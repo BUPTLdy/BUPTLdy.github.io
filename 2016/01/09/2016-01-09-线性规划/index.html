@@ -33,7 +33,7 @@ $$a_{21} x1 +">
 <meta property="og:image" content="http://i.imgur.com/0QzN1q2.png">
 <meta property="og:image" content="http://i.imgur.com/UfuthIQ.png">
 <meta property="og:image" content="http://i.imgur.com/lhxj168.png">
-<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+<meta property="og:updated_time" content="2016-03-14T03:21:45.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性规划 [Linear Programming]">
 <meta name="twitter:description" content="什么是线性规划
@@ -324,14 +324,14 @@ $$a_{21} x1 +">
 </li>
 <li><p>线性规划解决实际问题</p>
 <p> 问题如下：</p>
-<p> With human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $$i$$ has a time window $$[s_i,t_i]$$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as $$[s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n]$$ satisfying $$s_1 &lt;t_1 &lt; s_2 &lt; t_2 &lt; · · · &lt; s_n &lt; t_n$$, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.</p>
+<p> With human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $i$ has a time window $[s_i,t_i]$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as $[s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n]$ satisfying $s_1 &lt;t_1 &lt; s_2 &lt; t_2 &lt; · · · &lt; s_n &lt; t_n$, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.</p>
 <p> Please formulate this problem as an LP.</p>
 <p> 题目的大概意思是每架飞机都只能在自己固定的时间窗内降落，为了安全起见两架飞机之间的降落时间间隔越大越好，然后给你n架飞机的降落时间窗口，要求n架飞机的最小降落间隔的最大值。</p>
-<p> 这个问题的建模起来很简单，令$$x_i$$表示第$$i$$架飞机的降落时间，则需要满足约束条件：</p>
+<p> 这个问题的建模起来很简单，令$x_i$表示第$i$架飞机的降落时间，则需要满足约束条件：</p>
 <p> $$s_i\leq x_i \leq t_i$$</p>
 <p> 然后我们的目标是要求最小间隔的最大值，所以我们的目标函数为：</p>
 <p> $$max (min(x<em>{i+1}-x</em>{i}))$$</p>
-<p> 那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有$$y\leq x<em>{i+1}-x</em>{i} $$，那么$$y$$不就是$$x<em>{i+1}-x</em>{i}$$的最小值吗？</p>
+<p> 那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有$y\leq x<em>{i+1}-x</em>{i} $，那么$y$不就是$x<em>{i+1}-x</em>{i}$的最小值吗？</p>
 <p> 所以最终我们可以把问题形式化为:</p>
 <p> $$\begin{array}{cll}</p>
 <pre><code>max &amp; y &amp; \\
@@ -355,7 +355,7 @@ s.t.&amp; s_i\leq x_i \leq t_i&amp; i=1,2,3 \cdots n\\
         <p><span>本文标题:</span><a href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月09日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 11时21分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/09/2016-01-09-线性规划/" title="线性规划 [Linear Programming]">http://yoursite.com/2016/01/09/2016-01-09-线性规划/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/09/2016-01-09-线性规划/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -491,7 +491,7 @@ s.t.&amp; s_i\leq x_i \leq t_i&amp; i=1,2,3 \cdots n\\
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
     <script>
         $(".post-list").addClass("toc-article");
         $(".post-list-item a").attr("target","_blank");

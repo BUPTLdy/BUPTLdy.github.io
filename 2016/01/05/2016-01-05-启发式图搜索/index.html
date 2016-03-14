@@ -16,7 +16,7 @@
  在启发式搜索过程中对OPEN表进行排序，就需要定义一个评价函数f(n)，对当前的搜索状态进行评估，">
 <meta property="og:image" content="http://i.imgur.com/XGw5X8W.png">
 <meta property="og:image" content="http://i.imgur.com/8DgjWdD.png">
-<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+<meta property="og:updated_time" content="2016-03-14T03:26:46.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="启发式图搜索策略">
 <meta name="twitter:description" content="什么是启发式搜索 无信息图搜索一般需要产生大量的节点，因而效率较低。为提高效率，可以使用一些问题相关的信息，以减小搜索量，这些信息就称为启发式信息。使用启发式信息指导的搜索过程称为启发式搜索，所以启发式图搜索与无信息图搜索之间的区别就是启发式图搜索在OPEN表的排序过程中使用了与问题有关的知识。
@@ -285,7 +285,7 @@
 <ol>
 <li><p>A*算法的改进</p>
 <p> 在A*算法中，扩展一个节点时，对已经在OPEN表或CLOSED表中的子节点，要调整指针，花时间和精力。如果在扩展节点n时，就已经找到了从根节点开始到它的最优路径，则不必调整指针, 可以大大提高效率。如果满足单调性限制，则可实现此愿望。</p>
-<p> 如果对每一个节点$$n_i$$以及它的后继节点$$n_j$$，满足：</p>
+<p> 如果对每一个节点$n_i$以及它的后继节点$n_j$，满足：</p>
 <p> $$h(n_i) - h(n_j) ≤ k(n_i,n_j)$$</p>
 <p> 则称启发式函数满足单调性限制。</p>
 <p> 如果A*满足单调性限制，则当它选择节点n扩展时，就已经发现了通向节点n的最佳路径,则不必进行结点的指针修正操作，因而改善了A*的效率。</p>
@@ -302,7 +302,7 @@
         <p><span>本文标题:</span><a href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月05日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 11时26分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/05/2016-01-05-启发式图搜索/" title="启发式图搜索策略">http://yoursite.com/2016/01/05/2016-01-05-启发式图搜索/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/05/2016-01-05-启发式图搜索/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -438,7 +438,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
     <script>
         $(".post-list").addClass("toc-article");
         $(".post-list-item a").attr("target","_blank");

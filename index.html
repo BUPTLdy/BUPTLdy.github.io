@@ -214,65 +214,6 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/13/hello-world/" class="article-date">
-      <time datetime="2016-03-13T11:45:19.114Z" itemprop="datePublished">2016-03-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/13/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/13/hello-world/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-2016-03-02-GIT命令总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -439,25 +380,25 @@
           
         <ol>
 <li><p>近似算法(Approximation algorithm)概念</p>
-<p> 许多具有卖际意义的问题都是 <a href="http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/" target="_blank" rel="external">NP 完全</a>问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法： </p>
+<p> 许多具有卖际意义的问题都是 <a href="http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/" target="_blank" rel="external">NP 完全</a>问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：</p>
 <ul>
-<li>如果实际输入数据规模较小，则用指数级运行时的算法就能很好地解决问题； </li>
+<li>如果实际输入数据规模较小，则用指数级运行时的算法就能很好地解决问题；</li>
 <li>对于一些能在多项式时间内解决的特殊情况，可以把它们单独列出来求解；</li>
 <li><p>可以寻找一些能够在多项式时间内得到近似最优解 （near-optimal solution)的方法(最坏情况或平均情况)。</p>
-<p>在实际应用中，近似最优解一般都能满足要求， 返回近似最优解的算法就称为近似算法(approximation algorithm)。 </p>
+<p>在实际应用中，近似最优解一般都能满足要求， 返回近似最优解的算法就称为近似算法(approximation algorithm)。</p>
 <p><strong>近似比：</strong></p>
-<p>如果对规模为n的任意输人，近似算法所产生的近似解的代价C与最优解的代价C*只差一个因子$$\rho (n)$$:</p>
+<p>如果对规模为n的任意输人，近似算法所产生的近似解的代价C与最优解的代价C*只差一个因子$\rho (n)$:</p>
 <p>$$max(\frac{C}{C<em>},\frac{C</em>}{C} )\leq \rho (n)$$</p>
-<p>则称该近似算法有近似比$$\rho (n)$$。如果一个算法的近似比达到 $$\rho (n)$$，则称该算法为$$\rho (n)$$近似算法。近似比和$$\rho (n)$$近似算法的定义对求最大化和最小化问题都适用，一个近似算法的近似比不会小于1。</p>
+<p>则称该近似算法有近似比$\rho (n)$。如果一个算法的近似比达到 $\rho (n)$，则称该算法为$\rho (n)$近似算法。近似比和$\rho (n)$近似算法的定义对求最大化和最小化问题都适用，一个近似算法的近似比不会小于1。</p>
 </li>
 </ul>
 </li>
 <li><p>一维装箱问题(Bin Packing)</p>
 <p> 问题如下：</p>
-<p> Bin Packing is as follows: Given n items with sizes $$a_1, \cdots , a_n ∈ (0, 1]$$, find a packing in unit-sized bins that minimizes the number of bins used.</p>
+<p> Bin Packing is as follows: Given n items with sizes $a_1, \cdots , a_n ∈ (0, 1]$, find a packing in unit-sized bins that minimizes the number of bins used.</p>
 <p> Give a 2-approximation algorithm for this problem and analysis the approximation factor.</p>
 <p> 装箱问题：有n个物品，每个物品的尺寸在0-1之间，每个箱子的容量为1，问最少要用多少的箱子能把所有的物品装下？</p>
-<p> 装箱问题可用整数规划描述如下，其中$$y<em>i=1$$表示箱子$$i$$被使用，否则表示没有使用，$$x</em>{ij}=1$$表示物品j放入箱子i中。</p>
+<p> 装箱问题可用整数规划描述如下，其中$y<em>i=1$表示箱子$i$被使用，否则表示没有使用，$x</em>{ij}=1$表示物品j放入箱子i中。</p>
 </li>
 </ol>
 <pre><code>![](http://i.imgur.com/VPewCSm.png)
@@ -472,7 +413,7 @@
 
 举例：
 
-|物品|$$J_1$$|$$J_2$$|$$J_3$$|$$J_4$$|$$J_5$$|$$J_6$$|
+|物品|$J_1$|$J_2$|$J_3$|$J_4$|$J_5$|$J_6$|
 |-|-|-|-|-|-|-|
 |尺寸|0.6|0.7|0.4|0.2|0.8|0.3|
 
@@ -484,13 +425,13 @@
 
 &gt; 证明：Next Fit是Bin Packing问题近似比为2的近似算法
 
-- 对所有的输入物品序列I有:$$NF(I) \leq 2OPT(I)$$
+- 对所有的输入物品序列I有:$NF(I) \leq 2OPT(I)$
 
-    如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$$B_1+B_2&gt;1$$，对于$$B_3+B_4,\dots$$都是这样。因此浪费的空间不达到一半，所以有$$NF(I) \leq 2OPT(I)$$。
+    如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$B_1+B_2&gt;1$，对于$B_3+B_4,\dots$都是这样。因此浪费的空间不达到一半，所以有$NF(I) \leq 2OPT(I)$。
 
     ![](http://i.imgur.com/A8GpRKX.png)
 
-- 存在一个输入物品序列I：$$NF(I)\geq 2OPT(I)-2$$
+- 存在一个输入物品序列I：$NF(I)\geq 2OPT(I)-2$
 
     考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：
 
@@ -506,7 +447,7 @@
 
 所以根据上述证明，Next Fit是Bin Packing问题近似比为2的近似算法。
 
-**复杂度分析**：由于NF算法处理每个物品只检查一个箱子,所以其时间复杂度是线性的,但也正因为如此,使得前面箱子剩余空间再无利用的可能。该算法的时间复杂度是$$O(n)$$, 空间复杂度为$$O(1)$$。
+**复杂度分析**：由于NF算法处理每个物品只检查一个箱子,所以其时间复杂度是线性的,但也正因为如此,使得前面箱子剩余空间再无利用的可能。该算法的时间复杂度是$O(n)$, 空间复杂度为$O(1)$。
 </code></pre><ol>
 <li><p>Steiner Tree Problem</p>
 <p> 问题如下：</p>
@@ -532,7 +473,7 @@
 <p>Step4: 将G2中的cycle去掉.</p>
 <p><img src="http://i.imgur.com/CohPHo2.png" alt=""></p>
 <p>如上图所示, 首先我们先建立一个包含所有terminal 的complete distance graph G1, 然后找出它的minimum spanning tree T1, 然后将原路径代回, 得到G2, 最后将G2 的cycle移去, 得到total cost 为14 的Steine​​r Tree T. 因为此一近似算法为approximate algorithm, 所以它得到的steine​​r tree并一定都是optimum, 此例子的minimum Steine​​r tree的cost为13。</p>
-<p>复杂度和近似比：因为需要计算最短路径，所以时间复杂度为$$O(M*N^2)$$,其中$$|V|=N$$, $$|S|=M$$。</p>
+<p>复杂度和近似比：因为需要计算最短路径，所以时间复杂度为$O(M*N^2)$,其中$|V|=N$, $|S|=M$。</p>
 <p>近似比为2，证明可以参考：<a href="http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf" title="http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf" target="_blank" rel="external">http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf</a></p>
 </li>
 </ul>
@@ -621,7 +562,6 @@
 <p>  图的顶点覆盖是一些顶点的集合，使得图中的每一条边都至少接触集合中的一个顶点，如下图所示，图中红色顶点可以覆盖图中所有的边。寻找最小的顶点覆盖的问题称为顶点覆盖问题，它是一个NP完全问题。</p>
 <p>  <img src="http://i.imgur.com/9wD7p7i.png" alt=""></p>
 <p>  集合覆盖问题</p>
-<p> $\pis$</p>
 
       
     </div>
@@ -681,13 +621,13 @@
         <ol>
 <li><p>网络流的定义</p>
 <p> 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。</p>
-<p> 假设 G = (V,E) 是一个有限的有向图，它的每条边$$ \ (u,v) \in E $$ 都有一个非负值实数的容量$$c(u, v)$$。如果$$(u, v) \not \in E$$，我们假设 $$c(u, v) = 0$$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $$f:$$：</p>
+<p> 假设 G = (V,E) 是一个有限的有向图，它的每条边$ \ (u,v) \in E $ 都有一个非负值实数的容量$c(u, v)$。如果$(u, v) \not \in E$，我们假设 $c(u, v) = 0$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $f:$：</p>
 </li>
 </ol>
-<pre><code>&gt; 容量限制（Capacity Constraints）：    $$\ f(u, v) \le c(u, v)$$一条边的流不能超过它的容量。
-&gt; 
-&gt; 流量守恒（Flow Conservation）：    除非u = s或u = t，否则$$\ \sum_{w \in V} f(u, w) = 0$$，中间结点的流入等于流出。
-&gt; 即流守恒意味着： $$\ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $$，对每个顶点$$ \ {v \in V\setminus\{s,t\}}$$。
+<pre><code>&gt; 容量限制（Capacity Constraints）：    $\ f(u, v) \le c(u, v)$一条边的流不能超过它的容量。
+&gt;
+&gt; 流量守恒（Flow Conservation）：    除非u = s或u = t，否则$\ \sum_{w \in V} f(u, w) = 0$，中间结点的流入等于流出。
+&gt; 即流守恒意味着： $\ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $，对每个顶点$ \ {v \in V\setminus\{s,t\}}$。
 
 **最大流问题**就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。
 
@@ -699,18 +639,18 @@
 <ul>
 <li><p>Ford-Fulkerson算法</p>
 <p>残存网络的概念：</p>
-<p>边的残存容量（residual capacity）是$$ c_f(u, v) = c(u, v) - f(u, v)$$。</p>
-<p>定义 $$G_f(V, E_f)$$ 表示剩余网络（residual network），它显示当前网络可用的容量的多少。就算在原网络中由 u 到 v 没有边，在剩余网络仍可能有由 u 到 v 的边。因为残存网络允许相反方向的流抵消，减少由 v 到 u 的流相当于增加由 u 到 v 的流，因为我们是为了求最大流，之前走过的路可能是走错的。</p>
-<p>增广路（augmenting path）是一条路径 $$(u_1, u_2, \dots, u_k)$$，而 $$u_1 = s、u_k = t $$及 $$c_f(u<em>i, u</em>{i+1}) &gt; 0$$，如果存在增广路，这表示沿这条路径还能够传送更多流。当且仅当剩余网络$$G_f$$ 没有增广路时处于最大流。</p>
-<p>建立残存网络$$\ G_f$$的步骤：</p>
+<p>边的残存容量（residual capacity）是$ c_f(u, v) = c(u, v) - f(u, v)$。</p>
+<p>定义 $G_f(V, E_f)$ 表示剩余网络（residual network），它显示当前网络可用的容量的多少。就算在原网络中由 u 到 v 没有边，在剩余网络仍可能有由 u 到 v 的边。因为残存网络允许相反方向的流抵消，减少由 v 到 u 的流相当于增加由 u 到 v 的流，因为我们是为了求最大流，之前走过的路可能是走错的。</p>
+<p>增广路（augmenting path）是一条路径 $(u_1, u_2, \dots, u_k)$，而 $u_1 = s、u_k = t $及 $c_f(u<em>i, u</em>{i+1}) &gt; 0$，如果存在增广路，这表示沿这条路径还能够传送更多流。当且仅当剩余网络$G_f$ 没有增广路时处于最大流。</p>
+<p>建立残存网络$\ G_f$的步骤：</p>
 </li>
 </ul>
 <ol>
-<li>$$\ G_f = \ V $$ 的顶点</li>
-<li><p>定义如下的 $$\ G_f = \ E_f$$ 的边,对每条边 $$\ (x,y) \in E$$ </p>
+<li>$\ G_f = \ V $ 的顶点</li>
+<li><p>定义如下的 $\ G_f = \ E_f$ 的边,对每条边 $\ (x,y) \in E$</p>
 <ul>
-<li>若$$\ f(x,y) &lt; c(x,y)$$，建立容量为$$\ c_f = c(x,y) - f(x,y)$$ 的前向边$$\ (x,y) \in E_f$$。</li>
-<li>若$$\ f(x,y) &gt; 0$$，建立容量为$$\ c_f =  f(x,y)$$ 的后向边$$\ (y, x) \in E_f$$。</li>
+<li>若$\ f(x,y) &lt; c(x,y)$，建立容量为$\ c_f = c(x,y) - f(x,y)$ 的前向边$\ (x,y) \in E_f$。</li>
+<li>若$\ f(x,y) &gt; 0$，建立容量为$\ c_f =  f(x,y)$ 的后向边$\ (y, x) \in E_f$。</li>
 </ul>
 <p>上图中的残存网络如下图所示：</p>
 <p><img src="http://i.imgur.com/RS7lQTw.png" alt=""></p>
@@ -748,7 +688,7 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
 <p> 问题如下：</p>
 <p> Support the you are a matchmaker and there are some boys and girls. Since the boys are alway more than girls, you can assume that if a girl express her love to a boy , the boy will always accept her. Now you know every girl’s thought(a girl may like more than one boy) and you want to make as much pairs as you can. show that you can do this using maximum flow algorithm.</p>
 <p> 题目意思大概是有一些男孩和女孩。男孩的数量大于等于女孩的数量，如果女孩向男孩表达爱意，男孩必定接受，假设你是个媒婆，而且你知道女孩们喜欢那个男孩(一个女孩可能同时喜欢多个男孩)，要你用最大流的方法求最多能匹配多少对？</p>
-<p> 问题分析：最终一个女孩肯定只能和一个男孩配对，为了简单分析，我们假设有3个女孩$${G_1,G_2,G_3}$$，3个男孩$${B_1,B_2,B_3}$$,并且已知$$G_1$$喜欢$$B_1$$和$$B_2$$，$$G_2$$喜欢$$B_2$$,$$G_3$$喜欢$$B_3$$，我们可以构造出如下图所示的网络流：</p>
+<p> 问题分析：最终一个女孩肯定只能和一个男孩配对，为了简单分析，我们假设有3个女孩${G_1,G_2,G_3}$，3个男孩${B_1,B_2,B_3}$,并且已知$G_1$喜欢$B_1$和$B_2$，$G_2$喜欢$B_2$,$G_3$喜欢$B_3$，我们可以构造出如下图所示的网络流：</p>
 <p> <img src="http://i.imgur.com/9hAGUgE.png" alt=""><br>，<br> 求出上图所示网络的的最大流就是最大的匹配对数，根据这个思路，这个题抽象成最大流问题为：</p>
 <ul>
 <li>源节点，汇点，以及每个女孩男孩都构成一个节点</li>
@@ -865,14 +805,14 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
 </li>
 <li><p>线性规划解决实际问题</p>
 <p> 问题如下：</p>
-<p> With human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $$i$$ has a time window $$[s_i,t_i]$$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as $$[s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n]$$ satisfying $$s_1 &lt;t_1 &lt; s_2 &lt; t_2 &lt; · · · &lt; s_n &lt; t_n$$, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.</p>
+<p> With human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $i$ has a time window $[s_i,t_i]$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as $[s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n]$ satisfying $s_1 &lt;t_1 &lt; s_2 &lt; t_2 &lt; · · · &lt; s_n &lt; t_n$, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.</p>
 <p> Please formulate this problem as an LP.</p>
 <p> 题目的大概意思是每架飞机都只能在自己固定的时间窗内降落，为了安全起见两架飞机之间的降落时间间隔越大越好，然后给你n架飞机的降落时间窗口，要求n架飞机的最小降落间隔的最大值。</p>
-<p> 这个问题的建模起来很简单，令$$x_i$$表示第$$i$$架飞机的降落时间，则需要满足约束条件：</p>
+<p> 这个问题的建模起来很简单，令$x_i$表示第$i$架飞机的降落时间，则需要满足约束条件：</p>
 <p> $$s_i\leq x_i \leq t_i$$</p>
 <p> 然后我们的目标是要求最小间隔的最大值，所以我们的目标函数为：</p>
 <p> $$max (min(x<em>{i+1}-x</em>{i}))$$</p>
-<p> 那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有$$y\leq x<em>{i+1}-x</em>{i} $$，那么$$y$$不就是$$x<em>{i+1}-x</em>{i}$$的最小值吗？</p>
+<p> 那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有$y\leq x<em>{i+1}-x</em>{i} $，那么$y$不就是$x<em>{i+1}-x</em>{i}$的最小值吗？</p>
 <p> 所以最终我们可以把问题形式化为:</p>
 <p> $$\begin{array}{cll}</p>
 <pre><code>max &amp; y &amp; \\
@@ -942,7 +882,7 @@ s.t.&amp; s_i\leq x_i \leq t_i&amp; i=1,2,3 \cdots n\\
       
           
         <ol>
-<li><p>贪心算法(greedy algorithm)    </p>
+<li><p>贪心算法(greedy algorithm)</p>
 <p> 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是<a href="http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" target="_blank" rel="external">动态规划</a>问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？</p>
 <p> 如果我们能够证明要解决的问题具有如下两个性质，那么我们向贪心算法迈出了重要一步。</p>
 <ul>
@@ -962,19 +902,19 @@ s.t.&amp; s_i\leq x_i \leq t_i&amp; i=1,2,3 \cdots n\\
 </ol>
 </li>
 <li><p>问题举例：Havel-Hakimi定理</p>
-<p> Given a list of $$n$$ natural numbers $$d_1, d_2,…,d_n$$, show how to decide in polynomial time whether there exists an undirected graph G = (V, E) whose node degrees are precisely the numbers $$d_1, d_2, \cdots , d_n$$. G should not contain multiple edges between the same pair of nodes, or “ loop” edges with both endpoints equal to the same node.</p>
+<p> Given a list of $n$ natural numbers $d_1, d_2,…,d_n$, show how to decide in polynomial time whether there exists an undirected graph G = (V, E) whose node degrees are precisely the numbers $d_1, d_2, \cdots , d_n$. G should not contain multiple edges between the same pair of nodes, or “ loop” edges with both endpoints equal to the same node.</p>
 <p> 题目的大概意思是：给你一组数字序列，数字的大小为图的度，问这些数字的度能够构成一个图（无向无环图），如果可以，则称该序列是可图的。</p>
 <p> 怎么用贪心算法分析：</p>
 <ol>
 <li>首先由无向图的性质分析，如果所有的度之和为奇数，显然不能构成无向图</li>
 <li>如果最大的度比序列的长度还大，明显也不能构成图，因为就算所有的结点和它相连，度的值也为n-1小于n。</li>
-<li><p>贪心选择:由<strong>非负数组成的非增序列</strong>$$s:d_1,d_2,\cdots,d_n（n&gt;=2，d_1&gt;=1）$$是可图的，当仅当序列</p>
+<li><p>贪心选择:由<strong>非负数组成的非增序列</strong>$s:d_1,d_2,\cdots,d_n（n&gt;=2，d_1&gt;=1）$是可图的，当仅当序列</p>
 <p>$$s1：d_2-1，d<em>3-1，···，d</em>{d<em>1+1}-1,d</em>{d1+2}，····，d_n$$</p>
 </li>
 </ol>
 </li>
 </ol>
-<pre><code>是可图的。序列s1中有n-1个非负数，s序列排在$$d_1$$之后的前$$d_1$$个数减1后构成s1中的前$$d_1$$个数。
+<pre><code>是可图的。序列s1中有n-1个非负数，s序列排在$d_1$之后的前$d_1$个数减1后构成s1中的前$d_1$个数。
 
 判定过程：一直循环直到当前序列出现负数（即不是可图的情况）或者当前序列全为0 （可图）时退出。
 
@@ -1183,13 +1123,13 @@ Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到
 </ul>
 </li>
 <li><p><a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm" target="_blank" rel="external">Karatsuba</a> 算法</p>
-<p> Karatsuba算法是一种快速乘法算法，在1960年由<a href="https://en.wikipedia.org/wiki/Anatoly_Karatsuba" target="_blank" rel="external">Anatoly Karatsuba</a>提出。普通乘法的复杂度是$$O(n^2)$$,而Karatsuba算法的时间复杂度为$$O(n^{1.585})$$。</p>
+<p> Karatsuba算法是一种快速乘法算法，在1960年由<a href="https://en.wikipedia.org/wiki/Anatoly_Karatsuba" target="_blank" rel="external">Anatoly Karatsuba</a>提出。普通乘法的复杂度是$O(n^2)$,而Karatsuba算法的时间复杂度为$O(n^{1.585})$。</p>
 <p> 现在运用分治的思想来阐述下Karatsuba算法的基本原理：</p>
 <ul>
 <li><p>分解：原本要计算两个大数x，y的乘法,先把x,y分解成如下两部分，其中B为基。</p>
 <p>$$x = x_1B^m + x_0$$</p>
 <p>$$y = y_1B^m + y_0$$</p>
-<p>其中 $$x_0$$ 和 $$y_0$$ 要小于 $$B^m$$。 现在$$xy$$可以写为:</p>
+<p>其中 $x_0$ 和 $y_0$ 要小于 $B^m$。 现在$xy$可以写为:</p>
 <p>$$xy = (x_1B^m + x_0)(y_1B^m + y_0)$$<br>$$xy = z_2B^{2m} + z_1B^m + z_0$$<br>$$z_2 = x_1y_1$$<br>$$z_1 = x_1y_0 + x_0y_1$$<br>$$z_0 = x_0y_0$$</p>
 <p>原本上面的式子中一共需要计算4次乘法（与基的幂次相乘只要进行移位操作就行），但是注意到有：</p>
 <p>$$z_1 = (x_1 + x_0)(y_1 + y_0) - z_2 - z_0$$</p>
@@ -1197,7 +1137,7 @@ Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到
 </li>
 <li><p>解决：通过上述分解步骤，我们每次还是需要3次乘法运算，然而这三次乘法运算我们可以继续递归的调用Karatsuba算法，直到数字足够小可以直接运用普通乘法求解。</p>
 </li>
-<li><p>合并：Karatsuba算法并没有涉及合并问题，通过公式$$xy = z_2B^{2m} + z_1B^m + z_0$$把最终结果求出来即可。</p>
+<li><p>合并：Karatsuba算法并没有涉及合并问题，通过公式$xy = z_2B^{2m} + z_1B^m + z_0$把最终结果求出来即可。</p>
 <p>根据上述分析，当m=n/2时(n为乘数的长度)，递归的效率最高，所以递归公式为：</p>
 <p>$$T(n) = 3 T(\lceil n/2\rceil) + cn + d$$</p>
 <p>由递归公式根据<a href="http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/" target="_blank" rel="external">主定理</a>得到算法的复杂度为：</p>
@@ -1237,9 +1177,9 @@ Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到
 </ol>
 <ol>
 <li><p>逆序数统计(Counting Inversion)</p>
-<p> 问题定义：输入n个不同的数字$$a_1,a_2,\cdots ,a_n$$，计算有多少对逆序数，逆序数的定义为数字下标$$i<j$$但是数字$$a_i>a_j$$。比如数字序列2，4，1，3，5，数字2在数字1的前面，但比数字1大，所以是一对逆序数，上述数字序列共有3组逆序数：（2，1），（4，1），（4，3）。</j$$但是数字$$a_i></p>
+<p> 问题定义：输入n个不同的数字$a_1,a_2,\cdots ,a_n$，计算有多少对逆序数，逆序数的定义为数字下标$i<j$但是数字$a_i>a_j$。比如数字序列2，4，1，3，5，数字2在数字1的前面，但比数字1大，所以是一对逆序数，上述数字序列共有3组逆序数：（2，1），（4，1），（4，3）。</j$但是数字$a_i></p>
 <p> 统计逆序数要用到分治的思想，我们能很容易能想到先分解成两个子序列然后再递归求解每个子序列的逆序数。</p>
-<p> 现在主要的问题是解决，怎么计算两个不同子序列之间的逆序数，也就是怎么合并的问题，如下图所示，如果只是通过子序列之间每个数字的简单比较求解逆序数，则需要通过$$n^2/4$$次比较。所以时间复杂度为$$T(n)=2T(n/2)+n^2/4=O(n^2)$$(求解方法参考<a href="http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/" target="_blank" rel="external">主定理</a>)</p>
+<p> 现在主要的问题是解决，怎么计算两个不同子序列之间的逆序数，也就是怎么合并的问题，如下图所示，如果只是通过子序列之间每个数字的简单比较求解逆序数，则需要通过$n^2/4$次比较。所以时间复杂度为$T(n)=2T(n/2)+n^2/4=O(n^2)$(求解方法参考<a href="http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/" target="_blank" rel="external">主定理</a>)</p>
 <p> <img src="http://i.imgur.com/mDpKIUp.png" alt=""></p>
 <p> 所以这样和直接暴力解法相比，时间复杂度比没有降低，这时我们通过前面的归并排序想到，如果我们先对子序列进行排序(对子序列排序并不会影响两个子序列之间的逆序数对)，再统计子序列之间的逆序数。统计方法如下图所示，两个排好序的子序列之间进行逆序数统计，比如说第一个序列的第一个数字3比第二个序列的第一个数字2要大，则第一个序列3后面的数字肯定都要比2要大，所以直接统计出逆序数为6，根据这种思想可以把子序列之间的所有逆序数统计出来。</p>
 </li>
@@ -1248,7 +1188,7 @@ Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到
 
 (gif generated by [ScreenToGif](https://screentogif.codeplex.com/))
 
-上述合并求解逆序数的方法，先给子序列排序并同时计算逆序数，花费$$O(n)$$的时间，所以问题总的时间复杂度为：
+上述合并求解逆序数的方法，先给子序列排序并同时计算逆序数，花费$O(n)$的时间，所以问题总的时间复杂度为：
 
 $$T(n)=2T(n/2)+O(n)=O(nlogn)$$
 
@@ -1342,10 +1282,111 @@ $$T(n)=2T(n/2)+O(n)=O(nlogn)$$
 <ol>
 <li><p>A*算法的改进</p>
 <p> 在A*算法中，扩展一个节点时，对已经在OPEN表或CLOSED表中的子节点，要调整指针，花时间和精力。如果在扩展节点n时，就已经找到了从根节点开始到它的最优路径，则不必调整指针, 可以大大提高效率。如果满足单调性限制，则可实现此愿望。</p>
-<p> 如果对每一个节点$$n_i$$以及它的后继节点$$n_j$$，满足：</p>
+<p> 如果对每一个节点$n_i$以及它的后继节点$n_j$，满足：</p>
 <p> $$h(n_i) - h(n_j) ≤ k(n_i,n_j)$$</p>
 <p> 则称启发式函数满足单调性限制。</p>
 <p> 如果A*满足单调性限制，则当它选择节点n扩展时，就已经发现了通向节点n的最佳路径,则不必进行结点的指针修正操作，因而改善了A*的效率。</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Artificial-Intelligence/">Artificial Intelligence</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2016-01-04-图搜索" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/04/2016-01-04-图搜索/" class="article-date">
+      <time datetime="2016-01-04T02:00:00.000Z" itemprop="datePublished">2016-01-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>图搜索策略简介<br> 之前所说的<a href="http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/" target="_blank" rel="external">回溯搜索策略</a>是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。</p>
+<p> 图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。</p>
+<p> 扩展一个结点：应用规则到已有结点上，生成其<strong>所有</strong>后继扩展结点的过程。扩展节点可使定义的隐含图生成为显式表示的状态空间图。</p>
+</li>
+<li><p>图搜索算法</p>
+<p> 图搜索中的两个表：</p>
+<ul>
+<li>OPEN表：存放已经生成但未扩展的节点，最初只含初始结点</li>
+<li><p>CLOSED表：存放已经扩展的节点，其实设置为空表</p>
+<p>图搜索过程：<br><img src="http://i.imgur.com/7EvIIuk.png" alt=""></p>
+<p><strong>算法结束后，将生成一个图G，称为搜索图。同时由于每个节点都有一个指针指向父节点，这些指针指向的节点构成G的一个支撑树，称为搜索树。</strong></p>
+<p>从目标节点开始，将指针指向的状态回串起来，即找到一条解路径。</p>
+<p>例子：<br>下图中S结点为初始结点，把结点S放入OPEN表中，从S结点开始扩展，生成S结点的所有后继结点｛1，2，3｝，S结点已扩展，加入CLOSED表中，继续这一过程。<br><img src="http://i.imgur.com/2g5AKHd.png" alt=""></p>
+<p>从上述结果可以看出，最终OPEN表中的结点都是搜索树中的端结点，而CLOSED表中的结点为搜索树中的非端结点。</p>
+<p>对于搜索过程中3中的d）步骤，如果要搜索的隐含图是一棵树，则在它上一步中生成后继结点不可能是以前生成过的，即生成的后继结点不可能出现在OPEN，CLOSED表中，此时搜索图就是搜索树，因此不必进行指针的修改操作。如果要搜索的隐含图不是一棵树，则有可能存在生成的后继结点中的某一结点$m_k$已经在OPEN，CLOSED表中存在,<strong><em>这意味着此时又发现了达到$m_k$的新通路</em></strong>，这样就需要比较不用路径到达点$m_k$的代价，将指针修改到代价最小的路径上。</p>
+</li>
+</ul>
+</li>
+<li><p>无信息图搜索过程<br> 无信息搜索过程是在图搜索算法过程中第3点的e）步中排列OPEN表中结点的顺序时，没有使用与问题有关的知识，任意排列，通常有<em>深度优先</em>和<em>宽度优先</em>两种排列方式。</p>
+<ul>
+<li><p>深度优先</p>
+<p>所谓深度优先搜索就是在每次扩展一个结点时，选择到目前为止深度最深的结点优先扩展。在算法中的实现为：</p>
+<p>  把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的最前面，是深度大的结点优先扩展</p>
+<p>因为新扩展出来的结点为子节点，子节点的深度要大于父节点的深度。一般情况下，深度优先搜索不但不能保证找到最优解，也不一定能保证找到解，这取决与问题的状态空间，如果问题的状态空间无限，可能会陷入“深渊”，而找不到解，因此也需要限制搜索的深度。</p>
+<p>举例：</p>
+<p>问题状态图G2如下图所示：</p>
+<p><img src="http://i.imgur.com/B3dYJla.jpg" alt=""></p>
+<p>根据深度优先原则，搜索过程为：（A–&gt;B–&gt;C–&gt;E–&gt;D–&gt;F–&gt;G）</p>
+<p><img src="http://i.imgur.com/CrjoNGl.jpg" alt=""></p>
+</li>
+<li><p>宽度优先</p>
+<p>宽度优先搜索与深度优先相反，每次选择深度最浅的结点优先扩展，实现方法为：</p>
+<p>  把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的后面</p>
+<p>当问题有解时，宽度优先算大一定能找到解，且在每段路径为单位代价时能找到最优解。</p>
+<p>根据宽度优先原则，对图G2的搜索过程为：（A–&gt;B–&gt;C–&gt;E–&gt;F–&gt;D–&gt;G）</p>
+<p><img src="http://i.imgur.com/LLE7pad.jpg" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>参考</p>
+<p> &lt;&lt;人工智能&gt;&gt;.马少平，朱小燕编著</p>
+<p> 图的遍历之 深度优先搜索和广度优先搜索:<a href="http://www.cnblogs.com/skywang12345/p/3711483.html" title="图的遍历之 深度优先搜索和广度优先搜索" target="_blank" rel="external">http://www.cnblogs.com/skywang12345/p/3711483.html</a></p>
 </li>
 </ol>
 

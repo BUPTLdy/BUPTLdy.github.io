@@ -6,22 +6,22 @@
   
   <title>贪心算法[greedy algorithm] | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="贪心算法(greedy algorithm)    
+  <meta name="description" content="贪心算法(greedy algorithm)
  贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是动态规划问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？
- 如果我们能够证明要解决的问题具有如下两个">
+ 如果我们能够证明要解决的问题具有如下两个性质，那">
 <meta property="og:type" content="article">
 <meta property="og:title" content="贪心算法[greedy algorithm]">
 <meta property="og:url" content="http://yoursite.com/2016/01/08/2016-01-08-贪心策略/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="贪心算法(greedy algorithm)    
+<meta property="og:description" content="贪心算法(greedy algorithm)
  贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是动态规划问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？
- 如果我们能够证明要解决的问题具有如下两个">
-<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+ 如果我们能够证明要解决的问题具有如下两个性质，那">
+<meta property="og:updated_time" content="2016-03-14T03:26:46.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贪心算法[greedy algorithm]">
-<meta name="twitter:description" content="贪心算法(greedy algorithm)    
+<meta name="twitter:description" content="贪心算法(greedy algorithm)
  贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是动态规划问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？
- 如果我们能够证明要解决的问题具有如下两个">
+ 如果我们能够证明要解决的问题具有如下两个性质，那">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -253,7 +253,7 @@
       
           
         <ol>
-<li><p>贪心算法(greedy algorithm)    </p>
+<li><p>贪心算法(greedy algorithm)</p>
 <p> 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是<a href="http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" target="_blank" rel="external">动态规划</a>问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？</p>
 <p> 如果我们能够证明要解决的问题具有如下两个性质，那么我们向贪心算法迈出了重要一步。</p>
 <ul>
@@ -273,19 +273,19 @@
 </ol>
 </li>
 <li><p>问题举例：Havel-Hakimi定理</p>
-<p> Given a list of $$n$$ natural numbers $$d_1, d_2,…,d_n$$, show how to decide in polynomial time whether there exists an undirected graph G = (V, E) whose node degrees are precisely the numbers $$d_1, d_2, \cdots , d_n$$. G should not contain multiple edges between the same pair of nodes, or “ loop” edges with both endpoints equal to the same node.</p>
+<p> Given a list of $n$ natural numbers $d_1, d_2,…,d_n$, show how to decide in polynomial time whether there exists an undirected graph G = (V, E) whose node degrees are precisely the numbers $d_1, d_2, \cdots , d_n$. G should not contain multiple edges between the same pair of nodes, or “ loop” edges with both endpoints equal to the same node.</p>
 <p> 题目的大概意思是：给你一组数字序列，数字的大小为图的度，问这些数字的度能够构成一个图（无向无环图），如果可以，则称该序列是可图的。</p>
 <p> 怎么用贪心算法分析：</p>
 <ol>
 <li>首先由无向图的性质分析，如果所有的度之和为奇数，显然不能构成无向图</li>
 <li>如果最大的度比序列的长度还大，明显也不能构成图，因为就算所有的结点和它相连，度的值也为n-1小于n。</li>
-<li><p>贪心选择:由<strong>非负数组成的非增序列</strong>$$s:d_1,d_2,\cdots,d_n（n&gt;=2，d_1&gt;=1）$$是可图的，当仅当序列</p>
+<li><p>贪心选择:由<strong>非负数组成的非增序列</strong>$s:d_1,d_2,\cdots,d_n（n&gt;=2，d_1&gt;=1）$是可图的，当仅当序列</p>
 <p>$$s1：d_2-1，d<em>3-1，···，d</em>{d<em>1+1}-1,d</em>{d1+2}，····，d_n$$</p>
 </li>
 </ol>
 </li>
 </ol>
-<pre><code>是可图的。序列s1中有n-1个非负数，s序列排在$$d_1$$之后的前$$d_1$$个数减1后构成s1中的前$$d_1$$个数。
+<pre><code>是可图的。序列s1中有n-1个非负数，s序列排在$d_1$之后的前$d_1$个数减1后构成s1中的前$d_1$个数。
 
 判定过程：一直循环直到当前序列出现负数（即不是可图的情况）或者当前序列全为0 （可图）时退出。
 
@@ -317,7 +317,7 @@ Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到
         <p><span>本文标题:</span><a href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月08日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 11时26分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/08/2016-01-08-贪心策略/" title="贪心算法[greedy algorithm]">http://yoursite.com/2016/01/08/2016-01-08-贪心策略/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/08/2016-01-08-贪心策略/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -453,7 +453,7 @@ Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
     <script>
         $(".post-list").addClass("toc-article");
         $(".post-list-item a").attr("target","_blank");

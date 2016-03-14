@@ -16,7 +16,7 @@
  在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
 <meta property="og:image" content="http://i.imgur.com/RS7lQTw.png">
 <meta property="og:image" content="http://i.imgur.com/9hAGUgE.png">
-<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+<meta property="og:updated_time" content="2016-03-14T03:26:46.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络最大流 [Max Flow]">
 <meta name="twitter:description" content="网络流的定义
@@ -255,13 +255,13 @@
         <ol>
 <li><p>网络流的定义</p>
 <p> 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。</p>
-<p> 假设 G = (V,E) 是一个有限的有向图，它的每条边$$ \ (u,v) \in E $$ 都有一个非负值实数的容量$$c(u, v)$$。如果$$(u, v) \not \in E$$，我们假设 $$c(u, v) = 0$$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $$f:$$：</p>
+<p> 假设 G = (V,E) 是一个有限的有向图，它的每条边$ \ (u,v) \in E $ 都有一个非负值实数的容量$c(u, v)$。如果$(u, v) \not \in E$，我们假设 $c(u, v) = 0$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $f:$：</p>
 </li>
 </ol>
-<pre><code>&gt; 容量限制（Capacity Constraints）：    $$\ f(u, v) \le c(u, v)$$一条边的流不能超过它的容量。
-&gt; 
-&gt; 流量守恒（Flow Conservation）：    除非u = s或u = t，否则$$\ \sum_{w \in V} f(u, w) = 0$$，中间结点的流入等于流出。
-&gt; 即流守恒意味着： $$\ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $$，对每个顶点$$ \ {v \in V\setminus\{s,t\}}$$。
+<pre><code>&gt; 容量限制（Capacity Constraints）：    $\ f(u, v) \le c(u, v)$一条边的流不能超过它的容量。
+&gt;
+&gt; 流量守恒（Flow Conservation）：    除非u = s或u = t，否则$\ \sum_{w \in V} f(u, w) = 0$，中间结点的流入等于流出。
+&gt; 即流守恒意味着： $\ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $，对每个顶点$ \ {v \in V\setminus\{s,t\}}$。
 
 **最大流问题**就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。
 
@@ -273,18 +273,18 @@
 <ul>
 <li><p>Ford-Fulkerson算法</p>
 <p>残存网络的概念：</p>
-<p>边的残存容量（residual capacity）是$$ c_f(u, v) = c(u, v) - f(u, v)$$。</p>
-<p>定义 $$G_f(V, E_f)$$ 表示剩余网络（residual network），它显示当前网络可用的容量的多少。就算在原网络中由 u 到 v 没有边，在剩余网络仍可能有由 u 到 v 的边。因为残存网络允许相反方向的流抵消，减少由 v 到 u 的流相当于增加由 u 到 v 的流，因为我们是为了求最大流，之前走过的路可能是走错的。</p>
-<p>增广路（augmenting path）是一条路径 $$(u_1, u_2, \dots, u_k)$$，而 $$u_1 = s、u_k = t $$及 $$c_f(u<em>i, u</em>{i+1}) &gt; 0$$，如果存在增广路，这表示沿这条路径还能够传送更多流。当且仅当剩余网络$$G_f$$ 没有增广路时处于最大流。</p>
-<p>建立残存网络$$\ G_f$$的步骤：</p>
+<p>边的残存容量（residual capacity）是$ c_f(u, v) = c(u, v) - f(u, v)$。</p>
+<p>定义 $G_f(V, E_f)$ 表示剩余网络（residual network），它显示当前网络可用的容量的多少。就算在原网络中由 u 到 v 没有边，在剩余网络仍可能有由 u 到 v 的边。因为残存网络允许相反方向的流抵消，减少由 v 到 u 的流相当于增加由 u 到 v 的流，因为我们是为了求最大流，之前走过的路可能是走错的。</p>
+<p>增广路（augmenting path）是一条路径 $(u_1, u_2, \dots, u_k)$，而 $u_1 = s、u_k = t $及 $c_f(u<em>i, u</em>{i+1}) &gt; 0$，如果存在增广路，这表示沿这条路径还能够传送更多流。当且仅当剩余网络$G_f$ 没有增广路时处于最大流。</p>
+<p>建立残存网络$\ G_f$的步骤：</p>
 </li>
 </ul>
 <ol>
-<li>$$\ G_f = \ V $$ 的顶点</li>
-<li><p>定义如下的 $$\ G_f = \ E_f$$ 的边,对每条边 $$\ (x,y) \in E$$ </p>
+<li>$\ G_f = \ V $ 的顶点</li>
+<li><p>定义如下的 $\ G_f = \ E_f$ 的边,对每条边 $\ (x,y) \in E$</p>
 <ul>
-<li>若$$\ f(x,y) &lt; c(x,y)$$，建立容量为$$\ c_f = c(x,y) - f(x,y)$$ 的前向边$$\ (x,y) \in E_f$$。</li>
-<li>若$$\ f(x,y) &gt; 0$$，建立容量为$$\ c_f =  f(x,y)$$ 的后向边$$\ (y, x) \in E_f$$。</li>
+<li>若$\ f(x,y) &lt; c(x,y)$，建立容量为$\ c_f = c(x,y) - f(x,y)$ 的前向边$\ (x,y) \in E_f$。</li>
+<li>若$\ f(x,y) &gt; 0$，建立容量为$\ c_f =  f(x,y)$ 的后向边$\ (y, x) \in E_f$。</li>
 </ul>
 <p>上图中的残存网络如下图所示：</p>
 <p><img src="http://i.imgur.com/RS7lQTw.png" alt=""></p>
@@ -322,7 +322,7 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
 <p> 问题如下：</p>
 <p> Support the you are a matchmaker and there are some boys and girls. Since the boys are alway more than girls, you can assume that if a girl express her love to a boy , the boy will always accept her. Now you know every girl’s thought(a girl may like more than one boy) and you want to make as much pairs as you can. show that you can do this using maximum flow algorithm.</p>
 <p> 题目意思大概是有一些男孩和女孩。男孩的数量大于等于女孩的数量，如果女孩向男孩表达爱意，男孩必定接受，假设你是个媒婆，而且你知道女孩们喜欢那个男孩(一个女孩可能同时喜欢多个男孩)，要你用最大流的方法求最多能匹配多少对？</p>
-<p> 问题分析：最终一个女孩肯定只能和一个男孩配对，为了简单分析，我们假设有3个女孩$${G_1,G_2,G_3}$$，3个男孩$${B_1,B_2,B_3}$$,并且已知$$G_1$$喜欢$$B_1$$和$$B_2$$，$$G_2$$喜欢$$B_2$$,$$G_3$$喜欢$$B_3$$，我们可以构造出如下图所示的网络流：</p>
+<p> 问题分析：最终一个女孩肯定只能和一个男孩配对，为了简单分析，我们假设有3个女孩${G_1,G_2,G_3}$，3个男孩${B_1,B_2,B_3}$,并且已知$G_1$喜欢$B_1$和$B_2$，$G_2$喜欢$B_2$,$G_3$喜欢$B_3$，我们可以构造出如下图所示的网络流：</p>
 <p> <img src="http://i.imgur.com/9hAGUgE.png" alt=""><br>，<br> 求出上图所示网络的的最大流就是最大的匹配对数，根据这个思路，这个题抽象成最大流问题为：</p>
 <ul>
 <li>源节点，汇点，以及每个女孩男孩都构成一个节点</li>
@@ -347,7 +347,7 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
         <p><span>本文标题:</span><a href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月10日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 11时26分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/10/2016-01-10-网络最大流/" title="网络最大流 [Max Flow]">http://yoursite.com/2016/01/10/2016-01-10-网络最大流/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/10/2016-01-10-网络最大流/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -483,7 +483,7 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
     <script>
         $(".post-list").addClass("toc-article");
         $(".post-list-item a").attr("target","_blank");
