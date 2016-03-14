@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-14T03:41:46.870Z</updated>
+  <updated>2016-03-14T04:14:22.645Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/02/2016-03-02-GIT%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/03/02/2016-03-02-GIT命令总结/</id>
     <published>2016-03-02T02:00:00.000Z</published>
-    <updated>2016-03-14T03:41:46.870Z</updated>
+    <updated>2016-03-14T04:14:22.645Z</updated>
     
     <content type="html">&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;创建版本库&lt;/p&gt;
@@ -95,13 +95,10 @@
 &lt;p&gt; .gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;参考资料&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-10/93928228.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git教程-廖雪峰的官方网站&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
+&lt;p&gt;&lt;strong&gt;参考资料&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-10/93928228.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[Git教程-廖雪峰的官方网站](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+&lt;/code&gt;&lt;/pre&gt;</content>
     
     <summary type="html">
     
