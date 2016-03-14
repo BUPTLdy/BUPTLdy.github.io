@@ -495,7 +495,7 @@ s.t.&amp;amp; s_i\leq x_i \leq t_i&amp;amp; i=1,2,3 \cdots n\\
     <link href="http://yoursite.com/2016/01/08/2016-01-08-%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/"/>
     <id>http://yoursite.com/2016/01/08/2016-01-08-贪心策略/</id>
     <published>2016-01-08T02:00:00.000Z</published>
-    <updated>2016-03-14T04:28:33.867Z</updated>
+    <updated>2016-03-14T04:29:58.064Z</updated>
     
     <content type="html">&lt;h1 id=&quot;贪心算法-greedy-algorithm&quot;&gt;&lt;a href=&quot;#贪心算法-greedy-algorithm&quot; class=&quot;headerlink&quot; title=&quot;贪心算法(greedy algorithm)&quot;&gt;&lt;/a&gt;贪心算法(greedy algorithm)&lt;/h1&gt;&lt;p&gt;贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是&lt;a href=&quot;http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;动态规划&lt;/a&gt;问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;如果我们能够证明要解决的问题具有如下两个性质，那么我们向贪心算法迈出了重要一步。&lt;/p&gt;
 &lt;ul&gt;
@@ -524,8 +524,7 @@ s.t.&amp;amp; s_i\leq x_i \leq t_i&amp;amp; i=1,2,3 \cdots n\\
 &lt;h1 id=&quot;问题举例：霍夫曼编码-Huffman-Coding&quot;&gt;&lt;a href=&quot;#问题举例：霍夫曼编码-Huffman-Coding&quot; class=&quot;headerlink&quot; title=&quot;问题举例：霍夫曼编码(Huffman Coding)&quot;&gt;&lt;/a&gt;问题举例：霍夫曼编码(Huffman Coding)&lt;/h1&gt;&lt;p&gt;霍夫曼编码的具体原理就不仔细介绍了，可以参考维基百科&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81&quot; title=&quot;霍夫曼编码&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;霍夫曼编码&lt;/a&gt;，主要在这里说说霍夫曼编码中怎么应用贪心算法。&lt;/p&gt;
 &lt;p&gt;贪心选择：构造霍夫曼树的关键之处在于每一步执行的时候，并不知道这个低频率的字符会编码为多少，只能保证它在树的最下面，使用最长的编码，这样就不会影响频率高的字符的编码。而每一步贪心的过程，都将两个频率低的字符合成一个父字符，减小了问题的规模，这样这个策略就在不影响其它字符编码的情况下，不断缩小问题的规模，直到最终求解。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/BUPTLdy/Algorithms/tree/master/huffman&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;霍夫曼编码CPP代码下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;#参考&lt;/p&gt;
-&lt;p&gt;贪心算法如何体现在霍夫曼编码中？&lt;a href=&quot;https://www.zhihu.com/question/22112710/answer/56030576&quot; title=&quot;贪心算法如何体现在霍夫曼编码中？&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/22112710/answer/56030576&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;贪心算法如何体现在霍夫曼编码中？&lt;a href=&quot;https://www.zhihu.com/question/22112710/answer/56030576&quot; title=&quot;贪心算法如何体现在霍夫曼编码中？&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/22112710/answer/56030576&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">

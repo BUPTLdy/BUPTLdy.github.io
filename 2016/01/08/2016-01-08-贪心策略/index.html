@@ -1,4 +1,6 @@
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,7 @@
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description" content="贪心算法(greedy algorithm)贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是动态规划问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？">
 <meta property="og:image" content="http://i.imgur.com/K3Qj1gw.png">
-<meta property="og:updated_time" content="2016-03-14T04:28:33.867Z">
+<meta property="og:updated_time" content="2016-03-14T04:29:58.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贪心算法[greedy algorithm]">
 <meta name="twitter:description" content="贪心算法(greedy algorithm)贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是动态规划问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？">
@@ -210,7 +212,10 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-2016-01-08-贪心策略" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><script type="text/javascript" async
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<article id="post-2016-01-08-贪心策略" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/01/08/2016-01-08-贪心策略/" class="article-date">
@@ -275,8 +280,7 @@
 <h1 id="问题举例：霍夫曼编码-Huffman-Coding"><a href="#问题举例：霍夫曼编码-Huffman-Coding" class="headerlink" title="问题举例：霍夫曼编码(Huffman Coding)"></a>问题举例：霍夫曼编码(Huffman Coding)</h1><p>霍夫曼编码的具体原理就不仔细介绍了，可以参考维基百科<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" title="霍夫曼编码" target="_blank" rel="external">霍夫曼编码</a>，主要在这里说说霍夫曼编码中怎么应用贪心算法。</p>
 <p>贪心选择：构造霍夫曼树的关键之处在于每一步执行的时候，并不知道这个低频率的字符会编码为多少，只能保证它在树的最下面，使用最长的编码，这样就不会影响频率高的字符的编码。而每一步贪心的过程，都将两个频率低的字符合成一个父字符，减小了问题的规模，这样这个策略就在不影响其它字符编码的情况下，不断缩小问题的规模，直到最终求解。</p>
 <p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/huffman" target="_blank" rel="external">霍夫曼编码CPP代码下载</a></p>
-<p>#参考</p>
-<p>贪心算法如何体现在霍夫曼编码中？<a href="https://www.zhihu.com/question/22112710/answer/56030576" title="贪心算法如何体现在霍夫曼编码中？" target="_blank" rel="external">https://www.zhihu.com/question/22112710/answer/56030576</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>贪心算法如何体现在霍夫曼编码中？<a href="https://www.zhihu.com/question/22112710/answer/56030576" title="贪心算法如何体现在霍夫曼编码中？" target="_blank" rel="external">https://www.zhihu.com/question/22112710/answer/56030576</a></p>
 
       
     </div>
@@ -288,7 +292,7 @@
         <p><span>本文标题:</span><a href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月08日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年03月14日 - 12时28分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 12时29分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/08/2016-01-08-贪心策略/" title="贪心算法[greedy algorithm]">http://yoursite.com/2016/01/08/2016-01-08-贪心策略/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/08/2016-01-08-贪心策略/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -324,7 +328,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#贪心算法-greedy-algorithm"><span class="toc-number">1.</span> <span class="toc-text">贪心算法(greedy algorithm)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题举例：Havel-Hakimi定理"><span class="toc-number">2.</span> <span class="toc-text">问题举例：Havel-Hakimi定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题举例：霍夫曼编码-Huffman-Coding"><span class="toc-number">3.</span> <span class="toc-text">问题举例：霍夫曼编码(Huffman Coding)</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#贪心算法-greedy-algorithm"><span class="toc-number">1.</span> <span class="toc-text">贪心算法(greedy algorithm)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题举例：Havel-Hakimi定理"><span class="toc-number">2.</span> <span class="toc-text">问题举例：Havel-Hakimi定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题举例：霍夫曼编码-Huffman-Coding"><span class="toc-number">3.</span> <span class="toc-text">问题举例：霍夫曼编码(Huffman Coding)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number">4.</span> <span class="toc-text">参考</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -451,6 +455,7 @@
     <script>
         
     </script>
+
 </div>
       <footer id="footer">
     <div class="outer">
