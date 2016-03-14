@@ -396,7 +396,7 @@ dd {
 .use-motion .motion-element {
   opacity: 0;
 }
-input[id$=search-input] {
+#local-search-input {
   padding: 3px;
   border: none;
   text-indent: 14px;
@@ -407,10 +407,10 @@ input[id$=search-input] {
   background: inherit;
   opacity: 0.5;
 }
-input[id$=search-input]:focus {
+#local-search-input:focus {
   opacity: 1;
 }
-.fa-search {
+.search-icon {
   position: absolute;
   top: 9px;
 }
@@ -421,6 +421,8 @@ table {
   border-spacing: 0;
   border: 1px solid #ddd;
   font-size: 14px;
+  table-layout: fixed;
+  word-wrap: break-word;
 }
 table>tbody>tr:nth-of-type(odd) {
   background-color: #f9f9f9;
@@ -1029,6 +1031,9 @@ pre .javascript .function {
 .menu .menu-item a:hover {
   border-bottom-color: #222;
 }
+.menu .menu-item .fa {
+  margin-right: 5px;
+}
 .use-motion .menu-item {
   opacity: 0;
 }
@@ -1544,7 +1549,22 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f7c8ff;
+  background: #66c3ab;
+}
+.links-of-blogroll {
+  font-size: 13px;
+}
+.links-of-blogroll-title {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.links-of-blogroll-list {
+  margin: 0;
+  padding: 0;
+}
+.links-of-blogroll-item {
+  padding: 2px 10px;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1954,23 +1974,9 @@ a.search-result {
   border-bottom: 1px dashed #4088b8;
   font-weight: bold;
 }
-#search-result {
-  display: none;
-  position: absolute;
-  width: 146px;
-  border: 1px solid #ccc;
-  background: #fff;
-  cursor: default;
-  overflow: auto;
-  margin: 0px;
-  z-index: 999;
-}
 #local-search-result {
   height: 90%;
   overflow: auto;
-}
-.site-search-form {
-  background: #f5f5f5;
 }
 .popup {
   display: none;
