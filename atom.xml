@@ -122,24 +122,23 @@
     <link href="http://yoursite.com/2016/01/12/2016-01-12-%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2016/01/12/2016-01-12-近似算法/</id>
     <published>2016-01-12T02:00:00.000Z</published>
-    <updated>2016-03-14T03:30:26.309Z</updated>
+    <updated>2016-03-14T05:26:41.597Z</updated>
     
     <content type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;近似算法(Approximation algorithm)概念&lt;/p&gt;
-&lt;p&gt; 许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;li&gt;近似算法(Approximation algorithm)概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果实际输入数据规模较小，则用指数级运行时的算法就能很好地解决问题；&lt;/li&gt;
 &lt;li&gt;对于一些能在多项式时间内解决的特殊情况，可以把它们单独列出来求解；&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;可以寻找一些能够在多项式时间内得到近似最优解 （near-optimal solution)的方法(最坏情况或平均情况)。&lt;/p&gt;
+&lt;li&gt;可以寻找一些能够在多项式时间内得到近似最优解 （near-optimal solution)的方法(最坏情况或平均情况)。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;在实际应用中，近似最优解一般都能满足要求， 返回近似最优解的算法就称为近似算法(approximation algorithm)。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;近似比：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;如果对规模为n的任意输人，近似算法所产生的近似解的代价C与最优解的代价C*只差一个因子$\rho (n)$:&lt;/p&gt;
-&lt;p&gt;$$max(\frac{C}{C&lt;em&gt;},\frac{C&lt;/em&gt;}{C} )\leq \rho (n)$$&lt;/p&gt;
+&lt;p&gt;$$max(\frac{C}{C*},\frac{C*}{C} )\leq \rho (n)$$&lt;/p&gt;
 &lt;p&gt;则称该近似算法有近似比$\rho (n)$。如果一个算法的近似比达到 $\rho (n)$，则称该算法为$\rho (n)$近似算法。近似比和$\rho (n)$近似算法的定义对求最大化和最小化问题都适用，一个近似算法的近似比不会小于1。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;一维装箱问题(Bin Packing)&lt;/p&gt;
 &lt;p&gt; 问题如下：&lt;/p&gt;
 &lt;p&gt; Bin Packing is as follows: Given n items with sizes $a_1, \cdots , a_n ∈ (0, 1]$, find a packing in unit-sized bins that minimizes the number of bins used.&lt;/p&gt;
@@ -148,54 +147,55 @@
 &lt;p&gt; 装箱问题可用整数规划描述如下，其中$y&lt;em&gt;i=1$表示箱子$i$被使用，否则表示没有使用，$x&lt;/em&gt;{ij}=1$表示物品j放入箱子i中。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;![](http://i.imgur.com/VPewCSm.png)
-
-其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。
-
-约束条件(2)表示：每个物品刚好放入一个箱子中。
-
-由[前文](http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/)已知，整数线性规划问题是NP完全的，即不能找到多项式时间算法来求解，所以需要寻找一种近似算法。
-
-&amp;gt; Next Fit算法：按顺序把物品放进当前箱子，如果放不下，则放下一个。
-
-举例：
-
-|物品|$J_1$|$J_2$|$J_3$|$J_4$|$J_5$|$J_6$|
-|-|-|-|-|-|-|-|
-|尺寸|0.6|0.7|0.4|0.2|0.8|0.3|
-
-根据Next Fit算法，解如下图所示：
-
-![](http://i.imgur.com/YDnGdKS.png)
-
-
-
-&amp;gt; 证明：Next Fit是Bin Packing问题近似比为2的近似算法
-
-- 对所有的输入物品序列I有:$NF(I) \leq 2OPT(I)$
-
-    如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$B_1+B_2&amp;gt;1$，对于$B_3+B_4,\dots$都是这样。因此浪费的空间不达到一半，所以有$NF(I) \leq 2OPT(I)$。
-
-    ![](http://i.imgur.com/A8GpRKX.png)
-
-- 存在一个输入物品序列I：$NF(I)\geq 2OPT(I)-2$
-
-    考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：
-
-    0.5，2/n，0.5，2/n，...，0.5，2/n
-
-    则最佳装箱策略如下图所示，最少需要(n/4+1)个箱子。
-
-    ![](http://i.imgur.com/IPg1QX9.png)
-
-    Next Fit策略如下图所示，需要(n/2)个箱子
-
-    ![](http://i.imgur.com/EkthQ3j.png)
-
-所以根据上述证明，Next Fit是Bin Packing问题近似比为2的近似算法。
-
-**复杂度分析**：由于NF算法处理每个物品只检查一个箱子,所以其时间复杂度是线性的,但也正因为如此,使得前面箱子剩余空间再无利用的可能。该算法的时间复杂度是$O(n)$, 空间复杂度为$O(1)$。
-&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/VPewCSm.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。&lt;/p&gt;
+&lt;p&gt;约束条件(2)表示：每个物品刚好放入一个箱子中。&lt;/p&gt;
+&lt;p&gt;由&lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前文&lt;/a&gt;已知，整数线性规划问题是NP完全的，即不能找到多项式时间算法来求解，所以需要寻找一种近似算法。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Next Fit算法：按顺序把物品放进当前箱子，如果放不下，则放下一个。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;举例：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;物品&lt;/th&gt;
+&lt;th&gt;$J_1$&lt;/th&gt;
+&lt;th&gt;$J_2$&lt;/th&gt;
+&lt;th&gt;$J_3$&lt;/th&gt;
+&lt;th&gt;$J_4$&lt;/th&gt;
+&lt;th&gt;$J_5$&lt;/th&gt;
+&lt;th&gt;$J_6$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;尺寸|0.6|0.7|0.4|0.2|0.8|0.3|&lt;/p&gt;
+&lt;p&gt;根据Next Fit算法，解如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/YDnGdKS.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;证明：Next Fit是Bin Packing问题近似比为2的近似算法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;对所有的输入物品序列I有:$NF(I) \leq 2OPT(I)$&lt;/p&gt;
+&lt;p&gt;  如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$B_1+B_2&amp;gt;1$，对于$B_3+B_4,\dots$都是这样。因此浪费的空间不达到一半，所以有$NF(I) \leq 2OPT(I)$。&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/A8GpRKX.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;存在一个输入物品序列I：$NF(I)\geq 2OPT(I)-2$&lt;/p&gt;
+&lt;p&gt;  考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：&lt;/p&gt;
+&lt;p&gt;  0.5，2/n，0.5，2/n，…，0.5，2/n&lt;/p&gt;
+&lt;p&gt;  则最佳装箱策略如下图所示，最少需要(n/4+1)个箱子。&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/IPg1QX9.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  Next Fit策略如下图所示，需要(n/2)个箱子&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/EkthQ3j.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  所以根据上述证明，Next Fit是Bin Packing问题近似比为2的近似算法。&lt;/p&gt;
+&lt;p&gt;  &lt;strong&gt;复杂度分析&lt;/strong&gt;：由于NF算法处理每个物品只检查一个箱子,所以其时间复杂度是线性的,但也正因为如此,使得前面箱子剩余空间再无利用的可能。该算法的时间复杂度是$O(n)$, 空间复杂度为$O(1)$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Steiner Tree Problem&lt;/p&gt;
 &lt;p&gt; 问题如下：&lt;/p&gt;
 &lt;p&gt; Given an undirected graph G = (V, E) with edge costs and set T ⊆ V of required vertices, the Steiner Tree Problem is to find a minimum cost tree in G containing every vertex in T (vertices in V −T may or may not be used in T).&lt;/p&gt;
@@ -234,8 +234,9 @@
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;近似算法(Approximation algorithm)概念&lt;/p&gt;
-&lt;p&gt; 许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;/p&gt;
+&lt;li&gt;近似算法(Approximation algorithm)概念&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;br&gt;
     
     </summary>
     

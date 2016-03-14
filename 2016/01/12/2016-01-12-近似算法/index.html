@@ -9,21 +9,29 @@
   <title>近似算法[Approximation algorithm] | Ldy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="近似算法(Approximation algorithm)概念
- 许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
+
+许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="近似算法[Approximation algorithm]">
 <meta property="og:url" content="http://yoursite.com/2016/01/12/2016-01-12-近似算法/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description" content="近似算法(Approximation algorithm)概念
- 许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
+
+许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
+<meta property="og:image" content="http://i.imgur.com/VPewCSm.png">
+<meta property="og:image" content="http://i.imgur.com/YDnGdKS.png">
+<meta property="og:image" content="http://i.imgur.com/A8GpRKX.png">
+<meta property="og:image" content="http://i.imgur.com/IPg1QX9.png">
+<meta property="og:image" content="http://i.imgur.com/EkthQ3j.png">
 <meta property="og:image" content="http://i.imgur.com/TF3lU8i.gif">
 <meta property="og:image" content="http://i.imgur.com/CohPHo2.png">
-<meta property="og:updated_time" content="2016-03-14T03:30:26.309Z">
+<meta property="og:updated_time" content="2016-03-14T05:26:41.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近似算法[Approximation algorithm]">
 <meta name="twitter:description" content="近似算法(Approximation algorithm)概念
- 许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
-<meta name="twitter:image" content="http://i.imgur.com/TF3lU8i.gif">
+
+许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
+<meta name="twitter:image" content="http://i.imgur.com/VPewCSm.png">
   
     <link rel="alternative" href="/atom.xml" title="Ldy&#39;s Blog" type="application/atom+xml">
   
@@ -258,21 +266,20 @@
       
           
         <ol>
-<li><p>近似算法(Approximation algorithm)概念</p>
-<p> 许多具有卖际意义的问题都是 <a href="http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/" target="_blank" rel="external">NP 完全</a>问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：</p>
-<a id="more"></a>
+<li>近似算法(Approximation algorithm)概念</li>
+</ol>
+<p>许多具有卖际意义的问题都是 <a href="http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/" target="_blank" rel="external">NP 完全</a>问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：<br><a id="more"></a></p>
 <ul>
 <li>如果实际输入数据规模较小，则用指数级运行时的算法就能很好地解决问题；</li>
 <li>对于一些能在多项式时间内解决的特殊情况，可以把它们单独列出来求解；</li>
-<li><p>可以寻找一些能够在多项式时间内得到近似最优解 （near-optimal solution)的方法(最坏情况或平均情况)。</p>
+<li>可以寻找一些能够在多项式时间内得到近似最优解 （near-optimal solution)的方法(最坏情况或平均情况)。</li>
+</ul>
 <p>在实际应用中，近似最优解一般都能满足要求， 返回近似最优解的算法就称为近似算法(approximation algorithm)。</p>
 <p><strong>近似比：</strong></p>
 <p>如果对规模为n的任意输人，近似算法所产生的近似解的代价C与最优解的代价C*只差一个因子$\rho (n)$:</p>
-<p>$$max(\frac{C}{C<em>},\frac{C</em>}{C} )\leq \rho (n)$$</p>
+<p>$$max(\frac{C}{C*},\frac{C*}{C} )\leq \rho (n)$$</p>
 <p>则称该近似算法有近似比$\rho (n)$。如果一个算法的近似比达到 $\rho (n)$，则称该算法为$\rho (n)$近似算法。近似比和$\rho (n)$近似算法的定义对求最大化和最小化问题都适用，一个近似算法的近似比不会小于1。</p>
-</li>
-</ul>
-</li>
+<ol>
 <li><p>一维装箱问题(Bin Packing)</p>
 <p> 问题如下：</p>
 <p> Bin Packing is as follows: Given n items with sizes $a_1, \cdots , a_n ∈ (0, 1]$, find a packing in unit-sized bins that minimizes the number of bins used.</p>
@@ -281,54 +288,55 @@
 <p> 装箱问题可用整数规划描述如下，其中$y<em>i=1$表示箱子$i$被使用，否则表示没有使用，$x</em>{ij}=1$表示物品j放入箱子i中。</p>
 </li>
 </ol>
-<pre><code>![](http://i.imgur.com/VPewCSm.png)
-
-其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。
-
-约束条件(2)表示：每个物品刚好放入一个箱子中。
-
-由[前文](http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/)已知，整数线性规划问题是NP完全的，即不能找到多项式时间算法来求解，所以需要寻找一种近似算法。
-
-&gt; Next Fit算法：按顺序把物品放进当前箱子，如果放不下，则放下一个。
-
-举例：
-
-|物品|$J_1$|$J_2$|$J_3$|$J_4$|$J_5$|$J_6$|
-|-|-|-|-|-|-|-|
-|尺寸|0.6|0.7|0.4|0.2|0.8|0.3|
-
-根据Next Fit算法，解如下图所示：
-
-![](http://i.imgur.com/YDnGdKS.png)
-
-
-
-&gt; 证明：Next Fit是Bin Packing问题近似比为2的近似算法
-
-- 对所有的输入物品序列I有:$NF(I) \leq 2OPT(I)$
-
-    如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$B_1+B_2&gt;1$，对于$B_3+B_4,\dots$都是这样。因此浪费的空间不达到一半，所以有$NF(I) \leq 2OPT(I)$。
-
-    ![](http://i.imgur.com/A8GpRKX.png)
-
-- 存在一个输入物品序列I：$NF(I)\geq 2OPT(I)-2$
-
-    考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：
-
-    0.5，2/n，0.5，2/n，...，0.5，2/n
-
-    则最佳装箱策略如下图所示，最少需要(n/4+1)个箱子。
-
-    ![](http://i.imgur.com/IPg1QX9.png)
-
-    Next Fit策略如下图所示，需要(n/2)个箱子
-
-    ![](http://i.imgur.com/EkthQ3j.png)
-
-所以根据上述证明，Next Fit是Bin Packing问题近似比为2的近似算法。
-
-**复杂度分析**：由于NF算法处理每个物品只检查一个箱子,所以其时间复杂度是线性的,但也正因为如此,使得前面箱子剩余空间再无利用的可能。该算法的时间复杂度是$O(n)$, 空间复杂度为$O(1)$。
-</code></pre><ol>
+<p><img src="http://i.imgur.com/VPewCSm.png" alt=""></p>
+<p>其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。</p>
+<p>约束条件(2)表示：每个物品刚好放入一个箱子中。</p>
+<p>由<a href="http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/" target="_blank" rel="external">前文</a>已知，整数线性规划问题是NP完全的，即不能找到多项式时间算法来求解，所以需要寻找一种近似算法。</p>
+<blockquote>
+<p>Next Fit算法：按顺序把物品放进当前箱子，如果放不下，则放下一个。</p>
+</blockquote>
+<p>举例：</p>
+<table>
+<thead>
+<tr>
+<th>物品</th>
+<th>$J_1$</th>
+<th>$J_2$</th>
+<th>$J_3$</th>
+<th>$J_4$</th>
+<th>$J_5$</th>
+<th>$J_6$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>尺寸|0.6|0.7|0.4|0.2|0.8|0.3|</p>
+<p>根据Next Fit算法，解如下图所示：</p>
+<p><img src="http://i.imgur.com/YDnGdKS.png" alt=""></p>
+<blockquote>
+<p>证明：Next Fit是Bin Packing问题近似比为2的近似算法</p>
+</blockquote>
+<ul>
+<li><p>对所有的输入物品序列I有:$NF(I) \leq 2OPT(I)$</p>
+<p>  如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$B_1+B_2&gt;1$，对于$B_3+B_4,\dots$都是这样。因此浪费的空间不达到一半，所以有$NF(I) \leq 2OPT(I)$。</p>
+<p>  <img src="http://i.imgur.com/A8GpRKX.png" alt=""></p>
+</li>
+<li><p>存在一个输入物品序列I：$NF(I)\geq 2OPT(I)-2$</p>
+<p>  考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：</p>
+<p>  0.5，2/n，0.5，2/n，…，0.5，2/n</p>
+<p>  则最佳装箱策略如下图所示，最少需要(n/4+1)个箱子。</p>
+<p>  <img src="http://i.imgur.com/IPg1QX9.png" alt=""></p>
+<p>  Next Fit策略如下图所示，需要(n/2)个箱子</p>
+<p>  <img src="http://i.imgur.com/EkthQ3j.png" alt=""></p>
+<p>  所以根据上述证明，Next Fit是Bin Packing问题近似比为2的近似算法。</p>
+<p>  <strong>复杂度分析</strong>：由于NF算法处理每个物品只检查一个箱子,所以其时间复杂度是线性的,但也正因为如此,使得前面箱子剩余空间再无利用的可能。该算法的时间复杂度是$O(n)$, 空间复杂度为$O(1)$。</p>
+</li>
+</ul>
+<ol>
 <li><p>Steiner Tree Problem</p>
 <p> 问题如下：</p>
 <p> Given an undirected graph G = (V, E) with edge costs and set T ⊆ V of required vertices, the Steiner Tree Problem is to find a minimum cost tree in G containing every vertex in T (vertices in V −T may or may not be used in T).</p>
@@ -373,7 +381,7 @@
         <p><span>本文标题:</span><a href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月12日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年03月14日 - 11时30分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 13时26分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/12/2016-01-12-近似算法/" title="近似算法[Approximation algorithm]">http://yoursite.com/2016/01/12/2016-01-12-近似算法/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/12/2016-01-12-近似算法/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
