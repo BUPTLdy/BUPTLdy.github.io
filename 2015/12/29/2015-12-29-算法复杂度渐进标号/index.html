@@ -1,0 +1,602 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>算法渐进记号及主定理 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="算法渐进记号
+
+Big $\Theta$：$\Theta$记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。
+
+Big $$O$$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。
+
+Big $$\Omega$$：表示一个函数的渐进下界，算法运行的最好情况。
+
+Litter $$o$$: 和big $$O$$ 定义相似，区别主要是 big$$O$$ 提供的上界可能和函数是同阶的，li">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法渐进记号及主定理">
+<meta property="og:url" content="http://yoursite.com/2015/12/29/2015-12-29-算法复杂度渐进标号/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="算法渐进记号
+
+Big $\Theta$：$\Theta$记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。
+
+Big $$O$$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。
+
+Big $$\Omega$$：表示一个函数的渐进下界，算法运行的最好情况。
+
+Litter $$o$$: 和big $$O$$ 定义相似，区别主要是 big$$O$$ 提供的上界可能和函数是同阶的，li">
+<meta property="og:image" content="http://i.imgur.com/GgsO2DX.png">
+<meta property="og:image" content="http://i.imgur.com/wUDSXQf.png">
+<meta property="og:updated_time" content="2016-03-13T13:01:46.247Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法渐进记号及主定理">
+<meta name="twitter:description" content="算法渐进记号
+
+Big $\Theta$：$\Theta$记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。
+
+Big $$O$$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。
+
+Big $$\Omega$$：表示一个函数的渐进下界，算法运行的最好情况。
+
+Litter $$o$$: 和big $$O$$ 定义相似，区别主要是 big$$O$$ 提供的上界可能和函数是同阶的，li">
+<meta name="twitter:image" content="http://i.imgur.com/GgsO2DX.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Ldy</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Algorithms/" style="font-size: 20px;">Algorithms</a> <a href="/tags/Artificial-Intelligence/" style="font-size: 16.67px;">Artificial Intelligence</a> <a href="/tags/CPP/" style="font-size: 16.67px;">CPP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://buptweixin.github.io/w">WeiXin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ldy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Ldy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2015-12-29-算法复杂度渐进标号" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/29/2015-12-29-算法复杂度渐进标号/" class="article-date">
+      <time datetime="2015-12-29T02:00:00.000Z" itemprop="datePublished">2015-12-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法渐进记号及主定理
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>算法渐进记号</p>
+<ul>
+<li><p>Big $\Theta$：$\Theta$记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。</p>
+</li>
+<li><p>Big $$O$$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。</p>
+</li>
+<li><p>Big $$\Omega$$：表示一个函数的渐进下界，算法运行的最好情况。</p>
+</li>
+<li><p>Litter $$o$$: 和big $$O$$ 定义相似，区别主要是 big$$O$$ 提供的上界可能和函数是同阶的，litter $$o$$ 表示非渐进紧确的上界。</p>
+</li>
+</ul>
+</li>
+<li><p>举例</p>
+<p> <img src="http://i.imgur.com/GgsO2DX.png" alt=""></p>
+</li>
+<li><p>渐进记号与函数阶数的关系</p>
+<p> 其中$$a，b$$分别为函数$$g(n)，f(n)$$的阶数</p>
+<p> <img src="http://i.imgur.com/wUDSXQf.png" alt=""></p>
+<p> 通常Big $$\Theta$$ 用来描述算法的最好和最坏的运行时间，Big $$O$$描述算法的最坏运行时间，Big $$\Omega$$描述算法的最好运行时间，经常使用的是Big $$O$$， 用来衡量算法的时间复杂度和空间复杂度。</p>
+</li>
+<li><p>主定理(master theorem)求解递归式</p>
+<p>假设有递推关系式</p>
+<p>$$T(n) = a \; T!\left(\frac{n}{b}\right) + f(n)$$</p>
+<p>其中$$ a \geq 1 \mbox{, } b &gt; 1$$，n为问题规模，a为递推的子问题数量，n/b为每个子问题的规模（假设每个子问题的规模基本一样），f(n)为递推以外进行的计算工作，包含了问题分解和子问题合并的代价。</p>
+<ul>
+<li>情况一<br>如果存在常数$$\epsilon &gt; 0$$，有$$f(n) = O\left( n^{\log_b (a) - \epsilon} \right)$$，并且是多项式意义上的小于，那么</li>
+</ul>
+<p>$$T(n) = \Theta\left( n^{\log_b a} \right)$$</p>
+<ul>
+<li>情况二<br>如果存在常数k ≥ 0，有$$f(n) = \Theta\left( n^{\log_b a} \log^{k} n \right)$$那么</li>
+</ul>
+<p>$$T(n) = \Theta\left( n^{\log_b a} \log^{k+1} n \right)$$</p>
+<ul>
+<li>情况三<br>如果存在常数$$\epsilon &gt; 0$$，有$$f(n) = \Omega\left( n^{\log_b (a) + \epsilon} \right)$$，并且是多项式意义上的大于，同时存在常数c &lt; 1以及充分大的n，满足</li>
+</ul>
+<p>$$a f\left( \frac{n}{b} \right) \le c f(n)$$</p>
+<p>那么</p>
+<p>$$T\left(n \right) = \Theta \left(f \left(n \right) \right)$$</p>
+<p>简单举例：</p>
+<p>$$T(n) = 9 \; T!\left(\frac{n}{3}\right) + n$$</p>
+<p>对这个递归式，有a=9,b=3,f(n)=n,因此有$$n^{log_b a}=n^2&gt;n$$,所以复杂度为：</p>
+<p>$$T(n)=\Theta(n^2)$$</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
+        <p><span>发布时间:</span>2015年12月29日 - 10时00分</p>
+        <p><span>最后更新:</span>2016年03月13日 - 21时01分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/" title="算法渐进记号及主定理">http://yoursite.com/2015/12/29/2015-12-29-算法复杂度渐进标号/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2015/12/29/2015-12-29-算法复杂度渐进标号/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/03/2016-01-03-回溯策略/">
+                    回溯策略[backtracking]
+                </a>
+            </div>
+        
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2015/12/29/2015-12-29-算法复杂度渐进标号/" data-title="算法渐进记号及主定理" data-url="http://yoursite.com/2015/12/29/2015-12-29-算法复杂度渐进标号/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bonerkiller"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/03/2016-01-03-回溯策略/" title="上一篇: 回溯策略[backtracking]">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Ldy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>

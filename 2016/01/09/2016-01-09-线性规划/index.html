@@ -1,0 +1,636 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>线性规划 [Linear Programming] | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是线性规划
+ 线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。
+ 线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：
+
+一个需要极大化的线性函数，例如：
+$$c_1 x_1 + c_2 x_2$$
+
+以下形式的问题约束，例如：
+$$a_{11} x1 + a{12} x_2 \le b_1$$
+$$a_{21} x1 +">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性规划 [Linear Programming]">
+<meta property="og:url" content="http://yoursite.com/2016/01/09/2016-01-09-线性规划/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是线性规划
+ 线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。
+ 线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：
+
+一个需要极大化的线性函数，例如：
+$$c_1 x_1 + c_2 x_2$$
+
+以下形式的问题约束，例如：
+$$a_{11} x1 + a{12} x_2 \le b_1$$
+$$a_{21} x1 +">
+<meta property="og:image" content="http://i.imgur.com/0QzN1q2.png">
+<meta property="og:image" content="http://i.imgur.com/UfuthIQ.png">
+<meta property="og:image" content="http://i.imgur.com/lhxj168.png">
+<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="线性规划 [Linear Programming]">
+<meta name="twitter:description" content="什么是线性规划
+ 线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。
+ 线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：
+
+一个需要极大化的线性函数，例如：
+$$c_1 x_1 + c_2 x_2$$
+
+以下形式的问题约束，例如：
+$$a_{11} x1 + a{12} x_2 \le b_1$$
+$$a_{21} x1 +">
+<meta name="twitter:image" content="http://i.imgur.com/0QzN1q2.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Ldy</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Algorithms/" style="font-size: 20px;">Algorithms</a> <a href="/tags/Artificial-Intelligence/" style="font-size: 16.67px;">Artificial Intelligence</a> <a href="/tags/CPP/" style="font-size: 16.67px;">CPP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://buptweixin.github.io/w">WeiXin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ldy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Ldy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2016-01-09-线性规划" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/09/2016-01-09-线性规划/" class="article-date">
+      <time datetime="2016-01-09T02:00:00.000Z" itemprop="datePublished">2016-01-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      线性规划 [Linear Programming]
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>什么是线性规划</p>
+<p> 线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。</p>
+<p> 线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：</p>
+<ul>
+<li><p>一个需要极大化的线性函数，例如：</p>
+<p>$$c_1 x_1 + c_2 x_2$$</p>
+</li>
+<li><p>以下形式的问题约束，例如：</p>
+<p>$$a_{11} x<em>1 + a</em>{12} x_2 \le b_1$$</p>
+<p>$$a_{21} x<em>1 + a</em>{22} x_2  \le b_2$$</p>
+<p>$$a_{31} x<em>1 + a</em>{32} x_2  \le b_3$$</p>
+</li>
+<li><p>非负变量，例如：</p>
+<p>$$x_1 \ge 0 $$</p>
+<p>$$x_2 \ge 0 $$</p>
+<p>几个概念和定理介绍：</p>
+<p>可行域：下图中蓝色部分的点都是线性规划问题的解(可行解)，蓝色区域是可行解的集合，称为可行域。</p>
+<p><img src="http://i.imgur.com/0QzN1q2.png" alt=""></p>
+<p>基可行解：出现在可行域顶点的可行解</p>
+<blockquote>
+<p>定理1 若线性规划问题存在可行域，则其可行域是<a href="https://zh.wikipedia.org/wiki/%E5%87%B8%E9%9B%86" target="_blank" rel="external">凸集</a></p>
+<p>定理2 若可行域有界，线性规划问题的目标函数一定可以在其可行域的顶点上达到最优</p>
+</blockquote>
+<p>通过上述定理得知，线性规划问题的解一定出现在可行域的顶点上，所以可以通过枚举所有的基可行解来找到最优解，但当变量个数很多时，这种办法是行不通的。</p>
+</li>
+</ul>
+</li>
+<li><p>单纯形法</p>
+<p> 单纯形法是求解线性规划问题的通用方法。单纯形是美国数学家G.B.丹齐克于1947年首先提出来的。它的理论根据是：线性规划问题的可行域是$$n$$维向量空间$$R_n$$中的多面凸集，其最优值如果存在必在该凸集的某顶点处达到。顶点所对应的可行解称为基本可行解。</p>
+<p> 单纯形法的基本思想是：先找出一个基本可行解，对它进行鉴别，看是否是最优解；若不是，则按照一定法则转换到另一改进的基本可行解，再鉴别；若仍不是，则再转换，按此重复进行。因基本可行解的个数有限，故经有限次转换必能得出问题的最优解。如果问题无最优解也可用此法判别。</p>
+<p> 单纯形法的一般解题步骤可归纳如下：</p>
+<p> ①把线性规划问题的约束方程组表达成典范型方程组，找出基本可行解作为初始基可行解。</p>
+<p> ②若基本可行解不存在，即约束条件有矛盾，则问题无解。</p>
+<p> ③若基本可行解存在，从初始基本可行解作为起点，根据最优性条件和可行性条件，引入非基变量取代某一基变量，找出目标函数值更优的另一基本可行解。</p>
+<p> ④按步骤③进行迭代,直到对应检验数满足最优性条件（这时目标函数值不能再改善），即得到问题的最优解。</p>
+<p> ⑤若迭代过程中发现问题的目标函数值无界，则终止迭代。</p>
+<p> 过程如下图所示：</p>
+<p> <img src="http://i.imgur.com/UfuthIQ.png" alt=""></p>
+<p> <a href="http://wenku.baidu.com/view/0edfb06aaf1ffc4ffe47acec.html" target="_blank" rel="external">单纯形法求解-动态演示</a></p>
+<p> 单纯形法伪代码：</p>
+<p> <img src="http://i.imgur.com/lhxj168.png" alt=""></p>
+<p> <a href="https://github.com/BUPTLdy/Algorithms/tree/master/Simplex%20Algorithm" target="_blank" rel="external">单纯形法Python实现</a></p>
+<p> 解线性规划问题也一些很好的工具，比如<a href="https://www.gnu.org/software/glpk/" target="_blank" rel="external">GLPK</a>和<a href="http://www.gurobi.com/" target="_blank" rel="external">Gurobi</a>等。</p>
+</li>
+<li><p>线性规划解决实际问题</p>
+<p> 问题如下：</p>
+<p> With human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $$i$$ has a time window $$[s_i,t_i]$$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as $$[s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n]$$ satisfying $$s_1 &lt;t_1 &lt; s_2 &lt; t_2 &lt; · · · &lt; s_n &lt; t_n$$, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.</p>
+<p> Please formulate this problem as an LP.</p>
+<p> 题目的大概意思是每架飞机都只能在自己固定的时间窗内降落，为了安全起见两架飞机之间的降落时间间隔越大越好，然后给你n架飞机的降落时间窗口，要求n架飞机的最小降落间隔的最大值。</p>
+<p> 这个问题的建模起来很简单，令$$x_i$$表示第$$i$$架飞机的降落时间，则需要满足约束条件：</p>
+<p> $$s_i\leq x_i \leq t_i$$</p>
+<p> 然后我们的目标是要求最小间隔的最大值，所以我们的目标函数为：</p>
+<p> $$max (min(x<em>{i+1}-x</em>{i}))$$</p>
+<p> 那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有$$y\leq x<em>{i+1}-x</em>{i} $$，那么$$y$$不就是$$x<em>{i+1}-x</em>{i}$$的最小值吗？</p>
+<p> 所以最终我们可以把问题形式化为:</p>
+<p> $$\begin{array}{cll}</p>
+<pre><code>max &amp; y &amp; \\
+s.t.&amp; s_i\leq x_i \leq t_i&amp; i=1,2,3 \cdots n\\
+&amp; y\leq x_{i+1}-x_i &amp; i=1,2,3 \cdots n
+</code></pre><p> \end{array}$$</p>
+</li>
+<li><p>参考</p>
+<p> 维基百科 线性规划：<a href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92" title="维基百科 线性规划" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92</a></p>
+<p> 百度百科 单纯形法：<a href="http://baike.baidu.com/subview/471090/471090.htm" title="百度百科 单纯形法" target="_blank" rel="external">http://baike.baidu.com/subview/471090/471090.htm</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
+        <p><span>发布时间:</span>2016年01月09日 - 10时00分</p>
+        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/09/2016-01-09-线性规划/" title="线性规划 [Linear Programming]">http://yoursite.com/2016/01/09/2016-01-09-线性规划/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/09/2016-01-09-线性规划/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/10/2016-01-10-网络最大流/">
+                    网络最大流 [Max Flow]
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/08/2016-01-08-贪心策略/">
+                    贪心算法[greedy algorithm]
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/01/09/2016-01-09-线性规划/" data-title="线性规划 [Linear Programming]" data-url="http://yoursite.com/2016/01/09/2016-01-09-线性规划/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bonerkiller"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/10/2016-01-10-网络最大流/" title="上一篇: 网络最大流 [Max Flow]">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/08/2016-01-08-贪心策略/" title="下一篇: 贪心算法[greedy algorithm]">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Ldy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>

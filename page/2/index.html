@@ -1,0 +1,640 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+      <style> .article { opacity: 0;} </style>
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Ldy</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Algorithms/" style="font-size: 20px;">Algorithms</a> <a href="/tags/Artificial-Intelligence/" style="font-size: 16.67px;">Artificial Intelligence</a> <a href="/tags/CPP/" style="font-size: 16.67px;">CPP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://buptweixin.github.io/w">WeiXin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ldy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Ldy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-2016-01-04-图搜索" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/04/2016-01-04-图搜索/" class="article-date">
+      <time datetime="2016-01-04T02:00:00.000Z" itemprop="datePublished">2016-01-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>图搜索策略简介<br> 之前所说的<a href="http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/" target="_blank" rel="external">回溯搜索策略</a>是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。</p>
+<p> 图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。</p>
+<p> 扩展一个结点：应用规则到已有结点上，生成其<strong>所有</strong>后继扩展结点的过程。扩展节点可使定义的隐含图生成为显式表示的状态空间图。</p>
+</li>
+<li><p>图搜索算法</p>
+<p> 图搜索中的两个表：</p>
+<ul>
+<li>OPEN表：存放已经生成但未扩展的节点，最初只含初始结点</li>
+<li><p>CLOSED表：存放已经扩展的节点，其实设置为空表</p>
+<p>图搜索过程：<br><img src="http://i.imgur.com/7EvIIuk.png" alt=""></p>
+<p><strong>算法结束后，将生成一个图G，称为搜索图。同时由于每个节点都有一个指针指向父节点，这些指针指向的节点构成G的一个支撑树，称为搜索树。</strong></p>
+<p>从目标节点开始，将指针指向的状态回串起来，即找到一条解路径。</p>
+<p>例子：<br>下图中S结点为初始结点，把结点S放入OPEN表中，从S结点开始扩展，生成S结点的所有后继结点｛1，2，3｝，S结点已扩展，加入CLOSED表中，继续这一过程。<br><img src="http://i.imgur.com/2g5AKHd.png" alt=""></p>
+<p>从上述结果可以看出，最终OPEN表中的结点都是搜索树中的端结点，而CLOSED表中的结点为搜索树中的非端结点。</p>
+<p>对于搜索过程中3中的d）步骤，如果要搜索的隐含图是一棵树，则在它上一步中生成后继结点不可能是以前生成过的，即生成的后继结点不可能出现在OPEN，CLOSED表中，此时搜索图就是搜索树，因此不必进行指针的修改操作。如果要搜索的隐含图不是一棵树，则有可能存在生成的后继结点中的某一结点$$m_k$$已经在OPEN，CLOSED表中存在,<strong><em>这意味着此时又发现了达到$$m_k$$的新通路</em></strong>，这样就需要比较不用路径到达点$$m_k$$的代价，将指针修改到代价最小的路径上。</p>
+</li>
+</ul>
+</li>
+<li><p>无信息图搜索过程<br> 无信息搜索过程是在图搜索算法过程中第3点的e）步中排列OPEN表中结点的顺序时，没有使用与问题有关的知识，任意排列，通常有<em>深度优先</em>和<em>宽度优先</em>两种排列方式。</p>
+<ul>
+<li><p>深度优先</p>
+<p>所谓深度优先搜索就是在每次扩展一个结点时，选择到目前为止深度最深的结点优先扩展。在算法中的实现为：</p>
+<p>  把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的最前面，是深度大的结点优先扩展</p>
+<p>因为新扩展出来的结点为子节点，子节点的深度要大于父节点的深度。一般情况下，深度优先搜索不但不能保证找到最优解，也不一定能保证找到解，这取决与问题的状态空间，如果问题的状态空间无限，可能会陷入“深渊”，而找不到解，因此也需要限制搜索的深度。</p>
+<p>举例：</p>
+<p>问题状态图G2如下图所示：</p>
+<p><img src="http://i.imgur.com/B3dYJla.jpg" alt=""></p>
+<p>根据深度优先原则，搜索过程为：（A–&gt;B–&gt;C–&gt;E–&gt;D–&gt;F–&gt;G）</p>
+<p><img src="http://i.imgur.com/CrjoNGl.jpg" alt=""></p>
+</li>
+<li><p>宽度优先</p>
+<p>宽度优先搜索与深度优先相反，每次选择深度最浅的结点优先扩展，实现方法为：</p>
+<p>  把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的后面</p>
+<p>当问题有解时，宽度优先算大一定能找到解，且在每段路径为单位代价时能找到最优解。</p>
+<p>根据宽度优先原则，对图G2的搜索过程为：（A–&gt;B–&gt;C–&gt;E–&gt;F–&gt;D–&gt;G）</p>
+<p><img src="http://i.imgur.com/LLE7pad.jpg" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>参考</p>
+<p> &lt;&lt;人工智能&gt;&gt;.马少平，朱小燕编著</p>
+<p> 图的遍历之 深度优先搜索和广度优先搜索:<a href="http://www.cnblogs.com/skywang12345/p/3711483.html" title="图的遍历之 深度优先搜索和广度优先搜索" target="_blank" rel="external">http://www.cnblogs.com/skywang12345/p/3711483.html</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Artificial-Intelligence/">Artificial Intelligence</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2016-01-03-回溯策略" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/03/2016-01-03-回溯策略/" class="article-date">
+      <time datetime="2016-01-03T02:00:00.000Z" itemprop="datePublished">2016-01-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>回溯策略（backtracking）简介</p>
+<p> 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：</p>
+<ul>
+<li>找到一个可能存在的正确的答案</li>
+<li><p>在尝试了所有可能的分步方法后宣告该问题没有答案</p>
+<p>在最坏的情况下，回溯法会导致一次复杂度为指数时间的计算。</p>
+</li>
+</ul>
+</li>
+<li><p>回溯策略应用：四皇后问题（Four queens puzzle）<br> 四皇后问题：在一个国际象棋中的 的棋盘上放置4个皇后， 为了使其中的任何2个皇后都不能相互“攻击”，希望寻求4个皇后的安全放置位置。 该问题的不能相互“攻击”相当于要求任意两个皇后不能在同一行、同一列或同一斜线上。</p>
+<p> 用回溯策略解决这一问题：</p>
+<ul>
+<li><p>首先放第一颗棋子<br><img src="http://i.imgur.com/775UH8f.png" alt=""></p>
+</li>
+<li><p>在符合规则的条件下摆放第二课棋子<br><img src="http://i.imgur.com/OYEeASd.png" alt=""></p>
+</li>
+<li><p>在规则下未找到解时，回溯<br><img src="http://i.imgur.com/wIxeLH5.png" alt=""></p>
+</li>
+<li><p>根据回溯策略，不断的试探，最终找到解为：<br><img src="http://i.imgur.com/f1QnRh3.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>回溯搜索中知识的利用</p>
+<p> 在回溯策略中，可以通过引入一些与问题有关的信息来加快搜索解的速度。对与N皇后问题来说，引入信息的基本思想是：</p>
+<pre><code>尽可能选取划去对角线上位置数最少的
+</code></pre><p>  <img src="http://i.imgur.com/JCaTEEu.png" alt=""></p>
+<p> 可以想象，如果把一个皇后放在棋盘的某个位置后，它所影响的棋盘位置数少，那么给以后放置皇后剩下的余地就越大，找到解的可能性也越大。</p>
+</li>
+<li><p>回溯算法存在的问题及解决方案</p>
+<p> 存在的问题：</p>
+<ul>
+<li>某一个分支具有无穷个状态，算法可能落入“深渊”，永远不能回溯</li>
+<li><p>某一个分支上具有环路，搜索在环路中一直进行，同样不能回溯</p>
+<p>解决方案：</p>
+</li>
+<li>对搜索深度进行限制，当当前状态的深度达到了限制深度时，算法将进行回溯</li>
+<li>记录从初始状态到当前状态的路径，如果出现过此路径，表明出现环路，算法回溯</li>
+</ul>
+</li>
+<li><p>参考</p>
+<p> 维基百科回溯法：<a href="https://zh.wikipedia.org/wiki/%E5%9B%9E%E6%BA%AF%E6%B3%95" title="维基百科：回溯法" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E5%9B%9E%E6%BA%AF%E6%B3%95</a></p>
+<p> 四皇后问题：<a href="http://jpkc.onlinesjtu.com/CourseShare/DataStructure/FlashInteractivePage/exp7.htm" title="四皇后问题" target="_blank" rel="external">http://jpkc.onlinesjtu.com/CourseShare/DataStructure/FlashInteractivePage/exp7.htm</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Artificial-Intelligence/">Artificial Intelligence</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-2015-12-29-算法复杂度渐进标号" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/29/2015-12-29-算法复杂度渐进标号/" class="article-date">
+      <time datetime="2015-12-29T02:00:00.000Z" itemprop="datePublished">2015-12-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>算法渐进记号</p>
+<ul>
+<li><p>Big $\Theta$：$\Theta$记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。</p>
+</li>
+<li><p>Big $$O$$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。</p>
+</li>
+<li><p>Big $$\Omega$$：表示一个函数的渐进下界，算法运行的最好情况。</p>
+</li>
+<li><p>Litter $$o$$: 和big $$O$$ 定义相似，区别主要是 big$$O$$ 提供的上界可能和函数是同阶的，litter $$o$$ 表示非渐进紧确的上界。</p>
+</li>
+</ul>
+</li>
+<li><p>举例</p>
+<p> <img src="http://i.imgur.com/GgsO2DX.png" alt=""></p>
+</li>
+<li><p>渐进记号与函数阶数的关系</p>
+<p> 其中$$a，b$$分别为函数$$g(n)，f(n)$$的阶数</p>
+<p> <img src="http://i.imgur.com/wUDSXQf.png" alt=""></p>
+<p> 通常Big $$\Theta$$ 用来描述算法的最好和最坏的运行时间，Big $$O$$描述算法的最坏运行时间，Big $$\Omega$$描述算法的最好运行时间，经常使用的是Big $$O$$， 用来衡量算法的时间复杂度和空间复杂度。</p>
+</li>
+<li><p>主定理(master theorem)求解递归式</p>
+<p>假设有递推关系式</p>
+<p>$$T(n) = a \; T!\left(\frac{n}{b}\right) + f(n)$$</p>
+<p>其中$$ a \geq 1 \mbox{, } b &gt; 1$$，n为问题规模，a为递推的子问题数量，n/b为每个子问题的规模（假设每个子问题的规模基本一样），f(n)为递推以外进行的计算工作，包含了问题分解和子问题合并的代价。</p>
+<ul>
+<li>情况一<br>如果存在常数$$\epsilon &gt; 0$$，有$$f(n) = O\left( n^{\log_b (a) - \epsilon} \right)$$，并且是多项式意义上的小于，那么</li>
+</ul>
+<p>$$T(n) = \Theta\left( n^{\log_b a} \right)$$</p>
+<ul>
+<li>情况二<br>如果存在常数k ≥ 0，有$$f(n) = \Theta\left( n^{\log_b a} \log^{k} n \right)$$那么</li>
+</ul>
+<p>$$T(n) = \Theta\left( n^{\log_b a} \log^{k+1} n \right)$$</p>
+<ul>
+<li>情况三<br>如果存在常数$$\epsilon &gt; 0$$，有$$f(n) = \Omega\left( n^{\log_b (a) + \epsilon} \right)$$，并且是多项式意义上的大于，同时存在常数c &lt; 1以及充分大的n，满足</li>
+</ul>
+<p>$$a f\left( \frac{n}{b} \right) \le c f(n)$$</p>
+<p>那么</p>
+<p>$$T\left(n \right) = \Theta \left(f \left(n \right) \right)$$</p>
+<p>简单举例：</p>
+<p>$$T(n) = 9 \; T!\left(\frac{n}{3}\right) + n$$</p>
+<p>对这个递归式，有a=9,b=3,f(n)=n,因此有$$n^{log_b a}=n^2&gt;n$$,所以复杂度为：</p>
+<p>$$T(n)=\Theta(n^2)$$</p>
+</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Ldy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>

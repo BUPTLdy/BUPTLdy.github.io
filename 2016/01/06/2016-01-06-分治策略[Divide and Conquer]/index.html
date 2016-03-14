@@ -1,0 +1,653 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>分治策略[Divide and Conquer] | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="分治法简介：
+ 使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
+ 分治模式在每层的递归时有三个步骤：
+
+分解原问题为若干子问题，这些子问题是原问题规模较小的实例。
+解决这些子问题，递归的求解各子问题，当子问题规模最够小时，则直接求解。
+合并这些子问题的解得到原始问题的解
+
+
+Karatsuba 算法
+ Karatsuba算法是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分治策略[Divide and Conquer]">
+<meta property="og:url" content="http://yoursite.com/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="分治法简介：
+ 使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
+ 分治模式在每层的递归时有三个步骤：
+
+分解原问题为若干子问题，这些子问题是原问题规模较小的实例。
+解决这些子问题，递归的求解各子问题，当子问题规模最够小时，则直接求解。
+合并这些子问题的解得到原始问题的解
+
+
+Karatsuba 算法
+ Karatsuba算法是">
+<meta property="og:image" content="http://i.imgur.com/umuDsOg.png">
+<meta property="og:image" content="http://i.imgur.com/33u5yyl.gif">
+<meta property="og:image" content="http://i.imgur.com/mDpKIUp.png">
+<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="分治策略[Divide and Conquer]">
+<meta name="twitter:description" content="分治法简介：
+ 使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
+ 分治模式在每层的递归时有三个步骤：
+
+分解原问题为若干子问题，这些子问题是原问题规模较小的实例。
+解决这些子问题，递归的求解各子问题，当子问题规模最够小时，则直接求解。
+合并这些子问题的解得到原始问题的解
+
+
+Karatsuba 算法
+ Karatsuba算法是">
+<meta name="twitter:image" content="http://i.imgur.com/umuDsOg.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Ldy</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Algorithms/" style="font-size: 20px;">Algorithms</a> <a href="/tags/Artificial-Intelligence/" style="font-size: 16.67px;">Artificial Intelligence</a> <a href="/tags/CPP/" style="font-size: 16.67px;">CPP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://buptweixin.github.io/w">WeiXin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ldy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Ldy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2016-01-06-分治策略[Divide and Conquer]" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/" class="article-date">
+      <time datetime="2016-01-06T02:00:00.000Z" itemprop="datePublished">2016-01-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      分治策略[Divide and Conquer]
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CPP/">CPP</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>分治法简介：</p>
+<p> 使用分治法的前提是问题在结构上是<strong>递归</strong>的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。</p>
+<p> 分治模式在每层的递归时有三个步骤：</p>
+<ul>
+<li><strong>分解</strong>原问题为若干子问题，这些子问题是原问题规模较小的实例。</li>
+<li><strong>解决</strong>这些子问题，递归的求解各子问题，当子问题规模最够小时，则直接求解。</li>
+<li><strong>合并</strong>这些子问题的解得到原始问题的解</li>
+</ul>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm" target="_blank" rel="external">Karatsuba</a> 算法</p>
+<p> Karatsuba算法是一种快速乘法算法，在1960年由<a href="https://en.wikipedia.org/wiki/Anatoly_Karatsuba" target="_blank" rel="external">Anatoly Karatsuba</a>提出。普通乘法的复杂度是$$O(n^2)$$,而Karatsuba算法的时间复杂度为$$O(n^{1.585})$$。</p>
+<p> 现在运用分治的思想来阐述下Karatsuba算法的基本原理：</p>
+<ul>
+<li><p>分解：原本要计算两个大数x，y的乘法,先把x,y分解成如下两部分，其中B为基。</p>
+<p>$$x = x_1B^m + x_0$$</p>
+<p>$$y = y_1B^m + y_0$$</p>
+<p>其中 $$x_0$$ 和 $$y_0$$ 要小于 $$B^m$$。 现在$$xy$$可以写为:</p>
+<p>$$xy = (x_1B^m + x_0)(y_1B^m + y_0)$$<br>$$xy = z_2B^{2m} + z_1B^m + z_0$$<br>$$z_2 = x_1y_1$$<br>$$z_1 = x_1y_0 + x_0y_1$$<br>$$z_0 = x_0y_0$$</p>
+<p>原本上面的式子中一共需要计算4次乘法（与基的幂次相乘只要进行移位操作就行），但是注意到有：</p>
+<p>$$z_1 = (x_1 + x_0)(y_1 + y_0) - z_2 - z_0$$</p>
+<p>所以每次只需要计算三次乘法即可。</p>
+</li>
+<li><p>解决：通过上述分解步骤，我们每次还是需要3次乘法运算，然而这三次乘法运算我们可以继续递归的调用Karatsuba算法，直到数字足够小可以直接运用普通乘法求解。</p>
+</li>
+<li><p>合并：Karatsuba算法并没有涉及合并问题，通过公式$$xy = z_2B^{2m} + z_1B^m + z_0$$把最终结果求出来即可。</p>
+<p>根据上述分析，当m=n/2时(n为乘数的长度)，递归的效率最高，所以递归公式为：</p>
+<p>$$T(n) = 3 T(\lceil n/2\rceil) + cn + d$$</p>
+<p>由递归公式根据<a href="http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/" target="_blank" rel="external">主定理</a>得到算法的复杂度为：</p>
+<p>$$T(n) = \Theta(n^{\log_2 3})$$</p>
+<p>Karatsuba算法伪代码：</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>        procedure karatsuba(num1, num2)
+          if (num1 &lt; 10) or (num2 &lt; 10)
+            return num1*num2
+          /* calculates the size of the numbers */
+          m = max(size_base10(num1), size_base10(num2))
+         m2 = m/2
+          /* split the digit sequences about the middle */
+         high1, low1 = split_at(num1, m2)
+          high2, low2 = split_at(num2, m2)
+          /* 3 calls made to numbers approximately half the size */
+          z0 = karatsuba(low1,low2)
+          z1 = karatsuba((low1+high1),(low2+high2))
+          z2 = karatsuba(high1,high2)
+          return (z2*10^(2*m2))+((z1-z2-z0)*10^(m2))+(z0)
+
+[Karatsuba算法代码下载(CPP)](https://github.com/BUPTLdy/Algorithms/tree/master/Karatsuba)
+</code></pre><ol>
+<li><p>归并排序(MergeSort)</p>
+<p> 还是根据分治策略的思想，分为三个步骤：</p>
+<ul>
+<li>分解：把要排序的n个元素序列分解成两个含有n/2个元素的子序列<br><img src="http://i.imgur.com/umuDsOg.png" alt=""></li>
+<li>解决：递归的调用分解，直到子序列能够直接排序</li>
+<li><p>合并：归并排好序的子序列，直到得到原始问题的解</p>
+<p>简单例子演示：<br><img src="http://i.imgur.com/33u5yyl.gif" alt=""></p>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>逆序数统计(Counting Inversion)</p>
+<p> 问题定义：输入n个不同的数字$$a_1,a_2,\cdots ,a_n$$，计算有多少对逆序数，逆序数的定义为数字下标$$i<j$$但是数字$$a_i>a_j$$。比如数字序列2，4，1，3，5，数字2在数字1的前面，但比数字1大，所以是一对逆序数，上述数字序列共有3组逆序数：（2，1），（4，1），（4，3）。</j$$但是数字$$a_i></p>
+<p> 统计逆序数要用到分治的思想，我们能很容易能想到先分解成两个子序列然后再递归求解每个子序列的逆序数。</p>
+<p> 现在主要的问题是解决，怎么计算两个不同子序列之间的逆序数，也就是怎么合并的问题，如下图所示，如果只是通过子序列之间每个数字的简单比较求解逆序数，则需要通过$$n^2/4$$次比较。所以时间复杂度为$$T(n)=2T(n/2)+n^2/4=O(n^2)$$(求解方法参考<a href="http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/" target="_blank" rel="external">主定理</a>)</p>
+<p> <img src="http://i.imgur.com/mDpKIUp.png" alt=""></p>
+<p> 所以这样和直接暴力解法相比，时间复杂度比没有降低，这时我们通过前面的归并排序想到，如果我们先对子序列进行排序(对子序列排序并不会影响两个子序列之间的逆序数对)，再统计子序列之间的逆序数。统计方法如下图所示，两个排好序的子序列之间进行逆序数统计，比如说第一个序列的第一个数字3比第二个序列的第一个数字2要大，则第一个序列3后面的数字肯定都要比2要大，所以直接统计出逆序数为6，根据这种思想可以把子序列之间的所有逆序数统计出来。</p>
+</li>
+</ol>
+<pre><code>![](http://i.imgur.com/wJtHUMG.gif)
+
+(gif generated by [ScreenToGif](https://screentogif.codeplex.com/))
+
+上述合并求解逆序数的方法，先给子序列排序并同时计算逆序数，花费$$O(n)$$的时间，所以问题总的时间复杂度为：
+
+$$T(n)=2T(n/2)+O(n)=O(nlogn)$$
+
+[Counting Inversion算法代码下载(CPP)](https://github.com/BUPTLdy/Algorithms/tree/master/Counting%20Inversion)
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
+        <p><span>发布时间:</span>2016年01月06日 - 10时00分</p>
+        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/" title="分治策略[Divide and Conquer]">http://yoursite.com/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/07/2016-01-07-动态规划/">
+                    动态规划[dynamic programming]
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/05/2016-01-05-启发式图搜索/">
+                    启发式图搜索策略
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/01/06/2016-01-06-分治策略[Divide and Conquer]/" data-title="分治策略[Divide and Conquer]" data-url="http://yoursite.com/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bonerkiller"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/07/2016-01-07-动态规划/" title="上一篇: 动态规划[dynamic programming]">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/05/2016-01-05-启发式图搜索/" title="下一篇: 启发式图搜索策略">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Ldy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>

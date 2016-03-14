@@ -1,0 +1,1073 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-03-13T11:45:19.114Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Ldy</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2016/03/13/hello-world/"/>
+    <id>http://yoursite.com/2016/03/13/hello-world/</id>
+    <published>2016-03-13T11:45:19.114Z</published>
+    <updated>2016-03-13T11:45:19.114Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Git命令总结</title>
+    <link href="http://yoursite.com/2016/03/02/2016-03-02-GIT%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/03/02/2016-03-02-GIT命令总结/</id>
+    <published>2016-03-02T02:00:00.000Z</published>
+    <updated>2016-03-10T03:22:22.728Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;创建版本库&lt;/p&gt;
+&lt;p&gt; 初始化一个Git仓库，使用git init命令。&lt;/p&gt;
+&lt;p&gt; 添加文件到Git仓库，分两步：&lt;/p&gt;
+&lt;p&gt; 第一步，使用命令git add &lt;file&gt;，注意，可反复多次使用，添加多个文件；&lt;/file&gt;&lt;/p&gt;
+&lt;p&gt; 第二步，使用命令git commit，完成。&lt;/p&gt;
+&lt;p&gt; 要随时掌握工作区的状态，使用git status命令。&lt;/p&gt;
+&lt;p&gt; 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;版本回退&lt;/p&gt;
+&lt;p&gt; HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。&lt;/p&gt;
+&lt;p&gt; 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。&lt;/p&gt;
+&lt;p&gt; 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;工作区和暂存区&lt;/p&gt;
+&lt;p&gt; 工作区（Working Directory）：就是你在电脑里能看到的目录。&lt;/p&gt;
+&lt;p&gt; 版本库（Repository）：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。&lt;/p&gt;
+&lt;p&gt; Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-10/74272820.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; 前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：&lt;/p&gt;
+&lt;p&gt; 第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；&lt;/p&gt;
+&lt;p&gt; 第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。&lt;/p&gt;
+&lt;p&gt; 因为我们创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。&lt;/p&gt;
+&lt;p&gt; 你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。&lt;/p&gt;
+&lt;p&gt; Git是如何跟踪修改的:每次修改，如果不add到暂存区，那就不会加入到commit中。&lt;/p&gt;
+&lt;p&gt; 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。&lt;/p&gt;
+&lt;p&gt; 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。&lt;/p&gt;
+&lt;p&gt; 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;远程仓库&lt;/p&gt;
+&lt;p&gt; 要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；&lt;/p&gt;
+&lt;p&gt; 关联后，使用命令git push -u origin master第一次推送master分支的所有内容；&lt;/p&gt;
+&lt;p&gt; 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;创建和合并分支&lt;/p&gt;
+&lt;p&gt; 查看分支：git branch&lt;/p&gt;
+&lt;p&gt; 创建分支：git branch &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt; 切换分支：git checkout &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt; 创建+切换分支：git checkout -b &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt; 合并某分支到当前分支：git merge &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt; 删除分支：git branch -d &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt; 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。&lt;/p&gt;
+&lt;p&gt; 用git log –graph命令可以看到分支合并图。&lt;/p&gt;
+&lt;p&gt; 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；&lt;/p&gt;
+&lt;p&gt; 当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。&lt;/p&gt;
+&lt;p&gt; 开发一个新feature，最好新建一个分支；&lt;/p&gt;
+&lt;p&gt; 如果要丢弃一个没有被合并过的分支，可以通过git branch -D &lt;name&gt;强行删除。&lt;/name&gt;&lt;/p&gt;
+&lt;p&gt; 查看远程库信息，使用git remote -v；&lt;/p&gt;
+&lt;p&gt; 本地新建的分支如果不推送到远程，对其他人就是不可见的；&lt;/p&gt;
+&lt;p&gt; 从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；&lt;/p&gt;
+&lt;p&gt; 在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；&lt;/p&gt;
+&lt;p&gt; 建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；&lt;/p&gt;
+&lt;p&gt; 从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。&lt;/p&gt;
+&lt;p&gt; 命令git tag &lt;name&gt;用于新建一个标签，默认为HEAD，也可以指定一个commit id；&lt;/name&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;标签管理&lt;/p&gt;
+&lt;p&gt; git tag -a &lt;tagname&gt; -m “blablabla…”可以指定标签信息；&lt;/tagname&gt;&lt;/p&gt;
+&lt;p&gt; git tag -s &lt;tagname&gt; -m “blablabla…”可以用PGP签名标签；&lt;/tagname&gt;&lt;/p&gt;
+&lt;p&gt; 命令git tag可以查看所有标签。&lt;/p&gt;
+&lt;p&gt; 命令git push origin &lt;tagname&gt;可以推送一个本地标签；&lt;/tagname&gt;&lt;/p&gt;
+&lt;p&gt; 命令git push origin –tags可以推送全部未推送过的本地标签；&lt;/p&gt;
+&lt;p&gt; 命令git tag -d &lt;tagname&gt;可以删除一个本地标签；&lt;/tagname&gt;&lt;/p&gt;
+&lt;p&gt; 命令git push origin :refs/tags/&lt;tagname&gt;可以删除一个远程标签&lt;/tagname&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Github使用&lt;/p&gt;
+&lt;p&gt; 在GitHub上，可以任意Fork开源仓库；&lt;/p&gt;
+&lt;p&gt; 自己拥有Fork后的仓库的读写权限；&lt;/p&gt;
+&lt;p&gt; 可以推送pull request给官方仓库来贡献代码。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;忽略某些文件时，需要编写.gitignore；
+
+.gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;GIT指令速查表&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-10/93928228.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参考资料&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git教程-廖雪峰的官方网站&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;创建版本库&lt;/p&gt;
+&lt;p&gt; 初始化一个Git仓库，使用git init命令。&lt;/p&gt;
+&lt;p&gt; 添加文件到Git仓库，分两步：&lt;/p&gt;
+&lt;p&gt; 第一步，使用命令git add &lt;file&gt;，注意，可反复多次使用，添加多个文件；&lt;/file&gt;&lt;/p&gt;
+&lt;p&gt; 
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://yoursite.com/tags/Git/"/>
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>近似算法[Approximation algorithm]</title>
+    <link href="http://yoursite.com/2016/01/12/2016-01-12-%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/"/>
+    <id>http://yoursite.com/2016/01/12/2016-01-12-近似算法/</id>
+    <published>2016-01-12T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;近似算法(Approximation algorithm)概念&lt;/p&gt;
+&lt;p&gt; 许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法： &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果实际输入数据规模较小，则用指数级运行时的算法就能很好地解决问题； &lt;/li&gt;
+&lt;li&gt;对于一些能在多项式时间内解决的特殊情况，可以把它们单独列出来求解；&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;可以寻找一些能够在多项式时间内得到近似最优解 （near-optimal solution)的方法(最坏情况或平均情况)。&lt;/p&gt;
+&lt;p&gt;在实际应用中，近似最优解一般都能满足要求， 返回近似最优解的算法就称为近似算法(approximation algorithm)。 &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;近似比：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果对规模为n的任意输人，近似算法所产生的近似解的代价C与最优解的代价C*只差一个因子$$\rho (n)$$:&lt;/p&gt;
+&lt;p&gt;$$max(\frac{C}{C&lt;em&gt;},\frac{C&lt;/em&gt;}{C} )\leq \rho (n)$$&lt;/p&gt;
+&lt;p&gt;则称该近似算法有近似比$$\rho (n)$$。如果一个算法的近似比达到 $$\rho (n)$$，则称该算法为$$\rho (n)$$近似算法。近似比和$$\rho (n)$$近似算法的定义对求最大化和最小化问题都适用，一个近似算法的近似比不会小于1。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一维装箱问题(Bin Packing)&lt;/p&gt;
+&lt;p&gt; 问题如下：&lt;/p&gt;
+&lt;p&gt; Bin Packing is as follows: Given n items with sizes $$a_1, \cdots , a_n ∈ (0, 1]$$, find a packing in unit-sized bins that minimizes the number of bins used.&lt;/p&gt;
+&lt;p&gt; Give a 2-approximation algorithm for this problem and analysis the approximation factor.&lt;/p&gt;
+&lt;p&gt; 装箱问题：有n个物品，每个物品的尺寸在0-1之间，每个箱子的容量为1，问最少要用多少的箱子能把所有的物品装下？&lt;/p&gt;
+&lt;p&gt; 装箱问题可用整数规划描述如下，其中$$y&lt;em&gt;i=1$$表示箱子$$i$$被使用，否则表示没有使用，$$x&lt;/em&gt;{ij}=1$$表示物品j放入箱子i中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;![](http://i.imgur.com/VPewCSm.png)
+
+其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。
+
+约束条件(2)表示：每个物品刚好放入一个箱子中。
+
+由[前文](http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/)已知，整数线性规划问题是NP完全的，即不能找到多项式时间算法来求解，所以需要寻找一种近似算法。
+
+&amp;gt; Next Fit算法：按顺序把物品放进当前箱子，如果放不下，则放下一个。
+
+举例：
+
+|物品|$$J_1$$|$$J_2$$|$$J_3$$|$$J_4$$|$$J_5$$|$$J_6$$|
+|-|-|-|-|-|-|-|
+|尺寸|0.6|0.7|0.4|0.2|0.8|0.3|
+
+根据Next Fit算法，解如下图所示：
+
+![](http://i.imgur.com/YDnGdKS.png)
+
+
+
+&amp;gt; 证明：Next Fit是Bin Packing问题近似比为2的近似算法
+
+- 对所有的输入物品序列I有:$$NF(I) \leq 2OPT(I)$$
+
+    如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$$B_1+B_2&amp;gt;1$$，对于$$B_3+B_4,\dots$$都是这样。因此浪费的空间不达到一半，所以有$$NF(I) \leq 2OPT(I)$$。
+
+    ![](http://i.imgur.com/A8GpRKX.png)
+
+- 存在一个输入物品序列I：$$NF(I)\geq 2OPT(I)-2$$
+
+    考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：
+
+    0.5，2/n，0.5，2/n，...，0.5，2/n
+
+    则最佳装箱策略如下图所示，最少需要(n/4+1)个箱子。
+
+    ![](http://i.imgur.com/IPg1QX9.png)
+
+    Next Fit策略如下图所示，需要(n/2)个箱子
+
+    ![](http://i.imgur.com/EkthQ3j.png)
+
+所以根据上述证明，Next Fit是Bin Packing问题近似比为2的近似算法。
+
+**复杂度分析**：由于NF算法处理每个物品只检查一个箱子,所以其时间复杂度是线性的,但也正因为如此,使得前面箱子剩余空间再无利用的可能。该算法的时间复杂度是$$O(n)$$, 空间复杂度为$$O(1)$$。
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Steiner Tree Problem&lt;/p&gt;
+&lt;p&gt; 问题如下：&lt;/p&gt;
+&lt;p&gt; Given an undirected graph G = (V, E) with edge costs and set T ⊆ V of required vertices, the Steiner Tree Problem is to find a minimum cost tree in G containing every vertex in T (vertices in V −T may or may not be used in T).&lt;/p&gt;
+&lt;p&gt; Give a 2-approximation algorithm if G is complete and the edge costs satisfy the triangle inequality.&lt;/p&gt;
+&lt;p&gt; 所谓的Steine​​r tree problem是指在一无向图G(V,E)中, 给定一组V的子集合S, 我们要在其中找到一个minimum cost tree, 这个tree 必需包含S中所有的点, 另外也可包含一些非S中的点。这些非S的点我们称之为Steine​​r nodes, S中的点我们称之为terminals。&lt;/p&gt;
+&lt;p&gt; Steine​​r tree problem 是属于NP-complete 的间题, 代表着我们目前找不到一个算法, 能够在polynomial 的时间内解决这个问题。&lt;/p&gt;
+&lt;p&gt; &lt;strong&gt;问题详述:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://i.imgur.com/TF3lU8i.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; 所谓的Steine​​r Tree Problem, 是一组无向图G(V,E)中, 给定一组terminals, 如图一的A和D, 然后我们必需在G上找到一个minimum spanning tree, 这个tree 必需满足下面要求&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;它必需span 所有的terminals&lt;/li&gt;
+&lt;li&gt;它可以包含非terminal 的点, 这些点称之为steine​​r node, 如图1的B, E, F&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;它的total cost必需为最小&lt;/p&gt;
+&lt;p&gt;在上图中我们可以知道, 如果不能包含非terminal 的点, 则找出来的spanning tree, cost为6, 而且有可能根本找不到这样的tree, 在包含了一些steine​​r node 之后, 所找出的cost为5。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;近似算法&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The Kou Markowsky and Berman algorithm&lt;/p&gt;
+&lt;p&gt;Input: a undirect graph G(V,E) and a subset S of V.&lt;/p&gt;
+&lt;p&gt;Output: The minimum cost Steine​​r tree T.&lt;/p&gt;
+&lt;p&gt;Step1:建构distance graph G1(S, E’). 对每一个E’中的edge (u, v),它的cost等于G中u到v的最短路径的cost&lt;/p&gt;
+&lt;p&gt;Step2: 找出minimum spaning tree T1 of G1&lt;/p&gt;
+&lt;p&gt;Step3: 建构G2(V’’, E’’), 将T1的每一个edge (u, v), 用它在Step1中所找的路径代入.&lt;/p&gt;
+&lt;p&gt;Step4: 将G2中的cycle去掉.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/CohPHo2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示, 首先我们先建立一个包含所有terminal 的complete distance graph G1, 然后找出它的minimum spanning tree T1, 然后将原路径代回, 得到G2, 最后将G2 的cycle移去, 得到total cost 为14 的Steine​​r Tree T. 因为此一近似算法为approximate algorithm, 所以它得到的steine​​r tree并一定都是optimum, 此例子的minimum Steine​​r tree的cost为13。&lt;/p&gt;
+&lt;p&gt;复杂度和近似比：因为需要计算最短路径，所以时间复杂度为$$O(M*N^2)$$,其中$$|V|=N$$, $$|S|=M$$。&lt;/p&gt;
+&lt;p&gt;近似比为2，证明可以参考：&lt;a href=&quot;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&quot; title=&quot;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt; 演算法设计与分析Term Project：&lt;a href=&quot;http://par.cse.nsysu.edu.tw/~homework/algo01/9034811/Report/index.htm&quot; title=&quot;演算法设计与分析Term Project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://par.cse.nsysu.edu.tw/~homework/algo01/9034811/Report/index.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;近似算法(Approximation algorithm)概念&lt;/p&gt;
+&lt;p&gt; 许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NP完全性</title>
+    <link href="http://yoursite.com/2016/01/11/2016-01-11-NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/"/>
+    <id>http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/</id>
+    <published>2016-01-11T02:00:00.000Z</published>
+    <updated>2016-03-11T14:56:31.715Z</updated>
+    
+    <content type="html">&lt;p&gt;#NP完全性&lt;/p&gt;
+&lt;p&gt;  到目前为止，我们讨论的几乎都是&lt;strong&gt;多项式时间算法&lt;/strong&gt;：对于规模n的输入，在最坏情况下的运行时间是$O(n^k)$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：&lt;/p&gt;
+&lt;p&gt;  P: 能在多项式时间内解决的问题&lt;/p&gt;
+&lt;p&gt;  NP:不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题&lt;/p&gt;
+&lt;p&gt;  NPC:NP完全问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的NP问题，即解决了此NPC题，所有NP问题也都得到解决。&lt;/p&gt;
+&lt;p&gt;  NP难问题:所有NP问题在多项式时间内都能约化(Reducibility)到它的问题(不一定是NP问题)。&lt;/p&gt;
+&lt;p&gt;  如果任何NP完全问题是可以多项式求解的，则P=NP，目前还不能证明P是否等于NP，这几个问题的关系如下：&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/mAyE7SM.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  规约的概念：若我们拥有一个已证明难以解决的问题，我们又获得另一个相似的新问题。我们可合理推想此新问题亦是难以解决的。我们可由下列谬证法得证：若此新问题本质上容易解答，且若我们可展示每个旧问题的实例可经由一系列转换步骤变成新问题的实例，则旧问题便容易解决，因此得到悖论。因此新问题可知亦难以解决。&lt;/p&gt;
+&lt;p&gt;  如何证明某个问题是NP完全的？&lt;/p&gt;
+&lt;p&gt;  如果我们有一个已经证明的NP完全问题，如果我们可以把已证明的NP完全问题的任何实例都能多项式的规约到要要证明问题的实例，则能证明这个问题是NP完全的。即如果我们要证明一个问题A是NPC问题，则只需要首先证明他是NP问题，然后只要找一个你所知道的NPC问题规约到A即可。&lt;/p&gt;
+&lt;p&gt;#常见的NPC问题&lt;br&gt;  布尔可满足性问题（SAT）&lt;/p&gt;
+&lt;p&gt;  对于一个确定的逻辑电路，是否存在一种输入使得输出为真。是第一个被证明的NPC问题，直观的看出这应该是一个NPC问题，因为当电路有k个输入，就会有$2^k$种情况的不同取值。&lt;br&gt;  3SAT&lt;/p&gt;
+&lt;p&gt;  3和取范式：公式中每个字句都恰好有三个不同的’文字’，3SAT问题就是满足3和取范式的布尔公式是否可满足，3SAT问题可由SAT问题规约而来。&lt;br&gt;  分团问题（clique problem）&lt;/p&gt;
+&lt;p&gt;  无向图中的团是图中所有顶点的一个子集，团中的每一对顶点之间都有一条边相连，即一个团就是无向图中的一个完全子图。&lt;/p&gt;
+&lt;p&gt;  分团问题就是要寻找图中规模最大的团，判定条件：在图中是否存在一个给定规模为k的团。&lt;/p&gt;
+&lt;p&gt;  独立集问题（Independent Set）&lt;/p&gt;
+&lt;p&gt;  独立集：如果有一个顶点集合S，S中的任意两个顶点之间都没有边相连，则称S为一个独立集。&lt;/p&gt;
+&lt;p&gt;  独立集问题和分团问题可相互规约，因为存在一个大小是k以上的分团，等价于它的补图中存在一个大小是k以上的独立集。&lt;/p&gt;
+&lt;p&gt;  补图：一个图G的补图（complement）或者反面（inverse）是一个图有着跟G相同的点，而且这些点之间有边相连当且仅当在G里面他们没有边相连。在制作图的时候，你可以先建立一个有G所有点的完全图，然后清除G里面已经有的边来得到补图，这里的补图并不是图本身的补集。&lt;/p&gt;
+&lt;p&gt;  顶点覆盖问题（Vertex Cover）&lt;/p&gt;
+&lt;p&gt;  图的顶点覆盖是一些顶点的集合，使得图中的每一条边都至少接触集合中的一个顶点，如下图所示，图中红色顶点可以覆盖图中所有的边。寻找最小的顶点覆盖的问题称为顶点覆盖问题，它是一个NP完全问题。&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/9wD7p7i.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  集合覆盖问题&lt;/p&gt;
+&lt;p&gt; $\pis$&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#NP完全性&lt;/p&gt;
+&lt;p&gt;  到目前为止，我们讨论的几乎都是&lt;strong&gt;多项式时间算法&lt;/strong&gt;：对于规模n的输入，在最坏情况下的运行时间是$O(n^k)$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络最大流 [Max Flow]</title>
+    <link href="http://yoursite.com/2016/01/10/2016-01-10-%E7%BD%91%E7%BB%9C%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
+    <id>http://yoursite.com/2016/01/10/2016-01-10-网络最大流/</id>
+    <published>2016-01-10T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;网络流的定义&lt;/p&gt;
+&lt;p&gt; 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。&lt;/p&gt;
+&lt;p&gt; 假设 G = (V,E) 是一个有限的有向图，它的每条边$$ \ (u,v) \in E $$ 都有一个非负值实数的容量$$c(u, v)$$。如果$$(u, v) \not \in E$$，我们假设 $$c(u, v) = 0$$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $$f:$$：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 容量限制（Capacity Constraints）：    $$\ f(u, v) \le c(u, v)$$一条边的流不能超过它的容量。
+&amp;gt; 
+&amp;gt; 流量守恒（Flow Conservation）：    除非u = s或u = t，否则$$\ \sum_{w \in V} f(u, w) = 0$$，中间结点的流入等于流出。
+&amp;gt; 即流守恒意味着： $$\ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $$，对每个顶点$$ \ {v \in V\setminus\{s,t\}}$$。
+
+**最大流问题**就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。
+
+一个网络流如下图所示：
+
+![](http://i.imgur.com/a8NFZl3.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;网络最大流算法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Ford-Fulkerson算法&lt;/p&gt;
+&lt;p&gt;残存网络的概念：&lt;/p&gt;
+&lt;p&gt;边的残存容量（residual capacity）是$$ c_f(u, v) = c(u, v) - f(u, v)$$。&lt;/p&gt;
+&lt;p&gt;定义 $$G_f(V, E_f)$$ 表示剩余网络（residual network），它显示当前网络可用的容量的多少。就算在原网络中由 u 到 v 没有边，在剩余网络仍可能有由 u 到 v 的边。因为残存网络允许相反方向的流抵消，减少由 v 到 u 的流相当于增加由 u 到 v 的流，因为我们是为了求最大流，之前走过的路可能是走错的。&lt;/p&gt;
+&lt;p&gt;增广路（augmenting path）是一条路径 $$(u_1, u_2, \dots, u_k)$$，而 $$u_1 = s、u_k = t $$及 $$c_f(u&lt;em&gt;i, u&lt;/em&gt;{i+1}) &amp;gt; 0$$，如果存在增广路，这表示沿这条路径还能够传送更多流。当且仅当剩余网络$$G_f$$ 没有增广路时处于最大流。&lt;/p&gt;
+&lt;p&gt;建立残存网络$$\ G_f$$的步骤：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;$$\ G_f = \ V $$ 的顶点&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;定义如下的 $$\ G_f = \ E_f$$ 的边,对每条边 $$\ (x,y) \in E$$ &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若$$\ f(x,y) &amp;lt; c(x,y)$$，建立容量为$$\ c_f = c(x,y) - f(x,y)$$ 的前向边$$\ (x,y) \in E_f$$。&lt;/li&gt;
+&lt;li&gt;若$$\ f(x,y) &amp;gt; 0$$，建立容量为$$\ c_f =  f(x,y)$$ 的后向边$$\ (y, x) \in E_f$$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;上图中的残存网络如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/RS7lQTw.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;最小割的概念：&lt;/p&gt;
+&lt;p&gt;割的定义： 一个s-t 的割 C = (S, T) 把 所有的结点集合V分成两部分S和T，其中源节点s ∈ S 汇点 t ∈ T. 割 C 的集合表示如下：&lt;/p&gt;
+&lt;p&gt;$${(u,v)\in E\ :\ u\in S,v\in T}$$&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;当割中的边被移掉时,则从源节点到汇结点的流量为0&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;割容量的定义：&lt;/p&gt;
+&lt;p&gt;$$c(S,T)=\sum \nolimits &lt;em&gt;{(u,v)\in S\times T}c&lt;/em&gt;{uv}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; 最大流最小割定理：当残存网络中不含有任何增广路径时，网络中的流量f最大且等于最小割容量。
+
+如下图所示，网络的最大流为7，最小割由图中虚线组成，其中最小割的容量也为7.
+
+![](http://i.imgur.com/7Q718mT.png)
+
+Ford-Fulkerson算法求网络的最大流就是在每次的迭代中，寻找某条增广路径p，然后使用p来对流f进行修改，直到残存网络中不含有任何增广路径时，求得最大流f。
+
+Ford-Fulkerson算法伪代码：
+
+![](http://i.imgur.com/zsQkoBR.png)
+
+[Ford-Fulkerson算法Python实现](https://github.com/BUPTLdy/Algorithms/tree/master/Ford-Fulkerson)
+
+- Push-relabel algorithm
+
+Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点是相对难以理解。详细内容可以参考[维基百科 Push–relabel maximum flow algorithm](https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm#Concepts)
+
+[Push-relabel 算法Python实现](https://github.com/BUPTLdy/Algorithms/tree/master/Push-relabel)
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;网络最大流问题建模&lt;/p&gt;
+&lt;p&gt; 问题如下：&lt;/p&gt;
+&lt;p&gt; Support the you are a matchmaker and there are some boys and girls. Since the boys are alway more than girls, you can assume that if a girl express her love to a boy , the boy will always accept her. Now you know every girl’s thought(a girl may like more than one boy) and you want to make as much pairs as you can. show that you can do this using maximum flow algorithm.&lt;/p&gt;
+&lt;p&gt; 题目意思大概是有一些男孩和女孩。男孩的数量大于等于女孩的数量，如果女孩向男孩表达爱意，男孩必定接受，假设你是个媒婆，而且你知道女孩们喜欢那个男孩(一个女孩可能同时喜欢多个男孩)，要你用最大流的方法求最多能匹配多少对？&lt;/p&gt;
+&lt;p&gt; 问题分析：最终一个女孩肯定只能和一个男孩配对，为了简单分析，我们假设有3个女孩$${G_1,G_2,G_3}$$，3个男孩$${B_1,B_2,B_3}$$,并且已知$$G_1$$喜欢$$B_1$$和$$B_2$$，$$G_2$$喜欢$$B_2$$,$$G_3$$喜欢$$B_3$$，我们可以构造出如下图所示的网络流：&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://i.imgur.com/9hAGUgE.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;，&lt;br&gt; 求出上图所示网络的的最大流就是最大的匹配对数，根据这个思路，这个题抽象成最大流问题为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;源节点，汇点，以及每个女孩男孩都构成一个节点&lt;/li&gt;
+&lt;li&gt;如果某个女孩喜欢某些男孩，则把这个女孩和那些男孩相连&lt;/li&gt;
+&lt;li&gt;把源节点和每个女孩相连，汇结点和每个男孩相连&lt;/li&gt;
+&lt;li&gt;网络中所有相连边的容量为1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt; 维基百科 网络流：&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%B5%81&quot; title=&quot;维基百科 网络流&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%B5%81&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; Wikipedia Max-flow min-cut theorem:&lt;a href=&quot;https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem&quot; title=&quot;Wikipedia Max-flow min-cut theorem&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;网络流的定义&lt;/p&gt;
+&lt;p&gt; 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性规划 [Linear Programming]</title>
+    <link href="http://yoursite.com/2016/01/09/2016-01-09-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/"/>
+    <id>http://yoursite.com/2016/01/09/2016-01-09-线性规划/</id>
+    <published>2016-01-09T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;什么是线性规划&lt;/p&gt;
+&lt;p&gt; 线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。&lt;/p&gt;
+&lt;p&gt; 线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;一个需要极大化的线性函数，例如：&lt;/p&gt;
+&lt;p&gt;$$c_1 x_1 + c_2 x_2$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;以下形式的问题约束，例如：&lt;/p&gt;
+&lt;p&gt;$$a_{11} x&lt;em&gt;1 + a&lt;/em&gt;{12} x_2 \le b_1$$&lt;/p&gt;
+&lt;p&gt;$$a_{21} x&lt;em&gt;1 + a&lt;/em&gt;{22} x_2  \le b_2$$&lt;/p&gt;
+&lt;p&gt;$$a_{31} x&lt;em&gt;1 + a&lt;/em&gt;{32} x_2  \le b_3$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;非负变量，例如：&lt;/p&gt;
+&lt;p&gt;$$x_1 \ge 0 $$&lt;/p&gt;
+&lt;p&gt;$$x_2 \ge 0 $$&lt;/p&gt;
+&lt;p&gt;几个概念和定理介绍：&lt;/p&gt;
+&lt;p&gt;可行域：下图中蓝色部分的点都是线性规划问题的解(可行解)，蓝色区域是可行解的集合，称为可行域。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/0QzN1q2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;基可行解：出现在可行域顶点的可行解&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;定理1 若线性规划问题存在可行域，则其可行域是&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%87%B8%E9%9B%86&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;凸集&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;定理2 若可行域有界，线性规划问题的目标函数一定可以在其可行域的顶点上达到最优&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;通过上述定理得知，线性规划问题的解一定出现在可行域的顶点上，所以可以通过枚举所有的基可行解来找到最优解，但当变量个数很多时，这种办法是行不通的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;单纯形法&lt;/p&gt;
+&lt;p&gt; 单纯形法是求解线性规划问题的通用方法。单纯形是美国数学家G.B.丹齐克于1947年首先提出来的。它的理论根据是：线性规划问题的可行域是$$n$$维向量空间$$R_n$$中的多面凸集，其最优值如果存在必在该凸集的某顶点处达到。顶点所对应的可行解称为基本可行解。&lt;/p&gt;
+&lt;p&gt; 单纯形法的基本思想是：先找出一个基本可行解，对它进行鉴别，看是否是最优解；若不是，则按照一定法则转换到另一改进的基本可行解，再鉴别；若仍不是，则再转换，按此重复进行。因基本可行解的个数有限，故经有限次转换必能得出问题的最优解。如果问题无最优解也可用此法判别。&lt;/p&gt;
+&lt;p&gt; 单纯形法的一般解题步骤可归纳如下：&lt;/p&gt;
+&lt;p&gt; ①把线性规划问题的约束方程组表达成典范型方程组，找出基本可行解作为初始基可行解。&lt;/p&gt;
+&lt;p&gt; ②若基本可行解不存在，即约束条件有矛盾，则问题无解。&lt;/p&gt;
+&lt;p&gt; ③若基本可行解存在，从初始基本可行解作为起点，根据最优性条件和可行性条件，引入非基变量取代某一基变量，找出目标函数值更优的另一基本可行解。&lt;/p&gt;
+&lt;p&gt; ④按步骤③进行迭代,直到对应检验数满足最优性条件（这时目标函数值不能再改善），即得到问题的最优解。&lt;/p&gt;
+&lt;p&gt; ⑤若迭代过程中发现问题的目标函数值无界，则终止迭代。&lt;/p&gt;
+&lt;p&gt; 过程如下图所示：&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://i.imgur.com/UfuthIQ.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;http://wenku.baidu.com/view/0edfb06aaf1ffc4ffe47acec.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;单纯形法求解-动态演示&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; 单纯形法伪代码：&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://i.imgur.com/lhxj168.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/BUPTLdy/Algorithms/tree/master/Simplex%20Algorithm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;单纯形法Python实现&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; 解线性规划问题也一些很好的工具，比如&lt;a href=&quot;https://www.gnu.org/software/glpk/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GLPK&lt;/a&gt;和&lt;a href=&quot;http://www.gurobi.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gurobi&lt;/a&gt;等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;线性规划解决实际问题&lt;/p&gt;
+&lt;p&gt; 问题如下：&lt;/p&gt;
+&lt;p&gt; With human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $$i$$ has a time window $$[s_i,t_i]$$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as $$[s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n]$$ satisfying $$s_1 &amp;lt;t_1 &amp;lt; s_2 &amp;lt; t_2 &amp;lt; · · · &amp;lt; s_n &amp;lt; t_n$$, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.&lt;/p&gt;
+&lt;p&gt; Please formulate this problem as an LP.&lt;/p&gt;
+&lt;p&gt; 题目的大概意思是每架飞机都只能在自己固定的时间窗内降落，为了安全起见两架飞机之间的降落时间间隔越大越好，然后给你n架飞机的降落时间窗口，要求n架飞机的最小降落间隔的最大值。&lt;/p&gt;
+&lt;p&gt; 这个问题的建模起来很简单，令$$x_i$$表示第$$i$$架飞机的降落时间，则需要满足约束条件：&lt;/p&gt;
+&lt;p&gt; $$s_i\leq x_i \leq t_i$$&lt;/p&gt;
+&lt;p&gt; 然后我们的目标是要求最小间隔的最大值，所以我们的目标函数为：&lt;/p&gt;
+&lt;p&gt; $$max (min(x&lt;em&gt;{i+1}-x&lt;/em&gt;{i}))$$&lt;/p&gt;
+&lt;p&gt; 那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有$$y\leq x&lt;em&gt;{i+1}-x&lt;/em&gt;{i} $$，那么$$y$$不就是$$x&lt;em&gt;{i+1}-x&lt;/em&gt;{i}$$的最小值吗？&lt;/p&gt;
+&lt;p&gt; 所以最终我们可以把问题形式化为:&lt;/p&gt;
+&lt;p&gt; $$\begin{array}{cll}&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;max &amp;amp; y &amp;amp; \\
+s.t.&amp;amp; s_i\leq x_i \leq t_i&amp;amp; i=1,2,3 \cdots n\\
+&amp;amp; y\leq x_{i+1}-x_i &amp;amp; i=1,2,3 \cdots n
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; \end{array}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt; 维基百科 线性规划：&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92&quot; title=&quot;维基百科 线性规划&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; 百度百科 单纯形法：&lt;a href=&quot;http://baike.baidu.com/subview/471090/471090.htm&quot; title=&quot;百度百科 单纯形法&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://baike.baidu.com/subview/471090/471090.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;什么是线性规划&lt;/p&gt;
+&lt;p&gt; 线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。&lt;/p&gt;
+&lt;p&gt; 线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;一
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>贪心算法[greedy algorithm]</title>
+    <link href="http://yoursite.com/2016/01/08/2016-01-08-%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/"/>
+    <id>http://yoursite.com/2016/01/08/2016-01-08-贪心策略/</id>
+    <published>2016-01-08T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;贪心算法(greedy algorithm)    &lt;/p&gt;
+&lt;p&gt; 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是&lt;a href=&quot;http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;动态规划&lt;/a&gt;问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？&lt;/p&gt;
+&lt;p&gt; 如果我们能够证明要解决的问题具有如下两个性质，那么我们向贪心算法迈出了重要一步。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;贪心选择性质&lt;/p&gt;
+&lt;p&gt;最关键的要素是看问题是否具有贪心选择性质：如果我们可以通过做出局部最优选择来构造全局解。也就是说，在进行选择时，我们直接选择在当前问题看起来最优的情况，而不必考虑子问题的解。&lt;/p&gt;
+&lt;p&gt;这也是贪心算法与动态规划的不同之处，动态规划中每次的选择依赖于子问题的解，因此通常使用自底向上的方式求解动态规划问题。在贪心算法中，我们总是做出当时看起来是最佳的选择，然后求解剩下的&lt;strong&gt;唯一子问题&lt;/strong&gt;。贪心算法在选择时可能依赖以前的选择，但不依赖任何将来的选择或者子问题的解。因此，&lt;strong&gt;动态规划算法是自底向上进行计算的，而每一个贪心算法通常时自顶向下的，进行一次又一次选择，将给定问题的实例变得更小。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;最优子结构&lt;/p&gt;
+&lt;p&gt;如果一个问题的最优解包含其子问题的最优解，则称此问题具有最优子结构性质。此性质是能否应用动态规划和贪心算法的关键要素。当应用于贪心算法时，我们可以假定，&lt;strong&gt;通过对原问题应用贪心选择就可以得到子问题&lt;/strong&gt;，我们所要做的工作就是论证：将子问题的最优解与贪心选择组合在一起就能得到原始问题的最优解。&lt;/p&gt;
+&lt;p&gt;经过上述描述，我们可以按如下步骤设计贪心算法：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;将最优化问题转化成这样的形式：对其做出一次选择后，只剩下一个子问题需要求解。&lt;/li&gt;
+&lt;li&gt;证明做出贪心选择后，原问题总是存在最优解，即贪心选择总是安全的。&lt;/li&gt;
+&lt;li&gt;证明做出贪心选择后，剩余的子问题满足性质:其最优解与贪心选择组合即可得到原问题的最优解。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;问题举例：Havel-Hakimi定理&lt;/p&gt;
+&lt;p&gt; Given a list of $$n$$ natural numbers $$d_1, d_2,…,d_n$$, show how to decide in polynomial time whether there exists an undirected graph G = (V, E) whose node degrees are precisely the numbers $$d_1, d_2, \cdots , d_n$$. G should not contain multiple edges between the same pair of nodes, or “ loop” edges with both endpoints equal to the same node.&lt;/p&gt;
+&lt;p&gt; 题目的大概意思是：给你一组数字序列，数字的大小为图的度，问这些数字的度能够构成一个图（无向无环图），如果可以，则称该序列是可图的。&lt;/p&gt;
+&lt;p&gt; 怎么用贪心算法分析：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首先由无向图的性质分析，如果所有的度之和为奇数，显然不能构成无向图&lt;/li&gt;
+&lt;li&gt;如果最大的度比序列的长度还大，明显也不能构成图，因为就算所有的结点和它相连，度的值也为n-1小于n。&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;贪心选择:由&lt;strong&gt;非负数组成的非增序列&lt;/strong&gt;$$s:d_1,d_2,\cdots,d_n（n&amp;gt;=2，d_1&amp;gt;=1）$$是可图的，当仅当序列&lt;/p&gt;
+&lt;p&gt;$$s1：d_2-1，d&lt;em&gt;3-1，···，d&lt;/em&gt;{d&lt;em&gt;1+1}-1,d&lt;/em&gt;{d1+2}，····，d_n$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;是可图的。序列s1中有n-1个非负数，s序列排在$$d_1$$之后的前$$d_1$$个数减1后构成s1中的前$$d_1$$个数。
+
+判定过程：一直循环直到当前序列出现负数（即不是可图的情况）或者当前序列全为0 （可图）时退出。
+
+怎么理解这个贪心选择：如果一个序列是可图的，则我们选择一个度最小的结点，然后去掉这个结点以及和这个结点相连接的边，那么剩下的结点还是可图的，当然反过来也是可以的，所以这符合贪心算法的条件，去点一个结点以及和它连接的边之后，只要判断剩下的子问题是不是可图，逐渐的减少问题的规模，直到求解。
+
+Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到小排序)
+
+![](http://i.imgur.com/K3Qj1gw.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;问题举例：霍夫曼编码(Huffman Coding)&lt;/p&gt;
+&lt;p&gt; 霍夫曼编码的具体原理就不仔细介绍了，可以参考维基百科&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81&quot; title=&quot;霍夫曼编码&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;霍夫曼编码&lt;/a&gt;，主要在这里说说霍夫曼编码中怎么应用贪心算法。&lt;/p&gt;
+&lt;p&gt; 贪心选择：构造霍夫曼树的关键之处在于每一步执行的时候，并不知道这个低频率的字符会编码为多少，只能保证它在树的最下面，使用最长的编码，这样就不会影响频率高的字符的编码。而每一步贪心的过程，都将两个频率低的字符合成一个父字符，减小了问题的规模，这样这个策略就在不影响其它字符编码的情况下，不断缩小问题的规模，直到最终求解。&lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/BUPTLdy/Algorithms/tree/master/huffman&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;霍夫曼编码CPP代码下载&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt; 贪心算法如何体现在霍夫曼编码中？&lt;a href=&quot;https://www.zhihu.com/question/22112710/answer/56030576&quot; title=&quot;贪心算法如何体现在霍夫曼编码中？&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/22112710/answer/56030576&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;贪心算法(greedy algorithm)    &lt;/p&gt;
+&lt;p&gt; 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是&lt;a href=&quot;http://buptldy.github.io/2016
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+      <category term="CPP" scheme="http://yoursite.com/tags/CPP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>动态规划[dynamic programming]</title>
+    <link href="http://yoursite.com/2016/01/07/2016-01-07-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <id>http://yoursite.com/2016/01/07/2016-01-07-动态规划/</id>
+    <published>2016-01-07T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;动态规划(dynamic programming)&lt;/p&gt;
+&lt;p&gt; 动态规划与&lt;a href=&quot;http://buptldy.github.io/2016/01/06/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivide%20and%20Conquer%5D/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;分治方法&lt;/a&gt;相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。&lt;/p&gt;
+&lt;p&gt; 通常动态规划被用来求解&lt;a href=&quot;https://en.wikipedia.org/wiki/Optimization_problem&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;最优化问题&lt;/a&gt;，即在可行解中寻找最优解。&lt;/p&gt;
+&lt;p&gt; 设计一个动态规划算法通常有如下4个步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(1).刻画一个最优解的结构特征&lt;/li&gt;
+&lt;li&gt;(2).递归地定义最优解的值&lt;/li&gt;
+&lt;li&gt;(3).采用自底向上的方法计算最优解的值&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;(4).利用计算出的信息构造最优解&lt;/p&gt;
+&lt;p&gt;如果我们只需要得到这个最优解的结果，而不关注这个解是怎么得来的，则可以忽略步骤(4)。&lt;/p&gt;
+&lt;p&gt;上面叙述了动态规划方法的步骤，但是什么问题才能够使用动态规划法求解？使用动态规划方法求解的最优化问题应该具备两个要素：最优子结构和子问题重叠。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;最优子结构&lt;/p&gt;
+&lt;p&gt;如果一个问题的最优解包含其子问题的最优解，则称此问题具有最优子结构性质。在动态规划方法中，我们通常自底向上地使用最优子结构，即首先求得子问题的最优解，然后求原问题的最优解。&lt;strong&gt;原问题的最优解的代价通常就是子问题最优解的代价再加上由此次选择直接产生的代价。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;子问题重叠&lt;/p&gt;
+&lt;p&gt;如果递归算法反复求解相同的子问题，就称最优化问题具有重叠子问题。动态规划算法通常这样利用重叠子问题性质：&lt;strong&gt;对每个子问题求解一次，将解存入一个表中，当再次需要这个子问题时直接查表，每次查表的代价为常量时间。&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;问题举例：Money robbing&lt;/p&gt;
+&lt;p&gt; 问题如下所示：&lt;/p&gt;
+&lt;p&gt; A robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What if all houses are arranged in a circle?&lt;/p&gt;
+&lt;p&gt;大概意思就是街上有一排房子，有个房子里有一定数量的钱，如果小偷在同一天晚上偷了两座相邻的房子，就会触发警报系统，第一问就是问在小偷不触发警报系统的前提下，怎样偷到的钱最多。&lt;/p&gt;
+&lt;p&gt;动态规划问题最重要的就是求出递归式，把原问题的最优化化为子问题的最优化。对这个问题来说，唯一的约束条件是不能同时抢劫相邻的两座房子，假设共有n座房子，分两种情况讨论：&lt;/p&gt;
+&lt;p&gt;(1). 如果你抢劫了第n座房子，很明显你能得到第n座房子的钱，但你只能抢劫第n-2座房子了，因为你不想被抓起来；&lt;/p&gt;
+&lt;p&gt;(2). 此时不选择抢劫第n座房子，当然待会你就可以抢劫第n-1座房子了&lt;/p&gt;
+&lt;p&gt;但这两种选择哪种是最优的了，很明显取决与这两个子问题的最优解，所以我们把原问题的最优解化成求解子问题的最优解，根据上述两种情况划分，可以很容易的写出递推公式：&lt;/p&gt;
+&lt;p&gt;$$dp(n)=MAX{dp(n-1),dp(n-2)+money(n)}$$&lt;/p&gt;
+&lt;p&gt;其中money(n)表示抢劫第n座房子得到的钱(注意在写程序是money[n-1],因为数组下标从0开始)，根据递推公式，采用自底向上的方法，就能计算出最优的结果。&lt;/p&gt;
+&lt;p&gt;伪代码如下所示：&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/MW11e6T.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;再来看第二问，第二问的意思就是如果房子不是排成一排而是围成一圈，该怎样才能偷到最多的钱？&lt;br&gt;我们随机的从一圈n座房子中选中一座房子，现在我们面临两个选择，抢还是不抢？&lt;/p&gt;
+&lt;p&gt;(1) 假设我们选择抢劫这座房子，当然我们能得到这座房子的钱，但是为了避免触发警报我们不能抢劫它周围的两座房子了，那么剩下的n-3座房子就没有构成一个圈了，那么问题也就规约成第一问的情况了；&lt;br&gt;(2) 假如我们没有抢劫这座房子，那么去掉这座房子，剩下的n-1座房子不是就不构成圈了吗，所以还是回到第一问的问题。&lt;/p&gt;
+&lt;p&gt;经过分析，所以我们得到递推公式为:&lt;/p&gt;
+&lt;p&gt;$$dp_{circle(n)}=MAX{dp(n-1),dp(n-3)+money(n)}$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;问题举例：Maximum profit of transactions&lt;/p&gt;
+&lt;p&gt; 问题如下：&lt;/p&gt;
+&lt;p&gt; Say you have an array for which the i-th element is the price of a given stock on day i.&lt;br&gt; Design an algorithm and implement it to find the maximum profit. You may complete at most two transactions.&lt;/p&gt;
+&lt;p&gt; Note: You may not engage in multiple transactions at the same time (ie,you must sell the stock before you buy again).&lt;/p&gt;
+&lt;p&gt; 这个题目的意思是给你每天股票的价格，你能最多进行两次交易(一次交易包括买进和卖出)，怎样才能获得最大的收益。&lt;/p&gt;
+&lt;p&gt; 我们先来讨论只在一次交易的情况下，怎么求得收益最大化，其实这个问题就是给你一个数组，求出这组数里面不是&lt;a href=&quot;http://buptldy.github.io/2016/01/06/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivide%20and%20Conquer%5D/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;逆序数&lt;/a&gt;(因为卖出肯定在买进之后)但相差最大的两个数的差,比如5，1，3，2，4中，以价钱1买进，价钱4卖出可以获得最大的收益3。&lt;/p&gt;
+&lt;p&gt; 我们用动态规划法来分析这个问题，通过自底向上的方法，分析如何从前i天的最大收益推出前i+1天的最大收益，已知前i天的最大收益和前i天的最低价格：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第i+1天的价格大于minPrice（已遍历数据的最低价），此时只要对max(i)（前i天的最大获益）和prices[i + 1] - minPrice（第i+1天卖出所能得到的获益）取大值就能得出max(i + 1)&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第i+1天的价格小于等于minPrice，那么在第i+1天卖出所得到的获益必然是小于max(i)（这里哪怕考虑极端情况：给出的数据是整体递减的，那么最佳的卖出时机也是当天买当天卖，获益为0，所以不会存在获益是负值的情况），所以max(i + 1) = max(i)。而且，对于之后的数据而言，minPrice需要更新了，因为对于之后的数据，在第i+1天买进必然比在0到i天之间的任何时候买进的获益都要多（因为第i+1天是0到i+1区间内的最低价）。&lt;/p&gt;
+&lt;p&gt;所以通过上述动态规划的方法可以求出只进行一次交易的最大收益，但我们题目中问的是最多进行两次交易的情况下，我们可以把Prices[] 分成两部分Prices[0…m] 和 Prices[m…length]  ，分别计算在这两部分内做交易的最大收益，方法就是上面所说的一次交易的方法，第一步扫描，先计算出子序列[0,…,i]中的最大利润，用一个数组保存下来，时间是O(n)。 第二步是逆向扫描，计算子序列[i,…,n-1]上的最大利润，这一步同时就能结合上一步的结果计算最终的最大利润了，这一步也是O(n)。 所以最后算法的复杂度就是O(n)。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/BUPTLdy/Algorithms/tree/master/Maximum%20profit%20of%20transactions&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;算法代码下载(CPP)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt; Best Time to Buy and Sell Stock I II III IV@LeetCode：&lt;a href=&quot;http://segmentfault.com/a/1190000002565570&quot; title=&quot;Best Time to Buy and Sell Stock I II III IV@LeetCode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://segmentfault.com/a/1190000002565570&lt;/a&gt;&lt;br&gt; LeetCode-Best Time to Buy and Sell Stock系列：&lt;a href=&quot;http://www.tuicool.com/articles/rMJZj2&quot; title=&quot;LeetCode-Best Time to Buy and Sell Stock系列&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.tuicool.com/articles/rMJZj2&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;动态规划(dynamic programming)&lt;/p&gt;
+&lt;p&gt; 动态规划与&lt;a href=&quot;http://buptldy.github.io/2016/01/06/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivid
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+      <category term="CPP" scheme="http://yoursite.com/tags/CPP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分治策略[Divide and Conquer]</title>
+    <link href="http://yoursite.com/2016/01/06/2016-01-06-%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivide%20and%20Conquer%5D/"/>
+    <id>http://yoursite.com/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/</id>
+    <published>2016-01-06T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;分治法简介：&lt;/p&gt;
+&lt;p&gt; 使用分治法的前提是问题在结构上是&lt;strong&gt;递归&lt;/strong&gt;的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。&lt;/p&gt;
+&lt;p&gt; 分治模式在每层的递归时有三个步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;分解&lt;/strong&gt;原问题为若干子问题，这些子问题是原问题规模较小的实例。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;解决&lt;/strong&gt;这些子问题，递归的求解各子问题，当子问题规模最够小时，则直接求解。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;合并&lt;/strong&gt;这些子问题的解得到原始问题的解&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Karatsuba_algorithm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Karatsuba&lt;/a&gt; 算法&lt;/p&gt;
+&lt;p&gt; Karatsuba算法是一种快速乘法算法，在1960年由&lt;a href=&quot;https://en.wikipedia.org/wiki/Anatoly_Karatsuba&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Anatoly Karatsuba&lt;/a&gt;提出。普通乘法的复杂度是$$O(n^2)$$,而Karatsuba算法的时间复杂度为$$O(n^{1.585})$$。&lt;/p&gt;
+&lt;p&gt; 现在运用分治的思想来阐述下Karatsuba算法的基本原理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;分解：原本要计算两个大数x，y的乘法,先把x,y分解成如下两部分，其中B为基。&lt;/p&gt;
+&lt;p&gt;$$x = x_1B^m + x_0$$&lt;/p&gt;
+&lt;p&gt;$$y = y_1B^m + y_0$$&lt;/p&gt;
+&lt;p&gt;其中 $$x_0$$ 和 $$y_0$$ 要小于 $$B^m$$。 现在$$xy$$可以写为:&lt;/p&gt;
+&lt;p&gt;$$xy = (x_1B^m + x_0)(y_1B^m + y_0)$$&lt;br&gt;$$xy = z_2B^{2m} + z_1B^m + z_0$$&lt;br&gt;$$z_2 = x_1y_1$$&lt;br&gt;$$z_1 = x_1y_0 + x_0y_1$$&lt;br&gt;$$z_0 = x_0y_0$$&lt;/p&gt;
+&lt;p&gt;原本上面的式子中一共需要计算4次乘法（与基的幂次相乘只要进行移位操作就行），但是注意到有：&lt;/p&gt;
+&lt;p&gt;$$z_1 = (x_1 + x_0)(y_1 + y_0) - z_2 - z_0$$&lt;/p&gt;
+&lt;p&gt;所以每次只需要计算三次乘法即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;解决：通过上述分解步骤，我们每次还是需要3次乘法运算，然而这三次乘法运算我们可以继续递归的调用Karatsuba算法，直到数字足够小可以直接运用普通乘法求解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;合并：Karatsuba算法并没有涉及合并问题，通过公式$$xy = z_2B^{2m} + z_1B^m + z_0$$把最终结果求出来即可。&lt;/p&gt;
+&lt;p&gt;根据上述分析，当m=n/2时(n为乘数的长度)，递归的效率最高，所以递归公式为：&lt;/p&gt;
+&lt;p&gt;$$T(n) = 3 T(\lceil n/2\rceil) + cn + d$$&lt;/p&gt;
+&lt;p&gt;由递归公式根据&lt;a href=&quot;http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;主定理&lt;/a&gt;得到算法的复杂度为：&lt;/p&gt;
+&lt;p&gt;$$T(n) = \Theta(n^{\log_2 3})$$&lt;/p&gt;
+&lt;p&gt;Karatsuba算法伪代码：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;        procedure karatsuba(num1, num2)
+          if (num1 &amp;lt; 10) or (num2 &amp;lt; 10)
+            return num1*num2
+          /* calculates the size of the numbers */
+          m = max(size_base10(num1), size_base10(num2))
+         m2 = m/2
+          /* split the digit sequences about the middle */
+         high1, low1 = split_at(num1, m2)
+          high2, low2 = split_at(num2, m2)
+          /* 3 calls made to numbers approximately half the size */
+          z0 = karatsuba(low1,low2)
+          z1 = karatsuba((low1+high1),(low2+high2))
+          z2 = karatsuba(high1,high2)
+          return (z2*10^(2*m2))+((z1-z2-z0)*10^(m2))+(z0)
+
+[Karatsuba算法代码下载(CPP)](https://github.com/BUPTLdy/Algorithms/tree/master/Karatsuba)
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;归并排序(MergeSort)&lt;/p&gt;
+&lt;p&gt; 还是根据分治策略的思想，分为三个步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分解：把要排序的n个元素序列分解成两个含有n/2个元素的子序列&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/umuDsOg.png&quot; alt=&quot;&quot;&gt;&lt;/li&gt;
+&lt;li&gt;解决：递归的调用分解，直到子序列能够直接排序&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;合并：归并排好序的子序列，直到得到原始问题的解&lt;/p&gt;
+&lt;p&gt;简单例子演示：&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/33u5yyl.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;逆序数统计(Counting Inversion)&lt;/p&gt;
+&lt;p&gt; 问题定义：输入n个不同的数字$$a_1,a_2,\cdots ,a_n$$，计算有多少对逆序数，逆序数的定义为数字下标$$i&lt;j$$但是数字$$a_i&gt;a_j$$。比如数字序列2，4，1，3，5，数字2在数字1的前面，但比数字1大，所以是一对逆序数，上述数字序列共有3组逆序数：（2，1），（4，1），（4，3）。&lt;/j$$但是数字$$a_i&gt;&lt;/p&gt;
+&lt;p&gt; 统计逆序数要用到分治的思想，我们能很容易能想到先分解成两个子序列然后再递归求解每个子序列的逆序数。&lt;/p&gt;
+&lt;p&gt; 现在主要的问题是解决，怎么计算两个不同子序列之间的逆序数，也就是怎么合并的问题，如下图所示，如果只是通过子序列之间每个数字的简单比较求解逆序数，则需要通过$$n^2/4$$次比较。所以时间复杂度为$$T(n)=2T(n/2)+n^2/4=O(n^2)$$(求解方法参考&lt;a href=&quot;http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;主定理&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://i.imgur.com/mDpKIUp.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; 所以这样和直接暴力解法相比，时间复杂度比没有降低，这时我们通过前面的归并排序想到，如果我们先对子序列进行排序(对子序列排序并不会影响两个子序列之间的逆序数对)，再统计子序列之间的逆序数。统计方法如下图所示，两个排好序的子序列之间进行逆序数统计，比如说第一个序列的第一个数字3比第二个序列的第一个数字2要大，则第一个序列3后面的数字肯定都要比2要大，所以直接统计出逆序数为6，根据这种思想可以把子序列之间的所有逆序数统计出来。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;![](http://i.imgur.com/wJtHUMG.gif)
+
+(gif generated by [ScreenToGif](https://screentogif.codeplex.com/))
+
+上述合并求解逆序数的方法，先给子序列排序并同时计算逆序数，花费$$O(n)$$的时间，所以问题总的时间复杂度为：
+
+$$T(n)=2T(n/2)+O(n)=O(nlogn)$$
+
+[Counting Inversion算法代码下载(CPP)](https://github.com/BUPTLdy/Algorithms/tree/master/Counting%20Inversion)
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;分治法简介：&lt;/p&gt;
+&lt;p&gt; 使用分治法的前提是问题在结构上是&lt;strong&gt;递归&lt;/strong&gt;的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。&lt;/p&gt;
+&lt;p&gt; 分治模式在每层的递归时有三个步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;l
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+      <category term="CPP" scheme="http://yoursite.com/tags/CPP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>启发式图搜索策略</title>
+    <link href="http://yoursite.com/2016/01/05/2016-01-05-%E5%90%AF%E5%8F%91%E5%BC%8F%E5%9B%BE%E6%90%9C%E7%B4%A2/"/>
+    <id>http://yoursite.com/2016/01/05/2016-01-05-启发式图搜索/</id>
+    <published>2016-01-05T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;什么是启发式搜索&lt;br&gt; &lt;a href=&quot;http://buptldy.github.io/2016/01/04/%E5%9B%BE%E6%90%9C%E7%B4%A2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;无信息图搜索&lt;/a&gt;一般需要产生大量的节点，因而效率较低。为提高效率，可以使用一些问题相关的信息，以减小搜索量，这些信息就称为启发式信息。使用启发式信息指导的搜索过程称为启发式搜索，所以启发式图搜索与无信息图搜索之间的区别就是启发式图搜索在OPEN表的排序过程中使用了与问题有关的知识。&lt;/p&gt;
+&lt;p&gt; 在启发式搜索过程中对OPEN表进行排序，就需要定义一个评价函数f(n)，对当前的搜索状态进行评估，找出一个&lt;em&gt;最有希望&lt;/em&gt;的节点来扩展。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A算法&lt;br&gt; A算法是一种典型的启发式搜索算法，其基本思想为：定义一个评价函数f(n)，对当前的搜索状态进行评估，找出一个&lt;em&gt;最有希望&lt;/em&gt;的节点来扩展。&lt;br&gt; 评价函数的形式为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;f(n)=g(n)+h(n)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; 其中n是被评价的结点。&lt;/p&gt;
+&lt;p&gt; 为了了解f(n),g(n),h(n)的含义，我们先来介绍一下几个函数的定义：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;g*(n):从s（初始结点）到n的最短路径的耗散值（相当于一条路径的费用，代价）&lt;/li&gt;
+&lt;li&gt;h*(n):从n到g(目标结点)的最短路径的耗散值&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;f*(n)=g*(n)+h*(n)：从s经过n到g的最短路径的耗散值&lt;/p&gt;
+&lt;p&gt;g(n)、 h(n)、 f(n)分别是g*(n)、 h*(n)、 f*(n)的估计值,是一种预测。A算法就是利用这种预测，来达到搜索的目的。&lt;strong&gt;它每次按照f(n)值的大小对OPEN表中的元素进行排序，f值小的放前面，f值大的放后面&lt;/strong&gt;，这样每次在扩展结点时，总是选择当前f值最小的结点来优先扩展。&lt;/p&gt;
+&lt;p&gt;要想根据f对OPEN表中的结点排序，就需要计算f(n),g(n)和h(n)的值，根据搜索结果，g(n)就是初始结点s到结点n这条路径的耗散值；而h(n)依赖于启发信息，取决于具体的问题，通常称其为启发函数。&lt;/p&gt;
+&lt;p&gt;A算法举例：八数码问题（Eight-Puzzle）&lt;/p&gt;
+&lt;p&gt;八数码问题也称为九宫问题。在3×3的棋盘，摆有八个棋子，每个棋子上标有1至8的某一数字，不同棋子上标的数字不相同。棋盘上还有一个空格，与空格相邻的棋子可以移到空格中。要求解决的问题是：给出一个初始状态和一个目标状态，找出一种从初始转变成目标状态的移动棋子步数最少的移动步骤。&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/XGw5X8W.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;设评价函数f(n)形式如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;f(n)=d(n)+W(n)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中，d(n)代表结点的深度，在单位耗散的情况下g(n)=d(n);取h(n)=W(n)表示以‘不在位’棋子个数作为启发函数的度量。如上图所示，初始状态和目标状态相比，初始状态中的数字“1”，“2”，“6”，“8”不在目标状态的位置上，所以初始状态的h值为4。&lt;/p&gt;
+&lt;p&gt;使用这种评价函数的搜索树如下所示，图中括弧中的数字表示该结点的评价函数值f;带圆圈的数字表示扩展结点的顺序。&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/8DgjWdD.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;根据目标结点L返回到s的指针，可得解路径为S(4)，B(4)，E(5)，I(5)，K(5)，L(5)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;A*算法&lt;/p&gt;
+&lt;p&gt; 最佳图搜索算法A*(optimal search)，在A算法中，如果有h(n)&amp;lt;=h*(n),则把这个算法称为A*算法。当问题有解时，&lt;strong&gt;A*算法一定能找到一条到达目标结点的最佳路径&lt;/strong&gt;。例如，当h(n)恒为零时，满足条件，此时若取g为深度值，则算法等同于宽度优先算法，在&lt;a href=&quot;http://buptldy.github.io/2016/01/04/%E5%9B%BE%E6%90%9C%E7%B4%A2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;无信息图搜索&lt;/a&gt;中已提到过，宽度优先算法能够找到一条到目标结点的最短路径。&lt;/p&gt;
+&lt;p&gt; 在使用A*算法求解问题时，定义的启发函数h，在满足A*的条件下，应尽可能的大一点，使其接近h*，这样才能提高搜索的效率，当h=h*时，搜索的效率最高。&lt;/p&gt;
+&lt;p&gt; 对于八数码问题，取h(n)=W(n),容易看出，尽管我们不知道h*(n)具体为多少，但是它肯定至少要移动W(n)步才能达到目标状态，因为W(n)为此时和目标状态不相同的数字个数，所以有h(n)&amp;lt;=h*(n),满足A*算法条件，所以上述A算法的例子也是A*算法。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;A*算法的改进&lt;/p&gt;
+&lt;p&gt; 在A*算法中，扩展一个节点时，对已经在OPEN表或CLOSED表中的子节点，要调整指针，花时间和精力。如果在扩展节点n时，就已经找到了从根节点开始到它的最优路径，则不必调整指针, 可以大大提高效率。如果满足单调性限制，则可实现此愿望。&lt;/p&gt;
+&lt;p&gt; 如果对每一个节点$$n_i$$以及它的后继节点$$n_j$$，满足：&lt;/p&gt;
+&lt;p&gt; $$h(n_i) - h(n_j) ≤ k(n_i,n_j)$$&lt;/p&gt;
+&lt;p&gt; 则称启发式函数满足单调性限制。&lt;/p&gt;
+&lt;p&gt; 如果A*满足单调性限制，则当它选择节点n扩展时，就已经发现了通向节点n的最佳路径,则不必进行结点的指针修正操作，因而改善了A*的效率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;什么是启发式搜索&lt;br&gt; &lt;a href=&quot;http://buptldy.github.io/2016/01/04/%E5%9B%BE%E6%90%9C%E7%B4%A2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;无信息图搜索&lt;/a
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+      <category term="Artificial Intelligence" scheme="http://yoursite.com/tags/Artificial-Intelligence/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无信息图搜索策略</title>
+    <link href="http://yoursite.com/2016/01/04/2016-01-04-%E5%9B%BE%E6%90%9C%E7%B4%A2/"/>
+    <id>http://yoursite.com/2016/01/04/2016-01-04-图搜索/</id>
+    <published>2016-01-04T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;图搜索策略简介&lt;br&gt; 之前所说的&lt;a href=&quot;http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;回溯搜索策略&lt;/a&gt;是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。&lt;/p&gt;
+&lt;p&gt; 图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。&lt;/p&gt;
+&lt;p&gt; 扩展一个结点：应用规则到已有结点上，生成其&lt;strong&gt;所有&lt;/strong&gt;后继扩展结点的过程。扩展节点可使定义的隐含图生成为显式表示的状态空间图。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;图搜索算法&lt;/p&gt;
+&lt;p&gt; 图搜索中的两个表：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;OPEN表：存放已经生成但未扩展的节点，最初只含初始结点&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;CLOSED表：存放已经扩展的节点，其实设置为空表&lt;/p&gt;
+&lt;p&gt;图搜索过程：&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/7EvIIuk.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;算法结束后，将生成一个图G，称为搜索图。同时由于每个节点都有一个指针指向父节点，这些指针指向的节点构成G的一个支撑树，称为搜索树。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;从目标节点开始，将指针指向的状态回串起来，即找到一条解路径。&lt;/p&gt;
+&lt;p&gt;例子：&lt;br&gt;下图中S结点为初始结点，把结点S放入OPEN表中，从S结点开始扩展，生成S结点的所有后继结点｛1，2，3｝，S结点已扩展，加入CLOSED表中，继续这一过程。&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/2g5AKHd.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;从上述结果可以看出，最终OPEN表中的结点都是搜索树中的端结点，而CLOSED表中的结点为搜索树中的非端结点。&lt;/p&gt;
+&lt;p&gt;对于搜索过程中3中的d）步骤，如果要搜索的隐含图是一棵树，则在它上一步中生成后继结点不可能是以前生成过的，即生成的后继结点不可能出现在OPEN，CLOSED表中，此时搜索图就是搜索树，因此不必进行指针的修改操作。如果要搜索的隐含图不是一棵树，则有可能存在生成的后继结点中的某一结点$$m_k$$已经在OPEN，CLOSED表中存在,&lt;strong&gt;&lt;em&gt;这意味着此时又发现了达到$$m_k$$的新通路&lt;/em&gt;&lt;/strong&gt;，这样就需要比较不用路径到达点$$m_k$$的代价，将指针修改到代价最小的路径上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;无信息图搜索过程&lt;br&gt; 无信息搜索过程是在图搜索算法过程中第3点的e）步中排列OPEN表中结点的顺序时，没有使用与问题有关的知识，任意排列，通常有&lt;em&gt;深度优先&lt;/em&gt;和&lt;em&gt;宽度优先&lt;/em&gt;两种排列方式。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;深度优先&lt;/p&gt;
+&lt;p&gt;所谓深度优先搜索就是在每次扩展一个结点时，选择到目前为止深度最深的结点优先扩展。在算法中的实现为：&lt;/p&gt;
+&lt;p&gt;  把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的最前面，是深度大的结点优先扩展&lt;/p&gt;
+&lt;p&gt;因为新扩展出来的结点为子节点，子节点的深度要大于父节点的深度。一般情况下，深度优先搜索不但不能保证找到最优解，也不一定能保证找到解，这取决与问题的状态空间，如果问题的状态空间无限，可能会陷入“深渊”，而找不到解，因此也需要限制搜索的深度。&lt;/p&gt;
+&lt;p&gt;举例：&lt;/p&gt;
+&lt;p&gt;问题状态图G2如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/B3dYJla.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;根据深度优先原则，搜索过程为：（A–&amp;gt;B–&amp;gt;C–&amp;gt;E–&amp;gt;D–&amp;gt;F–&amp;gt;G）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/CrjoNGl.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;宽度优先&lt;/p&gt;
+&lt;p&gt;宽度优先搜索与深度优先相反，每次选择深度最浅的结点优先扩展，实现方法为：&lt;/p&gt;
+&lt;p&gt;  把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的后面&lt;/p&gt;
+&lt;p&gt;当问题有解时，宽度优先算大一定能找到解，且在每段路径为单位代价时能找到最优解。&lt;/p&gt;
+&lt;p&gt;根据宽度优先原则，对图G2的搜索过程为：（A–&amp;gt;B–&amp;gt;C–&amp;gt;E–&amp;gt;F–&amp;gt;D–&amp;gt;G）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/LLE7pad.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt; &amp;lt;&amp;lt;人工智能&amp;gt;&amp;gt;.马少平，朱小燕编著&lt;/p&gt;
+&lt;p&gt; 图的遍历之 深度优先搜索和广度优先搜索:&lt;a href=&quot;http://www.cnblogs.com/skywang12345/p/3711483.html&quot; title=&quot;图的遍历之 深度优先搜索和广度优先搜索&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.cnblogs.com/skywang12345/p/3711483.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;图搜索策略简介&lt;br&gt; 之前所说的&lt;a href=&quot;http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/&quot; target=&quot;_blank&quot; rel=&quot;extern
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+      <category term="Artificial Intelligence" scheme="http://yoursite.com/tags/Artificial-Intelligence/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>回溯策略[backtracking]</title>
+    <link href="http://yoursite.com/2016/01/03/2016-01-03-%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/"/>
+    <id>http://yoursite.com/2016/01/03/2016-01-03-回溯策略/</id>
+    <published>2016-01-03T02:00:00.000Z</published>
+    <updated>2016-02-07T02:38:26.769Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;回溯策略（backtracking）简介&lt;/p&gt;
+&lt;p&gt; 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;找到一个可能存在的正确的答案&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在尝试了所有可能的分步方法后宣告该问题没有答案&lt;/p&gt;
+&lt;p&gt;在最坏的情况下，回溯法会导致一次复杂度为指数时间的计算。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;回溯策略应用：四皇后问题（Four queens puzzle）&lt;br&gt; 四皇后问题：在一个国际象棋中的 的棋盘上放置4个皇后， 为了使其中的任何2个皇后都不能相互“攻击”，希望寻求4个皇后的安全放置位置。 该问题的不能相互“攻击”相当于要求任意两个皇后不能在同一行、同一列或同一斜线上。&lt;/p&gt;
+&lt;p&gt; 用回溯策略解决这一问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;首先放第一颗棋子&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/775UH8f.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在符合规则的条件下摆放第二课棋子&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/OYEeASd.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在规则下未找到解时，回溯&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/wIxeLH5.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;根据回溯策略，不断的试探，最终找到解为：&lt;br&gt;&lt;img src=&quot;http://i.imgur.com/f1QnRh3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;回溯搜索中知识的利用&lt;/p&gt;
+&lt;p&gt; 在回溯策略中，可以通过引入一些与问题有关的信息来加快搜索解的速度。对与N皇后问题来说，引入信息的基本思想是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;尽可能选取划去对角线上位置数最少的
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/JCaTEEu.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; 可以想象，如果把一个皇后放在棋盘的某个位置后，它所影响的棋盘位置数少，那么给以后放置皇后剩下的余地就越大，找到解的可能性也越大。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;回溯算法存在的问题及解决方案&lt;/p&gt;
+&lt;p&gt; 存在的问题：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;某一个分支具有无穷个状态，算法可能落入“深渊”，永远不能回溯&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;某一个分支上具有环路，搜索在环路中一直进行，同样不能回溯&lt;/p&gt;
+&lt;p&gt;解决方案：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;对搜索深度进行限制，当当前状态的深度达到了限制深度时，算法将进行回溯&lt;/li&gt;
+&lt;li&gt;记录从初始状态到当前状态的路径，如果出现过此路径，表明出现环路，算法回溯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt; 维基百科回溯法：&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9B%9E%E6%BA%AF%E6%B3%95&quot; title=&quot;维基百科：回溯法&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://zh.wikipedia.org/wiki/%E5%9B%9E%E6%BA%AF%E6%B3%95&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt; 四皇后问题：&lt;a href=&quot;http://jpkc.onlinesjtu.com/CourseShare/DataStructure/FlashInteractivePage/exp7.htm&quot; title=&quot;四皇后问题&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://jpkc.onlinesjtu.com/CourseShare/DataStructure/FlashInteractivePage/exp7.htm&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;回溯策略（backtracking）简介&lt;/p&gt;
+&lt;p&gt; 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+      <category term="Artificial Intelligence" scheme="http://yoursite.com/tags/Artificial-Intelligence/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法渐进记号及主定理</title>
+    <link href="http://yoursite.com/2015/12/29/2015-12-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/"/>
+    <id>http://yoursite.com/2015/12/29/2015-12-29-算法复杂度渐进标号/</id>
+    <published>2015-12-29T02:00:00.000Z</published>
+    <updated>2016-03-13T13:01:46.247Z</updated>
+    
+    <content type="html">&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;算法渐进记号&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Big $\Theta$：$\Theta$记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Big $$O$$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Big $$\Omega$$：表示一个函数的渐进下界，算法运行的最好情况。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Litter $$o$$: 和big $$O$$ 定义相似，区别主要是 big$$O$$ 提供的上界可能和函数是同阶的，litter $$o$$ 表示非渐进紧确的上界。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;举例&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://i.imgur.com/GgsO2DX.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;渐进记号与函数阶数的关系&lt;/p&gt;
+&lt;p&gt; 其中$$a，b$$分别为函数$$g(n)，f(n)$$的阶数&lt;/p&gt;
+&lt;p&gt; &lt;img src=&quot;http://i.imgur.com/wUDSXQf.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt; 通常Big $$\Theta$$ 用来描述算法的最好和最坏的运行时间，Big $$O$$描述算法的最坏运行时间，Big $$\Omega$$描述算法的最好运行时间，经常使用的是Big $$O$$， 用来衡量算法的时间复杂度和空间复杂度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;主定理(master theorem)求解递归式&lt;/p&gt;
+&lt;p&gt;假设有递推关系式&lt;/p&gt;
+&lt;p&gt;$$T(n) = a \; T!\left(\frac{n}{b}\right) + f(n)$$&lt;/p&gt;
+&lt;p&gt;其中$$ a \geq 1 \mbox{, } b &amp;gt; 1$$，n为问题规模，a为递推的子问题数量，n/b为每个子问题的规模（假设每个子问题的规模基本一样），f(n)为递推以外进行的计算工作，包含了问题分解和子问题合并的代价。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;情况一&lt;br&gt;如果存在常数$$\epsilon &amp;gt; 0$$，有$$f(n) = O\left( n^{\log_b (a) - \epsilon} \right)$$，并且是多项式意义上的小于，那么&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$T(n) = \Theta\left( n^{\log_b a} \right)$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;情况二&lt;br&gt;如果存在常数k ≥ 0，有$$f(n) = \Theta\left( n^{\log_b a} \log^{k} n \right)$$那么&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$T(n) = \Theta\left( n^{\log_b a} \log^{k+1} n \right)$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;情况三&lt;br&gt;如果存在常数$$\epsilon &amp;gt; 0$$，有$$f(n) = \Omega\left( n^{\log_b (a) + \epsilon} \right)$$，并且是多项式意义上的大于，同时存在常数c &amp;lt; 1以及充分大的n，满足&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$a f\left( \frac{n}{b} \right) \le c f(n)$$&lt;/p&gt;
+&lt;p&gt;那么&lt;/p&gt;
+&lt;p&gt;$$T\left(n \right) = \Theta \left(f \left(n \right) \right)$$&lt;/p&gt;
+&lt;p&gt;简单举例：&lt;/p&gt;
+&lt;p&gt;$$T(n) = 9 \; T!\left(\frac{n}{3}\right) + n$$&lt;/p&gt;
+&lt;p&gt;对这个递归式，有a=9,b=3,f(n)=n,因此有$$n^{log_b a}=n^2&amp;gt;n$$,所以复杂度为：&lt;/p&gt;
+&lt;p&gt;$$T(n)=\Theta(n^2)$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;算法渐进记号&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Big $\Theta$：$\Theta$记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Big $$O$$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。&lt;
+    
+    </summary>
+    
+    
+      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,598 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>贪心算法[greedy algorithm] | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="贪心算法(greedy algorithm)    
+ 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是动态规划问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？
+ 如果我们能够证明要解决的问题具有如下两个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="贪心算法[greedy algorithm]">
+<meta property="og:url" content="http://yoursite.com/2016/01/08/2016-01-08-贪心策略/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="贪心算法(greedy algorithm)    
+ 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是动态规划问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？
+ 如果我们能够证明要解决的问题具有如下两个">
+<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="贪心算法[greedy algorithm]">
+<meta name="twitter:description" content="贪心算法(greedy algorithm)    
+ 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是动态规划问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？
+ 如果我们能够证明要解决的问题具有如下两个">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Ldy</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Algorithms/" style="font-size: 20px;">Algorithms</a> <a href="/tags/Artificial-Intelligence/" style="font-size: 16.67px;">Artificial Intelligence</a> <a href="/tags/CPP/" style="font-size: 16.67px;">CPP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://buptweixin.github.io/w">WeiXin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ldy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Ldy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2016-01-08-贪心策略" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/08/2016-01-08-贪心策略/" class="article-date">
+      <time datetime="2016-01-08T02:00:00.000Z" itemprop="datePublished">2016-01-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      贪心算法[greedy algorithm]
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CPP/">CPP</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>贪心算法(greedy algorithm)    </p>
+<p> 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是<a href="http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" target="_blank" rel="external">动态规划</a>问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？</p>
+<p> 如果我们能够证明要解决的问题具有如下两个性质，那么我们向贪心算法迈出了重要一步。</p>
+<ul>
+<li><p>贪心选择性质</p>
+<p>最关键的要素是看问题是否具有贪心选择性质：如果我们可以通过做出局部最优选择来构造全局解。也就是说，在进行选择时，我们直接选择在当前问题看起来最优的情况，而不必考虑子问题的解。</p>
+<p>这也是贪心算法与动态规划的不同之处，动态规划中每次的选择依赖于子问题的解，因此通常使用自底向上的方式求解动态规划问题。在贪心算法中，我们总是做出当时看起来是最佳的选择，然后求解剩下的<strong>唯一子问题</strong>。贪心算法在选择时可能依赖以前的选择，但不依赖任何将来的选择或者子问题的解。因此，<strong>动态规划算法是自底向上进行计算的，而每一个贪心算法通常时自顶向下的，进行一次又一次选择，将给定问题的实例变得更小。</strong></p>
+</li>
+<li><p>最优子结构</p>
+<p>如果一个问题的最优解包含其子问题的最优解，则称此问题具有最优子结构性质。此性质是能否应用动态规划和贪心算法的关键要素。当应用于贪心算法时，我们可以假定，<strong>通过对原问题应用贪心选择就可以得到子问题</strong>，我们所要做的工作就是论证：将子问题的最优解与贪心选择组合在一起就能得到原始问题的最优解。</p>
+<p>经过上述描述，我们可以按如下步骤设计贪心算法：</p>
+</li>
+</ul>
+<ol>
+<li>将最优化问题转化成这样的形式：对其做出一次选择后，只剩下一个子问题需要求解。</li>
+<li>证明做出贪心选择后，原问题总是存在最优解，即贪心选择总是安全的。</li>
+<li>证明做出贪心选择后，剩余的子问题满足性质:其最优解与贪心选择组合即可得到原问题的最优解。</li>
+</ol>
+</li>
+<li><p>问题举例：Havel-Hakimi定理</p>
+<p> Given a list of $$n$$ natural numbers $$d_1, d_2,…,d_n$$, show how to decide in polynomial time whether there exists an undirected graph G = (V, E) whose node degrees are precisely the numbers $$d_1, d_2, \cdots , d_n$$. G should not contain multiple edges between the same pair of nodes, or “ loop” edges with both endpoints equal to the same node.</p>
+<p> 题目的大概意思是：给你一组数字序列，数字的大小为图的度，问这些数字的度能够构成一个图（无向无环图），如果可以，则称该序列是可图的。</p>
+<p> 怎么用贪心算法分析：</p>
+<ol>
+<li>首先由无向图的性质分析，如果所有的度之和为奇数，显然不能构成无向图</li>
+<li>如果最大的度比序列的长度还大，明显也不能构成图，因为就算所有的结点和它相连，度的值也为n-1小于n。</li>
+<li><p>贪心选择:由<strong>非负数组成的非增序列</strong>$$s:d_1,d_2,\cdots,d_n（n&gt;=2，d_1&gt;=1）$$是可图的，当仅当序列</p>
+<p>$$s1：d_2-1，d<em>3-1，···，d</em>{d<em>1+1}-1,d</em>{d1+2}，····，d_n$$</p>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>是可图的。序列s1中有n-1个非负数，s序列排在$$d_1$$之后的前$$d_1$$个数减1后构成s1中的前$$d_1$$个数。
+
+判定过程：一直循环直到当前序列出现负数（即不是可图的情况）或者当前序列全为0 （可图）时退出。
+
+怎么理解这个贪心选择：如果一个序列是可图的，则我们选择一个度最小的结点，然后去掉这个结点以及和这个结点相连接的边，那么剩下的结点还是可图的，当然反过来也是可以的，所以这符合贪心算法的条件，去点一个结点以及和它连接的边之后，只要判断剩下的子问题是不是可图，逐渐的减少问题的规模，直到求解。
+
+Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到小排序)
+
+![](http://i.imgur.com/K3Qj1gw.png)
+</code></pre><ol>
+<li><p>问题举例：霍夫曼编码(Huffman Coding)</p>
+<p> 霍夫曼编码的具体原理就不仔细介绍了，可以参考维基百科<a href="https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81" title="霍夫曼编码" target="_blank" rel="external">霍夫曼编码</a>，主要在这里说说霍夫曼编码中怎么应用贪心算法。</p>
+<p> 贪心选择：构造霍夫曼树的关键之处在于每一步执行的时候，并不知道这个低频率的字符会编码为多少，只能保证它在树的最下面，使用最长的编码，这样就不会影响频率高的字符的编码。而每一步贪心的过程，都将两个频率低的字符合成一个父字符，减小了问题的规模，这样这个策略就在不影响其它字符编码的情况下，不断缩小问题的规模，直到最终求解。</p>
+<p> <a href="https://github.com/BUPTLdy/Algorithms/tree/master/huffman" target="_blank" rel="external">霍夫曼编码CPP代码下载</a></p>
+</li>
+</ol>
+<ol>
+<li><p>参考</p>
+<p> 贪心算法如何体现在霍夫曼编码中？<a href="https://www.zhihu.com/question/22112710/answer/56030576" title="贪心算法如何体现在霍夫曼编码中？" target="_blank" rel="external">https://www.zhihu.com/question/22112710/answer/56030576</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
+        <p><span>发布时间:</span>2016年01月08日 - 10时00分</p>
+        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/08/2016-01-08-贪心策略/" title="贪心算法[greedy algorithm]">http://yoursite.com/2016/01/08/2016-01-08-贪心策略/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/08/2016-01-08-贪心策略/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/09/2016-01-09-线性规划/">
+                    线性规划 [Linear Programming]
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/07/2016-01-07-动态规划/">
+                    动态规划[dynamic programming]
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/01/08/2016-01-08-贪心策略/" data-title="贪心算法[greedy algorithm]" data-url="http://yoursite.com/2016/01/08/2016-01-08-贪心策略/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bonerkiller"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/09/2016-01-09-线性规划/" title="上一篇: 线性规划 [Linear Programming]">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/07/2016-01-07-动态规划/" title="下一篇: 动态规划[dynamic programming]">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Ldy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>

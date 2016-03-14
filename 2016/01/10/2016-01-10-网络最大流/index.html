@@ -1,0 +1,628 @@
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>网络最大流 [Max Flow] | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="网络流的定义
+ 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络最大流 [Max Flow]">
+<meta property="og:url" content="http://yoursite.com/2016/01/10/2016-01-10-网络最大流/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="网络流的定义
+ 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
+<meta property="og:image" content="http://i.imgur.com/RS7lQTw.png">
+<meta property="og:image" content="http://i.imgur.com/9hAGUgE.png">
+<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络最大流 [Max Flow]">
+<meta name="twitter:description" content="网络流的定义
+ 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
+<meta name="twitter:image" content="http://i.imgur.com/RS7lQTw.png">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Ldy</a></h1>
+        </hgroup>
+
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Algorithms/" style="font-size: 20px;">Algorithms</a> <a href="/tags/Artificial-Intelligence/" style="font-size: 16.67px;">Artificial Intelligence</a> <a href="/tags/CPP/" style="font-size: 16.67px;">CPP</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://buptweixin.github.io/w">WeiXin</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ldy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Ldy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:buptlindaoyu@163.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/BUPTLdy" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-2016-01-10-网络最大流" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/10/2016-01-10-网络最大流/" class="article-date">
+      <time datetime="2016-01-10T02:00:00.000Z" itemprop="datePublished">2016-01-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      网络最大流 [Max Flow]
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <ol>
+<li><p>网络流的定义</p>
+<p> 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。</p>
+<p> 假设 G = (V,E) 是一个有限的有向图，它的每条边$$ \ (u,v) \in E $$ 都有一个非负值实数的容量$$c(u, v)$$。如果$$(u, v) \not \in E$$，我们假设 $$c(u, v) = 0$$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $$f:$$：</p>
+</li>
+</ol>
+<pre><code>&gt; 容量限制（Capacity Constraints）：    $$\ f(u, v) \le c(u, v)$$一条边的流不能超过它的容量。
+&gt; 
+&gt; 流量守恒（Flow Conservation）：    除非u = s或u = t，否则$$\ \sum_{w \in V} f(u, w) = 0$$，中间结点的流入等于流出。
+&gt; 即流守恒意味着： $$\ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $$，对每个顶点$$ \ {v \in V\setminus\{s,t\}}$$。
+
+**最大流问题**就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。
+
+一个网络流如下图所示：
+
+![](http://i.imgur.com/a8NFZl3.png)
+</code></pre><ol>
+<li><p>网络最大流算法</p>
+<ul>
+<li><p>Ford-Fulkerson算法</p>
+<p>残存网络的概念：</p>
+<p>边的残存容量（residual capacity）是$$ c_f(u, v) = c(u, v) - f(u, v)$$。</p>
+<p>定义 $$G_f(V, E_f)$$ 表示剩余网络（residual network），它显示当前网络可用的容量的多少。就算在原网络中由 u 到 v 没有边，在剩余网络仍可能有由 u 到 v 的边。因为残存网络允许相反方向的流抵消，减少由 v 到 u 的流相当于增加由 u 到 v 的流，因为我们是为了求最大流，之前走过的路可能是走错的。</p>
+<p>增广路（augmenting path）是一条路径 $$(u_1, u_2, \dots, u_k)$$，而 $$u_1 = s、u_k = t $$及 $$c_f(u<em>i, u</em>{i+1}) &gt; 0$$，如果存在增广路，这表示沿这条路径还能够传送更多流。当且仅当剩余网络$$G_f$$ 没有增广路时处于最大流。</p>
+<p>建立残存网络$$\ G_f$$的步骤：</p>
+</li>
+</ul>
+<ol>
+<li>$$\ G_f = \ V $$ 的顶点</li>
+<li><p>定义如下的 $$\ G_f = \ E_f$$ 的边,对每条边 $$\ (x,y) \in E$$ </p>
+<ul>
+<li>若$$\ f(x,y) &lt; c(x,y)$$，建立容量为$$\ c_f = c(x,y) - f(x,y)$$ 的前向边$$\ (x,y) \in E_f$$。</li>
+<li>若$$\ f(x,y) &gt; 0$$，建立容量为$$\ c_f =  f(x,y)$$ 的后向边$$\ (y, x) \in E_f$$。</li>
+</ul>
+<p>上图中的残存网络如下图所示：</p>
+<p><img src="http://i.imgur.com/RS7lQTw.png" alt=""></p>
+<p>最小割的概念：</p>
+<p>割的定义： 一个s-t 的割 C = (S, T) 把 所有的结点集合V分成两部分S和T，其中源节点s ∈ S 汇点 t ∈ T. 割 C 的集合表示如下：</p>
+<p>$${(u,v)\in E\ :\ u\in S,v\in T}$$</p>
+<p><strong>当割中的边被移掉时,则从源节点到汇结点的流量为0</strong>.</p>
+<p>割容量的定义：</p>
+<p>$$c(S,T)=\sum \nolimits <em>{(u,v)\in S\times T}c</em>{uv}$$</p>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>&gt; 最大流最小割定理：当残存网络中不含有任何增广路径时，网络中的流量f最大且等于最小割容量。
+
+如下图所示，网络的最大流为7，最小割由图中虚线组成，其中最小割的容量也为7.
+
+![](http://i.imgur.com/7Q718mT.png)
+
+Ford-Fulkerson算法求网络的最大流就是在每次的迭代中，寻找某条增广路径p，然后使用p来对流f进行修改，直到残存网络中不含有任何增广路径时，求得最大流f。
+
+Ford-Fulkerson算法伪代码：
+
+![](http://i.imgur.com/zsQkoBR.png)
+
+[Ford-Fulkerson算法Python实现](https://github.com/BUPTLdy/Algorithms/tree/master/Ford-Fulkerson)
+
+- Push-relabel algorithm
+
+Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点是相对难以理解。详细内容可以参考[维基百科 Push–relabel maximum flow algorithm](https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm#Concepts)
+
+[Push-relabel 算法Python实现](https://github.com/BUPTLdy/Algorithms/tree/master/Push-relabel)
+</code></pre><ol>
+<li><p>网络最大流问题建模</p>
+<p> 问题如下：</p>
+<p> Support the you are a matchmaker and there are some boys and girls. Since the boys are alway more than girls, you can assume that if a girl express her love to a boy , the boy will always accept her. Now you know every girl’s thought(a girl may like more than one boy) and you want to make as much pairs as you can. show that you can do this using maximum flow algorithm.</p>
+<p> 题目意思大概是有一些男孩和女孩。男孩的数量大于等于女孩的数量，如果女孩向男孩表达爱意，男孩必定接受，假设你是个媒婆，而且你知道女孩们喜欢那个男孩(一个女孩可能同时喜欢多个男孩)，要你用最大流的方法求最多能匹配多少对？</p>
+<p> 问题分析：最终一个女孩肯定只能和一个男孩配对，为了简单分析，我们假设有3个女孩$${G_1,G_2,G_3}$$，3个男孩$${B_1,B_2,B_3}$$,并且已知$$G_1$$喜欢$$B_1$$和$$B_2$$，$$G_2$$喜欢$$B_2$$,$$G_3$$喜欢$$B_3$$，我们可以构造出如下图所示的网络流：</p>
+<p> <img src="http://i.imgur.com/9hAGUgE.png" alt=""><br>，<br> 求出上图所示网络的的最大流就是最大的匹配对数，根据这个思路，这个题抽象成最大流问题为：</p>
+<ul>
+<li>源节点，汇点，以及每个女孩男孩都构成一个节点</li>
+<li>如果某个女孩喜欢某些男孩，则把这个女孩和那些男孩相连</li>
+<li>把源节点和每个女孩相连，汇结点和每个男孩相连</li>
+<li>网络中所有相连边的容量为1</li>
+</ul>
+</li>
+<li><p>参考</p>
+<p> 维基百科 网络流：<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%B5%81" title="维基百科 网络流" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%B5%81</a></p>
+<p> Wikipedia Max-flow min-cut theorem:<a href="https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem" title="Wikipedia Max-flow min-cut theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem</a></p>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
+        <p><span>发布时间:</span>2016年01月10日 - 10时00分</p>
+        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/10/2016-01-10-网络最大流/" title="网络最大流 [Max Flow]">http://yoursite.com/2016/01/10/2016-01-10-网络最大流/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/10/2016-01-10-网络最大流/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">
+                    NP完全性
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/09/2016-01-09-线性规划/">
+                    线性规划 [Linear Programming]
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/01/10/2016-01-10-网络最大流/" data-title="网络最大流 [Max Flow]" data-url="http://yoursite.com/2016/01/10/2016-01-10-网络最大流/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bonerkiller"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/" title="上一篇: NP完全性">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/09/2016-01-09-线性规划/" title="下一篇: 线性规划 [Linear Programming]">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/13/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/02/2016-03-02-GIT命令总结/">Git命令总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/12/2016-01-12-近似算法/">近似算法[Approximation algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">NP完全性</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/09/2016-01-09-线性规划/">线性规划 [Linear Programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/08/2016-01-08-贪心策略/">贪心算法[greedy algorithm]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/2016-01-07-动态规划/">动态规划[dynamic programming]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/">分治策略[Divide and Conquer]</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/05/2016-01-05-启发式图搜索/">启发式图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/29/2015-12-29-算法复杂度渐进标号/">算法渐进记号及主定理</a></li></ul>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Ldy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 3;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>
