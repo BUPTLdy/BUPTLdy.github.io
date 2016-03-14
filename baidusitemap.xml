@@ -2,6 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+  <url>
+    <loc>http://yoursite.com/2016/01/12/2016-01-12-%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2016-03-14T08:47:28.154Z</lastmod>
+    <data>
+        <display>
+        <title>近似算法[Approximation algorithm]</title>
+        <pubTime>2016-01-12T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms </tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
     
   <url>
@@ -34,23 +51,6 @@
         <tag>Algorithms </tag>
          
         <tag>Python </tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/01/12/2016-01-12-%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2016-03-14T05:34:41.211Z</lastmod>
-    <data>
-        <display>
-        <title>近似算法[Approximation algorithm]</title>
-        <pubTime>2016-01-12T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms </tag>
          
          
            
