@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-14T04:14:22.645Z</updated>
+  <updated>2016-03-14T05:34:41.203Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/02/2016-03-02-GIT%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
     <id>http://yoursite.com/2016/03/02/2016-03-02-GIT命令总结/</id>
     <published>2016-03-02T02:00:00.000Z</published>
-    <updated>2016-03-14T04:14:22.645Z</updated>
+    <updated>2016-03-14T05:34:41.203Z</updated>
     
     <content type="html">&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;创建版本库&lt;/p&gt;
@@ -96,9 +96,9 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;参考资料&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-10/93928228.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[Git教程-廖雪峰的官方网站](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
-&lt;/code&gt;&lt;/pre&gt;</content>
+&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-10/93928228.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git教程-廖雪峰的官方网站&lt;/a&gt;&lt;/p&gt;
+</content>
     
     <summary type="html">
     
@@ -122,7 +122,7 @@
     <link href="http://yoursite.com/2016/01/12/2016-01-12-%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2016/01/12/2016-01-12-近似算法/</id>
     <published>2016-01-12T02:00:00.000Z</published>
-    <updated>2016-03-14T05:26:41.597Z</updated>
+    <updated>2016-03-14T05:34:41.211Z</updated>
     
     <content type="html">&lt;ol&gt;
 &lt;li&gt;近似算法(Approximation algorithm)概念&lt;/li&gt;
@@ -169,11 +169,16 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;尺寸&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.2&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.3&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;尺寸|0.6|0.7|0.4|0.2|0.8|0.3|&lt;/p&gt;
 &lt;p&gt;根据Next Fit算法，解如下图所示：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/YDnGdKS.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -250,10 +255,9 @@
     <link href="http://yoursite.com/2016/01/11/2016-01-11-NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/"/>
     <id>http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/</id>
     <published>2016-01-11T02:00:00.000Z</published>
-    <updated>2016-03-14T03:30:26.309Z</updated>
+    <updated>2016-03-14T05:28:33.393Z</updated>
     
-    <content type="html">&lt;p&gt;#NP完全性&lt;/p&gt;
-&lt;p&gt;  到目前为止，我们讨论的几乎都是&lt;strong&gt;多项式时间算法&lt;/strong&gt;：对于规模n的输入，在最坏情况下的运行时间是$O(n^k)$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;  P: 能在多项式时间内解决的问题&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;NP完全性&quot;&gt;&lt;a href=&quot;#NP完全性&quot; class=&quot;headerlink&quot; title=&quot;NP完全性&quot;&gt;&lt;/a&gt;NP完全性&lt;/h1&gt;&lt;p&gt;  到目前为止，我们讨论的几乎都是&lt;strong&gt;多项式时间算法&lt;/strong&gt;：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;  P: 能在多项式时间内解决的问题&lt;/p&gt;
 &lt;p&gt;  NP:不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题&lt;/p&gt;
 &lt;p&gt;  NPC:NP完全问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的NP问题，即解决了此NPC题，所有NP问题也都得到解决。&lt;/p&gt;
 &lt;p&gt;  NP难问题:所有NP问题在多项式时间内都能约化(Reducibility)到它的问题(不一定是NP问题)。&lt;/p&gt;
@@ -262,7 +266,7 @@
 &lt;p&gt;  规约的概念：若我们拥有一个已证明难以解决的问题，我们又获得另一个相似的新问题。我们可合理推想此新问题亦是难以解决的。我们可由下列谬证法得证：若此新问题本质上容易解答，且若我们可展示每个旧问题的实例可经由一系列转换步骤变成新问题的实例，则旧问题便容易解决，因此得到悖论。因此新问题可知亦难以解决。&lt;/p&gt;
 &lt;p&gt;  如何证明某个问题是NP完全的？&lt;/p&gt;
 &lt;p&gt;  如果我们有一个已经证明的NP完全问题，如果我们可以把已证明的NP完全问题的任何实例都能多项式的规约到要要证明问题的实例，则能证明这个问题是NP完全的。即如果我们要证明一个问题A是NPC问题，则只需要首先证明他是NP问题，然后只要找一个你所知道的NPC问题规约到A即可。&lt;/p&gt;
-&lt;p&gt;#常见的NPC问题&lt;br&gt;  布尔可满足性问题（SAT）&lt;/p&gt;
+&lt;h1 id=&quot;常见的NPC问题&quot;&gt;&lt;a href=&quot;#常见的NPC问题&quot; class=&quot;headerlink&quot; title=&quot;常见的NPC问题&quot;&gt;&lt;/a&gt;常见的NPC问题&lt;/h1&gt;&lt;p&gt;  布尔可满足性问题（SAT）&lt;/p&gt;
 &lt;p&gt;  对于一个确定的逻辑电路，是否存在一种输入使得输出为真。是第一个被证明的NPC问题，直观的看出这应该是一个NPC问题，因为当电路有k个输入，就会有$2^k$种情况的不同取值。&lt;br&gt;  3SAT&lt;/p&gt;
 &lt;p&gt;  3和取范式：公式中每个字句都恰好有三个不同的’文字’，3SAT问题就是满足3和取范式的布尔公式是否可满足，3SAT问题可由SAT问题规约而来。&lt;br&gt;  分团问题（clique problem）&lt;/p&gt;
 &lt;p&gt;  无向图中的团是图中所有顶点的一个子集，团中的每一对顶点之间都有一条边相连，即一个团就是无向图中的一个完全子图。&lt;/p&gt;
@@ -274,13 +278,11 @@
 &lt;p&gt;  顶点覆盖问题（Vertex Cover）&lt;/p&gt;
 &lt;p&gt;  图的顶点覆盖是一些顶点的集合，使得图中的每一条边都至少接触集合中的一个顶点，如下图所示，图中红色顶点可以覆盖图中所有的边。寻找最小的顶点覆盖的问题称为顶点覆盖问题，它是一个NP完全问题。&lt;/p&gt;
 &lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/9wD7p7i.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  集合覆盖问题&lt;/p&gt;
-</content>
+&lt;h1 id=&quot;集合覆盖问题&quot;&gt;&lt;a href=&quot;#集合覆盖问题&quot; class=&quot;headerlink&quot; title=&quot;集合覆盖问题&quot;&gt;&lt;/a&gt;集合覆盖问题&lt;/h1&gt;</content>
     
     <summary type="html">
     
-      &lt;p&gt;#NP完全性&lt;/p&gt;
-&lt;p&gt;  到目前为止，我们讨论的几乎都是&lt;strong&gt;多项式时间算法&lt;/strong&gt;：对于规模n的输入，在最坏情况下的运行时间是$O(n^k)$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：&lt;br&gt;
+      &lt;h1 id=&quot;NP完全性&quot;&gt;&lt;a href=&quot;#NP完全性&quot; class=&quot;headerlink&quot; title=&quot;NP完全性&quot;&gt;&lt;/a&gt;NP完全性&lt;/h1&gt;&lt;p&gt;  到目前为止，我们讨论的几乎都是&lt;strong&gt;多项式时间算法&lt;/strong&gt;：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：&lt;br&gt;
     
     </summary>
     
@@ -294,26 +296,21 @@
     <link href="http://yoursite.com/2016/01/10/2016-01-10-%E7%BD%91%E7%BB%9C%E6%9C%80%E5%A4%A7%E6%B5%81/"/>
     <id>http://yoursite.com/2016/01/10/2016-01-10-网络最大流/</id>
     <published>2016-01-10T02:00:00.000Z</published>
-    <updated>2016-03-14T03:30:26.305Z</updated>
+    <updated>2016-03-14T05:34:41.215Z</updated>
     
     <content type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;网络流的定义&lt;/p&gt;
-&lt;p&gt; 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt; 假设 G = (V,E) 是一个有限的有向图，它的每条边$ \ (u,v) \in E $ 都有一个非负值实数的容量$c(u, v)$。如果$(u, v) \not \in E$，我们假设 $c(u, v) = 0$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $f:$：&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;网络流的定义&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; 容量限制（Capacity Constraints）：    $\ f(u, v) \le c(u, v)$一条边的流不能超过它的容量。
-&amp;gt;
-&amp;gt; 流量守恒（Flow Conservation）：    除非u = s或u = t，否则$\ \sum_{w \in V} f(u, w) = 0$，中间结点的流入等于流出。
-&amp;gt; 即流守恒意味着： $\ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $，对每个顶点$ \ {v \in V\setminus\{s,t\}}$。
-
-**最大流问题**就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。
-
-一个网络流如下图所示：
-
-![](http://i.imgur.com/a8NFZl3.png)
-&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;p&gt;在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;假设 G = (V,E) 是一个有限的有向图，它的每条边$ \ (u,v) \in E $ 都有一个非负值实数的容量$c(u, v)$。如果$(u, v) \not \in E$，我们假设 $c(u, v) = 0$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $f:$：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;容量限制（Capacity Constraints）：    $\ f(u, v) \le c(u, v)$一条边的流不能超过它的容量。&lt;/p&gt;
+&lt;p&gt;流量守恒（Flow Conservation）：    除非u = s或u = t，否则$\ \sum&lt;em&gt;{w \in V} f(u, w) = 0$，中间结点的流入等于流出。&lt;br&gt;即流守恒意味着： $\ \sum&lt;/em&gt;{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $，对每个顶点$ \ {v \in V\setminus{s,t}}$。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;最大流问题&lt;/strong&gt;就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。&lt;/p&gt;
+&lt;p&gt;一个网络流如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/a8NFZl3.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;网络最大流算法&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Ford-Fulkerson算法&lt;/p&gt;
@@ -335,34 +332,29 @@
 &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/RS7lQTw.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;最小割的概念：&lt;/p&gt;
 &lt;p&gt;割的定义： 一个s-t 的割 C = (S, T) 把 所有的结点集合V分成两部分S和T，其中源节点s ∈ S 汇点 t ∈ T. 割 C 的集合表示如下：&lt;/p&gt;
-&lt;p&gt;$${(u,v)\in E\ :\ u\in S,v\in T}$$&lt;/p&gt;
+&lt;p&gt;$${(u,v)\in E\:\ u\in S,v\in T}$$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;当割中的边被移掉时,则从源节点到汇结点的流量为0&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;割容量的定义：&lt;/p&gt;
-&lt;p&gt;$$c(S,T)=\sum \nolimits &lt;em&gt;{(u,v)\in S\times T}c&lt;/em&gt;{uv}$$&lt;/p&gt;
+&lt;p&gt;$$c(S,T)=\sum \nolimits&lt;em&gt;{(u,v)\in S\times T}c&lt;/em&gt;{uv}$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;&amp;gt; 最大流最小割定理：当残存网络中不含有任何增广路径时，网络中的流量f最大且等于最小割容量。
-
-如下图所示，网络的最大流为7，最小割由图中虚线组成，其中最小割的容量也为7.
-
-![](http://i.imgur.com/7Q718mT.png)
-
-Ford-Fulkerson算法求网络的最大流就是在每次的迭代中，寻找某条增广路径p，然后使用p来对流f进行修改，直到残存网络中不含有任何增广路径时，求得最大流f。
-
-Ford-Fulkerson算法伪代码：
-
-![](http://i.imgur.com/zsQkoBR.png)
-
-[Ford-Fulkerson算法Python实现](https://github.com/BUPTLdy/Algorithms/tree/master/Ford-Fulkerson)
-
-- Push-relabel algorithm
-
-Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点是相对难以理解。详细内容可以参考[维基百科 Push–relabel maximum flow algorithm](https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm#Concepts)
-
-[Push-relabel 算法Python实现](https://github.com/BUPTLdy/Algorithms/tree/master/Push-relabel)
-&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最大流最小割定理：当残存网络中不含有任何增广路径时，网络中的流量f最大且等于最小割容量。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如下图所示，网络的最大流为7，最小割由图中虚线组成，其中最小割的容量也为7.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/7Q718mT.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Ford-Fulkerson算法求网络的最大流就是在每次的迭代中，寻找某条增广路径p，然后使用p来对流f进行修改，直到残存网络中不含有任何增广路径时，求得最大流f。&lt;/p&gt;
+&lt;p&gt;Ford-Fulkerson算法伪代码：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/zsQkoBR.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/BUPTLdy/Algorithms/tree/master/Ford-Fulkerson&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ford-Fulkerson算法Python实现&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Push-relabel algorithm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点是相对难以理解。详细内容可以参考&lt;a href=&quot;https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm#Concepts&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;维基百科 Push–relabel maximum flow algorithm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/BUPTLdy/Algorithms/tree/master/Push-relabel&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Push-relabel 算法Python实现&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;网络最大流问题建模&lt;/p&gt;
 &lt;p&gt; 问题如下：&lt;/p&gt;
 &lt;p&gt; Support the you are a matchmaker and there are some boys and girls. Since the boys are alway more than girls, you can assume that if a girl express her love to a boy , the boy will always accept her. Now you know every girl’s thought(a girl may like more than one boy) and you want to make as much pairs as you can. show that you can do this using maximum flow algorithm.&lt;/p&gt;
@@ -386,8 +378,9 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;网络流的定义&lt;/p&gt;
-&lt;p&gt; 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。&lt;/p&gt;
+&lt;li&gt;网络流的定义&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。&lt;br&gt;
     
     </summary>
     
@@ -403,39 +396,40 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
     <link href="http://yoursite.com/2016/01/09/2016-01-09-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/"/>
     <id>http://yoursite.com/2016/01/09/2016-01-09-线性规划/</id>
     <published>2016-01-09T02:00:00.000Z</published>
-    <updated>2016-03-14T03:30:26.301Z</updated>
+    <updated>2016-03-14T05:39:11.549Z</updated>
     
     <content type="html">&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;什么是线性规划&lt;/p&gt;
 &lt;p&gt; 线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。&lt;/p&gt;
 &lt;p&gt; 线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;一个需要极大化的线性函数，例如：&lt;/p&gt;
-&lt;p&gt;$$c_1 x_1 + c_2 x_2$$&lt;/p&gt;
+&lt;p&gt;  $$c_1 x_1 + c_2 x_2$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;以下形式的问题约束，例如：&lt;/p&gt;
-&lt;p&gt;$$a_{11} x&lt;em&gt;1 + a&lt;/em&gt;{12} x_2 \le b_1$$&lt;/p&gt;
-&lt;p&gt;$$a_{21} x&lt;em&gt;1 + a&lt;/em&gt;{22} x_2  \le b_2$$&lt;/p&gt;
-&lt;p&gt;$$a_{31} x&lt;em&gt;1 + a&lt;/em&gt;{32} x_2  \le b_3$$&lt;/p&gt;
+&lt;p&gt;  $$a_{11} x&lt;em&gt;1 + a&lt;/em&gt;{12} x_2 \le b_1$$&lt;/p&gt;
+&lt;p&gt;  $$a_{21} x&lt;em&gt;1 + a&lt;/em&gt;{22} x_2  \le b_2$$&lt;/p&gt;
+&lt;p&gt;  $$a_{31} x&lt;em&gt;1 + a&lt;/em&gt;{32} x_2  \le b_3$$&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;非负变量，例如：&lt;/p&gt;
-&lt;p&gt;$$x_1 \ge 0 $$&lt;/p&gt;
-&lt;p&gt;$$x_2 \ge 0 $$&lt;/p&gt;
-&lt;p&gt;几个概念和定理介绍：&lt;/p&gt;
-&lt;p&gt;可行域：下图中蓝色部分的点都是线性规划问题的解(可行解)，蓝色区域是可行解的集合，称为可行域。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/0QzN1q2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;基可行解：出现在可行域顶点的可行解&lt;/p&gt;
+&lt;p&gt;  $$x_1 \ge 0 $$&lt;/p&gt;
+&lt;p&gt;  $$x_2 \ge 0 $$&lt;/p&gt;
+&lt;p&gt;  几个概念和定理介绍：&lt;/p&gt;
+&lt;p&gt;  可行域：下图中蓝色部分的点都是线性规划问题的解(可行解)，蓝色区域是可行解的集合，称为可行域。&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/0QzN1q2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  基可行解：出现在可行域顶点的可行解&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;定理1 若线性规划问题存在可行域，则其可行域是&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%87%B8%E9%9B%86&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;凸集&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;定理2 若可行域有界，线性规划问题的目标函数一定可以在其可行域的顶点上达到最优&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;通过上述定理得知，线性规划问题的解一定出现在可行域的顶点上，所以可以通过枚举所有的基可行解来找到最优解，但当变量个数很多时，这种办法是行不通的。&lt;/p&gt;
+&lt;p&gt;  通过上述定理得知，线性规划问题的解一定出现在可行域的顶点上，所以可以通过枚举所有的基可行解来找到最优解，但当变量个数很多时，这种办法是行不通的。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;单纯形法&lt;/p&gt;
-&lt;p&gt; 单纯形法是求解线性规划问题的通用方法。单纯形是美国数学家G.B.丹齐克于1947年首先提出来的。它的理论根据是：线性规划问题的可行域是$$n$$维向量空间$$R_n$$中的多面凸集，其最优值如果存在必在该凸集的某顶点处达到。顶点所对应的可行解称为基本可行解。&lt;/p&gt;
+&lt;p&gt; 单纯形法是求解线性规划问题的通用方法。单纯形是美国数学家G.B.丹齐克于1947年首先提出来的。它的理论根据是：线性规划问题的可行域是$n$维向量空间$R_n$中的多面凸集，其最优值如果存在必在该凸集的某顶点处达到。顶点所对应的可行解称为基本可行解。&lt;/p&gt;
 &lt;p&gt; 单纯形法的基本思想是：先找出一个基本可行解，对它进行鉴别，看是否是最优解；若不是，则按照一定法则转换到另一改进的基本可行解，再鉴别；若仍不是，则再转换，按此重复进行。因基本可行解的个数有限，故经有限次转换必能得出问题的最优解。如果问题无最优解也可用此法判别。&lt;/p&gt;
 &lt;p&gt; 单纯形法的一般解题步骤可归纳如下：&lt;/p&gt;
 &lt;p&gt; ①把线性规划问题的约束方程组表达成典范型方程组，找出基本可行解作为初始基可行解。&lt;/p&gt;
@@ -453,20 +447,20 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;线性规划解决实际问题&lt;/p&gt;
 &lt;p&gt; 问题如下：&lt;/p&gt;
-&lt;p&gt; With human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $i$ has a time window $[s_i,t_i]$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as $[s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n]$ satisfying $s_1 &amp;lt;t_1 &amp;lt; s_2 &amp;lt; t_2 &amp;lt; · · · &amp;lt; s_n &amp;lt; t_n$, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.&lt;/p&gt;
+&lt;p&gt; With human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $i$ has a time window $[s_i,t_i]$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as [s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n] satisfying s_1 &amp;lt;t_1 &amp;lt; s_2 &amp;lt; t_2 &amp;lt; · · · &amp;lt; s_n &amp;lt; t_n, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.&lt;/p&gt;
 &lt;p&gt; Please formulate this problem as an LP.&lt;/p&gt;
 &lt;p&gt; 题目的大概意思是每架飞机都只能在自己固定的时间窗内降落，为了安全起见两架飞机之间的降落时间间隔越大越好，然后给你n架飞机的降落时间窗口，要求n架飞机的最小降落间隔的最大值。&lt;/p&gt;
 &lt;p&gt; 这个问题的建模起来很简单，令$x_i$表示第$i$架飞机的降落时间，则需要满足约束条件：&lt;/p&gt;
 &lt;p&gt; $$s_i\leq x_i \leq t_i$$&lt;/p&gt;
 &lt;p&gt; 然后我们的目标是要求最小间隔的最大值，所以我们的目标函数为：&lt;/p&gt;
-&lt;p&gt; $$max (min(x&lt;em&gt;{i+1}-x&lt;/em&gt;{i}))$$&lt;/p&gt;
-&lt;p&gt; 那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有$y\leq x&lt;em&gt;{i+1}-x&lt;/em&gt;{i} $，那么$y$不就是$x&lt;em&gt;{i+1}-x&lt;/em&gt;{i}$的最小值吗？&lt;/p&gt;
+&lt;p&gt; $$max(min(x_{i+1}-x_i))$$&lt;/p&gt;
+&lt;p&gt; 那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有&lt;br&gt;$y\leq x&lt;em&gt;{i+1}-x&lt;/em&gt;{i}$，那么$y$不就是$x&lt;em&gt;{i+1}-x&lt;/em&gt;{i}$的最小值吗？&lt;/p&gt;
 &lt;p&gt; 所以最终我们可以把问题形式化为:&lt;/p&gt;
-&lt;p&gt; $$\begin{array}{cll}&lt;/p&gt;
+&lt;p&gt; \begin{array}{cll}&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;max &amp;amp; y &amp;amp; \\
 s.t.&amp;amp; s_i\leq x_i \leq t_i&amp;amp; i=1,2,3 \cdots n\\
 &amp;amp; y\leq x_{i+1}-x_i &amp;amp; i=1,2,3 \cdots n
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; \end{array}$$&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt; \end{array}&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
 &lt;p&gt; 维基百科 线性规划：&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92&quot; title=&quot;维基百科 线性规划&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92&lt;/a&gt;&lt;/p&gt;

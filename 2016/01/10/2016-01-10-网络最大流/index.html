@@ -9,21 +9,27 @@
   <title>网络最大流 [Max Flow] | Ldy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="网络流的定义
- 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
+
+在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络最大流 [Max Flow]">
 <meta property="og:url" content="http://yoursite.com/2016/01/10/2016-01-10-网络最大流/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description" content="网络流的定义
- 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
+
+在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
+<meta property="og:image" content="http://i.imgur.com/a8NFZl3.png">
 <meta property="og:image" content="http://i.imgur.com/RS7lQTw.png">
+<meta property="og:image" content="http://i.imgur.com/7Q718mT.png">
+<meta property="og:image" content="http://i.imgur.com/zsQkoBR.png">
 <meta property="og:image" content="http://i.imgur.com/9hAGUgE.png">
-<meta property="og:updated_time" content="2016-03-14T03:30:26.305Z">
+<meta property="og:updated_time" content="2016-03-14T05:34:41.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络最大流 [Max Flow]">
 <meta name="twitter:description" content="网络流的定义
- 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
-<meta name="twitter:image" content="http://i.imgur.com/RS7lQTw.png">
+
+在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用">
+<meta name="twitter:image" content="http://i.imgur.com/a8NFZl3.png">
   
     <link rel="alternative" href="/atom.xml" title="Ldy&#39;s Blog" type="application/atom+xml">
   
@@ -258,23 +264,18 @@
       
           
         <ol>
-<li><p>网络流的定义</p>
-<p> 在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。</p>
-<a id="more"></a>
-<p> 假设 G = (V,E) 是一个有限的有向图，它的每条边$ \ (u,v) \in E $ 都有一个非负值实数的容量$c(u, v)$。如果$(u, v) \not \in E$，我们假设 $c(u, v) = 0$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $f:$：</p>
-</li>
+<li>网络流的定义</li>
 </ol>
-<pre><code>&gt; 容量限制（Capacity Constraints）：    $\ f(u, v) \le c(u, v)$一条边的流不能超过它的容量。
-&gt;
-&gt; 流量守恒（Flow Conservation）：    除非u = s或u = t，否则$\ \sum_{w \in V} f(u, w) = 0$，中间结点的流入等于流出。
-&gt; 即流守恒意味着： $\ \sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $，对每个顶点$ \ {v \in V\setminus\{s,t\}}$。
-
-**最大流问题**就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。
-
-一个网络流如下图所示：
-
-![](http://i.imgur.com/a8NFZl3.png)
-</code></pre><ol>
+<p>在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。<br><a id="more"></a></p>
+<p>假设 G = (V,E) 是一个有限的有向图，它的每条边$ \ (u,v) \in E $ 都有一个非负值实数的容量$c(u, v)$。如果$(u, v) \not \in E$，我们假设 $c(u, v) = 0$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $f:$：</p>
+<blockquote>
+<p>容量限制（Capacity Constraints）：    $\ f(u, v) \le c(u, v)$一条边的流不能超过它的容量。</p>
+<p>流量守恒（Flow Conservation）：    除非u = s或u = t，否则$\ \sum<em>{w \in V} f(u, w) = 0$，中间结点的流入等于流出。<br>即流守恒意味着： $\ \sum</em>{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $，对每个顶点$ \ {v \in V\setminus{s,t}}$。</p>
+</blockquote>
+<p><strong>最大流问题</strong>就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。</p>
+<p>一个网络流如下图所示：</p>
+<p><img src="http://i.imgur.com/a8NFZl3.png" alt=""></p>
+<ol>
 <li><p>网络最大流算法</p>
 <ul>
 <li><p>Ford-Fulkerson算法</p>
@@ -296,34 +297,29 @@
 <p><img src="http://i.imgur.com/RS7lQTw.png" alt=""></p>
 <p>最小割的概念：</p>
 <p>割的定义： 一个s-t 的割 C = (S, T) 把 所有的结点集合V分成两部分S和T，其中源节点s ∈ S 汇点 t ∈ T. 割 C 的集合表示如下：</p>
-<p>$${(u,v)\in E\ :\ u\in S,v\in T}$$</p>
+<p>$${(u,v)\in E\:\ u\in S,v\in T}$$</p>
 <p><strong>当割中的边被移掉时,则从源节点到汇结点的流量为0</strong>.</p>
 <p>割容量的定义：</p>
-<p>$$c(S,T)=\sum \nolimits <em>{(u,v)\in S\times T}c</em>{uv}$$</p>
+<p>$$c(S,T)=\sum \nolimits<em>{(u,v)\in S\times T}c</em>{uv}$$</p>
 </li>
 </ol>
 </li>
 </ol>
-<pre><code>&gt; 最大流最小割定理：当残存网络中不含有任何增广路径时，网络中的流量f最大且等于最小割容量。
-
-如下图所示，网络的最大流为7，最小割由图中虚线组成，其中最小割的容量也为7.
-
-![](http://i.imgur.com/7Q718mT.png)
-
-Ford-Fulkerson算法求网络的最大流就是在每次的迭代中，寻找某条增广路径p，然后使用p来对流f进行修改，直到残存网络中不含有任何增广路径时，求得最大流f。
-
-Ford-Fulkerson算法伪代码：
-
-![](http://i.imgur.com/zsQkoBR.png)
-
-[Ford-Fulkerson算法Python实现](https://github.com/BUPTLdy/Algorithms/tree/master/Ford-Fulkerson)
-
-- Push-relabel algorithm
-
-Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点是相对难以理解。详细内容可以参考[维基百科 Push–relabel maximum flow algorithm](https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm#Concepts)
-
-[Push-relabel 算法Python实现](https://github.com/BUPTLdy/Algorithms/tree/master/Push-relabel)
-</code></pre><ol>
+<blockquote>
+<p>最大流最小割定理：当残存网络中不含有任何增广路径时，网络中的流量f最大且等于最小割容量。</p>
+</blockquote>
+<p>如下图所示，网络的最大流为7，最小割由图中虚线组成，其中最小割的容量也为7.</p>
+<p><img src="http://i.imgur.com/7Q718mT.png" alt=""></p>
+<p>Ford-Fulkerson算法求网络的最大流就是在每次的迭代中，寻找某条增广路径p，然后使用p来对流f进行修改，直到残存网络中不含有任何增广路径时，求得最大流f。</p>
+<p>Ford-Fulkerson算法伪代码：</p>
+<p><img src="http://i.imgur.com/zsQkoBR.png" alt=""></p>
+<p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Ford-Fulkerson" target="_blank" rel="external">Ford-Fulkerson算法Python实现</a></p>
+<ul>
+<li>Push-relabel algorithm</li>
+</ul>
+<p>Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点是相对难以理解。详细内容可以参考<a href="https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm#Concepts" target="_blank" rel="external">维基百科 Push–relabel maximum flow algorithm</a></p>
+<p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Push-relabel" target="_blank" rel="external">Push-relabel 算法Python实现</a></p>
+<ol>
 <li><p>网络最大流问题建模</p>
 <p> 问题如下：</p>
 <p> Support the you are a matchmaker and there are some boys and girls. Since the boys are alway more than girls, you can assume that if a girl express her love to a boy , the boy will always accept her. Now you know every girl’s thought(a girl may like more than one boy) and you want to make as much pairs as you can. show that you can do this using maximum flow algorithm.</p>
@@ -353,7 +349,7 @@ Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点
         <p><span>本文标题:</span><a href="/2016/01/10/2016-01-10-网络最大流/">网络最大流 [Max Flow]</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月10日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年03月14日 - 11时30分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 13时34分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/10/2016-01-10-网络最大流/" title="网络最大流 [Max Flow]">http://yoursite.com/2016/01/10/2016-01-10-网络最大流/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/10/2016-01-10-网络最大流/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
