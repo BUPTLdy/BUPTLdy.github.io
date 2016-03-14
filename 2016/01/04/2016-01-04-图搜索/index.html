@@ -6,27 +6,21 @@
   
   <title>无信息图搜索策略 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。
- 图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。
- 扩展一个结点：应用规则到已有结点上，生成其所有后继扩展结点的过程。扩展节点可使定义的隐含图">
+  <meta name="description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="无信息图搜索策略">
 <meta property="og:url" content="http://yoursite.com/2016/01/04/2016-01-04-图搜索/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。
- 图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。
- 扩展一个结点：应用规则到已有结点上，生成其所有后继扩展结点的过程。扩展节点可使定义的隐含图">
+<meta property="og:description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
 <meta property="og:image" content="http://i.imgur.com/7EvIIuk.png">
 <meta property="og:image" content="http://i.imgur.com/2g5AKHd.png">
 <meta property="og:image" content="http://i.imgur.com/B3dYJla.jpg">
 <meta property="og:image" content="http://i.imgur.com/CrjoNGl.jpg">
 <meta property="og:image" content="http://i.imgur.com/LLE7pad.jpg">
-<meta property="og:updated_time" content="2016-03-14T03:26:46.177Z">
+<meta property="og:updated_time" content="2016-03-14T03:30:26.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无信息图搜索策略">
-<meta name="twitter:description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。
- 图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。
- 扩展一个结点：应用规则到已有结点上，生成其所有后继扩展结点的过程。扩展节点可使定义的隐含图">
+<meta name="twitter:description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
 <meta name="twitter:image" content="http://i.imgur.com/7EvIIuk.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -260,6 +254,7 @@
           
         <ol>
 <li><p>图搜索策略简介<br> 之前所说的<a href="http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/" target="_blank" rel="external">回溯搜索策略</a>是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。</p>
+<a id="more"></a>
 <p> 图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。</p>
 <p> 扩展一个结点：应用规则到已有结点上，生成其<strong>所有</strong>后继扩展结点的过程。扩展节点可使定义的隐含图生成为显式表示的状态空间图。</p>
 </li>
@@ -314,7 +309,7 @@
         <p><span>本文标题:</span><a href="/2016/01/04/2016-01-04-图搜索/">无信息图搜索策略</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月04日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年03月14日 - 11时26分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 11时30分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/04/2016-01-04-图搜索/" title="无信息图搜索策略">http://yoursite.com/2016/01/04/2016-01-04-图搜索/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/04/2016-01-04-图搜索/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -7,32 +7,23 @@
   <title>回溯策略[backtracking] | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="回溯策略（backtracking）简介
- 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：
-
-找到一个可能存在的正确的答案
-在尝试了所有可能的分步方">
+ 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回溯策略[backtracking]">
 <meta property="og:url" content="http://yoursite.com/2016/01/03/2016-01-03-回溯策略/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="回溯策略（backtracking）简介
- 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：
-
-找到一个可能存在的正确的答案
-在尝试了所有可能的分步方">
+ 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：">
 <meta property="og:image" content="http://i.imgur.com/775UH8f.png">
 <meta property="og:image" content="http://i.imgur.com/OYEeASd.png">
 <meta property="og:image" content="http://i.imgur.com/wIxeLH5.png">
 <meta property="og:image" content="http://i.imgur.com/f1QnRh3.png">
 <meta property="og:image" content="http://i.imgur.com/JCaTEEu.png">
-<meta property="og:updated_time" content="2016-02-07T02:38:26.769Z">
+<meta property="og:updated_time" content="2016-03-14T03:30:26.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回溯策略[backtracking]">
 <meta name="twitter:description" content="回溯策略（backtracking）简介
- 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：
-
-找到一个可能存在的正确的答案
-在尝试了所有可能的分步方">
+ 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：">
 <meta name="twitter:image" content="http://i.imgur.com/775UH8f.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -266,9 +257,8 @@
           
         <ol>
 <li><p>回溯策略（backtracking）简介</p>
-<p> 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：</p>
+<p> 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：<br><a id="more"></a>    - 找到一个可能存在的正确的答案</p>
 <ul>
-<li>找到一个可能存在的正确的答案</li>
 <li><p>在尝试了所有可能的分步方法后宣告该问题没有答案</p>
 <p>在最坏的情况下，回溯法会导致一次复杂度为指数时间的计算。</p>
 </li>
@@ -320,7 +310,7 @@
         <p><span>本文标题:</span><a href="/2016/01/03/2016-01-03-回溯策略/">回溯策略[backtracking]</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Ldy 的个人博客">Ldy</a></p>
         <p><span>发布时间:</span>2016年01月03日 - 10时00分</p>
-        <p><span>最后更新:</span>2016年02月07日 - 10时38分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 11时30分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/03/2016-01-03-回溯策略/" title="回溯策略[backtracking]">http://yoursite.com/2016/01/03/2016-01-03-回溯策略/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/03/2016-01-03-回溯策略/　　作者: Ldy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

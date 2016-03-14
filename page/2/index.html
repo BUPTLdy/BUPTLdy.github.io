@@ -241,52 +241,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ol>
+              <ol>
 <li><p>回溯策略（backtracking）简介</p>
-<p> 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：</p>
-<ul>
-<li>找到一个可能存在的正确的答案</li>
-<li><p>在尝试了所有可能的分步方法后宣告该问题没有答案</p>
-<p>在最坏的情况下，回溯法会导致一次复杂度为指数时间的计算。</p>
-</li>
-</ul>
-</li>
-<li><p>回溯策略应用：四皇后问题（Four queens puzzle）<br> 四皇后问题：在一个国际象棋中的 的棋盘上放置4个皇后， 为了使其中的任何2个皇后都不能相互“攻击”，希望寻求4个皇后的安全放置位置。 该问题的不能相互“攻击”相当于要求任意两个皇后不能在同一行、同一列或同一斜线上。</p>
-<p> 用回溯策略解决这一问题：</p>
-<ul>
-<li><p>首先放第一颗棋子<br><img src="http://i.imgur.com/775UH8f.png" alt=""></p>
-</li>
-<li><p>在符合规则的条件下摆放第二课棋子<br><img src="http://i.imgur.com/OYEeASd.png" alt=""></p>
-</li>
-<li><p>在规则下未找到解时，回溯<br><img src="http://i.imgur.com/wIxeLH5.png" alt=""></p>
-</li>
-<li><p>根据回溯策略，不断的试探，最终找到解为：<br><img src="http://i.imgur.com/f1QnRh3.png" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>回溯搜索中知识的利用</p>
-<p> 在回溯策略中，可以通过引入一些与问题有关的信息来加快搜索解的速度。对与N皇后问题来说，引入信息的基本思想是：</p>
-<pre><code>尽可能选取划去对角线上位置数最少的
-</code></pre><p>  <img src="http://i.imgur.com/JCaTEEu.png" alt=""></p>
-<p> 可以想象，如果把一个皇后放在棋盘的某个位置后，它所影响的棋盘位置数少，那么给以后放置皇后剩下的余地就越大，找到解的可能性也越大。</p>
-</li>
-<li><p>回溯算法存在的问题及解决方案</p>
-<p> 存在的问题：</p>
-<ul>
-<li>某一个分支具有无穷个状态，算法可能落入“深渊”，永远不能回溯</li>
-<li><p>某一个分支上具有环路，搜索在环路中一直进行，同样不能回溯</p>
-<p>解决方案：</p>
-</li>
-<li>对搜索深度进行限制，当当前状态的深度达到了限制深度时，算法将进行回溯</li>
-<li>记录从初始状态到当前状态的路径，如果出现过此路径，表明出现环路，算法回溯</li>
-</ul>
-</li>
-<li><p>参考</p>
-<p> 维基百科回溯法：<a href="https://zh.wikipedia.org/wiki/%E5%9B%9E%E6%BA%AF%E6%B3%95" title="维基百科：回溯法" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E5%9B%9E%E6%BA%AF%E6%B3%95</a></p>
-<p> 四皇后问题：<a href="http://jpkc.onlinesjtu.com/CourseShare/DataStructure/FlashInteractivePage/exp7.htm" title="四皇后问题" target="_blank" rel="external">http://jpkc.onlinesjtu.com/CourseShare/DataStructure/FlashInteractivePage/exp7.htm</a></p>
-</li>
-</ol>
-
+<p> 回溯法采用试错的思想，它尝试分步的去解决一个问题。在分步解决问题的过程中，当它通过尝试发现现有的分步答案不能得到有效的正确的解答的时候，它将取消上一步甚至是上几步的计算，再通过其它的可能的分步解答再次尝试寻找问题的答案。回溯法通常用最简单的递归方法来实现，在反复重复上述的步骤后可能出现两种情况：<br>
+          
       
     </div>
     
@@ -299,6 +257,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Artificial-Intelligence/">Artificial Intelligence</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/03/2016-01-03-回溯策略/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -342,52 +304,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ol>
+              <ol>
 <li><p>算法渐进记号</p>
 <ul>
 <li><p>Big $\Theta$ ：$\Theta$ 记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。</p>
 </li>
 <li><p>Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。</p>
-</li>
-<li><p>Big $\Omega$：表示一个函数的渐进下界，算法运行的最好情况。</p>
-</li>
-<li><p>Litter $o$: 和big $O$ 定义相似，区别主要是 big$O$ 提供的上界可能和函数是同阶的，litter $o$ 表示非渐进紧确的上界。</p>
-</li>
-</ul>
-</li>
-<li><p>举例</p>
-<p> <img src="http://i.imgur.com/GgsO2DX.png" alt=""></p>
-</li>
-<li><p>渐进记号与函数阶数的关系</p>
-<p> 其中$a，b$分别为函数$g(n)，f(n)$的阶数</p>
-<p> <img src="http://i.imgur.com/wUDSXQf.png" alt=""></p>
-<p> 通常Big $\Theta$ 用来描述算法的最好和最坏的运行时间，Big $O$描述算法的最坏运行时间，Big $\Omega$描述算法的最好运行时间，经常使用的是Big $O$， 用来衡量算法的时间复杂度和空间复杂度。</p>
-</li>
-<li><p>主定理(master theorem)求解递归式</p>
-<p>假设有递推关系式</p>
-<p>$$T(n) = a \; T!\left(\frac{n}{b}\right) + f(n)$$</p>
-<p>其中$ a \geq 1 \mbox{, } b &gt; 1$，n为问题规模，a为递推的子问题数量，n/b为每个子问题的规模（假设每个子问题的规模基本一样），f(n)为递推以外进行的计算工作，包含了问题分解和子问题合并的代价。</p>
-<ul>
-<li>情况一<br>如果存在常数$\epsilon &gt; 0$，有$f(n) = O\left( n^{\log_b (a) - \epsilon} \right)$，并且是多项式意义上的小于，那么</li>
-</ul>
-<p>$$T(n) = \Theta\left( n^{\log_b a} \right)$$</p>
-<ul>
-<li>情况二<br>如果存在常数k ≥ 0，有$f(n) = \Theta\left( n^{\log_b a} \log^{k} n \right)$那么</li>
-</ul>
-<p>$$T(n) = \Theta\left( n^{\log_b a} \log^{k+1} n \right)$$</p>
-<ul>
-<li>情况三<br>如果存在常数$\epsilon &gt; 0$，有$f(n) = \Omega\left( n^{\log_b (a) + \epsilon} \right)$，并且是多项式意义上的大于，同时存在常数c &lt; 1以及充分大的n，满足</li>
-</ul>
-<p>$$a f\left( \frac{n}{b} \right) \le c f(n)$$</p>
-<p>那么</p>
-<p>$$T\left(n \right) = \Theta \left(f \left(n \right) \right)$$</p>
-<p>简单举例：</p>
-<p>$$T(n) = 9 \; T!\left(\frac{n}{3}\right) + n$$</p>
-<p>对这个递归式，有a=9,b=3,f(n)=n,因此有$n^{log_b a}=n^2&gt;n$,所以复杂度为：</p>
-<p>$$T(n)=\Theta(n^2)$$</p>
-</li>
-</ol>
-
+          
       
     </div>
     
@@ -400,6 +323,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithms/">Algorithms</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/29/2015-12-29-算法复杂度渐进标号/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
