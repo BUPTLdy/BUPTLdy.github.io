@@ -495,43 +495,41 @@ s.t.&amp;amp; s_i\leq x_i \leq t_i&amp;amp; i=1,2,3 \cdots n\\
     <link href="http://yoursite.com/2016/01/08/2016-01-08-%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/"/>
     <id>http://yoursite.com/2016/01/08/2016-01-08-贪心策略/</id>
     <published>2016-01-08T02:00:00.000Z</published>
-    <updated>2016-03-14T03:30:26.297Z</updated>
+    <updated>2016-03-14T04:24:51.718Z</updated>
     
-    <content type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;贪心算法(greedy algorithm)&lt;/p&gt;
-&lt;p&gt; 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是&lt;a href=&quot;http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;动态规划&lt;/a&gt;问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt; 如果我们能够证明要解决的问题具有如下两个性质，那么我们向贪心算法迈出了重要一步。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;贪心选择性质&lt;/p&gt;
-&lt;p&gt;最关键的要素是看问题是否具有贪心选择性质：如果我们可以通过做出局部最优选择来构造全局解。也就是说，在进行选择时，我们直接选择在当前问题看起来最优的情况，而不必考虑子问题的解。&lt;/p&gt;
-&lt;p&gt;这也是贪心算法与动态规划的不同之处，动态规划中每次的选择依赖于子问题的解，因此通常使用自底向上的方式求解动态规划问题。在贪心算法中，我们总是做出当时看起来是最佳的选择，然后求解剩下的&lt;strong&gt;唯一子问题&lt;/strong&gt;。贪心算法在选择时可能依赖以前的选择，但不依赖任何将来的选择或者子问题的解。因此，&lt;strong&gt;动态规划算法是自底向上进行计算的，而每一个贪心算法通常时自顶向下的，进行一次又一次选择，将给定问题的实例变得更小。&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;最优子结构&lt;/p&gt;
-&lt;p&gt;如果一个问题的最优解包含其子问题的最优解，则称此问题具有最优子结构性质。此性质是能否应用动态规划和贪心算法的关键要素。当应用于贪心算法时，我们可以假定，&lt;strong&gt;通过对原问题应用贪心选择就可以得到子问题&lt;/strong&gt;，我们所要做的工作就是论证：将子问题的最优解与贪心选择组合在一起就能得到原始问题的最优解。&lt;/p&gt;
-&lt;p&gt;经过上述描述，我们可以按如下步骤设计贪心算法：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;将最优化问题转化成这样的形式：对其做出一次选择后，只剩下一个子问题需要求解。&lt;/li&gt;
-&lt;li&gt;证明做出贪心选择后，原问题总是存在最优解，即贪心选择总是安全的。&lt;/li&gt;
-&lt;li&gt;证明做出贪心选择后，剩余的子问题满足性质:其最优解与贪心选择组合即可得到原问题的最优解。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;问题举例：Havel-Hakimi定理&lt;/p&gt;
-&lt;p&gt; Given a list of $n$ natural numbers $d_1, d_2,…,d_n$, show how to decide in polynomial time whether there exists an undirected graph G = (V, E) whose node degrees are precisely the numbers $d_1, d_2, \cdots , d_n$. G should not contain multiple edges between the same pair of nodes, or “ loop” edges with both endpoints equal to the same node.&lt;/p&gt;
-&lt;p&gt; 题目的大概意思是：给你一组数字序列，数字的大小为图的度，问这些数字的度能够构成一个图（无向无环图），如果可以，则称该序列是可图的。&lt;/p&gt;
-&lt;p&gt; 怎么用贪心算法分析：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;首先由无向图的性质分析，如果所有的度之和为奇数，显然不能构成无向图&lt;/li&gt;
-&lt;li&gt;如果最大的度比序列的长度还大，明显也不能构成图，因为就算所有的结点和它相连，度的值也为n-1小于n。&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;贪心选择:由&lt;strong&gt;非负数组成的非增序列&lt;/strong&gt;$s:d_1,d_2,\cdots,d_n（n&amp;gt;=2，d_1&amp;gt;=1）$是可图的，当仅当序列&lt;/p&gt;
-&lt;p&gt;$$s1：d_2-1，d&lt;em&gt;3-1，···，d&lt;/em&gt;{d&lt;em&gt;1+1}-1,d&lt;/em&gt;{d1+2}，····，d_n$$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;是可图的。序列s1中有n-1个非负数，s序列排在$d_1$之后的前$d_1$个数减1后构成s1中的前$d_1$个数。
+    <content type="html">&lt;h1 id=&quot;贪心算法-greedy-algorithm&quot;&gt;&lt;a href=&quot;#贪心算法-greedy-algorithm&quot; class=&quot;headerlink&quot; title=&quot;贪心算法(greedy algorithm)&quot;&gt;&lt;/a&gt;贪心算法(greedy algorithm)&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是[动态规划](http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/)问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？
+&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;pre&gt;&lt;code&gt;如果我们能够证明要解决的问题具有如下两个性质，那么我们向贪心算法迈出了重要一步。
+
+- 贪心选择性质
+
+最关键的要素是看问题是否具有贪心选择性质：如果我们可以通过做出局部最优选择来构造全局解。也就是说，在进行选择时，我们直接选择在当前问题看起来最优的情况，而不必考虑子问题的解。
+
+这也是贪心算法与动态规划的不同之处，动态规划中每次的选择依赖于子问题的解，因此通常使用自底向上的方式求解动态规划问题。在贪心算法中，我们总是做出当时看起来是最佳的选择，然后求解剩下的**唯一子问题**。贪心算法在选择时可能依赖以前的选择，但不依赖任何将来的选择或者子问题的解。因此，**动态规划算法是自底向上进行计算的，而每一个贪心算法通常时自顶向下的，进行一次又一次选择，将给定问题的实例变得更小。**
+
+- 最优子结构
+
+如果一个问题的最优解包含其子问题的最优解，则称此问题具有最优子结构性质。此性质是能否应用动态规划和贪心算法的关键要素。当应用于贪心算法时，我们可以假定，**通过对原问题应用贪心选择就可以得到子问题**，我们所要做的工作就是论证：将子问题的最优解与贪心选择组合在一起就能得到原始问题的最优解。
+
+经过上述描述，我们可以按如下步骤设计贪心算法：
+
+1. 将最优化问题转化成这样的形式：对其做出一次选择后，只剩下一个子问题需要求解。
+2. 证明做出贪心选择后，原问题总是存在最优解，即贪心选择总是安全的。
+3. 证明做出贪心选择后，剩余的子问题满足性质:其最优解与贪心选择组合即可得到原问题的最优解。
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;问题举例：Havel-Hakimi定理&quot;&gt;&lt;a href=&quot;#问题举例：Havel-Hakimi定理&quot; class=&quot;headerlink&quot; title=&quot;问题举例：Havel-Hakimi定理&quot;&gt;&lt;/a&gt;问题举例：Havel-Hakimi定理&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;Given a list of $n$ natural numbers $d_1, d_2,...,d_n$, show how to decide in polynomial time whether there exists an undirected graph G = (V, E) whose node degrees are precisely the numbers $d_1, d_2, \cdots , d_n$. G should not contain multiple edges between the same pair of nodes, or “ loop” edges with both endpoints equal to the same node.
+
+题目的大概意思是：给你一组数字序列，数字的大小为图的度，问这些数字的度能够构成一个图（无向无环图），如果可以，则称该序列是可图的。
+
+怎么用贪心算法分析：
+
+1. 首先由无向图的性质分析，如果所有的度之和为奇数，显然不能构成无向图
+2. 如果最大的度比序列的长度还大，明显也不能构成图，因为就算所有的结点和它相连，度的值也为n-1小于n。
+3. 贪心选择:由**非负数组成的非增序列** $s:d_1,d_2,\cdots,d_n（n&amp;gt;=2，d_1&amp;gt;=1$是可图的，当仅当序列
+
+$$s1：d_2-1,d_3-1,···,d_{d_1+1}-1,d_{d1+2},····,d_n$$
+
+
+是可图的。序列s1中有n-1个非负数，s序列排在$d_1$之后的前$d_1$个数减1后构成s1中的前$d_1$个数。
 
 判定过程：一直循环直到当前序列出现负数（即不是可图的情况）或者当前序列全为0 （可图）时退出。
 
@@ -540,14 +538,12 @@ s.t.&amp;amp; s_i\leq x_i \leq t_i&amp;amp; i=1,2,3 \cdots n\\
 Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到小排序)
 
 ![](http://i.imgur.com/K3Qj1gw.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;问题举例：霍夫曼编码-Huffman-Coding&quot;&gt;&lt;a href=&quot;#问题举例：霍夫曼编码-Huffman-Coding&quot; class=&quot;headerlink&quot; title=&quot;问题举例：霍夫曼编码(Huffman Coding)&quot;&gt;&lt;/a&gt;问题举例：霍夫曼编码(Huffman Coding)&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;霍夫曼编码的具体原理就不仔细介绍了，可以参考维基百科[霍夫曼编码](https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81 &amp;quot;霍夫曼编码&amp;quot;)，主要在这里说说霍夫曼编码中怎么应用贪心算法。
+
+贪心选择：构造霍夫曼树的关键之处在于每一步执行的时候，并不知道这个低频率的字符会编码为多少，只能保证它在树的最下面，使用最长的编码，这样就不会影响频率高的字符的编码。而每一步贪心的过程，都将两个频率低的字符合成一个父字符，减小了问题的规模，这样这个策略就在不影响其它字符编码的情况下，不断缩小问题的规模，直到最终求解。
+
+[霍夫曼编码CPP代码下载](https://github.com/BUPTLdy/Algorithms/tree/master/huffman)
 &lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;问题举例：霍夫曼编码(Huffman Coding)&lt;/p&gt;
-&lt;p&gt; 霍夫曼编码的具体原理就不仔细介绍了，可以参考维基百科&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81&quot; title=&quot;霍夫曼编码&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;霍夫曼编码&lt;/a&gt;，主要在这里说说霍夫曼编码中怎么应用贪心算法。&lt;/p&gt;
-&lt;p&gt; 贪心选择：构造霍夫曼树的关键之处在于每一步执行的时候，并不知道这个低频率的字符会编码为多少，只能保证它在树的最下面，使用最长的编码，这样就不会影响频率高的字符的编码。而每一步贪心的过程，都将两个频率低的字符合成一个父字符，减小了问题的规模，这样这个策略就在不影响其它字符编码的情况下，不断缩小问题的规模，直到最终求解。&lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/BUPTLdy/Algorithms/tree/master/huffman&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;霍夫曼编码CPP代码下载&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;参考&lt;/p&gt;
 &lt;p&gt; 贪心算法如何体现在霍夫曼编码中？&lt;a href=&quot;https://www.zhihu.com/question/22112710/answer/56030576&quot; title=&quot;贪心算法如何体现在霍夫曼编码中？&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.zhihu.com/question/22112710/answer/56030576&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -556,9 +552,8 @@ Havel-Hakimi定理伪代码:(注意下面伪代码中的sort()排序是从大到
     
     <summary type="html">
     
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;贪心算法(greedy algorithm)&lt;/p&gt;
-&lt;p&gt; 贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是&lt;a href=&quot;http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/&quot;&gt;动态规划&lt;/a&gt;问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？&lt;/p&gt;
+      &lt;h1 id=&quot;贪心算法-greedy-algorithm&quot;&gt;&lt;a href=&quot;#贪心算法-greedy-algorithm&quot; class=&quot;headerlink&quot; title=&quot;贪心算法(greedy algorithm)&quot;&gt;&lt;/a&gt;贪心算法(greedy algorithm)&lt;/h1&gt;&lt;pre&gt;&lt;code&gt;贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是[动态规划](http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/)问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
