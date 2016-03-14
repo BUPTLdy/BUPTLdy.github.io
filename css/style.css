@@ -2865,32 +2865,3 @@ pre .javascript .function {
     padding: 20px 10px;
   }
 }
-body {
-  background: #808080;
-}
-.article-header {
-  border-left: 5px solid #666;
-}
-.article-more-link a {
-  background: #4d4d4d;
-  font-size: 0.8em;
-}
-.tagcloud a.color3 {
-  background: #7b5d5f;
-}
-.tagcloud a.color3:before {
-  border-right-color: #7b5d5f;
-}
-.tagcloud a.color5 {
-  background: #ba8f6c;
-}
-.tagcloud a.color5:before {
-  border-right-color: #ba8f6c;
-}
-.tagcloud a.color5:hover {
-  background-color: #9c9;
-  border-color: #9c9;
-}
-.tagcloud a.color5:hover::before {
-  border-right-color: #9c9;
-}
