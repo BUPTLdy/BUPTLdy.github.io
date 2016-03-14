@@ -60,7 +60,6 @@
 
 
 <meta name="description" content="算法渐进记号
-
 Big $\Theta$ ：$\Theta$ 记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。
 
 Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。">
@@ -69,17 +68,15 @@ Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况�
 <meta property="og:url" content="http://yoursite.com/2015/12/29/2015-12-29-算法复杂度渐进标号/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description" content="算法渐进记号
-
 Big $\Theta$ ：$\Theta$ 记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。
 
 Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。">
 <meta property="og:image" content="http://i.imgur.com/GgsO2DX.png">
 <meta property="og:image" content="http://i.imgur.com/wUDSXQf.png">
-<meta property="og:updated_time" content="2016-03-14T03:30:23.221Z">
+<meta property="og:updated_time" content="2016-03-14T09:32:57.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法渐进记号及主定理">
 <meta name="twitter:description" content="算法渐进记号
-
 Big $\Theta$ ：$\Theta$ 记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。
 
 Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。">
@@ -332,9 +329,7 @@ Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况�
       
 
       
-        <ol>
-<li><p>算法渐进记号</p>
-<ul>
+        <h1 id="算法渐进记号"><a href="#算法渐进记号" class="headerlink" title="算法渐进记号"></a>算法渐进记号</h1><ul>
 <li><p>Big $\Theta$ ：$\Theta$ 记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。</p>
 </li>
 <li><p>Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。</p>
@@ -344,17 +339,11 @@ Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况�
 <li><p>Litter $o$: 和big $O$ 定义相似，区别主要是 big$O$ 提供的上界可能和函数是同阶的，litter $o$ 表示非渐进紧确的上界。</p>
 </li>
 </ul>
-</li>
-<li><p>举例</p>
-<p> <img src="http://i.imgur.com/GgsO2DX.png" alt=""></p>
-</li>
-<li><p>渐进记号与函数阶数的关系</p>
-<p> 其中$a，b$分别为函数$g(n)，f(n)$的阶数</p>
-<p> <img src="http://i.imgur.com/wUDSXQf.png" alt=""></p>
-<p> 通常Big $\Theta$ 用来描述算法的最好和最坏的运行时间，Big $O$描述算法的最坏运行时间，Big $\Omega$描述算法的最好运行时间，经常使用的是Big $O$， 用来衡量算法的时间复杂度和空间复杂度。</p>
-</li>
-<li><p>主定理(master theorem)求解递归式</p>
-<p>假设有递推关系式</p>
+<h1 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h1><p><img src="http://i.imgur.com/GgsO2DX.png" alt=""></p>
+<h1 id="渐进记号与函数阶数的关系"><a href="#渐进记号与函数阶数的关系" class="headerlink" title="渐进记号与函数阶数的关系"></a>渐进记号与函数阶数的关系</h1><p>其中$a，b$分别为函数$g(n)，f(n)$的阶数</p>
+<p><img src="http://i.imgur.com/wUDSXQf.png" alt=""></p>
+<p>通常Big $\Theta$ 用来描述算法的最好和最坏的运行时间，Big $O$描述算法的最坏运行时间，Big $\Omega$描述算法的最好运行时间，经常使用的是Big $O$， 用来衡量算法的时间复杂度和空间复杂度。</p>
+<h1 id="主定理-master-theorem-求解递归式"><a href="#主定理-master-theorem-求解递归式" class="headerlink" title="主定理(master theorem)求解递归式"></a>主定理(master theorem)求解递归式</h1><p>假设有递推关系式</p>
 <p>$$T(n) = a \; T!\left(\frac{n}{b}\right) + f(n)$$</p>
 <p>其中$ a \geq 1 \mbox{, } b &gt; 1$，n为问题规模，a为递推的子问题数量，n/b为每个子问题的规模（假设每个子问题的规模基本一样），f(n)为递推以外进行的计算工作，包含了问题分解和子问题合并的代价。</p>
 <ul>
@@ -375,8 +364,6 @@ Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况�
 <p>$$T(n) = 9 \; T!\left(\frac{n}{3}\right) + n$$</p>
 <p>对这个递归式，有a=9,b=3,f(n)=n,因此有$n^{log_b a}=n^2&gt;n$,所以复杂度为：</p>
 <p>$$T(n)=\Theta(n^2)$$</p>
-</li>
-</ol>
 
       
     </div>
@@ -557,7 +544,7 @@ Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况�
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#算法渐进记号"><span class="nav-number">1.</span> <span class="nav-text">算法渐进记号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#举例"><span class="nav-number">2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#渐进记号与函数阶数的关系"><span class="nav-number">3.</span> <span class="nav-text">渐进记号与函数阶数的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#主定理-master-theorem-求解递归式"><span class="nav-number">4.</span> <span class="nav-text">主定理(master theorem)求解递归式</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

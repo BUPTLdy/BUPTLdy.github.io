@@ -59,25 +59,23 @@
 
 
 
-<meta name="description" content="分治法简介：
- 使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
- 分治模式在每层的递归时有三个步骤：">
+<meta name="description" content="分治法简介：使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
+分治模式在每层的递归时有三个步骤：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分治策略[Divide and Conquer]">
 <meta property="og:url" content="http://yoursite.com/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="分治法简介：
- 使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
- 分治模式在每层的递归时有三个步骤：">
+<meta property="og:description" content="分治法简介：使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
+分治模式在每层的递归时有三个步骤：">
 <meta property="og:image" content="http://i.imgur.com/umuDsOg.png">
 <meta property="og:image" content="http://i.imgur.com/33u5yyl.gif">
 <meta property="og:image" content="http://i.imgur.com/mDpKIUp.png">
-<meta property="og:updated_time" content="2016-03-14T03:30:26.269Z">
+<meta property="og:image" content="http://i.imgur.com/wJtHUMG.gif">
+<meta property="og:updated_time" content="2016-03-14T09:25:56.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分治策略[Divide and Conquer]">
-<meta name="twitter:description" content="分治法简介：
- 使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
- 分治模式在每层的递归时有三个步骤：">
+<meta name="twitter:description" content="分治法简介：使用分治法的前提是问题在结构上是递归的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。
+分治模式在每层的递归时有三个步骤：">
 <meta name="twitter:image" content="http://i.imgur.com/umuDsOg.png">
 
 
@@ -327,22 +325,16 @@
       
 
       
-        <ol>
-<li><p>分治法简介：</p>
-<p> 使用分治法的前提是问题在结构上是<strong>递归</strong>的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。</p>
-<p> 分治模式在每层的递归时有三个步骤：</p>
-<a id="more"></a>
+        <h1 id="分治法简介："><a href="#分治法简介：" class="headerlink" title="分治法简介："></a>分治法简介：</h1><p>使用分治法的前提是问题在结构上是<strong>递归</strong>的，为了解决这一问题，算法一次或多次递归地调用自身以解决紧密相关的若干个子问题。</p>
+<p>分治模式在每层的递归时有三个步骤：<br><a id="more"></a></p>
+<pre><code>- **分解**原问题为若干子问题，这些子问题是原问题规模较小的实例。
+- **解决**这些子问题，递归的求解各子问题，当子问题规模最够小时，则直接求解。
+- **合并**这些子问题的解得到原始问题的解
+</code></pre><h1 id="Karatsuba-算法"><a href="#Karatsuba-算法" class="headerlink" title="Karatsuba 算法"></a><a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm" target="_blank" rel="external">Karatsuba</a> 算法</h1><p>Karatsuba算法是一种快速乘法算法，在1960年由<a href="https://en.wikipedia.org/wiki/Anatoly_Karatsuba" target="_blank" rel="external">Anatoly Karatsuba</a>提出。普通乘法的复杂度是$O(n^2)$,而Karatsuba算法的时间复杂度为$O(n^{1.585})$。</p>
+<p>现在运用分治的思想来阐述下Karatsuba算法的基本原理：</p>
 <ul>
-<li><strong>分解</strong>原问题为若干子问题，这些子问题是原问题规模较小的实例。</li>
-<li><strong>解决</strong>这些子问题，递归的求解各子问题，当子问题规模最够小时，则直接求解。</li>
-<li><strong>合并</strong>这些子问题的解得到原始问题的解</li>
+<li>分解：原本要计算两个大数x，y的乘法,先把x,y分解成如下两部分，其中B为基。</li>
 </ul>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Karatsuba_algorithm" target="_blank" rel="external">Karatsuba</a> 算法</p>
-<p> Karatsuba算法是一种快速乘法算法，在1960年由<a href="https://en.wikipedia.org/wiki/Anatoly_Karatsuba" target="_blank" rel="external">Anatoly Karatsuba</a>提出。普通乘法的复杂度是$O(n^2)$,而Karatsuba算法的时间复杂度为$O(n^{1.585})$。</p>
-<p> 现在运用分治的思想来阐述下Karatsuba算法的基本原理：</p>
-<ul>
-<li><p>分解：原本要计算两个大数x，y的乘法,先把x,y分解成如下两部分，其中B为基。</p>
 <p>$$x = x_1B^m + x_0$$</p>
 <p>$$y = y_1B^m + y_0$$</p>
 <p>其中 $x_0$ 和 $y_0$ 要小于 $B^m$。 现在$xy$可以写为:</p>
@@ -350,66 +342,36 @@
 <p>原本上面的式子中一共需要计算4次乘法（与基的幂次相乘只要进行移位操作就行），但是注意到有：</p>
 <p>$$z_1 = (x_1 + x_0)(y_1 + y_0) - z_2 - z_0$$</p>
 <p>所以每次只需要计算三次乘法即可。</p>
-</li>
-<li><p>解决：通过上述分解步骤，我们每次还是需要3次乘法运算，然而这三次乘法运算我们可以继续递归的调用Karatsuba算法，直到数字足够小可以直接运用普通乘法求解。</p>
-</li>
-<li><p>合并：Karatsuba算法并没有涉及合并问题，通过公式$xy = z_2B^{2m} + z_1B^m + z_0$把最终结果求出来即可。</p>
+<ul>
+<li>解决：通过上述分解步骤，我们每次还是需要3次乘法运算，然而这三次乘法运算我们可以继续递归的调用Karatsuba算法，直到数字足够小可以直接运用普通乘法求解。</li>
+<li>合并：Karatsuba算法并没有涉及合并问题，通过公式$xy = z_2B^{2m} + z_1B^m + z_0$把最终结果求出来即可。</li>
+</ul>
 <p>根据上述分析，当m=n/2时(n为乘数的长度)，递归的效率最高，所以递归公式为：</p>
 <p>$$T(n) = 3 T(\lceil n/2\rceil) + cn + d$$</p>
 <p>由递归公式根据<a href="http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/" target="_blank" rel="external">主定理</a>得到算法的复杂度为：</p>
 <p>$$T(n) = \Theta(n^{\log_2 3})$$</p>
 <p>Karatsuba算法伪代码：</p>
-</li>
-</ul>
-</li>
-</ol>
-<pre><code>        procedure karatsuba(num1, num2)
-          if (num1 &lt; 10) or (num2 &lt; 10)
-            return num1*num2
-          /* calculates the size of the numbers */
-          m = max(size_base10(num1), size_base10(num2))
-         m2 = m/2
-          /* split the digit sequences about the middle */
-         high1, low1 = split_at(num1, m2)
-          high2, low2 = split_at(num2, m2)
-          /* 3 calls made to numbers approximately half the size */
-          z0 = karatsuba(low1,low2)
-          z1 = karatsuba((low1+high1),(low2+high2))
-          z2 = karatsuba(high1,high2)
-          return (z2*10^(2*m2))+((z1-z2-z0)*10^(m2))+(z0)
-
-[Karatsuba算法代码下载(CPP)](https://github.com/BUPTLdy/Algorithms/tree/master/Karatsuba)
-</code></pre><ol>
-<li><p>归并排序(MergeSort)</p>
-<p> 还是根据分治策略的思想，分为三个步骤：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">procedure karatsuba(num1, num2)</span><br><span class="line">			if (num1 &lt; 10) or (num2 &lt; 10)</span><br><span class="line">		return num1*num2</span><br><span class="line">			/* calculates the size of the numbers */</span><br><span class="line">			m = max(size_base10(num1), size_base10(num2))</span><br><span class="line">		m2 = m/2</span><br><span class="line">			/* split the digit sequences about the middle */</span><br><span class="line">		high1, low1 = split_at(num1, m2)</span><br><span class="line">			high2, low2 = split_at(num2, m2)</span><br><span class="line">			/* 3 calls made to numbers approximately half the size */</span><br><span class="line">			z0 = karatsuba(low1,low2)</span><br><span class="line">			z1 = karatsuba((low1+high1),(low2+high2))</span><br><span class="line">			z2 = karatsuba(high1,high2)</span><br><span class="line">			return (z2*10^(2*m2))+((z1-z2-z0)*10^(m2))+(z0)</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Karatsuba" target="_blank" rel="external">Karatsuba算法代码下载(CPP)</a></p>
+<h1 id="归并排序-MergeSort"><a href="#归并排序-MergeSort" class="headerlink" title="归并排序(MergeSort)"></a>归并排序(MergeSort)</h1><p>还是根据分治策略的思想，分为三个步骤：</p>
 <ul>
 <li>分解：把要排序的n个元素序列分解成两个含有n/2个元素的子序列<br><img src="http://i.imgur.com/umuDsOg.png" alt=""></li>
 <li>解决：递归的调用分解，直到子序列能够直接排序</li>
-<li><p>合并：归并排好序的子序列，直到得到原始问题的解</p>
-<p>简单例子演示：<br><img src="http://i.imgur.com/33u5yyl.gif" alt=""></p>
-</li>
+<li>合并：归并排好序的子序列，直到得到原始问题的解</li>
 </ul>
-</li>
-</ol>
-<ol>
-<li><p>逆序数统计(Counting Inversion)</p>
-<p> 问题定义：输入n个不同的数字$a_1,a_2,\cdots ,a_n$，计算有多少对逆序数，逆序数的定义为数字下标$i<j$但是数字$a_i>a_j$。比如数字序列2，4，1，3，5，数字2在数字1的前面，但比数字1大，所以是一对逆序数，上述数字序列共有3组逆序数：（2，1），（4，1），（4，3）。</j$但是数字$a_i></p>
-<p> 统计逆序数要用到分治的思想，我们能很容易能想到先分解成两个子序列然后再递归求解每个子序列的逆序数。</p>
-<p> 现在主要的问题是解决，怎么计算两个不同子序列之间的逆序数，也就是怎么合并的问题，如下图所示，如果只是通过子序列之间每个数字的简单比较求解逆序数，则需要通过$n^2/4$次比较。所以时间复杂度为$T(n)=2T(n/2)+n^2/4=O(n^2)$(求解方法参考<a href="http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/" target="_blank" rel="external">主定理</a>)</p>
-<p> <img src="http://i.imgur.com/mDpKIUp.png" alt=""></p>
-<p> 所以这样和直接暴力解法相比，时间复杂度比没有降低，这时我们通过前面的归并排序想到，如果我们先对子序列进行排序(对子序列排序并不会影响两个子序列之间的逆序数对)，再统计子序列之间的逆序数。统计方法如下图所示，两个排好序的子序列之间进行逆序数统计，比如说第一个序列的第一个数字3比第二个序列的第一个数字2要大，则第一个序列3后面的数字肯定都要比2要大，所以直接统计出逆序数为6，根据这种思想可以把子序列之间的所有逆序数统计出来。</p>
-</li>
-</ol>
-<pre><code>![](http://i.imgur.com/wJtHUMG.gif)
+<p>简单例子演示：</p>
+<p><img src="http://i.imgur.com/33u5yyl.gif" alt=""></p>
+<h1 id="逆序数统计-Counting-Inversion"><a href="#逆序数统计-Counting-Inversion" class="headerlink" title="逆序数统计(Counting Inversion)"></a>逆序数统计(Counting Inversion)</h1><p>问题定义：输入n个不同的数字$a_1,a_2,\cdots ,a_n$，计算有多少对逆序数，逆序数的定义为数字下标$i<j$但是数字$a_i>a_j$。比如数字序列2，4，1，3，5，数字2在数字1的前面，但比数字1大，所以是一对逆序数，上述数字序列共有3组逆序数：（2，1），（4，1），（4，3）。</j$但是数字$a_i></p>
+<p>统计逆序数要用到分治的思想，我们能很容易能想到先分解成两个子序列然后再递归求解每个子序列的逆序数。</p>
+<p>现在主要的问题是解决，怎么计算两个不同子序列之间的逆序数，也就是怎么合并的问题，如下图所示，如果只是通过子序列之间每个数字的简单比较求解逆序数，则需要通过$n^2/4$次比较。所以时间复杂度为$T(n)=2T(n/2)+n^2/4=O(n^2)$(求解方法参考<a href="http://buptldy.github.io/2015/12/29/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/" target="_blank" rel="external">主定理</a>)</p>
+<p><img src="http://i.imgur.com/mDpKIUp.png" alt=""></p>
+<p>所以这样和直接暴力解法相比，时间复杂度比没有降低，这时我们通过前面的归并排序想到，如果我们先对子序列进行排序(对子序列排序并不会影响两个子序列之间的逆序数对)，再统计子序列之间的逆序数。统计方法如下图所示，两个排好序的子序列之间进行逆序数统计，比如说第一个序列的第一个数字3比第二个序列的第一个数字2要大，则第一个序列3后面的数字肯定都要比2要大，所以直接统计出逆序数为6，根据这种思想可以把子序列之间的所有逆序数统计出来。</p>
+<p><img src="http://i.imgur.com/wJtHUMG.gif" alt=""></p>
+<p>(gif generated by <a href="https://screentogif.codeplex.com/" target="_blank" rel="external">ScreenToGif</a>)</p>
+<p>上述合并求解逆序数的方法，先给子序列排序并同时计算逆序数，花费$O(n)$的时间，所以问题总的时间复杂度为：</p>
+<p>$$T(n)=2T(n/2)+O(n)=O(nlogn)$$</p>
+<p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Counting%20Inversion" target="_blank" rel="external">Counting Inversion算法代码下载(CPP)</a></p>
 
-(gif generated by [ScreenToGif](https://screentogif.codeplex.com/))
-
-上述合并求解逆序数的方法，先给子序列排序并同时计算逆序数，花费$O(n)$的时间，所以问题总的时间复杂度为：
-
-$$T(n)=2T(n/2)+O(n)=O(nlogn)$$
-
-[Counting Inversion算法代码下载(CPP)](https://github.com/BUPTLdy/Algorithms/tree/master/Counting%20Inversion)
-</code></pre>
       
     </div>
 
@@ -595,7 +557,7 @@ $$T(n)=2T(n/2)+O(n)=O(nlogn)$$
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分治法简介："><span class="nav-number">1.</span> <span class="nav-text">分治法简介：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Karatsuba-算法"><span class="nav-number">2.</span> <span class="nav-text">Karatsuba 算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序-MergeSort"><span class="nav-number">3.</span> <span class="nav-text">归并排序(MergeSort)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逆序数统计-Counting-Inversion"><span class="nav-number">4.</span> <span class="nav-text">逆序数统计(Counting Inversion)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

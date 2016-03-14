@@ -59,21 +59,21 @@
 
 
 
-<meta name="description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
+<meta name="description" content="图搜索策略简介之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="无信息图搜索策略">
 <meta property="og:url" content="http://yoursite.com/2016/01/04/2016-01-04-图搜索/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
+<meta property="og:description" content="图搜索策略简介之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
 <meta property="og:image" content="http://i.imgur.com/7EvIIuk.png">
 <meta property="og:image" content="http://i.imgur.com/2g5AKHd.png">
 <meta property="og:image" content="http://i.imgur.com/B3dYJla.jpg">
 <meta property="og:image" content="http://i.imgur.com/CrjoNGl.jpg">
 <meta property="og:image" content="http://i.imgur.com/LLE7pad.jpg">
-<meta property="og:updated_time" content="2016-03-14T03:30:26.265Z">
+<meta property="og:updated_time" content="2016-03-14T09:29:00.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无信息图搜索策略">
-<meta name="twitter:description" content="图搜索策略简介 之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
+<meta name="twitter:description" content="图搜索策略简介之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
 <meta name="twitter:image" content="http://i.imgur.com/7EvIIuk.png">
 
 
@@ -323,52 +323,39 @@
       
 
       
-        <ol>
-<li><p>图搜索策略简介<br> 之前所说的<a href="http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/" target="_blank" rel="external">回溯搜索策略</a>是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。</p>
-<a id="more"></a>
-<p> 图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。</p>
-<p> 扩展一个结点：应用规则到已有结点上，生成其<strong>所有</strong>后继扩展结点的过程。扩展节点可使定义的隐含图生成为显式表示的状态空间图。</p>
-</li>
-<li><p>图搜索算法</p>
-<p> 图搜索中的两个表：</p>
-<ul>
-<li>OPEN表：存放已经生成但未扩展的节点，最初只含初始结点</li>
-<li><p>CLOSED表：存放已经扩展的节点，其实设置为空表</p>
-<p>图搜索过程：<br><img src="http://i.imgur.com/7EvIIuk.png" alt=""></p>
+        <h1 id="图搜索策略简介"><a href="#图搜索策略简介" class="headerlink" title="图搜索策略简介"></a>图搜索策略简介</h1><p>之前所说的<a href="http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/" target="_blank" rel="external">回溯搜索策略</a>是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。<br><a id="more"></a><br>图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。</p>
+<p>扩展一个结点：应用规则到已有结点上，生成其<strong>所有</strong>后继扩展结点的过程。扩展节点可使定义的隐含图生成为显式表示的状态空间图。</p>
+<h1 id="2-图搜索算法"><a href="#2-图搜索算法" class="headerlink" title="2. 图搜索算法"></a>2. 图搜索算法</h1><p>图搜索中的两个表：</p>
+<pre><code>- OPEN表：存放已经生成但未扩展的节点，最初只含初始结点
+- CLOSED表：存放已经扩展的节点，其实设置为空表
+</code></pre><p>图搜索过程：<br><img src="http://i.imgur.com/7EvIIuk.png" alt=""></p>
 <p><strong>算法结束后，将生成一个图G，称为搜索图。同时由于每个节点都有一个指针指向父节点，这些指针指向的节点构成G的一个支撑树，称为搜索树。</strong></p>
 <p>从目标节点开始，将指针指向的状态回串起来，即找到一条解路径。</p>
 <p>例子：<br>下图中S结点为初始结点，把结点S放入OPEN表中，从S结点开始扩展，生成S结点的所有后继结点｛1，2，3｝，S结点已扩展，加入CLOSED表中，继续这一过程。<br><img src="http://i.imgur.com/2g5AKHd.png" alt=""></p>
 <p>从上述结果可以看出，最终OPEN表中的结点都是搜索树中的端结点，而CLOSED表中的结点为搜索树中的非端结点。</p>
 <p>对于搜索过程中3中的d）步骤，如果要搜索的隐含图是一棵树，则在它上一步中生成后继结点不可能是以前生成过的，即生成的后继结点不可能出现在OPEN，CLOSED表中，此时搜索图就是搜索树，因此不必进行指针的修改操作。如果要搜索的隐含图不是一棵树，则有可能存在生成的后继结点中的某一结点$m_k$已经在OPEN，CLOSED表中存在,<strong><em>这意味着此时又发现了达到$m_k$的新通路</em></strong>，这样就需要比较不用路径到达点$m_k$的代价，将指针修改到代价最小的路径上。</p>
-</li>
-</ul>
-</li>
-<li><p>无信息图搜索过程<br> 无信息搜索过程是在图搜索算法过程中第3点的e）步中排列OPEN表中结点的顺序时，没有使用与问题有关的知识，任意排列，通常有<em>深度优先</em>和<em>宽度优先</em>两种排列方式。</p>
+<h1 id="无信息图搜索过程"><a href="#无信息图搜索过程" class="headerlink" title="无信息图搜索过程"></a>无信息图搜索过程</h1><p>无信息搜索过程是在图搜索算法过程中第3点的e）步中排列OPEN表中结点的顺序时，没有使用与问题有关的知识，任意排列，通常有<em>深度优先</em>和<em>宽度优先</em>两种排列方式。</p>
 <ul>
-<li><p>深度优先</p>
+<li>深度优先</li>
+</ul>
 <p>所谓深度优先搜索就是在每次扩展一个结点时，选择到目前为止深度最深的结点优先扩展。在算法中的实现为：</p>
-<p>  把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的最前面，是深度大的结点优先扩展</p>
+<p>把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的最前面，是深度大的结点优先扩展</p>
 <p>因为新扩展出来的结点为子节点，子节点的深度要大于父节点的深度。一般情况下，深度优先搜索不但不能保证找到最优解，也不一定能保证找到解，这取决与问题的状态空间，如果问题的状态空间无限，可能会陷入“深渊”，而找不到解，因此也需要限制搜索的深度。</p>
 <p>举例：</p>
 <p>问题状态图G2如下图所示：</p>
 <p><img src="http://i.imgur.com/B3dYJla.jpg" alt=""></p>
 <p>根据深度优先原则，搜索过程为：（A–&gt;B–&gt;C–&gt;E–&gt;D–&gt;F–&gt;G）</p>
 <p><img src="http://i.imgur.com/CrjoNGl.jpg" alt=""></p>
-</li>
-<li><p>宽度优先</p>
+<ul>
+<li>宽度优先</li>
+</ul>
 <p>宽度优先搜索与深度优先相反，每次选择深度最浅的结点优先扩展，实现方法为：</p>
-<p>  把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的后面</p>
+<p>把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的后面</p>
 <p>当问题有解时，宽度优先算大一定能找到解，且在每段路径为单位代价时能找到最优解。</p>
 <p>根据宽度优先原则，对图G2的搜索过程为：（A–&gt;B–&gt;C–&gt;E–&gt;F–&gt;D–&gt;G）</p>
 <p><img src="http://i.imgur.com/LLE7pad.jpg" alt=""></p>
-</li>
-</ul>
-</li>
-<li><p>参考</p>
-<p> &lt;&lt;人工智能&gt;&gt;.马少平，朱小燕编著</p>
-<p> 图的遍历之 深度优先搜索和广度优先搜索:<a href="http://www.cnblogs.com/skywang12345/p/3711483.html" title="图的遍历之 深度优先搜索和广度优先搜索" target="_blank" rel="external">http://www.cnblogs.com/skywang12345/p/3711483.html</a></p>
-</li>
-</ol>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>&lt;&lt;人工智能&gt;&gt;.马少平，朱小燕编著</p>
+<p>图的遍历之 深度优先搜索和广度优先搜索:<a href="http://www.cnblogs.com/skywang12345/p/3711483.html" title="图的遍历之 深度优先搜索和广度优先搜索" target="_blank" rel="external">http://www.cnblogs.com/skywang12345/p/3711483.html</a></p>
 
       
     </div>
@@ -555,7 +542,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图搜索策略简介"><span class="nav-number">1.</span> <span class="nav-text">图搜索策略简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-图搜索算法"><span class="nav-number">2.</span> <span class="nav-text">2. 图搜索算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无信息图搜索过程"><span class="nav-number">3.</span> <span class="nav-text">无信息图搜索过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
