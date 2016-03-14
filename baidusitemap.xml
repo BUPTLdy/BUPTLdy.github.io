@@ -172,12 +172,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/01/03/2016-01-03-%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/</loc>
+    <loc>http://yoursite.com/2016/01/04/2016-01-04-%E5%9B%BE%E6%90%9C%E7%B4%A2/</loc>
     <lastmod>2016-03-14T03:30:26.265Z</lastmod>
     <data>
         <display>
-        <title>回溯策略[backtracking]</title>
-        <pubTime>2016-01-03T02:00:00.000Z</pubTime>
+        <title>无信息图搜索策略</title>
+        <pubTime>2016-01-04T02:00:00.000Z</pubTime>
         
         <tag>Algorithms </tag>
          
@@ -191,12 +191,12 @@
 
     
   <url>
-    <loc>http://yoursite.com/2016/01/04/2016-01-04-%E5%9B%BE%E6%90%9C%E7%B4%A2/</loc>
+    <loc>http://yoursite.com/2016/01/03/2016-01-03-%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/</loc>
     <lastmod>2016-03-14T03:30:26.265Z</lastmod>
     <data>
         <display>
-        <title>无信息图搜索策略</title>
-        <pubTime>2016-01-04T02:00:00.000Z</pubTime>
+        <title>回溯策略[backtracking]</title>
+        <pubTime>2016-01-03T02:00:00.000Z</pubTime>
         
         <tag>Algorithms </tag>
          
