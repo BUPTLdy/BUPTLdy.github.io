@@ -59,12 +59,12 @@
 
 
 
-<meta name="description" content="近似算法(Approximation algorithm)概念许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
+<meta name="description" content="概念许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="近似算法[Approximation algorithm]">
 <meta property="og:url" content="http://yoursite.com/2016/01/12/2016-01-12-近似算法/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="近似算法(Approximation algorithm)概念许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
+<meta property="og:description" content="概念许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
 <meta property="og:image" content="http://i.imgur.com/VPewCSm.png">
 <meta property="og:image" content="http://i.imgur.com/YDnGdKS.png">
 <meta property="og:image" content="http://i.imgur.com/A8GpRKX.png">
@@ -72,10 +72,10 @@
 <meta property="og:image" content="http://i.imgur.com/EkthQ3j.png">
 <meta property="og:image" content="http://i.imgur.com/TF3lU8i.gif">
 <meta property="og:image" content="http://i.imgur.com/CohPHo2.png">
-<meta property="og:updated_time" content="2016-03-14T08:47:28.154Z">
+<meta property="og:updated_time" content="2016-03-16T06:58:36.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="近似算法[Approximation algorithm]">
-<meta name="twitter:description" content="近似算法(Approximation algorithm)概念许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
+<meta name="twitter:description" content="概念许多具有卖际意义的问题都是 NP 完全问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：">
 <meta name="twitter:image" content="http://i.imgur.com/VPewCSm.png">
 
 
@@ -336,7 +336,7 @@
       
 
       
-        <h1 id="近似算法-Approximation-algorithm-概念"><a href="#近似算法-Approximation-algorithm-概念" class="headerlink" title="近似算法(Approximation algorithm)概念"></a>近似算法(Approximation algorithm)概念</h1><p>许多具有卖际意义的问题都是 <a href="http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/" target="_blank" rel="external">NP 完全</a>问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：<br><a id="more"></a></p>
+        <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p>许多具有卖际意义的问题都是 <a href="http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/" target="_blank" rel="external">NP 完全</a>问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：<br><a id="more"></a></p>
 <ul>
 <li>如果实际输入数据规模较小，则用指数级运行时的算法就能很好地解决问题；</li>
 <li>对于一些能在多项式时间内解决的特殊情况，可以把它们单独列出来求解；</li>
@@ -352,7 +352,7 @@
 <p>Give a 2-approximation algorithm for this problem and analysis the approximation factor.</p>
 <p>装箱问题：有n个物品，每个物品的尺寸在0-1之间，每个箱子的容量为1，问最少要用多少的箱子能把所有的物品装下？</p>
 <p>装箱问题可用整数规划描述如下，其中$y<em>i=1$表示箱子$i$被使用，否则表示没有使用，$x</em>{ij}=1$表示物品j放入箱子i中。</p>
-<p><img src="http://i.imgur.com/VPewCSm.png" alt=""></p>
+<p><img src="http://i.imgur.com/VPewCSm.png" style="display:block;margin:auto"></p>
 <p>其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。</p>
 <p>约束条件(2)表示：每个物品刚好放入一个箱子中。</p>
 <p>由<a href="http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/" target="_blank" rel="external">前文</a>已知，整数线性规划问题是NP完全的，即不能找到多项式时间算法来求解，所以需要寻找一种近似算法。</p>
@@ -392,8 +392,11 @@
 <ul>
 <li><p>对所有的输入物品序列I有:$NF(I) \leq 2OPT(I)$</p>
 <p>  如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$B_1+B_2&gt;1$，对于$B_3+B_4,\dots$都是这样。因此浪费的空间不达到一半，所以有$NF(I) \leq 2OPT(I)$。</p>
-<p>  <img src="http://i.imgur.com/A8GpRKX.png" alt=""></p>
 </li>
+</ul>
+<center><br>    <img src="http://i.imgur.com/A8GpRKX.png" alt=""><br></center>
+
+<ul>
 <li><p>存在一个输入物品序列I：$NF(I)\geq 2OPT(I)-2$</p>
 <p>  考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：</p>
 <p>  0.5，2/n，0.5，2/n，…，0.5，2/n</p>
@@ -426,9 +429,12 @@
 <p>Step2: 找出minimum spaning tree T1 of G1</p>
 <p>Step3: 建构G2(V’’, E’’), 将T1的每一个edge (u, v), 用它在Step1中所找的路径代入.</p>
 <p>Step4: 将G2中的cycle去掉.</p>
-<p><img src="http://i.imgur.com/CohPHo2.png" alt=""></p>
+<center><br>  <img src="http://i.imgur.com/CohPHo2.png" alt=""><br></center>
+
+
+
 <p>如上图所示, 首先我们先建立一个包含所有terminal 的complete distance graph G1, 然后找出它的minimum spanning tree T1, 然后将原路径代回, 得到G2, 最后将G2 的cycle移去, 得到total cost 为14 的Steine​​r Tree T. 因为此一近似算法为approximate algorithm, 所以它得到的steine​​r tree并一定都是optimum, 此例子的minimum Steine​​r tree的cost为13。</p>
-<p>复杂度和近似比：因为需要计算最短路径，所以时间复杂度为$O(M*N^2)$,其中$|V|=N$, $|S|=M$。</p>
+<p>复杂度和近似比：因为需要计算最短路径，所以时间复杂度为$O(M*N^2)$,其中 $|V|=N$ , $|S|=M$。</p>
 <p>近似比为2，证明可以参考：<a href="http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf" title="http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf" target="_blank" rel="external">http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf</a></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>演算法设计与分析Term Project：<a href="http://par.cse.nsysu.edu.tw/~homework/algo01/9034811/Report/index.htm" title="演算法设计与分析Term Project" target="_blank" rel="external">http://par.cse.nsysu.edu.tw/~homework/algo01/9034811/Report/index.htm</a></p>
 
@@ -555,7 +561,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -616,7 +622,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#近似算法-Approximation-algorithm-概念"><span class="nav-number">1.</span> <span class="nav-text">近似算法(Approximation algorithm)概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一维装箱问题-Bin-Packing"><span class="nav-number">2.</span> <span class="nav-text">一维装箱问题(Bin Packing)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Steiner-Tree-Problem"><span class="nav-number">3.</span> <span class="nav-text">Steiner Tree Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一维装箱问题-Bin-Packing"><span class="nav-number">2.</span> <span class="nav-text">一维装箱问题(Bin Packing)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Steiner-Tree-Problem"><span class="nav-number">3.</span> <span class="nav-text">Steiner Tree Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

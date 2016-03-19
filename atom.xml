@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-14T05:34:41.203Z</updated>
+  <updated>2016-03-19T02:11:39.936Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2016/03/19/1%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
+    <id>http://yoursite.com/2016/03/19/1虚拟环境/</id>
+    <published>2016-03-19T02:11:39.936Z</published>
+    <updated>2016-03-19T02:11:39.936Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;virtualenv简介&quot;&gt;&lt;a href=&quot;#virtualenv简介&quot; class=&quot;headerlink&quot; title=&quot;virtualenv简介&quot;&gt;&lt;/a&gt;virtualenv简介&lt;/h1&gt;&lt;p&gt;virtualenv是一个可以在同一计算机中隔离多个python版本的工具。有时，两个不同的项目可能需要不同版本的python，如 python2.6.6 / python3.0 ，但是如果都装到一起，经常会导致问题。所以需要一个工具能够将这两种或几种不同版本的环境隔离开来，需要哪个版本就切换到哪个版本做为默认版本。virtualenv既是满足这个需求的工具。它能够用于创建独立的Python环境，多个Python相互独立，互不影响，能够：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在没有权限的情况下安装新套件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;不同应用可以使用不同的套件版本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;套件升级不影响其他应用&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;安装：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install virtualenv&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;使用方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;创建环境&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;virtualenv [新环境名] #这会再当前目录下创建一个新环境目录&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可使用 virtualenv –help 来查看如何使用。可以使用参数 –python=/usr/bin/python3 来创建一个已经安装的的Python环境。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用环境&lt;/p&gt;
+&lt;p&gt;切换到新环境目录&lt;/p&gt;
+&lt;p&gt;执行：source ./bin/activate 来激活环境，激活后在命令行的前面会出现新环境名称&lt;/p&gt;
+&lt;p&gt;接下来可使用pip命令安装新环境需要的各种包。（pip命令在创建新环境时自带）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;退出虚拟环境&lt;/li&gt;
+&lt;li&gt;deactivate&lt;/li&gt;
+&lt;li&gt;如果要删除虚拟环境，只需退出虚拟环境后，删除对应的虚拟环境目录即可。不影响其他环境。&lt;/li&gt;
+&lt;li&gt;注意事项&lt;/li&gt;
+&lt;li&gt;如果没有启动虚拟环境，系统也安装了pip工具，那么套件将被安装在系统环境中，为了避免发生此事，可以在~/.bashrc文件中加上：export PIP_REQUIRE_VIRTUALENV=true&lt;/li&gt;
+&lt;li&gt;或者让在执行pip的时候让系统自动开启虚拟环境：export PIP_RESPECT_VIRTUALENV=true&lt;/li&gt;
+&lt;li&gt;virtualenvwrapper&lt;/li&gt;
+&lt;li&gt;virtualenvwrapper是virtualenv的扩展管理包，用于更方便管理虚拟环境，它可以做：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;将所有虚拟环境整合在一个目录下 管理（新增，删除，复制）虚拟环境 切换虚拟环境 安装 pip install virtualenvwrapper&lt;/p&gt;
+&lt;p&gt;使用方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;初始配置&lt;/li&gt;
+&lt;li&gt;默认virtualenvwrapper安装在/usr/local/bin下面，实际上需要运行virtualenvwrapper.sh文件才行；所以需要先进行配置一下：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;创建虚拟环境管理目录: mkdir $HOME/.local/virtualenvs 在~/.bashrc中添加行：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export VIRTUALENV_USE_DISTRIBUTE=1        #  总是使用 pip/distribute                                                                                   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export WORKON_HOME=$HOME/.local/virtualenvs       # 所有虚拟环境存储的目录             &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;if [ -e $HOME/.local/bin/virtualenvwrapper.sh ];then&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   source $HOME/.local/bin/virtualenvwrapper.sh                                                                                                         &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;else if [ -e /usr/local/bin/virtualenvwrapper.sh ];then                                                                                                     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         source /usr/local/bin/virtualenvwrapper.sh                                                                                                        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fi                                                                                                                                                     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fi                                                                                                                                                          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PIP_VIRTUALENV_BASE=$WORKON_HOME                                                                                                                     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PIP_RESPECT_VIRTUALENV=true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;启动 virtualenvwrapper: source ~/.bashrc&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;使用方法&lt;/p&gt;
+&lt;p&gt;所有的命令可使用：virtualenvwrapper –help 进行查看，这里列出几个常用的：&lt;/p&gt;
+&lt;p&gt; 创建虚拟环境：mkvirtualenv [虚拟环境名称]&lt;/p&gt;
+&lt;p&gt; 3.列出虚拟环境：lsvirtualenv -b&lt;/p&gt;
+&lt;p&gt; 4.切换虚拟环境：workon [虚拟环境名称]&lt;/p&gt;
+&lt;p&gt; 5.查看环境里安装了哪些包：lssitepackages&lt;/p&gt;
+&lt;p&gt; 6.进入当前环境的目录：cdvirtualenv [子目录名]&lt;/p&gt;
+&lt;p&gt; 进入当前环境的site-packages目录：cdsitepackages [子目录名]&lt;/p&gt;
+&lt;p&gt; 7.控制环境是否使用global site-packages：toggleglobalsitepackages&lt;/p&gt;
+&lt;p&gt; 8.复制虚拟环境：cpvirtualenv [source] [dest]&lt;/p&gt;
+&lt;p&gt; 9.退出虚拟环境：deactivate&lt;/p&gt;
+&lt;p&gt; 10.删除虚拟环境：rmvirtualenv [虚拟环境名称]&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;使用技巧(pip + virtualenv)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;经常有这样一种需求:就是把项目发布,需要知道项目依赖哪些包.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4.1 pip的常用操作.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;导出:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip freeze &amp;gt; requirements.txt   # 导出项目依赖的包到requirements.txt文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;批量安装:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install -r requirements.txt  # 从依赖文件,批量安装包.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4.2 配合virtualenv使用.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;这里为何一定要用virtualenv呢?因为如果没有使用virtualenv,上述pip freeze操作,会将主机安装过的所有python包,都导出.这显然不是我们需要的.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;对单一的项目,如果没有virtualenv,将导出一堆用不到的包.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;有了virtualenv,就可以先激活项目中的virtualenv,再执行pip freeze操作.这样就可以保证获取到的都是项目依赖(无冗余).&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6.pip常用操作&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo pip install flask             # 单一安装flask包&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install -r requirements.txt    # 批量安装python包&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip list                           # 查看环境中,已安装的所有python包&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip freeze &amp;gt; requirements.txt      # 导出环境中,已安装所有包至配置文件&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;(&lt;a href=&quot;http://www.selfrebuild.net/2015/07/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20virtualenv%E4%BD%BF%E7%94%A8/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.selfrebuild.net/2015/07/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20virtualenv%E4%BD%BF%E7%94%A8/&lt;/a&gt;) (&lt;a href=&quot;http://www.jianshu.com/p/44ab75fbaef2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.jianshu.com/p/44ab75fbaef2&lt;/a&gt;) (&lt;a href=&quot;http://qicheng0211.blog.51cto.com/3958621/1561685&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://qicheng0211.blog.51cto.com/3958621/1561685&lt;/a&gt;)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;virtualenv简介&quot;&gt;&lt;a href=&quot;#virtualenv简介&quot; class=&quot;headerlink&quot; title=&quot;virtualenv简介&quot;&gt;&lt;/a&gt;virtualenv简介&lt;/h1&gt;&lt;p&gt;virtualenv是一个可以在同一计算机中隔离多个pyth
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Git命令总结</title>
@@ -122,9 +201,9 @@
     <link href="http://yoursite.com/2016/01/12/2016-01-12-%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/"/>
     <id>http://yoursite.com/2016/01/12/2016-01-12-近似算法/</id>
     <published>2016-01-12T02:00:00.000Z</published>
-    <updated>2016-03-14T08:47:28.154Z</updated>
+    <updated>2016-03-16T06:58:36.391Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;近似算法-Approximation-algorithm-概念&quot;&gt;&lt;a href=&quot;#近似算法-Approximation-algorithm-概念&quot; class=&quot;headerlink&quot; title=&quot;近似算法(Approximation algorithm)概念&quot;&gt;&lt;/a&gt;近似算法(Approximation algorithm)概念&lt;/h1&gt;&lt;p&gt;许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;p&gt;许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;如果实际输入数据规模较小，则用指数级运行时的算法就能很好地解决问题；&lt;/li&gt;
 &lt;li&gt;对于一些能在多项式时间内解决的特殊情况，可以把它们单独列出来求解；&lt;/li&gt;
@@ -140,7 +219,7 @@
 &lt;p&gt;Give a 2-approximation algorithm for this problem and analysis the approximation factor.&lt;/p&gt;
 &lt;p&gt;装箱问题：有n个物品，每个物品的尺寸在0-1之间，每个箱子的容量为1，问最少要用多少的箱子能把所有的物品装下？&lt;/p&gt;
 &lt;p&gt;装箱问题可用整数规划描述如下，其中$y&lt;em&gt;i=1$表示箱子$i$被使用，否则表示没有使用，$x&lt;/em&gt;{ij}=1$表示物品j放入箱子i中。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/VPewCSm.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/VPewCSm.png&quot; style=&quot;display:block;margin:auto&quot;&gt;&lt;/p&gt;
 &lt;p&gt;其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。&lt;/p&gt;
 &lt;p&gt;约束条件(2)表示：每个物品刚好放入一个箱子中。&lt;/p&gt;
 &lt;p&gt;由&lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前文&lt;/a&gt;已知，整数线性规划问题是NP完全的，即不能找到多项式时间算法来求解，所以需要寻找一种近似算法。&lt;/p&gt;
@@ -180,8 +259,11 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;对所有的输入物品序列I有:$NF(I) \leq 2OPT(I)$&lt;/p&gt;
 &lt;p&gt;  如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$B_1+B_2&amp;gt;1$，对于$B_3+B_4,\dots$都是这样。因此浪费的空间不达到一半，所以有$NF(I) \leq 2OPT(I)$。&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/A8GpRKX.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;/ul&gt;
+&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;http://i.imgur.com/A8GpRKX.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;存在一个输入物品序列I：$NF(I)\geq 2OPT(I)-2$&lt;/p&gt;
 &lt;p&gt;  考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：&lt;/p&gt;
 &lt;p&gt;  0.5，2/n，0.5，2/n，…，0.5，2/n&lt;/p&gt;
@@ -214,16 +296,19 @@
 &lt;p&gt;Step2: 找出minimum spaning tree T1 of G1&lt;/p&gt;
 &lt;p&gt;Step3: 建构G2(V’’, E’’), 将T1的每一个edge (u, v), 用它在Step1中所找的路径代入.&lt;/p&gt;
 &lt;p&gt;Step4: 将G2中的cycle去掉.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/CohPHo2.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;  &lt;img src=&quot;http://i.imgur.com/CohPHo2.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+
+
 &lt;p&gt;如上图所示, 首先我们先建立一个包含所有terminal 的complete distance graph G1, 然后找出它的minimum spanning tree T1, 然后将原路径代回, 得到G2, 最后将G2 的cycle移去, 得到total cost 为14 的Steine​​r Tree T. 因为此一近似算法为approximate algorithm, 所以它得到的steine​​r tree并一定都是optimum, 此例子的minimum Steine​​r tree的cost为13。&lt;/p&gt;
-&lt;p&gt;复杂度和近似比：因为需要计算最短路径，所以时间复杂度为$O(M*N^2)$,其中$|V|=N$, $|S|=M$。&lt;/p&gt;
+&lt;p&gt;复杂度和近似比：因为需要计算最短路径，所以时间复杂度为$O(M*N^2)$,其中 $|V|=N$ , $|S|=M$。&lt;/p&gt;
 &lt;p&gt;近似比为2，证明可以参考：&lt;a href=&quot;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&quot; title=&quot;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;演算法设计与分析Term Project：&lt;a href=&quot;http://par.cse.nsysu.edu.tw/~homework/algo01/9034811/Report/index.htm&quot; title=&quot;演算法设计与分析Term Project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://par.cse.nsysu.edu.tw/~homework/algo01/9034811/Report/index.htm&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;近似算法-Approximation-algorithm-概念&quot;&gt;&lt;a href=&quot;#近似算法-Approximation-algorithm-概念&quot; class=&quot;headerlink&quot; title=&quot;近似算法(Approximation algorithm)概念&quot;&gt;&lt;/a&gt;近似算法(Approximation algorithm)概念&lt;/h1&gt;&lt;p&gt;许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;br&gt;
+      &lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;p&gt;许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;br&gt;
     
     </summary>
     
