@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-19T02:11:39.936Z</updated>
+  <updated>2016-03-14T05:34:41.203Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,85 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/03/19/1%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"/>
-    <id>http://yoursite.com/2016/03/19/1虚拟环境/</id>
-    <published>2016-03-19T02:11:39.936Z</published>
-    <updated>2016-03-19T02:11:39.936Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;virtualenv简介&quot;&gt;&lt;a href=&quot;#virtualenv简介&quot; class=&quot;headerlink&quot; title=&quot;virtualenv简介&quot;&gt;&lt;/a&gt;virtualenv简介&lt;/h1&gt;&lt;p&gt;virtualenv是一个可以在同一计算机中隔离多个python版本的工具。有时，两个不同的项目可能需要不同版本的python，如 python2.6.6 / python3.0 ，但是如果都装到一起，经常会导致问题。所以需要一个工具能够将这两种或几种不同版本的环境隔离开来，需要哪个版本就切换到哪个版本做为默认版本。virtualenv既是满足这个需求的工具。它能够用于创建独立的Python环境，多个Python相互独立，互不影响，能够：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;在没有权限的情况下安装新套件&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;不同应用可以使用不同的套件版本&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;套件升级不影响其他应用&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;安装：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install virtualenv&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;使用方法&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;创建环境&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;virtualenv [新环境名] #这会再当前目录下创建一个新环境目录&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;可使用 virtualenv –help 来查看如何使用。可以使用参数 –python=/usr/bin/python3 来创建一个已经安装的的Python环境。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;使用环境&lt;/p&gt;
-&lt;p&gt;切换到新环境目录&lt;/p&gt;
-&lt;p&gt;执行：source ./bin/activate 来激活环境，激活后在命令行的前面会出现新环境名称&lt;/p&gt;
-&lt;p&gt;接下来可使用pip命令安装新环境需要的各种包。（pip命令在创建新环境时自带）&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;退出虚拟环境&lt;/li&gt;
-&lt;li&gt;deactivate&lt;/li&gt;
-&lt;li&gt;如果要删除虚拟环境，只需退出虚拟环境后，删除对应的虚拟环境目录即可。不影响其他环境。&lt;/li&gt;
-&lt;li&gt;注意事项&lt;/li&gt;
-&lt;li&gt;如果没有启动虚拟环境，系统也安装了pip工具，那么套件将被安装在系统环境中，为了避免发生此事，可以在~/.bashrc文件中加上：export PIP_REQUIRE_VIRTUALENV=true&lt;/li&gt;
-&lt;li&gt;或者让在执行pip的时候让系统自动开启虚拟环境：export PIP_RESPECT_VIRTUALENV=true&lt;/li&gt;
-&lt;li&gt;virtualenvwrapper&lt;/li&gt;
-&lt;li&gt;virtualenvwrapper是virtualenv的扩展管理包，用于更方便管理虚拟环境，它可以做：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;将所有虚拟环境整合在一个目录下 管理（新增，删除，复制）虚拟环境 切换虚拟环境 安装 pip install virtualenvwrapper&lt;/p&gt;
-&lt;p&gt;使用方法&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;初始配置&lt;/li&gt;
-&lt;li&gt;默认virtualenvwrapper安装在/usr/local/bin下面，实际上需要运行virtualenvwrapper.sh文件才行；所以需要先进行配置一下：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;创建虚拟环境管理目录: mkdir $HOME/.local/virtualenvs 在~/.bashrc中添加行：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;export VIRTUALENV_USE_DISTRIBUTE=1        #  总是使用 pip/distribute                                                                                   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export WORKON_HOME=$HOME/.local/virtualenvs       # 所有虚拟环境存储的目录             &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;if [ -e $HOME/.local/bin/virtualenvwrapper.sh ];then&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   source $HOME/.local/bin/virtualenvwrapper.sh                                                                                                         &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;else if [ -e /usr/local/bin/virtualenvwrapper.sh ];then                                                                                                     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         source /usr/local/bin/virtualenvwrapper.sh                                                                                                        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fi                                                                                                                                                     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fi                                                                                                                                                          &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PIP_VIRTUALENV_BASE=$WORKON_HOME                                                                                                                     &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PIP_RESPECT_VIRTUALENV=true&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;启动 virtualenvwrapper: source ~/.bashrc&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;使用方法&lt;/p&gt;
-&lt;p&gt;所有的命令可使用：virtualenvwrapper –help 进行查看，这里列出几个常用的：&lt;/p&gt;
-&lt;p&gt; 创建虚拟环境：mkvirtualenv [虚拟环境名称]&lt;/p&gt;
-&lt;p&gt; 3.列出虚拟环境：lsvirtualenv -b&lt;/p&gt;
-&lt;p&gt; 4.切换虚拟环境：workon [虚拟环境名称]&lt;/p&gt;
-&lt;p&gt; 5.查看环境里安装了哪些包：lssitepackages&lt;/p&gt;
-&lt;p&gt; 6.进入当前环境的目录：cdvirtualenv [子目录名]&lt;/p&gt;
-&lt;p&gt; 进入当前环境的site-packages目录：cdsitepackages [子目录名]&lt;/p&gt;
-&lt;p&gt; 7.控制环境是否使用global site-packages：toggleglobalsitepackages&lt;/p&gt;
-&lt;p&gt; 8.复制虚拟环境：cpvirtualenv [source] [dest]&lt;/p&gt;
-&lt;p&gt; 9.退出虚拟环境：deactivate&lt;/p&gt;
-&lt;p&gt; 10.删除虚拟环境：rmvirtualenv [虚拟环境名称]&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;使用技巧(pip + virtualenv)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;经常有这样一种需求:就是把项目发布,需要知道项目依赖哪些包.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4.1 pip的常用操作.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;导出:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip freeze &amp;gt; requirements.txt   # 导出项目依赖的包到requirements.txt文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;批量安装:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install -r requirements.txt  # 从依赖文件,批量安装包.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4.2 配合virtualenv使用.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;这里为何一定要用virtualenv呢?因为如果没有使用virtualenv,上述pip freeze操作,会将主机安装过的所有python包,都导出.这显然不是我们需要的.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;对单一的项目,如果没有virtualenv,将导出一堆用不到的包.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;有了virtualenv,就可以先激活项目中的virtualenv,再执行pip freeze操作.这样就可以保证获取到的都是项目依赖(无冗余).&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6.pip常用操作&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo pip install flask             # 单一安装flask包&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip install -r requirements.txt    # 批量安装python包&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip list                           # 查看环境中,已安装的所有python包&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;pip freeze &amp;gt; requirements.txt      # 导出环境中,已安装所有包至配置文件&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;(&lt;a href=&quot;http://www.selfrebuild.net/2015/07/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20virtualenv%E4%BD%BF%E7%94%A8/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.selfrebuild.net/2015/07/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20virtualenv%E4%BD%BF%E7%94%A8/&lt;/a&gt;) (&lt;a href=&quot;http://www.jianshu.com/p/44ab75fbaef2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.jianshu.com/p/44ab75fbaef2&lt;/a&gt;) (&lt;a href=&quot;http://qicheng0211.blog.51cto.com/3958621/1561685&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://qicheng0211.blog.51cto.com/3958621/1561685&lt;/a&gt;)&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;virtualenv简介&quot;&gt;&lt;a href=&quot;#virtualenv简介&quot; class=&quot;headerlink&quot; title=&quot;virtualenv简介&quot;&gt;&lt;/a&gt;virtualenv简介&lt;/h1&gt;&lt;p&gt;virtualenv是一个可以在同一计算机中隔离多个pyth
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Git命令总结</title>

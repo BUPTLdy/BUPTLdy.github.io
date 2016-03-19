@@ -273,173 +273,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/19/1虚拟环境/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-19T10:11:39+08:00" content="2016-03-19">
-              2016-03-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/19/1虚拟环境/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/19/1虚拟环境/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-
-
-          
-          
-             <span id="/2016/03/19/1虚拟环境/" class="leancloud_visitors" data-flag-title="">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="virtualenv简介"><a href="#virtualenv简介" class="headerlink" title="virtualenv简介"></a>virtualenv简介</h1><p>virtualenv是一个可以在同一计算机中隔离多个python版本的工具。有时，两个不同的项目可能需要不同版本的python，如 python2.6.6 / python3.0 ，但是如果都装到一起，经常会导致问题。所以需要一个工具能够将这两种或几种不同版本的环境隔离开来，需要哪个版本就切换到哪个版本做为默认版本。virtualenv既是满足这个需求的工具。它能够用于创建独立的Python环境，多个Python相互独立，互不影响，能够：</p>
-<ul>
-<li><p>在没有权限的情况下安装新套件</p>
-</li>
-<li><p>不同应用可以使用不同的套件版本</p>
-</li>
-<li><p>套件升级不影响其他应用</p>
-</li>
-</ul>
-<p>安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install virtualenv</span><br></pre></td></tr></table></figure>
-<p>使用方法</p>
-<ul>
-<li><p>创建环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv [新环境名] #这会再当前目录下创建一个新环境目录</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>可使用 virtualenv –help 来查看如何使用。可以使用参数 –python=/usr/bin/python3 来创建一个已经安装的的Python环境。</p>
-<ul>
-<li><p>使用环境</p>
-<p>切换到新环境目录</p>
-<p>执行：source ./bin/activate 来激活环境，激活后在命令行的前面会出现新环境名称</p>
-<p>接下来可使用pip命令安装新环境需要的各种包。（pip命令在创建新环境时自带）</p>
-</li>
-</ul>
-<ol>
-<li>退出虚拟环境</li>
-<li>deactivate</li>
-<li>如果要删除虚拟环境，只需退出虚拟环境后，删除对应的虚拟环境目录即可。不影响其他环境。</li>
-<li>注意事项</li>
-<li>如果没有启动虚拟环境，系统也安装了pip工具，那么套件将被安装在系统环境中，为了避免发生此事，可以在~/.bashrc文件中加上：export PIP_REQUIRE_VIRTUALENV=true</li>
-<li>或者让在执行pip的时候让系统自动开启虚拟环境：export PIP_RESPECT_VIRTUALENV=true</li>
-<li>virtualenvwrapper</li>
-<li>virtualenvwrapper是virtualenv的扩展管理包，用于更方便管理虚拟环境，它可以做：</li>
-</ol>
-<p>将所有虚拟环境整合在一个目录下 管理（新增，删除，复制）虚拟环境 切换虚拟环境 安装 pip install virtualenvwrapper</p>
-<p>使用方法</p>
-<ol>
-<li>初始配置</li>
-<li>默认virtualenvwrapper安装在/usr/local/bin下面，实际上需要运行virtualenvwrapper.sh文件才行；所以需要先进行配置一下：</li>
-</ol>
-<p>创建虚拟环境管理目录: mkdir $HOME/.local/virtualenvs 在~/.bashrc中添加行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export VIRTUALENV_USE_DISTRIBUTE=1        #  总是使用 pip/distribute                                                                                   </span><br><span class="line">export WORKON_HOME=$HOME/.local/virtualenvs       # 所有虚拟环境存储的目录             </span><br><span class="line">if [ -e $HOME/.local/bin/virtualenvwrapper.sh ];then</span><br><span class="line">   source $HOME/.local/bin/virtualenvwrapper.sh                                                                                                         </span><br><span class="line">else if [ -e /usr/local/bin/virtualenvwrapper.sh ];then                                                                                                     </span><br><span class="line">         source /usr/local/bin/virtualenvwrapper.sh                                                                                                        </span><br><span class="line">    fi                                                                                                                                                     </span><br><span class="line">fi                                                                                                                                                          </span><br><span class="line">export PIP_VIRTUALENV_BASE=$WORKON_HOME                                                                                                                     </span><br><span class="line">export PIP_RESPECT_VIRTUALENV=true</span><br></pre></td></tr></table></figure>
-<p>启动 virtualenvwrapper: source ~/.bashrc</p>
-<ul>
-<li><p>使用方法</p>
-<p>所有的命令可使用：virtualenvwrapper –help 进行查看，这里列出几个常用的：</p>
-<p> 创建虚拟环境：mkvirtualenv [虚拟环境名称]</p>
-<p> 3.列出虚拟环境：lsvirtualenv -b</p>
-<p> 4.切换虚拟环境：workon [虚拟环境名称]</p>
-<p> 5.查看环境里安装了哪些包：lssitepackages</p>
-<p> 6.进入当前环境的目录：cdvirtualenv [子目录名]</p>
-<p> 进入当前环境的site-packages目录：cdsitepackages [子目录名]</p>
-<p> 7.控制环境是否使用global site-packages：toggleglobalsitepackages</p>
-<p> 8.复制虚拟环境：cpvirtualenv [source] [dest]</p>
-<p> 9.退出虚拟环境：deactivate</p>
-<p> 10.删除虚拟环境：rmvirtualenv [虚拟环境名称]</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">使用技巧(pip + virtualenv)</span><br><span class="line">经常有这样一种需求:就是把项目发布,需要知道项目依赖哪些包.</span><br><span class="line"></span><br><span class="line">4.1 pip的常用操作.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">导出:</span><br><span class="line">pip freeze &gt; requirements.txt   # 导出项目依赖的包到requirements.txt文件</span><br><span class="line"></span><br><span class="line">批量安装:</span><br><span class="line">pip install -r requirements.txt  # 从依赖文件,批量安装包.</span><br><span class="line">4.2 配合virtualenv使用.</span><br><span class="line"></span><br><span class="line">这里为何一定要用virtualenv呢?因为如果没有使用virtualenv,上述pip freeze操作,会将主机安装过的所有python包,都导出.这显然不是我们需要的.</span><br><span class="line"></span><br><span class="line">对单一的项目,如果没有virtualenv,将导出一堆用不到的包.</span><br><span class="line"></span><br><span class="line">有了virtualenv,就可以先激活项目中的virtualenv,再执行pip freeze操作.这样就可以保证获取到的都是项目依赖(无冗余).</span><br><span class="line"></span><br><span class="line">6.pip常用操作</span><br><span class="line"></span><br><span class="line">sudo pip install flask             # 单一安装flask包</span><br><span class="line">pip install -r requirements.txt    # 批量安装python包</span><br><span class="line">pip list                           # 查看环境中,已安装的所有python包</span><br><span class="line">pip freeze &gt; requirements.txt      # 导出环境中,已安装所有包至配置文件</span><br></pre></td></tr></table></figure>
-<p>(<a href="http://www.selfrebuild.net/2015/07/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20virtualenv%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">http://www.selfrebuild.net/2015/07/02/Python%E5%B8%B8%E7%94%A8%E5%8C%85%20-%20virtualenv%E4%BD%BF%E7%94%A8/</a>) (<a href="http://www.jianshu.com/p/44ab75fbaef2" target="_blank" rel="external">http://www.jianshu.com/p/44ab75fbaef2</a>) (<a href="http://qicheng0211.blog.51cto.com/3958621/1561685" target="_blank" rel="external">http://qicheng0211.blog.51cto.com/3958621/1561685</a>)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/03/02/2016-03-02-GIT命令总结/" itemprop="url">
                   Git命令总结
                 </a>
@@ -1406,6 +1239,115 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/04/2016-01-04-图搜索/" itemprop="url">
+                  无信息图搜索策略
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-04T10:00:00+08:00" content="2016-01-04">
+              2016-01-04
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/04/2016-01-04-图搜索/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/04/2016-01-04-图搜索/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+
+          
+          
+             <span id="/2016/01/04/2016-01-04-图搜索/" class="leancloud_visitors" data-flag-title="无信息图搜索策略">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="图搜索策略简介"><a href="#图搜索策略简介" class="headerlink" title="图搜索策略简介"></a>图搜索策略简介</h1><p>之前所说的<a href="http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/">回溯搜索策略</a>是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/04/2016-01-04-图搜索/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1451,7 +1393,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
