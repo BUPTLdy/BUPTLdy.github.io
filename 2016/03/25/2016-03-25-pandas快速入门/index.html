@@ -69,7 +69,7 @@ pandas数据结构：Series">
 <meta property="og:description" content="10分钟简单介绍pandas首先，导入模块如下所示：
 123import pandas as pdimport numpy as npimport matplotlib.pyplot as plt
 pandas数据结构：Series">
-<meta property="og:updated_time" content="2016-03-26T06:51:54.510Z">
+<meta property="og:updated_time" content="2016-03-26T07:04:02.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas十分钟入门">
 <meta name="twitter:description" content="10分钟简单介绍pandas首先，导入模块如下所示：
@@ -434,12 +434,18 @@ Freq: D, Name: A, dtype: float64
 <table border="1" class="dataframe">   <thead>     <tr style="text-align: right;">       <th></th>       <th>A</th>       <th>B</th>       <th>C</th>       <th>D</th>     </tr>   </thead>   <tbody>     <tr>       <th>2013-01-01</th>       <td>0.212880</td>       <td>0.351725</td>       <td>-1.350579</td>       <td>-0.107403</td>     </tr>     <tr>       <th>2013-01-02</th>       <td>-0.857903</td>       <td>-1.783324</td>       <td>1.162888</td>       <td>-0.488226</td>     </tr>     <tr>       <th>2013-01-03</th>       <td>-0.245746</td>       <td>-0.226585</td>       <td>1.749624</td>       <td>1.140817</td>     </tr>   </tbody> </table>
 
 
-<pre><code> <figure class="highlight"><figcaption><span>df['20130102':'20130104'] ```   </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;table border="1" class="dataframe"&gt;   &lt;thead&gt;     &lt;tr style="text-align: right;"&gt;       &lt;th&gt;&lt;/th&gt;       &lt;th&gt;A&lt;/th&gt;       &lt;th&gt;B&lt;/th&gt;       &lt;th&gt;C&lt;/th&gt;       &lt;th&gt;D&lt;/th&gt;     &lt;/tr&gt;   &lt;/thead&gt;   &lt;tbody&gt;     &lt;tr&gt;       &lt;th&gt;2013-01-02&lt;/th&gt;       &lt;td&gt;-0.857903&lt;/td&gt;       &lt;td&gt;-1.783324&lt;/td&gt;       &lt;td&gt;1.162888&lt;/td&gt;       &lt;td&gt;-0.488226&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;th&gt;2013-01-03&lt;/th&gt;       &lt;td&gt;-0.245746&lt;/td&gt;       &lt;td&gt;-0.226585&lt;/td&gt;       &lt;td&gt;1.749624&lt;/td&gt;       &lt;td&gt;1.140817&lt;/td&gt;     &lt;/tr&gt;     &lt;tr&gt;       &lt;th&gt;2013-01-04&lt;/th&gt;       &lt;td&gt;0.032400&lt;/td&gt;       &lt;td&gt;-0.264382&lt;/td&gt;       &lt;td&gt;0.125095&lt;/td&gt;       &lt;td&gt;-1.322739&lt;/td&gt;     &lt;/tr&gt;   &lt;/tbody&gt; &lt;/table&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">通过标签选择：</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">df.loc[dates[0],['A','B']]</span><br></pre></td></tr></table></figure>
 
-A    0.212880
-B    0.351725
-Name: 2013-01-01 00:00:00, dtype: float64
-</code></pre><p>通过位置选取：</p>
+
+<pre><code>df[&apos;20130102&apos;:&apos;20130104&apos;]
+</code></pre><table border="1" class="dataframe">   <thead>     <tr style="text-align: right;">       <th></th>       <th>A</th>       <th>B</th>       <th>C</th>       <th>D</th>     </tr>   </thead>   <tbody>     <tr>       <th>2013-01-02</th>       <td>-0.857903</td>       <td>-1.783324</td>       <td>1.162888</td>       <td>-0.488226</td>     </tr>     <tr>       <th>2013-01-03</th>       <td>-0.245746</td>       <td>-0.226585</td>       <td>1.749624</td>       <td>1.140817</td>     </tr>     <tr>       <th>2013-01-04</th>       <td>0.032400</td>       <td>-0.264382</td>       <td>0.125095</td>       <td>-1.322739</td>     </tr>   </tbody> </table>
+
+
+
+
+<p>通过标签选择：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.loc[dates[<span class="number">0</span>],[<span class="string">'A'</span>,<span class="string">'B'</span>]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A    <span class="number">0.212880</span></span><br><span class="line">B    <span class="number">0.351725</span></span><br><span class="line">Name: <span class="number">2013</span><span class="number">-01</span><span class="number">-01</span> <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>, dtype: float64</span><br></pre></td></tr></table></figure>
+<p>通过位置选取：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.iloc[<span class="number">1</span>:<span class="number">3</span>,<span class="number">0</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
 <table border="1" class="dataframe">   <thead>     <tr style="text-align: right;">       <th></th>       <th>A</th>       <th>B</th>     </tr>   </thead>   <tbody>     <tr>       <th>2013-01-02</th>       <td>-0.857903</td>       <td>-1.783324</td>     </tr>     <tr>       <th>2013-01-03</th>       <td>-0.245746</td>       <td>-0.226585</td>     </tr>   </tbody> </table>  
 
