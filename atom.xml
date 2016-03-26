@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-26T05:26:05.574Z</updated>
+  <updated>2016-03-26T05:29:31.107Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,12 +20,11 @@
     <link href="http://yoursite.com/2016/03/25/2016-03-25-pandas%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
     <id>http://yoursite.com/2016/03/25/2016-03-25-pandas快速入门/</id>
     <published>2016-03-25T02:00:00.000Z</published>
-    <updated>2016-03-26T05:26:05.574Z</updated>
+    <updated>2016-03-26T05:29:31.107Z</updated>
     
-    <content type="html">&lt;p&gt;#10分钟简单介绍pandas&lt;/p&gt;
-&lt;p&gt;首先，导入模块如下所示：&lt;/p&gt;
+    <content type="html">&lt;h1 id=&quot;10分钟简单介绍pandas&quot;&gt;&lt;a href=&quot;#10分钟简单介绍pandas&quot; class=&quot;headerlink&quot; title=&quot;10分钟简单介绍pandas&quot;&gt;&lt;/a&gt;10分钟简单介绍pandas&lt;/h1&gt;&lt;p&gt;首先，导入模块如下所示：&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; pd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; plt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;#pandas数据结构：Series&lt;/p&gt;
+&lt;h1 id=&quot;pandas数据结构：Series&quot;&gt;&lt;a href=&quot;#pandas数据结构：Series&quot; class=&quot;headerlink&quot; title=&quot;pandas数据结构：Series&quot;&gt;&lt;/a&gt;pandas数据结构：Series&lt;/h1&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;Series可以简单地被认为是一维的数组。 Series 和一维数组最主要的区别在于 Series类型具有索引( index ),可以和另一个编程中常见的数据结构哈希( Hash )联系起来。&lt;/p&gt;
 &lt;p&gt;创建Series类型数据结构，如果没有传入索引，pandas默认的索引为从0开始的整数。&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;s = pd.Series([&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;,np.nan,&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -37,8 +36,7 @@
 4     6
 5     8
 dtype: float64
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;#pandas数据结构：DataFrame&lt;/p&gt;
-&lt;p&gt;DataFrame 是将数个 Series 按列合并而成的二维数据结构,每一列单独取出来是一个 Series ,这和 SQL 数据库中取出的数据是很类似的。所以,按&lt;br&gt;列对一个 DataFrame 进行处理更为方便,用户在编程时注意培养按列构建数据的思维。 DataFrame 的优势在于可以方便地处理不同类型的列,因此,就不要考虑如何对一个全是浮点数的 DataFrame 求逆之类的问题了,处理这种问题还是把数据存成 NumPy 的 matrix 类型比较便利一些。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;pandas数据结构：DataFrame&quot;&gt;&lt;a href=&quot;#pandas数据结构：DataFrame&quot; class=&quot;headerlink&quot; title=&quot;pandas数据结构：DataFrame&quot;&gt;&lt;/a&gt;pandas数据结构：DataFrame&lt;/h1&gt;&lt;p&gt;DataFrame 是将数个 Series 按列合并而成的二维数据结构,每一列单独取出来是一个 Series ,这和 SQL 数据库中取出的数据是很类似的。所以,按&lt;br&gt;列对一个 DataFrame 进行处理更为方便,用户在编程时注意培养按列构建数据的思维。 DataFrame 的优势在于可以方便地处理不同类型的列,因此,就不要考虑如何对一个全是浮点数的 DataFrame 求逆之类的问题了,处理这种问题还是把数据存成 NumPy 的 matrix 类型比较便利一些。&lt;/p&gt;
 &lt;p&gt;通过传入 numpy array数据创建 DataFrame：&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dates = pd.date_range(&lt;span class=&quot;string&quot;&gt;&#39;20130101&#39;&lt;/span&gt;, periods=&lt;span class=&quot;number&quot;&gt;6&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dates&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -177,8 +175,7 @@ Name: 2013-01-01 00:00:00, dtype: float64
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pd.isnull(df1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;div&gt;&lt;br&gt;&lt;table border=&quot;1&quot; class=&quot;dataframe&quot;&gt;&lt;br&gt;  &lt;thead&gt;&lt;br&gt;    &lt;tr style=&quot;text-align: right;&quot;&gt;&lt;br&gt;      &lt;th&gt;&lt;/th&gt;&lt;br&gt;      &lt;th&gt;A&lt;/th&gt;&lt;br&gt;      &lt;th&gt;B&lt;/th&gt;&lt;br&gt;      &lt;th&gt;C&lt;/th&gt;&lt;br&gt;      &lt;th&gt;D&lt;/th&gt;&lt;br&gt;      &lt;th&gt;E&lt;/th&gt;&lt;br&gt;    &lt;/tr&gt;&lt;br&gt;  &lt;/thead&gt;&lt;br&gt;  &lt;tbody&gt;&lt;br&gt;    &lt;tr&gt;&lt;br&gt;      &lt;th&gt;2013-01-01&lt;/th&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;    &lt;/tr&gt;&lt;br&gt;    &lt;tr&gt;&lt;br&gt;      &lt;th&gt;2013-01-02&lt;/th&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;    &lt;/tr&gt;&lt;br&gt;    &lt;tr&gt;&lt;br&gt;      &lt;th&gt;2013-01-03&lt;/th&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;True&lt;/td&gt;&lt;br&gt;    &lt;/tr&gt;&lt;br&gt;    &lt;tr&gt;&lt;br&gt;      &lt;th&gt;2013-01-04&lt;/th&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;False&lt;/td&gt;&lt;br&gt;      &lt;td&gt;True&lt;/td&gt;&lt;br&gt;    &lt;/tr&gt;&lt;br&gt;  &lt;/tbody&gt;&lt;br&gt;&lt;/table&gt;&lt;br&gt;&lt;/div&gt;
 
-&lt;p&gt;#读取文件&lt;/p&gt;
-&lt;p&gt;写csv文件：&lt;/p&gt;
+&lt;h1 id=&quot;读取文件&quot;&gt;&lt;a href=&quot;#读取文件&quot; class=&quot;headerlink&quot; title=&quot;读取文件&quot;&gt;&lt;/a&gt;读取文件&lt;/h1&gt;&lt;p&gt;写csv文件：&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;df.to_csv(&lt;span class=&quot;string&quot;&gt;&#39;foo.csv&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;读csv文件：&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pd.read_csv(&lt;span class=&quot;string&quot;&gt;&#39;foo.csv&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -188,16 +185,15 @@ Name: 2013-01-01 00:00:00, dtype: float64
 
 
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;#参考资料&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://pandas.pydata.org/pandas-docs/stable/10min.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;10 Minutes to pandas¶
+&lt;h1 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://pandas.pydata.org/pandas-docs/stable/10min.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;10 Minutes to pandas¶
 &lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;#10分钟简单介绍pandas&lt;/p&gt;
-&lt;p&gt;首先，导入模块如下所示：&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;b
+      &lt;h1 id=&quot;10分钟简单介绍pandas&quot;&gt;&lt;a href=&quot;#10分钟简单介绍pandas&quot; class=&quot;headerlink&quot; title=&quot;10分钟简单介绍pandas&quot;&gt;&lt;/a&gt;10分钟简单介绍pandas&lt;/h1&gt;&lt;p&gt;首先，导入模块如下所示：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; pandas &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; pd&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; plt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;pandas数据结构：Series&quot;&gt;&lt;a href=&quot;#pandas数据结构：Series&quot; class=&quot;headerlink&quot; title=&quot;pandas数据结构：Series&quot;&gt;&lt;/a&gt;pandas数据结构：Series&lt;/h1&gt;
     
     </summary>
     

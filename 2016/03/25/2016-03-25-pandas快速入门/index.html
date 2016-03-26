@@ -59,28 +59,22 @@
 
 
 
-<meta name="description" content="#10分钟简单介绍pandas
-首先，导入模块如下所示：
+<meta name="description" content="10分钟简单介绍pandas首先，导入模块如下所示：
 123import pandas as pdimport numpy as npimport matplotlib.pyplot as plt
-#pandas数据结构：Series
-Series可以简单地被认为是一维的数组。 Series 和一维数组最主要的区别在于 Series类型具有索引( index ),可以和另一个编程中常见的数据结">
+pandas数据结构：Series">
 <meta property="og:type" content="article">
 <meta property="og:title" content="pandas十分钟入门">
 <meta property="og:url" content="http://yoursite.com/2016/03/25/2016-03-25-pandas快速入门/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="#10分钟简单介绍pandas
-首先，导入模块如下所示：
+<meta property="og:description" content="10分钟简单介绍pandas首先，导入模块如下所示：
 123import pandas as pdimport numpy as npimport matplotlib.pyplot as plt
-#pandas数据结构：Series
-Series可以简单地被认为是一维的数组。 Series 和一维数组最主要的区别在于 Series类型具有索引( index ),可以和另一个编程中常见的数据结">
-<meta property="og:updated_time" content="2016-03-26T05:26:05.574Z">
+pandas数据结构：Series">
+<meta property="og:updated_time" content="2016-03-26T05:29:31.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pandas十分钟入门">
-<meta name="twitter:description" content="#10分钟简单介绍pandas
-首先，导入模块如下所示：
+<meta name="twitter:description" content="10分钟简单介绍pandas首先，导入模块如下所示：
 123import pandas as pdimport numpy as npimport matplotlib.pyplot as plt
-#pandas数据结构：Series
-Series可以简单地被认为是一维的数组。 Series 和一维数组最主要的区别在于 Series类型具有索引( index ),可以和另一个编程中常见的数据结">
+pandas数据结构：Series">
 
 
 
@@ -340,10 +334,9 @@ Series可以简单地被认为是一维的数组。 Series 和一维数组最主
       
 
       
-        <p>#10分钟简单介绍pandas</p>
-<p>首先，导入模块如下所示：</p>
+        <h1 id="10分钟简单介绍pandas"><a href="#10分钟简单介绍pandas" class="headerlink" title="10分钟简单介绍pandas"></a>10分钟简单介绍pandas</h1><p>首先，导入模块如下所示：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
-<p>#pandas数据结构：Series</p>
+<h1 id="pandas数据结构：Series"><a href="#pandas数据结构：Series" class="headerlink" title="pandas数据结构：Series"></a>pandas数据结构：Series</h1><a id="more"></a>
 <p>Series可以简单地被认为是一维的数组。 Series 和一维数组最主要的区别在于 Series类型具有索引( index ),可以和另一个编程中常见的数据结构哈希( Hash )联系起来。</p>
 <p>创建Series类型数据结构，如果没有传入索引，pandas默认的索引为从0开始的整数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s = pd.Series([<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,np.nan,<span class="number">6</span>,<span class="number">8</span>])</span><br></pre></td></tr></table></figure>
@@ -355,8 +348,7 @@ Series可以简单地被认为是一维的数组。 Series 和一维数组最主
 4     6
 5     8
 dtype: float64
-</code></pre><p>#pandas数据结构：DataFrame</p>
-<p>DataFrame 是将数个 Series 按列合并而成的二维数据结构,每一列单独取出来是一个 Series ,这和 SQL 数据库中取出的数据是很类似的。所以,按<br>列对一个 DataFrame 进行处理更为方便,用户在编程时注意培养按列构建数据的思维。 DataFrame 的优势在于可以方便地处理不同类型的列,因此,就不要考虑如何对一个全是浮点数的 DataFrame 求逆之类的问题了,处理这种问题还是把数据存成 NumPy 的 matrix 类型比较便利一些。</p>
+</code></pre><h1 id="pandas数据结构：DataFrame"><a href="#pandas数据结构：DataFrame" class="headerlink" title="pandas数据结构：DataFrame"></a>pandas数据结构：DataFrame</h1><p>DataFrame 是将数个 Series 按列合并而成的二维数据结构,每一列单独取出来是一个 Series ,这和 SQL 数据库中取出的数据是很类似的。所以,按<br>列对一个 DataFrame 进行处理更为方便,用户在编程时注意培养按列构建数据的思维。 DataFrame 的优势在于可以方便地处理不同类型的列,因此,就不要考虑如何对一个全是浮点数的 DataFrame 求逆之类的问题了,处理这种问题还是把数据存成 NumPy 的 matrix 类型比较便利一些。</p>
 <p>通过传入 numpy array数据创建 DataFrame：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dates = pd.date_range(<span class="string">'20130101'</span>, periods=<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dates</span><br></pre></td></tr></table></figure>
@@ -495,8 +487,7 @@ Name: 2013-01-01 00:00:00, dtype: float64
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.isnull(df1)</span><br></pre></td></tr></table></figure>
 <div><br><table border="1" class="dataframe"><br>  <thead><br>    <tr style="text-align: right;"><br>      <th></th><br>      <th>A</th><br>      <th>B</th><br>      <th>C</th><br>      <th>D</th><br>      <th>E</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <th>2013-01-01</th><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>    </tr><br>    <tr><br>      <th>2013-01-02</th><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>    </tr><br>    <tr><br>      <th>2013-01-03</th><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>      <td>True</td><br>    </tr><br>    <tr><br>      <th>2013-01-04</th><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>      <td>False</td><br>      <td>True</td><br>    </tr><br>  </tbody><br></table><br></div>
 
-<p>#读取文件</p>
-<p>写csv文件：</p>
+<h1 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h1><p>写csv文件：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.to_csv(<span class="string">'foo.csv'</span>)</span><br></pre></td></tr></table></figure>
 <p>读csv文件：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.read_csv(<span class="string">'foo.csv'</span>)</span><br></pre></td></tr></table></figure>
@@ -506,8 +497,7 @@ Name: 2013-01-01 00:00:00, dtype: float64
 
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>#参考资料</p>
-<p><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html" target="_blank" rel="external">10 Minutes to pandas¶
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="http://pandas.pydata.org/pandas-docs/stable/10min.html" target="_blank" rel="external">10 Minutes to pandas¶
 </a></p>
 
       
@@ -692,7 +682,7 @@ Name: 2013-01-01 00:00:00, dtype: float64
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#10分钟简单介绍pandas"><span class="nav-number">1.</span> <span class="nav-text">10分钟简单介绍pandas</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas数据结构：Series"><span class="nav-number">2.</span> <span class="nav-text">pandas数据结构：Series</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pandas数据结构：DataFrame"><span class="nav-number">3.</span> <span class="nav-text">pandas数据结构：DataFrame</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#读取文件"><span class="nav-number">4.</span> <span class="nav-text">读取文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
