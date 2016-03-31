@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithms,Python," />
+  <meta name="keywords" content="Computer Vision,HOG," />
 
 
 
@@ -59,23 +59,21 @@
 
 
 
-<meta name="description" content="什么是线性规划线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。
-线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：">
+<meta name="description" content="HOG算法概述局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性规划 [Linear Programming]">
-<meta property="og:url" content="http://yoursite.com/2016/01/09/2016-01-09-线性规划/index.html">
+<meta property="og:title" content="《Histograms of Oriented Gradients for Human Detection》论文笔记">
+<meta property="og:url" content="http://yoursite.com/2016/03/31/2016-03-31-HOG论文总结/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="什么是线性规划线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。
-线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：">
-<meta property="og:image" content="http://i.imgur.com/0QzN1q2.png">
-<meta property="og:image" content="http://i.imgur.com/UfuthIQ.png">
-<meta property="og:image" content="http://i.imgur.com/lhxj168.png">
-<meta property="og:updated_time" content="2016-03-14T09:32:59.400Z">
+<meta property="og:description" content="HOG算法概述局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/94180844.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/13507779.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/98414203.jpg">
+<meta property="og:updated_time" content="2016-03-31T02:17:05.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性规划 [Linear Programming]">
-<meta name="twitter:description" content="什么是线性规划线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。
-线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：">
-<meta name="twitter:image" content="http://i.imgur.com/0QzN1q2.png">
+<meta name="twitter:title" content="《Histograms of Oriented Gradients for Human Detection》论文笔记">
+<meta name="twitter:description" content="HOG算法概述局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg">
 
 
 
@@ -93,7 +91,7 @@
   };
 </script>
 
-  <title> 线性规划 [Linear Programming] | Ldy's Blog </title>
+  <title> 《Histograms of Oriented Gradients for Human Detection》论文笔记 | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -278,7 +276,7 @@
             
             
               
-                线性规划 [Linear Programming]
+                《Histograms of Oriented Gradients for Human Detection》论文笔记
               
             
           </h1>
@@ -290,8 +288,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-09T10:00:00+08:00" content="2016-01-09">
-              2016-01-09
+            <time itemprop="dateCreated" datetime="2016-03-31T10:00:00+08:00" content="2016-03-31">
+              2016-03-31
             </time>
           </span>
 
@@ -301,8 +299,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/09/2016-01-09-线性规划/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/09/2016-01-09-线性规划/" itemprop="commentsCount"></span>
+                <a href="/2016/03/31/2016-03-31-HOG论文总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/2016-03-31-HOG论文总结/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -314,7 +312,7 @@
 
           
           
-             <span id="/2016/01/09/2016-01-09-线性规划/" class="leancloud_visitors" data-flag-title="线性规划 [Linear Programming]">
+             <span id="/2016/03/31/2016-03-31-HOG论文总结/" class="leancloud_visitors" data-flag-title="《Histograms of Oriented Gradients for Human Detection》论文笔记">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -335,59 +333,19 @@
       
 
       
-        <h1 id="什么是线性规划"><a href="#什么是线性规划" class="headerlink" title="什么是线性规划"></a>什么是线性规划</h1><p>线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。</p>
-<p>线性规划问题的常用的最直观形式是标准型。标准型包括以下三个部分：<br><a id="more"></a></p>
-<ul>
-<li><p>一个需要极大化的线性函数，例如：</p>
-<p>  $$c_1 x_1 + c_2 x_2$$</p>
-</li>
-<li><p>以下形式的问题约束，例如：</p>
-<p>  $$a_{11} x<em>1 + a</em>{12} x_2 \le b_1$$</p>
-<p>  $$a_{21} x<em>1 + a</em>{22} x_2 \le b_2$$</p>
-<p>  $$a_{31} x<em>1 + a</em>{32} x_2 \le b_3$$</p>
-</li>
-<li><p>非负变量，例如：</p>
-<p>  $$x_1 \ge 0 $$</p>
-<p>  $$x_2 \ge 0 $$</p>
-</li>
-</ul>
-<p>几个概念和定理介绍：</p>
-<p>可行域：下图中蓝色部分的点都是线性规划问题的解(可行解)，蓝色区域是可行解的集合，称为可行域。</p>
-<p><img src="http://i.imgur.com/0QzN1q2.png" alt=""></p>
-<p>基可行解：出现在可行域顶点的可行解</p>
-<blockquote>
-<p>定理1 若线性规划问题存在可行域，则其可行域是<a href="https://zh.wikipedia.org/wiki/%E5%87%B8%E9%9B%86" target="_blank" rel="external">凸集</a></p>
-<p>定理2 若可行域有界，线性规划问题的目标函数一定可以在其可行域的顶点上达到最优</p>
-</blockquote>
-<p>通过上述定理得知，线性规划问题的解一定出现在可行域的顶点上，所以可以通过枚举所有的基可行解来找到最优解，但当变量个数很多时，这种办法是行不通的。</p>
-<h1 id="单纯形法"><a href="#单纯形法" class="headerlink" title="单纯形法"></a>单纯形法</h1><p>单纯形法是求解线性规划问题的通用方法。单纯形是美国数学家G.B.丹齐克于1947年首先提出来的。它的理论根据是：线性规划问题的可行域是$n$维向量空间$R_n$中的多面凸集，其最优值如果存在必在该凸集的某顶点处达到。顶点所对应的可行解称为基本可行解。</p>
-<p>单纯形法的基本思想是：先找出一个基本可行解，对它进行鉴别，看是否是最优解；若不是，则按照一定法则转换到另一改进的基本可行解，再鉴别；若仍不是，则再转换，按此重复进行。因基本可行解的个数有限，故经有限次转换必能得出问题的最优解。如果问题无最优解也可用此法判别。</p>
-<p>单纯形法的一般解题步骤可归纳如下：</p>
-<p>①把线性规划问题的约束方程组表达成典范型方程组，找出基本可行解作为初始基可行解。</p>
-<p>②若基本可行解不存在，即约束条件有矛盾，则问题无解。</p>
-<p>③若基本可行解存在，从初始基本可行解作为起点，根据最优性条件和可行性条件，引入非基变量取代某一基变量，找出目标函数值更优的另一基本可行解。</p>
-<p>④按步骤③进行迭代,直到对应检验数满足最优性条件（这时目标函数值不能再改善），即得到问题的最优解。</p>
-<p>⑤若迭代过程中发现问题的目标函数值无界，则终止迭代。</p>
-<p>过程如下图所示：</p>
-<p><img src="http://i.imgur.com/UfuthIQ.png" alt=""></p>
-<p><a href="http://wenku.baidu.com/view/0edfb06aaf1ffc4ffe47acec.html" target="_blank" rel="external">单纯形法求解-动态演示</a></p>
-<p>单纯形法伪代码：</p>
-<p><img src="http://i.imgur.com/lhxj168.png" alt=""></p>
-<p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Simplex%20Algorithm" target="_blank" rel="external">单纯形法Python实现</a></p>
-<p>解线性规划问题也一些很好的工具，比如<a href="https://www.gnu.org/software/glpk/" target="_blank" rel="external">GLPK</a>和<a href="http://www.gurobi.com/" target="_blank" rel="external">Gurobi</a>等。</p>
-<h1 id="线性规划解决实际问题"><a href="#线性规划解决实际问题" class="headerlink" title="线性规划解决实际问题"></a>线性规划解决实际问题</h1><p>问题如下：</p>
-<p>with human lives at stake, an air traffic controller has to schedule the airplanes that are landing at an airport in order to avoid airplane collision. Each airplane $i$ has a time window $[s_i,t_i]$ during which it can safely land. You must compute the exact time of landing for each airplane that respects these time windows. Furthermore, the airplane landings should be stretched out as much as possible so that the minimum time gap between successive landings is as large as possible. For example, if the time window of landing three airplanes are [10:00-11:00], [11:20-11:40], [12:00-12:20], and they land at 10:00, 11:20, 12:20 respectively, then the smallest gap is 60 minutes, which occurs between the last two airplanes. Given n time windows, denoted as [s_1,t_1], [s_2,t_2], · · ·, [s_n,t_n] satisfying s_1 &lt;t_1 &lt; s_2 &lt; t_2 &lt; · · · &lt; s_n &lt; t_n, you are required to give the exact landing time of each airplane, in which the smallest gap between successive landings is maximized.</p>
-<pre><code>Please formulate this problem as an LP.
-</code></pre><p>题目的大概意思是每架飞机都只能在自己固定的时间窗内降落，为了安全起见两架飞机之间的降落时间间隔越大越好，然后给你n架飞机的降落时间窗口，要求n架飞机的最小降落间隔的最大值。</p>
-<p>这个问题的建模起来很简单，令$x_i$表示第$i$架飞机的降落时间，则需要满足约束条件：</p>
-<p>$$s_i\leq x_i \leq t_i$$</p>
-<p>然后我们的目标是要求最小间隔的最大值，所以我们的目标函数为：</p>
-<p>$$max(min(x_{i+1}-x_i))$$</p>
-<p>那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有<br>  $y\leq x<em>{i+1}-x</em>{i}$，那么$y$不就是$x<em>{i+1}-x</em>{i}$的最小值吗？</p>
-<p>所以最终我们可以把问题形式化为:</p>
-<p>  $$    max &amp; y &amp; \<br>          s.t.&amp; s_i\leq x_i \leq t<em>i&amp; i=1,2,3 \cdots n\<br>         &amp; y\leq x</em>{i+1}-x_i &amp; i=1,2,3 \cdots n$$</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>维基百科 线性规划：<a href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92" title="维基百科 线性规划" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92</a></p>
-<p>百度百科 单纯形法：<a href="http://baike.baidu.com/subview/471090/471090.htm" title="百度百科 单纯形法" target="_blank" rel="external">http://baike.baidu.com/subview/471090/471090.htm</a></p>
+        <h1 id="HOG算法概述"><a href="#HOG算法概述" class="headerlink" title="HOG算法概述"></a>HOG算法概述</h1><p>局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做 HOG 描述子。将检测窗口中的所有块的 HOG 描述子组合起来就形成了最终的特征向量,然后使用 SVM 分类器进行人体检测,见下图。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg" alt=""><br><a id="more"></a><br>HOG特征有个优点,它们提取的边缘和梯度特征能很好的抓住局部形状的特点,并且由于是       在局部进行提取,所以对几何和光学变化都有很好的不变性:变换或旋转对于足够小的区域影响很小。对于人体检测,在粗糙的空域采样 (coarse spatial sampling) 、精细的方向采样 (fine orientationsampling)和较强的局部光学归一化 (stronglocal photometric normalization) 这些条件下,只要行人大体上能够保持直立的姿势,就容许有一些细微的肢体动作,这些细微的动作可以被忽略而不影响检测效果。</p>
+<h1 id="算法细节"><a href="#算法细节" class="headerlink" title="算法细节"></a>算法细节</h1><h2 id="伽马颜色归一化"><a href="#伽马颜色归一化" class="headerlink" title="伽马颜色归一化"></a>伽马颜色归一化</h2><p>用不同的幂值 (gamma 参数 ) 评价了几种颜色空间,有灰度空间、 RGB 、 LAB ,结果表明,这些规范化对结果影响很小,可能是由于随后的描述子归一化能达到相似的效果。</p>
+<h2 id="梯度计算"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算</h2><p>不同的梯度计算方法对检测器性能有很大影响,但事实证明最简单的梯度算子结果是最好的。采用了最简单的一维离散微分模板算子。测试表明，使用 Sobel 算子等其它算子或是引入高斯平滑反而会造成性能降低。对于带颜色的图像,分别计算每个颜色通道的梯度,以范数最大者作为该点的梯度向量。</p>
+<h2 id="空间-方向-bin-统计"><a href="#空间-方向-bin-统计" class="headerlink" title="空间 / 方向 bin 统计"></a>空间 / 方向 bin 统计</h2><p>如下图的一个包含行人的图像，红色框标记一个 8 × 8 单元，这些 8 × 8 的单元将被用来计算 HOG 描述符。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/94180844.jpg" alt=""><br></center><br>在每个单元中，我们在每个像素上计算梯度矢量，将得到 64 个梯度矢量，梯度矢量相角在 0◦ → 180◦ 之间分布，我们对相角进行分箱 (bin)，每箱 20◦，一共 9 箱 (Dalal 和 Triggs 得到的最佳参数)。具有某一相角的梯度矢量的幅度按照权重分配给直方图。这涉及到权重投票表决机制， Dalal 和 Triggs 发现，采用梯度幅度进行分配表现最佳。例如，一个具有 85 度相角的梯度矢量将其幅度的 1/4 分配给中心为 70◦ 的箱，将剩余的 3/4 幅度分配给中心为 90◦ 的箱。这样就得到了下面的方向梯度直方图。<br><br><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/13507779.jpg" alt=""><br></center>
+
+<p>上面分配幅度的方法可以减少恰好位于两箱边界的梯度矢量的影响，否则，如果一个强梯度矢量恰好在边界上，其相角的一个很小的绕动都将对直方图造成非常大的影响。同时，在计算出梯度后进行高斯平滑，也可以缓解这种影响。另一方面，特征的复杂程度对分类器的影响很大。通过直方图的构造，我们将特征 64 个二元矢量量化为特征 9 个值，很好地压缩了特征的同时保留了单元的信息。设想对图像加上一些失真，方向梯度直方图的变化也不会很大，这是 HOG 特征的优点。</p>
+<h2 id="归一化处理"><a href="#归一化处理" class="headerlink" title="归一化处理"></a>归一化处理</h2><p>前面提到，对图像所有像素进行加减后梯度矢量不变，接下来引入梯度矢量的标准化，使得其在像素值进行乘法运算后仍然保持不变。如果对单元内的像素值都乘以某一常数，梯度矢量的幅度明显会发生变化，幅度会增加常数因子,相角保持不变，这会造成整个直方图的每个箱的幅度增加常数因子。为了解决这个问题，需要引入梯度矢量标准化，一种简单的标准化方法是将梯度矢量除以其幅度，梯度矢量的幅度将保持 1，但是其相角不会发生变化。引入梯度矢量标准化以后，直方图各箱幅度在图像像素值整体乘以某个因子 (变化对比度) 时不会发生变化。除了对每个单元的直方图进行标准化外，另外一种方法是将固定数量的空域邻接的单元封装成区块，然后在区块上进行标准化。 Dalal 和 Triggs 使用 2 × 2 区块 (50% 重叠)，即 16 × 16 像素。将一个区块内的四个单元的直方图信息整合为 36 个值的特征 (9 × 4), 然后对这个 36 元矢量进行标准化。 Dalal 和 Triggs 考察了四种不同的区块标准化算法，设 v 为未标准化的区块梯度矢量， $||v||_{k}(k = 1, 2)$ 是 v 的 k-范数 (norm),e 是一个很小的常数 (具体值并不重要)，四种标准化算法如下：</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/98414203.jpg" alt=""><br></center>
+
+<p>L2-Hys 是在 L2-norm 后进行截断，然后重新进行标准化。 Dalal 和 Triggs 发现 L2-Hys,L2-norm,L1-sqrt 性能相似，L1-norm 性能稍有下降，但都相对于未标准化的梯度矢量有明显的性能提升。区块重叠的影响是使得每个单元会在最终得到的 HOG 描述符中其作用的次数大于 1 次 (角单元出现 1 次，边单元出现 2 次，其它单元出现 4 次)，但每次出现都在不同的区块进行标准化。定义一个区块位移的步长为 8 像素，则可以实现 50% 的重叠。如果检测器窗口为 64x128像素，则会被分为 7 × 15 区块，每个区块包括 2 × 2 个单元，每个单元包括 8 × 8 像素，每个区块进行 9 箱直方图统计 (36 值)，最后的总特征矢量将有 7 × 15 × 4 × 9 = 3780 个特征值元素。</p>
+<h2 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h2><p>分类器获取了 HOG 特征描述符之后，需要将其递交给监督学习分类器。 Dalal 和 Triggs 使用 SV M light 软件包配合HOG 描述符进行人体检测。 SVM 分类器寻找一个最佳超平面用作决策函数以实现二元分类，其特点是能够同时最小化经验误差与最大化几何边缘区。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://oncemore2020.github.io/blog/hog-using-opencv/" target="_blank" rel="external">HOG/linSVM检测器</a><br><a href="http://blog.csdn.net/masibuaa/article/details/14056807" target="_blank" rel="external">用于人体检测的方向梯度直方图</a></p>
 
       
     </div>
@@ -402,9 +360,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithms/" rel="tag">#Algorithms</a>
+            <a href="/tags/Computer-Vision/" rel="tag">#Computer Vision</a>
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
+            <a href="/tags/HOG/" rel="tag">#HOG</a>
           
         </div>
       
@@ -413,17 +371,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/08/2016-01-08-贪心策略/" rel="next" title="贪心算法[greedy algorithm]">
-                <i class="fa fa-chevron-left"></i> 贪心算法[greedy algorithm]
+              <a href="/2016/03/25/2016-03-25-pandas快速入门/" rel="next" title="pandas十分钟入门">
+                <i class="fa fa-chevron-left"></i> pandas十分钟入门
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/10/2016-01-10-网络最大流/" rel="prev" title="网络最大流 [Max Flow]">
-                网络最大流 [Max Flow] <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -438,10 +392,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/09/2016-01-09-线性规划/"
-     data-title="线性规划 [Linear Programming]"
+        <div class="ds-share flat" data-thread-key="2016/03/31/2016-03-31-HOG论文总结/"
+     data-title="《Histograms of Oriented Gradients for Human Detection》论文笔记"
      data-content=""
-     data-url="http://yoursite.com/2016/01/09/2016-01-09-线性规划/">
+     data-url="http://yoursite.com/2016/03/31/2016-03-31-HOG论文总结/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -468,8 +422,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/09/2016-01-09-线性规划/"
-           data-title="线性规划 [Linear Programming]" data-url="http://yoursite.com/2016/01/09/2016-01-09-线性规划/">
+      <div class="ds-thread" data-thread-key="2016/03/31/2016-03-31-HOG论文总结/"
+           data-title="《Histograms of Oriented Gradients for Human Detection》论文笔记" data-url="http://yoursite.com/2016/03/31/2016-03-31-HOG论文总结/">
       </div>
     
   </div>
@@ -575,7 +529,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是线性规划"><span class="nav-number">1.</span> <span class="nav-text">什么是线性规划</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单纯形法"><span class="nav-number">2.</span> <span class="nav-text">单纯形法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性规划解决实际问题"><span class="nav-number">3.</span> <span class="nav-text">线性规划解决实际问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HOG算法概述"><span class="nav-number">1.</span> <span class="nav-text">HOG算法概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法细节"><span class="nav-number">2.</span> <span class="nav-text">算法细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伽马颜色归一化"><span class="nav-number">2.1.</span> <span class="nav-text">伽马颜色归一化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度计算"><span class="nav-number">2.2.</span> <span class="nav-text">梯度计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间-方向-bin-统计"><span class="nav-number">2.3.</span> <span class="nav-text">空间 / 方向 bin 统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归一化处理"><span class="nav-number">2.4.</span> <span class="nav-text">归一化处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM"><span class="nav-number">2.5.</span> <span class="nav-text">SVM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-26T07:04:02.591Z</updated>
+  <updated>2016-03-31T02:17:05.158Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《Histograms of Oriented Gradients for Human Detection》论文笔记</title>
+    <link href="http://yoursite.com/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/03/31/2016-03-31-HOG论文总结/</id>
+    <published>2016-03-31T02:00:00.000Z</published>
+    <updated>2016-03-31T02:17:05.158Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;HOG算法概述&quot;&gt;&lt;a href=&quot;#HOG算法概述&quot; class=&quot;headerlink&quot; title=&quot;HOG算法概述&quot;&gt;&lt;/a&gt;HOG算法概述&lt;/h1&gt;&lt;p&gt;局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做 HOG 描述子。将检测窗口中的所有块的 HOG 描述子组合起来就形成了最终的特征向量,然后使用 SVM 分类器进行人体检测,见下图。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;HOG特征有个优点,它们提取的边缘和梯度特征能很好的抓住局部形状的特点,并且由于是       在局部进行提取,所以对几何和光学变化都有很好的不变性:变换或旋转对于足够小的区域影响很小。对于人体检测,在粗糙的空域采样 (coarse spatial sampling) 、精细的方向采样 (fine orientationsampling)和较强的局部光学归一化 (stronglocal photometric normalization) 这些条件下,只要行人大体上能够保持直立的姿势,就容许有一些细微的肢体动作,这些细微的动作可以被忽略而不影响检测效果。&lt;/p&gt;
+&lt;h1 id=&quot;算法细节&quot;&gt;&lt;a href=&quot;#算法细节&quot; class=&quot;headerlink&quot; title=&quot;算法细节&quot;&gt;&lt;/a&gt;算法细节&lt;/h1&gt;&lt;h2 id=&quot;伽马颜色归一化&quot;&gt;&lt;a href=&quot;#伽马颜色归一化&quot; class=&quot;headerlink&quot; title=&quot;伽马颜色归一化&quot;&gt;&lt;/a&gt;伽马颜色归一化&lt;/h2&gt;&lt;p&gt;用不同的幂值 (gamma 参数 ) 评价了几种颜色空间,有灰度空间、 RGB 、 LAB ,结果表明,这些规范化对结果影响很小,可能是由于随后的描述子归一化能达到相似的效果。&lt;/p&gt;
+&lt;h2 id=&quot;梯度计算&quot;&gt;&lt;a href=&quot;#梯度计算&quot; class=&quot;headerlink&quot; title=&quot;梯度计算&quot;&gt;&lt;/a&gt;梯度计算&lt;/h2&gt;&lt;p&gt;不同的梯度计算方法对检测器性能有很大影响,但事实证明最简单的梯度算子结果是最好的。采用了最简单的一维离散微分模板算子。测试表明，使用 Sobel 算子等其它算子或是引入高斯平滑反而会造成性能降低。对于带颜色的图像,分别计算每个颜色通道的梯度,以范数最大者作为该点的梯度向量。&lt;/p&gt;
+&lt;h2 id=&quot;空间-方向-bin-统计&quot;&gt;&lt;a href=&quot;#空间-方向-bin-统计&quot; class=&quot;headerlink&quot; title=&quot;空间 / 方向 bin 统计&quot;&gt;&lt;/a&gt;空间 / 方向 bin 统计&lt;/h2&gt;&lt;p&gt;如下图的一个包含行人的图像，红色框标记一个 8 × 8 单元，这些 8 × 8 的单元将被用来计算 HOG 描述符。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/94180844.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;在每个单元中，我们在每个像素上计算梯度矢量，将得到 64 个梯度矢量，梯度矢量相角在 0◦ → 180◦ 之间分布，我们对相角进行分箱 (bin)，每箱 20◦，一共 9 箱 (Dalal 和 Triggs 得到的最佳参数)。具有某一相角的梯度矢量的幅度按照权重分配给直方图。这涉及到权重投票表决机制， Dalal 和 Triggs 发现，采用梯度幅度进行分配表现最佳。例如，一个具有 85 度相角的梯度矢量将其幅度的 1/4 分配给中心为 70◦ 的箱，将剩余的 3/4 幅度分配给中心为 90◦ 的箱。这样就得到了下面的方向梯度直方图。&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/13507779.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;上面分配幅度的方法可以减少恰好位于两箱边界的梯度矢量的影响，否则，如果一个强梯度矢量恰好在边界上，其相角的一个很小的绕动都将对直方图造成非常大的影响。同时，在计算出梯度后进行高斯平滑，也可以缓解这种影响。另一方面，特征的复杂程度对分类器的影响很大。通过直方图的构造，我们将特征 64 个二元矢量量化为特征 9 个值，很好地压缩了特征的同时保留了单元的信息。设想对图像加上一些失真，方向梯度直方图的变化也不会很大，这是 HOG 特征的优点。&lt;/p&gt;
+&lt;h2 id=&quot;归一化处理&quot;&gt;&lt;a href=&quot;#归一化处理&quot; class=&quot;headerlink&quot; title=&quot;归一化处理&quot;&gt;&lt;/a&gt;归一化处理&lt;/h2&gt;&lt;p&gt;前面提到，对图像所有像素进行加减后梯度矢量不变，接下来引入梯度矢量的标准化，使得其在像素值进行乘法运算后仍然保持不变。如果对单元内的像素值都乘以某一常数，梯度矢量的幅度明显会发生变化，幅度会增加常数因子,相角保持不变，这会造成整个直方图的每个箱的幅度增加常数因子。为了解决这个问题，需要引入梯度矢量标准化，一种简单的标准化方法是将梯度矢量除以其幅度，梯度矢量的幅度将保持 1，但是其相角不会发生变化。引入梯度矢量标准化以后，直方图各箱幅度在图像像素值整体乘以某个因子 (变化对比度) 时不会发生变化。除了对每个单元的直方图进行标准化外，另外一种方法是将固定数量的空域邻接的单元封装成区块，然后在区块上进行标准化。 Dalal 和 Triggs 使用 2 × 2 区块 (50% 重叠)，即 16 × 16 像素。将一个区块内的四个单元的直方图信息整合为 36 个值的特征 (9 × 4), 然后对这个 36 元矢量进行标准化。 Dalal 和 Triggs 考察了四种不同的区块标准化算法，设 v 为未标准化的区块梯度矢量， $||v||_{k}(k = 1, 2)$ 是 v 的 k-范数 (norm),e 是一个很小的常数 (具体值并不重要)，四种标准化算法如下：&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/98414203.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;L2-Hys 是在 L2-norm 后进行截断，然后重新进行标准化。 Dalal 和 Triggs 发现 L2-Hys,L2-norm,L1-sqrt 性能相似，L1-norm 性能稍有下降，但都相对于未标准化的梯度矢量有明显的性能提升。区块重叠的影响是使得每个单元会在最终得到的 HOG 描述符中其作用的次数大于 1 次 (角单元出现 1 次，边单元出现 2 次，其它单元出现 4 次)，但每次出现都在不同的区块进行标准化。定义一个区块位移的步长为 8 像素，则可以实现 50% 的重叠。如果检测器窗口为 64x128像素，则会被分为 7 × 15 区块，每个区块包括 2 × 2 个单元，每个单元包括 8 × 8 像素，每个区块进行 9 箱直方图统计 (36 值)，最后的总特征矢量将有 7 × 15 × 4 × 9 = 3780 个特征值元素。&lt;/p&gt;
+&lt;h2 id=&quot;SVM&quot;&gt;&lt;a href=&quot;#SVM&quot; class=&quot;headerlink&quot; title=&quot;SVM&quot;&gt;&lt;/a&gt;SVM&lt;/h2&gt;&lt;p&gt;分类器获取了 HOG 特征描述符之后，需要将其递交给监督学习分类器。 Dalal 和 Triggs 使用 SV M light 软件包配合HOG 描述符进行人体检测。 SVM 分类器寻找一个最佳超平面用作决策函数以实现二元分类，其特点是能够同时最小化经验误差与最大化几何边缘区。&lt;/p&gt;
+&lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://oncemore2020.github.io/blog/hog-using-opencv/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HOG/linSVM检测器&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/masibuaa/article/details/14056807&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;用于人体检测的方向梯度直方图&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;HOG算法概述&quot;&gt;&lt;a href=&quot;#HOG算法概述&quot; class=&quot;headerlink&quot; title=&quot;HOG算法概述&quot;&gt;&lt;/a&gt;HOG算法概述&lt;/h1&gt;&lt;p&gt;局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做 HOG 描述子。将检测窗口中的所有块的 HOG 描述子组合起来就形成了最终的特征向量,然后使用 SVM 分类器进行人体检测,见下图。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
+    
+      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
+    
+  </entry>
   
   <entry>
     <title>pandas十分钟入门</title>
