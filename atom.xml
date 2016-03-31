@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-31T02:17:05.158Z</updated>
+  <updated>2016-03-31T05:41:42.784Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>skimage hog函数解析</title>
+    <link href="http://yoursite.com/2016/03/31/2016-03-31-Skimage%20hog%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/"/>
+    <id>http://yoursite.com/2016/03/31/2016-03-31-Skimage hog函数用法解析/</id>
+    <published>2016-03-31T03:00:00.000Z</published>
+    <updated>2016-03-31T05:41:42.784Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;HOG简介&quot;&gt;&lt;a href=&quot;#HOG简介&quot; class=&quot;headerlink&quot; title=&quot;HOG简介&quot;&gt;&lt;/a&gt;HOG简介&lt;/h2&gt;&lt;p&gt;方向梯度直方图（英语：Histogram of oriented gradient，简称HOG）是应用在计算机视觉和图像处理领域，用于目标检测的特征描述器。这项技术是用来计算局部图像梯度的方向信息的统计值。这种方法跟边缘方向直方图（edge orientation histograms）、尺度不变特征变换（scale-invariant feature transform descriptors）以及形状上下文方法（ shape contexts）有很多相似之处，但与它们的不同点是：HOG描述器是在一个网格密集的大小统一的细胞单元（dense grid of uniformly spaced cells）上计算，而且为了提高性能，还采用了重叠的局部对比度归一化（overlapping local contrast normalization）技术。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;函数形式&quot;&gt;&lt;a href=&quot;#函数形式&quot; class=&quot;headerlink&quot; title=&quot;函数形式&quot;&gt;&lt;/a&gt;函数形式&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;skimage.feature.hog(image, orientations=&lt;span class=&quot;number&quot;&gt;9&lt;/span&gt;, pixels_per_cell=(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;), cells_per_block=(&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;), visualise=&lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;, transform_sqrt=&lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;, feature_vector=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;, normalise=&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;hog函数实现的主要步骤&quot;&gt;&lt;a href=&quot;#hog函数实现的主要步骤&quot; class=&quot;headerlink&quot; title=&quot;hog函数实现的主要步骤&quot;&gt;&lt;/a&gt;hog函数实现的主要步骤&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;图像归一化（可选）&lt;/li&gt;
+&lt;li&gt;计算x和y方向的梯度，包括大小和方向&lt;/li&gt;
+&lt;li&gt;计算梯度柱状图&lt;/li&gt;
+&lt;li&gt;对块状区域进行归一化处理&lt;/li&gt;
+&lt;li&gt;得到一个一维的特征向量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;具体有关hog特征计算流程可参考：&lt;a href=&quot;http://buptldy.github.io/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Histograms of Oriented Gradients for Human Detection》论文笔记&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;hog函数参数解释&quot;&gt;&lt;a href=&quot;#hog函数参数解释&quot; class=&quot;headerlink&quot; title=&quot;hog函数参数解释&quot;&gt;&lt;/a&gt;hog函数参数解释&lt;/h2&gt;&lt;h3 id=&quot;传入参数&quot;&gt;&lt;a href=&quot;#传入参数&quot; class=&quot;headerlink&quot; title=&quot;传入参数&quot;&gt;&lt;/a&gt;传入参数&lt;/h3&gt;&lt;p&gt;image : (M, N) ndarray&lt;/p&gt;
+&lt;p&gt;传入要进行hog特征计算的灰度图&lt;/p&gt;
+&lt;p&gt;orientations : int&lt;/p&gt;
+&lt;p&gt;设置方向梯度直方图的箱子个数&lt;/p&gt;
+&lt;p&gt;pixels_per_cell : 2 tuple (int, int)&lt;/p&gt;
+&lt;p&gt;设置每个单元的像素&lt;/p&gt;
+&lt;p&gt;cells_per_block : 2 tuple (int,int)&lt;/p&gt;
+&lt;p&gt;设置每个区块的单元数&lt;/p&gt;
+&lt;p&gt;visualise : bool, optional&lt;/p&gt;
+&lt;p&gt;设置是否返回可视化的hog特征&lt;/p&gt;
+&lt;p&gt;transform_sqrt : bool, optional&lt;/p&gt;
+&lt;p&gt;Apply power law compression to normalise the image before processing. DO NOT use this if the image contains negative values. Also see notes section below.&lt;br&gt;feature_vector : bool, optional&lt;/p&gt;
+&lt;p&gt;Return the data as a feature vector by calling .ravel() on the result just before returning.&lt;br&gt;normalise : bool, deprecated&lt;/p&gt;
+&lt;p&gt;The parameter is deprecated. Use transform_sqrt for power law compression. normalise has been deprecated.&lt;/p&gt;
+&lt;h3 id=&quot;返回参数&quot;&gt;&lt;a href=&quot;#返回参数&quot; class=&quot;headerlink&quot; title=&quot;返回参数&quot;&gt;&lt;/a&gt;返回参数&lt;/h3&gt;&lt;p&gt;newarr : ndarray&lt;/p&gt;
+&lt;p&gt;返回得到的一维hog特征&lt;/p&gt;
+&lt;p&gt;hog_image : ndarray (if visualise=True)&lt;/p&gt;
+&lt;p&gt;hog特征的可视化图像&lt;/p&gt;
+&lt;h2 id=&quot;hog函数举例&quot;&gt;&lt;a href=&quot;#hog函数举例&quot; class=&quot;headerlink&quot; title=&quot;hog函数举例&quot;&gt;&lt;/a&gt;hog函数举例&lt;/h2&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; plt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; skimage.feature &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; hog&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; skimage &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; data, color, exposure&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;image = color.rgb2gray(data.astronaut())&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fd, hog_image = hog(image, orientations=&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, pixels_per_cell=(&lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;16&lt;/span&gt;),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    cells_per_block=(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;), visualise=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fig, (ax1, ax2) = plt.subplots(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, figsize=(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;), sharex=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;, sharey=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.axis(&lt;span class=&quot;string&quot;&gt;&#39;off&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.imshow(image, cmap=plt.cm.gray)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.set_title(&lt;span class=&quot;string&quot;&gt;&#39;Input image&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.set_adjustable(&lt;span class=&quot;string&quot;&gt;&#39;box-forced&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Rescale histogram for better display&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hog_image_rescaled = exposure.rescale_intensity(hog_image, in_range=(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0.02&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.axis(&lt;span class=&quot;string&quot;&gt;&#39;off&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.imshow(hog_image_rescaled, cmap=plt.cm.gray)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.set_title(&lt;span class=&quot;string&quot;&gt;&#39;Histogram of Oriented Gradients&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.set_adjustable(&lt;span class=&quot;string&quot;&gt;&#39;box-forced&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.show()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;HOG简介&quot;&gt;&lt;a href=&quot;#HOG简介&quot; class=&quot;headerlink&quot; title=&quot;HOG简介&quot;&gt;&lt;/a&gt;HOG简介&lt;/h2&gt;&lt;p&gt;方向梯度直方图（英语：Histogram of oriented gradient，简称HOG）是应用在计算机视觉和图像处理领域，用于目标检测的特征描述器。这项技术是用来计算局部图像梯度的方向信息的统计值。这种方法跟边缘方向直方图（edge orientation histograms）、尺度不变特征变换（scale-invariant feature transform descriptors）以及形状上下文方法（ shape contexts）有很多相似之处，但与它们的不同点是：HOG描述器是在一个网格密集的大小统一的细胞单元（dense grid of uniformly spaced cells）上计算，而且为了提高性能，还采用了重叠的局部对比度归一化（overlapping local contrast normalization）技术。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    
+    </summary>
+    
+    
+      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
+    
+      <category term="skimage" scheme="http://yoursite.com/tags/skimage/"/>
+    
+  </entry>
   
   <entry>
     <title>《Histograms of Oriented Gradients for Human Detection》论文笔记</title>

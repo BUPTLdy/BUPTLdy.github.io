@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithms," />
+  <meta name="keywords" content="HOG,skimage," />
 
 
 
@@ -59,19 +59,19 @@
 
 
 
-<meta name="description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
+<meta name="description" content="HOG简介方向梯度直方图（英语：Histogram of oriented gradient，简称HOG）是应用在计算机视觉和图像处理领域，用于目标检测的特征描述器。这项技术是用来计算局部图像梯度的方向信息的统计值。这种方法跟边缘方向直方图（edge orientation histograms）、尺度不变特征变换（scale-invariant feature transform descrip">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NP完全性">
-<meta property="og:url" content="http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/index.html">
+<meta property="og:title" content="skimage hog函数解析">
+<meta property="og:url" content="http://yoursite.com/2016/03/31/2016-03-31-Skimage hog函数用法解析/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
-<meta property="og:image" content="http://i.imgur.com/mAyE7SM.png">
-<meta property="og:image" content="http://i.imgur.com/9wD7p7i.png">
-<meta property="og:updated_time" content="2016-03-14T05:28:33.393Z">
+<meta property="og:description" content="HOG简介方向梯度直方图（英语：Histogram of oriented gradient，简称HOG）是应用在计算机视觉和图像处理领域，用于目标检测的特征描述器。这项技术是用来计算局部图像梯度的方向信息的统计值。这种方法跟边缘方向直方图（edge orientation histograms）、尺度不变特征变换（scale-invariant feature transform descrip">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg">
+<meta property="og:updated_time" content="2016-03-31T05:41:42.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NP完全性">
-<meta name="twitter:description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
-<meta name="twitter:image" content="http://i.imgur.com/mAyE7SM.png">
+<meta name="twitter:title" content="skimage hog函数解析">
+<meta name="twitter:description" content="HOG简介方向梯度直方图（英语：Histogram of oriented gradient，简称HOG）是应用在计算机视觉和图像处理领域，用于目标检测的特征描述器。这项技术是用来计算局部图像梯度的方向信息的统计值。这种方法跟边缘方向直方图（edge orientation histograms）、尺度不变特征变换（scale-invariant feature transform descrip">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg">
 
 
 
@@ -89,7 +89,7 @@
   };
 </script>
 
-  <title> NP完全性 | Ldy's Blog </title>
+  <title> skimage hog函数解析 | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +274,7 @@
             
             
               
-                NP完全性
+                skimage hog函数解析
               
             
           </h1>
@@ -286,8 +286,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-11T10:00:00+08:00" content="2016-01-11">
-              2016-01-11
+            <time itemprop="dateCreated" datetime="2016-03-31T11:00:00+08:00" content="2016-03-31">
+              2016-03-31
             </time>
           </span>
 
@@ -297,8 +297,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/2016-01-11-NP完全问题的介绍及证明/" itemprop="commentsCount"></span>
+                <a href="/2016/03/31/2016-03-31-Skimage hog函数用法解析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/2016-03-31-Skimage hog函数用法解析/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,7 +310,7 @@
 
           
           
-             <span id="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/" class="leancloud_visitors" data-flag-title="NP完全性">
+             <span id="/2016/03/31/2016-03-31-Skimage hog函数用法解析/" class="leancloud_visitors" data-flag-title="skimage hog函数解析">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -331,28 +331,41 @@
       
 
       
-        <h1 id="NP完全性"><a href="#NP完全性" class="headerlink" title="NP完全性"></a>NP完全性</h1><p>  到目前为止，我们讨论的几乎都是<strong>多项式时间算法</strong>：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：<br><a id="more"></a><br>  P: 能在多项式时间内解决的问题</p>
-<p>  NP:不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题</p>
-<p>  NPC:NP完全问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的NP问题，即解决了此NPC题，所有NP问题也都得到解决。</p>
-<p>  NP难问题:所有NP问题在多项式时间内都能约化(Reducibility)到它的问题(不一定是NP问题)。</p>
-<p>  如果任何NP完全问题是可以多项式求解的，则P=NP，目前还不能证明P是否等于NP，这几个问题的关系如下：</p>
-<p>  <img src="http://i.imgur.com/mAyE7SM.png" alt=""></p>
-<p>  规约的概念：若我们拥有一个已证明难以解决的问题，我们又获得另一个相似的新问题。我们可合理推想此新问题亦是难以解决的。我们可由下列谬证法得证：若此新问题本质上容易解答，且若我们可展示每个旧问题的实例可经由一系列转换步骤变成新问题的实例，则旧问题便容易解决，因此得到悖论。因此新问题可知亦难以解决。</p>
-<p>  如何证明某个问题是NP完全的？</p>
-<p>  如果我们有一个已经证明的NP完全问题，如果我们可以把已证明的NP完全问题的任何实例都能多项式的规约到要要证明问题的实例，则能证明这个问题是NP完全的。即如果我们要证明一个问题A是NPC问题，则只需要首先证明他是NP问题，然后只要找一个你所知道的NPC问题规约到A即可。</p>
-<h1 id="常见的NPC问题"><a href="#常见的NPC问题" class="headerlink" title="常见的NPC问题"></a>常见的NPC问题</h1><p>  布尔可满足性问题（SAT）</p>
-<p>  对于一个确定的逻辑电路，是否存在一种输入使得输出为真。是第一个被证明的NPC问题，直观的看出这应该是一个NPC问题，因为当电路有k个输入，就会有$2^k$种情况的不同取值。<br>  3SAT</p>
-<p>  3和取范式：公式中每个字句都恰好有三个不同的’文字’，3SAT问题就是满足3和取范式的布尔公式是否可满足，3SAT问题可由SAT问题规约而来。<br>  分团问题（clique problem）</p>
-<p>  无向图中的团是图中所有顶点的一个子集，团中的每一对顶点之间都有一条边相连，即一个团就是无向图中的一个完全子图。</p>
-<p>  分团问题就是要寻找图中规模最大的团，判定条件：在图中是否存在一个给定规模为k的团。</p>
-<p>  独立集问题（Independent Set）</p>
-<p>  独立集：如果有一个顶点集合S，S中的任意两个顶点之间都没有边相连，则称S为一个独立集。</p>
-<p>  独立集问题和分团问题可相互规约，因为存在一个大小是k以上的分团，等价于它的补图中存在一个大小是k以上的独立集。</p>
-<p>  补图：一个图G的补图（complement）或者反面（inverse）是一个图有着跟G相同的点，而且这些点之间有边相连当且仅当在G里面他们没有边相连。在制作图的时候，你可以先建立一个有G所有点的完全图，然后清除G里面已经有的边来得到补图，这里的补图并不是图本身的补集。</p>
-<p>  顶点覆盖问题（Vertex Cover）</p>
-<p>  图的顶点覆盖是一些顶点的集合，使得图中的每一条边都至少接触集合中的一个顶点，如下图所示，图中红色顶点可以覆盖图中所有的边。寻找最小的顶点覆盖的问题称为顶点覆盖问题，它是一个NP完全问题。</p>
-<p>  <img src="http://i.imgur.com/9wD7p7i.png" alt=""></p>
-<h1 id="集合覆盖问题"><a href="#集合覆盖问题" class="headerlink" title="集合覆盖问题"></a>集合覆盖问题</h1>
+        <h2 id="HOG简介"><a href="#HOG简介" class="headerlink" title="HOG简介"></a>HOG简介</h2><p>方向梯度直方图（英语：Histogram of oriented gradient，简称HOG）是应用在计算机视觉和图像处理领域，用于目标检测的特征描述器。这项技术是用来计算局部图像梯度的方向信息的统计值。这种方法跟边缘方向直方图（edge orientation histograms）、尺度不变特征变换（scale-invariant feature transform descriptors）以及形状上下文方法（ shape contexts）有很多相似之处，但与它们的不同点是：HOG描述器是在一个网格密集的大小统一的细胞单元（dense grid of uniformly spaced cells）上计算，而且为了提高性能，还采用了重叠的局部对比度归一化（overlapping local contrast normalization）技术。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg" alt=""><br></center>
+
+
+<a id="more"></a>
+<h2 id="函数形式"><a href="#函数形式" class="headerlink" title="函数形式"></a>函数形式</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skimage.feature.hog(image, orientations=<span class="number">9</span>, pixels_per_cell=(<span class="number">8</span>, <span class="number">8</span>), cells_per_block=(<span class="number">3</span>, <span class="number">3</span>), visualise=<span class="keyword">False</span>, transform_sqrt=<span class="keyword">False</span>, feature_vector=<span class="keyword">True</span>, normalise=<span class="keyword">None</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="hog函数实现的主要步骤"><a href="#hog函数实现的主要步骤" class="headerlink" title="hog函数实现的主要步骤"></a>hog函数实现的主要步骤</h2><ul>
+<li>图像归一化（可选）</li>
+<li>计算x和y方向的梯度，包括大小和方向</li>
+<li>计算梯度柱状图</li>
+<li>对块状区域进行归一化处理</li>
+<li>得到一个一维的特征向量</li>
+</ul>
+<p>具体有关hog特征计算流程可参考：<a href="http://buptldy.github.io/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/" target="_blank" rel="external">《Histograms of Oriented Gradients for Human Detection》论文笔记</a></p>
+<h2 id="hog函数参数解释"><a href="#hog函数参数解释" class="headerlink" title="hog函数参数解释"></a>hog函数参数解释</h2><h3 id="传入参数"><a href="#传入参数" class="headerlink" title="传入参数"></a>传入参数</h3><p>image : (M, N) ndarray</p>
+<p>传入要进行hog特征计算的灰度图</p>
+<p>orientations : int</p>
+<p>设置方向梯度直方图的箱子个数</p>
+<p>pixels_per_cell : 2 tuple (int, int)</p>
+<p>设置每个单元的像素</p>
+<p>cells_per_block : 2 tuple (int,int)</p>
+<p>设置每个区块的单元数</p>
+<p>visualise : bool, optional</p>
+<p>设置是否返回可视化的hog特征</p>
+<p>transform_sqrt : bool, optional</p>
+<p>Apply power law compression to normalise the image before processing. DO NOT use this if the image contains negative values. Also see notes section below.<br>feature_vector : bool, optional</p>
+<p>Return the data as a feature vector by calling .ravel() on the result just before returning.<br>normalise : bool, deprecated</p>
+<p>The parameter is deprecated. Use transform_sqrt for power law compression. normalise has been deprecated.</p>
+<h3 id="返回参数"><a href="#返回参数" class="headerlink" title="返回参数"></a>返回参数</h3><p>newarr : ndarray</p>
+<p>返回得到的一维hog特征</p>
+<p>hog_image : ndarray (if visualise=True)</p>
+<p>hog特征的可视化图像</p>
+<h2 id="hog函数举例"><a href="#hog函数举例" class="headerlink" title="hog函数举例"></a>hog函数举例</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> skimage.feature <span class="keyword">import</span> hog</span><br><span class="line"><span class="keyword">from</span> skimage <span class="keyword">import</span> data, color, exposure</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">image = color.rgb2gray(data.astronaut())</span><br><span class="line"></span><br><span class="line">fd, hog_image = hog(image, orientations=<span class="number">8</span>, pixels_per_cell=(<span class="number">16</span>, <span class="number">16</span>),</span><br><span class="line">                    cells_per_block=(<span class="number">1</span>, <span class="number">1</span>), visualise=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">fig, (ax1, ax2) = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">8</span>, <span class="number">4</span>), sharex=<span class="keyword">True</span>, sharey=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line">ax1.axis(<span class="string">'off'</span>)</span><br><span class="line">ax1.imshow(image, cmap=plt.cm.gray)</span><br><span class="line">ax1.set_title(<span class="string">'Input image'</span>)</span><br><span class="line">ax1.set_adjustable(<span class="string">'box-forced'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rescale histogram for better display</span></span><br><span class="line">hog_image_rescaled = exposure.rescale_intensity(hog_image, in_range=(<span class="number">0</span>, <span class="number">0.02</span>))</span><br><span class="line"></span><br><span class="line">ax2.axis(<span class="string">'off'</span>)</span><br><span class="line">ax2.imshow(hog_image_rescaled, cmap=plt.cm.gray)</span><br><span class="line">ax2.set_title(<span class="string">'Histogram of Oriented Gradients'</span>)</span><br><span class="line">ax1.set_adjustable(<span class="string">'box-forced'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg" alt=""><br></center>
+
       
     </div>
 
@@ -366,7 +379,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithms/" rel="tag">#Algorithms</a>
+            <a href="/tags/HOG/" rel="tag">#HOG</a>
+          
+            <a href="/tags/skimage/" rel="tag">#skimage</a>
           
         </div>
       
@@ -375,17 +390,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/10/2016-01-10-网络最大流/" rel="next" title="网络最大流 [Max Flow]">
-                <i class="fa fa-chevron-left"></i> 网络最大流 [Max Flow]
+              <a href="/2016/03/31/2016-03-31-HOG论文总结/" rel="next" title="《Histograms of Oriented Gradients for Human Detection》论文笔记">
+                <i class="fa fa-chevron-left"></i> 《Histograms of Oriented Gradients for Human Detection》论文笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/12/2016-01-12-近似算法/" rel="prev" title="近似算法[Approximation algorithm]">
-                近似算法[Approximation algorithm] <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -400,10 +411,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/11/2016-01-11-NP完全问题的介绍及证明/"
-     data-title="NP完全性"
+        <div class="ds-share flat" data-thread-key="2016/03/31/2016-03-31-Skimage hog函数用法解析/"
+     data-title="skimage hog函数解析"
      data-content=""
-     data-url="http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">
+     data-url="http://yoursite.com/2016/03/31/2016-03-31-Skimage hog函数用法解析/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -430,8 +441,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/11/2016-01-11-NP完全问题的介绍及证明/"
-           data-title="NP完全性" data-url="http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">
+      <div class="ds-thread" data-thread-key="2016/03/31/2016-03-31-Skimage hog函数用法解析/"
+           data-title="skimage hog函数解析" data-url="http://yoursite.com/2016/03/31/2016-03-31-Skimage hog函数用法解析/">
       </div>
     
   </div>
@@ -537,7 +548,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NP完全性"><span class="nav-number">1.</span> <span class="nav-text">NP完全性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的NPC问题"><span class="nav-number">2.</span> <span class="nav-text">常见的NPC问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合覆盖问题"><span class="nav-number">3.</span> <span class="nav-text">集合覆盖问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HOG简介"><span class="nav-number">1.</span> <span class="nav-text">HOG简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数形式"><span class="nav-number">2.</span> <span class="nav-text">函数形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hog函数实现的主要步骤"><span class="nav-number">3.</span> <span class="nav-text">hog函数实现的主要步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hog函数参数解释"><span class="nav-number">4.</span> <span class="nav-text">hog函数参数解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传入参数"><span class="nav-number">4.1.</span> <span class="nav-text">传入参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回参数"><span class="nav-number">4.2.</span> <span class="nav-text">返回参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hog函数举例"><span class="nav-number">5.</span> <span class="nav-text">hog函数举例</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
