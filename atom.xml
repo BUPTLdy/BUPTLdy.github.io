@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-31T05:41:42.784Z</updated>
+  <updated>2016-04-04T01:57:21.745Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,118 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python连接MySQL</title>
+    <link href="http://yoursite.com/2016/04/04/2016-04-04-Python%E8%BF%9E%E6%8E%A5MySQL.md/"/>
+    <id>http://yoursite.com/2016/04/04/2016-04-04-Python连接MySQL.md/</id>
+    <published>2016-04-04T03:00:00.000Z</published>
+    <updated>2016-04-04T01:57:21.745Z</updated>
+    
+    <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-4/94530193.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h1 id=&quot;环境安装&quot;&gt;&lt;a href=&quot;#环境安装&quot; class=&quot;headerlink&quot; title=&quot;环境安装&quot;&gt;&lt;/a&gt;环境安装&lt;/h1&gt;&lt;p&gt;  安装MySQL：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server
+&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;  安装MySQLdb模块：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-mysqldb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  测试是否安装成功：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import MySQLdb
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;MySQL建立数据库&quot;&gt;&lt;a href=&quot;#MySQL建立数据库&quot; class=&quot;headerlink&quot; title=&quot;MySQL建立数据库&quot;&gt;&lt;/a&gt;MySQL建立数据库&lt;/h1&gt;&lt;p&gt;  进入MySQL：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql -u root -p
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  进入MySQL并打开补全：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql -u USER -p --local-infile=1  --auto-rehash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  建立一个数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;create database testdb character set utf8;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  调用已经建立的数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;use testdb;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  建立一个数据表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;create table users
+(id int(2) not null primary key auto_increment,
+username varchar(40),
+password text,email text)
+default charset=utf8;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  显示表格：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;show tables;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  显示表格结构：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;desc users;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  表格中插入数据：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;insert into
+users(username,password,email)
+values(&amp;quot;qiwsir&amp;quot;,&amp;quot;123123&amp;quot;,&amp;quot;qiwsir@gmail.com&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  查询表格内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;select * from users;
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;Python操作数据库&quot;&gt;&lt;a href=&quot;#Python操作数据库&quot; class=&quot;headerlink&quot; title=&quot;Python操作数据库&quot;&gt;&lt;/a&gt;Python操作数据库&lt;/h1&gt;&lt;p&gt;  连接数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;conn =
+MySQLdb.connect
+(host=&amp;quot;localhost&amp;quot;,user=&amp;quot;root&amp;quot;,
+passwd=&amp;quot;123123&amp;quot;,db=&amp;quot;qiwsirtest&amp;quot;,charset=&amp;quot;utf8&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  用游标（指针）cursor的方式操作数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur = conn.cursor()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  在表中插入一条记录：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur.execute(&amp;quot;insert into
+users (username,password,email)
+values (%s,%s,%s)&amp;quot;,(&amp;quot;python&amp;quot;,&amp;quot;123456&amp;quot;,&amp;quot;python@gmail.com&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  使插入的记录生效，提交：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;conn.commit()
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  同时插入多条记录：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur.executemany(&amp;quot;insert into
+users (username,password,email)
+values (%s,%s,%s)&amp;quot;,
+((&amp;quot;google&amp;quot;,&amp;quot;111222&amp;quot;,&amp;quot;g@gmail.com&amp;quot;),
+(&amp;quot;facebook&amp;quot;,&amp;quot;222333&amp;quot;,&amp;quot;f@face.book&amp;quot;),
+(&amp;quot;github&amp;quot;,&amp;quot;333444&amp;quot;,&amp;quot;git@hub.com&amp;quot;),
+(&amp;quot;docker&amp;quot;,&amp;quot;444555&amp;quot;,&amp;quot;doc@ker.com&amp;quot;)))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  要记得提交生效&lt;/p&gt;
+&lt;p&gt;  查询数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur.execute(&amp;quot;select * from users&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  上述操作只是得到结果的指针，想要显示查询结果，可以用到以下方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;fetchall(self):接收全部的返回结果行.&lt;/li&gt;
+&lt;li&gt;fwetchmany(size=None):接收size条返回结果行.如果size的值大于返回的结果行的数量,则会返回cursor.arraysize条数据.&lt;/li&gt;
+&lt;li&gt;fetchone():返回一条结果行.&lt;/li&gt;
+&lt;li&gt;scroll(value,mode=’relative’):移动指针到某一行.如果mode=’relative’,则表示从当前所在行移动value条,如果mode=’absolute’,则表示从结果集的第一行移动value条.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  python的MySQLdb指针提供了一个参数，可以实现将读取到的数据变成字典形式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur = conn.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  更新数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur.execute(&amp;quot;update users set username=%s where id=2&amp;quot;,(&amp;quot;mypython&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   如果再下述连接数据库的语句中，如果没有指定具体的数据库，则连接到MySQL：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;conn = MySQLdb.connect
+(host=&amp;quot;localhost&amp;quot;,
+user=&amp;quot;root&amp;quot;,passwd=&amp;quot;123123&amp;quot;,
+db=&amp;quot;qiwsirtest&amp;quot;,charset=&amp;quot;utf8&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  然后可以通过用conn.select_db()选择要操作的数据库：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;conn.select_db(&amp;quot;testdb&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  不选数据库，而是要新建一个数据库，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur = conn.cursor()
+cur.execute(&amp;quot;create database newtest&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  建立数据库之后，就可以选择这个数据库，然后在这个数据库中建立一个数据表：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur.execute(&amp;quot;create table newusers
+(id int(2) primary key auto_increment,
+username varchar(20), age int(2), email text)&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  当进行完有关数据操作之后，最后要做的就是关闭游标（指针）和连接。用如下命令实现：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cur.close()
+conn.close()
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;  &lt;a href=&quot;http://python.xiaoleilu.com/300/302.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;通过Python连接数据库&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-4/94530193.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h1 id=&quot;环境安装&quot;&gt;&lt;a href=&quot;#环境安装&quot; class=&quot;headerlink&quot; title=&quot;环境安装&quot;&gt;&lt;/a&gt;环境安装&lt;/h1&gt;&lt;p&gt;  安装MySQL：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>skimage hog函数解析</title>
@@ -66,9 +178,9 @@
     </summary>
     
     
-      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
-    
       <category term="skimage" scheme="http://yoursite.com/tags/skimage/"/>
+    
+      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
     
   </entry>
   
@@ -101,9 +213,9 @@
     </summary>
     
     
-      <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
-    
       <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
+    
+      <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
     
   </entry>
   

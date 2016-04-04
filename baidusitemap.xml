@@ -4,6 +4,25 @@
 
     
   <url>
+    <loc>http://yoursite.com/2016/04/04/2016-04-04-Python%E8%BF%9E%E6%8E%A5MySQL.md/</loc>
+    <lastmod>2016-04-04T01:57:21.745Z</lastmod>
+    <data>
+        <display>
+        <title>Python连接MySQL</title>
+        <pubTime>2016-04-04T03:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>MySQL</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2016/03/31/2016-03-31-Skimage%20hog%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
     <lastmod>2016-03-31T05:41:42.784Z</lastmod>
     <data>
@@ -11,9 +30,9 @@
         <title>skimage hog函数解析</title>
         <pubTime>2016-03-31T03:00:00.000Z</pubTime>
         
-        <tag>HOG</tag>
-         
         <tag>skimage</tag>
+         
+        <tag>HOG</tag>
          
          
            
@@ -30,9 +49,9 @@
         <title>《Histograms of Oriented Gradients for Human Detection》论文笔记</title>
         <pubTime>2016-03-31T02:00:00.000Z</pubTime>
         
-        <tag>Computer Vision</tag>
-         
         <tag>HOG</tag>
+         
+        <tag>Computer Vision</tag>
          
          
            

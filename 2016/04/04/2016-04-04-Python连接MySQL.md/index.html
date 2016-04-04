@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Git,Linux," />
+  <meta name="keywords" content="Python,MySQL," />
 
 
 
@@ -59,28 +59,21 @@
 
 
 
-<meta name="description" content="创建版本库
- 初始化一个Git仓库，使用git init命令。
- 添加文件到Git仓库，分两步：
- 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件；">
+<meta name="description" content="环境安装  安装MySQL：
+sudo apt-get install mysql-server">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git命令总结">
-<meta property="og:url" content="http://yoursite.com/2016/03/02/2016-03-02-GIT命令总结/index.html">
+<meta property="og:title" content="Python连接MySQL">
+<meta property="og:url" content="http://yoursite.com/2016/04/04/2016-04-04-Python连接MySQL.md/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="创建版本库
- 初始化一个Git仓库，使用git init命令。
- 添加文件到Git仓库，分两步：
- 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件；">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-10/74272820.jpg">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-10/93928228.jpg">
-<meta property="og:updated_time" content="2016-03-14T05:34:41.203Z">
+<meta property="og:description" content="环境安装  安装MySQL：
+sudo apt-get install mysql-server">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-4-4/94530193.jpg">
+<meta property="og:updated_time" content="2016-04-04T01:57:21.745Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git命令总结">
-<meta name="twitter:description" content="创建版本库
- 初始化一个Git仓库，使用git init命令。
- 添加文件到Git仓库，分两步：
- 第一步，使用命令git add ，注意，可反复多次使用，添加多个文件；">
-<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-10/74272820.jpg">
+<meta name="twitter:title" content="Python连接MySQL">
+<meta name="twitter:description" content="环境安装  安装MySQL：
+sudo apt-get install mysql-server">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-4-4/94530193.jpg">
 
 
 
@@ -98,7 +91,7 @@
   };
 </script>
 
-  <title> Git命令总结 | Ldy's Blog </title>
+  <title> Python连接MySQL | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -283,7 +276,7 @@
             
             
               
-                Git命令总结
+                Python连接MySQL
               
             
           </h1>
@@ -295,8 +288,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-02T10:00:00+08:00" content="2016-03-02">
-              2016-03-02
+            <time itemprop="dateCreated" datetime="2016-04-04T11:00:00+08:00" content="2016-04-04">
+              2016-04-04
             </time>
           </span>
 
@@ -306,8 +299,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/02/2016-03-02-GIT命令总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/2016-03-02-GIT命令总结/" itemprop="commentsCount"></span>
+                <a href="/2016/04/04/2016-04-04-Python连接MySQL.md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/04/2016-04-04-Python连接MySQL.md/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -319,7 +312,7 @@
 
           
           
-             <span id="/2016/03/02/2016-03-02-GIT命令总结/" class="leancloud_visitors" data-flag-title="Git命令总结">
+             <span id="/2016/04/04/2016-04-04-Python连接MySQL.md/" class="leancloud_visitors" data-flag-title="Python连接MySQL">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -340,82 +333,92 @@
       
 
       
-        <ol>
-<li><p>创建版本库</p>
-<p> 初始化一个Git仓库，使用git init命令。</p>
-<p> 添加文件到Git仓库，分两步：</p>
-<p> 第一步，使用命令git add <file>，注意，可反复多次使用，添加多个文件；</file></p>
-<a id="more"></a>
-<p> 第二步，使用命令git commit，完成。</p>
-<p> 要随时掌握工作区的状态，使用git status命令。</p>
-<p> 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。</p>
-</li>
-<li><p>版本回退</p>
-<p> HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。</p>
-<p> 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。</p>
-<p> 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。</p>
-</li>
-<li><p>工作区和暂存区</p>
-<p> 工作区（Working Directory）：就是你在电脑里能看到的目录。</p>
-<p> 版本库（Repository）：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</p>
-<p> Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</p>
-<p> <img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-10/74272820.jpg" alt=""></p>
-<p> 前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：</p>
-<p> 第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；</p>
-<p> 第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。</p>
-<p> 因为我们创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。</p>
-<p> 你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
-<p> Git是如何跟踪修改的:每次修改，如果不add到暂存区，那就不会加入到commit中。</p>
-<p> 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
-<p> 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。</p>
-<p> 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。</p>
-</li>
-<li><p>远程仓库</p>
-<p> 要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；</p>
-<p> 关联后，使用命令git push -u origin master第一次推送master分支的所有内容；</p>
-<p> 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；</p>
-</li>
-<li><p>创建和合并分支</p>
-<p> 查看分支：git branch</p>
-<p> 创建分支：git branch <name></name></p>
-<p> 切换分支：git checkout <name></name></p>
-<p> 创建+切换分支：git checkout -b <name></name></p>
-<p> 合并某分支到当前分支：git merge <name></name></p>
-<p> 删除分支：git branch -d <name></name></p>
-<p> 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</p>
-<p> 用git log –graph命令可以看到分支合并图。</p>
-<p> 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；</p>
-<p> 当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。</p>
-<p> 开发一个新feature，最好新建一个分支；</p>
-<p> 如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。</name></p>
-<p> 查看远程库信息，使用git remote -v；</p>
-<p> 本地新建的分支如果不推送到远程，对其他人就是不可见的；</p>
-<p> 从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；</p>
-<p> 在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；</p>
-<p> 建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；</p>
-<p> 从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。</p>
-<p> 命令git tag <name>用于新建一个标签，默认为HEAD，也可以指定一个commit id；</name></p>
-</li>
-<li><p>标签管理</p>
-<p> git tag -a <tagname> -m “blablabla…”可以指定标签信息；</tagname></p>
-<p> git tag -s <tagname> -m “blablabla…”可以用PGP签名标签；</tagname></p>
-<p> 命令git tag可以查看所有标签。</p>
-<p> 命令git push origin <tagname>可以推送一个本地标签；</tagname></p>
-<p> 命令git push origin –tags可以推送全部未推送过的本地标签；</p>
-<p> 命令git tag -d <tagname>可以删除一个本地标签；</tagname></p>
-<p> 命令git push origin :refs/tags/<tagname>可以删除一个远程标签</tagname></p>
-</li>
-<li><p>Github使用</p>
-<p> 在GitHub上，可以任意Fork开源仓库；</p>
-<p> 自己拥有Fork后的仓库的读写权限；</p>
-<p> 可以推送pull request给官方仓库来贡献代码。</p>
-<p> 忽略某些文件时，需要编写.gitignore；</p>
-<p> .gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！</p>
-</li>
-</ol>
-<p><strong>参考资料</strong></p>
-<p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-10/93928228.jpg" alt=""></p>
-<p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git教程-廖雪峰的官方网站</a></p>
+        <center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-4-4/94530193.jpg" alt=""><br></center>
+
+<h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><p>  安装MySQL：</p>
+<pre><code>sudo apt-get install mysql-server
+</code></pre><a id="more"></a>
+<p>  安装MySQLdb模块：</p>
+<pre><code>sudo apt-get install python-mysqldb
+</code></pre><p>  测试是否安装成功：</p>
+<pre><code>import MySQLdb
+</code></pre><h1 id="MySQL建立数据库"><a href="#MySQL建立数据库" class="headerlink" title="MySQL建立数据库"></a>MySQL建立数据库</h1><p>  进入MySQL：</p>
+<pre><code>mysql -u root -p
+</code></pre><p>  进入MySQL并打开补全：</p>
+<pre><code>mysql -u USER -p --local-infile=1  --auto-rehash
+</code></pre><p>  建立一个数据库：</p>
+<pre><code>create database testdb character set utf8;
+</code></pre><p>  调用已经建立的数据库：</p>
+<pre><code>use testdb;
+</code></pre><p>  建立一个数据表：</p>
+<pre><code>create table users
+(id int(2) not null primary key auto_increment,
+username varchar(40),
+password text,email text)
+default charset=utf8;
+</code></pre><p>  显示表格：</p>
+<pre><code>show tables;
+</code></pre><p>  显示表格结构：</p>
+<pre><code>desc users;
+</code></pre><p>  表格中插入数据：</p>
+<pre><code>insert into
+users(username,password,email)
+values(&quot;qiwsir&quot;,&quot;123123&quot;,&quot;qiwsir@gmail.com&quot;);
+</code></pre><p>  查询表格内容：</p>
+<pre><code>select * from users;
+</code></pre><h1 id="Python操作数据库"><a href="#Python操作数据库" class="headerlink" title="Python操作数据库"></a>Python操作数据库</h1><p>  连接数据库：</p>
+<pre><code>conn =
+MySQLdb.connect
+(host=&quot;localhost&quot;,user=&quot;root&quot;,
+passwd=&quot;123123&quot;,db=&quot;qiwsirtest&quot;,charset=&quot;utf8&quot;)
+</code></pre><p>  用游标（指针）cursor的方式操作数据库：</p>
+<pre><code>cur = conn.cursor()
+</code></pre><p>  在表中插入一条记录：</p>
+<pre><code>cur.execute(&quot;insert into
+users (username,password,email)
+values (%s,%s,%s)&quot;,(&quot;python&quot;,&quot;123456&quot;,&quot;python@gmail.com&quot;))
+</code></pre><p>  使插入的记录生效，提交：</p>
+<pre><code>conn.commit()
+</code></pre><p>  同时插入多条记录：</p>
+<pre><code>cur.executemany(&quot;insert into
+users (username,password,email)
+values (%s,%s,%s)&quot;,
+((&quot;google&quot;,&quot;111222&quot;,&quot;g@gmail.com&quot;),
+(&quot;facebook&quot;,&quot;222333&quot;,&quot;f@face.book&quot;),
+(&quot;github&quot;,&quot;333444&quot;,&quot;git@hub.com&quot;),
+(&quot;docker&quot;,&quot;444555&quot;,&quot;doc@ker.com&quot;)))
+</code></pre><p>  要记得提交生效</p>
+<p>  查询数据库：</p>
+<pre><code>cur.execute(&quot;select * from users&quot;)
+</code></pre><p>  上述操作只是得到结果的指针，想要显示查询结果，可以用到以下方法：</p>
+<ul>
+<li>fetchall(self):接收全部的返回结果行.</li>
+<li>fwetchmany(size=None):接收size条返回结果行.如果size的值大于返回的结果行的数量,则会返回cursor.arraysize条数据.</li>
+<li>fetchone():返回一条结果行.</li>
+<li>scroll(value,mode=’relative’):移动指针到某一行.如果mode=’relative’,则表示从当前所在行移动value条,如果mode=’absolute’,则表示从结果集的第一行移动value条.</li>
+</ul>
+<p>  python的MySQLdb指针提供了一个参数，可以实现将读取到的数据变成字典形式：</p>
+<pre><code>cur = conn.cursor(cursorclass=MySQLdb.cursors.DictCursor)
+</code></pre><p>  更新数据库：</p>
+<pre><code>cur.execute(&quot;update users set username=%s where id=2&quot;,(&quot;mypython&quot;))
+</code></pre><p>   如果再下述连接数据库的语句中，如果没有指定具体的数据库，则连接到MySQL：</p>
+<pre><code>conn = MySQLdb.connect
+(host=&quot;localhost&quot;,
+user=&quot;root&quot;,passwd=&quot;123123&quot;,
+db=&quot;qiwsirtest&quot;,charset=&quot;utf8&quot;)
+</code></pre><p>  然后可以通过用conn.select_db()选择要操作的数据库：</p>
+<pre><code>conn.select_db(&quot;testdb&quot;)
+</code></pre><p>  不选数据库，而是要新建一个数据库，如下所示：</p>
+<pre><code>cur = conn.cursor()
+cur.execute(&quot;create database newtest&quot;)
+</code></pre><p>  建立数据库之后，就可以选择这个数据库，然后在这个数据库中建立一个数据表：</p>
+<pre><code>cur.execute(&quot;create table newusers
+(id int(2) primary key auto_increment,
+username varchar(20), age int(2), email text)&quot;)
+</code></pre><p>  当进行完有关数据操作之后，最后要做的就是关闭游标（指针）和连接。用如下命令实现：</p>
+<pre><code>cur.close()
+conn.close()
+</code></pre><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>  <a href="http://python.xiaoleilu.com/300/302.html" target="_blank" rel="external">通过Python连接数据库</a></p>
 
       
     </div>
@@ -430,9 +433,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Git/" rel="tag">#Git</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
           
         </div>
       
@@ -441,17 +444,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/12/2016-01-12-近似算法/" rel="next" title="近似算法[Approximation algorithm]">
-                <i class="fa fa-chevron-left"></i> 近似算法[Approximation algorithm]
+              <a href="/2016/03/31/2016-03-31-Skimage hog函数用法解析/" rel="next" title="skimage hog函数解析">
+                <i class="fa fa-chevron-left"></i> skimage hog函数解析
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/25/2016-03-25-pandas快速入门/" rel="prev" title="pandas十分钟入门">
-                pandas十分钟入门 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -466,10 +465,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/02/2016-03-02-GIT命令总结/"
-     data-title="Git命令总结"
+        <div class="ds-share flat" data-thread-key="2016/04/04/2016-04-04-Python连接MySQL.md/"
+     data-title="Python连接MySQL"
      data-content=""
-     data-url="http://yoursite.com/2016/03/02/2016-03-02-GIT命令总结/">
+     data-url="http://yoursite.com/2016/04/04/2016-04-04-Python连接MySQL.md/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -496,8 +495,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/02/2016-03-02-GIT命令总结/"
-           data-title="Git命令总结" data-url="http://yoursite.com/2016/03/02/2016-03-02-GIT命令总结/">
+      <div class="ds-thread" data-thread-key="2016/04/04/2016-04-04-Python连接MySQL.md/"
+           data-title="Python连接MySQL" data-url="http://yoursite.com/2016/04/04/2016-04-04-Python连接MySQL.md/">
       </div>
     
   </div>
@@ -603,7 +602,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境安装"><span class="nav-number">1.</span> <span class="nav-text">环境安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL建立数据库"><span class="nav-number">2.</span> <span class="nav-text">MySQL建立数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python操作数据库"><span class="nav-number">3.</span> <span class="nav-text">Python操作数据库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
