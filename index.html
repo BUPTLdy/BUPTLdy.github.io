@@ -273,6 +273,153 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/07/2016-04-07-Keras简介/" itemprop="url">
+                  Keras简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-07T11:00:00+08:00" content="2016-04-07">
+              2016-04-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/07/2016-04-07-Keras简介/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/07/2016-04-07-Keras简介/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+
+          
+          
+             <span id="/2016/04/07/2016-04-07-Keras简介/" class="leancloud_visitors" data-flag-title="Keras简介">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Keras-简介"><a href="#Keras-简介" class="headerlink" title="Keras 简介"></a>Keras 简介</h1><p><a href="www.keras.io">Keras</a>是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。</p>
+<p><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg" alt=""><br></center><br>安装：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install keras</span><br></pre></td></tr></table></figure></p>
+<h1 id="Keras里的基本模块"><a href="#Keras里的基本模块" class="headerlink" title="Keras里的基本模块"></a>Keras里的基本模块</h1><h2 id="optimizers"><a href="#optimizers" class="headerlink" title="optimizers"></a>optimizers</h2><p>Keras包含了很多优化方法。比如最常用的随机梯度下降法(SGD)，还有Adagrad、Adadelta、RMSprop、Adam等。下面通过具体的代码介绍一下优化器的使用方法。<br>在编译一个Keras模型时，优化器是2个参数之一（另外一个是损失函数）。看如下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model = Sequential()  </span><br><span class="line">model.add(Dense(<span class="number">64</span>, init=<span class="string">'uniform'</span>, input_dim=<span class="number">10</span>))  </span><br><span class="line">model.add(Activation(<span class="string">'tanh'</span>))  </span><br><span class="line">model.add(Activation(<span class="string">'softmax'</span>))  </span><br><span class="line"></span><br><span class="line">sgd = SGD(lr=<span class="number">0.1</span>, decay=<span class="number">1e-6</span>, momentum=<span class="number">0.9</span>, nesterov=<span class="keyword">True</span>)  </span><br><span class="line">model.compile(loss=<span class="string">'mean_squared_error'</span>, optimizer=sgd)</span><br></pre></td></tr></table></figure>
+<p>这个例子中是在调用compile之前实例化了一个优化器。我们也可以通过传递名字的方式调用默认的优化器。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># passoptimizer by name: default parameters will be used  </span></span><br><span class="line">model.compile(loss=<span class="string">'mean_squared_error'</span>, optimizer=<span class="string">'sgd'</span>)</span><br></pre></td></tr></table></figure>
+<p>SGD（随机梯度下降优化器，性价比最好的算法）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">keras.optimizers.SGD(lr=<span class="number">0.01</span>, momentum=<span class="number">0.</span>, decay=<span class="number">0.</span>, nesterov=<span class="keyword">False</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li>lr :float&gt;=0，学习速率</li>
+<li>momentum :float&gt;=0 参数更新的动量</li>
+<li>decay : float&gt;=0 每次更新后学习速率的衰减量</li>
+<li>nesterov :Boolean 是否使用Nesterov动量项</li>
+</ul>
+<h2 id="objectives"><a href="#objectives" class="headerlink" title="objectives"></a>objectives</h2><p>目标函数模块，keras提供了mean_squared_error，mean_absolute_error，squared_hinge，hinge，binary_crossentropy，categorical_crossentropy这几种目标函数。</p>
+<p>这里binary_crossentropy 和categorical_crossentropy也就是常说的logloss.</p>
+<h2 id="Activations"><a href="#Activations" class="headerlink" title="Activations"></a>Activations</h2><p>激活函数模块，keras提供了linear、sigmoid、hard_sigmoid、tanh、softplus、relu、softplus，另外softmax也放在Activations模块里。此外，像LeakyReLU和PReLU这种比较新的激活函数，keras在keras.layers.advanced_activations模块里提供。</p>
+<h2 id="initializations"><a href="#initializations" class="headerlink" title="initializations"></a>initializations</h2><p>权值初始化，在Keras中对权值矩阵初始化的方式很简单，就是在add某一层时，同时注明初始化该层的概率分布是什么就可以了。代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># init是关键字，’uniform’表示用均匀分布去初始化  </span></span><br><span class="line">model.add(Dense(<span class="number">64</span>, init=<span class="string">'uniform'</span>))</span><br></pre></td></tr></table></figure>
+<p>keras提供了uniform、lecun_uniform、normal、orthogonal、zero、glorot_normal、he_normal这几种。</p>
+<h2 id="regularizers"><a href="#regularizers" class="headerlink" title="regularizers"></a>regularizers</h2><p>深度学习容易出现过拟合，通过使用<a href="http://blog.csdn.net/u012162613/article/details/44261657" target="_blank" rel="external">正则化方法</a>，防止过拟合，提高泛化能力。</p>
+<p>使用示例代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.regularizers <span class="keyword">import</span> l2, activity_l2  </span><br><span class="line">model.add(Dense(<span class="number">64</span>, input_dim=<span class="number">64</span>, W_regularizer=l2(<span class="number">0.01</span>), activity_regularizer=activity_l2(<span class="number">0.01</span>)))</span><br></pre></td></tr></table></figure>
+<h2 id="constraints"><a href="#constraints" class="headerlink" title="constraints"></a>constraints</h2><p>除了正则化外，Keras还有一个约束限制功能。函数可以设置在训练网络到最优时对网络参数的约束。这个约束就是限制参数值的取值范围。比如最大值是多少，不允许为负值等。</p>
+<p>2个关键的参数：</p>
+<ul>
+<li>W_constraint：约束主要的权值矩阵</li>
+<li>b_constraint：约束偏置值</li>
+</ul>
+<p>使用示例代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> keras.constraints <span class="keyword">import</span> maxnorm</span><br><span class="line">model.add(Dense(<span class="number">64</span>, W_constraint =maxnorm(<span class="number">2</span>)))</span><br><span class="line"><span class="comment">#限制权值的各个参数不能大于2</span></span><br></pre></td></tr></table></figure></p>
+<p>可用的约束限制</p>
+<ul>
+<li>maxnorm(m=2): 最大值约束</li>
+<li>nonneg(): 不允许负值</li>
+<li>unitnorm(): 归一化</li>
+</ul>
+<h1 id="实例：解决XOR问题"><a href="#实例：解决XOR问题" class="headerlink" title="实例：解决XOR问题"></a>实例：解决XOR问题</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers.core <span class="keyword">import</span> Activation, Dense</span><br><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> SGD</span><br><span class="line"></span><br><span class="line">X = np.zeros((<span class="number">4</span>, <span class="number">2</span>), dtype=<span class="string">'uint8'</span>)<span class="comment">#训练数据</span></span><br><span class="line">y = np.zeros(<span class="number">4</span>, dtype=<span class="string">'uint8'</span>)<span class="comment">#训练标签</span></span><br><span class="line"></span><br><span class="line">X[<span class="number">0</span>] = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">y[<span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">X[<span class="number">1</span>] = [<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">y[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">X[<span class="number">2</span>] = [<span class="number">1</span>, <span class="number">0</span>]</span><br><span class="line">y[<span class="number">2</span>] = <span class="number">1</span></span><br><span class="line">X[<span class="number">3</span>] = [<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">y[<span class="number">3</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">model = Sequential()<span class="comment">#实例化模型</span></span><br><span class="line">model.add(Dense(<span class="number">2</span>, input_dim=<span class="number">2</span>))<span class="comment">#输入层，输入数据维数为2</span></span><br><span class="line">model.add(Activation(<span class="string">'sigmoid'</span>))<span class="comment">#设置激活函数</span></span><br><span class="line">model.add(Dense(<span class="number">1</span>))</span><br><span class="line">model.add(Activation(<span class="string">'sigmoid'</span>))</span><br><span class="line"></span><br><span class="line">sgd = SGD(lr=<span class="number">0.1</span>, decay=<span class="number">1e-6</span>, momentum=<span class="number">0.9</span>, nesterov=<span class="keyword">True</span>)</span><br><span class="line">model.compile(loss=<span class="string">'mean_squared_error'</span>, optimizer=sgd)</span><br><span class="line"></span><br><span class="line">history = model.fit(X, y, nb_epoch=<span class="number">10000</span>, batch_size=<span class="number">4</span>, show_accuracy=<span class="keyword">True</span>, verbose=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> model.predict(X)<span class="comment">#预测</span></span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://keras.io/" target="_blank" rel="external">Keras Documentation</a></p>
+<p><a href="http://www.lai18.com/user/301164.html" target="_blank" rel="external">Keras 学习随笔</a></p>
+<p><a href="http://blog.csdn.net/u012162613/article/details/45397033" target="_blank" rel="external">深度学习框架Keras简介</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/04/2016-04-04-Python连接MySQL.md/" itemprop="url">
                   Python连接MySQL
                 </a>
@@ -1245,115 +1392,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/08/2016-01-08-贪心策略/" itemprop="url">
-                  贪心算法[greedy algorithm]
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-08T10:00:00+08:00" content="2016-01-08">
-              2016-01-08
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/08/2016-01-08-贪心策略/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/08/2016-01-08-贪心策略/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-
-
-          
-          
-             <span id="/2016/01/08/2016-01-08-贪心策略/" class="leancloud_visitors" data-flag-title="贪心算法[greedy algorithm]">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="贪心算法-greedy-algorithm"><a href="#贪心算法-greedy-algorithm" class="headerlink" title="贪心算法(greedy algorithm)"></a>贪心算法(greedy algorithm)</h1><p>贪心算法通过做出一系列的选择来求出问题的最优解。 在每个决策点，它做出在当时看来是最佳的选择。贪心算法可以说是<a href="http://buptldy.github.io/2016/01/07/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a>问题的一种特例，在学习贪心算法之前，必须先得了解动态规划算法。贪心算法总是做出局部最优的选择，并不能总能保证找到全局最优解，那我们怎么才能保证一个贪心算法能够求解一个最优化问题呢？<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/08/2016-01-08-贪心策略/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1399,7 +1437,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1409,7 +1447,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

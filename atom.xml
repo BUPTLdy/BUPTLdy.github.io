@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-04T01:57:21.745Z</updated>
+  <updated>2016-04-07T02:29:54.998Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Keras简介</title>
+    <link href="http://yoursite.com/2016/04/07/2016-04-07-Keras%E7%AE%80%E4%BB%8B/"/>
+    <id>http://yoursite.com/2016/04/07/2016-04-07-Keras简介/</id>
+    <published>2016-04-07T03:00:00.000Z</published>
+    <updated>2016-04-07T02:29:54.998Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;Keras-简介&quot;&gt;&lt;a href=&quot;#Keras-简介&quot; class=&quot;headerlink&quot; title=&quot;Keras 简介&quot;&gt;&lt;/a&gt;Keras 简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;www.keras.io&quot;&gt;Keras&lt;/a&gt;是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;安装：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo pip install keras&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Keras里的基本模块&quot;&gt;&lt;a href=&quot;#Keras里的基本模块&quot; class=&quot;headerlink&quot; title=&quot;Keras里的基本模块&quot;&gt;&lt;/a&gt;Keras里的基本模块&lt;/h1&gt;&lt;h2 id=&quot;optimizers&quot;&gt;&lt;a href=&quot;#optimizers&quot; class=&quot;headerlink&quot; title=&quot;optimizers&quot;&gt;&lt;/a&gt;optimizers&lt;/h2&gt;&lt;p&gt;Keras包含了很多优化方法。比如最常用的随机梯度下降法(SGD)，还有Adagrad、Adadelta、RMSprop、Adam等。下面通过具体的代码介绍一下优化器的使用方法。&lt;br&gt;在编译一个Keras模型时，优化器是2个参数之一（另外一个是损失函数）。看如下代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;model = Sequential()  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Dense(&lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;, init=&lt;span class=&quot;string&quot;&gt;&#39;uniform&#39;&lt;/span&gt;, input_dim=&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;))  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Activation(&lt;span class=&quot;string&quot;&gt;&#39;tanh&#39;&lt;/span&gt;))  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Activation(&lt;span class=&quot;string&quot;&gt;&#39;softmax&#39;&lt;/span&gt;))  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sgd = SGD(lr=&lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;, decay=&lt;span class=&quot;number&quot;&gt;1e-6&lt;/span&gt;, momentum=&lt;span class=&quot;number&quot;&gt;0.9&lt;/span&gt;, nesterov=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.compile(loss=&lt;span class=&quot;string&quot;&gt;&#39;mean_squared_error&#39;&lt;/span&gt;, optimizer=sgd)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个例子中是在调用compile之前实例化了一个优化器。我们也可以通过传递名字的方式调用默认的优化器。代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# passoptimizer by name: default parameters will be used  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.compile(loss=&lt;span class=&quot;string&quot;&gt;&#39;mean_squared_error&#39;&lt;/span&gt;, optimizer=&lt;span class=&quot;string&quot;&gt;&#39;sgd&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;SGD（随机梯度下降优化器，性价比最好的算法）&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;keras.optimizers.SGD(lr=&lt;span class=&quot;number&quot;&gt;0.01&lt;/span&gt;, momentum=&lt;span class=&quot;number&quot;&gt;0.&lt;/span&gt;, decay=&lt;span class=&quot;number&quot;&gt;0.&lt;/span&gt;, nesterov=&lt;span class=&quot;keyword&quot;&gt;False&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;lr :float&amp;gt;=0，学习速率&lt;/li&gt;
+&lt;li&gt;momentum :float&amp;gt;=0 参数更新的动量&lt;/li&gt;
+&lt;li&gt;decay : float&amp;gt;=0 每次更新后学习速率的衰减量&lt;/li&gt;
+&lt;li&gt;nesterov :Boolean 是否使用Nesterov动量项&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;objectives&quot;&gt;&lt;a href=&quot;#objectives&quot; class=&quot;headerlink&quot; title=&quot;objectives&quot;&gt;&lt;/a&gt;objectives&lt;/h2&gt;&lt;p&gt;目标函数模块，keras提供了mean_squared_error，mean_absolute_error，squared_hinge，hinge，binary_crossentropy，categorical_crossentropy这几种目标函数。&lt;/p&gt;
+&lt;p&gt;这里binary_crossentropy 和categorical_crossentropy也就是常说的logloss.&lt;/p&gt;
+&lt;h2 id=&quot;Activations&quot;&gt;&lt;a href=&quot;#Activations&quot; class=&quot;headerlink&quot; title=&quot;Activations&quot;&gt;&lt;/a&gt;Activations&lt;/h2&gt;&lt;p&gt;激活函数模块，keras提供了linear、sigmoid、hard_sigmoid、tanh、softplus、relu、softplus，另外softmax也放在Activations模块里。此外，像LeakyReLU和PReLU这种比较新的激活函数，keras在keras.layers.advanced_activations模块里提供。&lt;/p&gt;
+&lt;h2 id=&quot;initializations&quot;&gt;&lt;a href=&quot;#initializations&quot; class=&quot;headerlink&quot; title=&quot;initializations&quot;&gt;&lt;/a&gt;initializations&lt;/h2&gt;&lt;p&gt;权值初始化，在Keras中对权值矩阵初始化的方式很简单，就是在add某一层时，同时注明初始化该层的概率分布是什么就可以了。代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# init是关键字，’uniform’表示用均匀分布去初始化  &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Dense(&lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;, init=&lt;span class=&quot;string&quot;&gt;&#39;uniform&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;keras提供了uniform、lecun_uniform、normal、orthogonal、zero、glorot_normal、he_normal这几种。&lt;/p&gt;
+&lt;h2 id=&quot;regularizers&quot;&gt;&lt;a href=&quot;#regularizers&quot; class=&quot;headerlink&quot; title=&quot;regularizers&quot;&gt;&lt;/a&gt;regularizers&lt;/h2&gt;&lt;p&gt;深度学习容易出现过拟合，通过使用&lt;a href=&quot;http://blog.csdn.net/u012162613/article/details/44261657&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;正则化方法&lt;/a&gt;，防止过拟合，提高泛化能力。&lt;/p&gt;
+&lt;p&gt;使用示例代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; keras.regularizers &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; l2, activity_l2  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Dense(&lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;, input_dim=&lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;, W_regularizer=l2(&lt;span class=&quot;number&quot;&gt;0.01&lt;/span&gt;), activity_regularizer=activity_l2(&lt;span class=&quot;number&quot;&gt;0.01&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;constraints&quot;&gt;&lt;a href=&quot;#constraints&quot; class=&quot;headerlink&quot; title=&quot;constraints&quot;&gt;&lt;/a&gt;constraints&lt;/h2&gt;&lt;p&gt;除了正则化外，Keras还有一个约束限制功能。函数可以设置在训练网络到最优时对网络参数的约束。这个约束就是限制参数值的取值范围。比如最大值是多少，不允许为负值等。&lt;/p&gt;
+&lt;p&gt;2个关键的参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;W_constraint：约束主要的权值矩阵&lt;/li&gt;
+&lt;li&gt;b_constraint：约束偏置值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用示例代码如下：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; keras.constraints &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; maxnorm&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Dense(&lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;, W_constraint =maxnorm(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#限制权值的各个参数不能大于2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可用的约束限制&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;maxnorm(m=2): 最大值约束&lt;/li&gt;
+&lt;li&gt;nonneg(): 不允许负值&lt;/li&gt;
+&lt;li&gt;unitnorm(): 归一化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;实例：解决XOR问题&quot;&gt;&lt;a href=&quot;#实例：解决XOR问题&quot; class=&quot;headerlink&quot; title=&quot;实例：解决XOR问题&quot;&gt;&lt;/a&gt;实例：解决XOR问题&lt;/h1&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; keras.models &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; Sequential&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; keras.layers.core &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; Activation, Dense&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; keras.optimizers &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; SGD&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X = np.zeros((&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;), dtype=&lt;span class=&quot;string&quot;&gt;&#39;uint8&#39;&lt;/span&gt;)&lt;span class=&quot;comment&quot;&gt;#训练数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y = np.zeros(&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, dtype=&lt;span class=&quot;string&quot;&gt;&#39;uint8&#39;&lt;/span&gt;)&lt;span class=&quot;comment&quot;&gt;#训练标签&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;] = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y[&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;X[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;] = [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;y[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;] = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model = Sequential()&lt;span class=&quot;comment&quot;&gt;#实例化模型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Dense(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, input_dim=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))&lt;span class=&quot;comment&quot;&gt;#输入层，输入数据维数为2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Activation(&lt;span class=&quot;string&quot;&gt;&#39;sigmoid&#39;&lt;/span&gt;))&lt;span class=&quot;comment&quot;&gt;#设置激活函数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Dense(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.add(Activation(&lt;span class=&quot;string&quot;&gt;&#39;sigmoid&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sgd = SGD(lr=&lt;span class=&quot;number&quot;&gt;0.1&lt;/span&gt;, decay=&lt;span class=&quot;number&quot;&gt;1e-6&lt;/span&gt;, momentum=&lt;span class=&quot;number&quot;&gt;0.9&lt;/span&gt;, nesterov=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;model.compile(loss=&lt;span class=&quot;string&quot;&gt;&#39;mean_squared_error&#39;&lt;/span&gt;, optimizer=sgd)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;history = model.fit(X, y, nb_epoch=&lt;span class=&quot;number&quot;&gt;10000&lt;/span&gt;, batch_size=&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, show_accuracy=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;, verbose=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; model.predict(X)&lt;span class=&quot;comment&quot;&gt;#预测&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://keras.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Keras Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.lai18.com/user/301164.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Keras 学习随笔&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/u012162613/article/details/45397033&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;深度学习框架Keras简介&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Keras-简介&quot;&gt;&lt;a href=&quot;#Keras-简介&quot; class=&quot;headerlink&quot; title=&quot;Keras 简介&quot;&gt;&lt;/a&gt;Keras 简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;www.keras.io&quot;&gt;Keras&lt;/a&gt;是一个用Python编写的基
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
+    
+      <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Python连接MySQL</title>
@@ -178,9 +243,9 @@ conn.close()
     </summary>
     
     
-      <category term="skimage" scheme="http://yoursite.com/tags/skimage/"/>
-    
       <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
+    
+      <category term="skimage" scheme="http://yoursite.com/tags/skimage/"/>
     
   </entry>
   
@@ -213,9 +278,9 @@ conn.close()
     </summary>
     
     
-      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
-    
       <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
+    
+      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
     
   </entry>
   
