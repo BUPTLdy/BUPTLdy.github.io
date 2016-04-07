@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-07T02:32:26.667Z</updated>
+  <updated>2016-04-07T02:35:37.848Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://yoursite.com/2016/04/07/2016-04-07-Keras%E7%AE%80%E4%BB%8B/"/>
     <id>http://yoursite.com/2016/04/07/2016-04-07-Keras简介/</id>
     <published>2016-04-07T03:00:00.000Z</published>
-    <updated>2016-04-07T02:32:26.667Z</updated>
+    <updated>2016-04-07T02:35:37.848Z</updated>
     
-    <content type="html">&lt;h1 id=&quot;Keras-简介&quot;&gt;&lt;a href=&quot;#Keras-简介&quot; class=&quot;headerlink&quot; title=&quot;Keras 简介&quot;&gt;&lt;/a&gt;Keras 简介&lt;/h1&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
-&lt;p&gt;&lt;a href=&quot;www.keras.io&quot;&gt;Keras&lt;/a&gt;是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。&lt;/p&gt;
+&lt;h1 id=&quot;Keras-简介&quot;&gt;&lt;a href=&quot;#Keras-简介&quot; class=&quot;headerlink&quot; title=&quot;Keras 简介&quot;&gt;&lt;/a&gt;Keras 简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://keras.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Keras&lt;/a&gt;是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;安装：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo pip install keras&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h1 id=&quot;Keras里的基本模块&quot;&gt;&lt;a href=&quot;#Keras里的基本模块&quot; class=&quot;headerlink&quot; title=&quot;Keras里的基本模块&quot;&gt;&lt;/a&gt;Keras里的基本模块&lt;/h1&gt;&lt;h2 id=&quot;optimizers&quot;&gt;&lt;a href=&quot;#optimizers&quot; class=&quot;headerlink&quot; title=&quot;optimizers&quot;&gt;&lt;/a&gt;optimizers&lt;/h2&gt;&lt;p&gt;Keras包含了很多优化方法。比如最常用的随机梯度下降法(SGD)，还有Adagrad、Adadelta、RMSprop、Adam等。下面通过具体的代码介绍一下优化器的使用方法。&lt;br&gt;在编译一个Keras模型时，优化器是2个参数之一（另外一个是损失函数）。看如下代码：&lt;/p&gt;
@@ -70,9 +70,9 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Keras-简介&quot;&gt;&lt;a href=&quot;#Keras-简介&quot; class=&quot;headerlink&quot; title=&quot;Keras 简介&quot;&gt;&lt;/a&gt;Keras 简介&lt;/h1&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+      &lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
-&lt;p&gt;&lt;a href=&quot;www.keras.io&quot;&gt;Keras&lt;/a&gt;是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。&lt;/p&gt;
+&lt;h1 id=&quot;Keras-简介&quot;&gt;&lt;a href=&quot;#Keras-简介&quot; class=&quot;headerlink&quot; title=&quot;Keras 简介&quot;&gt;&lt;/a&gt;Keras 简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://keras.io/&quot;&gt;Keras&lt;/a&gt;是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。&lt;/p&gt;
     
     </summary>
     
