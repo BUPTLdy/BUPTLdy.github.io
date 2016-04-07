@@ -59,23 +59,23 @@
 
 
 
-<meta name="description" content="Keras 简介Keras是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。
-安装：1sudo pip install keras
-Keras里的基本模块optimizersKeras包含了很多优化方法。比如最常用的随机梯度下降法(SGD)，还有Ada">
+<meta name="description" content="Keras 简介
+
+Keras是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Keras简介">
 <meta property="og:url" content="http://yoursite.com/2016/04/07/2016-04-07-Keras简介/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="Keras 简介Keras是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。
-安装：1sudo pip install keras
-Keras里的基本模块optimizersKeras包含了很多优化方法。比如最常用的随机梯度下降法(SGD)，还有Ada">
+<meta property="og:description" content="Keras 简介
+
+Keras是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。">
 <meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg">
-<meta property="og:updated_time" content="2016-04-07T02:29:54.998Z">
+<meta property="og:updated_time" content="2016-04-07T02:32:26.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Keras简介">
-<meta name="twitter:description" content="Keras 简介Keras是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。
-安装：1sudo pip install keras
-Keras里的基本模块optimizersKeras包含了很多优化方法。比如最常用的随机梯度下降法(SGD)，还有Ada">
+<meta name="twitter:description" content="Keras 简介
+
+Keras是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。">
 <meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg">
 
 
@@ -336,8 +336,11 @@ Keras里的基本模块optimizersKeras包含了很多优化方法。比如最常
       
 
       
-        <h1 id="Keras-简介"><a href="#Keras-简介" class="headerlink" title="Keras 简介"></a>Keras 简介</h1><p><a href="www.keras.io">Keras</a>是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。</p>
-<p><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg" alt=""><br></center><br>安装：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install keras</span><br></pre></td></tr></table></figure></p>
+        <h1 id="Keras-简介"><a href="#Keras-简介" class="headerlink" title="Keras 简介"></a>Keras 简介</h1><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg" alt=""><br></center>
+
+<p><a href="www.keras.io">Keras</a>是一个用Python编写的基于 TensorFlow 和 Theano高度模块化的神经网络库。其最大的优点在于样例丰富，现有主流模型封装完美。复杂点的模型可以像搭积木一样搞出来，适合快速地搭建模型。</p>
+<a id="more"></a>
+<p>安装：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install keras</span><br></pre></td></tr></table></figure></p>
 <h1 id="Keras里的基本模块"><a href="#Keras里的基本模块" class="headerlink" title="Keras里的基本模块"></a>Keras里的基本模块</h1><h2 id="optimizers"><a href="#optimizers" class="headerlink" title="optimizers"></a>optimizers</h2><p>Keras包含了很多优化方法。比如最常用的随机梯度下降法(SGD)，还有Adagrad、Adadelta、RMSprop、Adam等。下面通过具体的代码介绍一下优化器的使用方法。<br>在编译一个Keras模型时，优化器是2个参数之一（另外一个是损失函数）。看如下代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model = Sequential()  </span><br><span class="line">model.add(Dense(<span class="number">64</span>, init=<span class="string">'uniform'</span>, input_dim=<span class="number">10</span>))  </span><br><span class="line">model.add(Activation(<span class="string">'tanh'</span>))  </span><br><span class="line">model.add(Activation(<span class="string">'softmax'</span>))  </span><br><span class="line"></span><br><span class="line">sgd = SGD(lr=<span class="number">0.1</span>, decay=<span class="number">1e-6</span>, momentum=<span class="number">0.9</span>, nesterov=<span class="keyword">True</span>)  </span><br><span class="line">model.compile(loss=<span class="string">'mean_squared_error'</span>, optimizer=sgd)</span><br></pre></td></tr></table></figure>
 <p>这个例子中是在调用compile之前实例化了一个优化器。我们也可以通过传递名字的方式调用默认的优化器。代码如下：</p>
