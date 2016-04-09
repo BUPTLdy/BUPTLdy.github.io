@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2016/04/07/2016-04-07-Keras%E7%AE%80%E4%BB%8B/</loc>
+    <loc>http://yoursite.com/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/</loc>
     
-    <lastmod>2016-04-07T02:35:37.848Z</lastmod>
+    <lastmod>2016-04-09T06:49:02.413Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2016/04/04/2016-04-04-Python%E8%BF%9E%E6%8E%A5MySQL.md/</loc>
     
-    <lastmod>2016-04-04T01:57:21.745Z</lastmod>
+    <lastmod>2016-04-07T05:24:50.915Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/04/07/2016-04-07-Keras%E7%AE%80%E4%BB%8B/</loc>
+    
+    <lastmod>2016-04-07T02:35:37.848Z</lastmod>
     
   </url>
   
