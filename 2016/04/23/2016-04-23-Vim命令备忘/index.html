@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithms," />
+  <meta name="keywords" content="Keras,Deep Learning,Cuda," />
 
 
 
@@ -59,19 +59,18 @@
 
 
 
-<meta name="description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NP完全性">
-<meta property="og:url" content="http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/index.html">
+<meta property="og:title" content="Vim命令备忘">
+<meta property="og:url" content="http://yoursite.com/2016/04/23/2016-04-23-Vim命令备忘/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
-<meta property="og:image" content="http://i.imgur.com/mAyE7SM.png">
-<meta property="og:image" content="http://i.imgur.com/9wD7p7i.png">
-<meta property="og:updated_time" content="2016-03-14T05:28:33.393Z">
+<meta property="og:description">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-4-23/88022819.jpg">
+<meta property="og:updated_time" content="2016-04-23T11:03:08.840Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NP完全性">
-<meta name="twitter:description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
-<meta name="twitter:image" content="http://i.imgur.com/mAyE7SM.png">
+<meta name="twitter:title" content="Vim命令备忘">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-4-23/88022819.jpg">
 
 
 
@@ -89,7 +88,7 @@
   };
 </script>
 
-  <title> NP完全性 | Ldy's Blog </title>
+  <title> Vim命令备忘 | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +273,7 @@
             
             
               
-                NP完全性
+                Vim命令备忘
               
             
           </h1>
@@ -286,8 +285,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-11T10:00:00+08:00" content="2016-01-11">
-              2016-01-11
+            <time itemprop="dateCreated" datetime="2016-04-23T11:00:00+08:00" content="2016-04-23">
+              2016-04-23
             </time>
           </span>
 
@@ -297,8 +296,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/2016-01-11-NP完全问题的介绍及证明/" itemprop="commentsCount"></span>
+                <a href="/2016/04/23/2016-04-23-Vim命令备忘/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/23/2016-04-23-Vim命令备忘/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,7 +309,7 @@
 
           
           
-             <span id="/2016/01/11/2016-01-11-NP完全问题的介绍及证明/" class="leancloud_visitors" data-flag-title="NP完全性">
+             <span id="/2016/04/23/2016-04-23-Vim命令备忘/" class="leancloud_visitors" data-flag-title="Vim命令备忘">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -331,28 +330,102 @@
       
 
       
-        <h1 id="NP完全性"><a href="#NP完全性" class="headerlink" title="NP完全性"></a>NP完全性</h1><p>  到目前为止，我们讨论的几乎都是<strong>多项式时间算法</strong>：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：<br><a id="more"></a><br>  P: 能在多项式时间内解决的问题</p>
-<p>  NP:不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题</p>
-<p>  NPC:NP完全问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的NP问题，即解决了此NPC题，所有NP问题也都得到解决。</p>
-<p>  NP难问题:所有NP问题在多项式时间内都能约化(Reducibility)到它的问题(不一定是NP问题)。</p>
-<p>  如果任何NP完全问题是可以多项式求解的，则P=NP，目前还不能证明P是否等于NP，这几个问题的关系如下：</p>
-<p>  <img src="http://i.imgur.com/mAyE7SM.png" alt=""></p>
-<p>  规约的概念：若我们拥有一个已证明难以解决的问题，我们又获得另一个相似的新问题。我们可合理推想此新问题亦是难以解决的。我们可由下列谬证法得证：若此新问题本质上容易解答，且若我们可展示每个旧问题的实例可经由一系列转换步骤变成新问题的实例，则旧问题便容易解决，因此得到悖论。因此新问题可知亦难以解决。</p>
-<p>  如何证明某个问题是NP完全的？</p>
-<p>  如果我们有一个已经证明的NP完全问题，如果我们可以把已证明的NP完全问题的任何实例都能多项式的规约到要要证明问题的实例，则能证明这个问题是NP完全的。即如果我们要证明一个问题A是NPC问题，则只需要首先证明他是NP问题，然后只要找一个你所知道的NPC问题规约到A即可。</p>
-<h1 id="常见的NPC问题"><a href="#常见的NPC问题" class="headerlink" title="常见的NPC问题"></a>常见的NPC问题</h1><p>  布尔可满足性问题（SAT）</p>
-<p>  对于一个确定的逻辑电路，是否存在一种输入使得输出为真。是第一个被证明的NPC问题，直观的看出这应该是一个NPC问题，因为当电路有k个输入，就会有$2^k$种情况的不同取值。<br>  3SAT</p>
-<p>  3和取范式：公式中每个字句都恰好有三个不同的’文字’，3SAT问题就是满足3和取范式的布尔公式是否可满足，3SAT问题可由SAT问题规约而来。<br>  分团问题（clique problem）</p>
-<p>  无向图中的团是图中所有顶点的一个子集，团中的每一对顶点之间都有一条边相连，即一个团就是无向图中的一个完全子图。</p>
-<p>  分团问题就是要寻找图中规模最大的团，判定条件：在图中是否存在一个给定规模为k的团。</p>
-<p>  独立集问题（Independent Set）</p>
-<p>  独立集：如果有一个顶点集合S，S中的任意两个顶点之间都没有边相连，则称S为一个独立集。</p>
-<p>  独立集问题和分团问题可相互规约，因为存在一个大小是k以上的分团，等价于它的补图中存在一个大小是k以上的独立集。</p>
-<p>  补图：一个图G的补图（complement）或者反面（inverse）是一个图有着跟G相同的点，而且这些点之间有边相连当且仅当在G里面他们没有边相连。在制作图的时候，你可以先建立一个有G所有点的完全图，然后清除G里面已经有的边来得到补图，这里的补图并不是图本身的补集。</p>
-<p>  顶点覆盖问题（Vertex Cover）</p>
-<p>  图的顶点覆盖是一些顶点的集合，使得图中的每一条边都至少接触集合中的一个顶点，如下图所示，图中红色顶点可以覆盖图中所有的边。寻找最小的顶点覆盖的问题称为顶点覆盖问题，它是一个NP完全问题。</p>
-<p>  <img src="http://i.imgur.com/9wD7p7i.png" alt=""></p>
-<h1 id="集合覆盖问题"><a href="#集合覆盖问题" class="headerlink" title="集合覆盖问题"></a>集合覆盖问题</h1>
+        <p><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-4-23/88022819.jpg" alt=""><br></center><br><a id="more"></a></p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ol>
+<li><p>光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。<br>h (左移)    j (下行)       k (上行)        l (右移)</p>
+</li>
+<li><p>欲进入 Vim 编辑器(从命令行提示符)，请输入：vim 文件名 &lt;回车&gt;</p>
+</li>
+<li><p>欲退出 Vim 编辑器，请输入 <esc>   :q!   &lt;回车&gt; 放弃所有改动。或者输入 <esc>   :wq   &lt;回车&gt; 保存改动。</esc></esc></p>
+</li>
+<li><p>在正常模式下删除光标所在位置的字符，请按： x</p>
+</li>
+<li><p>欲插入或添加文本，请输入：</p>
+<p>i   输入欲插入文本   <esc>        在光标前插入文本<br>A   输入欲添加文本   <esc>             在一行后添加文本</esc></esc></p>
+<p>特别提示：按下 <esc> 键会带您回到正常模式或者撤消一个不想输入或部分完整的命令。</esc></p>
+</li>
+</ol>
+<h2 id="删除类命令"><a href="#删除类命令" class="headerlink" title="删除类命令"></a>删除类命令</h2><ol>
+<li>欲从当前光标删除至下一个单词，请输入：dw</li>
+<li>欲从当前光标删除至当前行末尾，请输入：d$</li>
+<li><p>欲删除整行，请输入：dd</p>
+</li>
+<li><p>欲重复一个动作，请在它前面加上一个数字：2w</p>
+</li>
+<li><p>在正常模式下修改命令的格式是：</p>
+<pre><code>operator   [number]   motion
+</code></pre><p>其中：<br>operator - 操作符，代表要做的事情，比如 d 代表删除<br>[number] - 可以附加的数字，代表动作重复的次数<br>motion   - 动作，代表在所操作的文本上的移动，例如 w 代表单词(word)，<br>$ 代表行末等等。</p>
+</li>
+<li><p>欲移动光标到行首，请按数字0键：0</p>
+</li>
+<li><p>欲撤消以前的操作，请输入：u (小写的u)<br>欲撤消在一行中所做的改动，请输入：U (大写的U)<br>欲撤消以前的撤消命令，恢复以前的操作结果，请输入：CTRL-R</p>
+</li>
+</ol>
+<h2 id="置入类命令"><a href="#置入类命令" class="headerlink" title="置入类命令"></a>置入类命令</h2><ol>
+<li><p>要重新置入已经删除的文本内容，请按小写字母 p 键。该操作可以将已删除<br>的文本内容置于光标之后。如果最后一次删除的是一个整行，那么该行将置<br>于当前光标所在行的下一行。</p>
+</li>
+<li><p>要替换光标所在位置的字符，请输入小写的 r 和要替换掉原位置字符的新字<br>符即可。</p>
+</li>
+<li><p>更改类命令允许您改变从当前光标所在位置直到动作指示的位置中间的文本。<br>比如输入 ce 可以替换当前光标到单词的末尾的内容；输入 c$ 可以替换当<br>前光标到行末的内容。</p>
+</li>
+<li><p>更改类命令的格式是：</p>
+<pre><code>c   [number]   motion
+</code></pre></li>
+</ol>
+<h2 id="定位及文件状态"><a href="#定位及文件状态" class="headerlink" title="定位及文件状态"></a>定位及文件状态</h2><ol>
+<li><p>CTRL-G 用于显示当前光标所在位置和文件状态信息。<br>G 用于将光标跳转至文件最后一行。<br>先敲入一个行号然后输入大写 G 则是将光标移动至该行号代表的行。<br>gg 用于将光标跳转至文件第一行。</p>
+</li>
+<li><p>输入 / 然后紧随一个字符串是在当前所编辑的文档中正向查找该字符串。<br>输入 ? 然后紧随一个字符串则是在当前所编辑的文档中反向查找该字符串。<br>完成一次查找之后按 n 键是重复上一次的命令，可在同一方向上查<br>找下一个匹配字符串所在；或者按大写 N 向相反方向查找下一匹配字符串所在。<br>CTRL-O 带您跳转回较旧的位置，CTRL-I 则带您到较新的位置。</p>
+</li>
+<li><p>如果光标当前位置是括号(、)、[、]、{、}，按 % 会将光标移动到配对的括号上。</p>
+</li>
+<li><p>在一行内替换头一个字符串 old 为新的字符串 new，请输入  :s/old/new<br>在一行内替换所有的字符串 old 为新的字符串 new，请输入  :s/old/new/g<br>在两行内替换所有的字符串 old 为新的字符串 new，请输入  :#,#s/old/new/g<br>在文件内替换所有的字符串 old 为新的字符串 new，请输入  :%s/old/new/g<br>进行全文替换时询问用户确认每个替换需添加 c 标志        :%s/old/new/gc</p>
+</li>
+</ol>
+<h2 id="在-VIM-内执行外部命令的方法"><a href="#在-VIM-内执行外部命令的方法" class="headerlink" title="在 VIM 内执行外部命令的方法"></a>在 VIM 内执行外部命令的方法</h2><ol>
+<li><p>:!command 用于执行一个外部命令 command。</p>
+<p>请看一些实际例子：<br> :!dir           :!ls           -  用于显示当前目录的内容。<br> :!del FILENAME   :!rm FILENAME   -  用于删除名为 FILENAME 的文件。</p>
+</li>
+<li><p>:w FILENAME  可将当前 VIM 中正在编辑的文件保存到名为 FILENAME 的文件中。</p>
+</li>
+<li><p>v motion :w FILENAME 可将当前编辑文件中可视模式下选中的内容保存到文件FILENAME 中。</p>
+</li>
+<li><p>:r FILENAME 可提取磁盘文件 FILENAME 并将其插入到当前文件的光标位置后面。</p>
+</li>
+<li><p>:r !dir 可以读取 dir 命令的输出并将其放置到当前文件的光标位置后面。</p>
+</li>
+</ol>
+<h2 id="打开类命令"><a href="#打开类命令" class="headerlink" title="打开类命令"></a>打开类命令</h2><ol>
+<li><p>输入小写的 o 可以在光标下方打开新的一行并进入插入模式。<br>输入大写的 O 可以在光标上方打开新的一行。</p>
+</li>
+<li><p>输入小写的 a 可以在光标所在位置之后插入文本。<br>输入大写的 A 可以在光标所在行的行末之后插入文本。</p>
+</li>
+<li><p>e 命令可以使光标移动到单词末尾。</p>
+</li>
+<li><p>操作符 y 复制文本，p 粘贴先前复制的文本。</p>
+</li>
+<li><p>输入大写的 R 将进入替换模式，直至按 <esc> 键回到正常模式。</esc></p>
+</li>
+<li><p>输入 :set xxx 可以设置 xxx 选项。一些有用的选项如下：<br>‘ic’ ‘ignorecase’    查找时忽略字母大小写<br>‘is’ ‘incsearch’    查找短语时显示部分匹配<br>‘hls’ ‘hlsearch’    高亮显示所有的匹配短语<br>选项名可以用完整版本，也可以用缩略版本。</p>
+</li>
+<li><p>在选项前加上 no 可以关闭选项：  :set noic</p>
+</li>
+</ol>
+<h2 id="获取帮助信息"><a href="#获取帮助信息" class="headerlink" title="获取帮助信息"></a>获取帮助信息</h2><ol>
+<li><p>输入 :help 或者按 <f1> 键或 <help> 键可以打开帮助窗口。</help></f1></p>
+</li>
+<li><p>输入 :help cmd 可以找到关于 cmd 命令的帮助。</p>
+</li>
+<li><p>输入 CTRL-W CTRL-W  可以使您在窗口之间跳转。</p>
+</li>
+<li><p>输入 :q 以关闭帮助窗口</p>
+</li>
+<li><p>您可以创建一个 vimrc 启动脚本文件用来保存您偏好的设置。</p>
+</li>
+<li><p>当输入 : 命令时，按 CTRL-D 可以查看可能的补全结果。按 <tab> 可以使用一个补全。</tab></p>
+</li>
+</ol>
+
       
     </div>
 
@@ -366,7 +439,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithms/" rel="tag">#Algorithms</a>
+            <a href="/tags/Keras/" rel="tag">#Keras</a>
+          
+            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
+          
+            <a href="/tags/Cuda/" rel="tag">#Cuda</a>
           
         </div>
       
@@ -375,17 +452,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/10/2016-01-10-网络最大流/" rel="next" title="网络最大流 [Max Flow]">
-                <i class="fa fa-chevron-left"></i> 网络最大流 [Max Flow]
+              <a href="/2016/04/09/2016-04-09-Deepin CUDA安装及Keras使用GPU模式运行/" rel="next" title="Deepin CUDA安装及Keras使用GPU模式运行">
+                <i class="fa fa-chevron-left"></i> Deepin CUDA安装及Keras使用GPU模式运行
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/12/2016-01-12-近似算法/" rel="prev" title="近似算法[Approximation algorithm]">
-                近似算法[Approximation algorithm] <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -400,10 +473,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/11/2016-01-11-NP完全问题的介绍及证明/"
-     data-title="NP完全性"
+        <div class="ds-share flat" data-thread-key="2016/04/23/2016-04-23-Vim命令备忘/"
+     data-title="Vim命令备忘"
      data-content=""
-     data-url="http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">
+     data-url="http://yoursite.com/2016/04/23/2016-04-23-Vim命令备忘/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -430,8 +503,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/11/2016-01-11-NP完全问题的介绍及证明/"
-           data-title="NP完全性" data-url="http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/">
+      <div class="ds-thread" data-thread-key="2016/04/23/2016-04-23-Vim命令备忘/"
+           data-title="Vim命令备忘" data-url="http://yoursite.com/2016/04/23/2016-04-23-Vim命令备忘/">
       </div>
     
   </div>
@@ -537,7 +610,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NP完全性"><span class="nav-number">1.</span> <span class="nav-text">NP完全性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的NPC问题"><span class="nav-number">2.</span> <span class="nav-text">常见的NPC问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合覆盖问题"><span class="nav-number">3.</span> <span class="nav-text">集合覆盖问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本操作"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除类命令"><span class="nav-number">2.</span> <span class="nav-text">删除类命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#置入类命令"><span class="nav-number">3.</span> <span class="nav-text">置入类命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定位及文件状态"><span class="nav-number">4.</span> <span class="nav-text">定位及文件状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-VIM-内执行外部命令的方法"><span class="nav-number">5.</span> <span class="nav-text">在 VIM 内执行外部命令的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打开类命令"><span class="nav-number">6.</span> <span class="nav-text">打开类命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取帮助信息"><span class="nav-number">7.</span> <span class="nav-text">获取帮助信息</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

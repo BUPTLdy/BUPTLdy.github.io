@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-04-09T06:57:48.666Z</updated>
+  <updated>2016-04-23T11:03:08.840Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,125 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vim命令备忘</title>
+    <link href="http://yoursite.com/2016/04/23/2016-04-23-Vim%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/"/>
+    <id>http://yoursite.com/2016/04/23/2016-04-23-Vim命令备忘/</id>
+    <published>2016-04-23T03:00:00.000Z</published>
+    <updated>2016-04-23T11:03:08.840Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-23/88022819.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;光标在屏幕文本中的移动既可以用箭头键，也可以使用 hjkl 字母键。&lt;br&gt;h (左移)    j (下行)       k (上行)        l (右移)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;欲进入 Vim 编辑器(从命令行提示符)，请输入：vim 文件名 &amp;lt;回车&amp;gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;欲退出 Vim 编辑器，请输入 &lt;esc&gt;   :q!   &amp;lt;回车&amp;gt; 放弃所有改动。或者输入 &lt;esc&gt;   :wq   &amp;lt;回车&amp;gt; 保存改动。&lt;/esc&gt;&lt;/esc&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在正常模式下删除光标所在位置的字符，请按： x&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;欲插入或添加文本，请输入：&lt;/p&gt;
+&lt;p&gt;i   输入欲插入文本   &lt;esc&gt;        在光标前插入文本&lt;br&gt;A   输入欲添加文本   &lt;esc&gt;             在一行后添加文本&lt;/esc&gt;&lt;/esc&gt;&lt;/p&gt;
+&lt;p&gt;特别提示：按下 &lt;esc&gt; 键会带您回到正常模式或者撤消一个不想输入或部分完整的命令。&lt;/esc&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;删除类命令&quot;&gt;&lt;a href=&quot;#删除类命令&quot; class=&quot;headerlink&quot; title=&quot;删除类命令&quot;&gt;&lt;/a&gt;删除类命令&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;欲从当前光标删除至下一个单词，请输入：dw&lt;/li&gt;
+&lt;li&gt;欲从当前光标删除至当前行末尾，请输入：d$&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;欲删除整行，请输入：dd&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;欲重复一个动作，请在它前面加上一个数字：2w&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在正常模式下修改命令的格式是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;operator   [number]   motion
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中：&lt;br&gt;operator - 操作符，代表要做的事情，比如 d 代表删除&lt;br&gt;[number] - 可以附加的数字，代表动作重复的次数&lt;br&gt;motion   - 动作，代表在所操作的文本上的移动，例如 w 代表单词(word)，&lt;br&gt;$ 代表行末等等。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;欲移动光标到行首，请按数字0键：0&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;欲撤消以前的操作，请输入：u (小写的u)&lt;br&gt;欲撤消在一行中所做的改动，请输入：U (大写的U)&lt;br&gt;欲撤消以前的撤消命令，恢复以前的操作结果，请输入：CTRL-R&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;置入类命令&quot;&gt;&lt;a href=&quot;#置入类命令&quot; class=&quot;headerlink&quot; title=&quot;置入类命令&quot;&gt;&lt;/a&gt;置入类命令&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;要重新置入已经删除的文本内容，请按小写字母 p 键。该操作可以将已删除&lt;br&gt;的文本内容置于光标之后。如果最后一次删除的是一个整行，那么该行将置&lt;br&gt;于当前光标所在行的下一行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;要替换光标所在位置的字符，请输入小写的 r 和要替换掉原位置字符的新字&lt;br&gt;符即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;更改类命令允许您改变从当前光标所在位置直到动作指示的位置中间的文本。&lt;br&gt;比如输入 ce 可以替换当前光标到单词的末尾的内容；输入 c$ 可以替换当&lt;br&gt;前光标到行末的内容。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;更改类命令的格式是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;c   [number]   motion
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;定位及文件状态&quot;&gt;&lt;a href=&quot;#定位及文件状态&quot; class=&quot;headerlink&quot; title=&quot;定位及文件状态&quot;&gt;&lt;/a&gt;定位及文件状态&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;CTRL-G 用于显示当前光标所在位置和文件状态信息。&lt;br&gt;G 用于将光标跳转至文件最后一行。&lt;br&gt;先敲入一个行号然后输入大写 G 则是将光标移动至该行号代表的行。&lt;br&gt;gg 用于将光标跳转至文件第一行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入 / 然后紧随一个字符串是在当前所编辑的文档中正向查找该字符串。&lt;br&gt;输入 ? 然后紧随一个字符串则是在当前所编辑的文档中反向查找该字符串。&lt;br&gt;完成一次查找之后按 n 键是重复上一次的命令，可在同一方向上查&lt;br&gt;找下一个匹配字符串所在；或者按大写 N 向相反方向查找下一匹配字符串所在。&lt;br&gt;CTRL-O 带您跳转回较旧的位置，CTRL-I 则带您到较新的位置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果光标当前位置是括号(、)、[、]、{、}，按 % 会将光标移动到配对的括号上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在一行内替换头一个字符串 old 为新的字符串 new，请输入  :s/old/new&lt;br&gt;在一行内替换所有的字符串 old 为新的字符串 new，请输入  :s/old/new/g&lt;br&gt;在两行内替换所有的字符串 old 为新的字符串 new，请输入  :#,#s/old/new/g&lt;br&gt;在文件内替换所有的字符串 old 为新的字符串 new，请输入  :%s/old/new/g&lt;br&gt;进行全文替换时询问用户确认每个替换需添加 c 标志        :%s/old/new/gc&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;在-VIM-内执行外部命令的方法&quot;&gt;&lt;a href=&quot;#在-VIM-内执行外部命令的方法&quot; class=&quot;headerlink&quot; title=&quot;在 VIM 内执行外部命令的方法&quot;&gt;&lt;/a&gt;在 VIM 内执行外部命令的方法&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;:!command 用于执行一个外部命令 command。&lt;/p&gt;
+&lt;p&gt;请看一些实际例子：&lt;br&gt; :!dir           :!ls           -  用于显示当前目录的内容。&lt;br&gt; :!del FILENAME   :!rm FILENAME   -  用于删除名为 FILENAME 的文件。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;:w FILENAME  可将当前 VIM 中正在编辑的文件保存到名为 FILENAME 的文件中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;v motion :w FILENAME 可将当前编辑文件中可视模式下选中的内容保存到文件FILENAME 中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;:r FILENAME 可提取磁盘文件 FILENAME 并将其插入到当前文件的光标位置后面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;:r !dir 可以读取 dir 命令的输出并将其放置到当前文件的光标位置后面。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;打开类命令&quot;&gt;&lt;a href=&quot;#打开类命令&quot; class=&quot;headerlink&quot; title=&quot;打开类命令&quot;&gt;&lt;/a&gt;打开类命令&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;输入小写的 o 可以在光标下方打开新的一行并进入插入模式。&lt;br&gt;输入大写的 O 可以在光标上方打开新的一行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入小写的 a 可以在光标所在位置之后插入文本。&lt;br&gt;输入大写的 A 可以在光标所在行的行末之后插入文本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;e 命令可以使光标移动到单词末尾。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;操作符 y 复制文本，p 粘贴先前复制的文本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入大写的 R 将进入替换模式，直至按 &lt;esc&gt; 键回到正常模式。&lt;/esc&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入 :set xxx 可以设置 xxx 选项。一些有用的选项如下：&lt;br&gt;‘ic’ ‘ignorecase’    查找时忽略字母大小写&lt;br&gt;‘is’ ‘incsearch’    查找短语时显示部分匹配&lt;br&gt;‘hls’ ‘hlsearch’    高亮显示所有的匹配短语&lt;br&gt;选项名可以用完整版本，也可以用缩略版本。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;在选项前加上 no 可以关闭选项：  :set noic&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;获取帮助信息&quot;&gt;&lt;a href=&quot;#获取帮助信息&quot; class=&quot;headerlink&quot; title=&quot;获取帮助信息&quot;&gt;&lt;/a&gt;获取帮助信息&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;输入 :help 或者按 &lt;f1&gt; 键或 &lt;help&gt; 键可以打开帮助窗口。&lt;/help&gt;&lt;/f1&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入 :help cmd 可以找到关于 cmd 命令的帮助。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入 CTRL-W CTRL-W  可以使您在窗口之间跳转。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;输入 :q 以关闭帮助窗口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;您可以创建一个 vimrc 启动脚本文件用来保存您偏好的设置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;当输入 : 命令时，按 CTRL-D 可以查看可能的补全结果。按 &lt;tab&gt; 可以使用一个补全。&lt;/tab&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-23/88022819.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
+    
+      <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
+    
+      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
+    
+  </entry>
   
   <entry>
     <title>Deepin CUDA安装及Keras使用GPU模式运行</title>
