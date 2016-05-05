@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-03T06:57:13.239Z</updated>
+  <updated>2016-05-05T14:10:52.551Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,251 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Caffe使用Python接口训练网络</title>
+    <link href="http://yoursite.com/2016/05/05/2016-05-05-Caffe%E4%BD%BF%E7%94%A8Python%E6%8E%A5%E5%8F%A3%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C/"/>
+    <id>http://yoursite.com/2016/05/05/2016-05-05-Caffe使用Python接口训练网络/</id>
+    <published>2016-05-05T02:00:00.000Z</published>
+    <updated>2016-05-05T14:10:52.551Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/41421657.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在这个例子中，我们开始尝试通过Python调用&lt;code&gt;Solver&lt;/code&gt;接口来训练一个网络。&lt;/p&gt;
+&lt;h3 id=&quot;环境设置&quot;&gt;&lt;a href=&quot;#环境设置&quot; class=&quot;headerlink&quot; title=&quot;环境设置&quot;&gt;&lt;/a&gt;环境设置&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pylab &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;%matplotlib inline&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;caffe_root = &lt;span class=&quot;string&quot;&gt;&#39;/home/ldy/workspace/caffe/&#39;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# this file should be run from &amp;#123;caffe_root&amp;#125;/examples (otherwise change this line)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; sys&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sys.path.insert(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, caffe_root + &lt;span class=&quot;string&quot;&gt;&#39;python&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; caffe&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;下载训练用的数据，并导入lmdb&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# run scripts from caffe root&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; os&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;os.chdir(caffe_root)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Download data&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;!data/mnist/get_mnist.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Prepare data&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;!examples/mnist/create_mnist.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# back to examples&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;os.chdir(&lt;span class=&quot;string&quot;&gt;&#39;examples&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;Downloading...
+Creating lmdb...
+I0505 20:49:32.535013 18388 db_lmdb.cpp:35] Opened lmdb examples/mnist/mnist_train_lmdb
+I0505 20:49:32.535306 18388 convert_mnist_data.cpp:88] A total of 60000 items.
+I0505 20:49:32.535323 18388 convert_mnist_data.cpp:89] Rows: 28 Cols: 28
+I0505 20:49:32.547651 18388 db_lmdb.cpp:101] Doubling LMDB map size to 2MB ...
+I0505 20:49:32.556696 18388 db_lmdb.cpp:101] Doubling LMDB map size to 4MB ...
+I0505 20:49:32.578054 18388 db_lmdb.cpp:101] Doubling LMDB map size to 8MB ...
+I0505 20:49:32.627709 18388 db_lmdb.cpp:101] Doubling LMDB map size to 16MB ...
+I0505 20:49:32.718138 18388 db_lmdb.cpp:101] Doubling LMDB map size to 32MB ...
+I0505 20:49:32.960189 18388 db_lmdb.cpp:101] Doubling LMDB map size to 64MB ...
+I0505 20:49:33.271764 18388 convert_mnist_data.cpp:108] Processed 60000 files.
+I0505 20:49:33.403015 18390 db_lmdb.cpp:35] Opened lmdb examples/mnist/mnist_test_lmdb
+I0505 20:49:33.403692 18390 convert_mnist_data.cpp:88] A total of 10000 items.
+I0505 20:49:33.403733 18390 convert_mnist_data.cpp:89] Rows: 28 Cols: 28
+I0505 20:49:33.423638 18390 db_lmdb.cpp:101] Doubling LMDB map size to 2MB ...
+I0505 20:49:33.439213 18390 db_lmdb.cpp:101] Doubling LMDB map size to 4MB ...
+I0505 20:49:33.470553 18390 db_lmdb.cpp:101] Doubling LMDB map size to 8MB ...
+I0505 20:49:33.525192 18390 db_lmdb.cpp:101] Doubling LMDB map size to 16MB ...
+I0505 20:49:33.546480 18390 convert_mnist_data.cpp:108] Processed 10000 files.
+Done.
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;搭建网络&quot;&gt;&lt;a href=&quot;#搭建网络&quot; class=&quot;headerlink&quot; title=&quot;搭建网络&quot;&gt;&lt;/a&gt;搭建网络&lt;/h3&gt;&lt;p&gt;搭建网络结构，并保存为lenet_auto_train.prototxt（训练网络），lenet_auto_test.prototxt（测试网络）。&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; caffe &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; layers &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; L, params &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; P&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;lenet&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(lmdb, batch_size)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# our version of LeNet: a series of linear and simple nonlinear transformations&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n = caffe.NetSpec()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.data, n.label = L.Data(batch_size=batch_size, backend=P.Data.LMDB, source=lmdb,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                             transform_param=dict(scale=&lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;255&lt;/span&gt;), ntop=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.conv1 = L.Convolution(n.data, kernel_size=&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, num_output=&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;, weight_filler=dict(type=&lt;span class=&quot;string&quot;&gt;&#39;xavier&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.pool1 = L.Pooling(n.conv1, kernel_size=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, stride=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, pool=P.Pooling.MAX)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.conv2 = L.Convolution(n.pool1, kernel_size=&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, num_output=&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, weight_filler=dict(type=&lt;span class=&quot;string&quot;&gt;&#39;xavier&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.pool2 = L.Pooling(n.conv2, kernel_size=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, stride=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, pool=P.Pooling.MAX)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.fc1 =   L.InnerProduct(n.pool2, num_output=&lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;, weight_filler=dict(type=&lt;span class=&quot;string&quot;&gt;&#39;xavier&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.relu1 = L.ReLU(n.fc1, in_place=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.score = L.InnerProduct(n.relu1, num_output=&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, weight_filler=dict(type=&lt;span class=&quot;string&quot;&gt;&#39;xavier&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.loss =  L.SoftmaxWithLoss(n.score, n.label)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; n.to_proto()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; open(&lt;span class=&quot;string&quot;&gt;&#39;mnist/lenet_auto_train.prototxt&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; f:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f.write(str(lenet(&lt;span class=&quot;string&quot;&gt;&#39;mnist/mnist_train_lmdb&#39;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; open(&lt;span class=&quot;string&quot;&gt;&#39;mnist/lenet_auto_test.prototxt&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; f:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f.write(str(lenet(&lt;span class=&quot;string&quot;&gt;&#39;mnist/mnist_test_lmdb&#39;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看训练网络结构：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;!cat mnist/lenet_auto_train.prototxt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;layer {
+  name: &amp;quot;data&amp;quot;
+  type: &amp;quot;Data&amp;quot;
+  top: &amp;quot;data&amp;quot;
+  top: &amp;quot;label&amp;quot;
+  transform_param {
+    scale: 0.00392156862745
+  }
+  data_param {
+    source: &amp;quot;mnist/mnist_train_lmdb&amp;quot;
+    batch_size: 64
+    backend: LMDB
+  }
+}
+layer {
+  name: &amp;quot;conv1&amp;quot;
+  type: &amp;quot;Convolution&amp;quot;
+  bottom: &amp;quot;data&amp;quot;
+  top: &amp;quot;conv1&amp;quot;
+  convolution_param {
+    num_output: 20
+    kernel_size: 5
+    weight_filler {
+      type: &amp;quot;xavier&amp;quot;
+    }
+  }
+}
+layer {
+  name: &amp;quot;pool1&amp;quot;
+  type: &amp;quot;Pooling&amp;quot;
+  bottom: &amp;quot;conv1&amp;quot;
+  top: &amp;quot;pool1&amp;quot;
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: &amp;quot;conv2&amp;quot;
+  type: &amp;quot;Convolution&amp;quot;
+  bottom: &amp;quot;pool1&amp;quot;
+  top: &amp;quot;conv2&amp;quot;
+  convolution_param {
+    num_output: 50
+    kernel_size: 5
+    weight_filler {
+      type: &amp;quot;xavier&amp;quot;
+    }
+  }
+}
+layer {
+  name: &amp;quot;pool2&amp;quot;
+  type: &amp;quot;Pooling&amp;quot;
+  bottom: &amp;quot;conv2&amp;quot;
+  top: &amp;quot;pool2&amp;quot;
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+  }
+}
+layer {
+  name: &amp;quot;fc1&amp;quot;
+  type: &amp;quot;InnerProduct&amp;quot;
+  bottom: &amp;quot;pool2&amp;quot;
+  top: &amp;quot;fc1&amp;quot;
+  inner_product_param {
+    num_output: 500
+    weight_filler {
+      type: &amp;quot;xavier&amp;quot;
+    }
+  }
+}
+layer {
+  name: &amp;quot;relu1&amp;quot;
+  type: &amp;quot;ReLU&amp;quot;
+  bottom: &amp;quot;fc1&amp;quot;
+  top: &amp;quot;fc1&amp;quot;
+}
+layer {
+  name: &amp;quot;score&amp;quot;
+  type: &amp;quot;InnerProduct&amp;quot;
+  bottom: &amp;quot;fc1&amp;quot;
+  top: &amp;quot;score&amp;quot;
+  inner_product_param {
+    num_output: 10
+    weight_filler {
+      type: &amp;quot;xavier&amp;quot;
+    }
+  }
+}
+layer {
+  name: &amp;quot;loss&amp;quot;
+  type: &amp;quot;SoftmaxWithLoss&amp;quot;
+  bottom: &amp;quot;score&amp;quot;
+  bottom: &amp;quot;label&amp;quot;
+  top: &amp;quot;loss&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查看学习参数，参数文件已经保存在本地磁盘：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;!cat mnist/lenet_auto_solver.prototxt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;# The train/test net protocol buffer definition
+train_net: &amp;quot;mnist/lenet_auto_train.prototxt&amp;quot;
+test_net: &amp;quot;mnist/lenet_auto_test.prototxt&amp;quot;
+# test_iter specifies how many forward passes the test should carry out.
+# In the case of MNIST, we have test batch size 100 and 100 test iterations,
+# covering the full 10,000 testing images.
+test_iter: 100
+# Carry out testing every 500 training iterations.
+test_interval: 500
+# The base learning rate, momentum and the weight decay of the network.
+base_lr: 0.01
+momentum: 0.9
+weight_decay: 0.0005
+# The learning rate policy
+lr_policy: &amp;quot;inv&amp;quot;
+gamma: 0.0001
+power: 0.75
+# Display every 100 iterations
+display: 100
+# The maximum number of iterations
+max_iter: 10000
+# snapshot intermediate results
+snapshot: 5000
+snapshot_prefix: &amp;quot;mnist/lenet&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;加载并检查solver&quot;&gt;&lt;a href=&quot;#加载并检查solver&quot; class=&quot;headerlink&quot; title=&quot;加载并检查solver&quot;&gt;&lt;/a&gt;加载并检查solver&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;caffe.set_device(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;caffe.set_mode_gpu()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;### load the solver and create train and test nets&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;solver = &lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# ignore this workaround for lmdb data (can&#39;t instantiate two solvers on the same data)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;solver = caffe.SGDSolver(&lt;span class=&quot;string&quot;&gt;&#39;mnist/lenet_auto_solver.prototxt&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;检查网络参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# each output is (batch size, feature dim, spatial dim)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[(k, v.data.shape) &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; solver.net.blobs.items()]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;[(&amp;apos;data&amp;apos;, (64, 1, 28, 28)),
+ (&amp;apos;label&amp;apos;, (64,)),
+ (&amp;apos;conv1&amp;apos;, (64, 20, 24, 24)),
+ (&amp;apos;pool1&amp;apos;, (64, 20, 12, 12)),
+ (&amp;apos;conv2&amp;apos;, (64, 50, 8, 8)),
+ (&amp;apos;pool2&amp;apos;, (64, 50, 4, 4)),
+ (&amp;apos;fc1&amp;apos;, (64, 500)),
+ (&amp;apos;score&amp;apos;, (64, 10)),
+ (&amp;apos;loss&amp;apos;, ())]
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# just print the weight sizes (we&#39;ll omit the biases)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[(k, v[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].data.shape) &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; k, v &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; solver.net.params.items()]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;[(&amp;apos;conv1&amp;apos;, (20, 1, 5, 5)),
+ (&amp;apos;conv2&amp;apos;, (50, 20, 5, 5)),
+ (&amp;apos;fc1&amp;apos;, (500, 800)),
+ (&amp;apos;score&amp;apos;, (10, 500))]
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;在开始前，我们先检查下训练网络和测试网络是否包含我们的数据&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;solver.net.forward()  &lt;span class=&quot;comment&quot;&gt;# train net&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].forward()  &lt;span class=&quot;comment&quot;&gt;# test net (there can be more than one)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;{&amp;apos;loss&amp;apos;: array(2.3089799880981445, dtype=float32)}
+&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# we use a little trick to tile the first eight images&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;imshow(solver.net.blobs[&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;].data[:&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].transpose(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;).reshape(&lt;span class=&quot;number&quot;&gt;28&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;28&lt;/span&gt;), cmap=&lt;span class=&quot;string&quot;&gt;&#39;gray&#39;&lt;/span&gt;); axis(&lt;span class=&quot;string&quot;&gt;&#39;off&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;train labels:&#39;&lt;/span&gt;, solver.net.blobs[&lt;span class=&quot;string&quot;&gt;&#39;label&#39;&lt;/span&gt;].data[:&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;train labels: [ 5.  0.  4.  1.  9.  2.  1.  3.]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/69386136.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;imshow(solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].blobs[&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;].data[:&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].transpose(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;).reshape(&lt;span class=&quot;number&quot;&gt;28&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;28&lt;/span&gt;), cmap=&lt;span class=&quot;string&quot;&gt;&#39;gray&#39;&lt;/span&gt;); axis(&lt;span class=&quot;string&quot;&gt;&#39;off&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;test labels:&#39;&lt;/span&gt;, solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].blobs[&lt;span class=&quot;string&quot;&gt;&#39;label&#39;&lt;/span&gt;].data[:&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;test labels: [ 7.  2.  1.  0.  4.  1.  4.  9.]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/12928484.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;开始训练&quot;&gt;&lt;a href=&quot;#开始训练&quot; class=&quot;headerlink&quot; title=&quot;开始训练&quot;&gt;&lt;/a&gt;开始训练&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;先训练一个batch看会有什么结果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;solver.step(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;运行一次之后，看看我们的第一层卷积层的滤波器是否有变化，20个滤波器如下所示：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;imshow(solver.net.params[&lt;span class=&quot;string&quot;&gt;&#39;conv1&#39;&lt;/span&gt;][&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].diff[:, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].reshape(&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       .transpose(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;).reshape(&lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;*&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;), cmap=&lt;span class=&quot;string&quot;&gt;&#39;gray&#39;&lt;/span&gt;); axis(&lt;span class=&quot;string&quot;&gt;&#39;off&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;(-0.5, 24.5, 19.5, -0.5)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/2284082.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;上面说明权重已经更新，我们可以在迭代训练的时候，记录一些参数，决定什么时候停止迭代&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;%%time&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;niter = &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test_interval = &lt;span class=&quot;number&quot;&gt;25&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# losses will also be stored in the log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;train_loss = zeros(niter)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test_acc = zeros(int(np.ceil(niter / test_interval)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;output = zeros((niter, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# the main solver loop&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; it &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(niter):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    solver.step(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)  &lt;span class=&quot;comment&quot;&gt;# SGD by Caffe&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# store the train loss&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    train_loss[it] = solver.net.blobs[&lt;span class=&quot;string&quot;&gt;&#39;loss&#39;&lt;/span&gt;].data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# store the output on the first test batch&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# (start the forward pass at conv1 to avoid loading new data)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].forward(start=&lt;span class=&quot;string&quot;&gt;&#39;conv1&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    output[it] = solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].blobs[&lt;span class=&quot;string&quot;&gt;&#39;score&#39;&lt;/span&gt;].data[:&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# run a full test every so often&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# (Caffe can also do this for us and write to a log, but we show here&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;#  how to do it directly in Python, where more complicated things are easier.)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; it % test_interval == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;Iteration&#39;&lt;/span&gt;, it, &lt;span class=&quot;string&quot;&gt;&#39;testing...&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        correct = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; test_it &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].forward()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            correct += sum(solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].blobs[&lt;span class=&quot;string&quot;&gt;&#39;score&#39;&lt;/span&gt;].data.argmax(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                           == solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].blobs[&lt;span class=&quot;string&quot;&gt;&#39;label&#39;&lt;/span&gt;].data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        test_acc[it // test_interval] = correct / &lt;span class=&quot;number&quot;&gt;1e4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;Iteration 0 testing...
+Iteration 25 testing...
+Iteration 50 testing...
+Iteration 75 testing...
+Iteration 100 testing...
+Iteration 125 testing...
+Iteration 150 testing...
+Iteration 175 testing...
+CPU times: user 1min 15s, sys: 15.3 s, total: 1min 31s
+Wall time: 1min 18s
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;画出train loss和test accuracy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;_, ax1 = subplots()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2 = ax1.twinx()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.plot(arange(niter), train_loss)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.plot(test_interval * arange(len(test_acc)), test_acc, &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.set_xlabel(&lt;span class=&quot;string&quot;&gt;&#39;iteration&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.set_ylabel(&lt;span class=&quot;string&quot;&gt;&#39;train loss&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.set_ylabel(&lt;span class=&quot;string&quot;&gt;&#39;test accuracy&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.set_title(&lt;span class=&quot;string&quot;&gt;&#39;Test Accuracy: &amp;#123;:.2f&amp;#125;&#39;&lt;/span&gt;.format(test_acc[&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;matplotlib.text.Text at 0x7feabeae91d0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/18901685.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;因为我们保存第一次测试batch的结果，所以可以看看每次迭代结果的变化，下面画出每个图像随迭代次数每个标签的可能性。(只显示了一个数字，其他的数字类似)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    figure(figsize=(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    imshow(solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].blobs[&lt;span class=&quot;string&quot;&gt;&#39;data&#39;&lt;/span&gt;].data[i, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;], cmap=&lt;span class=&quot;string&quot;&gt;&#39;gray&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    figure(figsize=(&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    imshow(output[:&lt;span class=&quot;number&quot;&gt;50&lt;/span&gt;, i].T, interpolation=&lt;span class=&quot;string&quot;&gt;&#39;nearest&#39;&lt;/span&gt;, cmap=&lt;span class=&quot;string&quot;&gt;&#39;gray&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    xlabel(&lt;span class=&quot;string&quot;&gt;&#39;iteration&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ylabel(&lt;span class=&quot;string&quot;&gt;&#39;label&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/47308921.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/21846569.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;尝试改变网络结构和优化函数&quot;&gt;&lt;a href=&quot;#尝试改变网络结构和优化函数&quot; class=&quot;headerlink&quot; title=&quot;尝试改变网络结构和优化函数&quot;&gt;&lt;/a&gt;尝试改变网络结构和优化函数&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;109&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;110&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;111&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;112&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;113&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;114&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;115&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;116&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;117&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;118&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;119&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;120&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;121&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;122&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;123&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;124&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;125&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;126&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;127&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;128&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;train_net_path = &lt;span class=&quot;string&quot;&gt;&#39;mnist/custom_auto_train.prototxt&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test_net_path = &lt;span class=&quot;string&quot;&gt;&#39;mnist/custom_auto_test.prototxt&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;solver_config_path = &lt;span class=&quot;string&quot;&gt;&#39;mnist/custom_auto_solver.prototxt&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;### define net&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;custom_net&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(lmdb, batch_size)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# define your own net!&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n = caffe.NetSpec()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# keep this data layer for all networks&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.data, n.label = L.Data(batch_size=batch_size, backend=P.Data.LMDB, source=lmdb,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                             transform_param=dict(scale=&lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;/&lt;span class=&quot;number&quot;&gt;255&lt;/span&gt;), ntop=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# EDIT HERE to try different networks&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# this single layer defines a simple linear classifier&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# (in particular this defines a multiway logistic regression)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.score =   L.InnerProduct(n.data, num_output=&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, weight_filler=dict(type=&lt;span class=&quot;string&quot;&gt;&#39;xavier&#39;&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# EDIT HERE this is the LeNet variant we have already tried&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# n.conv1 = L.Convolution(n.data, kernel_size=5, num_output=20, weight_filler=dict(type=&#39;xavier&#39;))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# n.pool1 = L.Pooling(n.conv1, kernel_size=2, stride=2, pool=P.Pooling.MAX)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# n.conv2 = L.Convolution(n.pool1, kernel_size=5, num_output=50, weight_filler=dict(type=&#39;xavier&#39;))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# n.pool2 = L.Pooling(n.conv2, kernel_size=2, stride=2, pool=P.Pooling.MAX)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# n.fc1 =   L.InnerProduct(n.pool2, num_output=500, weight_filler=dict(type=&#39;xavier&#39;))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# EDIT HERE consider L.ELU or L.Sigmoid for the nonlinearity&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# n.relu1 = L.ReLU(n.fc1, in_place=True)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# n.score =   L.InnerProduct(n.fc1, num_output=10, weight_filler=dict(type=&#39;xavier&#39;))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# keep this loss layer for all networks&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n.loss =  L.SoftmaxWithLoss(n.score, n.label)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; n.to_proto()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; open(train_net_path, &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; f:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f.write(str(custom_net(&lt;span class=&quot;string&quot;&gt;&#39;mnist/mnist_train_lmdb&#39;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;)))    &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; open(test_net_path, &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; f:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f.write(str(custom_net(&lt;span class=&quot;string&quot;&gt;&#39;mnist/mnist_test_lmdb&#39;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;### define solver&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; caffe.proto &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; caffe_pb2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s = caffe_pb2.SolverParameter()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Set a seed for reproducible experiments:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# this controls for randomization in training.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.random_seed = &lt;span class=&quot;number&quot;&gt;0xCAFFE&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Specify locations of the train and (maybe) test networks.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.train_net = train_net_path&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.test_net.append(test_net_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.test_interval = &lt;span class=&quot;number&quot;&gt;500&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# Test after every 500 training iterations.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.test_iter.append(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;# Test on 100 batches each time we test.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.max_iter = &lt;span class=&quot;number&quot;&gt;10000&lt;/span&gt;     &lt;span class=&quot;comment&quot;&gt;# no. of times to update the net (training iterations)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# EDIT HERE to try different solvers&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# solver types include &quot;SGD&quot;, &quot;Adam&quot;, and &quot;Nesterov&quot; among others.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.type = &lt;span class=&quot;string&quot;&gt;&quot;SGD&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Set the initial learning rate for SGD.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.base_lr = &lt;span class=&quot;number&quot;&gt;0.01&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# EDIT HERE to try different learning rates&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Set momentum to accelerate learning by&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# taking weighted average of current and previous updates.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.momentum = &lt;span class=&quot;number&quot;&gt;0.9&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Set weight decay to regularize and prevent overfitting&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.weight_decay = &lt;span class=&quot;number&quot;&gt;5e-4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Set `lr_policy` to define how the learning rate changes during training.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# This is the same policy as our default LeNet.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.lr_policy = &lt;span class=&quot;string&quot;&gt;&#39;inv&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.gamma = &lt;span class=&quot;number&quot;&gt;0.0001&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.power = &lt;span class=&quot;number&quot;&gt;0.75&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# EDIT HERE to try the fixed rate (and compare with adaptive solvers)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# `fixed` is the simplest policy that keeps the learning rate constant.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# s.lr_policy = &#39;fixed&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Display the current training loss and accuracy every 1000 iterations.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.display = &lt;span class=&quot;number&quot;&gt;1000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Snapshots are files used to store networks we&#39;ve trained.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# We&#39;ll snapshot every 5K iterations -- twice during training.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.snapshot = &lt;span class=&quot;number&quot;&gt;5000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.snapshot_prefix = &lt;span class=&quot;string&quot;&gt;&#39;mnist/custom_net&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Train on the GPU&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;s.solver_mode = caffe_pb2.SolverParameter.GPU&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Write the solver to a temporary file and return its filename.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;with&lt;/span&gt; open(solver_config_path, &lt;span class=&quot;string&quot;&gt;&#39;w&#39;&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; f:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    f.write(str(s))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;### load the solver and create train and test nets&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;solver = &lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# ignore this workaround for lmdb data (can&#39;t instantiate two solvers on the same data)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;solver = caffe.get_solver(solver_config_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;### solve&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;niter = &lt;span class=&quot;number&quot;&gt;250&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# EDIT HERE increase to train for longer&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test_interval = niter / &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# losses will also be stored in the log&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;train_loss = zeros(niter)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;test_acc = zeros(int(np.ceil(niter / test_interval)))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# the main solver loop&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; it &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(niter):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    solver.step(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)  &lt;span class=&quot;comment&quot;&gt;# SGD by Caffe&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# store the train loss&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    train_loss[it] = solver.net.blobs[&lt;span class=&quot;string&quot;&gt;&#39;loss&#39;&lt;/span&gt;].data&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# run a full test every so often&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# (Caffe can also do this for us and write to a log, but we show here&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;#  how to do it directly in Python, where more complicated things are easier.)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; it % test_interval == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;Iteration&#39;&lt;/span&gt;, it, &lt;span class=&quot;string&quot;&gt;&#39;testing...&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        correct = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; test_it &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(&lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].forward()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            correct += sum(solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].blobs[&lt;span class=&quot;string&quot;&gt;&#39;score&#39;&lt;/span&gt;].data.argmax(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                           == solver.test_nets[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;].blobs[&lt;span class=&quot;string&quot;&gt;&#39;label&#39;&lt;/span&gt;].data)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        test_acc[it // test_interval] = correct / &lt;span class=&quot;number&quot;&gt;1e4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;_, ax1 = subplots()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2 = ax1.twinx()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.plot(arange(niter), train_loss)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.plot(test_interval * arange(len(test_acc)), test_acc, &lt;span class=&quot;string&quot;&gt;&#39;r&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.set_xlabel(&lt;span class=&quot;string&quot;&gt;&#39;iteration&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax1.set_ylabel(&lt;span class=&quot;string&quot;&gt;&#39;train loss&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.set_ylabel(&lt;span class=&quot;string&quot;&gt;&#39;test accuracy&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ax2.set_title(&lt;span class=&quot;string&quot;&gt;&#39;Custom Test Accuracy: &amp;#123;:.2f&amp;#125;&#39;&lt;/span&gt;.format(test_acc[&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://nbviewer.jupyter.org/github/BVLC/caffe/blob/master/examples/01-learning-lenet.ipynb&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Solving in Python with LeNet&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/41421657.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="Caffe" scheme="http://yoursite.com/tags/Caffe/"/>
+    
+      <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Caffe训练好的CaffeNet进行图片分类</title>
@@ -161,9 +406,9 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
-    
       <category term="Caffe" scheme="http://yoursite.com/tags/Caffe/"/>
+    
+      <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
     
   </entry>
   
@@ -278,9 +523,9 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
-    
       <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
+    
+      <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
     
       <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
     
@@ -327,9 +572,9 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
-    
       <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
+    
+      <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
     
       <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
     
@@ -399,9 +644,9 @@ probabilities and labels:
     
       <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
     
-      <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
-    
       <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
+    
+      <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
     
   </entry>
   
@@ -1545,64 +1790,6 @@ Freq: D, Name: A, dtype: float64
       <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
     
       <category term="Artificial Intelligence" scheme="http://yoursite.com/tags/Artificial-Intelligence/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>算法渐进记号及主定理</title>
-    <link href="http://yoursite.com/2015/12/29/2015-12-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/"/>
-    <id>http://yoursite.com/2015/12/29/2015-12-29-算法复杂度渐进标号/</id>
-    <published>2015-12-29T02:00:00.000Z</published>
-    <updated>2016-03-14T09:32:57.208Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;算法渐进记号&quot;&gt;&lt;a href=&quot;#算法渐进记号&quot; class=&quot;headerlink&quot; title=&quot;算法渐进记号&quot;&gt;&lt;/a&gt;算法渐进记号&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Big $\Theta$ ：$\Theta$ 记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Big $\Omega$：表示一个函数的渐进下界，算法运行的最好情况。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Litter $o$: 和big $O$ 定义相似，区别主要是 big$O$ 提供的上界可能和函数是同阶的，litter $o$ 表示非渐进紧确的上界。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;举例&quot;&gt;&lt;a href=&quot;#举例&quot; class=&quot;headerlink&quot; title=&quot;举例&quot;&gt;&lt;/a&gt;举例&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/GgsO2DX.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;渐进记号与函数阶数的关系&quot;&gt;&lt;a href=&quot;#渐进记号与函数阶数的关系&quot; class=&quot;headerlink&quot; title=&quot;渐进记号与函数阶数的关系&quot;&gt;&lt;/a&gt;渐进记号与函数阶数的关系&lt;/h1&gt;&lt;p&gt;其中$a，b$分别为函数$g(n)，f(n)$的阶数&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/wUDSXQf.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;通常Big $\Theta$ 用来描述算法的最好和最坏的运行时间，Big $O$描述算法的最坏运行时间，Big $\Omega$描述算法的最好运行时间，经常使用的是Big $O$， 用来衡量算法的时间复杂度和空间复杂度。&lt;/p&gt;
-&lt;h1 id=&quot;主定理-master-theorem-求解递归式&quot;&gt;&lt;a href=&quot;#主定理-master-theorem-求解递归式&quot; class=&quot;headerlink&quot; title=&quot;主定理(master theorem)求解递归式&quot;&gt;&lt;/a&gt;主定理(master theorem)求解递归式&lt;/h1&gt;&lt;p&gt;假设有递推关系式&lt;/p&gt;
-&lt;p&gt;$$T(n) = a \; T!\left(\frac{n}{b}\right) + f(n)$$&lt;/p&gt;
-&lt;p&gt;其中$ a \geq 1 \mbox{, } b &amp;gt; 1$，n为问题规模，a为递推的子问题数量，n/b为每个子问题的规模（假设每个子问题的规模基本一样），f(n)为递推以外进行的计算工作，包含了问题分解和子问题合并的代价。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;情况一&lt;br&gt;如果存在常数$\epsilon &amp;gt; 0$，有$f(n) = O\left( n^{\log_b (a) - \epsilon} \right)$，并且是多项式意义上的小于，那么&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$T(n) = \Theta\left( n^{\log_b a} \right)$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;情况二&lt;br&gt;如果存在常数k ≥ 0，有$f(n) = \Theta\left( n^{\log_b a} \log^{k} n \right)$那么&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$T(n) = \Theta\left( n^{\log_b a} \log^{k+1} n \right)$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;情况三&lt;br&gt;如果存在常数$\epsilon &amp;gt; 0$，有$f(n) = \Omega\left( n^{\log_b (a) + \epsilon} \right)$，并且是多项式意义上的大于，同时存在常数c &amp;lt; 1以及充分大的n，满足&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;$$a f\left( \frac{n}{b} \right) \le c f(n)$$&lt;/p&gt;
-&lt;p&gt;那么&lt;/p&gt;
-&lt;p&gt;$$T\left(n \right) = \Theta \left(f \left(n \right) \right)$$&lt;/p&gt;
-&lt;p&gt;简单举例：&lt;/p&gt;
-&lt;p&gt;$$T(n) = 9 \; T!\left(\frac{n}{3}\right) + n$$&lt;/p&gt;
-&lt;p&gt;对这个递归式，有a=9,b=3,f(n)=n,因此有$n^{log_b a}=n^2&amp;gt;n$,所以复杂度为：&lt;/p&gt;
-&lt;p&gt;$$T(n)=\Theta(n^2)$$&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;算法渐进记号&quot;&gt;&lt;a href=&quot;#算法渐进记号&quot; class=&quot;headerlink&quot; title=&quot;算法渐进记号&quot;&gt;&lt;/a&gt;算法渐进记号&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Big $\Theta$ ：$\Theta$ 记号渐进的给出一个函数的上界和下届，表示同阶的函数簇。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Big $O$：表示一个函数的渐进上界，用来限制算法的最坏情况运行时间。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Algorithms" scheme="http://yoursite.com/tags/Algorithms/"/>
     
   </entry>
   
