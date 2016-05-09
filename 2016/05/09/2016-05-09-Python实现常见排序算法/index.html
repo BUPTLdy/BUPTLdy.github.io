@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithms,Artificial Intelligence," />
+  <meta name="keywords" content="Algorithms,Python," />
 
 
 
@@ -59,22 +59,18 @@
 
 
 
-<meta name="description" content="图搜索策略简介之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="无信息图搜索策略">
-<meta property="og:url" content="http://yoursite.com/2016/01/04/2016-01-04-图搜索/index.html">
+<meta property="og:title" content="Python实现常见排序算法">
+<meta property="og:url" content="http://yoursite.com/2016/05/09/2016-05-09-Python实现常见排序算法/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="图搜索策略简介之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
-<meta property="og:image" content="http://i.imgur.com/7EvIIuk.png">
-<meta property="og:image" content="http://i.imgur.com/2g5AKHd.png">
-<meta property="og:image" content="http://i.imgur.com/B3dYJla.jpg">
-<meta property="og:image" content="http://i.imgur.com/CrjoNGl.jpg">
-<meta property="og:image" content="http://i.imgur.com/LLE7pad.jpg">
-<meta property="og:updated_time" content="2016-03-14T09:29:00.079Z">
+<meta property="og:description">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/51291175.jpg">
+<meta property="og:updated_time" content="2016-05-09T11:57:53.710Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无信息图搜索策略">
-<meta name="twitter:description" content="图搜索策略简介之前所说的回溯搜索策略是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。">
-<meta name="twitter:image" content="http://i.imgur.com/7EvIIuk.png">
+<meta name="twitter:title" content="Python实现常见排序算法">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/51291175.jpg">
 
 
 
@@ -92,7 +88,7 @@
   };
 </script>
 
-  <title> 无信息图搜索策略 | Ldy's Blog </title>
+  <title> Python实现常见排序算法 | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -277,7 +273,7 @@
             
             
               
-                无信息图搜索策略
+                Python实现常见排序算法
               
             
           </h1>
@@ -289,8 +285,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-04T10:00:00+08:00" content="2016-01-04">
-              2016-01-04
+            <time itemprop="dateCreated" datetime="2016-05-09T12:00:00+08:00" content="2016-05-09">
+              2016-05-09
             </time>
           </span>
 
@@ -300,8 +296,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/04/2016-01-04-图搜索/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/04/2016-01-04-图搜索/" itemprop="commentsCount"></span>
+                <a href="/2016/05/09/2016-05-09-Python实现常见排序算法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/2016-05-09-Python实现常见排序算法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,7 +309,7 @@
 
           
           
-             <span id="/2016/01/04/2016-01-04-图搜索/" class="leancloud_visitors" data-flag-title="无信息图搜索策略">
+             <span id="/2016/05/09/2016-05-09-Python实现常见排序算法/" class="leancloud_visitors" data-flag-title="Python实现常见排序算法">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -334,39 +330,38 @@
       
 
       
-        <h1 id="图搜索策略简介"><a href="#图搜索策略简介" class="headerlink" title="图搜索策略简介"></a>图搜索策略简介</h1><p>之前所说的<a href="http://buptldy.github.io/2016/01/03/%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/" target="_blank" rel="external">回溯搜索策略</a>是只保留了从初始状态到当前状态的一条路径，优点是节省存储空间，缺点是被回溯掉的已经搜索过的部分不能再使用。 与之相对应的是，将所有搜索过的状态都记录下来的搜索方法称为“图搜索”。<br><a id="more"></a><br>图搜索实际上是从一个隐含图中生成一部分确实含有一个目标结点的显示表示子图的搜索过程。</p>
-<p>扩展一个结点：应用规则到已有结点上，生成其<strong>所有</strong>后继扩展结点的过程。扩展节点可使定义的隐含图生成为显式表示的状态空间图。</p>
-<h1 id="2-图搜索算法"><a href="#2-图搜索算法" class="headerlink" title="2. 图搜索算法"></a>2. 图搜索算法</h1><p>图搜索中的两个表：</p>
-<pre><code>- OPEN表：存放已经生成但未扩展的节点，最初只含初始结点
-- CLOSED表：存放已经扩展的节点，其实设置为空表
-</code></pre><p>图搜索过程：<br><img src="http://i.imgur.com/7EvIIuk.png" alt=""></p>
-<p><strong>算法结束后，将生成一个图G，称为搜索图。同时由于每个节点都有一个指针指向父节点，这些指针指向的节点构成G的一个支撑树，称为搜索树。</strong></p>
-<p>从目标节点开始，将指针指向的状态回串起来，即找到一条解路径。</p>
-<p>例子：<br>下图中S结点为初始结点，把结点S放入OPEN表中，从S结点开始扩展，生成S结点的所有后继结点｛1，2，3｝，S结点已扩展，加入CLOSED表中，继续这一过程。<br><img src="http://i.imgur.com/2g5AKHd.png" alt=""></p>
-<p>从上述结果可以看出，最终OPEN表中的结点都是搜索树中的端结点，而CLOSED表中的结点为搜索树中的非端结点。</p>
-<p>对于搜索过程中3中的d）步骤，如果要搜索的隐含图是一棵树，则在它上一步中生成后继结点不可能是以前生成过的，即生成的后继结点不可能出现在OPEN，CLOSED表中，此时搜索图就是搜索树，因此不必进行指针的修改操作。如果要搜索的隐含图不是一棵树，则有可能存在生成的后继结点中的某一结点$m_k$已经在OPEN，CLOSED表中存在,<strong><em>这意味着此时又发现了达到$m_k$的新通路</em></strong>，这样就需要比较不用路径到达点$m_k$的代价，将指针修改到代价最小的路径上。</p>
-<h1 id="无信息图搜索过程"><a href="#无信息图搜索过程" class="headerlink" title="无信息图搜索过程"></a>无信息图搜索过程</h1><p>无信息搜索过程是在图搜索算法过程中第3点的e）步中排列OPEN表中结点的顺序时，没有使用与问题有关的知识，任意排列，通常有<em>深度优先</em>和<em>宽度优先</em>两种排列方式。</p>
+        <p><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/51291175.jpg" alt=""><br></center><br><a id="more"></a></p>
+<h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><p>冒泡排序比较简单，主要过程如下：</p>
 <ul>
-<li>深度优先</li>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
 </ul>
-<p>所谓深度优先搜索就是在每次扩展一个结点时，选择到目前为止深度最深的结点优先扩展。在算法中的实现为：</p>
-<p>把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的最前面，是深度大的结点优先扩展</p>
-<p>因为新扩展出来的结点为子节点，子节点的深度要大于父节点的深度。一般情况下，深度优先搜索不但不能保证找到最优解，也不一定能保证找到解，这取决与问题的状态空间，如果问题的状态空间无限，可能会陷入“深渊”，而找不到解，因此也需要限制搜索的深度。</p>
-<p>举例：</p>
-<p>问题状态图G2如下图所示：</p>
-<p><img src="http://i.imgur.com/B3dYJla.jpg" alt=""></p>
-<p>根据深度优先原则，搜索过程为：（A–&gt;B–&gt;C–&gt;E–&gt;D–&gt;F–&gt;G）</p>
-<p><img src="http://i.imgur.com/CrjoNGl.jpg" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BubbleSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(array)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(array)<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> array[j]&gt;array[j+<span class="number">1</span>]:</span><br><span class="line">                array[j],array[j+<span class="number">1</span>]=array[j+<span class="number">1</span>],array[j]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+<h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SelectionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(len(array)):</span><br><span class="line">        min_index=i</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> xrange(i+<span class="number">1</span>,len(array)):</span><br><span class="line">            <span class="keyword">if</span> array[j]&lt;array[min_index]:</span><br><span class="line">                min_index=j</span><br><span class="line">        array[i],array[min_index]=array[min_index],array[i]</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><p>插入排序（英语：Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">InsertionSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">1</span>,len(array)):</span><br><span class="line">        temp=array[i]</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> xrange(i,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> temp&gt;array[j<span class="number">-1</span>]:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                array[j]=array[j<span class="number">-1</span>]</span><br><span class="line">        array[j]=temp</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>归并排序（英语：Merge sort，或mergesort），是创建在归并操作上的一种有效的排序算法，效率为O(n log n)。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。</p>
+<p>有关归并排序中的详细内容可以参考<a href="http://buptldy.github.io/2016/01/06/2016-01-06-%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5[Divide%20and%20Conquer]/" target="_blank" rel="external">分治策略中的归并排序</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">MergeSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    n=len(array)</span><br><span class="line">    <span class="keyword">if</span> n&lt;=<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> array</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        n=n/<span class="number">2</span></span><br><span class="line">        left=MergeSort(array[<span class="number">0</span>:n])</span><br><span class="line">        right=MergeSort(array[n:])</span><br><span class="line">        <span class="keyword">return</span> Merge(left,right)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Merge</span><span class="params">(left,right)</span>:</span></span><br><span class="line">    array=[]</span><br><span class="line">    <span class="keyword">while</span> len(left)&gt;<span class="number">0</span> <span class="keyword">and</span> len(right)&gt;<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">if</span> left[<span class="number">0</span>]&lt;right[<span class="number">0</span>]:</span><br><span class="line">            array.append(left[<span class="number">0</span>])</span><br><span class="line">            <span class="keyword">del</span> left[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            array.append(right[<span class="number">0</span>])</span><br><span class="line">            <span class="keyword">del</span> right[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">if</span> len(left)&gt;<span class="number">0</span>:</span><br><span class="line">        array.extend(left)</span><br><span class="line">    <span class="keyword">if</span> len(right)&gt;<span class="number">0</span>:</span><br><span class="line">        array.extend(right)</span><br><span class="line">    <span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p>快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。</p>
+<p>步骤为：</p>
 <ul>
-<li>宽度优先</li>
+<li>从数列中挑出一个元素，称为”基准”（pivot），重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区结束之后，该基准就处于数列的中间位置。这个称为分区（partition）操作。</li>
+<li>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li>
+<li>递归的最底部情形，是数列的大小是零或一，也就是永远都已经被排序好了。虽然一直递归下去，但是这个算法总会结束，因为在每次的迭代（iteration）中，它至少会把一个元素摆到它最后的位置去。</li>
 </ul>
-<p>宽度优先搜索与深度优先相反，每次选择深度最浅的结点优先扩展，实现方法为：</p>
-<p>把后继结点中不在OPEN或CLOSED中的结点放在OPEN表的后面</p>
-<p>当问题有解时，宽度优先算大一定能找到解，且在每段路径为单位代价时能找到最优解。</p>
-<p>根据宽度优先原则，对图G2的搜索过程为：（A–&gt;B–&gt;C–&gt;E–&gt;F–&gt;D–&gt;G）</p>
-<p><img src="http://i.imgur.com/LLE7pad.jpg" alt=""></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>&lt;&lt;人工智能&gt;&gt;.马少平，朱小燕编著</p>
-<p>图的遍历之 深度优先搜索和广度优先搜索:<a href="http://www.cnblogs.com/skywang12345/p/3711483.html" title="图的遍历之 深度优先搜索和广度优先搜索" target="_blank" rel="external">http://www.cnblogs.com/skywang12345/p/3711483.html</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">QuickSort</span><span class="params">(array)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(array)&lt;=<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> array</span><br><span class="line">    pivot=array[<span class="number">0</span>]</span><br><span class="line">    left=[x <span class="keyword">for</span> x <span class="keyword">in</span> array[<span class="number">1</span>:]<span class="keyword">if</span> x&lt;pivot ]</span><br><span class="line">    right=[x <span class="keyword">for</span> x <span class="keyword">in</span> array[<span class="number">1</span>:] <span class="keyword">if</span> x&gt;=pivot]</span><br><span class="line">    <span class="keyword">return</span> QuickSort(left)+[pivot]+QuickSort(right)</span><br></pre></td></tr></table></figure>
+<h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><p>在堆的数据结构中，堆中的最大值总是位于根节点。堆中定义以下几种操作：</p>
+<ul>
+<li>最大堆调整（Max_Heapify）：将堆的末端子节点作调整，使得子节点永远小于父节点</li>
+<li>创建最大堆（Build_Max_Heap）：将堆所有数据重新排序</li>
+<li>堆排序（HeapSort）：移除位在第一个数据的根节点，并做最大堆调整的递归运算</li>
+</ul>
+<p>堆排序可以参考这篇博文：[<a href="http://www.cnblogs.com/cj723/archive/2011/04/22/2024269.html]（http://www.cnblogs.com/cj723/archive/2011/04/22/2024269.html）" target="_blank" rel="external">http://www.cnblogs.com/cj723/archive/2011/04/22/2024269.html]（http://www.cnblogs.com/cj723/archive/2011/04/22/2024269.html）</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">heap_sort</span><span class="params">(array)</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sift_down</span><span class="params">(start, end)</span>:</span></span><br><span class="line"><span class="string">"""最大堆调整"""</span></span><br><span class="line">root = start</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    child = <span class="number">2</span> * root + <span class="number">1</span>    <span class="comment">#左子节点</span></span><br><span class="line">    <span class="keyword">if</span> child &gt; end:         <span class="comment">#如果没有子节点退出</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> child + <span class="number">1</span> &lt;= end <span class="keyword">and</span> array[child] &lt; array[child + <span class="number">1</span>]: <span class="comment">#如果左子节点值小于右子节点</span></span><br><span class="line">        child += <span class="number">1</span>                             <span class="comment">#下标由左子节点更换为右子节点</span></span><br><span class="line">    <span class="keyword">if</span> array[root] &lt; array[child]:             <span class="comment">#如果父节点小与子节点，则值相互交换</span></span><br><span class="line">        array[root], array[child] = array[child], array[root]</span><br><span class="line">        root = child                           <span class="comment">#对发生变化的子节点向下递归，重复上述过程</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建最大堆</span></span><br><span class="line"><span class="keyword">for</span> start <span class="keyword">in</span> xrange((len(array) - <span class="number">2</span>) // <span class="number">2</span>, <span class="number">-1</span>, <span class="number">-1</span>):<span class="comment">#从最后一个非叶子节点开始构造最大堆</span></span><br><span class="line">sift_down(start, len(array) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 堆排序</span></span><br><span class="line"><span class="keyword">for</span> end <span class="keyword">in</span> xrange(len(array) - <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">array[<span class="number">0</span>], array[end] = array[end], array[<span class="number">0</span>] <span class="comment">#把最大值放在最后</span></span><br><span class="line">sift_down(<span class="number">0</span>, end - <span class="number">1</span>)                      <span class="comment">#除最大值之外的继续构造最大堆</span></span><br><span class="line"><span class="keyword">return</span> array</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -383,7 +378,7 @@
           
             <a href="/tags/Algorithms/" rel="tag">#Algorithms</a>
           
-            <a href="/tags/Artificial-Intelligence/" rel="tag">#Artificial Intelligence</a>
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
         </div>
       
@@ -392,17 +387,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/03/2016-01-03-回溯策略/" rel="next" title="回溯策略[backtracking]">
-                <i class="fa fa-chevron-left"></i> 回溯策略[backtracking]
+              <a href="/2016/05/09/2016-05-09-Python链表实现/" rel="next" title="Python实现单链表">
+                <i class="fa fa-chevron-left"></i> Python实现单链表
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/05/2016-01-05-启发式图搜索/" rel="prev" title="启发式图搜索策略">
-                启发式图搜索策略 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -417,10 +408,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/04/2016-01-04-图搜索/"
-     data-title="无信息图搜索策略"
+        <div class="ds-share flat" data-thread-key="2016/05/09/2016-05-09-Python实现常见排序算法/"
+     data-title="Python实现常见排序算法"
      data-content=""
-     data-url="http://yoursite.com/2016/01/04/2016-01-04-图搜索/">
+     data-url="http://yoursite.com/2016/05/09/2016-05-09-Python实现常见排序算法/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -447,8 +438,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/04/2016-01-04-图搜索/"
-           data-title="无信息图搜索策略" data-url="http://yoursite.com/2016/01/04/2016-01-04-图搜索/">
+      <div class="ds-thread" data-thread-key="2016/05/09/2016-05-09-Python实现常见排序算法/"
+           data-title="Python实现常见排序算法" data-url="http://yoursite.com/2016/05/09/2016-05-09-Python实现常见排序算法/">
       </div>
     
   </div>
@@ -554,7 +545,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图搜索策略简介"><span class="nav-number">1.</span> <span class="nav-text">图搜索策略简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-图搜索算法"><span class="nav-number">2.</span> <span class="nav-text">2. 图搜索算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无信息图搜索过程"><span class="nav-number">3.</span> <span class="nav-text">无信息图搜索过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-number">1.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择排序"><span class="nav-number">2.</span> <span class="nav-text">选择排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插入排序"><span class="nav-number">3.</span> <span class="nav-text">插入排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序"><span class="nav-number">4.</span> <span class="nav-text">归并排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-number">5.</span> <span class="nav-text">快速排序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆排序"><span class="nav-number">6.</span> <span class="nav-text">堆排序</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
