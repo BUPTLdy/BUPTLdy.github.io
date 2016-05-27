@@ -3,6 +3,27 @@
 
 
     
+  <url>
+    <loc>http://yoursite.com/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/</loc>
+    <lastmod>2016-05-27T01:31:25.505Z</lastmod>
+    <data>
+        <display>
+        <title>Deepin CUDA安装及Keras使用GPU模式运行</title>
+        <pubTime>2016-04-09T03:00:00.000Z</pubTime>
+        
+        <tag>Cuda</tag>
+         
+        <tag>Keras</tag>
+         
+        <tag>Deep Learning</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://yoursite.com/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</loc>
@@ -109,32 +130,11 @@
         <title>Vim命令备忘</title>
         <pubTime>2016-04-23T03:00:00.000Z</pubTime>
         
+        <tag>Cuda</tag>
+         
         <tag>Keras</tag>
          
         <tag>Deep Learning</tag>
-         
-        <tag>Cuda</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/</loc>
-    <lastmod>2016-04-09T06:57:48.666Z</lastmod>
-    <data>
-        <display>
-        <title>Deepin CUDA安装及Keras使用GPU模式运行</title>
-        <pubTime>2016-04-09T03:00:00.000Z</pubTime>
-        
-        <tag>Keras</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Cuda</tag>
          
          
            

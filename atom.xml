@@ -689,11 +689,11 @@ probabilities and labels:
     </summary>
     
     
+      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
+    
       <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
-    
-      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
     
   </entry>
   
@@ -702,7 +702,7 @@ probabilities and labels:
     <link href="http://yoursite.com/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/"/>
     <id>http://yoursite.com/2016/04/09/2016-04-09-Deepin CUDA安装及Keras使用GPU模式运行/</id>
     <published>2016-04-09T03:00:00.000Z</published>
-    <updated>2016-04-09T06:57:48.666Z</updated>
+    <updated>2016-05-27T01:31:25.505Z</updated>
     
     <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-9/8883646.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
@@ -710,7 +710,7 @@ probabilities and labels:
 &lt;h1 id=&quot;Deepin简介&quot;&gt;&lt;a href=&quot;#Deepin简介&quot; class=&quot;headerlink&quot; title=&quot;Deepin简介&quot;&gt;&lt;/a&gt;Deepin简介&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://www.deepin.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deepin&lt;/a&gt;是由武汉深之度科技有限公司开发的Linux发行版,Deepin 为所有人提供稳定、高效的操作系统，强调安全、易用、美观。其口号为“免除新手痛苦，节约老手时间”。&lt;/p&gt;
 &lt;h1 id=&quot;cuda安装&quot;&gt;&lt;a href=&quot;#cuda安装&quot; class=&quot;headerlink&quot; title=&quot;cuda安装&quot;&gt;&lt;/a&gt;cuda安装&lt;/h1&gt;&lt;h2 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h2&gt;&lt;p&gt;按照系统的版本下载对应的cuda版本，下载地址：&lt;a href=&quot;https://developer.nvidia.com/cuda-downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://developer.nvidia.com/cuda-downloads&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;注意执行安装文件的时候一定要加上’–­­override’，不然会出现错误：’”Toolkit: Installation Failed. Using unsupported Compiler.”‘&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;chmod 755 cuda_7.5.18_linux.run&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo ./cuda_7.5.18_linux.run --­­override&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;如果你电脑里已经装好比cuda内置的NVIDIA驱动更新的版本，那么在安装的时候就要选择安装NVIDIA驱动。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如果你电脑里已经装好比cuda内置的NVIDIA驱动更新的版本，那么在安装的时候就不要选择安装NVIDIA驱动。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;安装过程的设置如下所示：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;-------------------------------------------------------------&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Do you accept the previously read EULA? (accept/decline/quit): accept&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;You are attempting to install on an unsupported configuration. Do you wish to continue? ((y)es/(n)o) [ default is no ]: y&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 352.39? ((y)es/(n)o/(q)uit): n&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Install the CUDA 7.5 Toolkit? ((y)es/(n)o/(q)uit): y&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Enter Toolkit Location [ default is /usr/local/cuda-7.5 ]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Do you want to install a symbolic link at /usr/local/cuda? ((y)es/(n)o/(q)uit): y&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Install the CUDA 7.5 Samples? ((y)es/(n)o/(q)uit): y&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Enter CUDA Samples Location [ default is /home/kinghorn ]: /usr/local/cuda-7.5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Installing the CUDA Toolkit in /usr/local/cuda-7.5 ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Finished copying samples.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;===========&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;= Summary =&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;===========&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Driver:   Not Selected&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Toolkit:  Installed in /usr/local/cuda-7.5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Samples:  Installed in /usr/local/cuda-7.5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&quot;环境设置&quot;&gt;&lt;a href=&quot;#环境设置&quot; class=&quot;headerlink&quot; title=&quot;环境设置&quot;&gt;&lt;/a&gt;环境设置&lt;/h2&gt;&lt;p&gt;打开~/.bashrc&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;gedit ~/.bashrc&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;添加下面两条语句：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export PATH=$PATH:/usr/local/cuda/bin&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -738,11 +738,11 @@ probabilities and labels:
     </summary>
     
     
+      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
+    
       <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
-    
-      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
     
   </entry>
   
