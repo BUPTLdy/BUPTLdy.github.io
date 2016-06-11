@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithms,CPP," />
+  <meta name="keywords" content="Deep Learning,CNN," />
 
 
 
@@ -59,18 +59,45 @@
 
 
 
-<meta name="description" content="动态规划(dynamic programming)动态规划与分治方法相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="动态规划[dynamic programming]">
-<meta property="og:url" content="http://yoursite.com/2016/01/07/2016-01-07-动态规划/index.html">
+<meta property="og:title" content="CNN在光学遥感图像上的应用">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="动态规划(dynamic programming)动态规划与分治方法相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。">
-<meta property="og:image" content="http://i.imgur.com/MW11e6T.png">
-<meta property="og:updated_time" content="2016-03-14T09:21:35.329Z">
+<meta property="og:description">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-6-11/17213122.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/96930177.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/75458021.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/86340649.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/47661239.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/28174683.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/35987179.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/1408005.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/46888988.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/95817534.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/31732082.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/54435346.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/59029562.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/63655708.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/18035393.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/60490439.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/91330851.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/20682353.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/64622617.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/23497392.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/62208562.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/23347725.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/83947048.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/49629661.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/97608126.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/15829905.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/12013586.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/58707834.jpg">
+<meta property="og:updated_time" content="2016-06-11T11:58:41.588Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="动态规划[dynamic programming]">
-<meta name="twitter:description" content="动态规划(dynamic programming)动态规划与分治方法相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。">
-<meta name="twitter:image" content="http://i.imgur.com/MW11e6T.png">
+<meta name="twitter:title" content="CNN在光学遥感图像上的应用">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-6-11/17213122.jpg">
 
 
 
@@ -88,7 +115,7 @@
   };
 </script>
 
-  <title> 动态规划[dynamic programming] | Ldy's Blog </title>
+  <title> CNN在光学遥感图像上的应用 | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -273,7 +300,7 @@
             
             
               
-                动态规划[dynamic programming]
+                CNN在光学遥感图像上的应用
               
             
           </h1>
@@ -285,8 +312,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-01-07T10:00:00+08:00" content="2016-01-07">
-              2016-01-07
+            <time itemprop="dateCreated" datetime="2016-06-12T10:00:00+08:00" content="2016-06-12">
+              2016-06-12
             </time>
           </span>
 
@@ -296,8 +323,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/07/2016-01-07-动态规划/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/2016-01-07-动态规划/" itemprop="commentsCount"></span>
+                <a href="/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -309,7 +336,7 @@
 
           
           
-             <span id="/2016/01/07/2016-01-07-动态规划/" class="leancloud_visitors" data-flag-title="动态规划[dynamic programming]">
+             <span id="/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/" class="leancloud_visitors" data-flag-title="CNN在光学遥感图像上的应用">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -330,53 +357,35 @@
       
 
       
-        <h1 id="动态规划-dynamic-programming"><a href="#动态规划-dynamic-programming" class="headerlink" title="动态规划(dynamic programming)"></a>动态规划(dynamic programming)</h1><p>动态规划与<a href="http://buptldy.github.io/2016/01/06/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivide%20and%20Conquer%5D/" target="_blank" rel="external">分治方法</a>相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。<br><a id="more"></a><br>通常动态规划被用来求解<a href="https://en.wikipedia.org/wiki/Optimization_problem" target="_blank" rel="external">最优化问题</a>，即在可行解中寻找最优解。</p>
-<p>设计一个动态规划算法通常有如下4个步骤：</p>
-<pre><code>- (1).刻画一个最优解的结构特征
-- (2).递归地定义最优解的值
-- (3).采用自底向上的方法计算最优解的值
-- (4).利用计算出的信息构造最优解
-</code></pre><p>如果我们只需要得到这个最优解的结果，而不关注这个解是怎么得来的，则可以忽略步骤(4)。</p>
-<p>上面叙述了动态规划方法的步骤，但是什么问题才能够使用动态规划法求解？使用动态规划方法求解的最优化问题应该具备两个要素：最优子结构和子问题重叠。</p>
-<ul>
-<li>最优子结构</li>
-</ul>
-<p>如果一个问题的最优解包含其子问题的最优解，则称此问题具有最优子结构性质。在动态规划方法中，我们通常自底向上地使用最优子结构，即首先求得子问题的最优解，然后求原问题的最优解。<strong>原问题的最优解的代价通常就是子问题最优解的代价再加上由此次选择直接产生的代价。</strong></p>
-<ul>
-<li>子问题重叠</li>
-</ul>
-<p>如果递归算法反复求解相同的子问题，就称最优化问题具有重叠子问题。动态规划算法通常这样利用重叠子问题性质：<strong>对每个子问题求解一次，将解存入一个表中，当再次需要这个子问题时直接查表，每次查表的代价为常量时间。</strong></p>
-<h1 id="问题举例：Money-robbing"><a href="#问题举例：Money-robbing" class="headerlink" title="问题举例：Money robbing"></a>问题举例：Money robbing</h1><p>问题如下所示：</p>
-<p>A robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.</p>
-<ol>
-<li>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.</li>
-<li>What if all houses are arranged in a circle?</li>
-</ol>
-<p>大概意思就是街上有一排房子，有个房子里有一定数量的钱，如果小偷在同一天晚上偷了两座相邻的房子，就会触发警报系统，第一问就是问在小偷不触发警报系统的前提下，怎样偷到的钱最多。</p>
-<p>动态规划问题最重要的就是求出递归式，把原问题的最优化化为子问题的最优化。对这个问题来说，唯一的约束条件是不能同时抢劫相邻的两座房子，假设共有n座房子，分两种情况讨论：</p>
-<p>(1). 如果你抢劫了第n座房子，很明显你能得到第n座房子的钱，但你只能抢劫第n-2座房子了，因为你不想被抓起来；</p>
-<p>(2). 此时不选择抢劫第n座房子，当然待会你就可以抢劫第n-1座房子了</p>
-<p>但这两种选择哪种是最优的了，很明显取决与这两个子问题的最优解，所以我们把原问题的最优解化成求解子问题的最优解，根据上述两种情况划分，可以很容易的写出递推公式：</p>
-<p>$$dp(n)=MAX{dp(n-1),dp(n-2)+money(n)}$$</p>
-<p>其中money(n)表示抢劫第n座房子得到的钱(注意在写程序是money[n-1],因为数组下标从0开始)，根据递推公式，采用自底向上的方法，就能计算出最优的结果。</p>
-<p>伪代码如下所示：<br><img src="http://i.imgur.com/MW11e6T.png" alt=""></p>
-<p>再来看第二问，第二问的意思就是如果房子不是排成一排而是围成一圈，该怎样才能偷到最多的钱？<br>我们随机的从一圈n座房子中选中一座房子，现在我们面临两个选择，抢还是不抢？</p>
-<p>(1) 假设我们选择抢劫这座房子，当然我们能得到这座房子的钱，但是为了避免触发警报我们不能抢劫它周围的两座房子了，那么剩下的n-3座房子就没有构成一个圈了，那么问题也就规约成第一问的情况了；<br>(2) 假如我们没有抢劫这座房子，那么去掉这座房子，剩下的n-1座房子不是就不构成圈了吗，所以还是回到第一问的问题。</p>
-<p>经过分析，所以我们得到递推公式为:</p>
-<p>$$dp_{circle(n)}=MAX{dp(n-1),dp(n-3)+money(n)}$$</p>
-<h1 id="问题举例：Maximum-profit-of-transactions"><a href="#问题举例：Maximum-profit-of-transactions" class="headerlink" title="问题举例：Maximum profit of transactions"></a>问题举例：Maximum profit of transactions</h1><p>问题如下：</p>
-<p>Say you have an array for which the i-th element is the price of a given stock on day i.<br>Design an algorithm and implement it to find the maximum profit. You may complete at most two transactions.</p>
-<p>Note: You may not engage in multiple transactions at the same time (ie,you must sell the stock before you buy again).</p>
-<p>这个题目的意思是给你每天股票的价格，你能最多进行两次交易(一次交易包括买进和卖出)，怎样才能获得最大的收益。</p>
-<p>我们先来讨论只在一次交易的情况下，怎么求得收益最大化，其实这个问题就是给你一个数组，求出这组数里面不是<a href="http://buptldy.github.io/2016/01/06/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivide%20and%20Conquer%5D/" target="_blank" rel="external">逆序数</a>(因为卖出肯定在买进之后)但相差最大的两个数的差,比如5，1，3，2，4中，以价钱1买进，价钱4卖出可以获得最大的收益3。</p>
-<p>我们用动态规划法来分析这个问题，通过自底向上的方法，分析如何从前i天的最大收益推出前i+1天的最大收益，已知前i天的最大收益和前i天的最低价格：</p>
-<ol>
-<li>第i+1天的价格大于minPrice（已遍历数据的最低价），此时只要对max(i)（前i天的最大获益）和prices[i + 1] - minPrice（第i+1天卖出所能得到的获益）取大值就能得出max(i + 1)</li>
-<li>第i+1天的价格小于等于minPrice，那么在第i+1天卖出所得到的获益必然是小于max(i)（这里哪怕考虑极端情况：给出的数据是整体递减的，那么最佳的卖出时机也是当天买当天卖，获益为0，所以不会存在获益是负值的情况），所以max(i + 1) = max(i)。而且，对于之后的数据而言，minPrice需要更新了，因为对于之后的数据，在第i+1天买进必然比在0到i天之间的任何时候买进的获益都要多（因为第i+1天是0到i+1区间内的最低价）。</li>
-</ol>
-<p>所以通过上述动态规划的方法可以求出只进行一次交易的最大收益，但我们题目中问的是最多进行两次交易的情况下，我们可以把Prices[] 分成两部分Prices[0…m] 和 Prices[m…length]  ，分别计算在这两部分内做交易的最大收益，方法就是上面所说的一次交易的方法，第一步扫描，先计算出子序列[0,…,i]中的最大利润，用一个数组保存下来，时间是O(n)。 第二步是逆向扫描，计算子序列[i,…,n-1]上的最大利润，这一步同时就能结合上一步的结果计算最终的最大利润了，这一步也是O(n)。 所以最后算法的复杂度就是O(n)。</p>
-<p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Maximum%20profit%20of%20transactions" target="_blank" rel="external">算法代码下载(CPP)</a></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Best Time to Buy and Sell Stock I II III IV@LeetCode：<a href="http://segmentfault.com/a/1190000002565570" title="Best Time to Buy and Sell Stock I II III IV@LeetCode" target="_blank" rel="external">http://segmentfault.com/a/1190000002565570</a><br>LeetCode-Best Time to Buy and Sell Stock系列：<a href="http://www.tuicool.com/articles/rMJZj2" title="LeetCode-Best Time to Buy and Sell Stock系列" target="_blank" rel="external">http://www.tuicool.com/articles/rMJZj2</a></p>
+        <p><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-6-11/17213122.jpg" alt=""><br></center><br><a id="more"></a></p>
+<h2 id="CNN简介"><a href="#CNN简介" class="headerlink" title="CNN简介"></a>CNN简介</h2><p>从06年开始，深度结构学习方法（深度学习或者分层学习方法）作为机器学习领域的新的研究方向出现。由于芯片处理性能的巨大提升，数据爆炸性增长，在过去的短短几年时间，深度学习技术得到快速发展，已经深深的影响了学术领域，其研究涉及的应用领域包括计算机视觉、语音识别、对话语音识别、图像特征编码、语意表达分类、自然语言理解、手写识别、音频处理、信息检索、机器人学。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/96930177.jpg" alt=""><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/75458021.jpg" alt=""></p>
+<p>由于深度学习在众多领域表现比较好的性能，越来越多的学术机构把目光投入深度学习领域。今年来活跃在机器学习领域的研究机构包括众多高校比如斯坦福，伯克利，还有一些企业例如Google，IBM 研究院，微软研究院，FaceBook，百度等等。</p>
+<h3 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h3><p>人工神经网络是一种模仿生物神经网络(动物的中枢神经系统，特别是大脑)的结构和功能的数学模型或计算模型，简单结构如下图所示，包含了输入层，隐含层，和输出层，其中隐含层可能有多层。在神经网络中每个神经元都和它前一层的所有节点相连接，称之为全连接，其中每个连接以一定的权值相连接，<strong>网络训练的过程就是得到权值的过程</strong>。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/86340649.jpg" alt=""></p>
+<p>不管是机器学习还是深度学习实际上都是在解决分类问题，当数据线性可分时，一个sigmoid函数就可以把数据分开，如下图所示，其中两类数据是线性可分的，我们只需要神经网络的输入和输出层就可以把两类数据分开，其中黄色的连线表示权值为负，蓝色的连线表示权值为正，连线的粗细表示权值的绝对值大小。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/47661239.jpg" alt=""></p>
+<p>如下图，当原本的数据不可分时，我们就需要对数据进行一些非线性的变化，使得数据可分，而神经网络中的隐含层的作用就是对线性不可分的数据进行非线性变化，下图中包含了4个隐含层节点，数据被正确的分类。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/28174683.jpg" alt=""></p>
+<h3 id="卷积神经网络-CNN"><a href="#卷积神经网络-CNN" class="headerlink" title="卷积神经网络(CNN)"></a>卷积神经网络(CNN)</h3><p>一维的CNN如下所示，和人工神经网络相比，CNN中的卷积层只与前一层节点的部分节点相连，称为局部连接，且卷积层中的每个神经元的权值相等，这一属性称为权值共享。卷积神经网络为什么有卷积两个字，就是因为这两个属性：局部连接，权值相等，具体原因可参考<a href="http://colah.github.io/posts/2014-07-Understanding-Convolutions/" target="_blank" rel="external">http://colah.github.io/posts/2014-07-Understanding-Convolutions/</a>。下图中的max层成为池化层(pooling),下图为max pooling ，就是对两个神经元的输出取其中的较大值。池化操作能够降低特征的维度(相比使用所有提取得到的特征)，同时还会改善结果(不容易过拟合)，池化单元也具有一定的平移不变性。下图中的B层为第二层卷积层卷积层，F层为全连接层，也就是上面所说的人工神经网络。</p>
+<p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/35987179.jpg" alt=""></p>
+<p>二维卷积神经网络如下所示，二维数据的输入可以看成是一张图像的每个像素值，<strong>卷积层看做是一个滤波器对图像提取特征</strong>，max pooling层相当于对图像进行更高维的抽象，然后后面连接全连接层(也就是传统的人工神经网络)进行分类。所以总的说来，利用CNN进行图像处理就是前面的卷积层对图像进行特征提取，经过学习提取出利于图像分类的特征，然后对提取出的特征利用人工全连接层进行分类。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/1408005.jpg" alt=""></p>
+<p><strong>训练</strong>：上面说到了网络训练的过程就是得到权值的过程，我们在开始训练之前网络的权值是随机初始化的，也就是我们的图片滤波器是随机初始化的。比如我们输入一张图片，随机初始化的CNN分类告诉我们有6%的可能是一架<code>飞机</code>，但实际上我们告诉CNN这是一个<code>网球场</code>，然后其中会有数学的处理过程来稍稍改变滤波器的参数以便它下次碰到相同的图片时会更可能的预测为<code>网球场</code>。然后我们对我们的训练数据重复这一过程，CNN里的滤波器会逐渐的调整到能够提取我们图片里的供我们分类的重要特征。</p>
+<h2 id="数据集分析"><a href="#数据集分析" class="headerlink" title="数据集分析"></a>数据集分析</h2><p>UC Merced Land Use数据集包含21类土地类型，每类图像为100张，每张图像的像素为256*256。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/46888988.jpg" alt=""><br>数据集特点，数据集比较小，每一类只有100张图片，这个数据集还有其他的一些特点比如类间距离小，如下图所示，不同类的图片之间很相似。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/95817534.jpg" alt=""></p>
+<p>类内距离大，同类图片之间差别较大，如下图所示：<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/31732082.jpg" alt=""></p>
+<p>这些特点都是不利于图片的分类的，尤其是数据量太小，如果从头开始用数据集来训练网络肯定会造成严重的过拟合。考虑到这种情况，一个解决方法就是使用训练好的网络进行微调以适应我们自己的数据集，这种方法不仅能解决数据集小的问题，也能大大加快训练的速度。</p>
+<h2 id="网络微调"><a href="#网络微调" class="headerlink" title="网络微调"></a>网络微调</h2><p>网络微调就是使用事先已经训练好的网络，对网络进行微小的改造再训练以适用与我们自己的数据库。为什么别人训练好的网络，我们自己拿到改改就能使用呢？就像之前所说的，CNN的卷积层是用来提取图像的特征的，事实上图片的线条一级色彩纹理大致上是一样的，也就是说一个训练好CNN网络的卷积层也可以用来提取其他数据集图像的特征，因为图像的特征基本相似。特别的，能够使用网络微调的一个重要因素是使用的事先训练好的网络使用的数据集要和我们自己的训练集图像之间的‘距离’要比较小。因为我们的数据集是光学遥感图像，所以和我们的光学图像在底层上的特征有非常强的相似性。</p>
+<p>下图是Imagenet数据集的部分图片，也是我们要使用的预先训练好的所用网络的数据集。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/54435346.jpg" alt=""><br>基于遥感SAR图像每个像素级别的统计特性，这种用光学图像训练好的网络微调的方法是不适用与SAR图像分类的。SAR图像如下所示，直观上看也与光学图像差别很大。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/59029562.jpg" alt=""></p>
+<p>我们选择Caffe里预先使用Imagnet训练好的CaffeNet网络来经行微调，CaffeNet网络结构如下所示，fc6前为CNN中的卷积层用来提取图像特征，f6、fc7、fc8为全连接层(可以看成是人工神经网络的输入层，隐含层，输出层)，因为CaffeNet网络是用来分类1000类的图像的，所以最后一层有1000个神经元。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/63655708.jpg" alt=""></p>
+<p>而我们的数据集是分开21类的图像，所以微调网络中的调整主要就体现在这里，修改上述网络以使用我们自己的数据集，如下所示，只要把网络的输出层改为21个神经元即可。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/18035393.jpg" alt=""></p>
+<p>我们说的要使用要使用预先训练好的网络就是要使用它事先训练好的权值，比较上述两个网络，只有最后一层不同，所以它们的其他层的权值的维数都是相同的，所以我们把CaffeNet训练好的权值直接用在我们自己定义的网络上，最后一层的权值则随机初始化并设置较大的学习速率，然后就可以用我们定义好的网络训练我们自己的数据集。</p>
+<p>定义好网络之后就可以开始训练了，把数据集按4:1分为训练集和测试集，在测试集上的预测准确率在92%左右。</p>
+<p>还有一种常用的方法是不用CNN的最后一层分类，用CNN提取到的特征用SVM来分类，也能达到不错的效果。在这里我们提取fc7层输出的特征，根据上面定义的网络结构，fc7层共有4096个神经元，所以每张图片的特征维数为4096维，维数比较大，所以我们使用SVM的线性核即可达到分类效果。</p>
+<h2 id="结果展示与分析"><a href="#结果展示与分析" class="headerlink" title="结果展示与分析"></a>结果展示与分析</h2><p>fine-turning结果展示：<br>其中对预测结果做了一些可视化展示，左图表示为预测前五类的概率，左右为图片真实的类别。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/60490439.jpg" alt=""><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/91330851.jpg" alt=""><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/20682353.jpg" alt=""></p>
+<p>CNN提取特征，SVM分类结果展示：<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/64622617.jpg" alt=""><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/23497392.jpg" alt=""><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/62208562.jpg" alt=""></p>
+<p>从两种方法中可以看出，虽然都分类正确了，但用SVM作为分类器的正确分类的概率更高。</p>
+<p>fine-turning方法每个类别的准确率：<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/23347725.jpg" alt=""><br>从上图中我们可以看出，tenniscount类别的预测准确率最低，我们来看看有哪些tenniscount类是预测错了的：<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/83947048.jpg" alt=""><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/49629661.jpg" alt=""><br>从上面两个图片中可以看出，其实并不能说是预测错误，因为上面两张图中既包含了tenniscount类和CNN预测的类别，可以说本来就是有两个类。<br>CNN+SVM每个类别的准确率：<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/97608126.jpg" alt=""></p>
+<h2 id="CNN中间层可视化"><a href="#CNN中间层可视化" class="headerlink" title="CNN中间层可视化"></a>CNN中间层可视化</h2><p>神经网络不仅仅是一个黑盒子，我们可以查看一些中间结果和参数。上面我们也说了一个卷积层就相当与一个图像滤波器，在上面的网络的第一层的卷积层中我们定义了96个滤波器，96个滤波器可视化如下图所示，学过图像处理的同学都知道，下图中第一个滤波器是提取斜向下的边缘特征，第二个滤波器是提取斜向上的边缘特征，前面的滤波器大多数是在提取边缘特征，后面的大多是在统计颜色特征。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/15829905.jpg" alt=""></p>
+<p>我们输入一张图片，并输出其经过第一层卷积层滤波器滤波后的输出：<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/12013586.jpg" alt=""><br>从第一层滤波后的结果可以看出，前面两个滤波器就是在显示斜向下和斜向上的边缘。</p>
+<p>第五层卷积层滤波器输出如下图所示，高层的滤波器输出比较抽象。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/58707834.jpg" alt=""></p>
+<h2 id="总结及展望"><a href="#总结及展望" class="headerlink" title="总结及展望"></a>总结及展望</h2><p>当我们数据集不够的时候可以使用微调的方法，探索CNN怎么应用于SAR图像分类，解决图片类标签的分类问题。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://vision.ucmerced.edu/datasets/landuse.html" target="_blank" rel="external">http://vision.ucmerced.edu/datasets/landuse.html</a><br><a href="http://ufldl.stanford.edu/wiki/index.php/%E6%B1%A0%E5%8C%96" target="_blank" rel="external">http://ufldl.stanford.edu/wiki/index.php/%E6%B1%A0%E5%8C%96</a><br><a href="http://colah.github.io/posts/2014-07-Conv-Nets-Modular/" target="_blank" rel="external">http://colah.github.io/posts/2014-07-Conv-Nets-Modular/</a><br><a href="http://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=xor&amp;regDataset=reg-plane&amp;learningRate=0.03&amp;regularizationRate=0&amp;noise=0&amp;networkShape=4&amp;seed=0.38108&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification" target="_blank" rel="external">Tinker With a Neural Network Right Here in Your Browser</a></p>
 
       
     </div>
@@ -391,9 +400,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithms/" rel="tag">#Algorithms</a>
+            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
           
-            <a href="/tags/CPP/" rel="tag">#CPP</a>
+            <a href="/tags/CNN/" rel="tag">#CNN</a>
           
         </div>
       
@@ -402,17 +411,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/06/2016-01-06-分治策略[Divide and Conquer]/" rel="next" title="分治策略[Divide and Conquer]">
-                <i class="fa fa-chevron-left"></i> 分治策略[Divide and Conquer]
+              <a href="/2016/06/11/2016-06-11-基于位置约束的图可视化/" rel="next" title="基于位置约束的图可视化">
+                <i class="fa fa-chevron-left"></i> 基于位置约束的图可视化
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/08/2016-01-08-贪心策略/" rel="prev" title="贪心算法[greedy algorithm]">
-                贪心算法[greedy algorithm] <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -427,10 +432,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/07/2016-01-07-动态规划/"
-     data-title="动态规划[dynamic programming]"
+        <div class="ds-share flat" data-thread-key="2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/"
+     data-title="CNN在光学遥感图像上的应用"
      data-content=""
-     data-url="http://yoursite.com/2016/01/07/2016-01-07-动态规划/">
+     data-url="http://yoursite.com/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -457,8 +462,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/07/2016-01-07-动态规划/"
-           data-title="动态规划[dynamic programming]" data-url="http://yoursite.com/2016/01/07/2016-01-07-动态规划/">
+      <div class="ds-thread" data-thread-key="2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/"
+           data-title="CNN在光学遥感图像上的应用" data-url="http://yoursite.com/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/">
       </div>
     
   </div>
@@ -564,7 +569,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动态规划-dynamic-programming"><span class="nav-number">1.</span> <span class="nav-text">动态规划(dynamic programming)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题举例：Money-robbing"><span class="nav-number">2.</span> <span class="nav-text">问题举例：Money robbing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题举例：Maximum-profit-of-transactions"><span class="nav-number">3.</span> <span class="nav-text">问题举例：Maximum profit of transactions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN简介"><span class="nav-number">1.</span> <span class="nav-text">CNN简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#神经网络"><span class="nav-number">1.1.</span> <span class="nav-text">神经网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积神经网络-CNN"><span class="nav-number">1.2.</span> <span class="nav-text">卷积神经网络(CNN)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集分析"><span class="nav-number">2.</span> <span class="nav-text">数据集分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络微调"><span class="nav-number">3.</span> <span class="nav-text">网络微调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果展示与分析"><span class="nav-number">4.</span> <span class="nav-text">结果展示与分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN中间层可视化"><span class="nav-number">5.</span> <span class="nav-text">CNN中间层可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结及展望"><span class="nav-number">6.</span> <span class="nav-text">总结及展望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
