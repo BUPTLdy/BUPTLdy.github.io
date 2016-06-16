@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-06-15T14:44:04.923Z</updated>
+  <updated>2016-06-16T12:12:35.033Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/06/15/2016-06-15-Python%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96-Cython%E4%B8%ADnumpy%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2016/06/15/2016-06-15-Python速度优化-Cython中numpy以及多线程的使用/</id>
     <published>2016-06-15T02:00:00.000Z</published>
-    <updated>2016-06-15T14:44:04.923Z</updated>
+    <updated>2016-06-16T12:12:35.033Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-6-15/20612896.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Cython代码和Python代码区别&quot;&gt;&lt;a href=&quot;#Cython代码和Python代码区别&quot; class=&quot;headerlink&quot; title=&quot;Cython代码和Python代码区别&quot;&gt;&lt;/a&gt;Cython代码和Python代码区别&lt;/h2&gt;&lt;p&gt;代码运行在&lt;a href=&quot;https://ipython.org/notebook.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;IPython-Notebook&lt;/a&gt;中，在IPython-Notebook中导入cython环境。&lt;/p&gt;
@@ -46,9 +46,6 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;通过Python调用产出的&lt;code&gt;fib.so&lt;/code&gt;模块：&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; fib&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;fib.fib2(&lt;span class=&quot;number&quot;&gt;90&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;pre&gt;&lt;code&gt;2.880067194370816e+18
-&lt;/code&gt;&lt;/pre&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;fib?&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;%%cython&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cdef:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int i=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int j=i&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;j=j&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; i,j&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;pre&gt;&lt;code&gt;1 0
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&quot;Cython中类型的定义&quot;&gt;&lt;a href=&quot;#Cython中类型的定义&quot; class=&quot;headerlink&quot; title=&quot;Cython中类型的定义&quot;&gt;&lt;/a&gt;Cython中类型的定义&lt;/h2&gt;&lt;p&gt;为什么Cython和Python比会提高很多性能，主要原因有两点：一是Python是解释型语言，在运行之前Python解释器把Python代码解释成Python字节码运行在Python虚拟机上，Python虚拟机把Python字节码最终翻译成CPU能执行的机器码；而Cython代码是事先直接编译成可被Python调用的机器码，在运行时可直接执行。第二个主要的原因是Python是动态类型，Python解释器在解释时需要判断类型，然后再提取出底层能够运行的数据以及操作；然而C语言等比较底层的语言是静态类型，编译器直接提取数据进行操作产生机器码。&lt;/p&gt;
 &lt;p&gt;Cython中使用&lt;code&gt;cdef&lt;/code&gt;来定义静态类型：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cdef int i&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cdef int j&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cdef float f&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;也可以一次定义多个：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cdef:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int i&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    int j&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    float f&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
@@ -877,11 +874,11 @@ probabilities and labels:
     </summary>
     
     
+      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
+    
       <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
-    
-      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
     
   </entry>
   
@@ -926,11 +923,11 @@ probabilities and labels:
     </summary>
     
     
+      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
+    
       <category term="Keras" scheme="http://yoursite.com/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://yoursite.com/tags/Deep-Learning/"/>
-    
-      <category term="Cuda" scheme="http://yoursite.com/tags/Cuda/"/>
     
   </entry>
   
@@ -1149,9 +1146,9 @@ conn.close()
     </summary>
     
     
-      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
-    
       <category term="Object Detection" scheme="http://yoursite.com/tags/Object-Detection/"/>
+    
+      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
     
   </entry>
   
@@ -1241,9 +1238,9 @@ conn.close()
     </summary>
     
     
-      <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
-    
       <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
+    
+      <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
     
   </entry>
   
