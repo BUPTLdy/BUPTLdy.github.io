@@ -59,18 +59,33 @@
 
 
 
-<meta name="description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
+<meta name="description" content="NP完全性
+ 到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是$$O(n^k)$$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：
+
+P: 能在多项式时间内解决的问题
+NP: 不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题
+NPC: NP完全问题，所有NP问题在">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NP完全性">
 <meta property="og:url" content="http://yoursite.com/2016/01/11/2016-01-11-NP完全问题的介绍及证明/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
+<meta property="og:description" content="NP完全性
+ 到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是$$O(n^k)$$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：
+
+P: 能在多项式时间内解决的问题
+NP: 不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题
+NPC: NP完全问题，所有NP问题在">
 <meta property="og:image" content="http://i.imgur.com/mAyE7SM.png">
 <meta property="og:image" content="http://i.imgur.com/9wD7p7i.png">
-<meta property="og:updated_time" content="2016-03-14T05:28:33.393Z">
+<meta property="og:updated_time" content="2016-06-20T14:11:45.650Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NP完全性">
-<meta name="twitter:description" content="NP完全性  到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
+<meta name="twitter:description" content="NP完全性
+ 到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是$$O(n^k)$$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：
+
+P: 能在多项式时间内解决的问题
+NP: 不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题
+NPC: NP完全问题，所有NP问题在">
 <meta name="twitter:image" content="http://i.imgur.com/mAyE7SM.png">
 
 
@@ -331,28 +346,49 @@
       
 
       
-        <h1 id="NP完全性"><a href="#NP完全性" class="headerlink" title="NP完全性"></a>NP完全性</h1><p>  到目前为止，我们讨论的几乎都是<strong>多项式时间算法</strong>：对于规模n的输入，在最坏情况下的运行时间是 $O(n^k)$ ,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：<br><a id="more"></a><br>  P: 能在多项式时间内解决的问题</p>
-<p>  NP:不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题</p>
-<p>  NPC:NP完全问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的NP问题，即解决了此NPC题，所有NP问题也都得到解决。</p>
-<p>  NP难问题:所有NP问题在多项式时间内都能约化(Reducibility)到它的问题(不一定是NP问题)。</p>
-<p>  如果任何NP完全问题是可以多项式求解的，则P=NP，目前还不能证明P是否等于NP，这几个问题的关系如下：</p>
-<p>  <img src="http://i.imgur.com/mAyE7SM.png" alt=""></p>
-<p>  规约的概念：若我们拥有一个已证明难以解决的问题，我们又获得另一个相似的新问题。我们可合理推想此新问题亦是难以解决的。我们可由下列谬证法得证：若此新问题本质上容易解答，且若我们可展示每个旧问题的实例可经由一系列转换步骤变成新问题的实例，则旧问题便容易解决，因此得到悖论。因此新问题可知亦难以解决。</p>
-<p>  如何证明某个问题是NP完全的？</p>
-<p>  如果我们有一个已经证明的NP完全问题，如果我们可以把已证明的NP完全问题的任何实例都能多项式的规约到要要证明问题的实例，则能证明这个问题是NP完全的。即如果我们要证明一个问题A是NPC问题，则只需要首先证明他是NP问题，然后只要找一个你所知道的NPC问题规约到A即可。</p>
-<h1 id="常见的NPC问题"><a href="#常见的NPC问题" class="headerlink" title="常见的NPC问题"></a>常见的NPC问题</h1><p>  布尔可满足性问题（SAT）</p>
-<p>  对于一个确定的逻辑电路，是否存在一种输入使得输出为真。是第一个被证明的NPC问题，直观的看出这应该是一个NPC问题，因为当电路有k个输入，就会有$2^k$种情况的不同取值。<br>  3SAT</p>
-<p>  3和取范式：公式中每个字句都恰好有三个不同的’文字’，3SAT问题就是满足3和取范式的布尔公式是否可满足，3SAT问题可由SAT问题规约而来。<br>  分团问题（clique problem）</p>
+        <ol>
+<li><p>NP完全性</p>
+<p> 到目前为止，我们讨论的几乎都是<strong>多项式时间算法</strong>：对于规模n的输入，在最坏情况下的运行时间是$$O(n^k)$$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：</p>
+<ul>
+<li>P: 能在多项式时间内解决的问题</li>
+<li>NP: 不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题</li>
+<li>NPC: NP完全问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的NP问题，即解决了此NPC问题，所有NP问题也都得到解决。</li>
+<li><p>NP hard:NP难问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的问题(不一定是NP问题)。</p>
+<p>如果任何NP完全问题是可以多项式求解的，则P=NP，目前还不能证明P是否等于NP，这几个问题的关系如下：</p>
+<p><img src="http://i.imgur.com/mAyE7SM.png" alt=""></p>
+<p>规约的概念：若我们拥有一个已证明难以解决的问题，我们又获得另一个相似的新问题。我们可合理推想此新问题亦是难以解决的。我们可由下列谬证法得证：若此新问题本质上容易解答，且若我们可展示每个旧问题的实例可经由一系列转换步骤变成新问题的实例，则旧问题便容易解决，因此得到悖论。因此新问题可知亦难以解决。</p>
+<p>如何证明某个问题是NP完全的？</p>
+<p>如果我们有一个已经证明的NP完全问题，如果我们可以把已证明的NP完全问题的任何实例都能多项式的规约到要要证明问题的实例，则能证明这个问题是NP完全的。即如果我们要证明一个问题A是NPC问题，<strong>则只需要首先证明他是NP问题，然后只要找一个你所知道的NPC问题规约到A即可。</strong></p>
+</li>
+</ul>
+</li>
+<li><p>常见的NPC问题</p>
+<ul>
+<li><p>布尔可满足性问题（SAT）</p>
+<p>  对于一个确定的逻辑电路，是否存在一种输入使得输出为真。是第一个被证明的NPC问题，直观的看出这应该是一个NPC问题，因为当电路有k个输入，就会有$$2^k$$种情况的不同取值。</p>
+</li>
+<li><p>3SAT</p>
+<p>  3和取范式：公式中每个字句都恰好有三个不同的‘文字’，例如，布尔公式：</p>
+<p>  $$(l_1 ∨ l_2 ∨ x_2) ∧ (¬x_2 ∨ l_3 ∨ x_3) ∧ (¬x_3 ∨ l_4 ∨ x_4) ∧ … ∧ (¬x_{n − 3} ∨ l_{n − 2} ∨ x_{n − 2}) ∧ (¬x_{n − 2} ∨ l_{n − 1} ∨ l_n)$$<br>  3SAT问题就是满足3和取范式的布尔公式是否可满足，3SAT问题可由SAT问题规约而来。</p>
+</li>
+<li><p>分团问题（clique problem）</p>
 <p>  无向图中的团是图中所有顶点的一个子集，团中的每一对顶点之间都有一条边相连，即一个团就是无向图中的一个完全子图。</p>
 <p>  分团问题就是要寻找图中规模最大的团，判定条件：在图中是否存在一个给定规模为k的团。</p>
-<p>  独立集问题（Independent Set）</p>
+</li>
+<li><p>独立集问题（Independent Set）</p>
 <p>  独立集：如果有一个顶点集合S，S中的任意两个顶点之间都没有边相连，则称S为一个独立集。</p>
 <p>  独立集问题和分团问题可相互规约，因为存在一个大小是k以上的分团，等价于它的补图中存在一个大小是k以上的独立集。</p>
 <p>  补图：一个图G的补图（complement）或者反面（inverse）是一个图有着跟G相同的点，而且这些点之间有边相连当且仅当在G里面他们没有边相连。在制作图的时候，你可以先建立一个有G所有点的完全图，然后清除G里面已经有的边来得到补图，这里的补图并不是图本身的补集。</p>
-<p>  顶点覆盖问题（Vertex Cover）</p>
-<p>  图的顶点覆盖是一些顶点的集合，使得图中的每一条边都至少接触集合中的一个顶点，如下图所示，图中红色顶点可以覆盖图中所有的边。寻找最小的顶点覆盖的问题称为顶点覆盖问题，它是一个NP完全问题。</p>
-<p>  <img src="http://i.imgur.com/9wD7p7i.png" alt=""></p>
-<h1 id="集合覆盖问题"><a href="#集合覆盖问题" class="headerlink" title="集合覆盖问题"></a>集合覆盖问题</h1>
+</li>
+<li><p>顶点覆盖问题（Vertex Cover）</p>
+<p>  图的顶点覆盖是一些顶点的集合，使得图中的每一条边都至少接触集合中的一个顶点，如下图所示，图中红色顶点可以覆盖图中所有的边。寻找最小的顶点覆盖的问题称为顶点覆盖问题，它是一个NP完全问题。<br>  <img src="http://i.imgur.com/9wD7p7i.png" alt=""></p>
+</li>
+<li><p>集合覆盖问题</p>
+</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
 
@@ -537,7 +573,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NP完全性"><span class="nav-number">1.</span> <span class="nav-text">NP完全性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常见的NPC问题"><span class="nav-number">2.</span> <span class="nav-text">常见的NPC问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合覆盖问题"><span class="nav-number">3.</span> <span class="nav-text">集合覆盖问题</span></a></li></ol></div>
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

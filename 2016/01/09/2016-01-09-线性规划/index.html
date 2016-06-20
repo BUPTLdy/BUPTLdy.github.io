@@ -70,7 +70,7 @@
 <meta property="og:image" content="http://i.imgur.com/0QzN1q2.png">
 <meta property="og:image" content="http://i.imgur.com/UfuthIQ.png">
 <meta property="og:image" content="http://i.imgur.com/lhxj168.png">
-<meta property="og:updated_time" content="2016-03-14T09:32:59.400Z">
+<meta property="og:updated_time" content="2016-06-20T14:05:43.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性规划 [Linear Programming]">
 <meta name="twitter:description" content="什么是线性规划线性规划（Linear Programming，简称LP）是指目标函数和约束条件皆为线性函数的最优化问题。
@@ -342,9 +342,9 @@
 <p>  $$c_1 x_1 + c_2 x_2$$</p>
 </li>
 <li><p>以下形式的问题约束，例如：</p>
-<p>  $$a_{11} x<em>1 + a</em>{12} x_2 \le b_1$$</p>
-<p>  $$a_{21} x<em>1 + a</em>{22} x_2 \le b_2$$</p>
-<p>  $$a_{31} x<em>1 + a</em>{32} x_2 \le b_3$$</p>
+<p>  $$a_{11} x_1 + a_{12} x_2 \le b_1$$</p>
+<p>  $$a_{21} x_1 + a_{22} x_2 \le b_2$$</p>
+<p>  $$a_{31} x_1 + a_{32} x_2 \le b_3$$</p>
 </li>
 <li><p>非负变量，例如：</p>
 <p>  $$x_1 \ge 0 $$</p>
@@ -383,9 +383,9 @@
 <p>$$s_i\leq x_i \leq t_i$$</p>
 <p>然后我们的目标是要求最小间隔的最大值，所以我们的目标函数为：</p>
 <p>$$max(min(x_{i+1}-x_i))$$</p>
-<p>那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有<br>  $y\leq x<em>{i+1}-x</em>{i}$，那么$y$不就是$x<em>{i+1}-x</em>{i}$的最小值吗？</p>
+<p>那么现在问题来了，我们上面所说的线性规划的标准形式是不包括既有max又有min的，所以我们需要把这个min去掉，我们可以通过引入一个新变量，如果有<br>  $y\leq x_{i+1}-x_{i}$，那么$y$不就是$x_{i+1}-x_{i}$的最小值吗？</p>
 <p>所以最终我们可以把问题形式化为:</p>
-<p>  $$    max &amp; y &amp; \<br>          s.t.&amp; s_i\leq x_i \leq t<em>i&amp; i=1,2,3 \cdots n\<br>         &amp; y\leq x</em>{i+1}-x_i &amp; i=1,2,3 \cdots n$$</p>
+<p>  $$    max &amp; y &amp; \<br>          s.t.&amp; s_i\leq x_i \leq t_i&amp; i=1,2,3 \cdots n\<br>         &amp; y\leq x_{i+1}-x_i &amp; i=1,2,3 \cdots n$$</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>维基百科 线性规划：<a href="https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92" title="维基百科 线性规划" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92</a></p>
 <p>百度百科 单纯形法：<a href="http://baike.baidu.com/subview/471090/471090.htm" title="百度百科 单纯形法" target="_blank" rel="external">http://baike.baidu.com/subview/471090/471090.htm</a></p>
 
