@@ -1038,6 +1038,7 @@ pre .javascript .function {
   opacity: 0;
 }
 .post-body .fancybox img {
+  text-align: center;
   display: block !important;
   margin: 0 auto;
   cursor: pointer;
@@ -1549,7 +1550,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #6f91ff;
+  background: #ffa783;
 }
 .links-of-blogroll {
   font-size: 13px;

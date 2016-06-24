@@ -357,13 +357,13 @@
 <p>(1). 如果你抢劫了第n座房子，很明显你能得到第n座房子的钱，但你只能抢劫第n-2座房子了，因为你不想被抓起来；</p>
 <p>(2). 此时不选择抢劫第n座房子，当然待会你就可以抢劫第n-1座房子了</p>
 <p>但这两种选择哪种是最优的了，很明显取决与这两个子问题的最优解，所以我们把原问题的最优解化成求解子问题的最优解，根据上述两种情况划分，可以很容易的写出递推公式：</p>
-<p>$$dp(n)=MAX{dp(n-1),dp(n-2)+money(n)}$$</p>
+<p>$$dp(n)=MAX\{dp(n-1),dp(n-2)+money(n)\}$$</p>
 <p>其中money(n)表示抢劫第n座房子得到的钱(注意在写程序是money[n-1],因为数组下标从0开始)，根据递推公式，采用自底向上的方法，就能计算出最优的结果。</p>
 <p>伪代码如下所示：<br><img src="http://i.imgur.com/MW11e6T.png" alt=""></p>
 <p>再来看第二问，第二问的意思就是如果房子不是排成一排而是围成一圈，该怎样才能偷到最多的钱？<br>我们随机的从一圈n座房子中选中一座房子，现在我们面临两个选择，抢还是不抢？</p>
 <p>(1) 假设我们选择抢劫这座房子，当然我们能得到这座房子的钱，但是为了避免触发警报我们不能抢劫它周围的两座房子了，那么剩下的n-3座房子就没有构成一个圈了，那么问题也就规约成第一问的情况了；<br>(2) 假如我们没有抢劫这座房子，那么去掉这座房子，剩下的n-1座房子不是就不构成圈了吗，所以还是回到第一问的问题。</p>
 <p>经过分析，所以我们得到递推公式为:</p>
-<p>$$dp_{circle(n)}=MAX{dp(n-1),dp(n-3)+money(n)}$$</p>
+<p>$$dp_{circle(n)}=MAX\{dp(n-1),dp(n-3)+money(n)\}$$</p>
 <h1 id="问题举例：Maximum-profit-of-transactions"><a href="#问题举例：Maximum-profit-of-transactions" class="headerlink" title="问题举例：Maximum profit of transactions"></a>问题举例：Maximum profit of transactions</h1><p>问题如下：</p>
 <p>Say you have an array for which the i-th element is the price of a given stock on day i.<br>Design an algorithm and implement it to find the maximum profit. You may complete at most two transactions.</p>
 <p>Note: You may not engage in multiple transactions at the same time (ie,you must sell the stock before you buy again).</p>

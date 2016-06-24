@@ -351,7 +351,7 @@
 <p>Bin Packing is as follows: Given n items with sizes $a_1, \cdots , a_n ∈ (0, 1]$, find a packing in unit-sized bins that minimizes the number of bins used.</p>
 <p>Give a 2-approximation algorithm for this problem and analysis the approximation factor.</p>
 <p>装箱问题：有n个物品，每个物品的尺寸在0-1之间，每个箱子的容量为1，问最少要用多少的箱子能把所有的物品装下？</p>
-<p>装箱问题可用整数规划描述如下，其中$y<em>i=1$表示箱子$i$被使用，否则表示没有使用，$x</em>{ij}=1$表示物品j放入箱子i中。</p>
+<p>装箱问题可用整数规划描述如下，其中$y_i=1$表示箱子$i$被使用，否则表示没有使用，$x_{ij}=1$表示物品j放入箱子i中。</p>
 <p><img src="http://i.imgur.com/VPewCSm.png" style="display:block;margin:auto"></p>
 <p>其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。</p>
 <p>约束条件(2)表示：每个物品刚好放入一个箱子中。</p>
