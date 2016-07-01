@@ -1286,9 +1286,9 @@ conn.close()
     </summary>
     
     
-      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
-    
       <category term="skimage" scheme="http://yoursite.com/tags/skimage/"/>
+    
+      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
     
   </entry>
   
@@ -1321,9 +1321,9 @@ conn.close()
     </summary>
     
     
-      <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
-    
       <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
+    
+      <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
     
   </entry>
   
