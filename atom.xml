@@ -179,7 +179,7 @@ iteration 400 / 500: loss 0.365702
     <link href="http://yoursite.com/2016/06/12/2016-06-12-CNN%E5%9C%A8%E5%85%89%E5%AD%A6%E9%81%A5%E6%84%9F%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/"/>
     <id>http://yoursite.com/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/</id>
     <published>2016-06-12T02:00:00.000Z</published>
-    <updated>2016-06-16T03:04:58.783Z</updated>
+    <updated>2016-07-08T00:58:01.903Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-6-11/17213122.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;CNN简介&quot;&gt;&lt;a href=&quot;#CNN简介&quot; class=&quot;headerlink&quot; title=&quot;CNN简介&quot;&gt;&lt;/a&gt;CNN简介&lt;/h2&gt;&lt;p&gt;从06年开始，深度结构学习方法（深度学习或者分层学习方法）作为机器学习领域的新的研究方向出现。由于芯片处理性能的巨大提升，数据爆炸性增长，在过去的短短几年时间，深度学习技术得到快速发展，已经深深的影响了学术领域，其研究涉及的应用领域包括计算机视觉、语音识别、对话语音识别、图像特征编码、语意表达分类、自然语言理解、手写识别、音频处理、信息检索、机器人学。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/96930177.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/75458021.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -189,8 +189,9 @@ iteration 400 / 500: loss 0.365702
 &lt;p&gt;如下图，当原本的数据不可分时，我们就需要对数据进行一些非线性的变化，使得数据可分，而神经网络中的隐含层的作用就是对线性不可分的数据进行非线性变化，下图中包含了4个隐含层节点，数据被正确的分类。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/28174683.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;卷积神经网络-CNN&quot;&gt;&lt;a href=&quot;#卷积神经网络-CNN&quot; class=&quot;headerlink&quot; title=&quot;卷积神经网络(CNN)&quot;&gt;&lt;/a&gt;卷积神经网络(CNN)&lt;/h3&gt;&lt;p&gt;一维的CNN如下所示，和人工神经网络相比，CNN中的卷积层只与前一层节点的部分节点相连，称为局部连接，且卷积层中的每个神经元的权值相等，这一属性称为权值共享。卷积神经网络为什么有卷积两个字，就是因为这两个属性：局部连接，权值相等，具体原因可参考&lt;a href=&quot;http://colah.github.io/posts/2014-07-Understanding-Convolutions/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://colah.github.io/posts/2014-07-Understanding-Convolutions/&lt;/a&gt;。下图中的max层成为池化层(pooling),下图为max pooling ，就是对两个神经元的输出取其中的较大值。池化操作能够降低特征的维度(相比使用所有提取得到的特征)，同时还会改善结果(不容易过拟合)，池化单元也具有一定的平移不变性。下图中的B层为第二层卷积层卷积层，F层为全连接层，也就是上面所说的人工神经网络。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/35987179.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;二维卷积神经网络如下所示，二维数据的输入可以看成是一张图像的每个像素值，&lt;strong&gt;卷积层看做是一个滤波器对图像提取特征&lt;/strong&gt;，max pooling层相当于对图像进行更高维的抽象，然后后面连接全连接层(也就是传统的人工神经网络)进行分类。所以总的说来，利用CNN进行图像处理就是前面的卷积层对图像进行特征提取，经过学习提取出利于图像分类的特征，然后对提取出的特征利用人工全连接层进行分类。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/1408005.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;训练&lt;/strong&gt;：上面说到了网络训练的过程就是得到权值的过程，我们在开始训练之前网络的权值是随机初始化的，也就是我们的图片滤波器是随机初始化的。比如我们输入一张图片，随机初始化的CNN分类告诉我们有6%的可能是一架&lt;code&gt;飞机&lt;/code&gt;，但实际上我们告诉CNN这是一个&lt;code&gt;网球场&lt;/code&gt;，然后其中会有数学的处理过程来稍稍改变滤波器的参数以便它下次碰到相同的图片时会更可能的预测为&lt;code&gt;网球场&lt;/code&gt;。然后我们对我们的训练数据重复这一过程，CNN里的滤波器会逐渐的调整到能够提取我们图片里的供我们分类的重要特征。&lt;/p&gt;
+&lt;p&gt;二维卷积神经网络如下所示，二维数据的输入可以看成是一张图像的每个像素值，&lt;strong&gt;卷积层看做是一个滤波器对图像提取特征&lt;/strong&gt;，max pooling层相当于对图像进行更高维的抽象，然后后面连接全连接层(也就是传统的人工神经网络)进行分类。所以总的说来，利用CNN进行图像处理就是前面的卷积层对图像进行特征提取，经过学习提取出利于图像分类的特征，然后对提取出的特征利用人工神经网络进行分类。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/1408005.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;训练&lt;/strong&gt;：上面说到了网络训练的过程就是得到权值的过程，我们在开始训练之前网络的权值是随机初始化的，也就是我们的图片滤波器是随机初始化的。比如我们输入一张图片，随机初始化的CNN分类告诉我们有6%的可能是一个&lt;code&gt;网球场&lt;/code&gt;，但实际上我们告诉CNN这是一个&lt;code&gt;飞机场&lt;/code&gt;，然后其中会有一个&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E7%AE%97%E6%B3%95&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;反向传播&lt;/a&gt;的处理过程来稍稍改变滤波器的参数以便它下次碰到相同的图片时会更可能的预测为&lt;code&gt;网球场&lt;/code&gt;。然后我们对我们的训练数据重复这一过程，CNN里的滤波器会逐渐的调整到能够提取我们图片里的供我们分类的重要特征。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-7-8/73324267.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;数据集分析&quot;&gt;&lt;a href=&quot;#数据集分析&quot; class=&quot;headerlink&quot; title=&quot;数据集分析&quot;&gt;&lt;/a&gt;数据集分析&lt;/h2&gt;&lt;p&gt;UC Merced Land Use数据集包含21类土地类型，每类图像为100张，每张图像的像素为256*256。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/46888988.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;数据集特点，数据集比较小，每一类只有100张图片，这个数据集还有其他的一些特点比如类间距离小，如下图所示，不同类的图片之间很相似。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/95817534.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;类内距离大，同类图片之间差别较大，如下图所示：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/31732082.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;这些特点都是不利于图片的分类的，尤其是数据量太小，如果从头开始用数据集来训练网络肯定会造成严重的过拟合。考虑到这种情况，一个解决方法就是使用训练好的网络进行微调以适应我们自己的数据集，这种方法不仅能解决数据集小的问题，也能大大加快训练的速度。&lt;/p&gt;
@@ -204,7 +205,9 @@ iteration 400 / 500: loss 0.365702
 &lt;h2 id=&quot;结果展示与分析&quot;&gt;&lt;a href=&quot;#结果展示与分析&quot; class=&quot;headerlink&quot; title=&quot;结果展示与分析&quot;&gt;&lt;/a&gt;结果展示与分析&lt;/h2&gt;&lt;p&gt;fine-turning结果展示：&lt;br&gt;其中对预测结果做了一些可视化展示，左图表示为预测前五类的概率，左右为图片真实的类别。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/60490439.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/91330851.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/20682353.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;CNN提取特征，SVM分类结果展示：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/64622617.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/23497392.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/62208562.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;从两种方法中可以看出，虽然都分类正确了，但用SVM作为分类器的正确分类的概率更高。&lt;/p&gt;
-&lt;p&gt;fine-turning方法每个类别的准确率：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/23347725.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;从上图中我们可以看出，tenniscount类别的预测准确率最低，我们来看看有哪些tenniscount类是预测错了的：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/83947048.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/49629661.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;从上面两个图片中可以看出，其实并不能说是预测错误，因为上面两张图中既包含了tenniscount类和CNN预测的类别，可以说本来就是有两个类。&lt;br&gt;CNN+SVM每个类别的准确率：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/97608126.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;fine-turning方法每个类别的准确率：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/23347725.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;从上图中我们可以看出，tenniscount类别的预测准确率最低，我们来看看有哪些tenniscount类是预测错了的：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/83947048.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/49629661.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;从上面两个图片中可以看出，其实并不能说是预测错误，因为上面两张图中既包含了tenniscount类和CNN预测的类别，可以说本来就是有两个类。&lt;/p&gt;
+&lt;h3 id=&quot;t-sne特征降维可视化&quot;&gt;&lt;a href=&quot;#t-sne特征降维可视化&quot; class=&quot;headerlink&quot; title=&quot;t-sne特征降维可视化&quot;&gt;&lt;/a&gt;t-sne特征降维可视化&lt;/h3&gt;&lt;p&gt;对CNN中第七层提取到的4096维特征经行降维可视化，从下图可以看出，分类准备率比较低的类别靠的都比较紧密，难以区分。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-7-8/84288255.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;CNN+SVM每个类别的准确率：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/97608126.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;CNN中间层可视化&quot;&gt;&lt;a href=&quot;#CNN中间层可视化&quot; class=&quot;headerlink&quot; title=&quot;CNN中间层可视化&quot;&gt;&lt;/a&gt;CNN中间层可视化&lt;/h2&gt;&lt;p&gt;神经网络不仅仅是一个黑盒子，我们可以查看一些中间结果和参数。上面我们也说了一个卷积层就相当与一个图像滤波器，在上面的网络的第一层的卷积层中我们定义了96个滤波器，96个滤波器可视化如下图所示，学过图像处理的同学都知道，下图中第一个滤波器是提取斜向下的边缘特征，第二个滤波器是提取斜向上的边缘特征，前面的滤波器大多数是在提取边缘特征，后面的大多是在统计颜色特征。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/15829905.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;我们输入一张图片，并输出其经过第一层卷积层滤波器滤波后的输出：&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/12013586.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;从第一层滤波后的结果可以看出，前面两个滤波器就是在显示斜向下和斜向上的边缘。&lt;/p&gt;
 &lt;p&gt;第五层卷积层滤波器输出如下图所示，高层的滤波器输出比较抽象。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-23/58707834.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -1286,9 +1289,9 @@ conn.close()
     </summary>
     
     
-      <category term="skimage" scheme="http://yoursite.com/tags/skimage/"/>
-    
       <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
+    
+      <category term="skimage" scheme="http://yoursite.com/tags/skimage/"/>
     
   </entry>
   
@@ -1321,9 +1324,9 @@ conn.close()
     </summary>
     
     
-      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
-    
       <category term="Computer Vision" scheme="http://yoursite.com/tags/Computer-Vision/"/>
+    
+      <category term="HOG" scheme="http://yoursite.com/tags/HOG/"/>
     
   </entry>
   
