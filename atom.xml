@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bonerkiller.coding.me/"/>
-  <updated>2016-07-18T09:24:08.729Z</updated>
+  <updated>2016-08-18T08:15:39.885Z</updated>
   <id>http://bonerkiller.coding.me/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Batch Normalization实现</title>
+    <link href="http://bonerkiller.coding.me/2016/08/18/2016-08-18-Batch_Normalization%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://bonerkiller.coding.me/2016/08/18/2016-08-18-Batch_Normalization实现/</id>
+    <published>2016-08-18T02:00:00.000Z</published>
+    <updated>2016-08-18T08:15:39.885Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-8-5/21841995.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;数据归一化&quot;&gt;&lt;a href=&quot;#数据归一化&quot; class=&quot;headerlink&quot; title=&quot;数据归一化&quot;&gt;&lt;/a&gt;数据归一化&lt;/h2&gt;&lt;p&gt;通常在神经网络训练开始前,都要对输入数据做一个归一化处理,那么具体为什么需要归一化呢?归一化后有什么好处呢?原因在于神经网络学习过程本质就是为了学习数据分布,一旦训练数据与测试数据的分布不同,那么网络的泛化能力也大大降低;另外一方面,一旦每批训练数据的分布各不相同(batch 梯度下降),那么网络就要在每次迭代都去学习适应不同的分布,这样将会大大降低网络的训练速度,这也正是为什么我们需要对数据都要做一个归一化预处理的原因。对于深度网络的训练是一个复杂的过程,只要网络的前面几层发生微小的改变,那么后面几层就会被累积放大下去。一旦网络某一层的输入数据的分布发生改变,那么这一层网络就需要去适应学习这个新的数据分布,所以如果训练过程中,训练数据的分布一直在发生变化,那么将会影响网络的训练速度。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://i2.buimg.com/567571/70c7efd885eb08f3.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;举例说明进行数据预处理能够加速训练过程，上图中红点代表2维的数据点，由于图像数据的每一维一般都是0-255之间的数字，因此数据点只会落在第一象限，而且图像数据具有很强的相关性，比如第一个灰度值为30，比较黑，那它旁边的一个像素值一般不会超过100，否则给人的感觉就像噪声一样。由于强相关性，数据点仅会落在第一象限的很小的区域中，形成类似上图所示的狭长分布。&lt;/p&gt;
+&lt;p&gt;而神经网络模型在初始化的时候，权重W是随机采样生成的，一个常见的神经元表示为：ReLU(Wx+b) = max(Wx+b,0)，即在Wx+b=0的两侧，对数据采用不同的操作方法。具体到ReLU就是一侧收缩，一侧保持不变。&lt;/p&gt;
+&lt;p&gt;随机的Wx+b=0表现为上图中的随机虚线，注意到，两条绿色虚线实际上并没有什么意义，在使用梯度下降时，可能需要很多次迭代才会使这些虚线对数据点进行有效的分割，就像紫色虚线那样，这势必会带来求解速率变慢的问题。更何况，我们这只是个二维的演示，数据占据四个象限中的一个，如果是几百、几千、上万维呢？而且数据在第一象限中也只是占了很小的一部分区域而已，可想而知不对数据进行预处理带来了多少运算资源的浪费，而且大量的数据外分割面在迭代时很可能会在刚进入数据中时就遇到了一个局部最优，导致overfit的问题。&lt;/p&gt;
+&lt;p&gt;这时，如果我们将数据减去其均值，数据点就不再只分布在第一象限，这时一个随机分界面落入数据分布的概率增加了多少呢？2^n倍！如果我们使用去除相关性的算法，例如PCA和ZCA白化，数据不再是一个狭长的分布，随机分界面有效的概率就又大大增加了。&lt;/p&gt;
+&lt;p&gt;不过计算协方差矩阵的特征值太耗时也太耗空间，我们一般最多只用到z-score处理，即每一维度减去自身均值，再除以自身标准差，这样能使数据点在每维上具有相似的宽度，可以起到一定的增大数据分布范围，进而使更多随机分界面有意义的作用。&lt;/p&gt;
+&lt;h2 id=&quot;batch-normalization-算法&quot;&gt;&lt;a href=&quot;#batch-normalization-算法&quot; class=&quot;headerlink&quot; title=&quot;batch normalization 算法&quot;&gt;&lt;/a&gt;batch normalization 算法&lt;/h2&gt;&lt;p&gt;算法基本流程：&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-8-5/92943869.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;如果在ReLU=max(Wx+b,0)之后，对数据进行归一化。然而，文章中说这样做在训练初期，分界面还在剧烈变化时，计算出的参数不稳定，所以退而求其次，在Wx+b之后进行归一化。因为初始的W是从标准高斯分布中采样得到的，而W中元素的数量远大于x，Wx+b每维的均值本身就接近0、方差接近1，所以在Wx+b后使用Batch Normalization能得到更稳定的结果。&lt;/p&gt;
+&lt;p&gt;文中使用了类似z-score的归一化方式：每一维度减去自身均值，再除以自身标准差，由于使用的是随机梯度下降法，这些均值和方差也只能在当前迭代的batch中计算，故作者给这个算法命名为Batch Normalization。&lt;/p&gt;
+&lt;p&gt;在Normalization完成后，Google的研究员仍对数值稳定性不放心，又加入了两个参数gamma和beta，使得&lt;/p&gt;
+&lt;p&gt;$$y_i=\gamma \hat{x}_i+ \beta$$&lt;/p&gt;
+&lt;p&gt;注意到，如果我们令gamma等于之前求得的标准差，beta等于之前求得的均值，则这个变换就又将数据还原回去了。在他们的模型中，这两个参数与每层的W和b一样，是需要迭代求解的。为什么进行归一化之后又添加两个可学习的参数对数据进行变化：&lt;strong&gt;实际上BN可以看作是在原模型上加入的“新操作”，这个新操作很大可能会改变某层原来的输入。当然也可能不改变，不改变的时候就是“还原原来输入”。如此一来，既可以改变同时也可以保持原输入，那么模型的容纳能力（capacity）就提升了。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;算法实现&quot;&gt;&lt;a href=&quot;#算法实现&quot; class=&quot;headerlink&quot; title=&quot;算法实现&quot;&gt;&lt;/a&gt;算法实现&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-8-5/21841995.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;根据链式求导法则，我们可以把复杂的运算分解成一步一步能够简单求导的运算，然后根据链式求导法则来求得最终的导数，参考&lt;a href=&quot;http://cs231n.github.io/optimization-2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;cs231n&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&quot;前向传播&quot;&gt;&lt;a href=&quot;#前向传播&quot; class=&quot;headerlink&quot; title=&quot;前向传播&quot;&gt;&lt;/a&gt;前向传播&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;batchnorm_forward&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(x, gamma, beta, eps)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  N, D = x.shape&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step1: calculate mean&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  mu = &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;/N * np.sum(x, axis = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step2: subtract mean vector of every trainings example&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xmu = x - mu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step3: following the lower branch - calculation denominator&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  sq = xmu ** &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step4: calculate variance&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  var = &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;/N * np.sum(sq, axis = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step5: add eps for numerical stability, then sqrt&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  sqrtvar = np.sqrt(var + eps)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step6: invert sqrtwar&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ivar = &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt;/sqrtvar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step7: execute normalization&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhat = xmu * ivar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step8: Nor the two transformation steps&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  gammax = gamma * xhat&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step9&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  out = gammax + beta&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#store intermediate&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  cache = (xhat,gamma,xmu,ivar,sqrtvar,var,eps)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; out, cache&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;反向求导&quot;&gt;&lt;a href=&quot;#反向求导&quot; class=&quot;headerlink&quot; title=&quot;反向求导&quot;&gt;&lt;/a&gt;反向求导&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;batchnorm_backward&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(dout, cache)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#unfold the variables stored in cache&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhat,gamma,xmu,ivar,sqrtvar,var,eps = cache&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#get the dimensions of the input/output&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  N,D = dout.shape&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step9&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dbeta = np.sum(dout, axis=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dgammax = dout &lt;span class=&quot;comment&quot;&gt;#not necessary, but more understandable&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step8&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dgamma = np.sum(dgammax*xhat, axis=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dxhat = dgammax * gamma&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step7&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  divar = np.sum(dxhat*xmu, axis=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dxmu1 = dxhat * ivar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dsqrtvar = &lt;span class=&quot;number&quot;&gt;-1.&lt;/span&gt; /(sqrtvar**&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;) * divar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dvar = &lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt; * &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; /np.sqrt(var+eps) * dsqrtvar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dsq = &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; /N * np.ones((N,D)) * dvar&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dxmu2 = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt; * xmu * dsq&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dx1 = (dxmu1 + dxmu2)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dmu = &lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt; * np.sum(dxmu1+dxmu2, axis=&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dx2 = &lt;span class=&quot;number&quot;&gt;1.&lt;/span&gt; /N * np.ones((N,D)) * dmu&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;comment&quot;&gt;#step0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dx = dx1 + dx2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; dx, dgamma, dbeta&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;卷积层batch-normalization&quot;&gt;&lt;a href=&quot;#卷积层batch-normalization&quot; class=&quot;headerlink&quot; title=&quot;卷积层batch normalization&quot;&gt;&lt;/a&gt;卷积层batch normalization&lt;/h2&gt;&lt;p&gt;这里有一点需要注意，像卷积层这样具有权值共享的层，Wx+b的均值和方差是对整张map求得的，在batch_size * channel * height * width这么大的一层中，对总共batch_size*height*width个像素点统计得到一个均值和一个标准差，共得到channel组参数。&lt;/p&gt;
+&lt;p&gt;也就是说把每个channel看出一批数据，然后就可以调用全连接层的batch normalization 算法了。&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;spatial_batchnorm_forward&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(x, gamma, beta, bn_param)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Computes the forward pass for spatial batch normalization.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Inputs:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - x: Input data of shape (N, C, H, W)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - gamma: Scale parameter, of shape (C,)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - beta: Shift parameter, of shape (C,)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - bn_param: Dictionary with the following keys:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - mode: &#39;train&#39; or &#39;test&#39;; required&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - eps: Constant for numeric stability&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - momentum: Constant for running mean / variance. momentum=0 means that&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      old information is discarded completely at every time step, while&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      momentum=1 means that new information is never incorporated. The&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      default of momentum=0.9 should work well in most situations.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - running_mean: Array of shape (D,) giving running mean of features&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    - running_var Array of shape (D,) giving running variance of features&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Returns a tuple of:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - out: Output data, of shape (N, C, H, W)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - cache: Values needed for the backward pass&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &quot;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  out, cache = &lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  N, C, H, W = x.shape&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  x_flat = x.transpose(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;).reshape(&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;, C)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  out_flat, cache = batchnorm_forward(x_flat, gamma, beta, bn_param)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  out = out_flat.reshape(N, H, W, C).transpose(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; out, cache&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;spatial_batchnorm_backward&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(dout, cache)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Computes the backward pass for spatial batch normalization.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Inputs:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - dout: Upstream derivatives, of shape (N, C, H, W)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - cache: Values from the forward pass&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Returns a tuple of:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - dx: Gradient with respect to inputs, of shape (N, C, H, W)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - dgamma: Gradient with respect to scale parameter, of shape (C,)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  - dbeta: Gradient with respect to shift parameter, of shape (C,)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &quot;&quot;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dx, dgamma, dbeta = &lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, &lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;                                   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  N, C, H, W = dout.shape&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dout_flat = dout.transpose(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;).reshape(&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;, C)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dx_flat, dgamma, dbeta = batchnorm_backward(dout_flat, cache)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dx = dx_flat.reshape(N, H, W, C).transpose(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)                        &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; dx, dgamma, dbeta&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/hjimce/article/details/50866313&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Batch Normalization 学习笔记&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/happynear/article/details/44238541&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Batch Normalization Accelerating Deep Network Training by Reducing Internal Covariate Shift》阅读笔记与实现&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://zhihu.com/question/38102762/answer/85238569&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;深度学习中 Batch Normalization为什么效果好？ - 回答作者: 魏秀参&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Understanding the backward pass through Batch Normalization Layer&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-8-5/21841995.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+    
+      <category term="CNN" scheme="http://bonerkiller.coding.me/tags/CNN/"/>
+    
+  </entry>
   
   <entry>
     <title>购物评论情感分析的实现</title>
@@ -1011,11 +1062,11 @@ probabilities and labels:
     </summary>
     
     
+      <category term="Cuda" scheme="http://bonerkiller.coding.me/tags/Cuda/"/>
+    
       <category term="Keras" scheme="http://bonerkiller.coding.me/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
-    
-      <category term="Cuda" scheme="http://bonerkiller.coding.me/tags/Cuda/"/>
     
   </entry>
   
@@ -1060,11 +1111,11 @@ probabilities and labels:
     </summary>
     
     
+      <category term="Cuda" scheme="http://bonerkiller.coding.me/tags/Cuda/"/>
+    
       <category term="Keras" scheme="http://bonerkiller.coding.me/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
-    
-      <category term="Cuda" scheme="http://bonerkiller.coding.me/tags/Cuda/"/>
     
   </entry>
   
@@ -1653,127 +1704,6 @@ Freq: D, Name: A, dtype: float64
       <category term="Git" scheme="http://bonerkiller.coding.me/tags/Git/"/>
     
       <category term="Linux" scheme="http://bonerkiller.coding.me/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>近似算法[Approximation algorithm]</title>
-    <link href="http://bonerkiller.coding.me/2016/01/12/2016-01-12-%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/"/>
-    <id>http://bonerkiller.coding.me/2016/01/12/2016-01-12-近似算法/</id>
-    <published>2016-01-12T02:00:00.000Z</published>
-    <updated>2016-03-16T06:58:36.391Z</updated>
-    
-    <content type="html">&lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;p&gt;许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;如果实际输入数据规模较小，则用指数级运行时的算法就能很好地解决问题；&lt;/li&gt;
-&lt;li&gt;对于一些能在多项式时间内解决的特殊情况，可以把它们单独列出来求解；&lt;/li&gt;
-&lt;li&gt;可以寻找一些能够在多项式时间内得到近似最优解 （near-optimal solution)的方法(最坏情况或平均情况)。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在实际应用中，近似最优解一般都能满足要求， 返回近似最优解的算法就称为近似算法(approximation algorithm)。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;近似比：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果对规模为n的任意输人，近似算法所产生的近似解的代价C与最优解的代价C*只差一个因子$\rho (n)$:&lt;/p&gt;
-&lt;p&gt;$$max(\frac{C}{C*},\frac{C*}{C} )\leq \rho (n)$$&lt;/p&gt;
-&lt;p&gt;则称该近似算法有近似比$\rho (n)$。如果一个算法的近似比达到 $\rho (n)$，则称该算法为$\rho (n)$近似算法。近似比和$\rho (n)$近似算法的定义对求最大化和最小化问题都适用，一个近似算法的近似比不会小于1。&lt;/p&gt;
-&lt;h1 id=&quot;一维装箱问题-Bin-Packing&quot;&gt;&lt;a href=&quot;#一维装箱问题-Bin-Packing&quot; class=&quot;headerlink&quot; title=&quot;一维装箱问题(Bin Packing)&quot;&gt;&lt;/a&gt;一维装箱问题(Bin Packing)&lt;/h1&gt;&lt;p&gt;问题如下：&lt;/p&gt;
-&lt;p&gt;Bin Packing is as follows: Given n items with sizes $a_1, \cdots , a_n ∈ (0, 1]$, find a packing in unit-sized bins that minimizes the number of bins used.&lt;/p&gt;
-&lt;p&gt;Give a 2-approximation algorithm for this problem and analysis the approximation factor.&lt;/p&gt;
-&lt;p&gt;装箱问题：有n个物品，每个物品的尺寸在0-1之间，每个箱子的容量为1，问最少要用多少的箱子能把所有的物品装下？&lt;/p&gt;
-&lt;p&gt;装箱问题可用整数规划描述如下，其中$y_i=1$表示箱子$i$被使用，否则表示没有使用，$x_{ij}=1$表示物品j放入箱子i中。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/VPewCSm.png&quot; style=&quot;display:block;margin:auto&quot;&gt;&lt;/p&gt;
-&lt;p&gt;其中约束条件(1)表示：一旦箱子i被使用，放入箱子i中的物品尺寸不能超过箱子的容量1。&lt;/p&gt;
-&lt;p&gt;约束条件(2)表示：每个物品刚好放入一个箱子中。&lt;/p&gt;
-&lt;p&gt;由&lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;前文&lt;/a&gt;已知，整数线性规划问题是NP完全的，即不能找到多项式时间算法来求解，所以需要寻找一种近似算法。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Next Fit算法：按顺序把物品放进当前箱子，如果放不下，则放下一个。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;举例：&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;物品&lt;/th&gt;
-&lt;th&gt;$J_1$&lt;/th&gt;
-&lt;th&gt;$J_2$&lt;/th&gt;
-&lt;th&gt;$J_3$&lt;/th&gt;
-&lt;th&gt;$J_4$&lt;/th&gt;
-&lt;th&gt;$J_5$&lt;/th&gt;
-&lt;th&gt;$J_6$&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;尺寸&lt;/td&gt;
-&lt;td&gt;0.6&lt;/td&gt;
-&lt;td&gt;0.7&lt;/td&gt;
-&lt;td&gt;0.4&lt;/td&gt;
-&lt;td&gt;0.2&lt;/td&gt;
-&lt;td&gt;0.8&lt;/td&gt;
-&lt;td&gt;0.3&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;根据Next Fit算法，解如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/YDnGdKS.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;证明：Next Fit是Bin Packing问题近似比为2的近似算法&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;对所有的输入物品序列I有:$NF(I) \leq 2OPT(I)$&lt;/p&gt;
-&lt;p&gt;  如下图所示，任意考虑两个相邻的箱子，这两个箱子里面的物品的容量肯定要大于1，否则根据Next Fit算法会把这些物品放进第一个箱子，所以两个相邻箱子所占用的空间肯定是大于1的，即有$B_1+B_2&amp;gt;1$，对于$B_3+B_4,\dots$都是这样。因此浪费的空间不达到一半，所以有$NF(I) \leq 2OPT(I)$。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;http://i.imgur.com/A8GpRKX.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;存在一个输入物品序列I：$NF(I)\geq 2OPT(I)-2$&lt;/p&gt;
-&lt;p&gt;  考虑长度为n(n为4的倍数)的物品序列I，尺寸大小分别为：&lt;/p&gt;
-&lt;p&gt;  0.5，2/n，0.5，2/n，…，0.5，2/n&lt;/p&gt;
-&lt;p&gt;  则最佳装箱策略如下图所示，最少需要(n/4+1)个箱子。&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/IPg1QX9.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  Next Fit策略如下图所示，需要(n/2)个箱子&lt;/p&gt;
-&lt;p&gt;  &lt;img src=&quot;http://i.imgur.com/EkthQ3j.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;  所以根据上述证明，Next Fit是Bin Packing问题近似比为2的近似算法。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;复杂度分析&lt;/strong&gt;：由于NF算法处理每个物品只检查一个箱子,所以其时间复杂度是线性的,但也正因为如此,使得前面箱子剩余空间再无利用的可能。该算法的时间复杂度是 $O(n)$ , 空间复杂度为 $O(1)$ 。&lt;/p&gt;
-&lt;h1 id=&quot;Steiner-Tree-Problem&quot;&gt;&lt;a href=&quot;#Steiner-Tree-Problem&quot; class=&quot;headerlink&quot; title=&quot;Steiner Tree Problem&quot;&gt;&lt;/a&gt;Steiner Tree Problem&lt;/h1&gt;&lt;p&gt;问题如下：&lt;/p&gt;
-&lt;p&gt;Given an undirected graph G = (V, E) with edge costs and set T ⊆ V of required vertices, the Steiner Tree Problem is to find a minimum cost tree in G containing every vertex in T (vertices in V −T may or may not be used in T).&lt;/p&gt;
-&lt;p&gt;Give a 2-approximation algorithm if G is complete and the edge costs satisfy the triangle inequality.&lt;/p&gt;
-&lt;p&gt;所谓的Steine​​r tree problem是指在一无向图G(V,E)中, 给定一组V的子集合S, 我们要在其中找到一个minimum cost tree, 这个tree 必需包含S中所有的点, 另外也可包含一些非S中的点。这些非S的点我们称之为Steine​​r nodes, S中的点我们称之为terminals。&lt;/p&gt;
-&lt;p&gt;Steine​​r tree problem 是属于NP-complete 的间题, 代表着我们目前找不到一个算法, 能够在polynomial 的时间内解决这个问题。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;问题详述:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/TF3lU8i.gif&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;所谓的Steine​​r Tree Problem, 是一组无向图G(V,E)中, 给定一组terminals, 如图一的A和D, 然后我们必需在G上找到一个minimum spanning tree, 这个tree 必需满足下面要求&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;它必需span 所有的terminals&lt;/li&gt;
-&lt;li&gt;它可以包含非terminal 的点, 这些点称之为steine​​r node, 如图1的B, E, F&lt;/li&gt;
-&lt;li&gt;它的total cost必需为最小&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在上图中我们可以知道, 如果不能包含非terminal 的点, 则找出来的spanning tree, cost为6, 而且有可能根本找不到这样的tree, 在包含了一些steine​​r node 之后, 所找出的cost为5。&lt;br&gt;&lt;strong&gt;近似算法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The Kou Markowsky and Berman algorithm&lt;/p&gt;
-&lt;p&gt;Input: a undirect graph G(V,E) and a subset S of V.&lt;/p&gt;
-&lt;p&gt;Output: The minimum cost Steine​​r tree T.&lt;/p&gt;
-&lt;p&gt;Step1:建构distance graph G1(S, E’). 对每一个E’中的edge (u, v),它的cost等于G中u到v的最短路径的cost&lt;/p&gt;
-&lt;p&gt;Step2: 找出minimum spaning tree T1 of G1&lt;/p&gt;
-&lt;p&gt;Step3: 建构G2(V’’, E’’), 将T1的每一个edge (u, v), 用它在Step1中所找的路径代入.&lt;/p&gt;
-&lt;p&gt;Step4: 将G2中的cycle去掉.&lt;/p&gt;
-&lt;center&gt;&lt;br&gt;  &lt;img src=&quot;http://i.imgur.com/CohPHo2.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
-
-
-
-&lt;p&gt;如上图所示, 首先我们先建立一个包含所有terminal 的complete distance graph G1, 然后找出它的minimum spanning tree T1, 然后将原路径代回, 得到G2, 最后将G2 的cycle移去, 得到total cost 为14 的Steine​​r Tree T. 因为此一近似算法为approximate algorithm, 所以它得到的steine​​r tree并一定都是optimum, 此例子的minimum Steine​​r tree的cost为13。&lt;/p&gt;
-&lt;p&gt;复杂度和近似比：因为需要计算最短路径，所以时间复杂度为$O(M*N^2)$,其中 $|V|=N$ , $|S|=M$。&lt;/p&gt;
-&lt;p&gt;近似比为2，证明可以参考：&lt;a href=&quot;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&quot; title=&quot;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.csie.ntu.edu.tw/~kmchao/tree10fall/Steiner.pdf&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;演算法设计与分析Term Project：&lt;a href=&quot;http://par.cse.nsysu.edu.tw/~homework/algo01/9034811/Report/index.htm&quot; title=&quot;演算法设计与分析Term Project&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://par.cse.nsysu.edu.tw/~homework/algo01/9034811/Report/index.htm&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;p&gt;许多具有卖际意义的问题都是 &lt;a href=&quot;http://buptldy.github.io/2016/01/11/NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/&quot;&gt;NP 完全&lt;/a&gt;问题。我们不知道如何在多项式时间内求得最优解。但是，这些问题通常又十分重要， 我们不能因此而放弃对它们的求解。即使一个问题是 NP 完全的，也有其求解方法。解决 NP 完全问题至少有三种方法：&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Algorithms" scheme="http://bonerkiller.coding.me/tags/Algorithms/"/>
     
   </entry>
   

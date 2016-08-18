@@ -3,6 +3,25 @@
 
 
     
+  <url>
+    <loc>http://bonerkiller.coding.me/2016/08/18/2016-08-18-Batch_Normalization%E5%AE%9E%E7%8E%B0/</loc>
+    <lastmod>2016-08-18T08:15:39.885Z</lastmod>
+    <data>
+        <display>
+        <title>Batch Normalization实现</title>
+        <pubTime>2016-08-18T02:00:00.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>CNN</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://bonerkiller.coding.me/2016/07/20/2016-07-20-%E8%B4%AD%E7%89%A9%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
@@ -202,11 +221,11 @@
         <title>Deepin CUDA安装及Keras使用GPU模式运行</title>
         <pubTime>2016-04-09T03:00:00.000Z</pubTime>
         
+        <tag>Cuda</tag>
+         
         <tag>Keras</tag>
          
         <tag>Deep Learning</tag>
-         
-        <tag>Cuda</tag>
          
          
            
@@ -320,11 +339,11 @@
         <title>Vim命令备忘</title>
         <pubTime>2016-04-23T03:00:00.000Z</pubTime>
         
+        <tag>Cuda</tag>
+         
         <tag>Keras</tag>
          
         <tag>Deep Learning</tag>
-         
-        <tag>Cuda</tag>
          
          
            
