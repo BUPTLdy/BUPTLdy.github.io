@@ -62,7 +62,7 @@
 <meta name="description" content="什么是启发式搜索无信息图搜索一般需要产生大量的节点，因而效率较低。为提高效率，可以使用一些问题相关的信息，以减小搜索量，这些信息就称为启发式信息。使用启发式信息指导的搜索过程称为启发式搜索，所以启发式图搜索与无信息图搜索之间的区别就是启发式图搜索在OPEN表的排序过程中使用了与问题有关的知识。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="启发式图搜索策略">
-<meta property="og:url" content="http://bonerkiller.coding.me/2016/01/05/2016-01-05-启发式图搜索/index.html">
+<meta property="og:url" content="http://buptldy.github.io/2016/01/05/2016-01-05-启发式图搜索/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description" content="什么是启发式搜索无信息图搜索一般需要产生大量的节点，因而效率较低。为提高效率，可以使用一些问题相关的信息，以减小搜索量，这些信息就称为启发式信息。使用启发式信息指导的搜索过程称为启发式搜索，所以启发式图搜索与无信息图搜索之间的区别就是启发式图搜索在OPEN表的排序过程中使用了与问题有关的知识。">
 <meta property="og:image" content="http://i.imgur.com/XGw5X8W.png">
@@ -331,7 +331,7 @@
       
 
       
-        <h1 id="什么是启发式搜索"><a href="#什么是启发式搜索" class="headerlink" title="什么是启发式搜索"></a>什么是启发式搜索</h1><p><a href="http://buptldy.github.io/2016/01/04/%E5%9B%BE%E6%90%9C%E7%B4%A2/" target="_blank" rel="external">无信息图搜索</a>一般需要产生大量的节点，因而效率较低。为提高效率，可以使用一些问题相关的信息，以减小搜索量，这些信息就称为启发式信息。使用启发式信息指导的搜索过程称为启发式搜索，所以启发式图搜索与无信息图搜索之间的区别就是启发式图搜索在OPEN表的排序过程中使用了与问题有关的知识。<br><a id="more"></a><br>在启发式搜索过程中对OPEN表进行排序，就需要定义一个评价函数f(n)，对当前的搜索状态进行评估，找出一个<em>最有希望</em>的节点来扩展。</p>
+        <h1 id="什么是启发式搜索"><a href="#什么是启发式搜索" class="headerlink" title="什么是启发式搜索"></a>什么是启发式搜索</h1><p><a href="http://buptldy.github.io/2016/01/04/%E5%9B%BE%E6%90%9C%E7%B4%A2/">无信息图搜索</a>一般需要产生大量的节点，因而效率较低。为提高效率，可以使用一些问题相关的信息，以减小搜索量，这些信息就称为启发式信息。使用启发式信息指导的搜索过程称为启发式搜索，所以启发式图搜索与无信息图搜索之间的区别就是启发式图搜索在OPEN表的排序过程中使用了与问题有关的知识。<br><a id="more"></a><br>在启发式搜索过程中对OPEN表进行排序，就需要定义一个评价函数f(n)，对当前的搜索状态进行评估，找出一个<em>最有希望</em>的节点来扩展。</p>
 <h1 id="A算法"><a href="#A算法" class="headerlink" title="A算法"></a>A算法</h1><p>A算法是一种典型的启发式搜索算法，其基本思想为：定义一个评价函数f(n)，对当前的搜索状态进行评估，找出一个<em>最有希望</em>的节点来扩展。<br>评价函数的形式为：</p>
 <pre><code>f(n)=g(n)+h(n)
 </code></pre><p>其中n是被评价的结点。</p>
@@ -349,7 +349,7 @@
 </code></pre><p>其中，d(n)代表结点的深度，在单位耗散的情况下g(n)=d(n);取h(n)=W(n)表示以‘不在位’棋子个数作为启发函数的度量。如上图所示，初始状态和目标状态相比，初始状态中的数字“1”，“2”，“6”，“8”不在目标状态的位置上，所以初始状态的h值为4。</p>
 <p>使用这种评价函数的搜索树如下所示，图中括弧中的数字表示该结点的评价函数值f;带圆圈的数字表示扩展结点的顺序。<br>    <img src="http://i.imgur.com/8DgjWdD.png" alt=""></p>
 <pre><code>根据目标结点L返回到s的指针，可得解路径为S(4)，B(4)，E(5)，I(5)，K(5)，L(5)。
-</code></pre><h1 id="A-算法"><a href="#A-算法" class="headerlink" title="A*算法"></a>A*算法</h1><p>最佳图搜索算法A*(optimal search)，在A算法中，如果有h(n)&lt;=h*(n),则把这个算法称为A*算法。当问题有解时，<strong>A*算法一定能找到一条到达目标结点的最佳路径</strong>。例如，当h(n)恒为零时，满足条件，此时若取g为深度值，则算法等同于宽度优先算法，在<a href="http://buptldy.github.io/2016/01/04/%E5%9B%BE%E6%90%9C%E7%B4%A2/" target="_blank" rel="external">无信息图搜索</a>中已提到过，宽度优先算法能够找到一条到目标结点的最短路径。</p>
+</code></pre><h1 id="A-算法"><a href="#A-算法" class="headerlink" title="A*算法"></a>A*算法</h1><p>最佳图搜索算法A*(optimal search)，在A算法中，如果有h(n)&lt;=h*(n),则把这个算法称为A*算法。当问题有解时，<strong>A*算法一定能找到一条到达目标结点的最佳路径</strong>。例如，当h(n)恒为零时，满足条件，此时若取g为深度值，则算法等同于宽度优先算法，在<a href="http://buptldy.github.io/2016/01/04/%E5%9B%BE%E6%90%9C%E7%B4%A2/">无信息图搜索</a>中已提到过，宽度优先算法能够找到一条到目标结点的最短路径。</p>
 <p>在使用A*算法求解问题时，定义的启发函数h，在满足A*的条件下，应尽可能的大一点，使其接近h*，这样才能提高搜索的效率，当h=h*时，搜索的效率最高。</p>
 <p>对于八数码问题，取h(n)=W(n),容易看出，尽管我们不知道h*(n)具体为多少，但是它肯定至少要移动W(n)步才能达到目标状态，因为W(n)为此时和目标状态不相同的数字个数，所以有h(n)&lt;=h*(n),满足A*算法条件，所以上述A算法的例子也是A*算法。</p>
 <h1 id="A-算法的改进"><a href="#A-算法的改进" class="headerlink" title="A*算法的改进"></a>A*算法的改进</h1><p>在A*算法中，扩展一个节点时，对已经在OPEN表或CLOSED表中的子节点，要调整指针，花时间和精力。如果在扩展节点n时，就已经找到了从根节点开始到它的最优路径，则不必调整指针, 可以大大提高效率。如果满足单调性限制，则可实现此愿望。</p>
@@ -410,7 +410,7 @@
         <div class="ds-share flat" data-thread-key="2016/01/05/2016-01-05-启发式图搜索/"
      data-title="启发式图搜索策略"
      data-content=""
-     data-url="http://bonerkiller.coding.me/2016/01/05/2016-01-05-启发式图搜索/">
+     data-url="http://buptldy.github.io/2016/01/05/2016-01-05-启发式图搜索/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -438,7 +438,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/01/05/2016-01-05-启发式图搜索/"
-           data-title="启发式图搜索策略" data-url="http://bonerkiller.coding.me/2016/01/05/2016-01-05-启发式图搜索/">
+           data-title="启发式图搜索策略" data-url="http://buptldy.github.io/2016/01/05/2016-01-05-启发式图搜索/">
       </div>
     
   </div>

@@ -62,7 +62,7 @@
 <meta name="description">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于位置约束的图可视化">
-<meta property="og:url" content="http://bonerkiller.coding.me/2016/06/11/2016-06-11-基于位置约束的图可视化/index.html">
+<meta property="og:url" content="http://buptldy.github.io/2016/06/11/2016-06-11-基于位置约束的图可视化/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description">
 <meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-6-11/65263838.jpg">
@@ -365,7 +365,7 @@
 <p>代码如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加连线</span></span><br><span class="line"> <span class="keyword">var</span> svg_edges = svg.selectAll(<span class="string">"line"</span>)</span><br><span class="line">     .data(edges)</span><br><span class="line">     .enter()</span><br><span class="line">     .append(<span class="string">"line"</span>)</span><br><span class="line">     .style(<span class="string">"stroke"</span>,<span class="string">"#ccc"</span>)</span><br><span class="line">     .style(<span class="string">"stroke-width"</span>,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> color = d3.scale.category20();</span><br><span class="line"></span><br><span class="line"> <span class="comment">//添加节点</span></span><br><span class="line"> <span class="keyword">var</span> svg_nodes = svg.selectAll(<span class="string">"circle"</span>)</span><br><span class="line">     .data(nodes)</span><br><span class="line">     .enter()</span><br><span class="line">     .append(<span class="string">"circle"</span>)</span><br><span class="line">     .attr(<span class="string">"r"</span>,<span class="number">20</span>)</span><br><span class="line">     .style(<span class="string">"fill"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">d,i</span>)</span>&#123;</span><br><span class="line">         <span class="keyword">return</span> color(i);</span><br><span class="line">     &#125;)</span><br><span class="line">     .call(force.drag);  <span class="comment">//使得节点能够拖动</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">//添加描述节点的文字</span></span><br><span class="line"> <span class="keyword">var</span> svg_texts = svg.selectAll(<span class="string">"text"</span>)</span><br><span class="line">     .data(nodes)</span><br><span class="line">     .enter()</span><br><span class="line">     .append(<span class="string">"text"</span>)</span><br><span class="line">     .style(<span class="string">"fill"</span>, <span class="string">"black"</span>)</span><br><span class="line">     .attr(<span class="string">"dx"</span>, <span class="number">20</span>)</span><br><span class="line">     .attr(<span class="string">"dy"</span>, <span class="number">8</span>)</span><br><span class="line">     .text(<span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> d.name;</span><br><span class="line">     &#125;);</span><br></pre></td></tr></table></figure>
 <p>调用 call( force.drag ) 后节点可被拖动。force.drag() 是一个函数，将其作为 call() 的参数，相当于将当前选择的元素传到 force.drag() 函数中。</p>
-<h2 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h2><p>可视化结果如下所示，在线演示地址:<a href="http://buptldy.github.io/DEMO/news_map.html" target="_blank" rel="external">http://buptldy.github.io/DEMO/news_map.html</a></p>
+<h2 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h2><p>可视化结果如下所示，在线演示地址:<a href="http://buptldy.github.io/DEMO/news_map.html">http://buptldy.github.io/DEMO/news_map.html</a></p>
 <p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-21/3836519.jpg" alt=""></p>
 
       
@@ -420,7 +420,7 @@
         <div class="ds-share flat" data-thread-key="2016/06/11/2016-06-11-基于位置约束的图可视化/"
      data-title="基于位置约束的图可视化"
      data-content=""
-     data-url="http://bonerkiller.coding.me/2016/06/11/2016-06-11-基于位置约束的图可视化/">
+     data-url="http://buptldy.github.io/2016/06/11/2016-06-11-基于位置约束的图可视化/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -448,7 +448,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/06/11/2016-06-11-基于位置约束的图可视化/"
-           data-title="基于位置约束的图可视化" data-url="http://bonerkiller.coding.me/2016/06/11/2016-06-11-基于位置约束的图可视化/">
+           data-title="基于位置约束的图可视化" data-url="http://buptldy.github.io/2016/06/11/2016-06-11-基于位置约束的图可视化/">
       </div>
     
   </div>

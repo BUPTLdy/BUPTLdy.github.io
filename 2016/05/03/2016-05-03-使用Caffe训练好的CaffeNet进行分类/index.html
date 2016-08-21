@@ -62,7 +62,7 @@
 <meta name="description">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用Caffe训练好的CaffeNet进行图片分类">
-<meta property="og:url" content="http://bonerkiller.coding.me/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/index.html">
+<meta property="og:url" content="http://buptldy.github.io/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description">
 <meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-3/46730593.jpg">
@@ -341,7 +341,7 @@
 
 <a id="more"></a>
 <p>Caffe直接使用训练好的CaffeNet模型来进行分类，Caffe的安装有很多教程，<a href="http://ixez.info/?p=105" target="_blank" rel="external">千秋轻松装Caffe教程（含CUDA 7.0和CuDNN）
-</a>这个教程说的很详细，其中比较繁琐的就是CUDA的安装了，可以参考这里：<a href="http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/" target="_blank" rel="external">Deepin CUDA安装及Keras使用GPU模式运行</a>。其中遇到的一个比较大的坑就是cuDNN的安装，首先得确定你的GPU是否支持cuDNN，cuDNN要求GPU的计算能力在3.0以上，这里<a href="http://developer.nvidia.com/cuda-gpus" target="_blank" rel="external"> http://developer.nvidia.com/cuda-gpus</a>可以查询GPU的计算能力，也能查询你的GPU是否支持CUDA，如果你的GPU不支持cuDNN但是支持CUDA，在编译配置文件注释掉<code>USE_CUDNN :=1</code>和<code>CPU_ONLY :=1</code>就可以使用CUDA了。如果你的GPU支持GUDA和cuDNN，得注意你下的Caffe所支持cuDNN的版本，这里可以查看<a href="http://caffe.berkeleyvision.org/installation.html" target="_blank" rel="external">http://caffe.berkeleyvision.org/installation.html</a>。</p>
+</a>这个教程说的很详细，其中比较繁琐的就是CUDA的安装了，可以参考这里：<a href="http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/">Deepin CUDA安装及Keras使用GPU模式运行</a>。其中遇到的一个比较大的坑就是cuDNN的安装，首先得确定你的GPU是否支持cuDNN，cuDNN要求GPU的计算能力在3.0以上，这里<a href="http://developer.nvidia.com/cuda-gpus" target="_blank" rel="external"> http://developer.nvidia.com/cuda-gpus</a>可以查询GPU的计算能力，也能查询你的GPU是否支持CUDA，如果你的GPU不支持cuDNN但是支持CUDA，在编译配置文件注释掉<code>USE_CUDNN :=1</code>和<code>CPU_ONLY :=1</code>就可以使用CUDA了。如果你的GPU支持GUDA和cuDNN，得注意你下的Caffe所支持cuDNN的版本，这里可以查看<a href="http://caffe.berkeleyvision.org/installation.html" target="_blank" rel="external">http://caffe.berkeleyvision.org/installation.html</a>。</p>
 <p>在这里我们比较下CPU和GPU模式下，网络的运行速度，并了解模型特征的提取。</p>
 <h2 id="设置环境"><a href="#设置环境" class="headerlink" title="设置环境"></a>设置环境</h2><p>导入Python,numpy,matplotlib</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="comment"># set display defaults</span></span><br><span class="line">plt.rcParams[<span class="string">'figure.figsize'</span>] = (<span class="number">10</span>, <span class="number">10</span>)        <span class="comment"># large images</span></span><br><span class="line">plt.rcParams[<span class="string">'image.interpolation'</span>] = <span class="string">'nearest'</span>  <span class="comment"># don't interpolate: show square pixels</span></span><br><span class="line">plt.rcParams[<span class="string">'image.cmap'</span>] = <span class="string">'gray'</span>  <span class="comment"># use grayscale output rather than a (potentially misleading) color heatmap</span></span><br></pre></td></tr></table></figure>
@@ -520,7 +520,7 @@ probabilities and labels:
         <div class="ds-share flat" data-thread-key="2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/"
      data-title="使用Caffe训练好的CaffeNet进行图片分类"
      data-content=""
-     data-url="http://bonerkiller.coding.me/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/">
+     data-url="http://buptldy.github.io/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -548,7 +548,7 @@ probabilities and labels:
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/"
-           data-title="使用Caffe训练好的CaffeNet进行图片分类" data-url="http://bonerkiller.coding.me/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/">
+           data-title="使用Caffe训练好的CaffeNet进行图片分类" data-url="http://buptldy.github.io/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/">
       </div>
     
   </div>

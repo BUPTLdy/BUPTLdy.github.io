@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://bonerkiller.coding.me/"/>
+  <link href="http://buptldy.github.io/"/>
   <updated>2016-08-18T08:15:39.885Z</updated>
-  <id>http://bonerkiller.coding.me/</id>
+  <id>http://buptldy.github.io/</id>
   
   <author>
     <name>Ldy</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Batch Normalization实现</title>
-    <link href="http://bonerkiller.coding.me/2016/08/18/2016-08-18-Batch_Normalization%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://bonerkiller.coding.me/2016/08/18/2016-08-18-Batch_Normalization实现/</id>
+    <link href="http://buptldy.github.io/2016/08/18/2016-08-18-Batch_Normalization%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://buptldy.github.io/2016/08/18/2016-08-18-Batch_Normalization实现/</id>
     <published>2016-08-18T02:00:00.000Z</published>
     <updated>2016-08-18T08:15:39.885Z</updated>
     
@@ -60,16 +60,16 @@
     </summary>
     
     
-      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
     
-      <category term="CNN" scheme="http://bonerkiller.coding.me/tags/CNN/"/>
+      <category term="CNN" scheme="http://buptldy.github.io/tags/CNN/"/>
     
   </entry>
   
   <entry>
     <title>购物评论情感分析的实现</title>
-    <link href="http://bonerkiller.coding.me/2016/07/20/2016-07-20-%E8%B4%AD%E7%89%A9%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://bonerkiller.coding.me/2016/07/20/2016-07-20-购物评论情感分析的实现/</id>
+    <link href="http://buptldy.github.io/2016/07/20/2016-07-20-%E8%B4%AD%E7%89%A9%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://buptldy.github.io/2016/07/20/2016-07-20-购物评论情感分析的实现/</id>
     <published>2016-07-20T02:00:00.000Z</published>
     <updated>2016-07-18T09:24:08.729Z</updated>
     
@@ -109,18 +109,18 @@
     </summary>
     
     
-      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
     
-      <category term="LSTM" scheme="http://bonerkiller.coding.me/tags/LSTM/"/>
+      <category term="LSTM" scheme="http://buptldy.github.io/tags/LSTM/"/>
     
-      <category term="NLP" scheme="http://bonerkiller.coding.me/tags/NLP/"/>
+      <category term="NLP" scheme="http://buptldy.github.io/tags/NLP/"/>
     
   </entry>
   
   <entry>
     <title>线性SVM及Softmax的随机梯度下降求解</title>
-    <link href="http://bonerkiller.coding.me/2016/06/20/2016-06-20-%E7%BA%BF%E6%80%A7SVM%E5%8F%8ASoftmax%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B1%82%E8%A7%A3/"/>
-    <id>http://bonerkiller.coding.me/2016/06/20/2016-06-20-线性SVM及Softmax的随机梯度下降求解/</id>
+    <link href="http://buptldy.github.io/2016/06/20/2016-06-20-%E7%BA%BF%E6%80%A7SVM%E5%8F%8ASoftmax%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B1%82%E8%A7%A3/"/>
+    <id>http://buptldy.github.io/2016/06/20/2016-06-20-线性SVM及Softmax的随机梯度下降求解/</id>
     <published>2016-06-20T02:00:00.000Z</published>
     <updated>2016-06-20T13:56:49.082Z</updated>
     
@@ -194,16 +194,16 @@ iteration 400 / 500: loss 0.365702
     </summary>
     
     
-      <category term="SVM" scheme="http://bonerkiller.coding.me/tags/SVM/"/>
+      <category term="SVM" scheme="http://buptldy.github.io/tags/SVM/"/>
     
-      <category term="Softmax" scheme="http://bonerkiller.coding.me/tags/Softmax/"/>
+      <category term="Softmax" scheme="http://buptldy.github.io/tags/Softmax/"/>
     
   </entry>
   
   <entry>
     <title>Python速度优化-Cython中numpy以及多线程的使用</title>
-    <link href="http://bonerkiller.coding.me/2016/06/15/2016-06-15-Python%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96-Cython%E4%B8%ADnumpy%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://bonerkiller.coding.me/2016/06/15/2016-06-15-Python速度优化-Cython中numpy以及多线程的使用/</id>
+    <link href="http://buptldy.github.io/2016/06/15/2016-06-15-Python%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96-Cython%E4%B8%ADnumpy%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://buptldy.github.io/2016/06/15/2016-06-15-Python速度优化-Cython中numpy以及多线程的使用/</id>
     <published>2016-06-15T02:00:00.000Z</published>
     <updated>2016-06-16T12:12:35.033Z</updated>
     
@@ -270,16 +270,16 @@ iteration 400 / 500: loss 0.365702
     </summary>
     
     
-      <category term="Python" scheme="http://bonerkiller.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
-      <category term="Cython" scheme="http://bonerkiller.coding.me/tags/Cython/"/>
+      <category term="Cython" scheme="http://buptldy.github.io/tags/Cython/"/>
     
   </entry>
   
   <entry>
     <title>CNN在光学遥感图像上的应用</title>
-    <link href="http://bonerkiller.coding.me/2016/06/12/2016-06-12-CNN%E5%9C%A8%E5%85%89%E5%AD%A6%E9%81%A5%E6%84%9F%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-    <id>http://bonerkiller.coding.me/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/</id>
+    <link href="http://buptldy.github.io/2016/06/12/2016-06-12-CNN%E5%9C%A8%E5%85%89%E5%AD%A6%E9%81%A5%E6%84%9F%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+    <id>http://buptldy.github.io/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/</id>
     <published>2016-06-12T02:00:00.000Z</published>
     <updated>2016-07-08T00:58:01.903Z</updated>
     
@@ -325,16 +325,16 @@ iteration 400 / 500: loss 0.365702
     </summary>
     
     
-      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
     
-      <category term="CNN" scheme="http://bonerkiller.coding.me/tags/CNN/"/>
+      <category term="CNN" scheme="http://buptldy.github.io/tags/CNN/"/>
     
   </entry>
   
   <entry>
     <title>基于位置约束的图可视化</title>
-    <link href="http://bonerkiller.coding.me/2016/06/11/2016-06-11-%E5%9F%BA%E4%BA%8E%E4%BD%8D%E7%BD%AE%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
-    <id>http://bonerkiller.coding.me/2016/06/11/2016-06-11-基于位置约束的图可视化/</id>
+    <link href="http://buptldy.github.io/2016/06/11/2016-06-11-%E5%9F%BA%E4%BA%8E%E4%BD%8D%E7%BD%AE%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    <id>http://buptldy.github.io/2016/06/11/2016-06-11-基于位置约束的图可视化/</id>
     <published>2016-06-11T02:00:00.000Z</published>
     <updated>2016-06-11T12:27:25.231Z</updated>
     
@@ -371,7 +371,7 @@ iteration 400 / 500: loss 0.365702
 &lt;p&gt;代码如下：&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//添加连线&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; svg_edges = svg.selectAll(&lt;span class=&quot;string&quot;&gt;&quot;line&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .data(edges)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .enter()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .append(&lt;span class=&quot;string&quot;&gt;&quot;line&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .style(&lt;span class=&quot;string&quot;&gt;&quot;stroke&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;#ccc&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .style(&lt;span class=&quot;string&quot;&gt;&quot;stroke-width&quot;&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; color = d3.scale.category20();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;//添加节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; svg_nodes = svg.selectAll(&lt;span class=&quot;string&quot;&gt;&quot;circle&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .data(nodes)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .enter()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .append(&lt;span class=&quot;string&quot;&gt;&quot;circle&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .attr(&lt;span class=&quot;string&quot;&gt;&quot;r&quot;&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .style(&lt;span class=&quot;string&quot;&gt;&quot;fill&quot;&lt;/span&gt;,&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;d,i&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; color(i);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .call(force.drag);  &lt;span class=&quot;comment&quot;&gt;//使得节点能够拖动&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;comment&quot;&gt;//添加描述节点的文字&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; svg_texts = svg.selectAll(&lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .data(nodes)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .enter()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .append(&lt;span class=&quot;string&quot;&gt;&quot;text&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .style(&lt;span class=&quot;string&quot;&gt;&quot;fill&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;black&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .attr(&lt;span class=&quot;string&quot;&gt;&quot;dx&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .attr(&lt;span class=&quot;string&quot;&gt;&quot;dy&quot;&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     .text(&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;d&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; d.name;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;     &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;调用 call( force.drag ) 后节点可被拖动。force.drag() 是一个函数，将其作为 call() 的参数，相当于将当前选择的元素传到 force.drag() 函数中。&lt;/p&gt;
-&lt;h2 id=&quot;结果展示&quot;&gt;&lt;a href=&quot;#结果展示&quot; class=&quot;headerlink&quot; title=&quot;结果展示&quot;&gt;&lt;/a&gt;结果展示&lt;/h2&gt;&lt;p&gt;可视化结果如下所示，在线演示地址:&lt;a href=&quot;http://buptldy.github.io/DEMO/news_map.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://buptldy.github.io/DEMO/news_map.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;结果展示&quot;&gt;&lt;a href=&quot;#结果展示&quot; class=&quot;headerlink&quot; title=&quot;结果展示&quot;&gt;&lt;/a&gt;结果展示&lt;/h2&gt;&lt;p&gt;可视化结果如下所示，在线演示地址:&lt;a href=&quot;http://buptldy.github.io/DEMO/news_map.html&quot;&gt;http://buptldy.github.io/DEMO/news_map.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-21/3836519.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 </content>
     
@@ -382,16 +382,16 @@ iteration 400 / 500: loss 0.365702
     </summary>
     
     
-      <category term="D3" scheme="http://bonerkiller.coding.me/tags/D3/"/>
+      <category term="D3" scheme="http://buptldy.github.io/tags/D3/"/>
     
-      <category term="Data Visualization" scheme="http://bonerkiller.coding.me/tags/Data-Visualization/"/>
+      <category term="Data Visualization" scheme="http://buptldy.github.io/tags/Data-Visualization/"/>
     
   </entry>
   
   <entry>
     <title>Python实现常见排序算法</title>
-    <link href="http://bonerkiller.coding.me/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
-    <id>http://bonerkiller.coding.me/2016/05/09/2016-05-09-Python实现常见排序算法/</id>
+    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python实现常见排序算法/</id>
     <published>2016-05-09T04:00:00.000Z</published>
     <updated>2016-05-09T11:57:53.710Z</updated>
     
@@ -409,7 +409,7 @@ iteration 400 / 500: loss 0.365702
 &lt;h1 id=&quot;插入排序&quot;&gt;&lt;a href=&quot;#插入排序&quot; class=&quot;headerlink&quot; title=&quot;插入排序&quot;&gt;&lt;/a&gt;插入排序&lt;/h1&gt;&lt;p&gt;插入排序（英语：Insertion Sort）是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。插入排序在实现上，通常采用in-place排序（即只需用到O(1)的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;InsertionSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(array)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,len(array)):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        temp=array[i]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; j &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(i,&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; temp&amp;gt;array[j&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                array[j]=array[j&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        array[j]=temp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; array&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;归并排序&quot;&gt;&lt;a href=&quot;#归并排序&quot; class=&quot;headerlink&quot; title=&quot;归并排序&quot;&gt;&lt;/a&gt;归并排序&lt;/h1&gt;&lt;p&gt;归并排序（英语：Merge sort，或mergesort），是创建在归并操作上的一种有效的排序算法，效率为O(n log n)。1945年由约翰·冯·诺伊曼首次提出。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用，且各层分治递归可以同时进行。&lt;/p&gt;
-&lt;p&gt;有关归并排序中的详细内容可以参考&lt;a href=&quot;http://buptldy.github.io/2016/01/06/2016-01-06-%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5[Divide%20and%20Conquer]/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;分治策略中的归并排序&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有关归并排序中的详细内容可以参考&lt;a href=&quot;http://buptldy.github.io/2016/01/06/2016-01-06-%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5[Divide%20and%20Conquer]/&quot;&gt;分治策略中的归并排序&lt;/a&gt;&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;MergeSort&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(array)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    n=len(array)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; n&amp;lt;=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; array&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        n=n/&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        left=MergeSort(array[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:n])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        right=MergeSort(array[n:])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; Merge(left,right)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Merge&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(left,right)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    array=[]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;while&lt;/span&gt; len(left)&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;and&lt;/span&gt; len(right)&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; left[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&amp;lt;right[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            array.append(left[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;del&lt;/span&gt; left[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            array.append(right[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;del&lt;/span&gt; right[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; len(left)&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        array.extend(left)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; len(right)&amp;gt;&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        array.extend(right)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; array&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h1 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h1&gt;&lt;p&gt;快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为两个子序列（sub-lists）。&lt;/p&gt;
 &lt;p&gt;步骤为：&lt;/p&gt;
@@ -436,16 +436,16 @@ iteration 400 / 500: loss 0.365702
     </summary>
     
     
-      <category term="Algorithms" scheme="http://bonerkiller.coding.me/tags/Algorithms/"/>
+      <category term="Algorithms" scheme="http://buptldy.github.io/tags/Algorithms/"/>
     
-      <category term="Python" scheme="http://bonerkiller.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>Python实现单链表</title>
-    <link href="http://bonerkiller.coding.me/2016/05/09/2016-05-09-Python%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://bonerkiller.coding.me/2016/05/09/2016-05-09-Python链表实现/</id>
+    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python链表实现/</id>
     <published>2016-05-09T03:00:00.000Z</published>
     <updated>2016-05-09T12:02:46.660Z</updated>
     
@@ -483,16 +483,16 @@ iteration 400 / 500: loss 0.365702
     </summary>
     
     
-      <category term="Python" scheme="http://bonerkiller.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
-      <category term="Data Structure" scheme="http://bonerkiller.coding.me/tags/Data-Structure/"/>
+      <category term="Data Structure" scheme="http://buptldy.github.io/tags/Data-Structure/"/>
     
   </entry>
   
   <entry>
     <title>Python实现二叉搜索树</title>
-    <link href="http://bonerkiller.coding.me/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
-    <id>http://bonerkiller.coding.me/2016/05/09/2016-05-09-Python实现二叉搜索树/</id>
+    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
+    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python实现二叉搜索树/</id>
     <published>2016-05-09T02:00:00.000Z</published>
     <updated>2016-05-09T12:03:03.464Z</updated>
     
@@ -548,16 +548,16 @@ iteration 400 / 500: loss 0.365702
     </summary>
     
     
-      <category term="Python" scheme="http://bonerkiller.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
-      <category term="Data Structure" scheme="http://bonerkiller.coding.me/tags/Data-Structure/"/>
+      <category term="Data Structure" scheme="http://buptldy.github.io/tags/Data-Structure/"/>
     
   </entry>
   
   <entry>
     <title>Caffe使用Python接口训练网络</title>
-    <link href="http://bonerkiller.coding.me/2016/05/05/2016-05-05-Caffe%E4%BD%BF%E7%94%A8Python%E6%8E%A5%E5%8F%A3%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C/"/>
-    <id>http://bonerkiller.coding.me/2016/05/05/2016-05-05-Caffe使用Python接口训练网络/</id>
+    <link href="http://buptldy.github.io/2016/05/05/2016-05-05-Caffe%E4%BD%BF%E7%94%A8Python%E6%8E%A5%E5%8F%A3%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C/"/>
+    <id>http://buptldy.github.io/2016/05/05/2016-05-05-Caffe使用Python接口训练网络/</id>
     <published>2016-05-05T02:00:00.000Z</published>
     <updated>2016-05-05T14:10:52.551Z</updated>
     
@@ -791,18 +791,18 @@ Wall time: 1min 18s
     </summary>
     
     
-      <category term="Python" scheme="http://bonerkiller.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
-      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
     
-      <category term="Caffe" scheme="http://bonerkiller.coding.me/tags/Caffe/"/>
+      <category term="Caffe" scheme="http://buptldy.github.io/tags/Caffe/"/>
     
   </entry>
   
   <entry>
     <title>使用Caffe训练好的CaffeNet进行图片分类</title>
-    <link href="http://bonerkiller.coding.me/2016/05/03/2016-05-03-%E4%BD%BF%E7%94%A8Caffe%E8%AE%AD%E7%BB%83%E5%A5%BD%E7%9A%84CaffeNet%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB/"/>
-    <id>http://bonerkiller.coding.me/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/</id>
+    <link href="http://buptldy.github.io/2016/05/03/2016-05-03-%E4%BD%BF%E7%94%A8Caffe%E8%AE%AD%E7%BB%83%E5%A5%BD%E7%9A%84CaffeNet%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB/"/>
+    <id>http://buptldy.github.io/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/</id>
     <published>2016-05-03T02:00:00.000Z</published>
     <updated>2016-05-03T06:57:13.239Z</updated>
     
@@ -810,7 +810,7 @@ Wall time: 1min 18s
 
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;Caffe直接使用训练好的CaffeNet模型来进行分类，Caffe的安装有很多教程，&lt;a href=&quot;http://ixez.info/?p=105&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;千秋轻松装Caffe教程（含CUDA 7.0和CuDNN）
-&lt;/a&gt;这个教程说的很详细，其中比较繁琐的就是CUDA的安装了，可以参考这里：&lt;a href=&quot;http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deepin CUDA安装及Keras使用GPU模式运行&lt;/a&gt;。其中遇到的一个比较大的坑就是cuDNN的安装，首先得确定你的GPU是否支持cuDNN，cuDNN要求GPU的计算能力在3.0以上，这里&lt;a href=&quot;http://developer.nvidia.com/cuda-gpus&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt; http://developer.nvidia.com/cuda-gpus&lt;/a&gt;可以查询GPU的计算能力，也能查询你的GPU是否支持CUDA，如果你的GPU不支持cuDNN但是支持CUDA，在编译配置文件注释掉&lt;code&gt;USE_CUDNN :=1&lt;/code&gt;和&lt;code&gt;CPU_ONLY :=1&lt;/code&gt;就可以使用CUDA了。如果你的GPU支持GUDA和cuDNN，得注意你下的Caffe所支持cuDNN的版本，这里可以查看&lt;a href=&quot;http://caffe.berkeleyvision.org/installation.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://caffe.berkeleyvision.org/installation.html&lt;/a&gt;。&lt;/p&gt;
+&lt;/a&gt;这个教程说的很详细，其中比较繁琐的就是CUDA的安装了，可以参考这里：&lt;a href=&quot;http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/&quot;&gt;Deepin CUDA安装及Keras使用GPU模式运行&lt;/a&gt;。其中遇到的一个比较大的坑就是cuDNN的安装，首先得确定你的GPU是否支持cuDNN，cuDNN要求GPU的计算能力在3.0以上，这里&lt;a href=&quot;http://developer.nvidia.com/cuda-gpus&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt; http://developer.nvidia.com/cuda-gpus&lt;/a&gt;可以查询GPU的计算能力，也能查询你的GPU是否支持CUDA，如果你的GPU不支持cuDNN但是支持CUDA，在编译配置文件注释掉&lt;code&gt;USE_CUDNN :=1&lt;/code&gt;和&lt;code&gt;CPU_ONLY :=1&lt;/code&gt;就可以使用CUDA了。如果你的GPU支持GUDA和cuDNN，得注意你下的Caffe所支持cuDNN的版本，这里可以查看&lt;a href=&quot;http://caffe.berkeleyvision.org/installation.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://caffe.berkeleyvision.org/installation.html&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;在这里我们比较下CPU和GPU模式下，网络的运行速度，并了解模型特征的提取。&lt;/p&gt;
 &lt;h2 id=&quot;设置环境&quot;&gt;&lt;a href=&quot;#设置环境&quot; class=&quot;headerlink&quot; title=&quot;设置环境&quot;&gt;&lt;/a&gt;设置环境&lt;/h2&gt;&lt;p&gt;导入Python,numpy,matplotlib&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; numpy &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; plt&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;%matplotlib inline&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# set display defaults&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.rcParams[&lt;span class=&quot;string&quot;&gt;&#39;figure.figsize&#39;&lt;/span&gt;] = (&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;)        &lt;span class=&quot;comment&quot;&gt;# large images&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.rcParams[&lt;span class=&quot;string&quot;&gt;&#39;image.interpolation&#39;&lt;/span&gt;] = &lt;span class=&quot;string&quot;&gt;&#39;nearest&#39;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# don&#39;t interpolate: show square pixels&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;plt.rcParams[&lt;span class=&quot;string&quot;&gt;&#39;image.cmap&#39;&lt;/span&gt;] = &lt;span class=&quot;string&quot;&gt;&#39;gray&#39;&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# use grayscale output rather than a (potentially misleading) color heatmap&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -945,16 +945,16 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
     
-      <category term="Caffe" scheme="http://bonerkiller.coding.me/tags/Caffe/"/>
+      <category term="Caffe" scheme="http://buptldy.github.io/tags/Caffe/"/>
     
   </entry>
   
   <entry>
     <title>Vim命令备忘</title>
-    <link href="http://bonerkiller.coding.me/2016/04/23/2016-04-23-Vim%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/"/>
-    <id>http://bonerkiller.coding.me/2016/04/23/2016-04-23-Vim命令备忘/</id>
+    <link href="http://buptldy.github.io/2016/04/23/2016-04-23-Vim%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/"/>
+    <id>http://buptldy.github.io/2016/04/23/2016-04-23-Vim命令备忘/</id>
     <published>2016-04-23T03:00:00.000Z</published>
     <updated>2016-04-23T11:03:08.840Z</updated>
     
@@ -1062,18 +1062,18 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Cuda" scheme="http://bonerkiller.coding.me/tags/Cuda/"/>
+      <category term="Keras" scheme="http://buptldy.github.io/tags/Keras/"/>
     
-      <category term="Keras" scheme="http://bonerkiller.coding.me/tags/Keras/"/>
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
     
-      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+      <category term="Cuda" scheme="http://buptldy.github.io/tags/Cuda/"/>
     
   </entry>
   
   <entry>
     <title>Deepin CUDA安装及Keras使用GPU模式运行</title>
-    <link href="http://bonerkiller.coding.me/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/"/>
-    <id>http://bonerkiller.coding.me/2016/04/09/2016-04-09-Deepin CUDA安装及Keras使用GPU模式运行/</id>
+    <link href="http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/"/>
+    <id>http://buptldy.github.io/2016/04/09/2016-04-09-Deepin CUDA安装及Keras使用GPU模式运行/</id>
     <published>2016-04-09T03:00:00.000Z</published>
     <updated>2016-05-27T01:31:25.505Z</updated>
     
@@ -1111,18 +1111,18 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Cuda" scheme="http://bonerkiller.coding.me/tags/Cuda/"/>
+      <category term="Keras" scheme="http://buptldy.github.io/tags/Keras/"/>
     
-      <category term="Keras" scheme="http://bonerkiller.coding.me/tags/Keras/"/>
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
     
-      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+      <category term="Cuda" scheme="http://buptldy.github.io/tags/Cuda/"/>
     
   </entry>
   
   <entry>
     <title>Keras简介</title>
-    <link href="http://bonerkiller.coding.me/2016/04/07/2016-04-07-Keras%E7%AE%80%E4%BB%8B/"/>
-    <id>http://bonerkiller.coding.me/2016/04/07/2016-04-07-Keras简介/</id>
+    <link href="http://buptldy.github.io/2016/04/07/2016-04-07-Keras%E7%AE%80%E4%BB%8B/"/>
+    <id>http://buptldy.github.io/2016/04/07/2016-04-07-Keras简介/</id>
     <published>2016-04-07T03:00:00.000Z</published>
     <updated>2016-04-07T02:35:37.848Z</updated>
     
@@ -1181,18 +1181,18 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Python" scheme="http://bonerkiller.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
-      <category term="Keras" scheme="http://bonerkiller.coding.me/tags/Keras/"/>
+      <category term="Keras" scheme="http://buptldy.github.io/tags/Keras/"/>
     
-      <category term="Deep Learning" scheme="http://bonerkiller.coding.me/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
     
   </entry>
   
   <entry>
     <title>Python连接MySQL</title>
-    <link href="http://bonerkiller.coding.me/2016/04/04/2016-04-04-Python%E8%BF%9E%E6%8E%A5MySQL.md/"/>
-    <id>http://bonerkiller.coding.me/2016/04/04/2016-04-04-Python连接MySQL.md/</id>
+    <link href="http://buptldy.github.io/2016/04/04/2016-04-04-Python%E8%BF%9E%E6%8E%A5MySQL.md/"/>
+    <id>http://buptldy.github.io/2016/04/04/2016-04-04-Python连接MySQL.md/</id>
     <published>2016-04-04T03:00:00.000Z</published>
     <updated>2016-04-07T05:24:50.915Z</updated>
     
@@ -1295,22 +1295,22 @@ conn.close()
     </summary>
     
     
-      <category term="Python" scheme="http://bonerkiller.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
-      <category term="MySQL" scheme="http://bonerkiller.coding.me/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://buptldy.github.io/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Python利用HOG特征实现人体检测</title>
-    <link href="http://bonerkiller.coding.me/2016/04/01/2016-04-01-Python%E5%88%A9%E7%94%A8HOG%E7%89%B9%E5%BE%81%E5%AE%9E%E7%8E%B0%E4%BA%BA%E4%BD%93%E6%A3%80%E6%B5%8B/"/>
-    <id>http://bonerkiller.coding.me/2016/04/01/2016-04-01-Python利用HOG特征实现人体检测/</id>
+    <link href="http://buptldy.github.io/2016/04/01/2016-04-01-Python%E5%88%A9%E7%94%A8HOG%E7%89%B9%E5%BE%81%E5%AE%9E%E7%8E%B0%E4%BA%BA%E4%BD%93%E6%A3%80%E6%B5%8B/"/>
+    <id>http://buptldy.github.io/2016/04/01/2016-04-01-Python利用HOG特征实现人体检测/</id>
     <published>2016-04-01T02:00:00.000Z</published>
     <updated>2016-06-12T02:44:10.339Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-6-12/14156501.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;数据集介绍&quot;&gt;&lt;a href=&quot;#数据集介绍&quot; class=&quot;headerlink&quot; title=&quot;数据集介绍&quot;&gt;&lt;/a&gt;数据集介绍&lt;/h2&gt;&lt;p&gt;训练数据来自&lt;a href=&quot;http://pascal.inrialpes.fr/data/human/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;INRIA Person Dataset&lt;/a&gt;,其中正样本为64*128的人体图像，负样本为64*128的非人体图像，如下图所示。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/56925025.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;HOG特征&quot;&gt;&lt;a href=&quot;#HOG特征&quot; class=&quot;headerlink&quot; title=&quot;HOG特征&quot;&gt;&lt;/a&gt;HOG特征&lt;/h2&gt;&lt;p&gt;HOG特征详细介绍：&lt;a href=&quot;http://buptldy.github.io/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;HOG论文笔记&lt;/a&gt;提取HOG特征的方法使用了skimage库中的hog函数。&lt;/p&gt;
+&lt;h2 id=&quot;HOG特征&quot;&gt;&lt;a href=&quot;#HOG特征&quot; class=&quot;headerlink&quot; title=&quot;HOG特征&quot;&gt;&lt;/a&gt;HOG特征&lt;/h2&gt;&lt;p&gt;HOG特征详细介绍：&lt;a href=&quot;http://buptldy.github.io/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/&quot;&gt;HOG论文笔记&lt;/a&gt;提取HOG特征的方法使用了skimage库中的hog函数。&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;extract_features&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    des_type = &lt;span class=&quot;string&quot;&gt;&#39;HOG&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# If feature directories don&#39;t exist, create them&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; os.path.isdir(pos_feat_ph):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        os.makedirs(pos_feat_ph)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# If feature directories don&#39;t exist, create them&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; os.path.isdir(neg_feat_ph):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        os.makedirs(neg_feat_ph)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Calculating the descriptors for the positive samples and saving them&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; im_path &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; glob.glob(os.path.join(pos_im_path, &lt;span class=&quot;string&quot;&gt;&quot;*&quot;&lt;/span&gt;)):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;#print im_path&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        im = imread(im_path, as_grey=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; des_type == &lt;span class=&quot;string&quot;&gt;&quot;HOG&quot;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            fd = hog(im, orientations, pixels_per_cell, cells_per_block, visualize, normalize)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fd_name = os.path.split(im_path)[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;].split(&lt;span class=&quot;string&quot;&gt;&quot;.&quot;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] + &lt;span class=&quot;string&quot;&gt;&quot;.feat&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fd_path = os.path.join(pos_feat_ph, fd_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        joblib.dump(fd, fd_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Positive features saved in &amp;#123;&amp;#125;&quot;&lt;/span&gt;.format(pos_feat_ph)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Calculating the descriptors for the negative samples and saving them&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; im_path &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; glob.glob(os.path.join(neg_im_path, &lt;span class=&quot;string&quot;&gt;&quot;*&quot;&lt;/span&gt;)):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        im = imread(im_path, as_grey=&lt;span class=&quot;keyword&quot;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; des_type == &lt;span class=&quot;string&quot;&gt;&quot;HOG&quot;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            fd = hog(im,  orientations, pixels_per_cell, cells_per_block, visualize, normalize)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fd_name = os.path.split(im_path)[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;].split(&lt;span class=&quot;string&quot;&gt;&quot;.&quot;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] + &lt;span class=&quot;string&quot;&gt;&quot;.feat&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fd_path = os.path.join(neg_feat_ph, fd_name)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        joblib.dump(fd, fd_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Negative features saved in &amp;#123;&amp;#125;&quot;&lt;/span&gt;.format(neg_feat_ph)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;训练SVM&quot;&gt;&lt;a href=&quot;#训练SVM&quot; class=&quot;headerlink&quot; title=&quot;训练SVM&quot;&gt;&lt;/a&gt;训练SVM&lt;/h2&gt;&lt;p&gt;因为每张图片提取出来的HOG特征有6480维，所以我们使用线性SVM就足够可分。&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;train_svm&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pos_feat_path = &lt;span class=&quot;string&quot;&gt;&#39;../data/features/pos&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    neg_feat_path = &lt;span class=&quot;string&quot;&gt;&#39;../data/features/neg&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Classifiers supported&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    clf_type = &lt;span class=&quot;string&quot;&gt;&#39;LIN_SVM&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    fds = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    labels = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Load the positive features&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; feat_path &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; glob.glob(os.path.join(pos_feat_path,&lt;span class=&quot;string&quot;&gt;&quot;*.feat&quot;&lt;/span&gt;)):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fd = joblib.load(feat_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fds.append(fd)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        labels.append(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# Load the negative features&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; feat_path &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; glob.glob(os.path.join(neg_feat_path,&lt;span class=&quot;string&quot;&gt;&quot;*.feat&quot;&lt;/span&gt;)):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fd = joblib.load(feat_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        fds.append(fd)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        labels.append(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; np.array(fds).shape,len(labels)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; clf_type &lt;span class=&quot;keyword&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;LIN_SVM&quot;&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        clf = LinearSVC()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Training a Linear SVM Classifier&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        clf.fit(fds, labels)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;# If feature directories don&#39;t exist, create them&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;not&lt;/span&gt; os.path.isdir(os.path.split(model_path)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            os.makedirs(os.path.split(model_path)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        joblib.dump(clf, model_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;Classifier saved to &amp;#123;&amp;#125;&quot;&lt;/span&gt;.format(model_path)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h2 id=&quot;进行人体检测&quot;&gt;&lt;a href=&quot;#进行人体检测&quot; class=&quot;headerlink&quot; title=&quot;进行人体检测&quot;&gt;&lt;/a&gt;进行人体检测&lt;/h2&gt;&lt;p&gt;因为对进行人体检测的输入图片大小是未知的，所以需要对图片进行尺度缩放，使用的方法如下所示：&lt;/p&gt;
@@ -1334,16 +1334,16 @@ conn.close()
     </summary>
     
     
-      <category term="HOG" scheme="http://bonerkiller.coding.me/tags/HOG/"/>
+      <category term="HOG" scheme="http://buptldy.github.io/tags/HOG/"/>
     
-      <category term="Object Detection" scheme="http://bonerkiller.coding.me/tags/Object-Detection/"/>
+      <category term="Object Detection" scheme="http://buptldy.github.io/tags/Object-Detection/"/>
     
   </entry>
   
   <entry>
     <title>skimage hog函数解析</title>
-    <link href="http://bonerkiller.coding.me/2016/03/31/2016-03-31-Skimage%20hog%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/"/>
-    <id>http://bonerkiller.coding.me/2016/03/31/2016-03-31-Skimage hog函数用法解析/</id>
+    <link href="http://buptldy.github.io/2016/03/31/2016-03-31-Skimage%20hog%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/"/>
+    <id>http://buptldy.github.io/2016/03/31/2016-03-31-Skimage hog函数用法解析/</id>
     <published>2016-03-31T03:00:00.000Z</published>
     <updated>2016-03-31T05:41:42.784Z</updated>
     
@@ -1360,7 +1360,7 @@ conn.close()
 &lt;li&gt;对块状区域进行归一化处理&lt;/li&gt;
 &lt;li&gt;得到一个一维的特征向量&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;具体有关hog特征计算流程可参考：&lt;a href=&quot;http://buptldy.github.io/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;《Histograms of Oriented Gradients for Human Detection》论文笔记&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;具体有关hog特征计算流程可参考：&lt;a href=&quot;http://buptldy.github.io/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/&quot;&gt;《Histograms of Oriented Gradients for Human Detection》论文笔记&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;hog函数参数解释&quot;&gt;&lt;a href=&quot;#hog函数参数解释&quot; class=&quot;headerlink&quot; title=&quot;hog函数参数解释&quot;&gt;&lt;/a&gt;hog函数参数解释&lt;/h2&gt;&lt;h3 id=&quot;传入参数&quot;&gt;&lt;a href=&quot;#传入参数&quot; class=&quot;headerlink&quot; title=&quot;传入参数&quot;&gt;&lt;/a&gt;传入参数&lt;/h3&gt;&lt;p&gt;image : (M, N) ndarray&lt;/p&gt;
 &lt;p&gt;传入要进行hog特征计算的灰度图&lt;/p&gt;
 &lt;p&gt;orientations : int&lt;/p&gt;
@@ -1391,16 +1391,16 @@ conn.close()
     </summary>
     
     
-      <category term="HOG" scheme="http://bonerkiller.coding.me/tags/HOG/"/>
+      <category term="HOG" scheme="http://buptldy.github.io/tags/HOG/"/>
     
-      <category term="skimage" scheme="http://bonerkiller.coding.me/tags/skimage/"/>
+      <category term="skimage" scheme="http://buptldy.github.io/tags/skimage/"/>
     
   </entry>
   
   <entry>
     <title>《Histograms of Oriented Gradients for Human Detection》论文笔记</title>
-    <link href="http://bonerkiller.coding.me/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/"/>
-    <id>http://bonerkiller.coding.me/2016/03/31/2016-03-31-HOG论文总结/</id>
+    <link href="http://buptldy.github.io/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/"/>
+    <id>http://buptldy.github.io/2016/03/31/2016-03-31-HOG论文总结/</id>
     <published>2016-03-31T02:00:00.000Z</published>
     <updated>2016-03-31T02:17:05.158Z</updated>
     
@@ -1426,16 +1426,16 @@ conn.close()
     </summary>
     
     
-      <category term="Computer Vision" scheme="http://bonerkiller.coding.me/tags/Computer-Vision/"/>
+      <category term="Computer Vision" scheme="http://buptldy.github.io/tags/Computer-Vision/"/>
     
-      <category term="HOG" scheme="http://bonerkiller.coding.me/tags/HOG/"/>
+      <category term="HOG" scheme="http://buptldy.github.io/tags/HOG/"/>
     
   </entry>
   
   <entry>
     <title>pandas十分钟入门</title>
-    <link href="http://bonerkiller.coding.me/2016/03/25/2016-03-25-pandas%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
-    <id>http://bonerkiller.coding.me/2016/03/25/2016-03-25-pandas快速入门/</id>
+    <link href="http://buptldy.github.io/2016/03/25/2016-03-25-pandas%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"/>
+    <id>http://buptldy.github.io/2016/03/25/2016-03-25-pandas快速入门/</id>
     <published>2016-03-25T02:00:00.000Z</published>
     <updated>2016-03-26T07:04:02.591Z</updated>
     
@@ -1599,16 +1599,16 @@ Freq: D, Name: A, dtype: float64
     </summary>
     
     
-      <category term="Python" scheme="http://bonerkiller.coding.me/tags/Python/"/>
+      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
-      <category term="pandas" scheme="http://bonerkiller.coding.me/tags/pandas/"/>
+      <category term="pandas" scheme="http://buptldy.github.io/tags/pandas/"/>
     
   </entry>
   
   <entry>
     <title>Git命令总结</title>
-    <link href="http://bonerkiller.coding.me/2016/03/02/2016-03-02-GIT%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
-    <id>http://bonerkiller.coding.me/2016/03/02/2016-03-02-GIT命令总结/</id>
+    <link href="http://buptldy.github.io/2016/03/02/2016-03-02-GIT%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
+    <id>http://buptldy.github.io/2016/03/02/2016-03-02-GIT命令总结/</id>
     <published>2016-03-02T02:00:00.000Z</published>
     <updated>2016-03-14T05:34:41.203Z</updated>
     
@@ -1701,9 +1701,9 @@ Freq: D, Name: A, dtype: float64
     </summary>
     
     
-      <category term="Git" scheme="http://bonerkiller.coding.me/tags/Git/"/>
+      <category term="Git" scheme="http://buptldy.github.io/tags/Git/"/>
     
-      <category term="Linux" scheme="http://bonerkiller.coding.me/tags/Linux/"/>
+      <category term="Linux" scheme="http://buptldy.github.io/tags/Linux/"/>
     
   </entry>
   
