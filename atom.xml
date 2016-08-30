@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://buptldy.github.io/"/>
-  <updated>2016-08-18T08:15:39.885Z</updated>
+  <updated>2016-08-30T14:47:23.598Z</updated>
   <id>http://buptldy.github.io/</id>
   
   <author>
@@ -14,6 +14,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录deepin使用过程中碰到的问题及解决方法</title>
+    <link href="http://buptldy.github.io/2016/08/30/2016-08-30-%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BD%95deepin%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://buptldy.github.io/2016/08/30/2016-08-30-长期记录deepin使用过程中碰到的问题及解决方法/</id>
+    <published>2016-08-30T02:00:00.000Z</published>
+    <updated>2016-08-30T14:47:23.598Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/25403365.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;系统备份及还原&quot;&gt;&lt;a href=&quot;#系统备份及还原&quot; class=&quot;headerlink&quot; title=&quot;系统备份及还原&quot;&gt;&lt;/a&gt;系统备份及还原&lt;/h2&gt;&lt;p&gt;深度操作系统，是一个Linux发行版，由武汉深之度科技有限公司开发。Deepin系统不仅仅注重系统和桌面环境的开发，同时还注重配套的基础软件开发，目前Deepin系统已经拥有相当多深度特色应用并与许多第三方厂商合作推出热门应用的Linux版本。以上来自维基百科，总的来说Deepin界面很漂亮，对新手也很友好，但就是有点不稳定加上我又爱折腾，所以有时会崩溃，所以进行系统备份还是很有必要的。&lt;/p&gt;
+&lt;p&gt;备份系统前我们先了解下Linux文件系统的目录结构，清楚哪些文件夹需要备份，哪些不需要。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/70789457.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;备份过程&quot;&gt;&lt;a href=&quot;#备份过程&quot; class=&quot;headerlink&quot; title=&quot;备份过程&quot;&gt;&lt;/a&gt;备份过程&lt;/h3&gt;&lt;h4 id=&quot;切换到root&quot;&gt;&lt;a href=&quot;#切换到root&quot; class=&quot;headerlink&quot; title=&quot;切换到root&quot;&gt;&lt;/a&gt;切换到root&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo su&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;进入根目录&quot;&gt;&lt;a href=&quot;#进入根目录&quot; class=&quot;headerlink&quot; title=&quot;进入根目录&quot;&gt;&lt;/a&gt;进入根目录&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;执行打包命令&quot;&gt;&lt;a href=&quot;#执行打包命令&quot; class=&quot;headerlink&quot; title=&quot;执行打包命令&quot;&gt;&lt;/a&gt;执行打包命令&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar -cvpzf /media/ldy/6482108A82/backup1.tgz --exclude=/proc --exclude=/lost+found --exclude=/tmp --exclude=/sys --exclude=/media --exclude=/home /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;命令解释：&lt;/p&gt;
+&lt;p&gt;tar：linux常用的打包程序&lt;br&gt;cvpzf：式tar的参数&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;c­创建新文档&lt;/li&gt;
+&lt;li&gt;v­处理过程中输出相关信息&lt;/li&gt;
+&lt;li&gt;p­表示保持相同的权限&lt;/li&gt;
+&lt;li&gt;z­调用gzip来压缩归档文件，与­x联用时调用gzip完成解压缩&lt;/li&gt;
+&lt;li&gt;f­对普通文件操作&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;/media/ldy/6482108A82/backup1.tgz：表示打包到你挂载的硬盘里并命名为backup1.tgz&lt;/p&gt;
+&lt;p&gt;­­exclude=/proc：排除/proc目录，不打包这个目录，后面也同理，为什么排除参考上面的Linux文件系统的目录结构，为什么排除/home，因为我把/home新分了一区，在重装系统的时候选择不格式化/home分区即可保留数据&lt;/p&gt;
+&lt;p&gt;/：表示打包linux根目录所有文件，当然了排除的文件不包含在内&lt;/p&gt;
+&lt;h3 id=&quot;恢复过程-还未实践&quot;&gt;&lt;a href=&quot;#恢复过程-还未实践&quot; class=&quot;headerlink&quot; title=&quot;恢复过程(还未实践)&quot;&gt;&lt;/a&gt;恢复过程(还未实践)&lt;/h3&gt;&lt;h4 id=&quot;切换到root-1&quot;&gt;&lt;a href=&quot;#切换到root-1&quot; class=&quot;headerlink&quot; title=&quot;切换到root&quot;&gt;&lt;/a&gt;切换到root&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo su&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;进入根目录-1&quot;&gt;&lt;a href=&quot;#进入根目录-1&quot; class=&quot;headerlink&quot; title=&quot;进入根目录&quot;&gt;&lt;/a&gt;进入根目录&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;解压恢复系统&quot;&gt;&lt;a href=&quot;#解压恢复系统&quot; class=&quot;headerlink&quot; title=&quot;解压恢复系统&quot;&gt;&lt;/a&gt;解压恢复系统&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar xvpfz linuxbackup.tgz -C /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;等执行完后，别急着重启系统，要记得创建刚才在备份时候排除的目录，手动创建，例如上面我们排除，我们需创建&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir proc  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mdkir lost+found  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir mnt   &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir sys  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir tmp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;mkdir media&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;fsck命令&quot;&gt;&lt;a href=&quot;#fsck命令&quot; class=&quot;headerlink&quot; title=&quot;fsck命令&quot;&gt;&lt;/a&gt;fsck命令&lt;/h2&gt;&lt;p&gt;前两天由于笔记本突然掉电，导致/home分区损坏，开机出现：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Cannot open access to console , the root account is locked.&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h3&gt;&lt;p&gt;用deepin安装u盘启动，出现选择安装语言的界面时，按ctrl+alt+F1，进入tty，然后输入startx，进入live cd模式，挂载硬盘的根分区，然后修改/etc/fstab文件，把里面的/home分区里的启动项注释掉，如下所示。mount 命令在开始时会读取这个文件，确定设备和分区的挂载选项，注释掉后开机就不会挂载/home分区。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# /dev/sda2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;UUID=79813e75-eab0-42e4-b77c-daba9a9b7d01	/         	ext4      	rw,relatime,data=ordered	0 1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# /dev/sda6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;#UUID=8b23af2a-2fd6-426e-8e63-f791378d8485	/home     	ext4      	rw,relatime,data=ordered	0 2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# /dev/sda5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;UUID=730d40c7-946a-478e-bde9-9501ba156103	none      	swap      	defaults  	0 0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;修改后退出liveCD模式进入原系统，因为没有挂载损坏的/home分区，所以能进入系统，但是是不能进入图形界面的，进入文字界面执行下述命令修护损坏的/home分区，其中/dev/sda6为/home分区所在的设备名，设备名可以通过&lt;code&gt;fdisk -l&lt;/code&gt;查看。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo fsck -y /dev/sda6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;修复成功后，取消/etc/fstab的注释，重启即可。&lt;/p&gt;
+&lt;h2 id=&quot;双硬盘开机挂载&quot;&gt;&lt;a href=&quot;#双硬盘开机挂载&quot; class=&quot;headerlink&quot; title=&quot;双硬盘开机挂载&quot;&gt;&lt;/a&gt;双硬盘开机挂载&lt;/h2&gt;&lt;p&gt;前面已经介绍过/etc/fstab文件，要开机加载其他硬盘修改这个文件就可以。&lt;/p&gt;
+&lt;h3 id=&quot;UUID&quot;&gt;&lt;a href=&quot;#UUID&quot; class=&quot;headerlink&quot; title=&quot;UUID&quot;&gt;&lt;/a&gt;UUID&lt;/h3&gt;&lt;p&gt;所有分区和设备都有唯一的 UUID。它们由文件系统生成工具 (mkfs.*) 在创建文件系统时生成。&lt;br&gt;&lt;code&gt;lsblk -f&lt;/code&gt;命令将显示所有设备的 UUID 值。/etc/fstab 中使用 UUID= 前缀:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/etc/fstab&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# &amp;lt;file system&amp;gt;                           &amp;lt;dir&amp;gt;         &amp;lt;type&amp;gt;    &amp;lt;options&amp;gt;             &amp;lt;dump&amp;gt; &amp;lt;pass&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;tmpfs                                     /tmp          tmpfs     nodev,nosuid          0      0&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;UUID=24f28fc6-717e-4bcd-a5f7-32b959024e26 /     ext4              defaults,noatime      0      1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;UUID=03ec5dd3-45c0-4f95-a363-61ff321a09ff /home ext4              defaults,noatime      0      2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;UUID=4209c845-f495-4c43-8a03-5363dd433153 none  swap              defaults              0      0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;各段含义&quot;&gt;&lt;a href=&quot;#各段含义&quot; class=&quot;headerlink&quot; title=&quot;各段含义&quot;&gt;&lt;/a&gt;各段含义&lt;/h3&gt;&lt;p&gt;&lt;code&gt;&amp;lt;file systems&amp;gt;&lt;/code&gt; ：要挂载的分区或存储设备.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;dir&amp;gt;&lt;/code&gt; ： &lt;code&gt;&amp;lt;file systems&amp;gt;&lt;/code&gt;的挂载位置。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;type&amp;gt;&lt;/code&gt;  要挂载设备或是分区的文件系统类型，支持许多种不同的文件系统：ext2, ext3, ext4, reiserfs, xfs, jfs, smbfs, iso9660, vfat, ntfs, swap 及 auto。 设置成auto类型，mount 命令会猜测使用的文件系统类型，对 CDROM 和 DVD 等移动设备是非常有用的。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;options&amp;gt;&lt;/code&gt; 挂载时使用的参数，使用默认参数&lt;code&gt;defaults&lt;/code&gt;即可。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;dump&amp;gt;&lt;/code&gt;dump 工具通过它决定何时作备份. dump 会检查其内容，并用数字来决定是否对这个文件系统进行备份。 允许的数字是 0 和 1 。0 表示忽略， 1 则进行备份。大部分的用户是没有安装 dump 的 ，对他们而言 &lt;dump&gt; 应设为 0。&lt;/dump&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;lt;pass&amp;gt;&lt;/code&gt; fsck 读取 &lt;pass&gt; 的数值来决定需要检查的文件系统的检查顺序。允许的数字是0, 1, 和2。 根目录应当获得最高的优先权 1, 其它所有需要被检查的设备设置为 2. 0 表示设备不会被 fsck 所检查。&lt;/pass&gt;&lt;/p&gt;
+&lt;h3 id=&quot;实例&quot;&gt;&lt;a href=&quot;#实例&quot; class=&quot;headerlink&quot; title=&quot;实例&quot;&gt;&lt;/a&gt;实例&lt;/h3&gt;&lt;p&gt;比如我要开机自动挂载/dev/sdb5这个设备，在/etc/fstab后面加入下面内容即可。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;# /dev/sdb5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;UUID=6482108A821062BA           /media/ldy/6482108A82   ntfs     	defaults  	0 0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/25403365.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://buptldy.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Batch Normalization实现</title>
@@ -1602,108 +1660,6 @@ Freq: D, Name: A, dtype: float64
       <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
     
       <category term="pandas" scheme="http://buptldy.github.io/tags/pandas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git命令总结</title>
-    <link href="http://buptldy.github.io/2016/03/02/2016-03-02-GIT%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/"/>
-    <id>http://buptldy.github.io/2016/03/02/2016-03-02-GIT命令总结/</id>
-    <published>2016-03-02T02:00:00.000Z</published>
-    <updated>2016-03-14T05:34:41.203Z</updated>
-    
-    <content type="html">&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;创建版本库&lt;/p&gt;
-&lt;p&gt; 初始化一个Git仓库，使用git init命令。&lt;/p&gt;
-&lt;p&gt; 添加文件到Git仓库，分两步：&lt;/p&gt;
-&lt;p&gt; 第一步，使用命令git add &lt;file&gt;，注意，可反复多次使用，添加多个文件；&lt;/file&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt; 第二步，使用命令git commit，完成。&lt;/p&gt;
-&lt;p&gt; 要随时掌握工作区的状态，使用git status命令。&lt;/p&gt;
-&lt;p&gt; 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;版本回退&lt;/p&gt;
-&lt;p&gt; HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset –hard commit_id。Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。&lt;/p&gt;
-&lt;p&gt; 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。&lt;/p&gt;
-&lt;p&gt; 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;工作区和暂存区&lt;/p&gt;
-&lt;p&gt; 工作区（Working Directory）：就是你在电脑里能看到的目录。&lt;/p&gt;
-&lt;p&gt; 版本库（Repository）：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。&lt;/p&gt;
-&lt;p&gt; Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。&lt;/p&gt;
-&lt;p&gt; &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-10/74272820.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt; 前面讲了我们把文件往Git版本库里添加的时候，是分两步执行的：&lt;/p&gt;
-&lt;p&gt; 第一步是用git add把文件添加进去，实际上就是把文件修改添加到暂存区；&lt;/p&gt;
-&lt;p&gt; 第二步是用git commit提交更改，实际上就是把暂存区的所有内容提交到当前分支。&lt;/p&gt;
-&lt;p&gt; 因为我们创建Git版本库时，Git自动为我们创建了唯一一个master分支，所以，现在，git commit就是往master分支上提交更改。&lt;/p&gt;
-&lt;p&gt; 你可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。&lt;/p&gt;
-&lt;p&gt; Git是如何跟踪修改的:每次修改，如果不add到暂存区，那就不会加入到commit中。&lt;/p&gt;
-&lt;p&gt; 场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。&lt;/p&gt;
-&lt;p&gt; 场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。&lt;/p&gt;
-&lt;p&gt; 场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;远程仓库&lt;/p&gt;
-&lt;p&gt; 要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；&lt;/p&gt;
-&lt;p&gt; 关联后，使用命令git push -u origin master第一次推送master分支的所有内容；&lt;/p&gt;
-&lt;p&gt; 此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;创建和合并分支&lt;/p&gt;
-&lt;p&gt; 查看分支：git branch&lt;/p&gt;
-&lt;p&gt; 创建分支：git branch &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt; 切换分支：git checkout &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt; 创建+切换分支：git checkout -b &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt; 合并某分支到当前分支：git merge &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt; 删除分支：git branch -d &lt;name&gt;&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt; 当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。&lt;/p&gt;
-&lt;p&gt; 用git log –graph命令可以看到分支合并图。&lt;/p&gt;
-&lt;p&gt; 修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；&lt;/p&gt;
-&lt;p&gt; 当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。&lt;/p&gt;
-&lt;p&gt; 开发一个新feature，最好新建一个分支；&lt;/p&gt;
-&lt;p&gt; 如果要丢弃一个没有被合并过的分支，可以通过git branch -D &lt;name&gt;强行删除。&lt;/name&gt;&lt;/p&gt;
-&lt;p&gt; 查看远程库信息，使用git remote -v；&lt;/p&gt;
-&lt;p&gt; 本地新建的分支如果不推送到远程，对其他人就是不可见的；&lt;/p&gt;
-&lt;p&gt; 从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；&lt;/p&gt;
-&lt;p&gt; 在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；&lt;/p&gt;
-&lt;p&gt; 建立本地分支和远程分支的关联，使用git branch –set-upstream branch-name origin/branch-name；&lt;/p&gt;
-&lt;p&gt; 从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。&lt;/p&gt;
-&lt;p&gt; 命令git tag &lt;name&gt;用于新建一个标签，默认为HEAD，也可以指定一个commit id；&lt;/name&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;标签管理&lt;/p&gt;
-&lt;p&gt; git tag -a &lt;tagname&gt; -m “blablabla…”可以指定标签信息；&lt;/tagname&gt;&lt;/p&gt;
-&lt;p&gt; git tag -s &lt;tagname&gt; -m “blablabla…”可以用PGP签名标签；&lt;/tagname&gt;&lt;/p&gt;
-&lt;p&gt; 命令git tag可以查看所有标签。&lt;/p&gt;
-&lt;p&gt; 命令git push origin &lt;tagname&gt;可以推送一个本地标签；&lt;/tagname&gt;&lt;/p&gt;
-&lt;p&gt; 命令git push origin –tags可以推送全部未推送过的本地标签；&lt;/p&gt;
-&lt;p&gt; 命令git tag -d &lt;tagname&gt;可以删除一个本地标签；&lt;/tagname&gt;&lt;/p&gt;
-&lt;p&gt; 命令git push origin :refs/tags/&lt;tagname&gt;可以删除一个远程标签&lt;/tagname&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Github使用&lt;/p&gt;
-&lt;p&gt; 在GitHub上，可以任意Fork开源仓库；&lt;/p&gt;
-&lt;p&gt; 自己拥有Fork后的仓库的读写权限；&lt;/p&gt;
-&lt;p&gt; 可以推送pull request给官方仓库来贡献代码。&lt;/p&gt;
-&lt;p&gt; 忽略某些文件时，需要编写.gitignore；&lt;/p&gt;
-&lt;p&gt; .gitignore文件本身要放到版本库里，并且可以对.gitignore做版本管理！&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;参考资料&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-10/93928228.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git教程-廖雪峰的官方网站&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;创建版本库&lt;/p&gt;
-&lt;p&gt; 初始化一个Git仓库，使用git init命令。&lt;/p&gt;
-&lt;p&gt; 添加文件到Git仓库，分两步：&lt;/p&gt;
-&lt;p&gt; 第一步，使用命令git add &lt;file&gt;，注意，可反复多次使用，添加多个文件；&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://buptldy.github.io/tags/Git/"/>
-    
-      <category term="Linux" scheme="http://buptldy.github.io/tags/Linux/"/>
     
   </entry>
   
