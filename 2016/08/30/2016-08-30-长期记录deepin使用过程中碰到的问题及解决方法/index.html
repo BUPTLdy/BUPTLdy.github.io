@@ -65,13 +65,13 @@
 <meta property="og:url" content="http://buptldy.github.io/2016/08/30/2016-08-30-长期记录deepin使用过程中碰到的问题及解决方法/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description">
-<meta property="og:image" content="http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/25403365.jpg">
-<meta property="og:image" content="http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/70789457.jpg">
-<meta property="og:updated_time" content="2016-08-30T14:47:23.598Z">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-11/90739124.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-11/79598638.jpg">
+<meta property="og:updated_time" content="2016-09-10T16:19:18.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录deepin使用过程中碰到的问题及解决方法">
 <meta name="twitter:description">
-<meta name="twitter:image" content="http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/25403365.jpg">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-11/90739124.jpg">
 
 
 
@@ -331,11 +331,10 @@
       
 
       
-        <p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/25403365.jpg" alt=""></p>
-<a id="more"></a>
+        <p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-11/90739124.jpg" alt=""><br><a id="more"></a></p>
 <h2 id="系统备份及还原"><a href="#系统备份及还原" class="headerlink" title="系统备份及还原"></a>系统备份及还原</h2><p>深度操作系统，是一个Linux发行版，由武汉深之度科技有限公司开发。Deepin系统不仅仅注重系统和桌面环境的开发，同时还注重配套的基础软件开发，目前Deepin系统已经拥有相当多深度特色应用并与许多第三方厂商合作推出热门应用的Linux版本。以上来自维基百科，总的来说Deepin界面很漂亮，对新手也很友好，但就是有点不稳定加上我又爱折腾，所以有时会崩溃，所以进行系统备份还是很有必要的。</p>
 <p>备份系统前我们先了解下Linux文件系统的目录结构，清楚哪些文件夹需要备份，哪些不需要。</p>
-<p><img src="http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/70789457.jpg" alt=""></p>
+<p><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-11/79598638.jpg" alt=""><br></center></p>
 <h3 id="备份过程"><a href="#备份过程" class="headerlink" title="备份过程"></a>备份过程</h3><h4 id="切换到root"><a href="#切换到root" class="headerlink" title="切换到root"></a>切换到root</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
 <h4 id="进入根目录"><a href="#进入根目录" class="headerlink" title="进入根目录"></a>进入根目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /</span><br></pre></td></tr></table></figure>
 <h4 id="执行打包命令"><a href="#执行打包命令" class="headerlink" title="执行打包命令"></a>执行打包命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -cvpzf /media/ldy/6482108A82/backup1.tgz --exclude=/proc --exclude=/lost+found --exclude=/tmp --exclude=/sys --exclude=/media --exclude=/home /</span><br></pre></td></tr></table></figure>

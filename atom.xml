@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://buptldy.github.io/"/>
-  <updated>2016-08-30T14:47:23.598Z</updated>
+  <updated>2016-09-10T16:19:18.509Z</updated>
   <id>http://buptldy.github.io/</id>
   
   <author>
@@ -20,13 +20,12 @@
     <link href="http://buptldy.github.io/2016/08/30/2016-08-30-%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BD%95deepin%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
     <id>http://buptldy.github.io/2016/08/30/2016-08-30-长期记录deepin使用过程中碰到的问题及解决方法/</id>
     <published>2016-08-30T02:00:00.000Z</published>
-    <updated>2016-08-30T14:47:23.598Z</updated>
+    <updated>2016-09-10T16:19:18.509Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/25403365.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-11/90739124.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;系统备份及还原&quot;&gt;&lt;a href=&quot;#系统备份及还原&quot; class=&quot;headerlink&quot; title=&quot;系统备份及还原&quot;&gt;&lt;/a&gt;系统备份及还原&lt;/h2&gt;&lt;p&gt;深度操作系统，是一个Linux发行版，由武汉深之度科技有限公司开发。Deepin系统不仅仅注重系统和桌面环境的开发，同时还注重配套的基础软件开发，目前Deepin系统已经拥有相当多深度特色应用并与许多第三方厂商合作推出热门应用的Linux版本。以上来自维基百科，总的来说Deepin界面很漂亮，对新手也很友好，但就是有点不稳定加上我又爱折腾，所以有时会崩溃，所以进行系统备份还是很有必要的。&lt;/p&gt;
 &lt;p&gt;备份系统前我们先了解下Linux文件系统的目录结构，清楚哪些文件夹需要备份，哪些不需要。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/70789457.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-11/79598638.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;/p&gt;
 &lt;h3 id=&quot;备份过程&quot;&gt;&lt;a href=&quot;#备份过程&quot; class=&quot;headerlink&quot; title=&quot;备份过程&quot;&gt;&lt;/a&gt;备份过程&lt;/h3&gt;&lt;h4 id=&quot;切换到root&quot;&gt;&lt;a href=&quot;#切换到root&quot; class=&quot;headerlink&quot; title=&quot;切换到root&quot;&gt;&lt;/a&gt;切换到root&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo su&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;进入根目录&quot;&gt;&lt;a href=&quot;#进入根目录&quot; class=&quot;headerlink&quot; title=&quot;进入根目录&quot;&gt;&lt;/a&gt;进入根目录&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cd /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h4 id=&quot;执行打包命令&quot;&gt;&lt;a href=&quot;#执行打包命令&quot; class=&quot;headerlink&quot; title=&quot;执行打包命令&quot;&gt;&lt;/a&gt;执行打包命令&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;tar -cvpzf /media/ldy/6482108A82/backup1.tgz --exclude=/proc --exclude=/lost+found --exclude=/tmp --exclude=/sys --exclude=/media --exclude=/home /&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -64,7 +63,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://7xrn7f.com1.z0.glb.clouddn.com/16-8-30/25403365.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-11/90739124.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
