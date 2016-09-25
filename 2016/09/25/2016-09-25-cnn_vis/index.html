@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Python,Data Structure," />
+  <meta name="keywords" content="Deep Learning,CNN," />
 
 
 
@@ -61,20 +61,36 @@
 
 <meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python实现单链表">
-<meta property="og:url" content="http://buptldy.github.io/2016/05/09/2016-05-09-Python链表实现/index.html">
+<meta property="og:title" content="Ways for Visualizing Convolutional Networks">
+<meta property="og:url" content="http://buptldy.github.io/2016/09/25/2016-09-25-cnn_vis/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
 <meta property="og:description">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/62221771.jpg">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/37737204.jpg">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/39620482.jpg">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/89034482.jpg">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/28270792.jpg">
-<meta property="og:updated_time" content="2016-05-09T12:02:46.660Z">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/%E9%80%89%E5%8C%BA_005.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/80287570.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/38360122.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/18035393.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/46888988.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/70836148.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/23256006.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/89427613.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-19/45188603.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-21/40364595.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-22/81010256.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-22/31659955.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-22/60627433.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-22/72860217.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/93123483.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/40419664.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/18649599.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/14566819.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/11926968.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-9-19/64712899.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/%E9%80%89%E5%8C%BA_006.jpg">
+<meta property="og:updated_time" content="2016-09-25T14:50:57.340Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python实现单链表">
+<meta name="twitter:title" content="Ways for Visualizing Convolutional Networks">
 <meta name="twitter:description">
-<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/62221771.jpg">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/%E9%80%89%E5%8C%BA_005.jpg">
 
 
 
@@ -92,7 +108,7 @@
   };
 </script>
 
-  <title> Python实现单链表 | Ldy's Blog </title>
+  <title> Ways for Visualizing Convolutional Networks | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -277,7 +293,7 @@
             
             
               
-                Python实现单链表
+                Ways for Visualizing Convolutional Networks
               
             
           </h1>
@@ -289,8 +305,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-09T11:00:00+08:00" content="2016-05-09">
-              2016-05-09
+            <time itemprop="dateCreated" datetime="2016-09-25T10:00:00+08:00" content="2016-09-25">
+              2016-09-25
             </time>
           </span>
 
@@ -300,8 +316,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/09/2016-05-09-Python链表实现/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/2016-05-09-Python链表实现/" itemprop="commentsCount"></span>
+                <a href="/2016/09/25/2016-09-25-cnn_vis/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/25/2016-09-25-cnn_vis/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -313,7 +329,7 @@
 
           
           
-             <span id="/2016/05/09/2016-05-09-Python链表实现/" class="leancloud_visitors" data-flag-title="Python实现单链表">
+             <span id="/2016/09/25/2016-09-25-cnn_vis/" class="leancloud_visitors" data-flag-title="Ways for Visualizing Convolutional Networks">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -334,31 +350,65 @@
       
 
       
-        <center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/62221771.jpg" alt=""><br></center><br><a id="more"></a><br><br><br><br>链表中最简单的一种是单向链表，它包含两个域，一个信息域和一个指针域。这个链接指向列表中的下一个节点，而最后一个节点则指向一个空值。一个单向链表的节点被分成两个部分。第一个部分保存或者显示关于节点的信息，第二个部分存储下一个节点的地址。单向链表只可向一个方向遍历。<br><br><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/37737204.jpg" alt=""><br></center>
-
-<h1 id="链表节点类的实现"><a href="#链表节点类的实现" class="headerlink" title="链表节点类的实现"></a>链表节点类的实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,initdata)</span>:</span></span><br><span class="line">        self.data = initdata</span><br><span class="line">        self.next = <span class="keyword">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getData</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.data</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getNext</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.next</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setData</span><span class="params">(self,newdata)</span>:</span></span><br><span class="line">        self.data = newdata</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setNext</span><span class="params">(self,newnext)</span>:</span></span><br><span class="line">        self.next = newnext</span><br></pre></td></tr></table></figure>
-<p>生成一个节点对象：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>temp = Node(<span class="number">93</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>temp.getData()</span><br><span class="line"><span class="number">93</span></span><br></pre></td></tr></table></figure>
-<p>结构如下图所示：</p>
-<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/39620482.jpg" alt=""><br></center>
-
-<h1 id="链表类的实现"><a href="#链表类的实现" class="headerlink" title="链表类的实现"></a>链表类的实现</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">UnorderedList</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.head = <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
-<p>新建一个链表对象：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist = UnorderedList()</span><br></pre></td></tr></table></figure></p>
-<h1 id="往链表前端中加入节点"><a href="#往链表前端中加入节点" class="headerlink" title="往链表前端中加入节点"></a>往链表前端中加入节点</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self,item)</span>:</span></span><br><span class="line">    temp = Node(item)</span><br><span class="line">    temp.setNext(self.head)</span><br><span class="line">    self.head = temp</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist.add(<span class="number">31</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist.add(<span class="number">77</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist.add(<span class="number">17</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist.add(<span class="number">93</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist.add(<span class="number">26</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>mylist.add(<span class="number">54</span>)</span><br></pre></td></tr></table></figure>
-<p>现在链表结构如下图所示：</p>
-<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/89034482.jpg" alt=""><br></center>
-
-<h1 id="在链表尾端添加节点"><a href="#在链表尾端添加节点" class="headerlink" title="在链表尾端添加节点"></a>在链表尾端添加节点</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">append</span><span class="params">(self,item)</span>:</span></span><br><span class="line">    temp=Node(item)</span><br><span class="line">    <span class="keyword">if</span> self.head == <span class="keyword">None</span>:</span><br><span class="line">        self.head=item</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        current=self.head</span><br><span class="line">        <span class="keyword">while</span> current.getNext()!=<span class="keyword">None</span>:</span><br><span class="line">            current=current.getNext</span><br><span class="line">        current.setNext(temp)</span><br></pre></td></tr></table></figure>
-<h1 id="链表的长度计算"><a href="#链表的长度计算" class="headerlink" title="链表的长度计算"></a>链表的长度计算</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></span><br><span class="line">    count=<span class="number">0</span></span><br><span class="line">    current=self.head</span><br><span class="line">    <span class="keyword">while</span> current.getNext !=<span class="keyword">None</span>:</span><br><span class="line">        count=count+<span class="number">1</span></span><br><span class="line">        current=current.getNext</span><br></pre></td></tr></table></figure>
-<p>计算过程如下图所示：</p>
-<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/28270792.jpg" alt=""><br></center>
-
-<h1 id="寻找是否存在某一节点"><a href="#寻找是否存在某一节点" class="headerlink" title="寻找是否存在某一节点"></a>寻找是否存在某一节点</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">serch</span><span class="params">(self,item)</span>:</span></span><br><span class="line">    current=self.head</span><br><span class="line">    <span class="keyword">while</span> current.getNext()!=<span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">if</span> current.getData==item:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            current=current.getNext()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br></pre></td></tr></table></figure>
-<h1 id="删除某一节点"><a href="#删除某一节点" class="headerlink" title="删除某一节点"></a>删除某一节点</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove</span><span class="params">(self,item)</span>:</span></span><br><span class="line">    current=self.head</span><br><span class="line">    pre=<span class="keyword">None</span></span><br><span class="line">    <span class="keyword">while</span> current!=<span class="keyword">None</span>:</span><br><span class="line">        <span class="keyword">if</span> current.getData()==item:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> pre:</span><br><span class="line">                self.head=current.getNext()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                pre.setNext(current.getNext())</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pre=current</span><br><span class="line">            current=current.getNext()</span><br></pre></td></tr></table></figure>
-<h1 id="链表反转"><a href="#链表反转" class="headerlink" title="链表反转"></a>链表反转</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rev</span><span class="params">(self)</span>:</span></span><br><span class="line">    pre=<span class="keyword">None</span></span><br><span class="line">    current=self.head</span><br><span class="line">    <span class="keyword">while</span> current!=<span class="keyword">None</span>:</span><br><span class="line">        next=current.getNext()</span><br><span class="line">        current.setNext=pre</span><br><span class="line">        pre=current</span><br><span class="line">        curren=next</span><br><span class="line">    <span class="keyword">return</span> pre</span><br></pre></td></tr></table></figure>
-<h1 id="链表成对调换"><a href="#链表成对调换" class="headerlink" title="链表成对调换"></a>链表成对调换</h1><p>例如：<code>1-&gt;2-&gt;3-&gt;4</code>转换成<code>2-&gt;1-&gt;4-&gt;3</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pairswap</span><span class="params">(self)</span>:</span></span><br><span class="line">    curren=self.head</span><br><span class="line">    <span class="keyword">while</span> curren!=<span class="keyword">None</span> <span class="keyword">and</span> curren.getNext().getNext()!=<span class="keyword">None</span>:</span><br><span class="line">        temp=curren.getData()</span><br><span class="line">        curren.setData(curren.getNext().getData())</span><br><span class="line">        curren.getNext().setData(temp)</span><br><span class="line">        curren=curren.getNext().getNext()</span><br></pre></td></tr></table></figure>
+        <p><img src="http://7xritj.com1.z0.glb.clouddn.com/%E9%80%89%E5%8C%BA_005.jpg" alt=""><br><a id="more"></a><br>近年来，卷积神经网络（CNN）在海量数据的物体分类、识别取得了巨大的成功，但是我们对CNN为什么能够取得这么好的效果以及其中间层所计算得到的特征的理解却是远远落后与CNN的应用。更多的时候CNN对于我们来说就像个黑盒子，输入数据和便签进行训练，然后就可以拟合出我们想要的结果。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/80287570.jpg" alt=""></p>
+<p>如果不能弄明白CNN为什么能够工作的这么好，构建一个好的CNN模型就只能靠试错。为了对CNN有个直观的了解，近年来有许多工作围绕着CNN可视化来展开。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/38360122.jpg" alt=""></p>
+<p>目前CNN的可视化方法主要分为两种：</p>
+<p>(1) 前向计算可视化</p>
+<p>通过前向计算直接可视化深度卷积网络每层的feature map，然后观察feature map的数值变化。一个训练成功的CNN网络，其feature map的值伴随网络深度的增加，会越来越稀疏。</p>
+<p>(2)反向计算可视化</p>
+<p>反向信号向后传播将低维的feature maps 还原到原图像空间，可视化该feature map被原图哪部分特征激活，从而理解该feature map从原图像学习了何种特征。</p>
+<p>本文后面的内容也主要围绕这两方面展开。</p>
+<h2 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h2><p>在介绍一些具体的可视化方法之前，我们先介绍一下我们使用的模型,我们使用的网络是经过CaffeNet微调，用来分类21类光学遥感图像的模型，具体内容可参考<a href="http://buptldy.github.io/2016/06/12/2016-06-12-CNN%E5%9C%A8%E5%85%89%E5%AD%A6%E9%81%A5%E6%84%9F%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/">CNN在光学遥感图像上的应用</a>。</p>
+<p>CaffeNet其实就是AlexNet在Caffe上的实现，为了适应我们具体的分类任务，输出层改为21个节点。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-23/18035393.jpg" alt=""></p>
+<p>其中要分类的21类光学遥感图像如下图所示：</p>
+<p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-22/46888988.jpg" alt=""></p>
+<h2 id="前向计算可视化"><a href="#前向计算可视化" class="headerlink" title="前向计算可视化"></a>前向计算可视化</h2><h3 id="特征可视化"><a href="#特征可视化" class="headerlink" title="特征可视化"></a>特征可视化</h3><p>通过可视化CNN计算得到的特征通常是大家都能想到的事情，通常第一层能提取到的特征能够和图像对应上，但是到了CNN的更高层，提取到的特征就变的更加抽象，不容易解释。</p>
+<p>如下图所示，Input为输入图像，Filter为CNN第一层卷积层所学<br>习到的参数，可视化后其实就是一个个抽取边缘的滤波器，然后Output为CNN第一层卷积层所提取到的特征，从图中可以看出来输入图像经过CNN第一层卷积层之后得到了边缘特征。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/70836148.jpg" alt=""></p>
+<p>但是CNN高层滤波器对前面输入特征的组合，提取得到的高维特征就不怎么好解释了，如下图所示，顺着箭头方向依次为上述输入图片通过CNN高层卷积层所提取到的特征，可以发现特征随着网络的加深，会越来越抽象、越来越稀疏。</p>
+<p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/23256006.jpg" alt=""></p>
+<h3 id="t-SNE-visualization"><a href="#t-SNE-visualization" class="headerlink" title="t-SNE visualization"></a>t-SNE visualization</h3><p>有时为了体现CNN提取到特征的相关性，我们可以把提取到的特征经行t-SNE降维，然后在二维平面显示出来，如下图所示。从下图可以看出，视觉上看上去相似的图片，在降维后在平面上也很靠近。我们提取的是fc7层的特征（也称为CNN-Code）,t-SNE降维为2维向量显示如下。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-18/89427613.jpg" alt=""></p>
+<h3 id="遮挡实验"><a href="#遮挡实验" class="headerlink" title="遮挡实验"></a>遮挡实验</h3><p>如下图，左边的图为输入图像，注意上边的黑色遮挡区域，我们在输入图像上逐渐移动遮挡区域，然后记录对应输入图像所对应的正确类别的输出概率。很容易理解，当我们遮挡住输入图像的关键区域时，对应的正确输出概率会很低，从下图也可以看出来，当遮挡住飞机的关键部位时，CNN判别为飞机场的概率下降到0.2以下。说明CNN模型确实学习到了物体的关键部分，而不是只依靠一些上下文环境，遮挡实验的代码可参考：<a href="https://github.com/BUPTLdy/occlusion_experiments" target="_blank" rel="external">occlusion_experiments</a>。</p>
+<p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-19/45188603.jpg" alt=""></p>
+<h2 id="反向计算可视化"><a href="#反向计算可视化" class="headerlink" title="反向计算可视化"></a>反向计算可视化</h2><p>前面介绍的几种前向计算可视化的方法都比较好理解，但是还是不能解释CNN深层提取到的特征究竟是什么，究竟对应了输入图像的哪一部分。</p>
+<h3 id="反向求导可视化"><a href="#反向求导可视化" class="headerlink" title="反向求导可视化"></a>反向求导可视化</h3><p>在探讨对图像反向求导可视化之前，我们先看看那一个线性分类器，公式如下：</p>
+<p>$$f(x_i)=Wx_i+b$$</p>
+<p>$W$为线性分类器权值、$x_i$表示一幅输入图像，$b$为偏置。如下图所示，$W$为线性分类器的权值维度为<code>[3×4]</code>，3表示要分类的数目，4表示为图片的每一个像素值打分;其中$x_i$为一幅图像展成的列向量，维度为<code>[4×1]</code>;$b$的维度为<code>[3×1]</code>,所以$Wx_i+b$得到一个<code>[3×1]</code>的向量表示当前输入图像$x_i$在每个类别上的打分，其中最高分预判为输入图像的类别。通过上述分析<br>可知$W$值决定了图像中的对应像素的重要性，某一类中某个像素越重要，则其对应的权值越大。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-21/40364595.jpg" alt=""></p>
+<p>对于CNN来说因为有很多层非线性函数，$f(x_i)$为一个高度非线性话的分类器，不过我们可以把它看做一个整体，近似的等于一个线性分类器：</p>
+<p>$$f(x_i) \approx Wx_i+b$$</p>
+<p>然后我们可以对某个输入图片$x_0$上对上式求导，得打权值$W$，也就得到了对应输入图片的重要性大小。</p>
+<p>$$W = \frac{\partial f(x_i)}{\partial I}\vert _{x_0}$$</p>
+<p>产生的图像如下图所示，不是很明显，仔细看能看出飞机的轮廓。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-22/81010256.jpg" alt=""></p>
+<h3 id="欺骗CNN网络"><a href="#欺骗CNN网络" class="headerlink" title="欺骗CNN网络"></a>欺骗CNN网络</h3><p>上面讨论了通过对图片求导来得到对应图片像素的重要性，我们可以利用上面求到的图像导数来欺骗CNN网络，如下图所示坐上图为输入图片类别为<code>airplane</code>，然后给定一个目标类别<code>denseresidential</code>,我们通过对输入图像求梯度上升来最大化目标类别的输出，求得的梯度累加到输入图像上，知道CNN判别为目标类别。下图中我们可以看出，上面的两个图人眼看起来都是<code>airplane</code>类别，差别看起来也不大，但是CNN判别第二张图为<code>denseresidential</code>类比，从某种意义上说我们欺骗了CNN。</p>
+<p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-22/31659955.jpg" alt=""></p>
+<h3 id="Class-Model-Visualisation"><a href="#Class-Model-Visualisation" class="headerlink" title="Class Model Visualisation"></a>Class Model Visualisation</h3><p>对于一个训练好的CNN模型，我们可以通过随机产生一张带噪声的图片然后在我们感兴趣的类别上通过梯度上升逐渐优化输入图片可以产生对应类别的图片。</p>
+<p>更一般的, 让$I$ 表示随机产生的噪声图片， $y$ 表示我们感兴趣的类别， $s_y(I)$ 表示CNN 对图片 $I$ 在类别 $y$上的打分。 我们希望能够产生的图片 $I^*$ 使得在类别 $y$ 上打分最高。</p>
+<p>$$<br>I^* = \arg\max_I s_y(I) - R(I)<br>$$</p>
+<p>其中 $R$ 为正则项， 我们可以通过梯度上升法来求解 。</p>
+<p>产生的图片如下所示，可以看出产生的图像对目标的分类又一定的旋转不变形和尺度不变性。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-22/60627433.jpg" alt=""><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-22/72860217.jpg" alt=""></p>
+<h3 id="Feature-Inversion"><a href="#Feature-Inversion" class="headerlink" title="Feature Inversion"></a>Feature Inversion</h3><p>为了CNN怎么去学习和理解特征，最近也有文章提出通过提取到的特征重建原图像的方法。我们在训练好的CNN模型的基础上，可以通过对图像的求导来实现。具体来说，给定图片<br>$I$, 让$\phi_\ell(I)$ 表示卷积神经$\phi$中 $\ell$ 层所提取到的特征。我们想要求得一张图片$I^*$ 在网络$\phi$中的$\ell$ 层和图片 $I$有相同的特征。</p>
+<p>$$<br>I^* = \arg\min_{I’} |\phi_\ell(I) - \phi_\ell(I’)|_2^2 + R(I’)<br>$$</p>
+<p>其中 $|\cdot|_2^2$ 为欧式距离，$R$ 表示正则项。</p>
+<p>下图展示了从不同层提取的特征重建原图的结果，可以看出层数越深，重建出的结果和原图差异越大，因为CNN在特取特征的过程中，还有一个压缩学习图片最本质特征的作用，所以越往后层，重建得到图片越是代表原图片的本质。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/93123483.jpg" alt=""></p>
+<h3 id="DeepDream"><a href="#DeepDream" class="headerlink" title="DeepDream"></a>DeepDream</h3><p>2015年夏天，google发布了一种从神经网络产生图片的新方法，原理其实很简单，就是从神经网络中的某一层提取特征，然后让这一层的反向梯度等于这一层提取到的特征，然后在反向传导回图像，通常会选择在卷积层进行操作，所以可以产生任意分辨率的图像。</p>
+<p>过程如下，我们先对CNN输入一张原图<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/40419664.jpg" alt=""><br>然后选择激活某一层的特征，如果选择的是高层特征，反向传递得到的结果如下，高层特征反向传递得到了一些复杂的模式；</p>
+<p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/18649599.jpg" alt=""><br>如果是低层的特征，则得到的是一些线条，纹理特征。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/14566819.jpg" alt=""><br>如果我们把上述输出的结果当成输入再次传入，经过一定次数的循环，一些模式会得到增强，输出结果看起来有点惊悚:<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-23/11926968.jpg" alt=""></p>
+<h3 id="反卷积可视化"><a href="#反卷积可视化" class="headerlink" title="反卷积可视化"></a>反卷积可视化</h3><p>反卷积顾名思义是和卷积相反的操作，使用反卷积进行特征的可视化，可以理解为把得到的特征映射回原图像的输入空间。反卷积网络如下图所示，其中下图左边为反卷积网络、右边为卷积网络。其中反卷积网络中的反卷积层和卷积网络中卷积层对应，Unpooling层和pooling层对应。卷积网络是输入图像提取特征，而反卷积网络是从特征映射到输入图像。</p>
+<p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-9-19/64712899.jpg" alt=""></p>
+<p>流程如上图所示：</p>
+<h4 id="正常卷积过程convnet："><a href="#正常卷积过程convnet：" class="headerlink" title="正常卷积过程convnet："></a>正常卷积过程convnet：</h4><p>如图右侧黑框流程图部分，上一层pooled的特征图，通过本层的filter卷积后，形成本层的卷积特征，然后经过ReLU函数进行非线性变换的到Recitifed特征图，再经过本层的max-pooling操作，完成本层的卷积池化操作；之后传入下一层。本层需要记录在执行max-pooling操作时，每个pooing局域内最大值的位置</p>
+<p>选择激活值：</p>
+<p>为了理解某一个给定的pooling特征激活值，先把特征中其他的激活值设置为0；然后利用deconvnet把这个给定的激活值映射到初始像素层。</p>
+<h4 id="反卷积过程deconvnet："><a href="#反卷积过程deconvnet：" class="headerlink" title="反卷积过程deconvnet："></a>反卷积过程deconvnet：</h4><p>Unpooling</p>
+<p>顾名思义就是反pooling过程，由于pooling是不可逆的，所以unpooling只是正常pooling的一种近似；通过记录正常pooling时的位置，把传进来的特征按照记录的方式重新“摆放”，来近似pooling前的卷基层特征。如图中彩色部分</p>
+<p>Filtering</p>
+<p>利用卷积过程filter的转置（实际上就是水平和数值翻转filter）版本来计算卷积前的特征图；从而形成重构的特征。从一个单独的激活值获得的重构图片类似原始图片的一个部分。</p>
+<p>反卷积反池化过程如下所示：<br><img src="http://7xritj.com1.z0.glb.clouddn.com/%E9%80%89%E5%8C%BA_006.jpg" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过CNN可视化，我们可以看到底层卷积网络学习到的是一些边缘、颜色块等信息；高层网络通过对底层网络抽取到的特征经行组合，学习到了更加复杂以及具有不变性的特征。特征的可视化都是通过对图片方向求导来计算，通过设置不同的优化函数，梯度下降求导来达到可视化的目的。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://arxiv.org/abs/1412.0035" target="_blank" rel="external">Understanding deep image representations by inverting them.</a></p>
+<p><a href="https://arxiv.org/abs/1412.1897" target="_blank" rel="external">Deep neural networks are easily fooled: High confidence predictions for unrecognizable images.</a></p>
+<p><a href="https://arxiv.org/abs/1312.6034" target="_blank" rel="external">Deep inside convolutional networks: Visualising image classification models and saliency maps.</a></p>
+<p><a href="http://arxiv.org/abs/1506.06579" target="_blank" rel="external">Understanding neural networks through deep visualization.</a></p>
+<p><a href="https://arxiv.org/abs/1311.2901" target="_blank" rel="external">Visualizing and understanding convolutional networks.</a></p>
 
       
     </div>
@@ -373,9 +423,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
+            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
           
-            <a href="/tags/Data-Structure/" rel="tag">#Data Structure</a>
+            <a href="/tags/CNN/" rel="tag">#CNN</a>
           
         </div>
       
@@ -384,17 +434,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/09/2016-05-09-Python实现二叉搜索树/" rel="next" title="Python实现二叉搜索树">
-                <i class="fa fa-chevron-left"></i> Python实现二叉搜索树
+              <a href="/2016/08/30/2016-08-30-长期记录deepin使用过程中碰到的问题及解决方法/" rel="next" title="记录deepin使用过程中碰到的问题及解决方法">
+                <i class="fa fa-chevron-left"></i> 记录deepin使用过程中碰到的问题及解决方法
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/09/2016-05-09-Python实现常见排序算法/" rel="prev" title="Python实现常见排序算法">
-                Python实现常见排序算法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,10 +455,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/09/2016-05-09-Python链表实现/"
-     data-title="Python实现单链表"
+        <div class="ds-share flat" data-thread-key="2016/09/25/2016-09-25-cnn_vis/"
+     data-title="Ways for Visualizing Convolutional Networks"
      data-content=""
-     data-url="http://buptldy.github.io/2016/05/09/2016-05-09-Python链表实现/">
+     data-url="http://buptldy.github.io/2016/09/25/2016-09-25-cnn_vis/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -439,8 +485,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/09/2016-05-09-Python链表实现/"
-           data-title="Python实现单链表" data-url="http://buptldy.github.io/2016/05/09/2016-05-09-Python链表实现/">
+      <div class="ds-thread" data-thread-key="2016/09/25/2016-09-25-cnn_vis/"
+           data-title="Ways for Visualizing Convolutional Networks" data-url="http://buptldy.github.io/2016/09/25/2016-09-25-cnn_vis/">
       </div>
     
   </div>
@@ -563,7 +609,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#链表节点类的实现"><span class="nav-number">1.</span> <span class="nav-text">链表节点类的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表类的实现"><span class="nav-number">2.</span> <span class="nav-text">链表类的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#往链表前端中加入节点"><span class="nav-number">3.</span> <span class="nav-text">往链表前端中加入节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在链表尾端添加节点"><span class="nav-number">4.</span> <span class="nav-text">在链表尾端添加节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表的长度计算"><span class="nav-number">5.</span> <span class="nav-text">链表的长度计算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#寻找是否存在某一节点"><span class="nav-number">6.</span> <span class="nav-text">寻找是否存在某一节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除某一节点"><span class="nav-number">7.</span> <span class="nav-text">删除某一节点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表反转"><span class="nav-number">8.</span> <span class="nav-text">链表反转</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表成对调换"><span class="nav-number">9.</span> <span class="nav-text">链表成对调换</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型介绍"><span class="nav-number">1.</span> <span class="nav-text">模型介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前向计算可视化"><span class="nav-number">2.</span> <span class="nav-text">前向计算可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特征可视化"><span class="nav-number">2.1.</span> <span class="nav-text">特征可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#t-SNE-visualization"><span class="nav-number">2.2.</span> <span class="nav-text">t-SNE visualization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遮挡实验"><span class="nav-number">2.3.</span> <span class="nav-text">遮挡实验</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反向计算可视化"><span class="nav-number">3.</span> <span class="nav-text">反向计算可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反向求导可视化"><span class="nav-number">3.1.</span> <span class="nav-text">反向求导可视化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#欺骗CNN网络"><span class="nav-number">3.2.</span> <span class="nav-text">欺骗CNN网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-Model-Visualisation"><span class="nav-number">3.3.</span> <span class="nav-text">Class Model Visualisation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Inversion"><span class="nav-number">3.4.</span> <span class="nav-text">Feature Inversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DeepDream"><span class="nav-number">3.5.</span> <span class="nav-text">DeepDream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反卷积可视化"><span class="nav-number">3.6.</span> <span class="nav-text">反卷积可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#正常卷积过程convnet："><span class="nav-number">3.6.1.</span> <span class="nav-text">正常卷积过程convnet：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反卷积过程deconvnet："><span class="nav-number">3.6.2.</span> <span class="nav-text">反卷积过程deconvnet：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
