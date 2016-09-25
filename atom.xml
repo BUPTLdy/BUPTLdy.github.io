@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://buptldy.github.io/"/>
-  <updated>2016-09-25T14:50:57.340Z</updated>
+  <updated>2016-09-25T14:53:05.980Z</updated>
   <id>http://buptldy.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://buptldy.github.io/2016/09/25/2016-09-25-cnn_vis/"/>
     <id>http://buptldy.github.io/2016/09/25/2016-09-25-cnn_vis/</id>
     <published>2016-09-25T02:00:00.000Z</published>
-    <updated>2016-09-25T14:50:57.340Z</updated>
+    <updated>2016-09-25T14:53:05.980Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/%E9%80%89%E5%8C%BA_005.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;近年来，卷积神经网络（CNN）在海量数据的物体分类、识别取得了巨大的成功，但是我们对CNN为什么能够取得这么好的效果以及其中间层所计算得到的特征的理解却是远远落后与CNN的应用。更多的时候CNN对于我们来说就像个黑盒子，输入数据和便签进行训练，然后就可以拟合出我们想要的结果。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-18/80287570.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;如果不能弄明白CNN为什么能够工作的这么好，构建一个好的CNN模型就只能靠试错。为了对CNN有个直观的了解，近年来有许多工作围绕着CNN可视化来展开。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-18/38360122.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -66,7 +66,7 @@
 &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-23/18649599.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;如果是低层的特征，则得到的是一些线条，纹理特征。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-23/14566819.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;如果我们把上述输出的结果当成输入再次传入，经过一定次数的循环，一些模式会得到增强，输出结果看起来有点惊悚:&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-23/11926968.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h3 id=&quot;反卷积可视化&quot;&gt;&lt;a href=&quot;#反卷积可视化&quot; class=&quot;headerlink&quot; title=&quot;反卷积可视化&quot;&gt;&lt;/a&gt;反卷积可视化&lt;/h3&gt;&lt;p&gt;反卷积顾名思义是和卷积相反的操作，使用反卷积进行特征的可视化，可以理解为把得到的特征映射回原图像的输入空间。反卷积网络如下图所示，其中下图左边为反卷积网络、右边为卷积网络。其中反卷积网络中的反卷积层和卷积网络中卷积层对应，Unpooling层和pooling层对应。卷积网络是输入图像提取特征，而反卷积网络是从特征映射到输入图像。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-19/64712899.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;流程如上图所示：&lt;/p&gt;
+&lt;p&gt;流程如上图所示。&lt;/p&gt;
 &lt;h4 id=&quot;正常卷积过程convnet：&quot;&gt;&lt;a href=&quot;#正常卷积过程convnet：&quot; class=&quot;headerlink&quot; title=&quot;正常卷积过程convnet：&quot;&gt;&lt;/a&gt;正常卷积过程convnet：&lt;/h4&gt;&lt;p&gt;如图右侧黑框流程图部分，上一层pooled的特征图，通过本层的filter卷积后，形成本层的卷积特征，然后经过ReLU函数进行非线性变换的到Recitifed特征图，再经过本层的max-pooling操作，完成本层的卷积池化操作；之后传入下一层。本层需要记录在执行max-pooling操作时，每个pooing局域内最大值的位置&lt;/p&gt;
 &lt;p&gt;选择激活值：&lt;/p&gt;
 &lt;p&gt;为了理解某一个给定的pooling特征激活值，先把特征中其他的激活值设置为0；然后利用deconvnet把这个给定的激活值映射到初始像素层。&lt;/p&gt;
