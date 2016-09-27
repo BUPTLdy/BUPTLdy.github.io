@@ -1094,7 +1094,7 @@ probabilities and labels:
     <link href="http://buptldy.github.io/2016/04/23/2016-04-23-Vim%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/"/>
     <id>http://buptldy.github.io/2016/04/23/2016-04-23-Vim命令备忘/</id>
     <published>2016-04-23T03:00:00.000Z</published>
-    <updated>2016-04-23T11:03:08.840Z</updated>
+    <updated>2016-09-27T01:05:46.746Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-23/88022819.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h2&gt;&lt;ol&gt;
@@ -1200,11 +1200,7 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Keras" scheme="http://buptldy.github.io/tags/Keras/"/>
-    
-      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
-    
-      <category term="Cuda" scheme="http://buptldy.github.io/tags/Cuda/"/>
+      <category term="Linux" scheme="http://buptldy.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -1529,9 +1525,9 @@ conn.close()
     </summary>
     
     
-      <category term="HOG" scheme="http://buptldy.github.io/tags/HOG/"/>
-    
       <category term="skimage" scheme="http://buptldy.github.io/tags/skimage/"/>
+    
+      <category term="HOG" scheme="http://buptldy.github.io/tags/HOG/"/>
     
   </entry>
   
@@ -1564,9 +1560,9 @@ conn.close()
     </summary>
     
     
-      <category term="Computer Vision" scheme="http://buptldy.github.io/tags/Computer-Vision/"/>
-    
       <category term="HOG" scheme="http://buptldy.github.io/tags/HOG/"/>
+    
+      <category term="Computer Vision" scheme="http://buptldy.github.io/tags/Computer-Vision/"/>
     
   </entry>
   
