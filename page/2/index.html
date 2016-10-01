@@ -273,6 +273,115 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/09/2016-05-09-Python链表实现/" itemprop="url">
+                  Python实现单链表
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-09T11:00:00+08:00" content="2016-05-09">
+              2016-05-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/09/2016-05-09-Python链表实现/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/2016-05-09-Python链表实现/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+
+          
+          
+             <span id="/2016/05/09/2016-05-09-Python链表实现/" class="leancloud_visitors" data-flag-title="Python实现单链表">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-5-9/62221771.jpg" alt=""><br></center><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/09/2016-05-09-Python链表实现/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/09/2016-05-09-Python实现二叉搜索树/" itemprop="url">
                   Python实现二叉搜索树
                 </a>
@@ -1240,115 +1349,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/31/2016-03-31-HOG论文总结/" itemprop="url">
-                  《Histograms of Oriented Gradients for Human Detection》论文笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-31T10:00:00+08:00" content="2016-03-31">
-              2016-03-31
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/31/2016-03-31-HOG论文总结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/2016-03-31-HOG论文总结/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-
-
-          
-          
-             <span id="/2016/03/31/2016-03-31-HOG论文总结/" class="leancloud_visitors" data-flag-title="《Histograms of Oriented Gradients for Human Detection》论文笔记">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">visitors </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="HOG算法概述"><a href="#HOG算法概述" class="headerlink" title="HOG算法概述"></a>HOG算法概述</h1><p>局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做 HOG 描述子。将检测窗口中的所有块的 HOG 描述子组合起来就形成了最终的特征向量,然后使用 SVM 分类器进行人体检测,见下图。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg" alt=""><br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/31/2016-03-31-HOG论文总结/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1394,7 +1394,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">33</span>
+              <span class="site-state-item-count">34</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
