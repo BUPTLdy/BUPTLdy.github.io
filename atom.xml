@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://buptldy.github.io/"/>
-  <updated>2016-10-01T11:54:42.827Z</updated>
+  <updated>2016-10-01T11:57:07.112Z</updated>
   <id>http://buptldy.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://buptldy.github.io/2016/10/01/2016-10-01-im2col/"/>
     <id>http://buptldy.github.io/2016/10/01/2016-10-01-im2col/</id>
     <published>2016-10-01T02:00:00.000Z</published>
-    <updated>2016-10-01T11:54:42.827Z</updated>
+    <updated>2016-10-01T11:57:07.112Z</updated>
     
     <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-10-1/61814949.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
@@ -155,11 +155,11 @@
   </entry>
   
   <entry>
-    <title>记录deepin使用过程中碰到的问题及解决方法</title>
-    <link href="http://buptldy.github.io/2016/08/30/2016-08-30-%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BD%95deepin%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://buptldy.github.io/2016/08/30/2016-08-30-长期记录deepin使用过程中碰到的问题及解决方法/</id>
+    <title>Linux Deepin Note</title>
+    <link href="http://buptldy.github.io/2016/08/30/2016-08-30-deepin/"/>
+    <id>http://buptldy.github.io/2016/08/30/2016-08-30-deepin/</id>
     <published>2016-08-30T02:00:00.000Z</published>
-    <updated>2016-09-10T16:19:18.509Z</updated>
+    <updated>2016-10-04T06:18:38.788Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-9-11/90739124.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;系统备份及还原&quot;&gt;&lt;a href=&quot;#系统备份及还原&quot; class=&quot;headerlink&quot; title=&quot;系统备份及还原&quot;&gt;&lt;/a&gt;系统备份及还原&lt;/h2&gt;&lt;p&gt;深度操作系统，是一个Linux发行版，由武汉深之度科技有限公司开发。Deepin系统不仅仅注重系统和桌面环境的开发，同时还注重配套的基础软件开发，目前Deepin系统已经拥有相当多深度特色应用并与许多第三方厂商合作推出热门应用的Linux版本。以上来自维基百科，总的来说Deepin界面很漂亮，对新手也很友好，但就是有点不稳定加上我又爱折腾，所以有时会崩溃，所以进行系统备份还是很有必要的。&lt;/p&gt;
@@ -212,11 +212,11 @@
   </entry>
   
   <entry>
-    <title>Batch Normalization实现</title>
-    <link href="http://buptldy.github.io/2016/08/18/2016-08-18-Batch_Normalization%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://buptldy.github.io/2016/08/18/2016-08-18-Batch_Normalization实现/</id>
+    <title>Implementation of Batch Normalization Layer</title>
+    <link href="http://buptldy.github.io/2016/08/18/2016-08-18-Batch_Normalization/"/>
+    <id>http://buptldy.github.io/2016/08/18/2016-08-18-Batch_Normalization/</id>
     <published>2016-08-18T02:00:00.000Z</published>
-    <updated>2016-08-18T08:15:39.885Z</updated>
+    <updated>2016-10-04T06:14:23.251Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-8-5/21841995.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -263,11 +263,11 @@
   </entry>
   
   <entry>
-    <title>购物评论情感分析的实现</title>
-    <link href="http://buptldy.github.io/2016/07/20/2016-07-20-%E8%B4%AD%E7%89%A9%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://buptldy.github.io/2016/07/20/2016-07-20-购物评论情感分析的实现/</id>
+    <title>Shopping Reviews sentiment analysis</title>
+    <link href="http://buptldy.github.io/2016/07/20/2016-07-20-sentiment%20analysis/"/>
+    <id>http://buptldy.github.io/2016/07/20/2016-07-20-sentiment analysis/</id>
     <published>2016-07-20T02:00:00.000Z</published>
-    <updated>2016-07-18T09:24:08.729Z</updated>
+    <updated>2016-10-04T06:13:08.270Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-7-18/19781698.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;情感分析是一种常见的自然语言处理（NLP）方法的应用，特别是在以提取文本的情感内容为目标的分类方法中。通过这种方式，情感分析可以被视为利用一些情感得分指标来量化定性数据的方法。尽管情绪在很大程度上是主观的，但是情感量化分析已经有很多有用的实践，比如企业分析消费者对产品的反馈信息，或者检测在线评论中的差评信息。&lt;/p&gt;
 &lt;p&gt;最简单的情感分析方法是利用词语的正负属性来判定。句子中的每个单词都有一个得分，乐观的单词得分为+1，悲观的单词则为-1。然后我们对句子中所有单词得分进行加总求和得到一个最终的情感总分。很明显，这种方法有许多局限之处，最重要的一点在于它忽略了上下文的信息。例如，在这个简易模型中，因为“not”的得分为-1，而“good”的得分为 +1，所以词组“not good”将被归类到中性词组中。但是“not good”通常是消极的。&lt;/p&gt;
@@ -314,11 +314,11 @@
   </entry>
   
   <entry>
-    <title>线性SVM及Softmax的随机梯度下降求解</title>
-    <link href="http://buptldy.github.io/2016/06/20/2016-06-20-%E7%BA%BF%E6%80%A7SVM%E5%8F%8ASoftmax%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B1%82%E8%A7%A3/"/>
-    <id>http://buptldy.github.io/2016/06/20/2016-06-20-线性SVM及Softmax的随机梯度下降求解/</id>
+    <title>Solve Linear Classifier by SGD</title>
+    <link href="http://buptldy.github.io/2016/06/20/2016-06-20-SVM%20Softmax%20SGD/"/>
+    <id>http://buptldy.github.io/2016/06/20/2016-06-20-SVM Softmax SGD/</id>
     <published>2016-06-20T02:00:00.000Z</published>
-    <updated>2016-06-20T13:56:49.082Z</updated>
+    <updated>2016-10-04T06:07:13.593Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-6-20/61070235.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;线性分类器&quot;&gt;&lt;a href=&quot;#线性分类器&quot; class=&quot;headerlink&quot; title=&quot;线性分类器&quot;&gt;&lt;/a&gt;线性分类器&lt;/h2&gt;&lt;p&gt;一个线性分类器的基本形式如下所示：&lt;br&gt;$$f(x_i,W,b)=Wx_i+b （1）$$&lt;br&gt;在上面的公式中，如果是对图像经行分类，$x_i$表示对一张图片展开成一个列向量维数为[D,1],矩阵&lt;strong&gt;W&lt;/strong&gt;维数为[K,D],向量&lt;strong&gt;b&lt;/strong&gt;维数为[K,1]。参数&lt;strong&gt;W&lt;/strong&gt;通常成为权值，&lt;strong&gt;b&lt;/strong&gt;为偏置。&lt;/p&gt;
@@ -397,11 +397,11 @@ iteration 400 / 500: loss 0.365702
   </entry>
   
   <entry>
-    <title>Python速度优化-Cython中numpy以及多线程的使用</title>
-    <link href="http://buptldy.github.io/2016/06/15/2016-06-15-Python%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96-Cython%E4%B8%ADnumpy%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>http://buptldy.github.io/2016/06/15/2016-06-15-Python速度优化-Cython中numpy以及多线程的使用/</id>
+    <title>Speed-up with Cython and Numpy in Python</title>
+    <link href="http://buptldy.github.io/2016/06/15/2016-06-15-Python%20Cython/"/>
+    <id>http://buptldy.github.io/2016/06/15/2016-06-15-Python Cython/</id>
     <published>2016-06-15T02:00:00.000Z</published>
-    <updated>2016-06-16T12:12:35.033Z</updated>
+    <updated>2016-10-04T05:52:53.761Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-6-15/20612896.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Cython代码和Python代码区别&quot;&gt;&lt;a href=&quot;#Cython代码和Python代码区别&quot; class=&quot;headerlink&quot; title=&quot;Cython代码和Python代码区别&quot;&gt;&lt;/a&gt;Cython代码和Python代码区别&lt;/h2&gt;&lt;p&gt;代码运行在&lt;a href=&quot;https://ipython.org/notebook.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;IPython-Notebook&lt;/a&gt;中，在IPython-Notebook中导入cython环境。&lt;/p&gt;
@@ -473,11 +473,11 @@ iteration 400 / 500: loss 0.365702
   </entry>
   
   <entry>
-    <title>CNN在光学遥感图像上的应用</title>
-    <link href="http://buptldy.github.io/2016/06/12/2016-06-12-CNN%E5%9C%A8%E5%85%89%E5%AD%A6%E9%81%A5%E6%84%9F%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/"/>
-    <id>http://buptldy.github.io/2016/06/12/2016-06-12-CNN在光学遥感图像上的应用/</id>
+    <title>Classification in Remote Sensing Optical Images by CNNs</title>
+    <link href="http://buptldy.github.io/2016/06/12/2016-06-12-CNN%20Remote%20Sensing%20Optical%20Images/"/>
+    <id>http://buptldy.github.io/2016/06/12/2016-06-12-CNN Remote Sensing Optical Images/</id>
     <published>2016-06-12T02:00:00.000Z</published>
-    <updated>2016-07-08T00:58:01.903Z</updated>
+    <updated>2016-10-04T05:50:48.736Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-6-11/17213122.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;CNN简介&quot;&gt;&lt;a href=&quot;#CNN简介&quot; class=&quot;headerlink&quot; title=&quot;CNN简介&quot;&gt;&lt;/a&gt;CNN简介&lt;/h2&gt;&lt;p&gt;从06年开始，深度结构学习方法（深度学习或者分层学习方法）作为机器学习领域的新的研究方向出现。由于芯片处理性能的巨大提升，数据爆炸性增长，在过去的短短几年时间，深度学习技术得到快速发展，已经深深的影响了学术领域，其研究涉及的应用领域包括计算机视觉、语音识别、对话语音识别、图像特征编码、语意表达分类、自然语言理解、手写识别、音频处理、信息检索、机器人学。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/96930177.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-22/75458021.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -528,11 +528,11 @@ iteration 400 / 500: loss 0.365702
   </entry>
   
   <entry>
-    <title>基于位置约束的图可视化</title>
-    <link href="http://buptldy.github.io/2016/06/11/2016-06-11-%E5%9F%BA%E4%BA%8E%E4%BD%8D%E7%BD%AE%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
-    <id>http://buptldy.github.io/2016/06/11/2016-06-11-基于位置约束的图可视化/</id>
+    <title>Force-Directed Graph Visualization Based in Location</title>
+    <link href="http://buptldy.github.io/2016/06/11/2016-06-11-Force-directed/"/>
+    <id>http://buptldy.github.io/2016/06/11/2016-06-11-Force-directed/</id>
     <published>2016-06-11T02:00:00.000Z</published>
-    <updated>2016-06-11T12:27:25.231Z</updated>
+    <updated>2016-10-04T05:45:31.767Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-6-11/65263838.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;任务介绍&quot;&gt;&lt;a href=&quot;#任务介绍&quot; class=&quot;headerlink&quot; title=&quot;任务介绍&quot;&gt;&lt;/a&gt;任务介绍&lt;/h2&gt;&lt;p&gt;图是表现社交网络、知识图谱等关系的主要形式，对图的节点进行布局是图可视化的重要内容。然而，现有方法大多在布局时没有考虑节点地理位置对布局的约束。比如在POI点评应用中，我们希望一个“餐厅”节点出现在它实际的地理位置上，或者在热点事件应用中，希望“北京”节点出现在“上海”节点的北方（上方）。在布局中加入地理位置约束，能够使图的可视化结果更好的与位置关联，包含地理信息相关隐喻，在增加其承载信息量的同时，更好的辅助地理空间数据的可视分析。&lt;br&gt;任务1：调研图可视化中节点布局相关方法，特别是力引导方法和二分图布局方法，形成小综述；&lt;br&gt;任务2：将二分图中一类节点加入绝对地理位置或彼此间相对位置不变作为约束条件，改进一种基于力引导布局的二分图可视化方法，给出模型、公式、算法流程描述；&lt;br&gt;任务3：基于给定数据集（两类节点，一类节点包含地理坐标），选择一种可视化工具（如VTK、D3等），对上述改进算法进行实现。&lt;/p&gt;
@@ -585,11 +585,11 @@ iteration 400 / 500: loss 0.365702
   </entry>
   
   <entry>
-    <title>Python实现常见排序算法</title>
-    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
-    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python实现常见排序算法/</id>
+    <title>Basic Sorting Algorithms Implemented In Python</title>
+    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%20sorting/"/>
+    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python sorting/</id>
     <published>2016-05-09T04:00:00.000Z</published>
-    <updated>2016-05-09T11:57:53.710Z</updated>
+    <updated>2016-10-04T05:31:41.975Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-9/51291175.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;冒泡排序&quot;&gt;&lt;a href=&quot;#冒泡排序&quot; class=&quot;headerlink&quot; title=&quot;冒泡排序&quot;&gt;&lt;/a&gt;冒泡排序&lt;/h1&gt;&lt;p&gt;冒泡排序比较简单，主要过程如下：&lt;/p&gt;
@@ -639,11 +639,11 @@ iteration 400 / 500: loss 0.365702
   </entry>
   
   <entry>
-    <title>Python实现单链表</title>
-    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python链表实现/</id>
+    <title>Implementing a Singly Linked List in Python</title>
+    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%20linked%20list/"/>
+    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python linked list/</id>
     <published>2016-05-09T03:00:00.000Z</published>
-    <updated>2016-05-09T12:02:46.660Z</updated>
+    <updated>2016-10-04T05:25:36.558Z</updated>
     
     <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-9/62221771.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;链表中最简单的一种是单向链表，它包含两个域，一个信息域和一个指针域。这个链接指向列表中的下一个节点，而最后一个节点则指向一个空值。一个单向链表的节点被分成两个部分。第一个部分保存或者显示关于节点的信息，第二个部分存储下一个节点的地址。单向链表只可向一个方向遍历。&lt;br&gt;&lt;br&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-9/37737204.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
@@ -686,11 +686,11 @@ iteration 400 / 500: loss 0.365702
   </entry>
   
   <entry>
-    <title>Python实现二叉搜索树</title>
-    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/"/>
-    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python实现二叉搜索树/</id>
+    <title>Python Binary Search Tree implementation</title>
+    <link href="http://buptldy.github.io/2016/05/09/2016-05-09-Python%20BST/"/>
+    <id>http://buptldy.github.io/2016/05/09/2016-05-09-Python BST/</id>
     <published>2016-05-09T02:00:00.000Z</published>
-    <updated>2016-05-09T12:03:03.464Z</updated>
+    <updated>2016-10-04T05:35:07.544Z</updated>
     
     <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-9/90589523.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;二叉查找树（英语：Binary Search Tree），也称二叉搜索树、有序二叉树（英语：ordered binary tree），排序二叉树（英语：sorted binary tree），是指一棵空树或者具有下列性质的二叉树：&lt;br&gt;&lt;br&gt;- 任意节点的左子树不空，则左子树上所有结点的值均小于它的根结点的值；&lt;br&gt;- 任意节点的右子树不空，则右子树上所有结点的值均大于它的根结点的值；&lt;br&gt;- 任意节点的左、右子树也分别为二叉查找树；&lt;br&gt;- 没有键值相等的节点。&lt;br&gt;如下所示为一棵二叉查找树：&lt;br&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-8/57493358.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
@@ -751,11 +751,11 @@ iteration 400 / 500: loss 0.365702
   </entry>
   
   <entry>
-    <title>Caffe使用Python接口训练网络</title>
-    <link href="http://buptldy.github.io/2016/05/05/2016-05-05-Caffe%E4%BD%BF%E7%94%A8Python%E6%8E%A5%E5%8F%A3%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C/"/>
-    <id>http://buptldy.github.io/2016/05/05/2016-05-05-Caffe使用Python接口训练网络/</id>
+    <title>Learning with Caffe in Python</title>
+    <link href="http://buptldy.github.io/2016/05/05/2016-05-05-Caffe%20Python/"/>
+    <id>http://buptldy.github.io/2016/05/05/2016-05-05-Caffe Python/</id>
     <published>2016-05-05T02:00:00.000Z</published>
-    <updated>2016-05-05T14:10:52.551Z</updated>
+    <updated>2016-10-04T05:23:59.861Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-5/41421657.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;在这个例子中，我们开始尝试通过Python调用&lt;code&gt;Solver&lt;/code&gt;接口来训练一个网络。&lt;/p&gt;
 &lt;h3 id=&quot;环境设置&quot;&gt;&lt;a href=&quot;#环境设置&quot; class=&quot;headerlink&quot; title=&quot;环境设置&quot;&gt;&lt;/a&gt;环境设置&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;from&lt;/span&gt; pylab &lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; *&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;%matplotlib inline&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -996,11 +996,11 @@ Wall time: 1min 18s
   </entry>
   
   <entry>
-    <title>使用Caffe训练好的CaffeNet进行图片分类</title>
-    <link href="http://buptldy.github.io/2016/05/03/2016-05-03-%E4%BD%BF%E7%94%A8Caffe%E8%AE%AD%E7%BB%83%E5%A5%BD%E7%9A%84CaffeNet%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB/"/>
-    <id>http://buptldy.github.io/2016/05/03/2016-05-03-使用Caffe训练好的CaffeNet进行分类/</id>
+    <title>Classification with Caffenet</title>
+    <link href="http://buptldy.github.io/2016/05/03/2016-05-03-Classification%20with%20Caffenet/"/>
+    <id>http://buptldy.github.io/2016/05/03/2016-05-03-Classification with Caffenet/</id>
     <published>2016-05-03T02:00:00.000Z</published>
-    <updated>2016-05-03T06:57:13.239Z</updated>
+    <updated>2016-10-04T05:27:29.942Z</updated>
     
     <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-3/46730593.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
@@ -1148,11 +1148,11 @@ probabilities and labels:
   </entry>
   
   <entry>
-    <title>Vim命令备忘</title>
-    <link href="http://buptldy.github.io/2016/04/23/2016-04-23-Vim%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/"/>
-    <id>http://buptldy.github.io/2016/04/23/2016-04-23-Vim命令备忘/</id>
+    <title>Vim Cheat SHeet</title>
+    <link href="http://buptldy.github.io/2016/04/23/2016-04-23-Vim/"/>
+    <id>http://buptldy.github.io/2016/04/23/2016-04-23-Vim/</id>
     <published>2016-04-23T03:00:00.000Z</published>
-    <updated>2016-09-27T01:05:46.746Z</updated>
+    <updated>2016-10-04T05:09:17.297Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-23/88022819.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h2&gt;&lt;ol&gt;
@@ -1263,11 +1263,11 @@ probabilities and labels:
   </entry>
   
   <entry>
-    <title>Deepin CUDA安装及Keras使用GPU模式运行</title>
-    <link href="http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/"/>
-    <id>http://buptldy.github.io/2016/04/09/2016-04-09-Deepin CUDA安装及Keras使用GPU模式运行/</id>
+    <title>Deepin CUDA Install and Run Keras on GPU</title>
+    <link href="http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%20Keras%20GPU/"/>
+    <id>http://buptldy.github.io/2016/04/09/2016-04-09-Deepin CUDA Keras GPU/</id>
     <published>2016-04-09T03:00:00.000Z</published>
-    <updated>2016-05-27T01:31:25.505Z</updated>
+    <updated>2016-10-04T05:08:48.397Z</updated>
     
     <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-9/8883646.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
@@ -1312,11 +1312,11 @@ probabilities and labels:
   </entry>
   
   <entry>
-    <title>Keras简介</title>
-    <link href="http://buptldy.github.io/2016/04/07/2016-04-07-Keras%E7%AE%80%E4%BB%8B/"/>
-    <id>http://buptldy.github.io/2016/04/07/2016-04-07-Keras简介/</id>
+    <title>Keras Introduction</title>
+    <link href="http://buptldy.github.io/2016/04/07/2016-04-07-Keras%20Introduction/"/>
+    <id>http://buptldy.github.io/2016/04/07/2016-04-07-Keras Introduction/</id>
     <published>2016-04-07T03:00:00.000Z</published>
-    <updated>2016-04-07T02:35:37.848Z</updated>
+    <updated>2016-10-04T05:06:28.040Z</updated>
     
     <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-7/16129390.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
@@ -1382,11 +1382,11 @@ probabilities and labels:
   </entry>
   
   <entry>
-    <title>Python连接MySQL</title>
-    <link href="http://buptldy.github.io/2016/04/04/2016-04-04-Python%E8%BF%9E%E6%8E%A5MySQL.md/"/>
-    <id>http://buptldy.github.io/2016/04/04/2016-04-04-Python连接MySQL.md/</id>
+    <title>Connect to MySQL in Python?</title>
+    <link href="http://buptldy.github.io/2016/04/04/2016-04-04-Python%20MySQL/"/>
+    <id>http://buptldy.github.io/2016/04/04/2016-04-04-Python MySQL/</id>
     <published>2016-04-04T03:00:00.000Z</published>
-    <updated>2016-04-07T05:24:50.915Z</updated>
+    <updated>2016-10-04T05:04:42.064Z</updated>
     
     <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-4/94530193.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
@@ -1494,11 +1494,11 @@ conn.close()
   </entry>
   
   <entry>
-    <title>Python利用HOG特征实现人体检测</title>
-    <link href="http://buptldy.github.io/2016/04/01/2016-04-01-Python%E5%88%A9%E7%94%A8HOG%E7%89%B9%E5%BE%81%E5%AE%9E%E7%8E%B0%E4%BA%BA%E4%BD%93%E6%A3%80%E6%B5%8B/"/>
-    <id>http://buptldy.github.io/2016/04/01/2016-04-01-Python利用HOG特征实现人体检测/</id>
+    <title>Human Detection using HOG-Linear SVM in Python</title>
+    <link href="http://buptldy.github.io/2016/04/01/2016-04-01-Human%20Detection/"/>
+    <id>http://buptldy.github.io/2016/04/01/2016-04-01-Human Detection/</id>
     <published>2016-04-01T02:00:00.000Z</published>
-    <updated>2016-06-12T02:44:10.339Z</updated>
+    <updated>2016-10-04T04:50:11.824Z</updated>
     
     <content type="html">&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-6-12/14156501.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;数据集介绍&quot;&gt;&lt;a href=&quot;#数据集介绍&quot; class=&quot;headerlink&quot; title=&quot;数据集介绍&quot;&gt;&lt;/a&gt;数据集介绍&lt;/h2&gt;&lt;p&gt;训练数据来自&lt;a href=&quot;http://pascal.inrialpes.fr/data/human/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;INRIA Person Dataset&lt;/a&gt;,其中正样本为64*128的人体图像，负样本为64*128的非人体图像，如下图所示。&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/56925025.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -1513,10 +1513,8 @@ conn.close()
 &lt;p&gt;完整检测代码：&lt;/p&gt;
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;sliding_window&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(image, window_size, step_size)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&#39;&#39;&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    This function returns a patch of the input image `image` of size equal&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    to `window_size`. The first image returned top-left co-ordinates (0, 0)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    and are increment in both x and y directions by the `step_size` supplied.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    So, the input parameters are -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    * `image` - Input Image&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    * `window_size` - Size of Sliding Window&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    * `step_size` - Incremented Size of Window&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    The function returns a tuple -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    (x, y, im_window)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    where&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    * x is the top-left x co-ordinate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    * y is the top-left y co-ordinate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    * im_window is the sliding window image&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &#39;&#39;&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; y &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, image.shape[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;], step_size[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; x &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; xrange(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, image.shape[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], step_size[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;yield&lt;/span&gt; (x, y, image[y:y + window_size[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;], x:x + window_size[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;detector&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(filename)&lt;/span&gt;:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    im=cv2.imread(filename)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    im = imutils.resize(im, width=min(&lt;span class=&quot;number&quot;&gt;400&lt;/span&gt;, im.shape[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    min_wdw_sz = (&lt;span class=&quot;number&quot;&gt;64&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;128&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    step_size = (&lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;10&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    downscale = &lt;span class=&quot;number&quot;&gt;1.25&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 导入SVM模型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    clf = joblib.load(model_path)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# List to store the detections&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    detections = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# The current scale of the image&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    scale = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 在图像金字塔模型中对每个滑动窗口经行预测&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; im_scaled &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; pyramid_gaussian(im, downscale=downscale):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;# This list contains detections at the current scale&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cd = []&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;# If the width or height of the scaled image is less than&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;# the width or height of the window, then end the iterations.&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; im_scaled.shape[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] &amp;lt; min_wdw_sz[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; im_scaled.shape[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] &amp;lt; min_wdw_sz[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;break&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (x, y, im_window) &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; sliding_window(im_scaled, min_wdw_sz, step_size):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; im_window.shape[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] != min_wdw_sz[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] &lt;span class=&quot;keyword&quot;&gt;or&lt;/span&gt; im_window.shape[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;] != min_wdw_sz[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;continue&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;comment&quot;&gt;# 计算每个窗口的Hog特征&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            im_window=color.rgb2gray(im_window)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            fd = hog(im_window, orientations, pixels_per_cell, cells_per_block, visualize, normalize)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            fd=fd.reshape(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            pred = clf.predict(fd)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; pred == &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; clf.decision_function(fd)&amp;gt;&lt;span class=&quot;number&quot;&gt;0.5&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    detections.append((x, y, clf.decision_function(fd),&lt;span class=&quot;comment&quot;&gt;#样本点到超平面的距离&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        int(min_wdw_sz[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]*(downscale**scale)),&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        int(min_wdw_sz[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]*(downscale**scale))))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    cd.append(detections[&lt;span class=&quot;number&quot;&gt;-1&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        scale+=&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    clone = im.copy()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;# 画出矩形框&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (x_tl, y_tl, _, w, h) &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; detections:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cv2.rectangle(im, (x_tl, y_tl), (x_tl+w, y_tl+h), (&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;255&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;), thickness=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    rects = np.array([[x, y, x + w, y + h] &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (x, y,_, w, h) &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; detections])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    pick = non_max_suppression(rects, probs=&lt;span class=&quot;keyword&quot;&gt;None&lt;/span&gt;, overlapThresh=&lt;span class=&quot;number&quot;&gt;0.3&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (xA, yA, xB, yB) &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; pick:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        cv2.rectangle(clone, (xA, yA), (xB, yB), (&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;255&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;), &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    plt.axis(&lt;span class=&quot;string&quot;&gt;&quot;off&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    plt.imshow(cv2.cvtColor(im, cv2.COLOR_BGR2RGB))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    plt.title(&lt;span class=&quot;string&quot;&gt;&quot;Raw Detections before NMS&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    plt.show()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    plt.axis(&lt;span class=&quot;string&quot;&gt;&quot;off&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    plt.imshow(cv2.cvtColor(clone, cv2.COLOR_BGR2RGB))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    plt.title(&lt;span class=&quot;string&quot;&gt;&quot;Final Detections after applying NMS&quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    plt.show()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;效果演示&quot;&gt;&lt;a href=&quot;#效果演示&quot; class=&quot;headerlink&quot; title=&quot;效果演示&quot;&gt;&lt;/a&gt;效果演示&lt;/h2&gt;&lt;p&gt;非极大值抑制处理前：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/45995282.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/13402395.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;非极大值抑制处理后：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/43202553.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/41627345.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;github地址：&lt;a href=&quot;https://github.com/BUPTLdy/object-detector&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;object-detector&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/45995282.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/13402395.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;非极大值抑制处理后：&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/43202553.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-5-27/41627345.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;github地址：&lt;a href=&quot;https://github.com/BUPTLdy/object-detector&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;object-detector&lt;/a&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -1533,11 +1531,11 @@ conn.close()
   </entry>
   
   <entry>
-    <title>skimage hog函数解析</title>
-    <link href="http://buptldy.github.io/2016/03/31/2016-03-31-Skimage%20hog%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/"/>
-    <id>http://buptldy.github.io/2016/03/31/2016-03-31-Skimage hog函数用法解析/</id>
+    <title>Compute the HOG descriptor by skimage </title>
+    <link href="http://buptldy.github.io/2016/03/31/2016-03-31-Skimage%20hog/"/>
+    <id>http://buptldy.github.io/2016/03/31/2016-03-31-Skimage hog/</id>
     <published>2016-03-31T03:00:00.000Z</published>
-    <updated>2016-03-31T05:41:42.784Z</updated>
+    <updated>2016-10-04T04:45:35.122Z</updated>
     
     <content type="html">&lt;h2 id=&quot;HOG简介&quot;&gt;&lt;a href=&quot;#HOG简介&quot; class=&quot;headerlink&quot; title=&quot;HOG简介&quot;&gt;&lt;/a&gt;HOG简介&lt;/h2&gt;&lt;p&gt;方向梯度直方图（英语：Histogram of oriented gradient，简称HOG）是应用在计算机视觉和图像处理领域，用于目标检测的特征描述器。这项技术是用来计算局部图像梯度的方向信息的统计值。这种方法跟边缘方向直方图（edge orientation histograms）、尺度不变特征变换（scale-invariant feature transform descriptors）以及形状上下文方法（ shape contexts）有很多相似之处，但与它们的不同点是：HOG描述器是在一个网格密集的大小统一的细胞单元（dense grid of uniformly spaced cells）上计算，而且为了提高性能，还采用了重叠的局部对比度归一化（overlapping local contrast normalization）技术。&lt;/p&gt;
 &lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-3-31/40452258.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;

@@ -1,0 +1,989 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Computer Vision,HOG," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Ldy's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="HOG算法概述局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Histograms of Oriented Gradients for Human Detection》Note">
+<meta property="og:url" content="http://buptldy.github.io/2016/03/31/2016-03-31-HOG Note/index.html">
+<meta property="og:site_name" content="Ldy's Blog">
+<meta property="og:description" content="HOG算法概述局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/94180844.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/13507779.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/98414203.jpg">
+<meta property="og:updated_time" content="2016-10-04T04:43:38.354Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Histograms of Oriented Gradients for Human Detection》Note">
+<meta name="twitter:description" content="HOG算法概述局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231735513754109000,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> 《Histograms of Oriented Gradients for Human Detection》Note | Ldy's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71757219-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?69c6cb02c2398bb4b93dd67e2069320b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257966317&web_id=1257966317" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ldy's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'Q1wTNWx5LN7C_D8yzezV','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                《Histograms of Oriented Gradients for Human Detection》Note
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-31T10:00:00+08:00" content="2016-03-31">
+              2016-03-31
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/31/2016-03-31-HOG Note/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/31/2016-03-31-HOG Note/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+
+          
+          
+             <span id="/2016/03/31/2016-03-31-HOG Note/" class="leancloud_visitors" data-flag-title="《Histograms of Oriented Gradients for Human Detection》Note">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HOG算法概述"><a href="#HOG算法概述" class="headerlink" title="HOG算法概述"></a>HOG算法概述</h1><p>局部目标的外表和形状可以被局部梯度或边缘方向的分布很好的描述,即使我们不知道对应的梯度和边缘的位置。在实际操作中,将图像分为小的细胞单元 (cells) ,每个细胞单元计算一个梯度方向 ( 或边缘方向 )直方图。为了对光照和阴影有更好的不变性,需要对直方图进行对比度归一化,可以通过将细胞单元组成更大的块 (blocks) 并归一化块内的所有细胞单元来实现。我们将归一化的块描述符叫做 HOG 描述子。将检测窗口中的所有块的 HOG 描述子组合起来就形成了最终的特征向量,然后使用 SVM 分类器进行人体检测,见下图。<br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/19766259.jpg" alt=""><br><a id="more"></a><br>HOG特征有个优点,它们提取的边缘和梯度特征能很好的抓住局部形状的特点,并且由于是       在局部进行提取,所以对几何和光学变化都有很好的不变性:变换或旋转对于足够小的区域影响很小。对于人体检测,在粗糙的空域采样 (coarse spatial sampling) 、精细的方向采样 (fine orientationsampling)和较强的局部光学归一化 (stronglocal photometric normalization) 这些条件下,只要行人大体上能够保持直立的姿势,就容许有一些细微的肢体动作,这些细微的动作可以被忽略而不影响检测效果。</p>
+<h1 id="算法细节"><a href="#算法细节" class="headerlink" title="算法细节"></a>算法细节</h1><h2 id="伽马颜色归一化"><a href="#伽马颜色归一化" class="headerlink" title="伽马颜色归一化"></a>伽马颜色归一化</h2><p>用不同的幂值 (gamma 参数 ) 评价了几种颜色空间,有灰度空间、 RGB 、 LAB ,结果表明,这些规范化对结果影响很小,可能是由于随后的描述子归一化能达到相似的效果。</p>
+<h2 id="梯度计算"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算</h2><p>不同的梯度计算方法对检测器性能有很大影响,但事实证明最简单的梯度算子结果是最好的。采用了最简单的一维离散微分模板算子。测试表明，使用 Sobel 算子等其它算子或是引入高斯平滑反而会造成性能降低。对于带颜色的图像,分别计算每个颜色通道的梯度,以范数最大者作为该点的梯度向量。</p>
+<h2 id="空间-方向-bin-统计"><a href="#空间-方向-bin-统计" class="headerlink" title="空间 / 方向 bin 统计"></a>空间 / 方向 bin 统计</h2><p>如下图的一个包含行人的图像，红色框标记一个 8 × 8 单元，这些 8 × 8 的单元将被用来计算 HOG 描述符。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/94180844.jpg" alt=""><br></center><br>在每个单元中，我们在每个像素上计算梯度矢量，将得到 64 个梯度矢量，梯度矢量相角在 0◦ → 180◦ 之间分布，我们对相角进行分箱 (bin)，每箱 20◦，一共 9 箱 (Dalal 和 Triggs 得到的最佳参数)。具有某一相角的梯度矢量的幅度按照权重分配给直方图。这涉及到权重投票表决机制， Dalal 和 Triggs 发现，采用梯度幅度进行分配表现最佳。例如，一个具有 85 度相角的梯度矢量将其幅度的 1/4 分配给中心为 70◦ 的箱，将剩余的 3/4 幅度分配给中心为 90◦ 的箱。这样就得到了下面的方向梯度直方图。<br><br><center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/13507779.jpg" alt=""><br></center>
+
+<p>上面分配幅度的方法可以减少恰好位于两箱边界的梯度矢量的影响，否则，如果一个强梯度矢量恰好在边界上，其相角的一个很小的绕动都将对直方图造成非常大的影响。同时，在计算出梯度后进行高斯平滑，也可以缓解这种影响。另一方面，特征的复杂程度对分类器的影响很大。通过直方图的构造，我们将特征 64 个二元矢量量化为特征 9 个值，很好地压缩了特征的同时保留了单元的信息。设想对图像加上一些失真，方向梯度直方图的变化也不会很大，这是 HOG 特征的优点。</p>
+<h2 id="归一化处理"><a href="#归一化处理" class="headerlink" title="归一化处理"></a>归一化处理</h2><p>前面提到，对图像所有像素进行加减后梯度矢量不变，接下来引入梯度矢量的标准化，使得其在像素值进行乘法运算后仍然保持不变。如果对单元内的像素值都乘以某一常数，梯度矢量的幅度明显会发生变化，幅度会增加常数因子,相角保持不变，这会造成整个直方图的每个箱的幅度增加常数因子。为了解决这个问题，需要引入梯度矢量标准化，一种简单的标准化方法是将梯度矢量除以其幅度，梯度矢量的幅度将保持 1，但是其相角不会发生变化。引入梯度矢量标准化以后，直方图各箱幅度在图像像素值整体乘以某个因子 (变化对比度) 时不会发生变化。除了对每个单元的直方图进行标准化外，另外一种方法是将固定数量的空域邻接的单元封装成区块，然后在区块上进行标准化。 Dalal 和 Triggs 使用 2 × 2 区块 (50% 重叠)，即 16 × 16 像素。将一个区块内的四个单元的直方图信息整合为 36 个值的特征 (9 × 4), 然后对这个 36 元矢量进行标准化。 Dalal 和 Triggs 考察了四种不同的区块标准化算法，设 v 为未标准化的区块梯度矢量， $||v||_{k}(k = 1, 2)$ 是 v 的 k-范数 (norm),e 是一个很小的常数 (具体值并不重要)，四种标准化算法如下：</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/16-3-31/98414203.jpg" alt=""><br></center>
+
+<p>L2-Hys 是在 L2-norm 后进行截断，然后重新进行标准化。 Dalal 和 Triggs 发现 L2-Hys,L2-norm,L1-sqrt 性能相似，L1-norm 性能稍有下降，但都相对于未标准化的梯度矢量有明显的性能提升。区块重叠的影响是使得每个单元会在最终得到的 HOG 描述符中其作用的次数大于 1 次 (角单元出现 1 次，边单元出现 2 次，其它单元出现 4 次)，但每次出现都在不同的区块进行标准化。定义一个区块位移的步长为 8 像素，则可以实现 50% 的重叠。如果检测器窗口为 64x128像素，则会被分为 7 × 15 区块，每个区块包括 2 × 2 个单元，每个单元包括 8 × 8 像素，每个区块进行 9 箱直方图统计 (36 值)，最后的总特征矢量将有 7 × 15 × 4 × 9 = 3780 个特征值元素。</p>
+<h2 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h2><p>分类器获取了 HOG 特征描述符之后，需要将其递交给监督学习分类器。 Dalal 和 Triggs 使用 SV M light 软件包配合HOG 描述符进行人体检测。 SVM 分类器寻找一个最佳超平面用作决策函数以实现二元分类，其特点是能够同时最小化经验误差与最大化几何边缘区。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="http://oncemore2020.github.io/blog/hog-using-opencv/" target="_blank" rel="external">HOG/linSVM检测器</a><br><a href="http://blog.csdn.net/masibuaa/article/details/14056807" target="_blank" rel="external">用于人体检测的方向梯度直方图</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Computer-Vision/" rel="tag">#Computer Vision</a>
+          
+            <a href="/tags/HOG/" rel="tag">#HOG</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/25/2016-03-25-10 Minutes to Pandas/" rel="next" title="10 Minutes to pandas">
+                <i class="fa fa-chevron-left"></i> 10 Minutes to pandas
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/31/2016-03-31-Skimage hog/" rel="prev" title="Compute the HOG descriptor by skimage ">
+                Compute the HOG descriptor by skimage  <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/03/31/2016-03-31-HOG Note/"
+     data-title="《Histograms of Oriented Gradients for Human Detection》Note"
+     data-content=""
+     data-url="http://buptldy.github.io/2016/03/31/2016-03-31-HOG Note/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/31/2016-03-31-HOG Note/"
+           data-title="《Histograms of Oriented Gradients for Human Detection》Note" data-url="http://buptldy.github.io/2016/03/31/2016-03-31-HOG Note/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Ldy" />
+          <p class="site-author-name" itemprop="name">Ldy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BUPTLdy" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title"></div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gzutxy.blogspot.lt/" target="_blank">gzutxy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tqwangttm.github.io/" target="_blank">tqwangttm</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://buptweixin.github.io/" target="_blank">野原圆长</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HOG算法概述"><span class="nav-number">1.</span> <span class="nav-text">HOG算法概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法细节"><span class="nav-number">2.</span> <span class="nav-text">算法细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#伽马颜色归一化"><span class="nav-number">2.1.</span> <span class="nav-text">伽马颜色归一化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度计算"><span class="nav-number">2.2.</span> <span class="nav-text">梯度计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空间-方向-bin-统计"><span class="nav-number">2.3.</span> <span class="nav-text">空间 / 方向 bin 统计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归一化处理"><span class="nav-number">2.4.</span> <span class="nav-text">归一化处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM"><span class="nav-number">2.5.</span> <span class="nav-text">SVM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ldy</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bonerkiller"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+  <script type="text/javascript" async
+src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("h8kUJh2v9M5eeMnUGrxK7zxI-gzGzoHsz", "igJeMB5XNIxjtpQ4B0BHsjVb");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>

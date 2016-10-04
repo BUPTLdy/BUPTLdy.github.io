@@ -4,8 +4,597 @@
 
     
   <url>
-    <loc>http://buptldy.github.io/2015/12/29/2015-12-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/</loc>
-    <lastmod>2016-10-04T02:56:26.727Z</lastmod>
+    <loc>http://buptldy.github.io/2016/08/30/2016-08-30-deepin/</loc>
+    <lastmod>2016-10-04T06:18:38.788Z</lastmod>
+    <data>
+        <display>
+        <title>Linux Deepin Note</title>
+        <pubTime>2016-08-30T02:00:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/08/18/2016-08-18-Batch_Normalization/</loc>
+    <lastmod>2016-10-04T06:14:23.251Z</lastmod>
+    <data>
+        <display>
+        <title>Implementation of Batch Normalization Layer</title>
+        <pubTime>2016-08-18T02:00:00.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>CNN</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/07/20/2016-07-20-sentiment%20analysis/</loc>
+    <lastmod>2016-10-04T06:13:08.270Z</lastmod>
+    <data>
+        <display>
+        <title>Shopping Reviews sentiment analysis</title>
+        <pubTime>2016-07-20T02:00:00.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>LSTM</tag>
+         
+        <tag>NLP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/06/20/2016-06-20-SVM%20Softmax%20SGD/</loc>
+    <lastmod>2016-10-04T06:07:13.593Z</lastmod>
+    <data>
+        <display>
+        <title>Solve Linear Classifier by SGD</title>
+        <pubTime>2016-06-20T02:00:00.000Z</pubTime>
+        
+        <tag>SVM</tag>
+         
+        <tag>Softmax</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/06/15/2016-06-15-Python%20Cython/</loc>
+    <lastmod>2016-10-04T05:52:53.761Z</lastmod>
+    <data>
+        <display>
+        <title>Speed-up with Cython and Numpy in Python</title>
+        <pubTime>2016-06-15T02:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Cython</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/06/12/2016-06-12-CNN%20Remote%20Sensing%20Optical%20Images/</loc>
+    <lastmod>2016-10-04T05:50:48.736Z</lastmod>
+    <data>
+        <display>
+        <title>Classification in Remote Sensing Optical Images by CNNs</title>
+        <pubTime>2016-06-12T02:00:00.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>CNN</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/06/11/2016-06-11-Force-directed/</loc>
+    <lastmod>2016-10-04T05:45:31.767Z</lastmod>
+    <data>
+        <display>
+        <title>Force-Directed Graph Visualization Based in Location</title>
+        <pubTime>2016-06-11T02:00:00.000Z</pubTime>
+        
+        <tag>D3</tag>
+         
+        <tag>Data Visualization</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/05/09/2016-05-09-Python%20BST/</loc>
+    <lastmod>2016-10-04T05:35:07.544Z</lastmod>
+    <data>
+        <display>
+        <title>Python Binary Search Tree implementation</title>
+        <pubTime>2016-05-09T02:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Data Structure</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/05/09/2016-05-09-Python%20sorting/</loc>
+    <lastmod>2016-10-04T05:31:41.975Z</lastmod>
+    <data>
+        <display>
+        <title>Basic Sorting Algorithms Implemented In Python</title>
+        <pubTime>2016-05-09T04:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>Python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/05/03/2016-05-03-Classification%20with%20Caffenet/</loc>
+    <lastmod>2016-10-04T05:27:29.942Z</lastmod>
+    <data>
+        <display>
+        <title>Classification with Caffenet</title>
+        <pubTime>2016-05-03T02:00:00.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>Caffe</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/05/09/2016-05-09-Python%20linked%20list/</loc>
+    <lastmod>2016-10-04T05:25:36.558Z</lastmod>
+    <data>
+        <display>
+        <title>Implementing a Singly Linked List in Python</title>
+        <pubTime>2016-05-09T03:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Data Structure</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/05/05/2016-05-05-Caffe%20Python/</loc>
+    <lastmod>2016-10-04T05:23:59.861Z</lastmod>
+    <data>
+        <display>
+        <title>Learning with Caffe in Python</title>
+        <pubTime>2016-05-05T02:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Caffe</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/04/23/2016-04-23-Vim/</loc>
+    <lastmod>2016-10-04T05:09:17.297Z</lastmod>
+    <data>
+        <display>
+        <title>Vim Cheat SHeet</title>
+        <pubTime>2016-04-23T03:00:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%20Keras%20GPU/</loc>
+    <lastmod>2016-10-04T05:08:48.397Z</lastmod>
+    <data>
+        <display>
+        <title>Deepin CUDA Install and Run Keras on GPU</title>
+        <pubTime>2016-04-09T03:00:00.000Z</pubTime>
+        
+        <tag>Keras</tag>
+         
+        <tag>Deep Learning</tag>
+         
+        <tag>Cuda</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/04/07/2016-04-07-Keras%20Introduction/</loc>
+    <lastmod>2016-10-04T05:06:28.040Z</lastmod>
+    <data>
+        <display>
+        <title>Keras Introduction</title>
+        <pubTime>2016-04-07T03:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>Keras</tag>
+         
+        <tag>Deep Learning</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/04/04/2016-04-04-Python%20MySQL/</loc>
+    <lastmod>2016-10-04T05:04:42.064Z</lastmod>
+    <data>
+        <display>
+        <title>Connect to MySQL in Python?</title>
+        <pubTime>2016-04-04T03:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>MySQL</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/04/01/2016-04-01-Human%20Detection/</loc>
+    <lastmod>2016-10-04T04:50:11.824Z</lastmod>
+    <data>
+        <display>
+        <title>Human Detection using HOG-Linear SVM in Python</title>
+        <pubTime>2016-04-01T02:00:00.000Z</pubTime>
+        
+        <tag>HOG</tag>
+         
+        <tag>Object Detection</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/03/31/2016-03-31-Skimage%20hog/</loc>
+    <lastmod>2016-10-04T04:45:35.122Z</lastmod>
+    <data>
+        <display>
+        <title>Compute the HOG descriptor by skimage </title>
+        <pubTime>2016-03-31T03:00:00.000Z</pubTime>
+        
+        <tag>HOG</tag>
+         
+        <tag>skimage</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/03/31/2016-03-31-HOG%20Note/</loc>
+    <lastmod>2016-10-04T04:43:38.354Z</lastmod>
+    <data>
+        <display>
+        <title>《Histograms of Oriented Gradients for Human Detection》Note</title>
+        <pubTime>2016-03-31T02:00:00.000Z</pubTime>
+        
+        <tag>Computer Vision</tag>
+         
+        <tag>HOG</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/03/25/2016-03-25-10%20Minutes%20to%20Pandas/</loc>
+    <lastmod>2016-10-04T04:43:09.874Z</lastmod>
+    <data>
+        <display>
+        <title>10 Minutes to pandas</title>
+        <pubTime>2016-03-25T02:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>pandas</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/03/02/2016-03-02-Git%20Cheat%20Sheet/</loc>
+    <lastmod>2016-10-04T04:42:39.310Z</lastmod>
+    <data>
+        <display>
+        <title>Git Cheat Sheet</title>
+        <pubTime>2016-03-02T02:00:00.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+        <tag>Linux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/11/2016-01-11-NP-completeness%20Problem/</loc>
+    <lastmod>2016-10-04T04:40:25.253Z</lastmod>
+    <data>
+        <display>
+        <title>NP-completeness Problem</title>
+        <pubTime>2016-01-11T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/12/2016-01-12-Approximation%20Algorithm/</loc>
+    <lastmod>2016-10-04T04:35:56.608Z</lastmod>
+    <data>
+        <display>
+        <title>Approximation Algorithm</title>
+        <pubTime>2016-01-12T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/10/2016-01-10-Maximum%20Flow%20Problem/</loc>
+    <lastmod>2016-10-04T04:30:01.114Z</lastmod>
+    <data>
+        <display>
+        <title>Maximum Flow Problem</title>
+        <pubTime>2016-01-10T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>Python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/09/2016-01-09-Linear%20Programming/</loc>
+    <lastmod>2016-10-04T04:25:59.285Z</lastmod>
+    <data>
+        <display>
+        <title>Linear Programming</title>
+        <pubTime>2016-01-09T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>Python</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/08/2016-01-08-Greedy%20Algorithm/</loc>
+    <lastmod>2016-10-04T04:23:25.592Z</lastmod>
+    <data>
+        <display>
+        <title>Greedy Algorithm</title>
+        <pubTime>2016-01-08T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>CPP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/07/2016-01-07-Dynamic%20Programming/</loc>
+    <lastmod>2016-10-04T04:22:30.424Z</lastmod>
+    <data>
+        <display>
+        <title>Dynamic Programming</title>
+        <pubTime>2016-01-07T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>CPP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/06/2016-01-06-Divide%20and%20Conquer/</loc>
+    <lastmod>2016-10-04T04:20:39.168Z</lastmod>
+    <data>
+        <display>
+        <title>Divide and Conquer</title>
+        <pubTime>2016-01-06T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>CPP</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/05/2016-01-05-Heuristic%20Search%20Algorithm/</loc>
+    <lastmod>2016-10-04T04:13:26.634Z</lastmod>
+    <data>
+        <display>
+        <title>Heuristic Search Algorithm</title>
+        <pubTime>2016-01-05T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>Artificial Intelligence</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/03/2016-01-03-Backtracking%20Strategies/</loc>
+    <lastmod>2016-10-04T03:15:46.104Z</lastmod>
+    <data>
+        <display>
+        <title>Backtracking Strategies</title>
+        <pubTime>2016-01-03T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>Artificial Intelligence</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2016/01/04/2016-01-04-Depth-First-Search%20and%20Breadth-First-Search/</loc>
+    <lastmod>2016-10-04T03:11:22.979Z</lastmod>
+    <data>
+        <display>
+        <title>Depth-First-Search and Breadth-First-Search</title>
+        <pubTime>2016-01-04T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+        <tag>Artificial Intelligence</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://buptldy.github.io/2015/12/29/2015-12-29-Asymptotic%20Notation%20and%20Master%20theorem/</loc>
+    <lastmod>2016-10-04T02:59:34.308Z</lastmod>
     <data>
         <display>
         <title>Asymptotic Notation and Master theorem</title>
@@ -22,7 +611,7 @@
     
   <url>
     <loc>http://buptldy.github.io/2016/10/01/2016-10-01-im2col/</loc>
-    <lastmod>2016-10-01T11:54:42.827Z</lastmod>
+    <lastmod>2016-10-01T11:57:07.112Z</lastmod>
     <data>
         <display>
         <title>Implementing convolution as a matrix multiplication</title>
@@ -31,23 +620,6 @@
         <tag>Deep Learning</tag>
          
         <tag>CNN</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/04/23/2016-04-23-Vim%E5%91%BD%E4%BB%A4%E5%A4%87%E5%BF%98/</loc>
-    <lastmod>2016-09-27T01:05:46.746Z</lastmod>
-    <data>
-        <display>
-        <title>Vim命令备忘</title>
-        <pubTime>2016-04-23T03:00:00.000Z</pubTime>
-        
-        <tag>Linux</tag>
          
          
            
@@ -75,580 +647,8 @@
     </url>
 
     
-  <url>
-    <loc>http://buptldy.github.io/2016/08/30/2016-08-30-%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BD%95deepin%E4%BD%BF%E7%94%A8%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%A2%B0%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2016-09-10T16:19:18.509Z</lastmod>
-    <data>
-        <display>
-        <title>记录deepin使用过程中碰到的问题及解决方法</title>
-        <pubTime>2016-08-30T02:00:00.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/08/18/2016-08-18-Batch_Normalization%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2016-08-18T08:15:39.885Z</lastmod>
-    <data>
-        <display>
-        <title>Batch Normalization实现</title>
-        <pubTime>2016-08-18T02:00:00.000Z</pubTime>
-        
-        <tag>Deep Learning</tag>
-         
-        <tag>CNN</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/07/20/2016-07-20-%E8%B4%AD%E7%89%A9%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90%E7%9A%84%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2016-07-18T09:24:08.729Z</lastmod>
-    <data>
-        <display>
-        <title>购物评论情感分析的实现</title>
-        <pubTime>2016-07-20T02:00:00.000Z</pubTime>
-        
-        <tag>Deep Learning</tag>
-         
-        <tag>LSTM</tag>
-         
-        <tag>NLP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/06/12/2016-06-12-CNN%E5%9C%A8%E5%85%89%E5%AD%A6%E9%81%A5%E6%84%9F%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
-    <lastmod>2016-07-08T00:58:01.903Z</lastmod>
-    <data>
-        <display>
-        <title>CNN在光学遥感图像上的应用</title>
-        <pubTime>2016-06-12T02:00:00.000Z</pubTime>
-        
-        <tag>Deep Learning</tag>
-         
-        <tag>CNN</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/11/2016-01-11-NP%E5%AE%8C%E5%85%A8%E9%97%AE%E9%A2%98%E7%9A%84%E4%BB%8B%E7%BB%8D%E5%8F%8A%E8%AF%81%E6%98%8E/</loc>
-    <lastmod>2016-06-24T01:41:21.626Z</lastmod>
-    <data>
-        <display>
-        <title>NP完全性</title>
-        <pubTime>2016-01-11T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/10/2016-01-10-%E7%BD%91%E7%BB%9C%E6%9C%80%E5%A4%A7%E6%B5%81/</loc>
-    <lastmod>2016-06-21T02:00:55.736Z</lastmod>
-    <data>
-        <display>
-        <title>网络最大流 [Max Flow]</title>
-        <pubTime>2016-01-10T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>Python</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/09/2016-01-09-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2016-06-21T01:58:15.190Z</lastmod>
-    <data>
-        <display>
-        <title>线性规划 [Linear Programming]</title>
-        <pubTime>2016-01-09T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>Python</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/08/2016-01-08-%E8%B4%AA%E5%BF%83%E7%AD%96%E7%95%A5/</loc>
-    <lastmod>2016-06-20T14:03:55.576Z</lastmod>
-    <data>
-        <display>
-        <title>贪心算法[greedy algorithm]</title>
-        <pubTime>2016-01-08T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>CPP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/06/20/2016-06-20-%E7%BA%BF%E6%80%A7SVM%E5%8F%8ASoftmax%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B1%82%E8%A7%A3/</loc>
-    <lastmod>2016-06-20T13:56:49.082Z</lastmod>
-    <data>
-        <display>
-        <title>线性SVM及Softmax的随机梯度下降求解</title>
-        <pubTime>2016-06-20T02:00:00.000Z</pubTime>
-        
-        <tag>SVM</tag>
-         
-        <tag>Softmax</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/06/15/2016-06-15-Python%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96-Cython%E4%B8%ADnumpy%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2016-06-16T12:12:35.033Z</lastmod>
-    <data>
-        <display>
-        <title>Python速度优化-Cython中numpy以及多线程的使用</title>
-        <pubTime>2016-06-15T02:00:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Cython</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/04/01/2016-04-01-Python%E5%88%A9%E7%94%A8HOG%E7%89%B9%E5%BE%81%E5%AE%9E%E7%8E%B0%E4%BA%BA%E4%BD%93%E6%A3%80%E6%B5%8B/</loc>
-    <lastmod>2016-06-12T02:44:10.339Z</lastmod>
-    <data>
-        <display>
-        <title>Python利用HOG特征实现人体检测</title>
-        <pubTime>2016-04-01T02:00:00.000Z</pubTime>
-        
-        <tag>HOG</tag>
-         
-        <tag>Object Detection</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/06/11/2016-06-11-%E5%9F%BA%E4%BA%8E%E4%BD%8D%E7%BD%AE%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/</loc>
-    <lastmod>2016-06-11T12:27:25.231Z</lastmod>
-    <data>
-        <display>
-        <title>基于位置约束的图可视化</title>
-        <pubTime>2016-06-11T02:00:00.000Z</pubTime>
-        
-        <tag>D3</tag>
-         
-        <tag>Data Visualization</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%E5%AE%89%E8%A3%85%E5%8F%8AKeras%E4%BD%BF%E7%94%A8GPU%E6%A8%A1%E5%BC%8F%E8%BF%90%E8%A1%8C/</loc>
-    <lastmod>2016-05-27T01:31:25.505Z</lastmod>
-    <data>
-        <display>
-        <title>Deepin CUDA安装及Keras使用GPU模式运行</title>
-        <pubTime>2016-04-09T03:00:00.000Z</pubTime>
-        
-        <tag>Keras</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Cuda</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/</loc>
-    <lastmod>2016-05-09T12:03:03.464Z</lastmod>
-    <data>
-        <display>
-        <title>Python实现二叉搜索树</title>
-        <pubTime>2016-05-09T02:00:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Data Structure</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/05/09/2016-05-09-Python%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0/</loc>
-    <lastmod>2016-05-09T12:02:46.660Z</lastmod>
-    <data>
-        <display>
-        <title>Python实现单链表</title>
-        <pubTime>2016-05-09T03:00:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Data Structure</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/05/09/2016-05-09-Python%E5%AE%9E%E7%8E%B0%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2016-05-09T11:57:53.710Z</lastmod>
-    <data>
-        <display>
-        <title>Python实现常见排序算法</title>
-        <pubTime>2016-05-09T04:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>Python</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/05/05/2016-05-05-Caffe%E4%BD%BF%E7%94%A8Python%E6%8E%A5%E5%8F%A3%E8%AE%AD%E7%BB%83%E7%BD%91%E7%BB%9C/</loc>
-    <lastmod>2016-05-05T14:10:52.551Z</lastmod>
-    <data>
-        <display>
-        <title>Caffe使用Python接口训练网络</title>
-        <pubTime>2016-05-05T02:00:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Caffe</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/05/03/2016-05-03-%E4%BD%BF%E7%94%A8Caffe%E8%AE%AD%E7%BB%83%E5%A5%BD%E7%9A%84CaffeNet%E8%BF%9B%E8%A1%8C%E5%88%86%E7%B1%BB/</loc>
-    <lastmod>2016-05-03T06:57:13.239Z</lastmod>
-    <data>
-        <display>
-        <title>使用Caffe训练好的CaffeNet进行图片分类</title>
-        <pubTime>2016-05-03T02:00:00.000Z</pubTime>
-        
-        <tag>Deep Learning</tag>
-         
-        <tag>Caffe</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/04/04/2016-04-04-Python%E8%BF%9E%E6%8E%A5MySQL.md/</loc>
-    <lastmod>2016-04-07T05:24:50.915Z</lastmod>
-    <data>
-        <display>
-        <title>Python连接MySQL</title>
-        <pubTime>2016-04-04T03:00:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>MySQL</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/04/07/2016-04-07-Keras%E7%AE%80%E4%BB%8B/</loc>
-    <lastmod>2016-04-07T02:35:37.848Z</lastmod>
-    <data>
-        <display>
-        <title>Keras简介</title>
-        <pubTime>2016-04-07T03:00:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Keras</tag>
-         
-        <tag>Deep Learning</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/03/31/2016-03-31-Skimage%20hog%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95%E8%A7%A3%E6%9E%90/</loc>
-    <lastmod>2016-03-31T05:41:42.784Z</lastmod>
-    <data>
-        <display>
-        <title>skimage hog函数解析</title>
-        <pubTime>2016-03-31T03:00:00.000Z</pubTime>
-        
-        <tag>HOG</tag>
-         
-        <tag>skimage</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/03/31/2016-03-31-HOG%E8%AE%BA%E6%96%87%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2016-03-31T02:17:05.158Z</lastmod>
-    <data>
-        <display>
-        <title>《Histograms of Oriented Gradients for Human Detection》论文笔记</title>
-        <pubTime>2016-03-31T02:00:00.000Z</pubTime>
-        
-        <tag>Computer Vision</tag>
-         
-        <tag>HOG</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/03/25/2016-03-25-pandas%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</loc>
-    <lastmod>2016-03-26T07:04:02.591Z</lastmod>
-    <data>
-        <display>
-        <title>pandas十分钟入门</title>
-        <pubTime>2016-03-25T02:00:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>pandas</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/12/2016-01-12-%E8%BF%91%E4%BC%BC%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2016-03-16T06:58:36.391Z</lastmod>
-    <data>
-        <display>
-        <title>近似算法[Approximation algorithm]</title>
-        <pubTime>2016-01-12T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/03/2016-01-03-%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/</loc>
-    <lastmod>2016-03-14T09:30:39.408Z</lastmod>
-    <data>
-        <display>
-        <title>回溯策略[backtracking]</title>
-        <pubTime>2016-01-03T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>Artificial Intelligence</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/04/2016-01-04-%E5%9B%BE%E6%90%9C%E7%B4%A2/</loc>
-    <lastmod>2016-03-14T09:29:00.079Z</lastmod>
-    <data>
-        <display>
-        <title>无信息图搜索策略</title>
-        <pubTime>2016-01-04T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>Artificial Intelligence</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/05/2016-01-05-%E5%90%AF%E5%8F%91%E5%BC%8F%E5%9B%BE%E6%90%9C%E7%B4%A2/</loc>
-    <lastmod>2016-03-14T09:27:32.235Z</lastmod>
-    <data>
-        <display>
-        <title>启发式图搜索策略</title>
-        <pubTime>2016-01-05T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>Artificial Intelligence</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/06/2016-01-06-%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivide%20and%20Conquer%5D/</loc>
-    <lastmod>2016-03-14T09:25:56.030Z</lastmod>
-    <data>
-        <display>
-        <title>分治策略[Divide and Conquer]</title>
-        <pubTime>2016-01-06T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>CPP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/01/07/2016-01-07-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</loc>
-    <lastmod>2016-03-14T09:21:35.329Z</lastmod>
-    <data>
-        <display>
-        <title>动态规划[dynamic programming]</title>
-        <pubTime>2016-01-07T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-        <tag>CPP</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
     
     
-  <url>
-    <loc>http://buptldy.github.io/2016/03/02/2016-03-02-GIT%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2016-03-14T05:34:41.203Z</lastmod>
-    <data>
-        <display>
-        <title>Git命令总结</title>
-        <pubTime>2016-03-02T02:00:00.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-        <tag>Linux</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
 </urlset>

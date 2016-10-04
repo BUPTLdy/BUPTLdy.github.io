@@ -1,0 +1,1020 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Algorithms,CPP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Ldy's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="动态规划(dynamic programming)动态规划与分治方法相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dynamic Programming">
+<meta property="og:url" content="http://buptldy.github.io/2016/01/07/2016-01-07-Dynamic Programming/index.html">
+<meta property="og:site_name" content="Ldy's Blog">
+<meta property="og:description" content="动态规划(dynamic programming)动态规划与分治方法相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。">
+<meta property="og:image" content="http://i.imgur.com/MW11e6T.png">
+<meta property="og:updated_time" content="2016-10-04T04:22:30.424Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dynamic Programming">
+<meta name="twitter:description" content="动态规划(dynamic programming)动态规划与分治方法相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。">
+<meta name="twitter:image" content="http://i.imgur.com/MW11e6T.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231735513754109000,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Dynamic Programming | Ldy's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71757219-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?69c6cb02c2398bb4b93dd67e2069320b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257966317&web_id=1257966317" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ldy's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'Q1wTNWx5LN7C_D8yzezV','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Dynamic Programming
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-01-07T10:00:00+08:00" content="2016-01-07">
+              2016-01-07
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/07/2016-01-07-Dynamic Programming/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/2016-01-07-Dynamic Programming/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+
+          
+          
+             <span id="/2016/01/07/2016-01-07-Dynamic Programming/" class="leancloud_visitors" data-flag-title="Dynamic Programming">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="动态规划-dynamic-programming"><a href="#动态规划-dynamic-programming" class="headerlink" title="动态规划(dynamic programming)"></a>动态规划(dynamic programming)</h1><p>动态规划与<a href="http://buptldy.github.io/2016/01/06/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivide%20and%20Conquer%5D/">分治方法</a>相似，都是通过组合子问题的接来求解原问题，分治方法是将问题划分为互不相交的子问题，递归的求解子问题，再将它们的解组合起来，求出原问题的解。动态规划与之相反，应用于子问题重叠的情况，即不同的子问题具有公共的子子问题。在这种情况下，分治算法会反复的求解这些公共子问题，而动态规划对每个子问题只求解一次并保存结果，从而无需重复求解。<br><a id="more"></a><br>通常动态规划被用来求解<a href="https://en.wikipedia.org/wiki/Optimization_problem" target="_blank" rel="external">最优化问题</a>，即在可行解中寻找最优解。</p>
+<p>设计一个动态规划算法通常有如下4个步骤：</p>
+<pre><code>- (1).刻画一个最优解的结构特征
+- (2).递归地定义最优解的值
+- (3).采用自底向上的方法计算最优解的值
+- (4).利用计算出的信息构造最优解
+</code></pre><p>如果我们只需要得到这个最优解的结果，而不关注这个解是怎么得来的，则可以忽略步骤(4)。</p>
+<p>上面叙述了动态规划方法的步骤，但是什么问题才能够使用动态规划法求解？使用动态规划方法求解的最优化问题应该具备两个要素：最优子结构和子问题重叠。</p>
+<ul>
+<li>最优子结构</li>
+</ul>
+<p>如果一个问题的最优解包含其子问题的最优解，则称此问题具有最优子结构性质。在动态规划方法中，我们通常自底向上地使用最优子结构，即首先求得子问题的最优解，然后求原问题的最优解。<strong>原问题的最优解的代价通常就是子问题最优解的代价再加上由此次选择直接产生的代价。</strong></p>
+<ul>
+<li>子问题重叠</li>
+</ul>
+<p>如果递归算法反复求解相同的子问题，就称最优化问题具有重叠子问题。动态规划算法通常这样利用重叠子问题性质：<strong>对每个子问题求解一次，将解存入一个表中，当再次需要这个子问题时直接查表，每次查表的代价为常量时间。</strong></p>
+<h1 id="问题举例：Money-robbing"><a href="#问题举例：Money-robbing" class="headerlink" title="问题举例：Money robbing"></a>问题举例：Money robbing</h1><p>问题如下所示：</p>
+<p>A robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.</p>
+<ol>
+<li>Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.</li>
+<li>What if all houses are arranged in a circle?</li>
+</ol>
+<p>大概意思就是街上有一排房子，有个房子里有一定数量的钱，如果小偷在同一天晚上偷了两座相邻的房子，就会触发警报系统，第一问就是问在小偷不触发警报系统的前提下，怎样偷到的钱最多。</p>
+<p>动态规划问题最重要的就是求出递归式，把原问题的最优化化为子问题的最优化。对这个问题来说，唯一的约束条件是不能同时抢劫相邻的两座房子，假设共有n座房子，分两种情况讨论：</p>
+<p>(1). 如果你抢劫了第n座房子，很明显你能得到第n座房子的钱，但你只能抢劫第n-2座房子了，因为你不想被抓起来；</p>
+<p>(2). 此时不选择抢劫第n座房子，当然待会你就可以抢劫第n-1座房子了</p>
+<p>但这两种选择哪种是最优的了，很明显取决与这两个子问题的最优解，所以我们把原问题的最优解化成求解子问题的最优解，根据上述两种情况划分，可以很容易的写出递推公式：</p>
+<p>$$dp(n)=MAX\{dp(n-1),dp(n-2)+money(n)\}$$</p>
+<p>其中money(n)表示抢劫第n座房子得到的钱(注意在写程序是money[n-1],因为数组下标从0开始)，根据递推公式，采用自底向上的方法，就能计算出最优的结果。</p>
+<p>伪代码如下所示：<br><img src="http://i.imgur.com/MW11e6T.png" alt=""></p>
+<p>再来看第二问，第二问的意思就是如果房子不是排成一排而是围成一圈，该怎样才能偷到最多的钱？<br>我们随机的从一圈n座房子中选中一座房子，现在我们面临两个选择，抢还是不抢？</p>
+<p>(1) 假设我们选择抢劫这座房子，当然我们能得到这座房子的钱，但是为了避免触发警报我们不能抢劫它周围的两座房子了，那么剩下的n-3座房子就没有构成一个圈了，那么问题也就规约成第一问的情况了；<br>(2) 假如我们没有抢劫这座房子，那么去掉这座房子，剩下的n-1座房子不是就不构成圈了吗，所以还是回到第一问的问题。</p>
+<p>经过分析，所以我们得到递推公式为:</p>
+<p>$$dp_{circle(n)}=MAX\{dp(n-1),dp(n-3)+money(n)\}$$</p>
+<h1 id="问题举例：Maximum-profit-of-transactions"><a href="#问题举例：Maximum-profit-of-transactions" class="headerlink" title="问题举例：Maximum profit of transactions"></a>问题举例：Maximum profit of transactions</h1><p>问题如下：</p>
+<p>Say you have an array for which the i-th element is the price of a given stock on day i.<br>Design an algorithm and implement it to find the maximum profit. You may complete at most two transactions.</p>
+<p>Note: You may not engage in multiple transactions at the same time (ie,you must sell the stock before you buy again).</p>
+<p>这个题目的意思是给你每天股票的价格，你能最多进行两次交易(一次交易包括买进和卖出)，怎样才能获得最大的收益。</p>
+<p>我们先来讨论只在一次交易的情况下，怎么求得收益最大化，其实这个问题就是给你一个数组，求出这组数里面不是<a href="http://buptldy.github.io/2016/01/06/%E5%88%86%E6%B2%BB%E7%AD%96%E7%95%A5%5BDivide%20and%20Conquer%5D/">逆序数</a>(因为卖出肯定在买进之后)但相差最大的两个数的差,比如5，1，3，2，4中，以价钱1买进，价钱4卖出可以获得最大的收益3。</p>
+<p>我们用动态规划法来分析这个问题，通过自底向上的方法，分析如何从前i天的最大收益推出前i+1天的最大收益，已知前i天的最大收益和前i天的最低价格：</p>
+<ol>
+<li>第i+1天的价格大于minPrice（已遍历数据的最低价），此时只要对max(i)（前i天的最大获益）和prices[i + 1] - minPrice（第i+1天卖出所能得到的获益）取大值就能得出max(i + 1)</li>
+<li>第i+1天的价格小于等于minPrice，那么在第i+1天卖出所得到的获益必然是小于max(i)（这里哪怕考虑极端情况：给出的数据是整体递减的，那么最佳的卖出时机也是当天买当天卖，获益为0，所以不会存在获益是负值的情况），所以max(i + 1) = max(i)。而且，对于之后的数据而言，minPrice需要更新了，因为对于之后的数据，在第i+1天买进必然比在0到i天之间的任何时候买进的获益都要多（因为第i+1天是0到i+1区间内的最低价）。</li>
+</ol>
+<p>所以通过上述动态规划的方法可以求出只进行一次交易的最大收益，但我们题目中问的是最多进行两次交易的情况下，我们可以把Prices[] 分成两部分Prices[0…m] 和 Prices[m…length]  ，分别计算在这两部分内做交易的最大收益，方法就是上面所说的一次交易的方法，第一步扫描，先计算出子序列[0,…,i]中的最大利润，用一个数组保存下来，时间是O(n)。 第二步是逆向扫描，计算子序列[i,…,n-1]上的最大利润，这一步同时就能结合上一步的结果计算最终的最大利润了，这一步也是O(n)。 所以最后算法的复杂度就是O(n)。</p>
+<p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Maximum%20profit%20of%20transactions" target="_blank" rel="external">算法代码下载(CPP)</a></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>Best Time to Buy and Sell Stock I II III IV@LeetCode：<a href="http://segmentfault.com/a/1190000002565570" title="Best Time to Buy and Sell Stock I II III IV@LeetCode" target="_blank" rel="external">http://segmentfault.com/a/1190000002565570</a><br>LeetCode-Best Time to Buy and Sell Stock系列：<a href="http://www.tuicool.com/articles/rMJZj2" title="LeetCode-Best Time to Buy and Sell Stock系列" target="_blank" rel="external">http://www.tuicool.com/articles/rMJZj2</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Algorithms/" rel="tag">#Algorithms</a>
+          
+            <a href="/tags/CPP/" rel="tag">#CPP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/06/2016-01-06-Divide and Conquer/" rel="next" title="Divide and Conquer">
+                <i class="fa fa-chevron-left"></i> Divide and Conquer
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/08/2016-01-08-Greedy Algorithm/" rel="prev" title="Greedy Algorithm">
+                Greedy Algorithm <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/01/07/2016-01-07-Dynamic Programming/"
+     data-title="Dynamic Programming"
+     data-content=""
+     data-url="http://buptldy.github.io/2016/01/07/2016-01-07-Dynamic Programming/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/01/07/2016-01-07-Dynamic Programming/"
+           data-title="Dynamic Programming" data-url="http://buptldy.github.io/2016/01/07/2016-01-07-Dynamic Programming/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Ldy" />
+          <p class="site-author-name" itemprop="name">Ldy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BUPTLdy" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title"></div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gzutxy.blogspot.lt/" target="_blank">gzutxy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tqwangttm.github.io/" target="_blank">tqwangttm</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://buptweixin.github.io/" target="_blank">野原圆长</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#动态规划-dynamic-programming"><span class="nav-number">1.</span> <span class="nav-text">动态规划(dynamic programming)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题举例：Money-robbing"><span class="nav-number">2.</span> <span class="nav-text">问题举例：Money robbing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#问题举例：Maximum-profit-of-transactions"><span class="nav-number">3.</span> <span class="nav-text">问题举例：Maximum profit of transactions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ldy</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bonerkiller"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+  <script type="text/javascript" async
+src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("h8kUJh2v9M5eeMnUGrxK7zxI-gzGzoHsz", "igJeMB5XNIxjtpQ4B0BHsjVb");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>
