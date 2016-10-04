@@ -4,6 +4,23 @@
 
     
   <url>
+    <loc>http://buptldy.github.io/2015/12/29/2015-12-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/</loc>
+    <lastmod>2016-10-04T02:56:26.727Z</lastmod>
+    <data>
+        <display>
+        <title>Asymptotic Notation and Master theorem</title>
+        <pubTime>2015-12-29T02:00:00.000Z</pubTime>
+        
+        <tag>Algorithms</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://buptldy.github.io/2016/10/01/2016-10-01-im2col/</loc>
     <lastmod>2016-10-01T11:54:42.827Z</lastmod>
     <data>
@@ -293,11 +310,11 @@
         <title>Deepin CUDA安装及Keras使用GPU模式运行</title>
         <pubTime>2016-04-09T03:00:00.000Z</pubTime>
         
-        <tag>Cuda</tag>
-         
         <tag>Keras</tag>
          
         <tag>Deep Learning</tag>
+         
+        <tag>Cuda</tag>
          
          
            
@@ -517,23 +534,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://buptldy.github.io/2015/12/29/2015-12-29-%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6%E6%B8%90%E8%BF%9B%E6%A0%87%E5%8F%B7/</loc>
-    <lastmod>2016-03-14T09:32:57.208Z</lastmod>
-    <data>
-        <display>
-        <title>算法渐进记号及主定理</title>
-        <pubTime>2015-12-29T02:00:00.000Z</pubTime>
-        
-        <tag>Algorithms</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://buptldy.github.io/2016/01/03/2016-01-03-%E5%9B%9E%E6%BA%AF%E7%AD%96%E7%95%A5/</loc>

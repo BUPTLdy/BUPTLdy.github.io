@@ -1303,11 +1303,11 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Cuda" scheme="http://buptldy.github.io/tags/Cuda/"/>
-    
       <category term="Keras" scheme="http://buptldy.github.io/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Cuda" scheme="http://buptldy.github.io/tags/Cuda/"/>
     
   </entry>
   
