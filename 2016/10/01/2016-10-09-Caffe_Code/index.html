@@ -1,0 +1,1014 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Deep Learning,Caffe,C++," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Ldy's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="http://7xritj.com1.z0.glb.clouddn.com/16-10-7/19025083.jpg?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Implementing convolution as a matrix multiplication">
+<meta property="og:url" content="http://buptldy.github.io/2016/10/01/2016-10-09-Caffe_Code/index.html">
+<meta property="og:site_name" content="Ldy's Blog">
+<meta property="og:description">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-10-9/99266234.jpg">
+<meta property="og:updated_time" content="2016-10-09T02:00:06.684Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Implementing convolution as a matrix multiplication">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/16-10-9/99266234.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 6231735513754109000,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Implementing convolution as a matrix multiplication | Ldy's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-71757219-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?69c6cb02c2398bb4b93dd67e2069320b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1257966317&web_id=1257966317" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ldy's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="st-search-show-outputs">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'Q1wTNWx5LN7C_D8yzezV','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Implementing convolution as a matrix multiplication
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-10-01T10:00:00+08:00" content="2016-10-01">
+              2016-10-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/01/2016-10-09-Caffe_Code/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/01/2016-10-09-Caffe_Code/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+
+
+          
+          
+             <span id="/2016/10/01/2016-10-09-Caffe_Code/" class="leancloud_visitors" data-flag-title="Implementing convolution as a matrix multiplication">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://7xritj.com1.z0.glb.clouddn.com/16-10-9/99266234.jpg" alt=""><br><a id="more"></a></p>
+<h2 id="Caffe简介"><a href="#Caffe简介" class="headerlink" title="Caffe简介"></a>Caffe简介</h2><p><a href="http://caffe.berkeleyvision.org/" target="_blank" rel="external">Caffe</a>作为一个优秀的深度学习框架网上已经有很多内容介绍了，这里就不在多说。作为一个C++新手，断断续续看Caffe源码一个月以来发现越看不懂的东西越多，因此在博客里记录和分享一下学习的过程。其中我把自己看源码的一些注释结合了网上一些同学的注释以及在学习源码过程中查到到的一些资源(包括怎么使用IDE单步调试以及一些Caffe中使用的第三方库的介绍)放在github上：<a href="https://github.com/BUPTLdy/Caffe_Code_Analysis" target="_blank" rel="external">Caffe_Code_Analysis</a>，感兴趣的同学可以看一看，希望能对你有帮助。</p>
+<p>一般在介绍Caffe代码结构的时候，大家都会说Caffe主要由<code>Blob</code> <code>Layer</code> <code>Net</code> 和 <code>Solver</code>这几个部分组成。</p>
+<ul>
+<li>Blob 主要用来表示网络中的数据，包括训练数据，网络各层自身的参数(包括权值、偏置以及它们的梯度)，网络之间传递的数据都是通过 Blob 来实现的，同时 Blob 数据也支持在 CPU 与 GPU 上存储，能够在两者之间做同步。</li>
+<li>Layer 是对神经网络中各种层的一个抽象，包括我们熟知的卷积层和下采样层，还有全连接层和各种激活函数层等等。同时每种 Layer 都实现了前向传播和反向传播，并通过 Blob 来传递数据。</li>
+<li>Net 是对整个网络的表示，由各种 Layer 前后连接组合而成，也是我们所构建的网络模型。</li>
+<li>Solver 定义了针对 Net 网络模型的求解方法，记录网络的训练过程，保存网络模型参数，中断并恢复网络的训练过程。自定义 Solver 能够实现不同的网络求解方式。</li>
+</ul>
+<p>不过在刚开始准备阅读Caffe代码的时候，就算知道了代码是由上面四部分组成还是感觉会无从下手，下面我们准备通过一个<a href="http://caffe.berkeleyvision.org/gathered/examples/mnist.html" target="_blank" rel="external">Caffe训练LeNet</a>的实例并结合代码来解释Caffe是如何初始化网络，然后正向传播、反向传播开始训练，最终得到训练好的模型这一过程。</p>
+<h2 id="训练LeNet"><a href="#训练LeNet" class="headerlink" title="训练LeNet"></a>训练LeNet</h2><p>在Caffe提供的例子里，训练LeNet网络的命令为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $CAFFE_ROOT</span><br><span class="line">./build/tools/caffe train --solver=examples/mnist/lenet_solver.prototxt</span><br></pre></td></tr></table></figure></p>
+<p>其中第一个参数<code>build/tools/caffe</code>是Caffe框架的主要框架，由<a href="https://github.com/BVLC/caffe/blob/master/tools/caffe.cpp" target="_blank" rel="external"><code>tools/caffe.cpp</code></a>文件编译而来，第二个参数<code>train</code>表示是要训练网络，第三个参数是 <a href="https://github.com/BVLC/caffe/blob/master/examples/mnist/lenet_solver.prototxt" target="_blank" rel="external">solver的protobuf描述文件</a>。在Caffe中，网络模型的描述及其求解都是通过 <a href="https://developers.google.com/protocol-buffers/" target="_blank" rel="external">protobuf</a> 定义的，并不需要通过敲代码来实现。同时，模型的参数也是通过 protobuf 实现加载和存储，包括 CPU 与 GPU 之间的无缝切换，都是通过配置来实现的，不需要通过硬编码的方式实现，有关<br>protobuf的具体内容可参考这篇博文：<a href="http://alanse7en.github.io/caffedai-ma-jie-xi-2/" target="_blank" rel="external">http://alanse7en.github.io/caffedai-ma-jie-xi-2/</a>。</p>
+<h2 id="网络初始化"><a href="#网络初始化" class="headerlink" title="网络初始化"></a>网络初始化</h2><p>下面我们从<code>caffe.cpp</code>的main函数入口开始观察Caffe是怎么一步一步训练网络的。在<code>caffe.cpp</code>中main函数之外通过<code>RegisterBrewFunction</code>这个宏在每一个实现主要功能的函数之后将这个函数的名字和其对应的函数指针添加到了<code>g_brew_map</code>中,具体分别为train()，test()，device_query()，time()这四个函数。</p>
+<p>在运行的时候,根据传入的参数在main函数中，通过GetBrewFunction得到了我们需要调用的那个函数的函数指针，并完成了调用。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// caffe.cpp</span></span><br><span class="line"><span class="keyword">return</span> GetBrewFunction(caffe::<span class="built_in">string</span>(argv[<span class="number">1</span>])) ();</span><br></pre></td></tr></table></figure></p>
+<p>在我们上面所说的训练LeNet的例子中，传入的第二个参数为<code>train</code>，所以调用的函数为<code>caffe.cpp</code>中的<code>int train()</code>函数，接下来主要看这个函数的内容。在<code>train</code>函数中有下面两行代码，下面的代码定义了一个指向Solver<float>的shared_ptr。其中主要是通过调用SolverRegistry这个类的静态成员函数CreateSolver得到一个指向Solver的指针来构造shared_ptr类型的solver。而且由于C++多态的特性，尽管solver是一个指向基类Solver类型的指针，通过solver这个智能指针来调用各个成员函数会调用到各个子类(SGDSolver等)的函数。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// caffe.cpp</span></span><br><span class="line"><span class="comment">// 其中输入参数solver_param就是上面所说的第三个参数：网络的模型及求解文件</span></span><br><span class="line"><span class="built_in">shared_ptr</span>&lt;caffe::Solver&lt;<span class="keyword">float</span>&gt; &gt;</span><br><span class="line">    solver(caffe::SolverRegistry&lt;<span class="keyword">float</span>&gt;::CreateSolver(solver_param);</span><br></pre></td></tr></table></figure></float></p>
+<p>因为在<code>caffe.proto</code>文件中默认的优化<code>type</code>为<code>SGD</code>,所以上面的代码会实例化一个<code>SGDSolver</code>的对象，’SGDSolver’类继承于<code>Solver</code>类，在新建<code>SGDSolver</code>对象时会调用其构造函数如下所示：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//sgd_solvers.hpp</span><br><span class="line">explicit SGDSolver(const SolverParameter&amp; param)</span><br><span class="line">    : Solver&lt;Dtype&gt;(param) &#123; PreSolve(); &#125;</span><br></pre></td></tr></table></figure></p>
+<p>从上面代码可以看出，会先调用父类<code>Solver</code>的构造函数，如下所示。Solver类的构造函数通过<code>Init(param)</code>函数来初始化网络。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//solver.cpp</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Dtype&gt;</span><br><span class="line">Solver&lt;Dtype&gt;::Solver(<span class="keyword">const</span> SolverParameter&amp; param, <span class="keyword">const</span> Solver* root_solver)</span><br><span class="line">    : net_(), callbacks_(), root_solver_(root_solver),requested_early_exit_(<span class="literal">false</span>)</span><br><span class="line">&#123;</span><br><span class="line">  Init(param);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>而在<code>Init(paran)</code>函数中，又主要是通过<code>InitTrainNet()</code>和<code>InitTestNets()</code>函数分别来搭建训练网络结构和测试网络结构。</p>
+<p>训练网络只能有一个,在<code>InitTrainNet()</code>函数中首先会设置一些基本参数，包括设置网络的状态为<code>TRAIN</code>，确定训练网络只有一个等，然会会通过下面这条语句新建了一个<code>Net</code>对象。<code>InitTestNets()</code>函数和<code>InitTrainNet()</code>函数基本类似，不再赘述。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//solver.cpp</span></span><br><span class="line">net_.reset(<span class="keyword">new</span> Net&lt;Dtype&gt;(net_param));</span><br></pre></td></tr></table></figure></p>
+<p>上面语句新建了<code>Net</code>对象之后会调用<code>Net</code>类的构造函数，如下所示。可以看出构造函数是通过<code>Init(param)</code>函数来初始化网络结构的。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//net.cpp</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Dtype&gt;</span><br><span class="line">Net&lt;Dtype&gt;::Net(<span class="keyword">const</span> NetParameter&amp; param, <span class="keyword">const</span> Net* root_net)</span><br><span class="line">    : root_net_(root_net) &#123;</span><br><span class="line">  Init(param);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>下面是net.cpp文件里<code>Init()</code>函数的主要内容(忽略具体细节)，其中<code>LayerRegistry&lt;Dtype&gt;::CreateLayer(layer_param)</code>主要是通过调用LayerRegistry这个类的静态成员函数CreateLayer得到一个指向Layer类的shared_ptr类型指针。并把每一层的指针存放在<code>vector&lt;shared_ptr&lt;Layer&lt;Dtype&gt; &gt; &gt; layers_</code>这个指针容器里。这里相当于根据每层的参数<code>layer_param</code>实例化了对应的各个子类层，比如<code>conv_layer</code>(卷积层)和<code>pooling_layer</code>(池化层)。实例化了各层就会调用每个层的构造函数，但每层的构造函数都没有做什么大的设置。</p>
+<p>接下来在Init()函数中主要由四部分组成：</p>
+<ul>
+<li><code>AppendBottom</code>：设置每一层的输入数据</li>
+<li><code>AppendTop</code>：设置每一层的输出数据</li>
+<li><code>layers_[layer_id]-&gt;SetUp</code>：对上面设置的输入输出数据计算分配空间，并设置每层的可学习参数(权值和偏置),下面会详细降到这个函数</li>
+<li><code>AppendParam</code>：对上面申请的可学习参数进行设置，主要包括学习率和正则率等。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//net.cpp Init()</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> layer_id = <span class="number">0</span>; layer_id &lt; param.layer_size(); ++layer_id) &#123;<span class="comment">//param是网络参数，layer_size()返回网络拥有的层数</span></span><br><span class="line">    <span class="keyword">const</span> LayerParameter&amp; layer_param = param.layer(layer_id);<span class="comment">//获取当前layer的参数</span></span><br><span class="line">    layers_.push_back(LayerRegistry&lt;Dtype&gt;::CreateLayer(layer_param));<span class="comment">//根据参数实例化layer</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//下面的两个for循环将此layer的bottom blob的指针和top blob的指针放入bottom_vecs_和top_vecs_,bottom blob和top blob的实例全都存放在blobs_中。相邻的两层，前一层的top blob是后一层的bottom blob，所以blobs_的同一个blob既可能是bottom blob，也可能使top blob。</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> bottom_id = <span class="number">0</span>; bottom_id &lt; layer_param.bottom_size();++bottom_id) &#123;</span><br><span class="line">       <span class="keyword">const</span> <span class="keyword">int</span> blob_id=AppendBottom(param,layer_id,bottom_id,&amp;available_blobs,&amp;blob_name_to_idx);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> top_id = <span class="number">0</span>; top_id &lt; num_top; ++top_id) &#123;</span><br><span class="line">       AppendTop(param, layer_id, top_id, &amp;available_blobs, &amp;blob_name_to_idx);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用layer类的Setup函数进行初始化，输入参数：每个layer的输入blobs以及输出blobs,为每个blob设置大小</span></span><br><span class="line">layers_[layer_id]-&gt;SetUp(bottom_vecs_[layer_id], top_vecs_[layer_id]);</span><br><span class="line"></span><br><span class="line"><span class="comment">//接下来的工作是将每层的parameter的指针塞进params_，尤其是learnable_params_。</span></span><br><span class="line">   <span class="keyword">const</span> <span class="keyword">int</span> num_param_blobs = layers_[layer_id]-&gt;blobs().size();</span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> param_id = <span class="number">0</span>; param_id &lt; num_param_blobs; ++param_id) &#123;</span><br><span class="line">       AppendParam(param, layer_id, param_id);</span><br><span class="line">       <span class="comment">//AppendParam负责具体的dirtywork</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>经过上面的过程，<code>Net</code>类的初始化工作基本就完成了，接着我们具体来看看上面所说的<code>layers_[layer_id]-&gt;SetUp</code>对每一具体的层结构进行设置，我们来看看<code>Layer</code>类的<code>Setup()</code>函数，对每一层的设置主要由下面三个函数组成：<br><code>LayerSetUp(bottom, top)</code>：由Layer类派生出的特定类都需要重写这个函数，主要功能是设置权值参数(包括偏置)的空间以及对权值参数经行随机初始化。<br><code>Reshape(bottom, top)</code>：根据输出blob和权值参数计算输出blob的维数，并申请空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//layer.hpp</span><br><span class="line">// layer 初始化设置</span><br><span class="line">void SetUp(const vector&lt;Blob&lt;Dtype&gt;*&gt;&amp; bottom,   </span><br><span class="line">    const vector&lt;Blob&lt;Dtype&gt;*&gt;&amp; top) &#123;</span><br><span class="line">  InitMutex();</span><br><span class="line">  CheckBlobCounts(bottom, top);</span><br><span class="line">  LayerSetUp(bottom, top);</span><br><span class="line">  Reshape(bottom, top);</span><br><span class="line">  SetLossWeights(top);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过上述过程基本上就完成了初始化的工作，总体的流程大概就是新建一个<code>Solver</code>对象，然后调用<code>Solver</code>类的构造函数，然后在<code>Solver</code>的构造函数中又会新建<code>Net</code>类实例，在<code>Net</code>类的构造函数中又会新建各个<code>Layer</code>的实例,一直具体到设置每个<code>Blob</code>,大概就介绍完了网络初始化的工作，当然里面还有很多具体的细节，但大概的流程就是这样。</p>
+<h2 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h2><p>上面介绍了网络初始化的大概流程，如上面所说的网络的初始化就是从下面一行代码新建一个<code>solver</code>指针开始一步一步的调用<code>Solver</code>，<code>Net</code>,<code>Layer</code>,<code>Blob</code>类的构造函数，完成整个网络的初始化。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//caffe.cpp</span><br><span class="line">shared_ptr&lt;caffe::Solver&lt;float&gt; &gt; //初始化</span><br><span class="line">     solver(caffe::SolverRegistry&lt;float&gt;::CreateSolver(solver_param));</span><br></pre></td></tr></table></figure></p>
+<p>完成初始化之后，就可以开始对网络经行训练了，开始训练的代码如下所示，指向<code>Solver</code>类的指针<code>solver</code>开始调用<code>Solver</code>类的成员函数<code>Solve()</code>，名称比较绕啊。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开始优化</span></span><br><span class="line">solver-&gt;Solve();</span><br></pre></td></tr></table></figure></p>
+<p>接下来我们来看看<code>Solver</code>类的成员函数<code>Solve()</code>,Solve函数其实主要就是调用了<code>Solver</code>的另一个成员函数<code>Step（）</code>来完成实际的迭代训练过程。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//solver.cpp</span><br><span class="line">template &lt;typename Dtype&gt;</span><br><span class="line">void Solver&lt;Dtype&gt;::Solve(const char* resume_file) &#123;</span><br><span class="line">  ...</span><br><span class="line">  int start_iter = iter_;</span><br><span class="line">  ...</span><br><span class="line">  // 然后调用了&apos;Step&apos;函数，这个函数执行了实际的逐步的迭代过程</span><br><span class="line">  Step(param_.max_iter() - iter_);</span><br><span class="line">  ...</span><br><span class="line">  LOG(INFO) &lt;&lt; &quot;Optimization Done.&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>顺着来看看这个<code>Step()</code>函数的主要代码,首先是一个大循环设置了总的迭代次数，在每次迭代中训练<code>iter_size</code> x <code>batch_size</code>个样本，这个设置是为了在GPU的显存不够的时候使用，比如我本来想把batch_size设置为128，iter_size是默认为1的，但是会out_of_memory，借助这个方法，可以设置batch_size=32，iter_size=4，那实际上每次迭代还是处理了128个数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">//solver.cpp</span><br><span class="line">template &lt;typename Dtype&gt;</span><br><span class="line">void Solver&lt;Dtype&gt;::Step(int iters) &#123;</span><br><span class="line">  ...</span><br><span class="line">  //迭代</span><br><span class="line">  while (iter_ &lt; stop_iter) &#123;</span><br><span class="line">    ...</span><br><span class="line">    // iter_size也是在solver.prototxt里设置，实际上的batch_size=iter_size*网络定义里的batch_size，</span><br><span class="line">    // 因此每一次迭代的loss是iter_size次迭代的和，再除以iter_size，这个loss是通过调用`Net::ForwardBackward`函数得到的</span><br><span class="line">    // accumulate gradients over `iter_size` x `batch_size` instances</span><br><span class="line">    for (int i = 0; i &lt; param_.iter_size(); ++i) &#123;</span><br><span class="line">    /*</span><br><span class="line">     * 调用了Net中的代码，主要完成了前向后向的计算，</span><br><span class="line">     * 前向用于计算模型的最终输出和Loss，后向用于</span><br><span class="line">     * 计算每一层网络和参数的梯度。</span><br><span class="line">     */</span><br><span class="line">      loss += net_-&gt;ForwardBackward();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * 这个函数主要做Loss的平滑。由于Caffe的训练方式是SGD，我们无法把所有的数据同时</span><br><span class="line">     * 放入模型进行训练，那么部分数据产生的Loss就可能会和全样本的平均Loss不同，在必要</span><br><span class="line">     * 时候将Loss和历史过程中更新的Loss求平均就可以减少Loss的震荡问题。</span><br><span class="line">     */</span><br><span class="line">    UpdateSmoothedLoss(loss, start_iter, average_loss);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    ...</span><br><span class="line">    // 执行梯度的更新，这个函数在基类`Solver`中没有实现，会调用每个子类自己的实现</span><br><span class="line">    //，后面具体分析`SGDSolver`的实现</span><br><span class="line">    ApplyUpdate();</span><br><span class="line"></span><br><span class="line">    // 迭代次数加1</span><br><span class="line">    ++iter_;</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面<code>Step()</code>函数主要分为三部分：</p>
+<h3 id="loss-net-gt-ForwardBackward"><a href="#loss-net-gt-ForwardBackward" class="headerlink" title="loss += net_-&gt;ForwardBackward();"></a><code>loss += net_-&gt;ForwardBackward();</code></h3><p>这行代码通过<code>Net</code>类的<code>net_</code>指针调用其成员函数<code>ForwardBackward()</code>，其代码如下所示,分别调用了成员函数<code>Forward(&amp;loss)</code>和成员函数<code>Backward()</code>来进行前向传播和反向传播。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// net.hpp</span><br><span class="line">// 进行一次正向传播，一次反向传播</span><br><span class="line">Dtype ForwardBackward() &#123;</span><br><span class="line">  Dtype loss;</span><br><span class="line">  Forward(&amp;loss);</span><br><span class="line">  Backward();</span><br><span class="line">  return loss;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前面的<code>Forward(&amp;loss)</code>函数最终会执行到下面一段代码,<code>Net</code>类的<code>Forward()</code>函数会对网络中的每一层执行<code>Layer</code>类的成员函数<code>Forward()</code>，而具体的每一层<code>Layer</code>的派生类会重写<code>Forward()</code>函数来实现不同层的前向计算功能。上面的<code>Backward()</code>反向求导函数也和<code>Forward()</code>类似，调用不同层的<code>Backward()</code>函数来计算每层的梯度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//net.cpp</span><br><span class="line">for (int i = start; i &lt;= end; ++i) &#123;</span><br><span class="line">// 对每一层进行前向计算，返回每层的loss，其实只有最后一层loss不为0</span><br><span class="line">  Dtype layer_loss = layers_[i]-&gt;Forward(bottom_vecs_[i], top_vecs_[i]);</span><br><span class="line">  loss += layer_loss;</span><br><span class="line">  if (debug_info_) &#123; ForwardDebugInfo(i); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="UpdateSmoothedLoss"><a href="#UpdateSmoothedLoss" class="headerlink" title="UpdateSmoothedLoss();"></a><code>UpdateSmoothedLoss();</code></h3><p> 这个函数主要做Loss的平滑。由于Caffe的训练方式是SGD，我们无法把所有的数据同时放入模型进行训练，那么部分数据产生的Loss就可能会和全样本的平均Loss不同，在必要时候将Loss和历史过程中更新的Loss求平均就可以减少Loss的震荡问题</p>
+<h3 id="ApplyUpdate"><a href="#ApplyUpdate" class="headerlink" title="ApplyUpdate();"></a><code>ApplyUpdate();</code></h3><p>这个函数是<code>Solver</code>类的纯虚函数，需要派生类来实现，比如<code>SGDSolver</code>类实现的<code>ApplyUpdate();</code>函数如下，主要内容包括：设置参数的学习率；对梯度进行Normalize；对反向求导得到的梯度添加正则项的梯度；最后根据SGD算法计算最终的梯度；最后的最后把计算得到的最终梯度对权值进行更新。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">template &lt;typename Dtype&gt;</span><br><span class="line">void SGDSolver&lt;Dtype&gt;::ApplyUpdate() &#123;</span><br><span class="line">  CHECK(Caffe::root_solver());</span><br><span class="line"></span><br><span class="line">  // GetLearningRate根据设置的lr_policy来计算当前迭代的learning rate的值</span><br><span class="line">  Dtype rate = GetLearningRate();</span><br><span class="line"></span><br><span class="line">  // 判断是否需要输出当前的learning rate</span><br><span class="line">  if (this-&gt;param_.display() &amp;&amp; this-&gt;iter_ % this-&gt;param_.display() == 0) &#123;</span><br><span class="line">    LOG(INFO) &lt;&lt; &quot;Iteration &quot; &lt;&lt; this-&gt;iter_ &lt;&lt; &quot;, lr = &quot; &lt;&lt; rate;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  // 避免梯度爆炸，如果梯度的二范数超过了某个数值则进行scale操作，将梯度减小</span><br><span class="line">  ClipGradients();</span><br><span class="line"></span><br><span class="line">  // 对所有可更新的网络参数进行操作</span><br><span class="line">  for (int param_id = 0; param_id &lt; this-&gt;net_-&gt;learnable_params().size();</span><br><span class="line">       ++param_id) &#123;</span><br><span class="line">	// 将第param_id个参数的梯度除以iter_size，</span><br><span class="line">	// 这一步的作用是保证实际的batch_size=iter_size*设置的batch_size</span><br><span class="line">    Normalize(param_id);</span><br><span class="line"></span><br><span class="line">    // 将正则化部分的梯度降入到每个参数的梯度中</span><br><span class="line">    Regularize(param_id);</span><br><span class="line"></span><br><span class="line">    // 计算SGD算法的梯度(momentum等)</span><br><span class="line">    ComputeUpdateValue(param_id, rate);</span><br><span class="line">  &#125;</span><br><span class="line">  // 调用`Net::Update`更新所有的参数</span><br><span class="line">  this-&gt;net_-&gt;Update();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>等进行了所有的循环，网络的训练也算是完成了。上面大概说了下使用Caffe进行网络训练时网络初始化以及前向传播、反向传播、梯度更新的过程，其中省略了大量的细节。上面还有很多东西都没提到，比如说Caffe中<code>Layer</code>派生类的注册及各个具体层前向反向的实现、<code>Solver</code>派生类的注册、网络结构的读取、模型的保存等等大量内容。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
+          
+            <a href="/tags/Caffe/" rel="tag">#Caffe</a>
+          
+            <a href="/tags/C/" rel="tag">#C++</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/01/2016-10-01-im2col/" rel="next" title="Implementing convolution as a matrix multiplication">
+                <i class="fa fa-chevron-left"></i> Implementing convolution as a matrix multiplication
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/10/01/2016-10-09-Caffe_Code/"
+     data-title="Implementing convolution as a matrix multiplication"
+     data-content=""
+     data-url="http://buptldy.github.io/2016/10/01/2016-10-09-Caffe_Code/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/01/2016-10-09-Caffe_Code/"
+           data-title="Implementing convolution as a matrix multiplication" data-url="http://buptldy.github.io/2016/10/01/2016-10-09-Caffe_Code/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Ldy" />
+          <p class="site-author-name" itemprop="name">Ldy</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">35</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/BUPTLdy" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+            <div class="links-of-blogroll-title"></div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://gzutxy.blogspot.lt/" target="_blank">gzutxy</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://tqwangttm.github.io/" target="_blank">tqwangttm</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://buptweixin.github.io/" target="_blank">野原圆长</a>
+                </li>
+              
+            </ul>
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Caffe简介"><span class="nav-number">1.</span> <span class="nav-text">Caffe简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练LeNet"><span class="nav-number">2.</span> <span class="nav-text">训练LeNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络初始化"><span class="nav-number">3.</span> <span class="nav-text">网络初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练过程"><span class="nav-number">4.</span> <span class="nav-text">训练过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#loss-net-gt-ForwardBackward"><span class="nav-number">4.1.</span> <span class="nav-text">loss += net_->ForwardBackward();</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UpdateSmoothedLoss"><span class="nav-number">4.2.</span> <span class="nav-text">UpdateSmoothedLoss();</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ApplyUpdate"><span class="nav-number">4.3.</span> <span class="nav-text">ApplyUpdate();</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ldy</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"bonerkiller"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      <script src="/vendors/ua-parser-js/dist/ua-parser.min.js"></script>
+      <script src="/js/src/hook-duoshuo.js"></script>
+    
+  
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+  <script type="text/javascript" async
+src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("h8kUJh2v9M5eeMnUGrxK7zxI-gzGzoHsz", "igJeMB5XNIxjtpQ4B0BHsjVb");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+
+
+<!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config(null);
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+</body>
+</html>
