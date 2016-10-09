@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://buptldy.github.io/"/>
-  <updated>2016-10-09T02:05:59.126Z</updated>
+  <updated>2016-10-09T02:13:14.802Z</updated>
   <id>http://buptldy.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://buptldy.github.io/2016/10/09/2016-10-09-Caffe_Code/"/>
     <id>http://buptldy.github.io/2016/10/09/2016-10-09-Caffe_Code/</id>
     <published>2016-10-09T02:00:00.000Z</published>
-    <updated>2016-10-09T02:05:59.126Z</updated>
+    <updated>2016-10-09T02:13:14.802Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-10-9/99266234.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-10-9/83591184.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Caffe简介&quot;&gt;&lt;a href=&quot;#Caffe简介&quot; class=&quot;headerlink&quot; title=&quot;Caffe简介&quot;&gt;&lt;/a&gt;Caffe简介&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://caffe.berkeleyvision.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Caffe&lt;/a&gt;作为一个优秀的深度学习框架网上已经有很多内容介绍了，这里就不在多说。作为一个C++新手，断断续续看Caffe源码一个月以来发现越看不懂的东西越多，因此在博客里记录和分享一下学习的过程。其中我把自己看源码的一些注释结合了网上一些同学的注释以及在学习源码过程中查到到的一些资源(包括怎么使用IDE单步调试以及一些Caffe中使用的第三方库的介绍)放在github上：&lt;a href=&quot;https://github.com/BUPTLdy/Caffe_Code_Analysis&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Caffe_Code_Analysis&lt;/a&gt;，感兴趣的同学可以看一看，希望能对你有帮助。&lt;/p&gt;
 &lt;p&gt;一般在介绍Caffe代码结构的时候，大家都会说Caffe主要由&lt;code&gt;Blob&lt;/code&gt; &lt;code&gt;Layer&lt;/code&gt; &lt;code&gt;Net&lt;/code&gt; 和 &lt;code&gt;Solver&lt;/code&gt;这几个部分组成。&lt;/p&gt;
 &lt;ul&gt;
@@ -69,7 +69,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-10-9/99266234.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+      &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-10-9/83591184.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
