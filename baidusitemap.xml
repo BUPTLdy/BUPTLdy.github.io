@@ -3,6 +3,25 @@
 
 
     
+  <url>
+    <loc>http://buptldy.github.io/2016/04/04/2016-04-04-Python%20MySQL/</loc>
+    <lastmod>2016-10-13T01:25:32.873Z</lastmod>
+    <data>
+        <display>
+        <title>Connect to MySQL in Python</title>
+        <pubTime>2016-04-04T03:00:00.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>MySQL</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://buptldy.github.io/2016/10/09/2016-10-09-Caffe_Code/</loc>
@@ -306,25 +325,6 @@
         <tag>Keras</tag>
          
         <tag>Deep Learning</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/04/04/2016-04-04-Python%20MySQL/</loc>
-    <lastmod>2016-10-04T05:04:42.064Z</lastmod>
-    <data>
-        <display>
-        <title>Connect to MySQL in Python?</title>
-        <pubTime>2016-04-04T03:00:00.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>MySQL</tag>
          
          
            
