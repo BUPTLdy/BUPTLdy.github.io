@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithms,Python," />
+  <meta name="keywords" content="Deep Learning,Caffe," />
 
 
 
@@ -59,22 +59,23 @@
 
 
 
-<meta name="description" content="网络流的定义在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Maximum Flow Problem">
-<meta property="og:url" content="http://buptldy.github.io/2016/01/10/2016-01-10-Maximum Flow Problem/index.html">
+<meta property="og:title" content="Transposed Convolution, Fractionally Strided Convolution or Deconvolution">
+<meta property="og:url" content="http://buptldy.github.io/2016/10/29/2016-10-29-deconv/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="网络流的定义在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟">
-<meta property="og:image" content="http://i.imgur.com/a8NFZl3.png">
-<meta property="og:image" content="http://i.imgur.com/RS7lQTw.png">
-<meta property="og:image" content="http://i.imgur.com/7Q718mT.png">
-<meta property="og:image" content="http://i.imgur.com/zsQkoBR.png">
-<meta property="og:image" content="http://i.imgur.com/9hAGUgE.png">
-<meta property="og:updated_time" content="2016-10-04T04:30:01.114Z">
+<meta property="og:description">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/8c2b2f6fjw1f9ac3snmk6j21130a7wj5.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/8c2b2f6fjw1f99h94gnlbg20az0aldi4.gif">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/8c2b2f6fjw1f99h9jeg5ig20cd0bf0v5.gif">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/8c2b2f6fjw1f99i1rv4jog206s0770t7.gif">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/8c2b2f6fjw1f99j2k89hlg209k0aq41i.gif">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/8c2b2f6fjw1f9aba7bh2ig20az0chwjq.gif">
+<meta property="og:updated_time" content="2016-10-30T07:40:44.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Maximum Flow Problem">
-<meta name="twitter:description" content="网络流的定义在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟">
-<meta name="twitter:image" content="http://i.imgur.com/a8NFZl3.png">
+<meta name="twitter:title" content="Transposed Convolution, Fractionally Strided Convolution or Deconvolution">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://ww3.sinaimg.cn/large/8c2b2f6fjw1f9ac3snmk6j21130a7wj5.jpg">
 
 
 
@@ -92,7 +93,7 @@
   };
 </script>
 
-  <title> Maximum Flow Problem | Ldy's Blog </title>
+  <title> Transposed Convolution, Fractionally Strided Convolution or Deconvolution | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -270,7 +271,7 @@
             
             
               
-                Maximum Flow Problem
+                Transposed Convolution, Fractionally Strided Convolution or Deconvolution
               
             
           </h1>
@@ -282,8 +283,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-01-10T10:00:00+08:00" content="2016-01-10">
-              2016-01-10
+            <time itemprop="dateCreated" datetime="2016-10-29T10:00:00+08:00" content="2016-10-29">
+              2016-10-29
             </time>
           </span>
 
@@ -293,8 +294,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/10/2016-01-10-Maximum Flow Problem/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/10/2016-01-10-Maximum Flow Problem/" itemprop="commentsCount"></span>
+                <a href="/2016/10/29/2016-10-29-deconv/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/29/2016-10-29-deconv/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -306,7 +307,7 @@
 
           
           
-             <span id="/2016/01/10/2016-01-10-Maximum Flow Problem/" class="leancloud_visitors" data-flag-title="Maximum Flow Problem">
+             <span id="/2016/10/29/2016-10-29-deconv/" class="leancloud_visitors" data-flag-title="Transposed Convolution, Fractionally Strided Convolution or Deconvolution">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -327,64 +328,39 @@
       
 
       
-        <h1 id="网络流的定义"><a href="#网络流的定义" class="headerlink" title="网络流的定义"></a>网络流的定义</h1><p>在图论中，网络流（Network flow）是指在一个每条边都有容量（capacity）的有向图上分配每条路劲流量，使一条边的流量不会超过它的容量。通常在运筹学中，有向图称为网络。顶点称为节点（node）而边称为弧（arc）。一道流必须符合一个结点的进出的流量相同的限制，除非这是一个源点（source）──有较多向外的流，或是一个汇点（sink）──有较多向内的流。一个网络可以用来模拟道路系统的交通量、管中的液体、电路中的电流或类似一些东西在一个结点的网络中游动的任何事物。<br><a id="more"></a></p>
-<p>假设 G = (V,E) 是一个有限的有向图，它的每条边$  (u,v) \in E $ 都有一个非负值实数的容量$c(u, v)$。如果$(u, v) \not \in E$，我们假设 $c(u, v) = 0$。我们区别两个顶点：一个源点 s 和一个汇点 t 。一道网络流是一个对于所有结点 u 和 v 都有以下特性的实数函数 $f:$：</p>
-<blockquote>
-<p>容量限制（Capacity Constraints）：    $f(u, v) \le c(u, v)$一条边的流不能超过它的容量。</p>
-<p>流量守恒（Flow Conservation）：    除非u = s或u = t，否则 $\sum_{w \in V} f(u, w) = 0$，中间结点的流入等于流出。</p>
-</blockquote>
-<p>即流守恒意味着： $\sum_{(u,v) \in E} f(u,v) = \sum_{(v,z) \in E} f(v,z) $，对每个顶点${v \in V\setminus{s,t}}$。</p>
-<p><strong>最大流问题</strong>就是，给定一个流网络G，一个源节点s，一个汇点t，我们希望找到值最大的一个流。</p>
-<p>一个网络流如下图所示：</p>
-<center><br><img src="http://i.imgur.com/a8NFZl3.png" alt=""><br></center>
+        <center><br><img src="http://ww3.sinaimg.cn/large/8c2b2f6fjw1f9ac3snmk6j21130a7wj5.jpg"><br></center><br><a id="more"></a><br><br>反卷积（Deconvolution）的概念第一次出现是Zeiler在2010年发表的论文<a href="http://www.matthewzeiler.com/pubs/cvpr2010/cvpr2010.pdf" target="_blank" rel="external">Deconvolutional networks</a>中，但是并没有指定反卷积这个名字，反卷积这个术语正式的使用是在其之后的工作中(<a href="https://www.cs.nyu.edu/~gwtaylor/publications/zeilertaylorfergus_iccv2011.pdf" target="_blank" rel="external">Adaptive deconvolutional networks for mid and high level feature learning</a>)。随着反卷积在神经网络可视化上的成功应用，其被越来越多的工作所采纳比如：场景分割、生成模型等。其中反卷积（Deconvolution）也有很多其他的叫法，比如：Transposed Convolution，Fractional Strided Convolution等等。<br><br>这篇文章的目的主要有两方面：<br>1. 解释卷积层和反卷积层之间的关系；<br>2. 弄清楚反卷积层输入特征大小和输出特征大小之间的关系。<br><br><br>## 卷积层<br><br>卷积层大家应该都很熟悉了,为了方便说明，定义如下：<br>- 二维的离散卷积（$N = 2$）<br>- 方形的特征输入（$i_1 = i_2 = i$）<br>- 方形的卷积核尺寸（$k_1 = k_2 = k$）<br>- 每个维度相同的步长（$s_1 = s_2 = s$）<br>- 每个维度相同的padding ($p_1 = p_2 = p$)<br><br>下图表示参数为 $(i=5,k=3,s=2,p=1)$ 的卷积计算过程，从计算结果可以看出输出特征的尺寸为 $(o_1 = o_2 = o = 3)$。<br><center><br>    <img src="http://ww2.sinaimg.cn/large/8c2b2f6fjw1f99h94gnlbg20az0aldi4.gif"><br></center>
 
-<h1 id="网络最大流算法"><a href="#网络最大流算法" class="headerlink" title="网络最大流算法"></a>网络最大流算法</h1><ul>
-<li>Ford-Fulkerson算法</li>
-</ul>
-<p>残存网络的概念：</p>
-<p>边的残存容量（residual capacity）是$ c_f(u, v) = c(u, v) - f(u, v)$。</p>
-<p>定义 $G_f(V, E_f)$ 表示剩余网络（residual network），它显示当前网络可用的容量的多少。就算在原网络中由 u 到 v 没有边，在剩余网络仍可能有由 u 到 v 的边。因为残存网络允许相反方向的流抵消，减少由 v 到 u 的流相当于增加由 u 到 v 的流，因为我们是为了求最大流，之前走过的路可能是走错的。</p>
-<p>增广路（augmenting path）是一条路径 $(u_1, u_2, \dots, u_k)$，而$u_1 = s , u_k = t $ 及$c_f(u_i , u_{i+1})&gt;0$，如果存在增广路，这表示沿这条路径还能够传送更多流。当且仅当剩余网络$G_f$ 没有增广路时处于最大流。</p>
-<p>建立残存网络$ G_f$的步骤：</p>
-<ol>
-<li>$ G_f =  V $ 的顶点</li>
-<li><p>定义如下的 $ G_f =  E_f$ 的边,对每条边 $ (x,y) \in E$</p>
+<p>下图表示参数为 $(i=6,k=3,s=2,p=1)$ 的卷积计算过程，从计算结果可以看出输出特征的尺寸为 $(o_1 = o_2 = o = 3)$。</p>
+<center><br>    <img src="http://ww4.sinaimg.cn/large/8c2b2f6fjw1f99h9jeg5ig20cd0bf0v5.gif"><br></center>
+
+<p>从上述两个例子我们可以总结出卷积层输入特征与输出特征尺寸和卷积核参数的关系为：<br>$$o = \left\lfloor \frac{i + 2p - k}{s} \right\rfloor + 1.$$<br>其中 $\lfloor x \rfloor$ 表示对 $x$ 向下取整。</p>
+<h2 id="反卷积层"><a href="#反卷积层" class="headerlink" title="反卷积层"></a>反卷积层</h2><p>在介绍反卷积之前，我们先来看看卷积运算和矩阵运算之间的关系。</p>
+<h3 id="卷积和矩阵相乘"><a href="#卷积和矩阵相乘" class="headerlink" title="卷积和矩阵相乘"></a>卷积和矩阵相乘</h3><p>考虑如下一个简单的卷积层运算，其参数为 $(i=4,k=3,s=1,p=0)$，输出 $o=2$。</p>
+<center><br><img src="http://ww3.sinaimg.cn/large/8c2b2f6fjw1f99i1rv4jog206s0770t7.gif"><br></center>
+
+<p>对于上述卷积运算，我们把上图所示的3×3卷积核展成一个如下所示的[4,16]的稀疏矩阵 $\mathbf{C}$， 其中非0元素 $w_{i,j}$ 表示卷积核的第 $i$ 行和第 $j$ 列。<br>$$\begin{equation<em>}<br>    \begin{pmatrix}<br>    w_{0,0} &amp; w_{0,1} &amp; w_{0,2} &amp; 0       &amp; w_{1,0} &amp; w_{1,1} &amp; w_{1,2} &amp; 0       &amp;<br>    w_{2,0} &amp; w_{2,1} &amp; w_{2,2} &amp; 0       &amp; 0       &amp; 0       &amp; 0       &amp; 0       \\<br>    0       &amp; w_{0,0} &amp; w_{0,1} &amp; w_{0,2} &amp; 0       &amp; w_{1,0} &amp; w_{1,1} &amp; w_{1,2} &amp;<br>    0       &amp; w_{2,0} &amp; w_{2,1} &amp; w_{2,2} &amp; 0       &amp; 0       &amp; 0       &amp; 0       \\<br>    0       &amp; 0       &amp; 0       &amp; 0       &amp; w_{0,0} &amp; w_{0,1} &amp; w_{0,2} &amp; 0       &amp;<br>    w_{1,0} &amp; w_{1,1} &amp; w_{1,2} &amp; 0       &amp; w_{2,0} &amp; w_{2,1} &amp; w_{2,2} &amp; 0       \\<br>    0       &amp; 0       &amp; 0       &amp; 0       &amp; 0       &amp; w_{0,0} &amp; w_{0,1} &amp; w_{0,2} &amp;<br>    0       &amp; w_{1,0} &amp; w_{1,1} &amp; w_{1,2} &amp; 0       &amp; w_{2,0} &amp; w_{2,1} &amp; w_{2,2} \\<br>    \end{pmatrix}<br>\end{equation</em>}$$</p>
+<p>我们再把4×4的输入特征展成[16,1]的矩阵 $\mathbf{X}$，那么 $\mathbf{Y = CX}$ 则是一个[4,1]的输出特征矩阵，把它重新排列2×2的输出特征就得到最终的结果，从上述分析可以看出卷积层的计算其实是可以转化成矩阵相乘的。值得注意的是，在一些深度学习网络的开源框架中并不是通过这种这个转换方法来计算卷积的，因为这个转换会存在很多无用的0乘操作，Caffe中具体实现卷积计算的方法可参考<a href="http://buptldy.github.io/2016/10/01/2016-10-01-im2col/">Implementing convolution as a matrix multiplication</a>。</p>
+<p>通过上述的分析，我们已经知道卷积层的前向操作可以表示为和矩阵$\mathbf{C}$相乘，那么 <strong>我们很容易得到卷积层的反向传播就是和$\mathbf{C}$的转置相乘</strong>。</p>
+<h3 id="反卷积和卷积的关系"><a href="#反卷积和卷积的关系" class="headerlink" title="反卷积和卷积的关系"></a>反卷积和卷积的关系</h3><p>全面我们已经说过反卷积又被称为Transposed(转置) Convolution，我们可以看出其实卷积层的前向传播过程就是反卷积层的反向传播过程，卷积层的反向传播过程就是反卷积层的前向传播过程。因为卷积层的前向反向计算分别为乘 $\mathbf{C}$ 和 $\mathbf{C^T}$,而反卷积层的前向反向计算分别为乘 $\mathbf{C^T}$ 和 $\mathbf{(C^T)^T}$ ，所以它们的前向传播和反向传播刚好交换过来。</p>
+<p>下图表示一个和上图卷积计算对应的反卷积操作，其中他们的输入输出关系正好相反。如果不考虑通道以卷积运算的反向运算来计算反卷积运算的话，我们还可以通过离散卷积的方法来求反卷积（这里只是为了说明，实际工作中不会这么做）。</p>
+<p>同样为了说明，定义反卷积操作参数如下：</p>
 <ul>
-<li>若$ f(x,y) &lt; c(x,y)$，建立容量为$ c_f = c(x,y) - f(x,y)$ 的前向边$ (x,y) \in E_f$。</li>
-<li>若$ f(x,y) &gt; 0$，建立容量为$ c_f =  f(x,y)$ 的后向边$ (y, x) \in E_f$。</li>
+<li>二维的离散卷积（$N = 2$）</li>
+<li>方形的特征输入（$i’_1 = i’_2 = i’$）</li>
+<li>方形的卷积核尺寸（$k’_1 = k’_2 = k’$）</li>
+<li>每个维度相同的步长（$s’_1 = s’_2 = s’$）</li>
+<li>每个维度相同的padding ($p’_1 = p’_2 = p’$)</li>
 </ul>
-</li>
-</ol>
-<p>上图中的残存网络如下图所示：</p>
-<p><center><br><img src="http://i.imgur.com/RS7lQTw.png" alt=""><br></center><br>最小割的概念：</p>
-<p>割的定义： 一个s-t 的割 C = (S, T) 把 所有的结点集合V分成两部分S和T，其中源节点s ∈ S 汇点 t ∈ T. 割 C 的集合表示如下：</p>
-<p>$$\{(u,v)\in E\: u\in S,v\in T\}$$</p>
-<p><strong>当割中的边被移掉时,则从源节点到汇结点的流量为0</strong>.</p>
-<p>割容量的定义：</p>
-<p>$$c(S,T)=\sum \nolimits_{(u,v)\in S\times T}c_{uv}$$</p>
-<blockquote>
-<p>最大流最小割定理：当残存网络中不含有任何增广路径时，网络中的流量f最大且等于最小割容量。</p>
-</blockquote>
-<p>如下图所示，网络的最大流为7，最小割由图中虚线组成，其中最小割的容量也为7.</p>
-<p><center><br><img src="http://i.imgur.com/7Q718mT.png" alt=""><br></center><br>Ford-Fulkerson算法求网络的最大流就是在每次的迭代中，寻找某条增广路径p，然后使用p来对流f进行修改，直到残存网络中不含有任何增广路径时，求得最大流f。</p>
-<p>Ford-Fulkerson算法伪代码：</p>
-<p><center><br><img src="http://i.imgur.com/zsQkoBR.png" alt=""><br></center><br><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Ford-Fulkerson" target="_blank" rel="external">Ford-Fulkerson算法Python实现</a></p>
-<ul>
-<li>Push-relabel algorithm</li>
-</ul>
-<p>Push-Relabel系的算法普遍要比Ford-Fulkerson系的算法快，但是缺点是相对难以理解。详细内容可以参考<a href="https://en.wikipedia.org/wiki/Push%E2%80%93relabel_maximum_flow_algorithm#Concepts" target="_blank" rel="external">维基百科 Push–relabel maximum flow algorithm</a></p>
-<p><a href="https://github.com/BUPTLdy/Algorithms/tree/master/Push-relabel" target="_blank" rel="external">Push-relabel 算法Python实现</a></p>
-<h1 id="网络最大流问题建模"><a href="#网络最大流问题建模" class="headerlink" title="网络最大流问题建模"></a>网络最大流问题建模</h1><p>问题如下：</p>
-<p>Support the you are a matchmaker and there are some boys and girls. Since the boys are alway more than girls, you can assume that if a girl express her love to a boy , the boy will always accept her. Now you know every girl’s thought(a girl may like more than one boy) and you want to make as much pairs as you can. show that you can do this using maximum flow algorithm.</p>
-<p>题目意思大概是有一些男孩和女孩。男孩的数量大于等于女孩的数量，如果女孩向男孩表达爱意，男孩必定接受，假设你是个媒婆，而且你知道女孩们喜欢那个男孩(一个女孩可能同时喜欢多个男孩)，要你用最大流的方法求最多能匹配多少对？</p>
-<p>问题分析：最终一个女孩肯定只能和一个男孩配对，为了简单分析，我们假设有3个女孩$\{G_1,G_2,G_3\}$，3个男孩$\{B_1,B_2,B_3\}$,并且已知$G_1$喜欢$B_1$和$B_2$，$G_2$喜欢$B_2$,$G_3$喜欢$B_3$，我们可以构造出如下图所示的网络流：</p>
-<p><center><br><img src="http://i.imgur.com/9hAGUgE.png" alt=""><br></center><br>求出上图所示网络的的最大流就是最大的匹配对数，根据这个思路，这个题抽象成最大流问题为：</p>
-<pre><code>- 源节点，汇点，以及每个女孩男孩都构成一个节点
-- 如果某个女孩喜欢某些男孩，则把这个女孩和那些男孩相连
-- 把源节点和每个女孩相连，汇结点和每个男孩相连
-- 网络中所有相连边的容量为1
-</code></pre><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>维基百科 网络流：<a href="https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%B5%81" title="维基百科 网络流" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E7%BD%91%E7%BB%9C%E6%B5%81</a></p>
-<p>Wikipedia Max-flow min-cut theorem:<a href="https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem" title="Wikipedia Max-flow min-cut theorem" target="_blank" rel="external">https://en.wikipedia.org/wiki/Max-flow_min-cut_theorem</a></p>
+<p>下图表示的是参数为( $i’=2,k’=3,s’=1,p’=2$)的反卷积操作，其对应的卷积操作参数为 $(i=4,k=3,s=1,p=0)$。我们可以发现对应的卷积和非卷积操作其 $(k=k’,s=s’)$，但是反卷积却多了$p’=2$。通过对比我们可以发现卷积层中左上角的输入只对左上角的输出有贡献，所以反卷积层会出现 $p’=k-p-1=2$。通过示意图，我们可以发现，反卷积层的输入输出在 $s=s’=1$ 的情况下关系为：</p>
+<p>$$o’=i’-k’+2p’+1=i’+(k-1)-2p$$</p>
+<center><br><img src="http://ww4.sinaimg.cn/large/8c2b2f6fjw1f99j2k89hlg209k0aq41i.gif"><br></center>
+
+<h3 id="Fractionally-Strided-Convolution"><a href="#Fractionally-Strided-Convolution" class="headerlink" title="Fractionally Strided Convolution"></a>Fractionally Strided Convolution</h3><p>上面也提到过反卷积有时候也被叫做Fractionally Strided Convolution，翻译过来大概意思就是小数步长的卷积。对于步长 $s&gt;1$的卷积，我们可能会想到其对应的反卷积步长 $s’&lt;1$。 如下图所示为一个参数为 $i = 5, k = 3, s = 2 , p = 1$的卷积操作(就是第一张图所演示的)所对应的反卷积操作。对于反卷积操作的小数步长我们可以理解为：在其输入特征单元之间插入 $s-1$ 个0，插入0后把其看出是新的特征输入，然后此时步长 $s’$ 不再是小数而是为1。因此，结合上面所得到的结论，我们可以得出Fractionally Strided Convolution的输入输出关系为：</p>
+<p>$$ o’ = s(i’ −1)+k −2p$$</p>
+<center><br><img src="http://ww1.sinaimg.cn/large/8c2b2f6fjw1f9aba7bh2ig20az0chwjq.gif"><br></center>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/vdumoulin/conv_arithmetic" target="_blank" rel="external">conv_arithmetic</a></p>
+<p><a href="https://arxiv.org/abs/1609.07009" target="_blank" rel="external">Is the deconvolution layer the same as a convolutional layer?</a></p>
 
       
     </div>
@@ -399,9 +375,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithms/" rel="tag">#Algorithms</a>
+            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
           
-            <a href="/tags/Python/" rel="tag">#Python</a>
+            <a href="/tags/Caffe/" rel="tag">#Caffe</a>
           
         </div>
       
@@ -410,17 +386,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/09/2016-01-09-Linear Programming/" rel="next" title="Linear Programming">
-                <i class="fa fa-chevron-left"></i> Linear Programming
+              <a href="/2016/10/09/2016-10-09-Caffe_Code/" rel="next" title="Caffe Source Code Analysis">
+                <i class="fa fa-chevron-left"></i> Caffe Source Code Analysis
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/11/2016-01-11-NP-completeness Problem/" rel="prev" title="NP-completeness Problem">
-                NP-completeness Problem <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -435,10 +407,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/10/2016-01-10-Maximum Flow Problem/"
-     data-title="Maximum Flow Problem"
+        <div class="ds-share flat" data-thread-key="2016/10/29/2016-10-29-deconv/"
+     data-title="Transposed Convolution, Fractionally Strided Convolution or Deconvolution"
      data-content=""
-     data-url="http://buptldy.github.io/2016/01/10/2016-01-10-Maximum Flow Problem/">
+     data-url="http://buptldy.github.io/2016/10/29/2016-10-29-deconv/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -465,8 +437,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/10/2016-01-10-Maximum Flow Problem/"
-           data-title="Maximum Flow Problem" data-url="http://buptldy.github.io/2016/01/10/2016-01-10-Maximum Flow Problem/">
+      <div class="ds-thread" data-thread-key="2016/10/29/2016-10-29-deconv/"
+           data-title="Transposed Convolution, Fractionally Strided Convolution or Deconvolution" data-url="http://buptldy.github.io/2016/10/29/2016-10-29-deconv/">
       </div>
     
   </div>
@@ -589,7 +561,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#网络流的定义"><span class="nav-number">1.</span> <span class="nav-text">网络流的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络最大流算法"><span class="nav-number">2.</span> <span class="nav-text">网络最大流算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络最大流问题建模"><span class="nav-number">3.</span> <span class="nav-text">网络最大流问题建模</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">4.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#反卷积层"><span class="nav-number">1.</span> <span class="nav-text">反卷积层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#卷积和矩阵相乘"><span class="nav-number">1.1.</span> <span class="nav-text">卷积和矩阵相乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反卷积和卷积的关系"><span class="nav-number">1.2.</span> <span class="nav-text">反卷积和卷积的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fractionally-Strided-Convolution"><span class="nav-number">1.3.</span> <span class="nav-text">Fractionally Strided Convolution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
