@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://buptldy.github.io/"/>
-  <updated>2016-10-30T07:40:44.852Z</updated>
+  <updated>2016-10-30T07:58:21.147Z</updated>
   <id>http://buptldy.github.io/</id>
   
   <author>
@@ -20,17 +20,17 @@
     <link href="http://buptldy.github.io/2016/10/29/2016-10-29-deconv/"/>
     <id>http://buptldy.github.io/2016/10/29/2016-10-29-deconv/</id>
     <published>2016-10-29T02:00:00.000Z</published>
-    <updated>2016-10-30T07:40:44.852Z</updated>
+    <updated>2016-10-30T07:58:21.147Z</updated>
     
-    <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/8c2b2f6fjw1f9ac3snmk6j21130a7wj5.jpg&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;反卷积（Deconvolution）的概念第一次出现是Zeiler在2010年发表的论文&lt;a href=&quot;http://www.matthewzeiler.com/pubs/cvpr2010/cvpr2010.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deconvolutional networks&lt;/a&gt;中，但是并没有指定反卷积这个名字，反卷积这个术语正式的使用是在其之后的工作中(&lt;a href=&quot;https://www.cs.nyu.edu/~gwtaylor/publications/zeilertaylorfergus_iccv2011.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Adaptive deconvolutional networks for mid and high level feature learning&lt;/a&gt;)。随着反卷积在神经网络可视化上的成功应用，其被越来越多的工作所采纳比如：场景分割、生成模型等。其中反卷积（Deconvolution）也有很多其他的叫法，比如：Transposed Convolution，Fractional Strided Convolution等等。&lt;br&gt;&lt;br&gt;这篇文章的目的主要有两方面：&lt;br&gt;1. 解释卷积层和反卷积层之间的关系；&lt;br&gt;2. 弄清楚反卷积层输入特征大小和输出特征大小之间的关系。&lt;br&gt;&lt;br&gt;&lt;br&gt;## 卷积层&lt;br&gt;&lt;br&gt;卷积层大家应该都很熟悉了,为了方便说明，定义如下：&lt;br&gt;- 二维的离散卷积（$N = 2$）&lt;br&gt;- 方形的特征输入（$i_1 = i_2 = i$）&lt;br&gt;- 方形的卷积核尺寸（$k_1 = k_2 = k$）&lt;br&gt;- 每个维度相同的步长（$s_1 = s_2 = s$）&lt;br&gt;- 每个维度相同的padding ($p_1 = p_2 = p$)&lt;br&gt;&lt;br&gt;下图表示参数为 $(i=5,k=3,s=2,p=1)$ 的卷积计算过程，从计算结果可以看出输出特征的尺寸为 $(o_1 = o_2 = o = 3)$。&lt;br&gt;&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;http://ww2.sinaimg.cn/large/8c2b2f6fjw1f99h94gnlbg20az0aldi4.gif&quot;&gt;&lt;br&gt;&lt;/center&gt;
+    <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/8c2b2f6fjw1f9ac3snmk6j21130a7wj5.jpg&quot;&gt;&lt;br&gt;&lt;/center&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;反卷积（Deconvolution）的概念第一次出现是Zeiler在2010年发表的论文&lt;a href=&quot;http://www.matthewzeiler.com/pubs/cvpr2010/cvpr2010.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deconvolutional networks&lt;/a&gt;中，但是并没有指定反卷积这个名字，反卷积这个术语正式的使用是在其之后的工作中(&lt;a href=&quot;https://www.cs.nyu.edu/~gwtaylor/publications/zeilertaylorfergus_iccv2011.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Adaptive deconvolutional networks for mid and high level feature learning&lt;/a&gt;)。随着反卷积在神经网络可视化上的成功应用，其被越来越多的工作所采纳比如：场景分割、生成模型等。其中反卷积（Deconvolution）也有很多其他的叫法，比如：Transposed Convolution，Fractional Strided Convolution等等。&lt;br&gt;&lt;br&gt;这篇文章的目的主要有两方面：&lt;br&gt;1. 解释卷积层和反卷积层之间的关系；&lt;br&gt;2. 弄清楚反卷积层输入特征大小和输出特征大小之间的关系。&lt;br&gt;&lt;br&gt;## 卷积层&lt;br&gt;&lt;br&gt;卷积层大家应该都很熟悉了,为了方便说明，定义如下：&lt;br&gt;- 二维的离散卷积（$N = 2$）&lt;br&gt;- 方形的特征输入（$i_1 = i_2 = i$）&lt;br&gt;- 方形的卷积核尺寸（$k_1 = k_2 = k$）&lt;br&gt;- 每个维度相同的步长（$s_1 = s_2 = s$）&lt;br&gt;- 每个维度相同的padding ($p_1 = p_2 = p$)&lt;br&gt;&lt;br&gt;下图表示参数为 $(i=5,k=3,s=2,p=1)$ 的卷积计算过程，从计算结果可以看出输出特征的尺寸为 $(o_1 = o_2 = o = 3)$。&lt;br&gt;&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;http://ww2.sinaimg.cn/large/8c2b2f6fjw1f99h94gnlbg20az0aldi4.gif&quot; width=&quot;300&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
 &lt;p&gt;下图表示参数为 $(i=6,k=3,s=2,p=1)$ 的卷积计算过程，从计算结果可以看出输出特征的尺寸为 $(o_1 = o_2 = o = 3)$。&lt;/p&gt;
-&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;http://ww4.sinaimg.cn/large/8c2b2f6fjw1f99h9jeg5ig20cd0bf0v5.gif&quot;&gt;&lt;br&gt;&lt;/center&gt;
+&lt;center&gt;&lt;br&gt;    &lt;img src=&quot;http://ww4.sinaimg.cn/large/8c2b2f6fjw1f99h9jeg5ig20cd0bf0v5.gif&quot; width=&quot;300&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
 &lt;p&gt;从上述两个例子我们可以总结出卷积层输入特征与输出特征尺寸和卷积核参数的关系为：&lt;br&gt;$$o = \left\lfloor \frac{i + 2p - k}{s} \right\rfloor + 1.$$&lt;br&gt;其中 $\lfloor x \rfloor$ 表示对 $x$ 向下取整。&lt;/p&gt;
 &lt;h2 id=&quot;反卷积层&quot;&gt;&lt;a href=&quot;#反卷积层&quot; class=&quot;headerlink&quot; title=&quot;反卷积层&quot;&gt;&lt;/a&gt;反卷积层&lt;/h2&gt;&lt;p&gt;在介绍反卷积之前，我们先来看看卷积运算和矩阵运算之间的关系。&lt;/p&gt;
 &lt;h3 id=&quot;卷积和矩阵相乘&quot;&gt;&lt;a href=&quot;#卷积和矩阵相乘&quot; class=&quot;headerlink&quot; title=&quot;卷积和矩阵相乘&quot;&gt;&lt;/a&gt;卷积和矩阵相乘&lt;/h3&gt;&lt;p&gt;考虑如下一个简单的卷积层运算，其参数为 $(i=4,k=3,s=1,p=0)$，输出 $o=2$。&lt;/p&gt;
-&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/8c2b2f6fjw1f99i1rv4jog206s0770t7.gif&quot;&gt;&lt;br&gt;&lt;/center&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://ww3.sinaimg.cn/large/8c2b2f6fjw1f99i1rv4jog206s0770t7.gif&quot; width=&quot;300&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
 &lt;p&gt;对于上述卷积运算，我们把上图所示的3×3卷积核展成一个如下所示的[4,16]的稀疏矩阵 $\mathbf{C}$， 其中非0元素 $w_{i,j}$ 表示卷积核的第 $i$ 行和第 $j$ 列。&lt;br&gt;$$\begin{equation&lt;em&gt;}&lt;br&gt;    \begin{pmatrix}&lt;br&gt;    w_{0,0} &amp;amp; w_{0,1} &amp;amp; w_{0,2} &amp;amp; 0       &amp;amp; w_{1,0} &amp;amp; w_{1,1} &amp;amp; w_{1,2} &amp;amp; 0       &amp;amp;&lt;br&gt;    w_{2,0} &amp;amp; w_{2,1} &amp;amp; w_{2,2} &amp;amp; 0       &amp;amp; 0       &amp;amp; 0       &amp;amp; 0       &amp;amp; 0       \\&lt;br&gt;    0       &amp;amp; w_{0,0} &amp;amp; w_{0,1} &amp;amp; w_{0,2} &amp;amp; 0       &amp;amp; w_{1,0} &amp;amp; w_{1,1} &amp;amp; w_{1,2} &amp;amp;&lt;br&gt;    0       &amp;amp; w_{2,0} &amp;amp; w_{2,1} &amp;amp; w_{2,2} &amp;amp; 0       &amp;amp; 0       &amp;amp; 0       &amp;amp; 0       \\&lt;br&gt;    0       &amp;amp; 0       &amp;amp; 0       &amp;amp; 0       &amp;amp; w_{0,0} &amp;amp; w_{0,1} &amp;amp; w_{0,2} &amp;amp; 0       &amp;amp;&lt;br&gt;    w_{1,0} &amp;amp; w_{1,1} &amp;amp; w_{1,2} &amp;amp; 0       &amp;amp; w_{2,0} &amp;amp; w_{2,1} &amp;amp; w_{2,2} &amp;amp; 0       \\&lt;br&gt;    0       &amp;amp; 0       &amp;amp; 0       &amp;amp; 0       &amp;amp; 0       &amp;amp; w_{0,0} &amp;amp; w_{0,1} &amp;amp; w_{0,2} &amp;amp;&lt;br&gt;    0       &amp;amp; w_{1,0} &amp;amp; w_{1,1} &amp;amp; w_{1,2} &amp;amp; 0       &amp;amp; w_{2,0} &amp;amp; w_{2,1} &amp;amp; w_{2,2} \\&lt;br&gt;    \end{pmatrix}&lt;br&gt;\end{equation&lt;/em&gt;}$$&lt;/p&gt;
 &lt;p&gt;我们再把4×4的输入特征展成[16,1]的矩阵 $\mathbf{X}$，那么 $\mathbf{Y = CX}$ 则是一个[4,1]的输出特征矩阵，把它重新排列2×2的输出特征就得到最终的结果，从上述分析可以看出卷积层的计算其实是可以转化成矩阵相乘的。值得注意的是，在一些深度学习网络的开源框架中并不是通过这种这个转换方法来计算卷积的，因为这个转换会存在很多无用的0乘操作，Caffe中具体实现卷积计算的方法可参考&lt;a href=&quot;http://buptldy.github.io/2016/10/01/2016-10-01-im2col/&quot;&gt;Implementing convolution as a matrix multiplication&lt;/a&gt;。&lt;/p&gt;
@@ -47,11 +47,11 @@
 &lt;/ul&gt;
 &lt;p&gt;下图表示的是参数为( $i’=2,k’=3,s’=1,p’=2$)的反卷积操作，其对应的卷积操作参数为 $(i=4,k=3,s=1,p=0)$。我们可以发现对应的卷积和非卷积操作其 $(k=k’,s=s’)$，但是反卷积却多了$p’=2$。通过对比我们可以发现卷积层中左上角的输入只对左上角的输出有贡献，所以反卷积层会出现 $p’=k-p-1=2$。通过示意图，我们可以发现，反卷积层的输入输出在 $s=s’=1$ 的情况下关系为：&lt;/p&gt;
 &lt;p&gt;$$o’=i’-k’+2p’+1=i’+(k-1)-2p$$&lt;/p&gt;
-&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/8c2b2f6fjw1f99j2k89hlg209k0aq41i.gif&quot;&gt;&lt;br&gt;&lt;/center&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://ww4.sinaimg.cn/large/8c2b2f6fjw1f99j2k89hlg209k0aq41i.gif&quot; width=&quot;300&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
 &lt;h3 id=&quot;Fractionally-Strided-Convolution&quot;&gt;&lt;a href=&quot;#Fractionally-Strided-Convolution&quot; class=&quot;headerlink&quot; title=&quot;Fractionally Strided Convolution&quot;&gt;&lt;/a&gt;Fractionally Strided Convolution&lt;/h3&gt;&lt;p&gt;上面也提到过反卷积有时候也被叫做Fractionally Strided Convolution，翻译过来大概意思就是小数步长的卷积。对于步长 $s&amp;gt;1$的卷积，我们可能会想到其对应的反卷积步长 $s’&amp;lt;1$。 如下图所示为一个参数为 $i = 5, k = 3, s = 2 , p = 1$的卷积操作(就是第一张图所演示的)所对应的反卷积操作。对于反卷积操作的小数步长我们可以理解为：在其输入特征单元之间插入 $s-1$ 个0，插入0后把其看出是新的特征输入，然后此时步长 $s’$ 不再是小数而是为1。因此，结合上面所得到的结论，我们可以得出Fractionally Strided Convolution的输入输出关系为：&lt;/p&gt;
 &lt;p&gt;$$ o’ = s(i’ −1)+k −2p$$&lt;/p&gt;
-&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/8c2b2f6fjw1f9aba7bh2ig20az0chwjq.gif&quot;&gt;&lt;br&gt;&lt;/center&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://ww1.sinaimg.cn/large/8c2b2f6fjw1f9aba7bh2ig20az0chwjq.gif&quot; width=&quot;300&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
 &lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/vdumoulin/conv_arithmetic&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;conv_arithmetic&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1609.07009&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Is the deconvolution layer the same as a convolutional layer?&lt;/a&gt;&lt;/p&gt;
