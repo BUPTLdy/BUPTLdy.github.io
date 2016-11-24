@@ -4,6 +4,27 @@
 
     
   <url>
+    <loc>http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%20Keras%20GPU/</loc>
+    <lastmod>2016-11-24T11:25:45.243Z</lastmod>
+    <data>
+        <display>
+        <title>Deepin CUDA Install and Run Keras on GPU</title>
+        <pubTime>2016-04-09T03:00:00.000Z</pubTime>
+        
+        <tag>Cuda</tag>
+         
+        <tag>Keras</tag>
+         
+        <tag>Deep Learning</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://buptldy.github.io/2016/10/29/2016-10-29-deconv/</loc>
     <lastmod>2016-10-30T08:01:56.429Z</lastmod>
     <data>
@@ -302,27 +323,6 @@
         <pubTime>2016-04-23T03:00:00.000Z</pubTime>
         
         <tag>Linux</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://buptldy.github.io/2016/04/09/2016-04-09-Deepin%20CUDA%20Keras%20GPU/</loc>
-    <lastmod>2016-10-04T05:08:48.397Z</lastmod>
-    <data>
-        <display>
-        <title>Deepin CUDA Install and Run Keras on GPU</title>
-        <pubTime>2016-04-09T03:00:00.000Z</pubTime>
-        
-        <tag>Keras</tag>
-         
-        <tag>Deep Learning</tag>
-         
-        <tag>Cuda</tag>
          
          
            
