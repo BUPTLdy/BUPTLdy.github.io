@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://buptldy.github.io/"/>
-  <updated>2016-10-30T08:01:56.429Z</updated>
+  <updated>2016-11-27T09:24:41.395Z</updated>
   <id>http://buptldy.github.io/</id>
   
   <author>
@@ -14,6 +14,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Generative Adversarial Networks</title>
+    <link href="http://buptldy.github.io/2016/11/27/2016-11-27-gans/"/>
+    <id>http://buptldy.github.io/2016/11/27/2016-11-27-gans/</id>
+    <published>2016-11-27T02:00:00.000Z</published>
+    <updated>2016-11-27T09:24:41.395Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/13513902.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;人工智能目前的核心目标应该是赋予机器自主理解我们所在世界的能力。对于人类来说，我们对这个世界所了解的知识可能很快就会忘记，比如我们所处的三维环境中，物体能够交互，移动，碰撞；什么动物会飞，什么动物吃草等等。这些巨大的并且不断扩大的信息现在是很容易被机器获取的，问题的关键是怎么设计模型和算法让机器更好的去分析和理解这些数据中所蕴含的宝藏。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Generative models&lt;/code&gt;(生成模型)现在被认为是能够实现这一目标的最有前景的方法之一。&lt;code&gt;Generative models&lt;/code&gt;通过输入一大堆特定领域的数据进行训练（比如图像，句子，声音等）来使得模型能够产生和输入数据相似的输出。这一直觉的背后可以由下面名言阐述。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“What I cannot create, I do not understand.”&lt;br&gt;—Richard Feynman&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;生成模型由一个参数数量比训练数据少的多神经网络构成，所以生成模型为了能够产生和训练数据相似的输出就会迫使自己去发现数据中内在的本质内容。训练&lt;code&gt;Generative models&lt;/code&gt;的方法有几种，在这里我们主要阐述其中的&lt;code&gt;Adversarial Training&lt;/code&gt;（对抗训练）方法。&lt;/p&gt;
+&lt;h2 id=&quot;Adversarial-Training&quot;&gt;&lt;a href=&quot;#Adversarial-Training&quot; class=&quot;headerlink&quot; title=&quot;Adversarial Training&quot;&gt;&lt;/a&gt;Adversarial Training&lt;/h2&gt;&lt;p&gt;上文说过Adversarial Training是训练生成模型的一种方法。为了训练生成模型，Adversarial Training提出一种&lt;code&gt;Discriminative Model&lt;/code&gt;(判别模型)来和生成模型产生对抗，下面来说说&lt;code&gt;Generative models&lt;/code&gt; $G(z)$ 和 &lt;code&gt;Discriminative Model&lt;/code&gt; $D(x)$ 是如何相互作用的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;生成模型的目标是模仿输入训练数据, 通过输入一个随机噪声来产生和训练数据相似的样本；&lt;/li&gt;
+&lt;li&gt;判别模型的目标就是判断生成模型产生的样本和真实的输入样本之间的相似性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中生成模型和判别模型合起来的框架被称为&lt;code&gt;GAN&lt;/code&gt;网络。通过下图我们来理清判别模型和生成模型之间的输入输出关系：生成模型通过输入随机噪声 $z(z \sim p_z)$ 产生合成样本；而判别模型通过分别输入真实的训练数据和生成模型的训练数据来判断输入的数据是否真实。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/2522908.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;描述了&lt;code&gt;GAN&lt;/code&gt;的网络结构，但它的优化目标是什么？怎么就可以通过训练使得生成模型能够产生和真实数据相似的输出？优化的目标其实很简单，简单来说就是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;判别模型努力的想把真实的数据预测为&lt;code&gt;1&lt;/code&gt;，把生成的数据预测为&lt;code&gt;0&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;而生成模型的奋斗目标则为‘我’要尽力的让判别模型对‘我’生成的数据预测为&lt;code&gt;1&lt;/code&gt;，让判别模型分不清‘我’产生的数据和真实数据之间的区别，从而达到‘以假乱真’的效果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面用形式化说明下如果训练GAN网络, 先定义一些参数：&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;| 参数       | 含义           |&lt;br&gt;| :————:|:————-:|&lt;br&gt;| $p_z$     | 输入随机噪声 $z$ 的分布 |&lt;br&gt;| $p_{data}$      | 未知的输入样本的数据分布      |&lt;br&gt;| $p_g$ | 生成模型的输出样本的数据分布，GAN的目标就是要$p_g=p_{data}$    |&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;训练判别模型 $D(x)$ 的目标：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对每一个输入数据 $x \sim p_{data}$ 要使得 $D(x)$ 最大；&lt;/li&gt;
+&lt;li&gt;对每一个输入数据 $x \nsim p_{data}$ 要使得 $D(x)$ 最小。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;训练生成模型 $G(z)$ 的目标是来产生样本来欺骗判别模型 $D$, 因此目标为最大化 $D(G(z))$，也就是把生成模型的输出输入到判别模型，然后要让判别模型预测其为真实数据。同时，最大化 $D(G(z))$ 等同于最小化 $1-D(G(z))$，因为 $D$ 的输出是介于0到1之间的，真实数据努力预测为1，否则为0。&lt;/p&gt;
+&lt;p&gt;所以把生成模型和判别模型的训练目标结合起来，就得到了&lt;code&gt;GAN&lt;/code&gt;的优化目标：&lt;/p&gt;
+&lt;p&gt;$$\min_G \max_D {\mathbb E}_{x\sim p_{\rm data}} \log D(x)+{\mathbb E}_{z\sim p_z}[\log (1-D(G(z)))] $$&lt;/p&gt;
+&lt;p&gt;总结一下上面的内容，GAN启发自博弈论中的二人零和博弈，在二人零和博弈中，两位博弈方的利益之和为零或一个常数，即一方有所得，另一方必有所失。GAN模型中的两位博弈方分别由生成模型和判别模型充当。生成模型G捕捉样本数据的分布，判别模型是一个二分类器，估计一个样本来自于训练数据（而非生成数据）的概率。G和D一般都是非线性映射函数，例如多层感知机、卷积神经网络等。生成模型的输入是一些服从某一简单分布（例如高斯分布）的随机噪声z，输出是与训练图像相同尺寸的生成图像。向判别模型D输入生成样本，对于D来说期望输出低概率（判断为生成样本），对于生成模型G来说要尽量欺骗D，使判别模型输出高概率（误判为真实样本），从而形成竞争与对抗。&lt;/p&gt;
+&lt;h2 id=&quot;GAN实现&quot;&gt;&lt;a href=&quot;#GAN实现&quot; class=&quot;headerlink&quot; title=&quot;GAN实现&quot;&gt;&lt;/a&gt;GAN实现&lt;/h2&gt;&lt;p&gt;一个简单的一维数据GAN网络的tensorflow实现:&lt;a href=&quot;https://github.com/ericjang/genadv_tutorial&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;genadv_tutorial&lt;/a&gt;&lt;br&gt;其一维训练数据分布如下所示，是一个均值-1， $\sigma =1$ 的正态分布。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/4360345.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;我们结合代码和上面的理论内容来分析下GAN的具体实现，判别模型的优化目标为最大化下式，其中 $D_1(x)$ 表示判别真实数据, $D_2(G(z))$ 表示对生成的数据进行判别， 其中 $D_1$ 和 $D_2$ 是共享参数的， 也就是说是同一个判别模型。&lt;/p&gt;
+&lt;p&gt;$$\log(D_1(x))+\log(1-D_2(G(z)))$$&lt;/p&gt;
+&lt;p&gt;对应的python代码如下：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;batch=tf.Variable(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj_d=tf.reduce_mean(tf.log(D1)+tf.log(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;-D2))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;opt_d=tf.train.GradientDescentOptimizer(&lt;span class=&quot;number&quot;&gt;0.01&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              .minimize(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;-obj_d,global_step=batch,var_list=theta_d)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;为了优化 $G$, 我们想要最大化 $D_2(x’)$(成功欺骗 $D$ )，因此 $G$ 的优化函数为：&lt;/p&gt;
+&lt;p&gt;$$\log(D_2(G(z)))$$&lt;/p&gt;
+&lt;p&gt;对应的python代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;batch=tf.Variable(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj_g=tf.reduce_mean(tf.log(D2))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;opt_g=tf.train.GradientDescentOptimizer(&lt;span class=&quot;number&quot;&gt;0.01&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              .minimize(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;-obj_g,global_step=batch,var_list=theta_g)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;定义好优化目标后，下面就是训练的主要代码了：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Algorithm 1, GoodFellow et al. 2014&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(TRAIN_ITERS):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    x= np.random.normal(mu,sigma,M) &lt;span class=&quot;comment&quot;&gt;# sample minibatch from p_data&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    z= np.random.random(M)  &lt;span class=&quot;comment&quot;&gt;# sample minibatch from noise prior&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sess.run(opt_d, &amp;#123;x_node: x, z_node: z&amp;#125;) &lt;span class=&quot;comment&quot;&gt;# update discriminator D&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    z= np.random.random(M) &lt;span class=&quot;comment&quot;&gt;# sample noise prior&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sess.run(opt_g, &amp;#123;z_node: z&amp;#125;) &lt;span class=&quot;comment&quot;&gt;# update generator G&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;下面是实验的结果，左图是训练之间的数据，可以看到生成数据的分布和训练数据相差甚远；右图是训练后的数据分析，生成数据和训练数据的分布接近了很多，且此时判别模型的输出分布在0.5左右，说明生成模型顺利的欺骗到判别模型。&lt;/p&gt;
+&lt;figure class=&quot;half&quot;&gt;&lt;br&gt;    &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/44877660.jpg&quot;&gt;&lt;br&gt;    &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/72678087.jpg&quot;&gt;&lt;br&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;DCGAN&quot;&gt;&lt;a href=&quot;#DCGAN&quot; class=&quot;headerlink&quot; title=&quot;DCGAN&quot;&gt;&lt;/a&gt;DCGAN&lt;/h2&gt;&lt;p&gt;GAN的一个改进模型就是DCGAN。这个网络的生成模型的输入为一个100个符合均匀分布的随机数（通常被称为&lt;code&gt;code&lt;/code&gt;），然后产生输出为64x64x3的输出图像(下图中 $G(z)$ ), 当&lt;code&gt;code&lt;/code&gt;逐渐递增时，生成模型输出的图像也逐渐变化。下图中的生产模型主要由&lt;a href=&quot;http://buptldy.github.io/2016/10/29/2016-10-29-deconv/&quot;&gt;反卷积层&lt;/a&gt;构成, 判别模型就由简单的卷积层组成，最后输出一个判断输入图片是否为真实数据的概率 $P(x)$ 。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/33141448.jpg&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;下图为随着迭代次数，DCGAN产生图像的变化过程。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;https://openai.com/assets/research/generative-models/learning-gan-ffc4c09e6079283f334b2485ae663a6587d937a45ebc1d8aeac23a67889a3cf5.gif&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;训练好网络之后，其中的生成模型和判别模型都有其他的作用。一个训练好的判别模型能够用来对数据提取特征然后进行分类任务。通过输入随机向量生成模型可以产生一些非常有意思的的图片，如下图所示，当输入空间平滑变化时，输出的图片也在平滑转变。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-25/42718244.jpg&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;p&gt;还有一个非常有意思的属性就是如果对生产模型的输入向量做一些简单的数学运算，那么学习的特征输出也有同样的性质，如下图所示。&lt;/p&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;https://fb-s-a-a.akamaihd.net/h-ak-xfp1/t39.2365-6/13438466_275356996149902_2140145659_n.jpg&quot;&gt;&lt;br&gt;&lt;/center&gt;
+
+&lt;h2 id=&quot;训练GAN&quot;&gt;&lt;a href=&quot;#训练GAN&quot; class=&quot;headerlink&quot; title=&quot;训练GAN&quot;&gt;&lt;/a&gt;训练GAN&lt;/h2&gt;&lt;p&gt;上面使用GAN产生的图像虽然效果不错，但其实GAN网络的训练过程是非常不稳定的。&lt;br&gt;通常在实际训练GAN中所碰到的一个问题就是判别模型的收敛速度要比生成模型的收敛速度要快很多，通常的做法就是让生成模型多训练几次来赶上生成模型，但是存在的一个问题就是通常生成模型和判别模型的训练是相辅相成的，理想的状态是让生成模型和判别模型在每次的训练过程中同时变得更好。判别模型理想的minimum loss应该为0.5，这样才说明判别模型分不出是真实数据还是生成模型产生的数据。&lt;/p&gt;
+&lt;h3 id=&quot;Improved-GANs&quot;&gt;&lt;a href=&quot;#Improved-GANs&quot; class=&quot;headerlink&quot; title=&quot;Improved GANs&quot;&gt;&lt;/a&gt;Improved GANs&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1606.03498v1.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Improved techniques for training GANs&lt;/a&gt;这篇文章提出了很多改进GANs训练的方法，其中提出一个想法叫&lt;code&gt;Feature matching&lt;/code&gt;，之前判别模型只判别输入数据是来自真实数据还是生成模型。现在为判别模型提出了一个新的目标函数来判别生成模型产生图像的统计信息是否和真实数据的相似。让 $f(x)$ 表示判别模型中间层的输出， 新的目标函数被定义为 $|| \mathds{E}_{x \sim p_{data}}f(x)  -  \mathds{E}_{z \sim p_z}f(G(z))||^2_2$, 其实就是要求真实图像和合成图像在判别模型中间层的距离要最小。这样可以防止生成模型在当前判别模型上过拟合。&lt;/p&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1406.2661&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generative Adversarial Networks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1511.06434&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1606.03498&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Improved Techniques for Training GANs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1606.03657&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;InfoGAN: Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/13513902.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Unsupervised Learning" scheme="http://buptldy.github.io/tags/Unsupervised-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Transposed Convolution, Fractionally Strided Convolution or Deconvolution</title>
@@ -1501,118 +1587,6 @@ probabilities and labels:
       <category term="Keras" scheme="http://buptldy.github.io/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Connect to MySQL in Python</title>
-    <link href="http://buptldy.github.io/2016/04/04/2016-04-04-Python%20MySQL/"/>
-    <id>http://buptldy.github.io/2016/04/04/2016-04-04-Python MySQL/</id>
-    <published>2016-04-04T03:00:00.000Z</published>
-    <updated>2016-10-13T01:25:32.873Z</updated>
-    
-    <content type="html">&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-4/94530193.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
-
-&lt;h1 id=&quot;环境安装&quot;&gt;&lt;a href=&quot;#环境安装&quot; class=&quot;headerlink&quot; title=&quot;环境安装&quot;&gt;&lt;/a&gt;环境安装&lt;/h1&gt;&lt;p&gt;  安装MySQL：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server
-&lt;/code&gt;&lt;/pre&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;  安装MySQLdb模块：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install python-mysqldb
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  测试是否安装成功：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;import MySQLdb
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;MySQL建立数据库&quot;&gt;&lt;a href=&quot;#MySQL建立数据库&quot; class=&quot;headerlink&quot; title=&quot;MySQL建立数据库&quot;&gt;&lt;/a&gt;MySQL建立数据库&lt;/h1&gt;&lt;p&gt;  进入MySQL：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mysql -u root -p
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  进入MySQL并打开补全：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mysql -u USER -p --local-infile=1  --auto-rehash
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  建立一个数据库：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;create database testdb character set utf8;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  调用已经建立的数据库：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;use testdb;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  建立一个数据表：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;create table users
-(id int(2) not null primary key auto_increment,
-username varchar(40),
-password text,email text)
-default charset=utf8;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  显示表格：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;show tables;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  显示表格结构：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;desc users;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  表格中插入数据：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;insert into
-users(username,password,email)
-values(&amp;quot;qiwsir&amp;quot;,&amp;quot;123123&amp;quot;,&amp;quot;qiwsir@gmail.com&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  查询表格内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;select * from users;
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;Python操作数据库&quot;&gt;&lt;a href=&quot;#Python操作数据库&quot; class=&quot;headerlink&quot; title=&quot;Python操作数据库&quot;&gt;&lt;/a&gt;Python操作数据库&lt;/h1&gt;&lt;p&gt;  连接数据库：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;conn =
-MySQLdb.connect
-(host=&amp;quot;localhost&amp;quot;,user=&amp;quot;root&amp;quot;,
-passwd=&amp;quot;123123&amp;quot;,db=&amp;quot;qiwsirtest&amp;quot;,charset=&amp;quot;utf8&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  用游标（指针）cursor的方式操作数据库：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur = conn.cursor()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  在表中插入一条记录：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur.execute(&amp;quot;insert into
-users (username,password,email)
-values (%s,%s,%s)&amp;quot;,(&amp;quot;python&amp;quot;,&amp;quot;123456&amp;quot;,&amp;quot;python@gmail.com&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  使插入的记录生效，提交：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;conn.commit()
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  同时插入多条记录：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur.executemany(&amp;quot;insert into
-users (username,password,email)
-values (%s,%s,%s)&amp;quot;,
-((&amp;quot;google&amp;quot;,&amp;quot;111222&amp;quot;,&amp;quot;g@gmail.com&amp;quot;),
-(&amp;quot;facebook&amp;quot;,&amp;quot;222333&amp;quot;,&amp;quot;f@face.book&amp;quot;),
-(&amp;quot;github&amp;quot;,&amp;quot;333444&amp;quot;,&amp;quot;git@hub.com&amp;quot;),
-(&amp;quot;docker&amp;quot;,&amp;quot;444555&amp;quot;,&amp;quot;doc@ker.com&amp;quot;)))
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  要记得提交生效&lt;/p&gt;
-&lt;p&gt;  查询数据库：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur.execute(&amp;quot;select * from users&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  上述操作只是得到结果的指针，想要显示查询结果，可以用到以下方法：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;fetchall(self):接收全部的返回结果行.&lt;/li&gt;
-&lt;li&gt;fwetchmany(size=None):接收size条返回结果行.如果size的值大于返回的结果行的数量,则会返回cursor.arraysize条数据.&lt;/li&gt;
-&lt;li&gt;fetchone():返回一条结果行.&lt;/li&gt;
-&lt;li&gt;scroll(value,mode=’relative’):移动指针到某一行.如果mode=’relative’,则表示从当前所在行移动value条,如果mode=’absolute’,则表示从结果集的第一行移动value条.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;  python的MySQLdb指针提供了一个参数，可以实现将读取到的数据变成字典形式：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur = conn.cursor(cursorclass=MySQLdb.cursors.DictCursor)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  更新数据库：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur.execute(&amp;quot;update users set username=%s where id=2&amp;quot;,(&amp;quot;mypython&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;   如果再下述连接数据库的语句中，如果没有指定具体的数据库，则连接到MySQL：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;conn = MySQLdb.connect
-(host=&amp;quot;localhost&amp;quot;,
-user=&amp;quot;root&amp;quot;,passwd=&amp;quot;123123&amp;quot;,
-db=&amp;quot;qiwsirtest&amp;quot;,charset=&amp;quot;utf8&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  然后可以通过用conn.select_db()选择要操作的数据库：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;conn.select_db(&amp;quot;testdb&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  不选数据库，而是要新建一个数据库，如下所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur = conn.cursor()
-cur.execute(&amp;quot;create database newtest&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  建立数据库之后，就可以选择这个数据库，然后在这个数据库中建立一个数据表：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur.execute(&amp;quot;create table newusers
-(id int(2) primary key auto_increment,
-username varchar(20), age int(2), email text)&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;  当进行完有关数据操作之后，最后要做的就是关闭游标（指针）和连接。用如下命令实现：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cur.close()
-conn.close()
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;  &lt;a href=&quot;http://python.xiaoleilu.com/300/302.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;通过Python连接数据库&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/16-4-4/94530193.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
-
-&lt;h1 id=&quot;环境安装&quot;&gt;&lt;a href=&quot;#环境安装&quot; class=&quot;headerlink&quot; title=&quot;环境安装&quot;&gt;&lt;/a&gt;环境安装&lt;/h1&gt;&lt;p&gt;  安装MySQL：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install mysql-server
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-    
-      <category term="Python" scheme="http://buptldy.github.io/tags/Python/"/>
-    
-      <category term="MySQL" scheme="http://buptldy.github.io/tags/MySQL/"/>
     
   </entry>
   

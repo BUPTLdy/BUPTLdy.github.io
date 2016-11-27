@@ -4,16 +4,35 @@
 
     
   <url>
+    <loc>http://buptldy.github.io/2016/11/27/2016-11-27-gans/</loc>
+    <lastmod>2016-11-27T09:24:41.395Z</lastmod>
+    <data>
+        <display>
+        <title>Generative Adversarial Networks</title>
+        <pubTime>2016-11-27T02:00:00.000Z</pubTime>
+        
+        <tag>Deep Learning</tag>
+         
+        <tag>Unsupervised Learning</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://buptldy.github.io/2016/01/10/2016-01-10-Maximum%20Flow%20Problem/</loc>
-    <lastmod>2016-11-27T09:11:32.662Z</lastmod>
+    <lastmod>2016-11-27T09:24:21.039Z</lastmod>
     <data>
         <display>
         <title>Maximum Flow Problem</title>
         <pubTime>2016-01-10T02:00:00.000Z</pubTime>
         
-        <tag>Deep Learning</tag>
+        <tag>Algorithms</tag>
          
-        <tag>Unsupervised Learning</tag>
+        <tag>Python</tag>
          
          
            

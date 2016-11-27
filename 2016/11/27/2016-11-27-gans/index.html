@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Algorithms," />
+  <meta name="keywords" content="Deep Learning,Unsupervised Learning," />
 
 
 
@@ -59,20 +59,26 @@
 
 
 
-<meta name="description" content="NP完全性到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是$O(n^k)$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NP-completeness Problem">
-<meta property="og:url" content="http://buptldy.github.io/2016/01/11/2016-01-11-NP-completeness Problem/index.html">
+<meta property="og:title" content="Generative Adversarial Networks">
+<meta property="og:url" content="http://buptldy.github.io/2016/11/27/2016-11-27-gans/index.html">
 <meta property="og:site_name" content="Ldy's Blog">
-<meta property="og:description" content="NP完全性到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是$O(n^k)$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
-<meta property="og:image" content="http://i.imgur.com/mAyE7SM.png">
-<meta property="og:image" content="http://i.imgur.com/9wD7p7i.png">
-<meta property="og:image" content="http://i.imgur.com/GWPD8RB.png">
-<meta property="og:updated_time" content="2016-10-04T04:40:25.253Z">
+<meta property="og:description">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/13513902.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/2522908.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/4360345.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/44877660.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/72678087.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/33141448.jpg">
+<meta property="og:image" content="https://openai.com/assets/research/generative-models/learning-gan-ffc4c09e6079283f334b2485ae663a6587d937a45ebc1d8aeac23a67889a3cf5.gif">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-25/42718244.jpg">
+<meta property="og:image" content="https://fb-s-a-a.akamaihd.net/h-ak-xfp1/t39.2365-6/13438466_275356996149902_2140145659_n.jpg">
+<meta property="og:updated_time" content="2016-11-27T09:24:41.395Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NP-completeness Problem">
-<meta name="twitter:description" content="NP完全性到目前为止，我们讨论的几乎都是多项式时间算法：对于规模n的输入，在最坏情况下的运行时间是$O(n^k)$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：">
-<meta name="twitter:image" content="http://i.imgur.com/mAyE7SM.png">
+<meta name="twitter:title" content="Generative Adversarial Networks">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/13513902.jpg">
 
 
 
@@ -90,7 +96,7 @@
   };
 </script>
 
-  <title> NP-completeness Problem | Ldy's Blog </title>
+  <title> Generative Adversarial Networks | Ldy's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
@@ -268,7 +274,7 @@
             
             
               
-                NP-completeness Problem
+                Generative Adversarial Networks
               
             
           </h1>
@@ -280,8 +286,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-01-11T10:00:00+08:00" content="2016-01-11">
-              2016-01-11
+            <time itemprop="dateCreated" datetime="2016-11-27T10:00:00+08:00" content="2016-11-27">
+              2016-11-27
             </time>
           </span>
 
@@ -291,8 +297,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/11/2016-01-11-NP-completeness Problem/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/2016-01-11-NP-completeness Problem/" itemprop="commentsCount"></span>
+                <a href="/2016/11/27/2016-11-27-gans/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/27/2016-11-27-gans/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -304,7 +310,7 @@
 
           
           
-             <span id="/2016/01/11/2016-01-11-NP-completeness Problem/" class="leancloud_visitors" data-flag-title="NP-completeness Problem">
+             <span id="/2016/11/27/2016-11-27-gans/" class="leancloud_visitors" data-flag-title="Generative Adversarial Networks">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -325,41 +331,70 @@
       
 
       
-        <h2 id="NP完全性"><a href="#NP完全性" class="headerlink" title="NP完全性"></a>NP完全性</h2><p>到目前为止，我们讨论的几乎都是<strong>多项式时间算法</strong>：对于规模n的输入，在最坏情况下的运行时间是$O(n^k)$,其中k为某一确定常数。但还有很多问题在多项式时间内并不能求解，根据能否在多项式时间求解，定义如下几类问题：<br><a id="more"></a></p>
+        <p><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/13513902.jpg" alt=""><br><a id="more"></a></p>
+<p>人工智能目前的核心目标应该是赋予机器自主理解我们所在世界的能力。对于人类来说，我们对这个世界所了解的知识可能很快就会忘记，比如我们所处的三维环境中，物体能够交互，移动，碰撞；什么动物会飞，什么动物吃草等等。这些巨大的并且不断扩大的信息现在是很容易被机器获取的，问题的关键是怎么设计模型和算法让机器更好的去分析和理解这些数据中所蕴含的宝藏。</p>
+<p><code>Generative models</code>(生成模型)现在被认为是能够实现这一目标的最有前景的方法之一。<code>Generative models</code>通过输入一大堆特定领域的数据进行训练（比如图像，句子，声音等）来使得模型能够产生和输入数据相似的输出。这一直觉的背后可以由下面名言阐述。</p>
+<blockquote>
+<p>“What I cannot create, I do not understand.”<br>—Richard Feynman</p>
+</blockquote>
+<p>生成模型由一个参数数量比训练数据少的多神经网络构成，所以生成模型为了能够产生和训练数据相似的输出就会迫使自己去发现数据中内在的本质内容。训练<code>Generative models</code>的方法有几种，在这里我们主要阐述其中的<code>Adversarial Training</code>（对抗训练）方法。</p>
+<h2 id="Adversarial-Training"><a href="#Adversarial-Training" class="headerlink" title="Adversarial Training"></a>Adversarial Training</h2><p>上文说过Adversarial Training是训练生成模型的一种方法。为了训练生成模型，Adversarial Training提出一种<code>Discriminative Model</code>(判别模型)来和生成模型产生对抗，下面来说说<code>Generative models</code> $G(z)$ 和 <code>Discriminative Model</code> $D(x)$ 是如何相互作用的。</p>
 <ul>
-<li>P: 能在多项式时间内解决的问题</li>
-<li>NP: 不能在多项式时间内解决或不确定能不能在多项式时间内解决，但能在多项式时间验证的问题</li>
-<li>NPC: NP完全问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的NP问题，即解决了此NPC问题，所有NP问题也都得到解决。</li>
-<li>NP hard:NP难问题，所有NP问题在多项式时间内都能约化(Reducibility)到它的问题(不一定是NP问题)。</li>
+<li>生成模型的目标是模仿输入训练数据, 通过输入一个随机噪声来产生和训练数据相似的样本；</li>
+<li>判别模型的目标就是判断生成模型产生的样本和真实的输入样本之间的相似性。</li>
 </ul>
-<p>如果任何NP完全问题是可以多项式求解的，则P=NP，目前还不能证明P是否等于NP，这几个问题的关系如下：</p>
-<center><br><img src="http://i.imgur.com/mAyE7SM.png" alt=""><br></center><br>规约的概念：若我们拥有一个已证明难以解决的问题，我们又获得另一个相似的新问题。我们可合理推想此新问题亦是难以解决的。我们可由下列谬证法得证：若此新问题本质上容易解答，且若我们可展示每个旧问题的实例可经由一系列转换步骤变成新问题的实例，则旧问题便容易解决，因此得到悖论。因此新问题可知亦难以解决。<br><br>如何证明某个问题是NP完全的？<br><br>如果我们有一个已经证明的NP完全问题，如果我们可以把已证明的NP完全问题的任何实例都能多项式的规约到要要证明问题的实例，则能证明这个问题是NP完全的。即如果我们要证明一个问题A是NPC问题，<strong>则只需要首先证明他是NP问题，然后只要找一个你所知道的NPC问题规约到A即可。</strong><br><br>## 常见的NPC问题<br>### 布尔可满足性问题（SAT）<br><br>对于一个确定的逻辑电路，是否存在一种输入使得输出为真。是第一个被证明的NPC问题，直观的看出这应该是一个NPC问题，因为当电路有k个输入，就会有$2^k$种情况的不同取值。<br>### 3SAT<br><br>3和取范式：公式中每个字句都恰好有三个不同的‘文字’，例如，布尔公式：<br><br>$$(l_1 ∨ l_2 ∨ x_2) ∧ (¬x_2 ∨ l_3 ∨ x_3) ∧ (¬x_3 ∨ l_4 ∨ x_4) ∧ … ∧ (¬x_{n − 3} ∨ l_{n − 2} ∨ x_{n − 2}) ∧ (¬x_{n − 2} ∨ l_{n − 1} ∨ l_n)$$<br>3SAT问题就是满足3和取范式的布尔公式是否可满足，3SAT问题可由SAT问题规约而来。<br><br>### 分团问题（clique problem）<br><br>无向图中的团是图中所有顶点的一个子集，团中的每一对顶点之间都有一条边相连，即一个团就是无向图中的一个完全子图。分团问题就是要寻找图中规模最大的团，判定条件：在图中是否存在一个给定规模为k的团。<br>### 独立集问题（Independent Set）<br><br>独立集：如果有一个顶点集合S，S中的任意两个顶点之间都没有边相连，则称S为一个独立集。<br>独立集问题和分团问题可相互规约，因为存在一个大小是k以上的分团，等价于它的补图中存在一个大小是k以上的独立集。<br>补图：一个图G的补图（complement）或者反面（inverse）是一个图有着跟G相同的点，而且这些点之间有边相连当且仅当在G里面他们没有边相连。在制作图的时候，你可以先建立一个有G所有点的完全图，然后清除G里面已经有的边来得到补图，这里的补图并不是图本身的补集。<br>### 顶点覆盖问题（Vertex Cover）<br><br>图的顶点覆盖是一些顶点的集合，使得图中的每一条边都至少接触集合中的一个顶点，如下图所示，图中红色顶点可以覆盖图中所有的边。寻找最小的顶点覆盖的问题称为顶点覆盖问题，它是一个NP完全问题。<br><br><center><br><img src="http://i.imgur.com/9wD7p7i.png" alt=""><br></center>
+<p>其中生成模型和判别模型合起来的框架被称为<code>GAN</code>网络。通过下图我们来理清判别模型和生成模型之间的输入输出关系：生成模型通过输入随机噪声 $z(z \sim p_z)$ 产生合成样本；而判别模型通过分别输入真实的训练数据和生成模型的训练数据来判断输入的数据是否真实。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/2522908.jpg" alt=""><br></center>
 
-<h3 id="集合覆盖问题"><a href="#集合覆盖问题" class="headerlink" title="集合覆盖问题"></a>集合覆盖问题</h3><p>给定全集$\mathcal{U}$，以及一个包含n个集合且这n个集合的并集为全集的集合$\mathcal{S}$。集合覆盖问题要找到$\mathcal{S}$的一个最小的子集，使得他们的并集等于全集。<br>例如$\mathcal{U} = \{1, 2, 3, 4, 5\}，\mathcal{S} = \{\{1, 2, 3\}, \{2, 4\}, \{3, 4\}, \{4, 5\}\}$，虽然$\mathcal{S}$中所有元素的并集是$\mathcal{U}$，但是我们可以找到$\mathcal{S}$的一个子集$\{\{1, 2, 3\}, \{4, 5\}\}$，我们称其为一个集合覆盖。<br>集合覆盖问题的决定性问题为，给定$(\mathcal{U},\mathcal{S})$和一个整数k，求是否存在一个大小不超过k的覆盖。集合覆盖的最佳化问题为给定$(\mathcal{U},\mathcal{S})$，求使用最少的集合的一个覆盖。</p>
-<h3 id="子集合问题（subset-sum-problem）"><a href="#子集合问题（subset-sum-problem）" class="headerlink" title="子集合问题（subset-sum problem）"></a>子集合问题（subset-sum problem）</h3><p>给定一个正整数的有限集S和一个整数目标t&gt;0,求是否存在S的一个子集，使得其元素之和为t。</p>
-<h3 id="3-Coloring"><a href="#3-Coloring" class="headerlink" title="3 Coloring"></a>3 Coloring</h3><p>3Col is the problem of deciding whether there is a legal 3-Coloring of a graph (all edges bichromatic).</p>
-<h3 id="哈密顿回路（Hamiltonian-Cycle）"><a href="#哈密顿回路（Hamiltonian-Cycle）" class="headerlink" title="哈密顿回路（Hamiltonian Cycle）"></a>哈密顿回路（Hamiltonian Cycle）</h3><p>G=(V,E)是一个图，若G中一条通路通过每一个顶点一次且仅一次，称这条通路为哈密尔顿通路。若G中一个圈通过每一个顶点一次且仅一次，称这个圈为哈密尔顿圈。若一个图存在哈密尔顿圈，就称为哈密尔顿图。</p>
-<h2 id="NPC问题的证明"><a href="#NPC问题的证明" class="headerlink" title="NPC问题的证明"></a>NPC问题的证明</h2><p>问题如下：</p>
-<p>Given an integer m × n matrix A and an integer m-vector b, the Integer programming problem asks whether there is an integer n-vector x such that Ax ≥ b. Prove that Integer-programming is in NP-complete.</p>
-<p>证明整数线性规划是NP完全的。</p>
-<p>假设上面所提到的常见的NPC问题使我们已知的NPC问题</p>
-<p>我们可以把上面提到的顶点覆盖问题（Vertex Cover）规约成整数规划问题，举个简单的例子，简单无向图如下所示：</p>
-<p><center><br><img src="http://i.imgur.com/GWPD8RB.png" alt=""><br></center><br>很显然就能看出顶点2能够覆盖所有的边，现在我们来讨论这个问题怎么用线性规划来表示，用$y_i$取1或0来表示是否选择结点i来覆盖边，则该问题用整数线性规划建模如下：<br>
-$$\begin{align*}
-         \min y_1+y_2+y_3 \\
-         y_1 + y_2 & \ge 1 && \\
-         y_2 + y_3 & \ge 1 && \\
-         y_1,y_2,y_3 & \ge 0 && \\
-         y_1,y_2,y_3 & \in \mathbb{Z} &&
-\end{align*}$$
-<br>如果网络中有结点之间相连，则构成一个不等式约束。从上面例子来看顶点覆盖问题能够规约成整数线性规划问题，一般来说，网络中有多少个结点对应整数线性规划有多少个变量，如果两个结点之间有边相连，则对应一个约束条件，最小化顶点覆盖则对应最小化所有变量之和。所以对无向图G=(V,E),定义整数线性规划如下：<br>
-$$\begin{align*}
-         \min \sum_{v \in V} y_v \\
-         y_v + y_u & \ge 1 && \forall uv \in E\\
-         y_v & \ge 0 && \forall v \in V\\
-         y_v & \in \mathbb{Z} && \forall v \in V
-\end{align*}$$
-</p>
+<p>描述了<code>GAN</code>的网络结构，但它的优化目标是什么？怎么就可以通过训练使得生成模型能够产生和真实数据相似的输出？优化的目标其实很简单，简单来说就是：</p>
+<ul>
+<li>判别模型努力的想把真实的数据预测为<code>1</code>，把生成的数据预测为<code>0</code>；</li>
+<li>而生成模型的奋斗目标则为‘我’要尽力的让判别模型对‘我’生成的数据预测为<code>1</code>，让判别模型分不清‘我’产生的数据和真实数据之间的区别，从而达到‘以假乱真’的效果。</li>
+</ul>
+<p>下面用形式化说明下如果训练GAN网络, 先定义一些参数：</p>
+<center><br>| 参数       | 含义           |<br>| :————:|:————-:|<br>| $p_z$     | 输入随机噪声 $z$ 的分布 |<br>| $p_{data}$      | 未知的输入样本的数据分布      |<br>| $p_g$ | 生成模型的输出样本的数据分布，GAN的目标就是要$p_g=p_{data}$    |<br></center>
+
+<p>训练判别模型 $D(x)$ 的目标：</p>
+<ol>
+<li>对每一个输入数据 $x \sim p_{data}$ 要使得 $D(x)$ 最大；</li>
+<li>对每一个输入数据 $x \nsim p_{data}$ 要使得 $D(x)$ 最小。</li>
+</ol>
+<p>训练生成模型 $G(z)$ 的目标是来产生样本来欺骗判别模型 $D$, 因此目标为最大化 $D(G(z))$，也就是把生成模型的输出输入到判别模型，然后要让判别模型预测其为真实数据。同时，最大化 $D(G(z))$ 等同于最小化 $1-D(G(z))$，因为 $D$ 的输出是介于0到1之间的，真实数据努力预测为1，否则为0。</p>
+<p>所以把生成模型和判别模型的训练目标结合起来，就得到了<code>GAN</code>的优化目标：</p>
+<p>$$\min_G \max_D {\mathbb E}_{x\sim p_{\rm data}} \log D(x)+{\mathbb E}_{z\sim p_z}[\log (1-D(G(z)))] $$</p>
+<p>总结一下上面的内容，GAN启发自博弈论中的二人零和博弈，在二人零和博弈中，两位博弈方的利益之和为零或一个常数，即一方有所得，另一方必有所失。GAN模型中的两位博弈方分别由生成模型和判别模型充当。生成模型G捕捉样本数据的分布，判别模型是一个二分类器，估计一个样本来自于训练数据（而非生成数据）的概率。G和D一般都是非线性映射函数，例如多层感知机、卷积神经网络等。生成模型的输入是一些服从某一简单分布（例如高斯分布）的随机噪声z，输出是与训练图像相同尺寸的生成图像。向判别模型D输入生成样本，对于D来说期望输出低概率（判断为生成样本），对于生成模型G来说要尽量欺骗D，使判别模型输出高概率（误判为真实样本），从而形成竞争与对抗。</p>
+<h2 id="GAN实现"><a href="#GAN实现" class="headerlink" title="GAN实现"></a>GAN实现</h2><p>一个简单的一维数据GAN网络的tensorflow实现:<a href="https://github.com/ericjang/genadv_tutorial" target="_blank" rel="external">genadv_tutorial</a><br>其一维训练数据分布如下所示，是一个均值-1， $\sigma =1$ 的正态分布。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/4360345.jpg" alt=""><br></center>
+
+<p>我们结合代码和上面的理论内容来分析下GAN的具体实现，判别模型的优化目标为最大化下式，其中 $D_1(x)$ 表示判别真实数据, $D_2(G(z))$ 表示对生成的数据进行判别， 其中 $D_1$ 和 $D_2$ 是共享参数的， 也就是说是同一个判别模型。</p>
+<p>$$\log(D_1(x))+\log(1-D_2(G(z)))$$</p>
+<p>对应的python代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">batch=tf.Variable(<span class="number">0</span>)</span><br><span class="line">obj_d=tf.reduce_mean(tf.log(D1)+tf.log(<span class="number">1</span>-D2))</span><br><span class="line">opt_d=tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</span><br><span class="line">              .minimize(<span class="number">1</span>-obj_d,global_step=batch,var_list=theta_d)</span><br></pre></td></tr></table></figure></p>
+<p>为了优化 $G$, 我们想要最大化 $D_2(x’)$(成功欺骗 $D$ )，因此 $G$ 的优化函数为：</p>
+<p>$$\log(D_2(G(z)))$$</p>
+<p>对应的python代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">batch=tf.Variable(<span class="number">0</span>)</span><br><span class="line">obj_g=tf.reduce_mean(tf.log(D2))</span><br><span class="line">opt_g=tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</span><br><span class="line">              .minimize(<span class="number">1</span>-obj_g,global_step=batch,var_list=theta_g)</span><br></pre></td></tr></table></figure>
+<p>定义好优化目标后，下面就是训练的主要代码了：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Algorithm 1, GoodFellow et al. 2014</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(TRAIN_ITERS):</span><br><span class="line">    x= np.random.normal(mu,sigma,M) <span class="comment"># sample minibatch from p_data</span></span><br><span class="line">    z= np.random.random(M)  <span class="comment"># sample minibatch from noise prior</span></span><br><span class="line">    sess.run(opt_d, &#123;x_node: x, z_node: z&#125;) <span class="comment"># update discriminator D</span></span><br><span class="line">    z= np.random.random(M) <span class="comment"># sample noise prior</span></span><br><span class="line">    sess.run(opt_g, &#123;z_node: z&#125;) <span class="comment"># update generator G</span></span><br></pre></td></tr></table></figure></p>
+<p>下面是实验的结果，左图是训练之间的数据，可以看到生成数据的分布和训练数据相差甚远；右图是训练后的数据分析，生成数据和训练数据的分布接近了很多，且此时判别模型的输出分布在0.5左右，说明生成模型顺利的欺骗到判别模型。</p>
+<figure class="half"><br>    <img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/44877660.jpg"><br>    <img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/72678087.jpg"><br></figure>
+
+<h2 id="DCGAN"><a href="#DCGAN" class="headerlink" title="DCGAN"></a>DCGAN</h2><p>GAN的一个改进模型就是DCGAN。这个网络的生成模型的输入为一个100个符合均匀分布的随机数（通常被称为<code>code</code>），然后产生输出为64x64x3的输出图像(下图中 $G(z)$ ), 当<code>code</code>逐渐递增时，生成模型输出的图像也逐渐变化。下图中的生产模型主要由<a href="http://buptldy.github.io/2016/10/29/2016-10-29-deconv/">反卷积层</a>构成, 判别模型就由简单的卷积层组成，最后输出一个判断输入图片是否为真实数据的概率 $P(x)$ 。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/33141448.jpg"><br></center>
+
+<p>下图为随着迭代次数，DCGAN产生图像的变化过程。</p>
+<center><br><img src="https://openai.com/assets/research/generative-models/learning-gan-ffc4c09e6079283f334b2485ae663a6587d937a45ebc1d8aeac23a67889a3cf5.gif"><br></center>
+
+<p>训练好网络之后，其中的生成模型和判别模型都有其他的作用。一个训练好的判别模型能够用来对数据提取特征然后进行分类任务。通过输入随机向量生成模型可以产生一些非常有意思的的图片，如下图所示，当输入空间平滑变化时，输出的图片也在平滑转变。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-25/42718244.jpg"><br></center>
+
+<p>还有一个非常有意思的属性就是如果对生产模型的输入向量做一些简单的数学运算，那么学习的特征输出也有同样的性质，如下图所示。</p>
+<center><br><img src="https://fb-s-a-a.akamaihd.net/h-ak-xfp1/t39.2365-6/13438466_275356996149902_2140145659_n.jpg"><br></center>
+
+<h2 id="训练GAN"><a href="#训练GAN" class="headerlink" title="训练GAN"></a>训练GAN</h2><p>上面使用GAN产生的图像虽然效果不错，但其实GAN网络的训练过程是非常不稳定的。<br>通常在实际训练GAN中所碰到的一个问题就是判别模型的收敛速度要比生成模型的收敛速度要快很多，通常的做法就是让生成模型多训练几次来赶上生成模型，但是存在的一个问题就是通常生成模型和判别模型的训练是相辅相成的，理想的状态是让生成模型和判别模型在每次的训练过程中同时变得更好。判别模型理想的minimum loss应该为0.5，这样才说明判别模型分不出是真实数据还是生成模型产生的数据。</p>
+<h3 id="Improved-GANs"><a href="#Improved-GANs" class="headerlink" title="Improved GANs"></a>Improved GANs</h3><p><a href="https://arxiv.org/pdf/1606.03498v1.pdf" target="_blank" rel="external">Improved techniques for training GANs</a>这篇文章提出了很多改进GANs训练的方法，其中提出一个想法叫<code>Feature matching</code>，之前判别模型只判别输入数据是来自真实数据还是生成模型。现在为判别模型提出了一个新的目标函数来判别生成模型产生图像的统计信息是否和真实数据的相似。让 $f(x)$ 表示判别模型中间层的输出， 新的目标函数被定义为 $|| \mathds{E}_{x \sim p_{data}}f(x)  -  \mathds{E}_{z \sim p_z}f(G(z))||^2_2$, 其实就是要求真实图像和合成图像在判别模型中间层的距离要最小。这样可以防止生成模型在当前判别模型上过拟合。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="external">Generative Adversarial Networks</a></p>
+<p><a href="https://arxiv.org/abs/1511.06434" target="_blank" rel="external">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a></p>
+<p><a href="https://arxiv.org/abs/1606.03498" target="_blank" rel="external">Improved Techniques for Training GANs</a></p>
+<p><a href="https://arxiv.org/abs/1606.03657" target="_blank" rel="external">InfoGAN: Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets</a></p>
 
       
     </div>
@@ -374,7 +409,9 @@ $$\begin{align*}
       
         <div class="post-tags">
           
-            <a href="/tags/Algorithms/" rel="tag">#Algorithms</a>
+            <a href="/tags/Deep-Learning/" rel="tag">#Deep Learning</a>
+          
+            <a href="/tags/Unsupervised-Learning/" rel="tag">#Unsupervised Learning</a>
           
         </div>
       
@@ -383,17 +420,13 @@ $$\begin{align*}
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/01/10/2016-01-10-Maximum Flow Problem/" rel="next" title="Maximum Flow Problem">
-                <i class="fa fa-chevron-left"></i> Maximum Flow Problem
+              <a href="/2016/10/29/2016-10-29-deconv/" rel="next" title="Transposed Convolution, Fractionally Strided Convolution or Deconvolution">
+                <i class="fa fa-chevron-left"></i> Transposed Convolution, Fractionally Strided Convolution or Deconvolution
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/12/2016-01-12-Approximation Algorithm/" rel="prev" title="Approximation Algorithm">
-                Approximation Algorithm <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -408,10 +441,10 @@ $$\begin{align*}
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/11/2016-01-11-NP-completeness Problem/"
-     data-title="NP-completeness Problem"
+        <div class="ds-share flat" data-thread-key="2016/11/27/2016-11-27-gans/"
+     data-title="Generative Adversarial Networks"
      data-content=""
-     data-url="http://buptldy.github.io/2016/01/11/2016-01-11-NP-completeness Problem/">
+     data-url="http://buptldy.github.io/2016/11/27/2016-11-27-gans/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -438,8 +471,8 @@ $$\begin{align*}
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/11/2016-01-11-NP-completeness Problem/"
-           data-title="NP-completeness Problem" data-url="http://buptldy.github.io/2016/01/11/2016-01-11-NP-completeness Problem/">
+      <div class="ds-thread" data-thread-key="2016/11/27/2016-11-27-gans/"
+           data-title="Generative Adversarial Networks" data-url="http://buptldy.github.io/2016/11/27/2016-11-27-gans/">
       </div>
     
   </div>
@@ -562,7 +595,7 @@ $$\begin{align*}
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NP完全性"><span class="nav-number">1.</span> <span class="nav-text">NP完全性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#集合覆盖问题"><span class="nav-number">1.1.</span> <span class="nav-text">集合覆盖问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子集合问题（subset-sum-problem）"><span class="nav-number">1.2.</span> <span class="nav-text">子集合问题（subset-sum problem）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Coloring"><span class="nav-number">1.3.</span> <span class="nav-text">3 Coloring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈密顿回路（Hamiltonian-Cycle）"><span class="nav-number">1.4.</span> <span class="nav-text">哈密顿回路（Hamiltonian Cycle）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NPC问题的证明"><span class="nav-number">2.</span> <span class="nav-text">NPC问题的证明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Training"><span class="nav-number">1.</span> <span class="nav-text">Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GAN实现"><span class="nav-number">2.</span> <span class="nav-text">GAN实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DCGAN"><span class="nav-number">3.</span> <span class="nav-text">DCGAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练GAN"><span class="nav-number">4.</span> <span class="nav-text">训练GAN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Improved-GANs"><span class="nav-number">4.1.</span> <span class="nav-text">Improved GANs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
