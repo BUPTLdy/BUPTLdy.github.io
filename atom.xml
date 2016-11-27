@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://buptldy.github.io/"/>
-  <updated>2016-11-27T09:24:41.395Z</updated>
+  <updated>2016-11-27T09:33:22.966Z</updated>
   <id>http://buptldy.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://buptldy.github.io/2016/11/27/2016-11-27-gans/"/>
     <id>http://buptldy.github.io/2016/11/27/2016-11-27-gans/</id>
     <published>2016-11-27T02:00:00.000Z</published>
-    <updated>2016-11-27T09:24:41.395Z</updated>
+    <updated>2016-11-27T09:33:22.966Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/13513902.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;人工智能目前的核心目标应该是赋予机器自主理解我们所在世界的能力。对于人类来说，我们对这个世界所了解的知识可能很快就会忘记，比如我们所处的三维环境中，物体能够交互，移动，碰撞；什么动物会飞，什么动物吃草等等。这些巨大的并且不断扩大的信息现在是很容易被机器获取的，问题的关键是怎么设计模型和算法让机器更好的去分析和理解这些数据中所蕴含的宝藏。&lt;/p&gt;
@@ -35,7 +35,7 @@
 &lt;li&gt;判别模型的目标就是判断生成模型产生的样本和真实的输入样本之间的相似性。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;其中生成模型和判别模型合起来的框架被称为&lt;code&gt;GAN&lt;/code&gt;网络。通过下图我们来理清判别模型和生成模型之间的输入输出关系：生成模型通过输入随机噪声 $z(z \sim p_z)$ 产生合成样本；而判别模型通过分别输入真实的训练数据和生成模型的训练数据来判断输入的数据是否真实。&lt;/p&gt;
-&lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/2522908.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
+&lt;center&gt;&lt;br&gt;&lt;img src=&quot;https://culurciello.github.io/assets/unsup/gan_simple.svg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/center&gt;
 
 &lt;p&gt;描述了&lt;code&gt;GAN&lt;/code&gt;的网络结构，但它的优化目标是什么？怎么就可以通过训练使得生成模型能够产生和真实数据相似的输出？优化的目标其实很简单，简单来说就是：&lt;/p&gt;
 &lt;ul&gt;
@@ -43,8 +43,28 @@
 &lt;li&gt;而生成模型的奋斗目标则为‘我’要尽力的让判别模型对‘我’生成的数据预测为&lt;code&gt;1&lt;/code&gt;，让判别模型分不清‘我’产生的数据和真实数据之间的区别，从而达到‘以假乱真’的效果。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;下面用形式化说明下如果训练GAN网络, 先定义一些参数：&lt;/p&gt;
-&lt;center&gt;&lt;br&gt;| 参数       | 含义           |&lt;br&gt;| :————:|:————-:|&lt;br&gt;| $p_z$     | 输入随机噪声 $z$ 的分布 |&lt;br&gt;| $p_{data}$      | 未知的输入样本的数据分布      |&lt;br&gt;| $p_g$ | 生成模型的输出样本的数据分布，GAN的目标就是要$p_g=p_{data}$    |&lt;br&gt;&lt;/center&gt;
-
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;参数&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;$p_z$&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;输入随机噪声 $z$ 的分布&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;$p_{data}$&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;未知的输入样本的数据分布&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;$p_g$&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;生成模型的输出样本的数据分布，GAN的目标就是要$p_g=p_{data}$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;训练判别模型 $D(x)$ 的目标：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;对每一个输入数据 $x \sim p_{data}$ 要使得 $D(x)$ 最大；&lt;/li&gt;
@@ -66,7 +86,7 @@
 &lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;batch=tf.Variable(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;obj_g=tf.reduce_mean(tf.log(D2))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;opt_g=tf.train.GradientDescentOptimizer(&lt;span class=&quot;number&quot;&gt;0.01&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;              .minimize(&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;-obj_g,global_step=batch,var_list=theta_g)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;定义好优化目标后，下面就是训练的主要代码了：&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Algorithm 1, GoodFellow et al. 2014&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; range(TRAIN_ITERS):&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    x= np.random.normal(mu,sigma,M) &lt;span class=&quot;comment&quot;&gt;# sample minibatch from p_data&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    z= np.random.random(M)  &lt;span class=&quot;comment&quot;&gt;# sample minibatch from noise prior&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sess.run(opt_d, &amp;#123;x_node: x, z_node: z&amp;#125;) &lt;span class=&quot;comment&quot;&gt;# update discriminator D&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    z= np.random.random(M) &lt;span class=&quot;comment&quot;&gt;# sample noise prior&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    sess.run(opt_g, &amp;#123;z_node: z&amp;#125;) &lt;span class=&quot;comment&quot;&gt;# update generator G&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;下面是实验的结果，左图是训练之间的数据，可以看到生成数据的分布和训练数据相差甚远；右图是训练后的数据分析，生成数据和训练数据的分布接近了很多，且此时判别模型的输出分布在0.5左右，说明生成模型顺利的欺骗到判别模型。&lt;/p&gt;
-&lt;figure class=&quot;half&quot;&gt;&lt;br&gt;    &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/44877660.jpg&quot;&gt;&lt;br&gt;    &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/72678087.jpg&quot;&gt;&lt;br&gt;&lt;/figure&gt;
+&lt;figure class=&quot;half&quot;&gt;&lt;br&gt;    &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/44877660.jpg&quot; width=&quot;50%&quot;&gt;&lt;br&gt;    &lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/72678087.jpg&quot; width=&quot;50%&quot;&gt;&lt;br&gt;&lt;/figure&gt;
 
 &lt;h2 id=&quot;DCGAN&quot;&gt;&lt;a href=&quot;#DCGAN&quot; class=&quot;headerlink&quot; title=&quot;DCGAN&quot;&gt;&lt;/a&gt;DCGAN&lt;/h2&gt;&lt;p&gt;GAN的一个改进模型就是DCGAN。这个网络的生成模型的输入为一个100个符合均匀分布的随机数（通常被称为&lt;code&gt;code&lt;/code&gt;），然后产生输出为64x64x3的输出图像(下图中 $G(z)$ ), 当&lt;code&gt;code&lt;/code&gt;逐渐递增时，生成模型输出的图像也逐渐变化。下图中的生产模型主要由&lt;a href=&quot;http://buptldy.github.io/2016/10/29/2016-10-29-deconv/&quot;&gt;反卷积层&lt;/a&gt;构成, 判别模型就由简单的卷积层组成，最后输出一个判断输入图片是否为真实数据的概率 $P(x)$ 。&lt;/p&gt;
 &lt;center&gt;&lt;br&gt;&lt;img src=&quot;http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/33141448.jpg&quot;&gt;&lt;br&gt;&lt;/center&gt;
@@ -82,6 +102,7 @@
 
 &lt;h2 id=&quot;训练GAN&quot;&gt;&lt;a href=&quot;#训练GAN&quot; class=&quot;headerlink&quot; title=&quot;训练GAN&quot;&gt;&lt;/a&gt;训练GAN&lt;/h2&gt;&lt;p&gt;上面使用GAN产生的图像虽然效果不错，但其实GAN网络的训练过程是非常不稳定的。&lt;br&gt;通常在实际训练GAN中所碰到的一个问题就是判别模型的收敛速度要比生成模型的收敛速度要快很多，通常的做法就是让生成模型多训练几次来赶上生成模型，但是存在的一个问题就是通常生成模型和判别模型的训练是相辅相成的，理想的状态是让生成模型和判别模型在每次的训练过程中同时变得更好。判别模型理想的minimum loss应该为0.5，这样才说明判别模型分不出是真实数据还是生成模型产生的数据。&lt;/p&gt;
 &lt;h3 id=&quot;Improved-GANs&quot;&gt;&lt;a href=&quot;#Improved-GANs&quot; class=&quot;headerlink&quot; title=&quot;Improved GANs&quot;&gt;&lt;/a&gt;Improved GANs&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1606.03498v1.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Improved techniques for training GANs&lt;/a&gt;这篇文章提出了很多改进GANs训练的方法，其中提出一个想法叫&lt;code&gt;Feature matching&lt;/code&gt;，之前判别模型只判别输入数据是来自真实数据还是生成模型。现在为判别模型提出了一个新的目标函数来判别生成模型产生图像的统计信息是否和真实数据的相似。让 $f(x)$ 表示判别模型中间层的输出， 新的目标函数被定义为 $|| \mathds{E}_{x \sim p_{data}}f(x)  -  \mathds{E}_{z \sim p_z}f(G(z))||^2_2$, 其实就是要求真实图像和合成图像在判别模型中间层的距离要最小。这样可以防止生成模型在当前判别模型上过拟合。&lt;/p&gt;
+&lt;h3 id=&quot;InfoGAN&quot;&gt;&lt;a href=&quot;#InfoGAN&quot; class=&quot;headerlink&quot; title=&quot;InfoGAN&quot;&gt;&lt;/a&gt;InfoGAN&lt;/h3&gt;&lt;p&gt;待续。。。&lt;/p&gt;
 &lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1406.2661&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generative Adversarial Networks&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1511.06434&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1606.03498&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Improved Techniques for Training GANs&lt;/a&gt;&lt;/p&gt;
@@ -1512,11 +1533,11 @@ probabilities and labels:
     </summary>
     
     
-      <category term="Cuda" scheme="http://buptldy.github.io/tags/Cuda/"/>
-    
       <category term="Keras" scheme="http://buptldy.github.io/tags/Keras/"/>
     
       <category term="Deep Learning" scheme="http://buptldy.github.io/tags/Deep-Learning/"/>
+    
+      <category term="Cuda" scheme="http://buptldy.github.io/tags/Cuda/"/>
     
   </entry>
   
