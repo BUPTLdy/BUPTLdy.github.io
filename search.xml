@@ -84,9 +84,23 @@
 <p>还有一个非常有意思的属性就是如果对生产模型的输入向量做一些简单的数学运算，那么学习的特征输出也有同样的性质，如下图所示。</p>
 <center><br><img src="https://fb-s-a-a.akamaihd.net/h-ak-xfp1/t39.2365-6/13438466_275356996149902_2140145659_n.jpg"><br></center>
 
-<h2 id="训练GAN"><a href="#训练GAN" class="headerlink" title="训练GAN"></a>训练GAN</h2><p>上面使用GAN产生的图像虽然效果不错，但其实GAN网络的训练过程是非常不稳定的。<br>通常在实际训练GAN中所碰到的一个问题就是判别模型的收敛速度要比生成模型的收敛速度要快很多，通常的做法就是让生成模型多训练几次来赶上生成模型，但是存在的一个问题就是通常生成模型和判别模型的训练是相辅相成的，理想的状态是让生成模型和判别模型在每次的训练过程中同时变得更好。判别模型理想的minimum loss应该为0.5，这样才说明判别模型分不出是真实数据还是生成模型产生的数据。</p>
+<h2 id="GAN的训练及其改进"><a href="#GAN的训练及其改进" class="headerlink" title="GAN的训练及其改进"></a>GAN的训练及其改进</h2><p>上面使用GAN产生的图像虽然效果不错，但其实GAN网络的训练过程是非常不稳定的。<br>通常在实际训练GAN中所碰到的一个问题就是判别模型的收敛速度要比生成模型的收敛速度要快很多，通常的做法就是让生成模型多训练几次来赶上生成模型，但是存在的一个问题就是通常生成模型和判别模型的训练是相辅相成的，理想的状态是让生成模型和判别模型在每次的训练过程中同时变得更好。判别模型理想的minimum loss应该为0.5，这样才说明判别模型分不出是真实数据还是生成模型产生的数据。</p>
 <h3 id="Improved-GANs"><a href="#Improved-GANs" class="headerlink" title="Improved GANs"></a>Improved GANs</h3><p><a href="https://arxiv.org/pdf/1606.03498v1.pdf" target="_blank" rel="external">Improved techniques for training GANs</a>这篇文章提出了很多改进GANs训练的方法，其中提出一个想法叫<code>Feature matching</code>，之前判别模型只判别输入数据是来自真实数据还是生成模型。现在为判别模型提出了一个新的目标函数来判别生成模型产生图像的统计信息是否和真实数据的相似。让 $f(x)$ 表示判别模型中间层的输出， 新的目标函数被定义为 $|| \mathbb{E}_{x \sim p_{data}}f(x)  -  \mathbb{E}_{z \sim p_z}f(G(z))||^2_2$, 其实就是要求真实图像和合成图像在判别模型中间层的距离要最小。这样可以防止生成模型在当前判别模型上过拟合。</p>
-<h3 id="InfoGAN"><a href="#InfoGAN" class="headerlink" title="InfoGAN"></a>InfoGAN</h3><p>待续。。。</p>
+<h3 id="InfoGAN"><a href="#InfoGAN" class="headerlink" title="InfoGAN"></a>InfoGAN</h3><p>到这可能有些同学会想到，我要是想通过GAN产生我想要的特定属性的图片改怎么办？普通的GAN输入的是随机的噪声，输出也是与之对应的随机图片，我们并不能控制输出噪声和输出图片的对应关系。这样在训练的过程中也会倒置生成模型倾向于产生更容易欺骗判别模型的某一类特定图片，而不是更好的去学习训练数据的分布，这样对模型的训练肯定是不好的。InfoGAN的提出就是为了解决这一问题，通过对输入噪声添加一些类别信息以及控制图像特征(如mnist数字的角度和厚度)的隐含变量来使得生成模型的输入不在是随机噪声。虽然现在输入不再是随机噪声，但是生成模型可能会忽略这些输入的额外信息还是把输入当成和输出无关的噪声，所以需要定义一个生成模型输入输出的互信息，互信息越高，说明输入输出的关联越大。</p>
+<p>下面三张图片展示了通过分别控制输入噪声的类别信息，数字角度信息，数字笔画厚度信息产生指定输出的图片，可以看出InfoGAN产生图片的效果还是很好的。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-29/839516.jpg"><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-29/10937636.jpg"><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-29/2995738.jpg"><br></center>
+
+<h3 id="其他应用"><a href="#其他应用" class="headerlink" title="其他应用"></a>其他应用</h3><p>GAN网络还有很多其他的有趣应用，比如下图所示的根据<code>一句话来产生对应的图片</code>，可能大家都有了解karpathy大神的<a href="https://github.com/karpathy/neuraltalk2" target="_blank" rel="external"><code>看图说话</code></a>, 但是GAN有能力把这个过程给反过来。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-29/51572272.jpg"><br></center>
+
+<p>还有下面这个“<a href="https://github.com/bamos/dcgan-completion.tensorflow" target="_blank" rel="external">图像补全</a>”, 根据图像剩余的信息来匹配最佳的补全内容。</p>
+<center><br><img src="https://github.com/bamos/dcgan-completion.tensorflow/raw/master/completion.compressed.gif"><br></center>
+
+<p>还有下面这个<a href="https://swarbrickjones.wordpress.com/2016/01/13/enhancing-images-using-deep-convolutional-generative-adversarial-networks-dcgans/" target="_blank" rel="external">图像增强</a>的例子，有点去马赛克的意思，效果还是挺不错的:-D。</p>
+<center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-29/71438836.jpg
+"><br></center>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>颜乐存说过，2016年深度学习领域最让他兴奋技术莫过于对抗学习。对抗学习确实是解决非监督学习的一个有效方法，而无监督学习一直都是人工智能领域研究者所孜孜追求的“终极目标”之一。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="external">Generative Adversarial Networks</a></p>
 <p><a href="https://arxiv.org/abs/1511.06434" target="_blank" rel="external">Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks</a></p>
 <p><a href="https://arxiv.org/abs/1606.03498" target="_blank" rel="external">Improved Techniques for Training GANs</a></p>
