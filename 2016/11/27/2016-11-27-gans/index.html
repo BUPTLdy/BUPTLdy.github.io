@@ -68,8 +68,7 @@
 <meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/13513902.jpg">
 <meta property="og:image" content="https://culurciello.github.io/assets/unsup/gan_simple.svg">
 <meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/4360345.jpg">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/44877660.jpg">
-<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/72678087.jpg">
+<meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-29/64984825.jpg">
 <meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/33141448.jpg">
 <meta property="og:image" content="https://openai.com/assets/research/generative-models/learning-gan-ffc4c09e6079283f334b2485ae663a6587d937a45ebc1d8aeac23a67889a3cf5.gif">
 <meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-25/42718244.jpg">
@@ -81,7 +80,7 @@
 <meta property="og:image" content="https://github.com/bamos/dcgan-completion.tensorflow/raw/master/completion.compressed.gif">
 <meta property="og:image" content="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-29/71438836.jpg
 ">
-<meta property="og:updated_time" content="2016-11-29T08:46:25.821Z">
+<meta property="og:updated_time" content="2016-11-29T09:10:57.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Generative Adversarial Networks">
 <meta name="twitter:description">
@@ -342,7 +341,7 @@
 <p>人工智能目前的核心目标应该是赋予机器自主理解我们所在世界的能力。对于人类来说，我们对这个世界所了解的知识可能很快就会忘记，比如我们所处的三维环境中，物体能够交互，移动，碰撞；什么动物会飞，什么动物吃草等等。这些巨大的并且不断扩大的信息现在是很容易被机器获取的，问题的关键是怎么设计模型和算法让机器更好的去分析和理解这些数据中所蕴含的宝藏。</p>
 <p><code>Generative models</code>(生成模型)现在被认为是能够实现这一目标的最有前景的方法之一。<code>Generative models</code>通过输入一大堆特定领域的数据进行训练（比如图像，句子，声音等）来使得模型能够产生和输入数据相似的输出。这一直觉的背后可以由下面名言阐述。</p>
 <blockquote>
-<p>“What I cannot create, I do not understand.”<br>—Richard Feynman</p>
+<p>“What I cannot create, I do not understand.”  —Richard Feynman</p>
 </blockquote>
 <p>生成模型由一个参数数量比训练数据少的多神经网络构成，所以生成模型为了能够产生和训练数据相似的输出就会迫使自己去发现数据中内在的本质内容。训练<code>Generative models</code>的方法有几种，在这里我们主要阐述其中的<code>Adversarial Training</code>（对抗训练）方法。</p>
 <h2 id="Adversarial-Training"><a href="#Adversarial-Training" class="headerlink" title="Adversarial Training"></a>Adversarial Training</h2><p>上文说过Adversarial Training是训练生成模型的一种方法。为了训练生成模型，Adversarial Training提出一种<code>Discriminative Model</code>(判别模型)来和生成模型产生对抗，下面来说说<code>Generative models</code> $G(z)$ 和 <code>Discriminative Model</code> $D(x)$ 是如何相互作用的。</p>
@@ -402,8 +401,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">batch=tf.Variable(<span class="number">0</span>)</span><br><span class="line">obj_g=tf.reduce_mean(tf.log(D2))</span><br><span class="line">opt_g=tf.train.GradientDescentOptimizer(<span class="number">0.01</span>)</span><br><span class="line">              .minimize(<span class="number">1</span>-obj_g,global_step=batch,var_list=theta_g)</span><br></pre></td></tr></table></figure>
 <p>定义好优化目标后，下面就是训练的主要代码了：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Algorithm 1, GoodFellow et al. 2014</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(TRAIN_ITERS):</span><br><span class="line">    x= np.random.normal(mu,sigma,M) <span class="comment"># sample minibatch from p_data</span></span><br><span class="line">    z= np.random.random(M)  <span class="comment"># sample minibatch from noise prior</span></span><br><span class="line">    sess.run(opt_d, &#123;x_node: x, z_node: z&#125;) <span class="comment"># update discriminator D</span></span><br><span class="line">    z= np.random.random(M) <span class="comment"># sample noise prior</span></span><br><span class="line">    sess.run(opt_g, &#123;z_node: z&#125;) <span class="comment"># update generator G</span></span><br></pre></td></tr></table></figure></p>
 <p>下面是实验的结果，左图是训练之间的数据，可以看到生成数据的分布和训练数据相差甚远；右图是训练后的数据分析，生成数据和训练数据的分布接近了很多，且此时判别模型的输出分布在0.5左右，说明生成模型顺利的欺骗到判别模型。</p>
-<p><div></div></p>
-<p><figure class="half"><br>    <img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/44877660.jpg" width="300"><br>    <img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-24/72678087.jpg" width="300"><br></figure><br></p>
+<figure><br>    <img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-29/64984825.jpg"><br><br></figure>
+
 <h2 id="DCGAN"><a href="#DCGAN" class="headerlink" title="DCGAN"></a>DCGAN</h2><p>GAN的一个改进模型就是DCGAN。这个网络的生成模型的输入为一个100个符合均匀分布的随机数（通常被称为<code>code</code>），然后产生输出为64x64x3的输出图像(下图中 $G(z)$ ), 当<code>code</code>逐渐递增时，生成模型输出的图像也逐渐变化。下图中的生产模型主要由<a href="http://buptldy.github.io/2016/10/29/2016-10-29-deconv/">反卷积层</a>构成, 判别模型就由简单的卷积层组成，最后输出一个判断输入图片是否为真实数据的概率 $P(x)$ 。</p>
 <center><br><img src="http://7xritj.com1.z0.glb.clouddn.com/public/16-11-27/33141448.jpg"><br></center>
 
